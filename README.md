@@ -8,4 +8,7 @@
     - Joystick
 
 - Code migrieren
-    - package.xml file anpassen
+    - Migrate Packages
+    - Migrate Launch Files
+    - Migrate Scripts
+    - Mirgate Code
