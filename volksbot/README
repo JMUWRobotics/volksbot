@@ -1,0 +1,36 @@
+#################################
+## Volksbot Installation Guide ##
+#################################
+
+Note: This guide will assume you are using an Ubuntu/Debian-like Linux Distribution.
+You may have to alter these commands accordingly!
+
+1. Copy the "volksbot" folder that contains this README into your catkin workspace "src" directory
+
+2. Install the setserial programm
+
+	sudo apt-get install setserial
+
+3. Add your user to the "dialout" and "users" group. You may have to restart your computer or log out so the changes take effect!
+
+	sudo usermod -a -G dialout <your_username>
+	sudo usermod -a -G users <your_username>
+
+4. Copy the udev rules for the USB devices
+
+	sudo cp 42-usb-serial-volksbot.rules /etc/udev/rules.d/
+	sudo service udev restart
+
+5. Copy the libEposCmd Library. Use the version (armv7hf for Raspberry Pi, x86 or x86_64) that matches your CPU Architecture.
+
+	sudo cp libEposCmd/armv7hf/libEposCmd.so.6.1.1.0 /usr/local/lib/
+		- or -
+	sudo cp libEposCmd/x86/libEposCmd.so.6.1.1.0 /usr/local/lib/
+		- or -
+	sudo cp libEposCmd/x86_64/libEposCmd.so.6.1.1.0 /usr/local/lib/
+
+		- after any of the commands above, execute both these commands -
+	sudo ln -s /usr/local/lib/libEposCmd.so.6.1.1.0 /usr/local/lib/libEposCmd.so
+	sudo ln -s /usr/local/lib/libEposCmd.so.6.1.1.0 /usr/lib/libEposCmd.so
+
+6. Make the catkin workspace
