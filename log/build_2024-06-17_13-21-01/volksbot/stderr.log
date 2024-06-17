@@ -1,0 +1,47 @@
+[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[0mCMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[0mCMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:45 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[0mCMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[0mDetected architecture: x86_64[0m
+[0mUsing EposCmd library: /home/max/Documents/Hiwi/ROS2_volksbots/volksbot/libEposCmd/x86_64/libEposCmd.so[0m
+[0mlib[0m
+[01m[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/epos2/epos2.cpp:[m[K In static member function ‘[01m[Kstatic void* EPOS2::threadFunction(void*)[m[K’:
+[01m[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/epos2/epos2.cpp:157:1:[m[K [01;35m[Kwarning: [m[Kno return statement in function returning non-void [[01;35m[K-Wreturn-type[m[K]
+  157 | [01;35m[K}[m[K
+      | [01;35m[K^[m[K
+In file included from [01m[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/joystick/jscontrol.cc:3[m[K:
+[01m[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/joystick/logitechf710.h:15:[m[K [01;35m[Kwarning: [m[K"START" redefined
+   15 | #define START           0x06
+      | 
+In file included from [01m[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/joystick/jscontrol.cc:2[m[K:
+[01m[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/joystick/predator.h:18:[m[K [01;36m[Knote: [m[Kthis is the location of the previous definition
+   18 | #define START    0x09
+      | 

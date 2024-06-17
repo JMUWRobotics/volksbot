@@ -1,0 +1,14 @@
+[0.368s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 -- -j8 -l8
+[0.392s] [ 40%] Built target scanlistener
+[0.394s] [100%] Built target sicksensor
+[0.398s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 -- -j8 -l8
+[0.424s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 --target tests -- -j8 -l8
+[0.455s] Built target tests
+[0.465s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 --target tests -- -j8 -l8
+[0.510s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100
+[0.513s] -- Install configuration: ""
+[0.513s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig/lms100.pc
+[0.514s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/cmake/lms100Config.cmake
+[0.514s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/cmake/lms100Config-version.cmake
+[0.514s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/package.xml
+[0.515s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100

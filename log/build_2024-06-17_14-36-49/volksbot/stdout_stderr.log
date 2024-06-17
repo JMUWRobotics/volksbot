@@ -1,0 +1,166 @@
+[0mCMake Deprecation Warning at CMakeLists.txt:2 (cmake_policy):
+  The OLD behavior for policy CMP0048 will be removed from a future version
+  of CMake.
+
+  The cmake-policies(7) manual explains that the OLD behaviors of all
+  policies are deprecated and that a policy should be set to OLD only under
+  specific short-term circumstances.  Projects should be ported to the NEW
+  behavior and not rely on setting a policy to OLD.
+
+[0m
+-- Using CATKIN_DEVEL_PREFIX: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel
+-- Using CMAKE_PREFIX_PATH: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100;/opt/ros/noetic
+-- This workspace overlays: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100;/opt/ros/noetic
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using Debian Python package layout
+-- Using empy: /usr/lib/python3/dist-packages/em.py
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/test_results
+-- Forcing gtest/gmock from source, though one was otherwise available.
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0mCMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:4 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[0mCMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:45 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+[0mCMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (cmake_minimum_required):
+  Compatibility with CMake < 2.8.12 will be removed from a future version of
+  CMake.
+
+  Update the VERSION argument <min> value or use a ...<max> suffix to tell
+  CMake that the project does not need compatibility with older versions.
+
+[0m
+-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+-- Using Python nosetests: /usr/bin/nosetests3
+-- catkin 0.8.10
+-- BUILD_SHARED_LIBS is on
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+-- volksbot: 3 messages, 1 services
+[0mDetected architecture: x86_64[0m
+[0mUsing EposCmd library: /home/max/Documents/Hiwi/ROS2_volksbots/volksbot/libEposCmd/x86_64/libEposCmd.so[0m
+[0mlib[0m
+-- STATUS: include/volksbot
+-- STATUS: include
+-- STATUS: include/volksbot
+-- STATUS: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/include/
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target _volksbot_generate_messages_check_deps_velocities
+[  0%] Built target _volksbot_generate_messages_check_deps_pose2d
+[  0%] Built target _volksbot_generate_messages_check_deps_vels
+[  0%] Built target _volksbot_generate_messages_check_deps_ticks
+[ 15%] Built target volksbot_generate_messages_cpp
+[ 16%] Built target volksbot_generate_messages_nodejs
+[ 27%] Built target volksbot_generate_messages_eus
+[ 32%] Built target volksbot_generate_messages_py
+[ 38%] Built target volksbot_generate_messages_lisp
+[ 42%] Built target kbcontrol
+[ 45%] Built target odo
+[ 49%] Built target EPOS2
+[ 49%] Built target volksbot_generate_messages
+[ 54%] Built target odometry
+[ 57%] Built target calibration
+[ 67%] Built target jscontrol
+[ 96%] Built target VMCLIB
+[100%] Built target volksbot
+Built target tests
+-- Install configuration: ""
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/pose2d.msg
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/ticks.msg
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/vels.msg
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/srv/velocities.srv
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbot-msg-paths.cmake
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocitiesRequest.h
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/vels.h
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocitiesResponse.h
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/ticks.h
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/pose2d.h
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocities.h
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/manifest.l
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/srv
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/srv/velocities.l
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/ticks.l
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/vels.l
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/pose2d.l
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/_package.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/volksbot-srv.asd
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/_package_velocities.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/velocities.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_ticks.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/volksbot-msg.asd
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/vels.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_pose2d.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_vels.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/ticks.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/pose2d.lisp
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv/velocities.js
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv/_index.js
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/pose2d.js
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/vels.js
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/_index.js
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/ticks.js
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/_index.js
+Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot'...
+Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/msg'...
+Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/srv'...
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__init__.py
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/_velocities.py
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__init__.py
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__/_velocities.cpython-38.pyc
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__/__init__.cpython-38.pyc
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_ticks.py
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_vels.py
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__init__.py
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_pose2d.py
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_pose2d.cpython-38.pyc
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_vels.cpython-38.pyc
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_ticks.cpython-38.pyc
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/__init__.cpython-38.pyc
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__pycache__
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__pycache__/__init__.cpython-38.pyc
+-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/pkgconfig/volksbot.pc
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbot-msg-extras.cmake
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbotConfig.cmake
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbotConfig-version.cmake
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/package.xml
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libEposCmd.so
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libodo.so
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libVMCLIB.so
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/volksbot/volksbot-targets.cmake
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/volksbot/volksbot-targets-noconfig.cmake

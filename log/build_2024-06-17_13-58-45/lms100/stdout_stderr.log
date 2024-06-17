@@ -1,0 +1,13 @@
+[ 40%] [32mBuilding CXX object CMakeFiles/sicksensor.dir/src/sicksensor.cc.o[0m
+[ 40%] [32mBuilding CXX object CMakeFiles/scanlistener.dir/src/scanlistener.cc.o[0m
+[ 60%] [32mBuilding CXX object CMakeFiles/sicksensor.dir/src/lms100_cola.cc.o[0m
+[ 80%] [32m[1mLinking CXX executable devel/lib/lms100/sicksensor[0m
+[100%] [32m[1mLinking CXX executable devel/lib/lms100/scanlistener[0m
+[100%] Built target sicksensor
+[100%] Built target scanlistener
+Built target tests
+-- Install configuration: ""
+-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig/lms100.pc
+-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/cmake/lms100Config.cmake
+-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/cmake/lms100Config-version.cmake
+-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/package.xml

@@ -1,0 +1,79 @@
+[0.369s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot -- -j8 -l8
+[0.377s] [33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+[0.377s]   Policy CMP0048 is not set: project() command manages VERSION variables.
+[0.377s]   Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+[0.377s]   command to set the policy and suppress this warning.
+[0.377s] 
+[0.377s]   The following variable(s) would be set to empty:
+[0.377s] 
+[0.378s]     CMAKE_PROJECT_VERSION
+[0.378s]     CMAKE_PROJECT_VERSION_MAJOR
+[0.378s]     CMAKE_PROJECT_VERSION_MINOR
+[0.378s]     CMAKE_PROJECT_VERSION_PATCH
+[0.378s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.378s] [0m
+[0.382s] -- Using CATKIN_DEVEL_PREFIX: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel
+[0.382s] -- Using CMAKE_PREFIX_PATH: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100;/opt/ros/noetic
+[0.383s] -- This workspace overlays: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100;/opt/ros/noetic
+[0.404s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.404s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.404s] -- Using Debian Python package layout
+[0.404s] -- Using empy: /usr/lib/python3/dist-packages/em.py
+[0.506s] -- Using CATKIN_ENABLE_TESTING: ON
+[0.506s] -- Call enable_testing()
+[0.506s] -- Using CATKIN_TEST_RESULTS_DIR: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/test_results
+[0.546s] -- Forcing gtest/gmock from source, though one was otherwise available.
+[0.546s] -- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0.546s] -- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0.546s] [0mCMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:4 (cmake_minimum_required):
+[0.546s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.546s]   CMake.
+[0.546s] 
+[0.546s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.547s]   CMake that the project does not need compatibility with older versions.
+[0.547s] 
+[0.547s] [0m
+[0.548s] [0mCMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:45 (cmake_minimum_required):
+[0.548s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.548s]   CMake.
+[0.549s] 
+[0.549s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.549s]   CMake that the project does not need compatibility with older versions.
+[0.549s] 
+[0.549s] [0m
+[0.549s] [0mCMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (cmake_minimum_required):
+[0.549s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.549s]   CMake.
+[0.549s] 
+[0.549s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.549s]   CMake that the project does not need compatibility with older versions.
+[0.549s] 
+[0.549s] [0m
+[0.566s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.571s] -- Using Python nosetests: /usr/bin/nosetests3
+[0.615s] -- catkin 0.8.10
+[0.615s] -- BUILD_SHARED_LIBS is on
+[0.747s] -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0.956s] -- volksbot: 3 messages, 1 services
+[1.108s] [0mDetected architecture: x86_64[0m
+[1.108s] [0mUsing EposCmd library: /home/max/Documents/Hiwi/ROS2_volksbots/volksbot/libEposCmd/x86_64/libEposCmd.so[0m
+[1.108s] [0mlib[0m
+[1.109s] -- STATUS: include/volksbot
+[1.109s] -- STATUS: include
+[1.109s] -- STATUS: include/volksbot
+[1.109s] -- STATUS: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/include/
+[1.109s] [31mCMake Error in CMakeLists.txt:
+[1.109s]   No cmake_minimum_required command is present.  A line of code such as
+[1.109s] 
+[1.110s]     cmake_minimum_required(VERSION 3.25)
+[1.110s] 
+[1.110s]   should be added at the top of the file.  The version specified may be lower
+[1.110s]   if you wish to support older CMake versions for this project.  For more
+[1.110s]   information run "cmake --help-policy CMP0000".
+[1.110s] 
+[1.110s] [0m
+[1.110s] -- Configuring incomplete, errors occurred!
+[1.110s] See also "/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/CMakeFiles/CMakeOutput.log".
+[1.110s] See also "/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/CMakeFiles/CMakeError.log".
+[1.114s] make: *** [Makefile:2008: cmake_check_build_system] Error 1
+[1.115s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot' returned '2': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot -- -j8 -l8

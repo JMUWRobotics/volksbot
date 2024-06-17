@@ -8,7 +8,7 @@
     - Joystick
 
 - Code migrieren
-    - Migrate Packages
+    - Migrate Packages -> Max
     - Migrate Launch Files
     - Migrate Scripts
     - Mirgate Code

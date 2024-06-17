@@ -1,0 +1,113 @@
+[0.367s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot -- -j8 -l8
+[0.375s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.375s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.375s]   CMake.
+[0.375s] 
+[0.376s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.376s]   CMake that the project does not need compatibility with older versions.
+[0.376s] 
+[0.376s] [0m
+[0.376s] [33mCMake Warning (dev) at CMakeLists.txt:2 (project):
+[0.376s]   Policy CMP0048 is not set: project() command manages VERSION variables.
+[0.376s]   Run "cmake --help-policy CMP0048" for policy details.  Use the cmake_policy
+[0.376s]   command to set the policy and suppress this warning.
+[0.376s] 
+[0.376s]   The following variable(s) would be set to empty:
+[0.376s] 
+[0.376s]     CMAKE_PROJECT_VERSION
+[0.376s]     CMAKE_PROJECT_VERSION_MAJOR
+[0.376s]     CMAKE_PROJECT_VERSION_MINOR
+[0.376s]     CMAKE_PROJECT_VERSION_PATCH
+[0.376s] This warning is for project developers.  Use -Wno-dev to suppress it.
+[0.376s] [0m
+[0.381s] -- Using CATKIN_DEVEL_PREFIX: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel
+[0.381s] -- Using CMAKE_PREFIX_PATH: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100;/opt/ros/noetic
+[0.381s] -- This workspace overlays: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100;/opt/ros/noetic
+[0.400s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.400s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.400s] -- Using Debian Python package layout
+[0.400s] -- Using empy: /usr/lib/python3/dist-packages/em.py
+[0.501s] -- Using CATKIN_ENABLE_TESTING: ON
+[0.501s] -- Call enable_testing()
+[0.502s] -- Using CATKIN_TEST_RESULTS_DIR: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/test_results
+[0.542s] -- Forcing gtest/gmock from source, though one was otherwise available.
+[0.542s] -- Found gtest sources under '/usr/src/googletest': gtests will be built
+[0.542s] -- Found gmock sources under '/usr/src/googletest': gmock will be built
+[0.542s] [0mCMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:4 (cmake_minimum_required):
+[0.542s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.542s]   CMake.
+[0.543s] 
+[0.543s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.543s]   CMake that the project does not need compatibility with older versions.
+[0.543s] 
+[0.543s] [0m
+[0.546s] [0mCMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:45 (cmake_minimum_required):
+[0.546s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.546s]   CMake.
+[0.546s] 
+[0.546s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.546s]   CMake that the project does not need compatibility with older versions.
+[0.546s] 
+[0.546s] [0m
+[0.547s] [0mCMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (cmake_minimum_required):
+[0.547s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.547s]   CMake.
+[0.547s] 
+[0.547s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.547s]   CMake that the project does not need compatibility with older versions.
+[0.547s] 
+[0.547s] [0m
+[0.565s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[0.569s] -- Using Python nosetests: /usr/bin/nosetests3
+[0.618s] -- catkin 0.8.10
+[0.618s] -- BUILD_SHARED_LIBS is on
+[0.751s] -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[0.961s] -- volksbot: 3 messages, 1 services
+[1.097s] -- STATUS: include/volksbot
+[1.097s] -- STATUS: include
+[1.097s] -- STATUS: include/volksbot
+[1.097s] -- STATUS: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/include/
+[1.097s] -- Configuring done
+[1.145s] -- Generating done
+[1.151s] -- Build files have been written to: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot
+[1.170s] [  0%] Built target std_msgs_generate_messages_py
+[1.170s] [  0%] Built target std_msgs_generate_messages_cpp
+[1.170s] [  0%] Built target std_msgs_generate_messages_eus
+[1.172s] [  0%] Built target std_msgs_generate_messages_lisp
+[1.180s] [  0%] Built target std_msgs_generate_messages_nodejs
+[1.201s] [  0%] Built target _volksbot_generate_messages_check_deps_pose2d
+[1.203s] [  0%] Built target _volksbot_generate_messages_check_deps_ticks
+[1.212s] [  0%] Built target _volksbot_generate_messages_check_deps_velocities
+[1.216s] [  0%] Built target _volksbot_generate_messages_check_deps_vels
+[1.224s] [  8%] Built target volksbot_generate_messages_eus
+[1.225s] [ 15%] Built target volksbot_generate_messages_cpp
+[1.225s] [ 25%] Built target volksbot_generate_messages_py
+[1.226s] [ 32%] Built target volksbot_generate_messages_lisp
+[1.226s] [ 38%] Built target volksbot_generate_messages_nodejs
+[1.253s] [ 42%] Built target kbcontrol
+[1.257s] [ 45%] Built target odo
+[1.260s] [ 47%] [32m[1mLinking CXX shared library devel/lib/libEPOS2.so[0m
+[1.262s] [ 47%] Built target volksbot_generate_messages
+[1.263s] [ 50%] Built target calibration
+[1.268s] [ 55%] Built target odometry
+[1.269s] [ 66%] Built target jscontrol
+[1.271s] [ 94%] Built target VMCLIB
+[1.341s] [ 96%] Built target EPOS2
+[1.359s] [ 98%] [32m[1mLinking CXX executable devel/lib/volksbot/volksbot[0m
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_GetEnableState'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_GetFaultState'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_GetProtocolStackSettings'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_SetProtocolStackSettings'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_ClearFault'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_ActivateProfileVelocityMode'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_MoveWithVelocity'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_SetEnableState'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_OpenDevice'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_CloseDevice'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_GetPositionIs'
+[1.466s] /usr/bin/ld: devel/lib/libEPOS2.so: undefined reference to `VCS_HaltVelocityMovement'
+[1.466s] collect2: error: ld returned 1 exit status
+[1.467s] make[2]: *** [CMakeFiles/volksbot.dir/build.make:121: devel/lib/volksbot/volksbot] Error 1
+[1.467s] make[1]: *** [CMakeFiles/Makefile2:2007: CMakeFiles/volksbot.dir/all] Error 2
+[1.467s] make: *** [Makefile:146: all] Error 2
+[1.468s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot' returned '2': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot -- -j8 -l8

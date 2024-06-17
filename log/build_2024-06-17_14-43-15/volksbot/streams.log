@@ -1,0 +1,109 @@
+[0.363s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot -- -j8 -l8
+[0.385s] [  0%] Built target std_msgs_generate_messages_eus
+[0.386s] [  0%] Built target std_msgs_generate_messages_lisp
+[0.386s] [  0%] Built target std_msgs_generate_messages_cpp
+[0.387s] [  0%] Built target std_msgs_generate_messages_py
+[0.394s] [  0%] Built target std_msgs_generate_messages_nodejs
+[0.417s] [  0%] Built target _volksbot_generate_messages_check_deps_velocities
+[0.417s] [  0%] Built target _volksbot_generate_messages_check_deps_pose2d
+[0.429s] [  0%] Built target _volksbot_generate_messages_check_deps_ticks
+[0.429s] [  0%] Built target _volksbot_generate_messages_check_deps_vels
+[0.437s] [  8%] Built target volksbot_generate_messages_nodejs
+[0.437s] [ 23%] Built target volksbot_generate_messages_py
+[0.437s] [ 23%] Built target volksbot_generate_messages_cpp
+[0.437s] [ 32%] Built target volksbot_generate_messages_eus
+[0.438s] [ 38%] Built target volksbot_generate_messages_lisp
+[0.450s] [ 38%] Built target volksbot_generate_messages
+[0.457s] [ 45%] Built target kbcontrol
+[0.457s] [ 45%] Built target EPOS2
+[0.460s] [ 49%] Built target odo
+[0.460s] [ 52%] Built target calibration
+[0.461s] [ 57%] Built target odometry
+[0.463s] [ 86%] Built target VMCLIB
+[0.464s] [ 96%] Built target jscontrol
+[0.477s] [100%] Built target volksbot
+[0.481s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot' returned '0': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot -- -j8 -l8
+[0.549s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot --target tests -- -j8 -l8
+[0.577s] Built target tests
+[0.582s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot' returned '0': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot --target tests -- -j8 -l8
+[0.653s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot
+[0.657s] -- Install configuration: ""
+[0.657s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/pose2d.msg
+[0.657s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/ticks.msg
+[0.657s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/vels.msg
+[0.657s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/srv/velocities.srv
+[0.657s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbot-msg-paths.cmake
+[0.657s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot
+[0.657s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocitiesRequest.h
+[0.657s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/vels.h
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocitiesResponse.h
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/ticks.h
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/pose2d.h
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocities.h
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/manifest.l
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/srv
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/srv/velocities.l
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/ticks.l
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/vels.l
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/pose2d.l
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/_package.lisp
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/volksbot-srv.asd
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/_package_velocities.lisp
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/velocities.lisp
+[0.658s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package.lisp
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_ticks.lisp
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/volksbot-msg.asd
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/vels.lisp
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_pose2d.lisp
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_vels.lisp
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/ticks.lisp
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/pose2d.lisp
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv/velocities.js
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv/_index.js
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/pose2d.js
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/vels.js
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/_index.js
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/ticks.js
+[0.659s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/_index.js
+[0.681s] Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot'...
+[0.681s] Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/msg'...
+[0.681s] Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/srv'...
+[0.684s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot
+[0.684s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__init__.py
+[0.684s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv
+[0.684s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/_velocities.py
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__init__.py
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__/_velocities.cpython-38.pyc
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__/__init__.cpython-38.pyc
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_ticks.py
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_vels.py
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__init__.py
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_pose2d.py
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_pose2d.cpython-38.pyc
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_vels.cpython-38.pyc
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_ticks.cpython-38.pyc
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/__init__.cpython-38.pyc
+[0.685s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__pycache__
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__pycache__/__init__.cpython-38.pyc
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/pkgconfig/volksbot.pc
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbot-msg-extras.cmake
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbotConfig.cmake
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbotConfig-version.cmake
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/package.xml
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libEposCmd.so
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libodo.so
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libVMCLIB.so
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/volksbot/volksbot-targets.cmake
+[0.686s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/volksbot/volksbot-targets-noconfig.cmake
+[0.687s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot' returned '0': CMAKE_PREFIX_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100:${CMAKE_PREFIX_PATH} PKG_CONFIG_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/x86_64-linux-gnu/pkgconfig:/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig:${PKG_CONFIG_PATH} ROS_PACKAGE_PATH=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share:${ROS_PACKAGE_PATH} /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot

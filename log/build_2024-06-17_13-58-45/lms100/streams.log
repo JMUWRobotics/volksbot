@@ -1,0 +1,19 @@
+[0.749s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 -- -j8 -l8
+[0.768s] [ 40%] [32mBuilding CXX object CMakeFiles/sicksensor.dir/src/sicksensor.cc.o[0m
+[0.768s] [ 40%] [32mBuilding CXX object CMakeFiles/scanlistener.dir/src/scanlistener.cc.o[0m
+[0.768s] [ 60%] [32mBuilding CXX object CMakeFiles/sicksensor.dir/src/lms100_cola.cc.o[0m
+[2.677s] [ 80%] [32m[1mLinking CXX executable devel/lib/lms100/sicksensor[0m
+[2.713s] [100%] [32m[1mLinking CXX executable devel/lib/lms100/scanlistener[0m
+[2.803s] [100%] Built target sicksensor
+[2.844s] [100%] Built target scanlistener
+[2.848s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 -- -j8 -l8
+[2.872s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 --target tests -- -j8 -l8
+[2.900s] Built target tests
+[2.905s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 --target tests -- -j8 -l8
+[2.932s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100
+[2.935s] -- Install configuration: ""
+[2.935s] -- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/lib/pkgconfig/lms100.pc
+[2.935s] -- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/cmake/lms100Config.cmake
+[2.935s] -- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/cmake/lms100Config-version.cmake
+[2.935s] -- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100/share/lms100/package.xml
+[2.937s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100

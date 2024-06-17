@@ -1,0 +1,391 @@
+[0.000000] (-) TimerEvent: {}
+[0.000495] (volksbot) JobQueued: {'identifier': 'volksbot', 'dependencies': OrderedDict()}
+[0.000576] (volksbot) JobStarted: {'identifier': 'volksbot'}
+[0.099876] (-) TimerEvent: {}
+[0.201371] (-) TimerEvent: {}
+[0.303183] (-) TimerEvent: {}
+[0.367763] (volksbot) JobProgress: {'identifier': 'volksbot', 'progress': 'cmake'}
+[0.367953] (volksbot) Command: {'cmd': ['/usr/bin/cmake', '/home/max/Documents/Hiwi/ROS2_volksbots/volksbot', '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot'], 'cwd': '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max'), ('LC_TIME', 'de_DE.UTF-8'), ('SSH_AGENT_PID', '1591'), ('ROS_PACKAGE_PATH', '/opt/ros/noetic/share'), ('XDG_SESSION_TYPE', 'x11'), ('STM32CubeMX_PATH', '/home/max/STM32CubeMX'), ('ROS_ETC_DIR', '/opt/ros/noetic/etc/ros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/noetic/lib'), ('HOME', '/home/max'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/max/Documents/Hiwi'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'de_DE.UTF-8'), ('MANAGERPID', '1485'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'noetic'), ('LOGNAME', 'max'), ('JOURNAL_STREAM', '8:50520'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '1'), ('PKG_CONFIG_PATH', '/opt/ros/noetic/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'max'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/max/anaconda3/condabin:/home/max/bin:/opt/ros/noetic/bin:/home/max/.local/bin:/home/max/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/max-HP-Pavilion-Laptop-14-ce3xxx:@/tmp/.ICE-unix/1629,unix/max-HP-Pavilion-Laptop-14-ce3xxx:/tmp/.ICE-unix/1629'), ('INVOCATION_ID', '4d256b2204b544ea913be31a24df8d15'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/978f606b_b41d_4695_a0fa_1d3739bd9a6c'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('ROSLISP_PACKAGE_DIRECTORIES', ''), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.128'), ('ROS_ROOT', '/opt/ros/noetic/share/ros'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('CONDA_PYTHON_EXE', '/home/max/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/max/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/noetic/lib/python3/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/noetic')]), 'shell': False}
+[0.373819] (volksbot) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[0.373965] (volksbot) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[0.374022] (volksbot) StderrLine: {'line': b'  CMake.\n'}
+[0.374071] (volksbot) StderrLine: {'line': b'\n'}
+[0.374120] (volksbot) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[0.374169] (volksbot) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[0.374217] (volksbot) StderrLine: {'line': b'\n'}
+[0.374264] (volksbot) StderrLine: {'line': b'\x1b[0m\n'}
+[0.403383] (-) TimerEvent: {}
+[0.414725] (volksbot) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.466361] (volksbot) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.474651] (volksbot) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.503586] (-) TimerEvent: {}
+[0.529631] (volksbot) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.537415] (volksbot) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.537694] (volksbot) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.538234] (volksbot) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.542153] (volksbot) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.593769] (volksbot) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.601631] (volksbot) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.601955] (volksbot) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.602502] (volksbot) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.603664] (-) TimerEvent: {}
+[0.604238] (volksbot) StdoutLine: {'line': b'-- Using CATKIN_DEVEL_PREFIX: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel\n'}
+[0.604370] (volksbot) StdoutLine: {'line': b'-- Using CMAKE_PREFIX_PATH: /opt/ros/noetic\n'}
+[0.604466] (volksbot) StdoutLine: {'line': b'-- This workspace overlays: /opt/ros/noetic\n'}
+[0.625450] (volksbot) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.625634] (volksbot) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.625692] (volksbot) StdoutLine: {'line': b'-- Using Debian Python package layout\n'}
+[0.653246] (volksbot) StdoutLine: {'line': b'-- Found PY_em: /usr/lib/python3/dist-packages/em.py  \n'}
+[0.653426] (volksbot) StdoutLine: {'line': b'-- Using empy: /usr/lib/python3/dist-packages/em.py\n'}
+[0.703895] (-) TimerEvent: {}
+[0.757538] (volksbot) StdoutLine: {'line': b'-- Using CATKIN_ENABLE_TESTING: ON\n'}
+[0.757803] (volksbot) StdoutLine: {'line': b'-- Call enable_testing()\n'}
+[0.759040] (volksbot) StdoutLine: {'line': b'-- Using CATKIN_TEST_RESULTS_DIR: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/test_results\n'}
+[0.804016] (-) TimerEvent: {}
+[0.904320] (-) TimerEvent: {}
+[0.930621] (volksbot) StdoutLine: {'line': b'-- Forcing gtest/gmock from source, though one was otherwise available.\n'}
+[0.930957] (volksbot) StdoutLine: {'line': b"-- Found gtest sources under '/usr/src/googletest': gtests will be built\n"}
+[0.931133] (volksbot) StdoutLine: {'line': b"-- Found gmock sources under '/usr/src/googletest': gmock will be built\n"}
+[0.931589] (volksbot) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:4 (cmake_minimum_required):\n'}
+[0.931733] (volksbot) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[0.931827] (volksbot) StderrLine: {'line': b'  CMake.\n'}
+[0.931917] (volksbot) StderrLine: {'line': b'\n'}
+[0.931997] (volksbot) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[0.932076] (volksbot) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[0.932156] (volksbot) StderrLine: {'line': b'\n'}
+[0.932244] (volksbot) StderrLine: {'line': b'\x1b[0m\n'}
+[0.934600] (volksbot) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:45 (cmake_minimum_required):\n'}
+[0.934791] (volksbot) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[0.934898] (volksbot) StderrLine: {'line': b'  CMake.\n'}
+[0.934986] (volksbot) StderrLine: {'line': b'\n'}
+[0.935069] (volksbot) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[0.935149] (volksbot) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[0.935228] (volksbot) StderrLine: {'line': b'\n'}
+[0.935320] (volksbot) StderrLine: {'line': b'\x1b[0m\n'}
+[0.935547] (volksbot) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (cmake_minimum_required):\n'}
+[0.935648] (volksbot) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[0.935726] (volksbot) StderrLine: {'line': b'  CMake.\n'}
+[0.935808] (volksbot) StderrLine: {'line': b'\n'}
+[0.935885] (volksbot) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[0.935967] (volksbot) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[0.936051] (volksbot) StderrLine: {'line': b'\n'}
+[0.936134] (volksbot) StderrLine: {'line': b'\x1b[0m\n'}
+[0.955512] (volksbot) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[0.957172] (volksbot) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[0.960425] (volksbot) StdoutLine: {'line': b'-- Using Python nosetests: /usr/bin/nosetests3\n'}
+[1.004501] (-) TimerEvent: {}
+[1.010727] (volksbot) StdoutLine: {'line': b'-- catkin 0.8.10\n'}
+[1.010900] (volksbot) StdoutLine: {'line': b'-- BUILD_SHARED_LIBS is on\n'}
+[1.104613] (-) TimerEvent: {}
+[1.148591] (volksbot) StdoutLine: {'line': b'-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy\n'}
+[1.204718] (-) TimerEvent: {}
+[1.305080] (-) TimerEvent: {}
+[1.386904] (volksbot) StdoutLine: {'line': b'-- volksbot: 3 messages, 1 services\n'}
+[1.405255] (-) TimerEvent: {}
+[1.505535] (-) TimerEvent: {}
+[1.547616] (volksbot) StderrLine: {'line': b'\x1b[0mDetected architecture: x86_64\x1b[0m\n'}
+[1.547777] (volksbot) StderrLine: {'line': b'\x1b[0mUsing EposCmd library: /home/max/Documents/Hiwi/ROS2_volksbots/volksbot/libEposCmd/x86_64/libEposCmd.so\x1b[0m\n'}
+[1.547841] (volksbot) StderrLine: {'line': b'\x1b[0mlib\x1b[0m\n'}
+[1.548359] (volksbot) StdoutLine: {'line': b'-- STATUS: include/volksbot\n'}
+[1.548443] (volksbot) StdoutLine: {'line': b'-- STATUS: include\n'}
+[1.548500] (volksbot) StdoutLine: {'line': b'-- STATUS: include/volksbot\n'}
+[1.548567] (volksbot) StdoutLine: {'line': b'-- STATUS: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/include/\n'}
+[1.549106] (volksbot) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.605684] (-) TimerEvent: {}
+[1.613012] (volksbot) StdoutLine: {'line': b'-- Generating done\n'}
+[1.620184] (volksbot) StdoutLine: {'line': b'-- Build files have been written to: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot\n'}
+[1.628675] (volksbot) CommandEnded: {'returncode': 0}
+[1.629447] (volksbot) JobProgress: {'identifier': 'volksbot', 'progress': 'build'}
+[1.631175] (volksbot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot', '--', '-j8', '-l8'], 'cwd': '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max'), ('LC_TIME', 'de_DE.UTF-8'), ('SSH_AGENT_PID', '1591'), ('ROS_PACKAGE_PATH', '/opt/ros/noetic/share'), ('XDG_SESSION_TYPE', 'x11'), ('STM32CubeMX_PATH', '/home/max/STM32CubeMX'), ('ROS_ETC_DIR', '/opt/ros/noetic/etc/ros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/noetic/lib'), ('HOME', '/home/max'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/max/Documents/Hiwi'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'de_DE.UTF-8'), ('MANAGERPID', '1485'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'noetic'), ('LOGNAME', 'max'), ('JOURNAL_STREAM', '8:50520'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '1'), ('PKG_CONFIG_PATH', '/opt/ros/noetic/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'max'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/max/anaconda3/condabin:/home/max/bin:/opt/ros/noetic/bin:/home/max/.local/bin:/home/max/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/max-HP-Pavilion-Laptop-14-ce3xxx:@/tmp/.ICE-unix/1629,unix/max-HP-Pavilion-Laptop-14-ce3xxx:/tmp/.ICE-unix/1629'), ('INVOCATION_ID', '4d256b2204b544ea913be31a24df8d15'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/978f606b_b41d_4695_a0fa_1d3739bd9a6c'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('ROSLISP_PACKAGE_DIRECTORIES', ''), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.128'), ('ROS_ROOT', '/opt/ros/noetic/share/ros'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('CONDA_PYTHON_EXE', '/home/max/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/max/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/noetic/lib/python3/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/noetic')]), 'shell': False}
+[1.654343] (volksbot) StdoutLine: {'line': b'[  0%] Built target std_msgs_generate_messages_py\n'}
+[1.656672] (volksbot) StdoutLine: {'line': b'[  0%] Built target std_msgs_generate_messages_eus\n'}
+[1.656941] (volksbot) StdoutLine: {'line': b'[  0%] Built target std_msgs_generate_messages_cpp\n'}
+[1.657071] (volksbot) StdoutLine: {'line': b'[  0%] Built target std_msgs_generate_messages_lisp\n'}
+[1.664119] (volksbot) StdoutLine: {'line': b'[  0%] Built target std_msgs_generate_messages_nodejs\n'}
+[1.689208] (volksbot) StdoutLine: {'line': b'[  0%] Built target _volksbot_generate_messages_check_deps_pose2d\n'}
+[1.689417] (volksbot) StdoutLine: {'line': b'[  0%] Built target _volksbot_generate_messages_check_deps_velocities\n'}
+[1.697563] (volksbot) StdoutLine: {'line': b'[  0%] Built target _volksbot_generate_messages_check_deps_vels\n'}
+[1.697762] (volksbot) StdoutLine: {'line': b'[  0%] Built target _volksbot_generate_messages_check_deps_ticks\n'}
+[1.705832] (volksbot) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating Javascript code from volksbot/pose2d.msg\x1b[0m\n'}
+[1.706049] (-) TimerEvent: {}
+[1.706358] (volksbot) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating Python from MSG volksbot/pose2d\x1b[0m\n'}
+[1.706564] (volksbot) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating Python from MSG volksbot/ticks\x1b[0m\n'}
+[1.706688] (volksbot) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating EusLisp code from volksbot/pose2d.msg\x1b[0m\n'}
+[1.706804] (volksbot) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating C++ code from volksbot/pose2d.msg\x1b[0m\n'}
+[1.706902] (volksbot) StdoutLine: {'line': b'[ 10%] \x1b[34m\x1b[1mGenerating EusLisp code from volksbot/vels.msg\x1b[0m\n'}
+[1.707012] (volksbot) StdoutLine: {'line': b'[ 11%] \x1b[34m\x1b[1mGenerating EusLisp code from volksbot/ticks.msg\x1b[0m\n'}
+[1.708124] (volksbot) StdoutLine: {'line': b'[ 13%] \x1b[34m\x1b[1mGenerating Lisp code from volksbot/pose2d.msg\x1b[0m\n'}
+[1.779218] (volksbot) StdoutLine: {'line': b'[ 16%] \x1b[34m\x1b[1mGenerating Javascript code from volksbot/ticks.msg\x1b[0m\n'}
+[1.779457] (volksbot) StdoutLine: {'line': b'[ 16%] \x1b[34m\x1b[1mGenerating Lisp code from volksbot/ticks.msg\x1b[0m\n'}
+[1.806159] (-) TimerEvent: {}
+[1.875093] (volksbot) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating Lisp code from volksbot/vels.msg\x1b[0m\n'}
+[1.880002] (volksbot) StdoutLine: {'line': b'[ 20%] \x1b[34m\x1b[1mGenerating Javascript code from volksbot/vels.msg\x1b[0m\n'}
+[1.885512] (volksbot) StdoutLine: {'line': b'[ 22%] \x1b[34m\x1b[1mGenerating C++ code from volksbot/ticks.msg\x1b[0m\n'}
+[1.891269] (volksbot) StdoutLine: {'line': b'[ 23%] \x1b[34m\x1b[1mGenerating Lisp code from volksbot/velocities.srv\x1b[0m\n'}
+[1.906260] (-) TimerEvent: {}
+[1.913670] (volksbot) StdoutLine: {'line': b'[ 25%] \x1b[34m\x1b[1mGenerating EusLisp code from volksbot/velocities.srv\x1b[0m\n'}
+[2.006347] (-) TimerEvent: {}
+[2.019449] (volksbot) StdoutLine: {'line': b'[ 27%] \x1b[34m\x1b[1mGenerating C++ code from volksbot/vels.msg\x1b[0m\n'}
+[2.042318] (volksbot) StdoutLine: {'line': b'[ 28%] \x1b[34m\x1b[1mGenerating EusLisp manifest code for volksbot\x1b[0m\n'}
+[2.061995] (volksbot) StdoutLine: {'line': b'[ 28%] Built target volksbot_generate_messages_lisp\n'}
+[2.068640] (volksbot) StdoutLine: {'line': b'[ 30%] \x1b[34m\x1b[1mGenerating C++ code from volksbot/velocities.srv\x1b[0m\n'}
+[2.073983] (volksbot) StdoutLine: {'line': b'[ 32%] \x1b[34m\x1b[1mGenerating Javascript code from volksbot/velocities.srv\x1b[0m\n'}
+[2.086745] (volksbot) StdoutLine: {'line': b'[ 33%] \x1b[34m\x1b[1mGenerating Python from MSG volksbot/vels\x1b[0m\n'}
+[2.087852] (volksbot) StdoutLine: {'line': b'[ 35%] \x1b[34m\x1b[1mGenerating Python code from SRV volksbot/velocities\x1b[0m\n'}
+[2.106465] (-) TimerEvent: {}
+[2.141790] (volksbot) StdoutLine: {'line': b'[ 35%] Built target volksbot_generate_messages_nodejs\n'}
+[2.206553] (-) TimerEvent: {}
+[2.306946] (-) TimerEvent: {}
+[2.400958] (volksbot) StdoutLine: {'line': b'[ 38%] \x1b[34m\x1b[1mGenerating Python srv __init__.py for volksbot\x1b[0m\n'}
+[2.401113] (volksbot) StdoutLine: {'line': b'[ 38%] \x1b[34m\x1b[1mGenerating Python msg __init__.py for volksbot\x1b[0m\n'}
+[2.407042] (-) TimerEvent: {}
+[2.442137] (volksbot) StdoutLine: {'line': b'[ 38%] Built target volksbot_generate_messages_cpp\n'}
+[2.493093] (volksbot) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/odo.dir/src/odometry.cc.o\x1b[0m\n'}
+[2.507138] (-) TimerEvent: {}
+[2.529579] (volksbot) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/EPOS2.dir/src/epos2/epos2.cpp.o\x1b[0m\n'}
+[2.530122] (volksbot) StdoutLine: {'line': b'[ 44%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/Adapter/CComAdapter.cpp.o\x1b[0m\n'}
+[2.535198] (volksbot) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding CXX object CMakeFiles/kbcontrol.dir/src/kbcontrol.cc.o\x1b[0m\n'}
+[2.541309] (volksbot) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/odometry.dir/src/odometry.cc.o\x1b[0m\n'}
+[2.607259] (-) TimerEvent: {}
+[2.707155] (volksbot) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding CXX object CMakeFiles/odometry.dir/src/odometry_main.cc.o\x1b[0m\n'}
+[2.707474] (-) TimerEvent: {}
+[2.734899] (volksbot) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/LayerClasses/CVmc.cpp.o\x1b[0m\n'}
+[2.735161] (volksbot) StdoutLine: {'line': b'[ 50%] Built target volksbot_generate_messages_py\n'}
+[2.740308] (volksbot) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CData.cpp.o\x1b[0m\n'}
+[2.807570] (-) TimerEvent: {}
+[2.902313] (volksbot) StdoutLine: {'line': b'[ 52%] Built target volksbot_generate_messages_eus\n'}
+[2.907687] (-) TimerEvent: {}
+[2.920022] (volksbot) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding CXX object CMakeFiles/calibration.dir/src/calibration.cc.o\x1b[0m\n'}
+[3.007792] (-) TimerEvent: {}
+[3.108191] (-) TimerEvent: {}
+[3.208675] (-) TimerEvent: {}
+[3.309044] (-) TimerEvent: {}
+[3.349577] (volksbot) StdoutLine: {'line': b'[ 55%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CRequest.cpp.o\x1b[0m\n'}
+[3.409151] (-) TimerEvent: {}
+[3.509476] (-) TimerEvent: {}
+[3.609838] (-) TimerEvent: {}
+[3.710230] (-) TimerEvent: {}
+[3.795473] (volksbot) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/LayerClasses/CCommunicationLayer.cpp.o\x1b[0m\n'}
+[3.810349] (-) TimerEvent: {}
+[3.910844] (-) TimerEvent: {}
+[4.012052] (-) TimerEvent: {}
+[4.112525] (-) TimerEvent: {}
+[4.213032] (-) TimerEvent: {}
+[4.301597] (volksbot) StdoutLine: {'line': b'[ 59%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/StorageClasses/CMotor.cpp.o\x1b[0m\n'}
+[4.313146] (-) TimerEvent: {}
+[4.413667] (-) TimerEvent: {}
+[4.514199] (-) TimerEvent: {}
+[4.614761] (-) TimerEvent: {}
+[4.715341] (-) TimerEvent: {}
+[4.801430] (volksbot) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CError.cpp.o\x1b[0m\n'}
+[4.815456] (-) TimerEvent: {}
+[4.915947] (-) TimerEvent: {}
+[5.016525] (-) TimerEvent: {}
+[5.022130] (volksbot) StderrLine: {'line': b'\x1b[01m\x1b[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/epos2/epos2.cpp:\x1b[m\x1b[K In static member function \xe2\x80\x98\x1b[01m\x1b[Kstatic void* EPOS2::threadFunction(void*)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.022985] (volksbot) StderrLine: {'line': b'\x1b[01m\x1b[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/epos2/epos2.cpp:157:1:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kno return statement in function returning non-void [\x1b[01;35m\x1b[K-Wreturn-type\x1b[m\x1b[K]\n'}
+[5.023690] (volksbot) StderrLine: {'line': b'  157 | \x1b[01;35m\x1b[K}\x1b[m\x1b[K\n'}
+[5.024383] (volksbot) StderrLine: {'line': b'      | \x1b[01;35m\x1b[K^\x1b[m\x1b[K\n'}
+[5.116614] (-) TimerEvent: {}
+[5.217105] (-) TimerEvent: {}
+[5.251514] (volksbot) StdoutLine: {'line': b'[ 62%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CSendTwo.cpp.o\x1b[0m\n'}
+[5.317232] (-) TimerEvent: {}
+[5.417771] (-) TimerEvent: {}
+[5.518404] (-) TimerEvent: {}
+[5.618919] (-) TimerEvent: {}
+[5.708286] (volksbot) StdoutLine: {'line': b'[ 64%] \x1b[32m\x1b[1mLinking CXX executable devel/lib/volksbot/kbcontrol\x1b[0m\n'}
+[5.719043] (-) TimerEvent: {}
+[5.804016] (volksbot) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/LayerClasses/CTranslationLayer.cpp.o\x1b[0m\n'}
+[5.819187] (-) TimerEvent: {}
+[5.919789] (-) TimerEvent: {}
+[6.020358] (-) TimerEvent: {}
+[6.052399] (volksbot) StdoutLine: {'line': b'[ 66%] Built target kbcontrol\n'}
+[6.068029] (volksbot) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/StorageClasses/CStorage.cpp.o\x1b[0m\n'}
+[6.120486] (-) TimerEvent: {}
+[6.221059] (-) TimerEvent: {}
+[6.321530] (-) TimerEvent: {}
+[6.402622] (volksbot) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CMessage.cpp.o\x1b[0m\n'}
+[6.421656] (-) TimerEvent: {}
+[6.522052] (-) TimerEvent: {}
+[6.622434] (-) TimerEvent: {}
+[6.690446] (volksbot) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CTimer.cpp.o\x1b[0m\n'}
+[6.722574] (-) TimerEvent: {}
+[6.822966] (-) TimerEvent: {}
+[6.923363] (-) TimerEvent: {}
+[6.968188] (volksbot) StdoutLine: {'line': b'[ 72%] \x1b[32m\x1b[1mLinking CXX shared library devel/lib/libEPOS2.so\x1b[0m\n'}
+[6.969611] (volksbot) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/LayerClasses/CvmcAPI.cpp.o\x1b[0m\n'}
+[7.024666] (-) TimerEvent: {}
+[7.125256] (-) TimerEvent: {}
+[7.142126] (volksbot) StdoutLine: {'line': b'[ 76%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CChannel.cpp.o\x1b[0m\n'}
+[7.157036] (volksbot) StdoutLine: {'line': b'[ 77%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CMultisend.cpp.o\x1b[0m\n'}
+[7.170200] (volksbot) StdoutLine: {'line': b'[ 79%] \x1b[32m\x1b[1mLinking CXX executable devel/lib/volksbot/calibration\x1b[0m\n'}
+[7.189957] (volksbot) StdoutLine: {'line': b'[ 81%] \x1b[32mBuilding CXX object CMakeFiles/VMCLIB.dir/src/SupportClasses/CTimestamp.cpp.o\x1b[0m\n'}
+[7.225357] (-) TimerEvent: {}
+[7.252914] (volksbot) StdoutLine: {'line': b'[ 81%] Built target EPOS2\n'}
+[7.325479] (-) TimerEvent: {}
+[7.426212] (-) TimerEvent: {}
+[7.456948] (volksbot) StdoutLine: {'line': b'[ 83%] \x1b[32mBuilding CXX object CMakeFiles/jscontrol.dir/src/joystick/jscontrol.cc.o\x1b[0m\n'}
+[7.470049] (volksbot) StdoutLine: {'line': b'[ 83%] Built target calibration\n'}
+[7.526367] (-) TimerEvent: {}
+[7.541838] (volksbot) StdoutLine: {'line': b'[ 83%] Built target volksbot_generate_messages\n'}
+[7.551595] (volksbot) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding CXX object CMakeFiles/jscontrol.dir/src/joystick/joystick.cc.o\x1b[0m\n'}
+[7.557753] (volksbot) StdoutLine: {'line': b'[ 86%] \x1b[32mBuilding CXX object CMakeFiles/jscontrol.dir/src/joystick/firejet.cc.o\x1b[0m\n'}
+[7.621893] (volksbot) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding CXX object CMakeFiles/jscontrol.dir/src/joystick/predator.cc.o\x1b[0m\n'}
+[7.625468] (volksbot) StdoutLine: {'line': b'[ 89%] \x1b[32mBuilding CXX object CMakeFiles/jscontrol.dir/src/joystick/logitechf710.cc.o\x1b[0m\n'}
+[7.626444] (-) TimerEvent: {}
+[7.726891] (-) TimerEvent: {}
+[7.827374] (-) TimerEvent: {}
+[7.927970] (-) TimerEvent: {}
+[7.962760] (volksbot) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking CXX shared library devel/lib/libVMCLIB.so\x1b[0m\n'}
+[7.965225] (volksbot) StdoutLine: {'line': b'[ 93%] \x1b[32m\x1b[1mLinking CXX executable devel/lib/volksbot/odometry\x1b[0m\n'}
+[8.028115] (-) TimerEvent: {}
+[8.058003] (volksbot) StdoutLine: {'line': b'[ 94%] \x1b[32m\x1b[1mLinking CXX shared library devel/lib/libodo.so\x1b[0m\n'}
+[8.138749] (-) TimerEvent: {}
+[8.193156] (volksbot) StdoutLine: {'line': b'[ 94%] Built target odo\n'}
+[8.200879] (volksbot) StdoutLine: {'line': b'[ 94%] Built target VMCLIB\n'}
+[8.212732] (volksbot) StdoutLine: {'line': b'[ 96%] \x1b[32mBuilding CXX object CMakeFiles/volksbot.dir/src/volksbot.cc.o\x1b[0m\n'}
+[8.234702] (-) TimerEvent: {}
+[8.253019] (volksbot) StdoutLine: {'line': b'[ 96%] Built target odometry\n'}
+[8.316397] (volksbot) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/joystick/jscontrol.cc:3\x1b[m\x1b[K:\n'}
+[8.316708] (volksbot) StderrLine: {'line': b'\x1b[01m\x1b[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/joystick/logitechf710.h:15:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[K"START" redefined\n'}
+[8.316816] (volksbot) StderrLine: {'line': b'   15 | #define START           0x06\n'}
+[8.316904] (volksbot) StderrLine: {'line': b'      | \n'}
+[8.316987] (volksbot) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/joystick/jscontrol.cc:2\x1b[m\x1b[K:\n'}
+[8.317072] (volksbot) StderrLine: {'line': b'\x1b[01m\x1b[K/home/max/Documents/Hiwi/ROS2_volksbots/volksbot/src/joystick/predator.h:18:\x1b[m\x1b[K \x1b[01;36m\x1b[Knote: \x1b[m\x1b[Kthis is the location of the previous definition\n'}
+[8.317162] (volksbot) StderrLine: {'line': b'   18 | #define START    0x09\n'}
+[8.317246] (volksbot) StderrLine: {'line': b'      | \n'}
+[8.334807] (-) TimerEvent: {}
+[8.435136] (-) TimerEvent: {}
+[8.535560] (-) TimerEvent: {}
+[8.635990] (-) TimerEvent: {}
+[8.736482] (-) TimerEvent: {}
+[8.836850] (-) TimerEvent: {}
+[8.937438] (-) TimerEvent: {}
+[9.037797] (-) TimerEvent: {}
+[9.138217] (-) TimerEvent: {}
+[9.238578] (-) TimerEvent: {}
+[9.338928] (-) TimerEvent: {}
+[9.439273] (-) TimerEvent: {}
+[9.539625] (-) TimerEvent: {}
+[9.640040] (-) TimerEvent: {}
+[9.740395] (-) TimerEvent: {}
+[9.840710] (-) TimerEvent: {}
+[9.886672] (volksbot) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking CXX executable devel/lib/volksbot/volksbot\x1b[0m\n'}
+[9.940865] (-) TimerEvent: {}
+[10.034813] (volksbot) StdoutLine: {'line': b'[ 98%] Built target volksbot\n'}
+[10.040975] (-) TimerEvent: {}
+[10.113485] (volksbot) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable devel/lib/volksbot/jscontrol\x1b[0m\n'}
+[10.141080] (-) TimerEvent: {}
+[10.241428] (-) TimerEvent: {}
+[10.244708] (volksbot) StdoutLine: {'line': b'[100%] Built target jscontrol\n'}
+[10.251614] (volksbot) CommandEnded: {'returncode': 0}
+[10.315573] (volksbot) JobProgress: {'identifier': 'volksbot', 'progress': "build target 'tests'"}
+[10.315770] (volksbot) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot', '--target', 'tests', '--', '-j8', '-l8'], 'cwd': '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max'), ('LC_TIME', 'de_DE.UTF-8'), ('SSH_AGENT_PID', '1591'), ('ROS_PACKAGE_PATH', '/opt/ros/noetic/share'), ('XDG_SESSION_TYPE', 'x11'), ('STM32CubeMX_PATH', '/home/max/STM32CubeMX'), ('ROS_ETC_DIR', '/opt/ros/noetic/etc/ros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/noetic/lib'), ('HOME', '/home/max'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/max/Documents/Hiwi'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'de_DE.UTF-8'), ('MANAGERPID', '1485'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'noetic'), ('LOGNAME', 'max'), ('JOURNAL_STREAM', '8:50520'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '1'), ('PKG_CONFIG_PATH', '/opt/ros/noetic/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'max'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/max/anaconda3/condabin:/home/max/bin:/opt/ros/noetic/bin:/home/max/.local/bin:/home/max/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/max-HP-Pavilion-Laptop-14-ce3xxx:@/tmp/.ICE-unix/1629,unix/max-HP-Pavilion-Laptop-14-ce3xxx:/tmp/.ICE-unix/1629'), ('INVOCATION_ID', '4d256b2204b544ea913be31a24df8d15'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/978f606b_b41d_4695_a0fa_1d3739bd9a6c'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('ROSLISP_PACKAGE_DIRECTORIES', ''), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.128'), ('ROS_ROOT', '/opt/ros/noetic/share/ros'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('CONDA_PYTHON_EXE', '/home/max/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/max/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/noetic/lib/python3/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/noetic')]), 'shell': False}
+[10.341056] (volksbot) StdoutLine: {'line': b'Built target tests\n'}
+[10.341481] (-) TimerEvent: {}
+[10.345074] (volksbot) CommandEnded: {'returncode': 0}
+[10.411466] (volksbot) JobProgress: {'identifier': 'volksbot', 'progress': 'install'}
+[10.415288] (volksbot) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot'], 'cwd': '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max'), ('LC_TIME', 'de_DE.UTF-8'), ('SSH_AGENT_PID', '1591'), ('ROS_PACKAGE_PATH', '/opt/ros/noetic/share'), ('XDG_SESSION_TYPE', 'x11'), ('STM32CubeMX_PATH', '/home/max/STM32CubeMX'), ('ROS_ETC_DIR', '/opt/ros/noetic/etc/ros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/noetic/lib'), ('HOME', '/home/max'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/max/Documents/Hiwi'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'de_DE.UTF-8'), ('MANAGERPID', '1485'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'noetic'), ('LOGNAME', 'max'), ('JOURNAL_STREAM', '8:50520'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '1'), ('PKG_CONFIG_PATH', '/opt/ros/noetic/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'max'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/max/anaconda3/condabin:/home/max/bin:/opt/ros/noetic/bin:/home/max/.local/bin:/home/max/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/max-HP-Pavilion-Laptop-14-ce3xxx:@/tmp/.ICE-unix/1629,unix/max-HP-Pavilion-Laptop-14-ce3xxx:/tmp/.ICE-unix/1629'), ('INVOCATION_ID', '4d256b2204b544ea913be31a24df8d15'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/978f606b_b41d_4695_a0fa_1d3739bd9a6c'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('ROSLISP_PACKAGE_DIRECTORIES', ''), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.128'), ('ROS_ROOT', '/opt/ros/noetic/share/ros'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('CONDA_PYTHON_EXE', '/home/max/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/max/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/noetic/lib/python3/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/noetic')]), 'shell': False}
+[10.419398] (volksbot) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[10.419582] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/pose2d.msg\n'}
+[10.419670] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/ticks.msg\n'}
+[10.419726] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/msg/vels.msg\n'}
+[10.419822] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/srv/velocities.srv\n'}
+[10.419903] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbot-msg-paths.cmake\n'}
+[10.420022] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot\n'}
+[10.420110] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocitiesRequest.h\n'}
+[10.420203] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/vels.h\n'}
+[10.420292] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocitiesResponse.h\n'}
+[10.420381] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/ticks.h\n'}
+[10.420511] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/pose2d.h\n'}
+[10.420633] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/include/volksbot/velocities.h\n'}
+[10.420735] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot\n'}
+[10.420836] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/manifest.l\n'}
+[10.420932] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/srv\n'}
+[10.421022] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/srv/velocities.l\n'}
+[10.421126] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg\n'}
+[10.421223] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/ticks.l\n'}
+[10.421329] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/vels.l\n'}
+[10.421385] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/roseus/ros/volksbot/msg/pose2d.l\n'}
+[10.421450] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot\n'}
+[10.421523] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv\n'}
+[10.421593] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/_package.lisp\n'}
+[10.421679] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/volksbot-srv.asd\n'}
+[10.421771] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/_package_velocities.lisp\n'}
+[10.421883] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/srv/velocities.lisp\n'}
+[10.421974] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg\n'}
+[10.422060] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package.lisp\n'}
+[10.422143] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_ticks.lisp\n'}
+[10.422229] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/volksbot-msg.asd\n'}
+[10.422312] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/vels.lisp\n'}
+[10.422391] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_pose2d.lisp\n'}
+[10.422479] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/_package_vels.lisp\n'}
+[10.422566] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/ticks.lisp\n'}
+[10.422680] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/common-lisp/ros/volksbot/msg/pose2d.lisp\n'}
+[10.422793] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot\n'}
+[10.422883] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv\n'}
+[10.422961] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv/velocities.js\n'}
+[10.423053] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/srv/_index.js\n'}
+[10.423139] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg\n'}
+[10.423214] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/pose2d.js\n'}
+[10.423294] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/vels.js\n'}
+[10.423383] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/_index.js\n'}
+[10.423474] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/msg/ticks.js\n'}
+[10.423566] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/gennodejs/ros/volksbot/_index.js\n'}
+[10.441634] (-) TimerEvent: {}
+[10.457645] (volksbot) StdoutLine: {'line': b"Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot'...\n"}
+[10.457846] (volksbot) StdoutLine: {'line': b"Compiling '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/__init__.py'...\n"}
+[10.457915] (volksbot) StdoutLine: {'line': b"Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/msg'...\n"}
+[10.457971] (volksbot) StdoutLine: {'line': b"Compiling '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/msg/__init__.py'...\n"}
+[10.458024] (volksbot) StdoutLine: {'line': b"Compiling '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/msg/_pose2d.py'...\n"}
+[10.458074] (volksbot) StdoutLine: {'line': b"Compiling '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/msg/_ticks.py'...\n"}
+[10.458127] (volksbot) StdoutLine: {'line': b"Compiling '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/msg/_vels.py'...\n"}
+[10.458178] (volksbot) StdoutLine: {'line': b"Listing '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/srv'...\n"}
+[10.458229] (volksbot) StdoutLine: {'line': b"Compiling '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/srv/__init__.py'...\n"}
+[10.458279] (volksbot) StdoutLine: {'line': b"Compiling '/home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel/lib/python3/dist-packages/volksbot/srv/_velocities.py'...\n"}
+[10.461412] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot\n'}
+[10.461583] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__init__.py\n'}
+[10.461650] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv\n'}
+[10.461703] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/_velocities.py\n'}
+[10.461775] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__init__.py\n'}
+[10.461834] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__\n'}
+[10.461907] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__/_velocities.cpython-38.pyc\n'}
+[10.461982] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/srv/__pycache__/__init__.cpython-38.pyc\n'}
+[10.462033] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg\n'}
+[10.462086] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_ticks.py\n'}
+[10.462164] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_vels.py\n'}
+[10.462235] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__init__.py\n'}
+[10.462287] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/_pose2d.py\n'}
+[10.462361] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__\n'}
+[10.462413] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_pose2d.cpython-38.pyc\n'}
+[10.462481] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_vels.cpython-38.pyc\n'}
+[10.462550] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/_ticks.cpython-38.pyc\n'}
+[10.462626] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/msg/__pycache__/__init__.cpython-38.pyc\n'}
+[10.462712] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__pycache__\n'}
+[10.462780] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/python3/dist-packages/volksbot/__pycache__/__init__.cpython-38.pyc\n'}
+[10.462945] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/pkgconfig/volksbot.pc\n'}
+[10.463077] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbot-msg-extras.cmake\n'}
+[10.463208] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbotConfig.cmake\n'}
+[10.463312] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbotConfig-version.cmake\n'}
+[10.463433] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/package.xml\n'}
+[10.463563] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libEposCmd.so\n'}
+[10.469630] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libodo.so\n'}
+[10.470394] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/libVMCLIB.so\n'}
+[10.471905] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/volksbot/volksbot-targets.cmake\n'}
+[10.472009] (volksbot) StdoutLine: {'line': b'-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/volksbot/volksbot-targets-noconfig.cmake\n'}
+[10.474314] (volksbot) CommandEnded: {'returncode': 0}
+[10.542060] (-) TimerEvent: {}
+[10.642437] (-) TimerEvent: {}
+[10.743805] (-) TimerEvent: {}
+[10.844979] (-) TimerEvent: {}
+[10.945482] (-) TimerEvent: {}
+[11.046614] (-) TimerEvent: {}
+[11.148047] (-) TimerEvent: {}
+[11.248548] (-) TimerEvent: {}
+[11.351152] (-) TimerEvent: {}
+[11.452057] (-) TimerEvent: {}
+[11.552962] (-) TimerEvent: {}
+[11.654285] (-) TimerEvent: {}
+[11.754925] (-) TimerEvent: {}
+[11.855415] (-) TimerEvent: {}
+[11.870393] (volksbot) JobEnded: {'identifier': 'volksbot', 'rc': 0}
+[11.871152] (-) EventReactorShutdown: {}

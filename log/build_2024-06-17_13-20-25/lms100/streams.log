@@ -1,0 +1,80 @@
+[0.419s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake /home/max/Documents/Hiwi/ROS2_volksbots/lms100 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100
+[0.448s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.448s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[0.448s]   CMake.
+[0.448s] 
+[0.448s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.449s]   CMake that the project does not need compatibility with older versions.
+[0.449s] 
+[0.449s] [0m
+[0.622s] -- The C compiler identification is GNU 9.4.0
+[0.749s] -- The CXX compiler identification is GNU 9.4.0
+[0.765s] -- Detecting C compiler ABI info
+[0.816s] -- Detecting C compiler ABI info - done
+[0.824s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.824s] -- Detecting C compile features
+[0.825s] -- Detecting C compile features - done
+[0.829s] -- Detecting CXX compiler ABI info
+[0.880s] -- Detecting CXX compiler ABI info - done
+[0.888s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.889s] -- Detecting CXX compile features
+[0.889s] -- Detecting CXX compile features - done
+[0.893s] -- Using CATKIN_DEVEL_PREFIX: /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100/devel
+[0.893s] -- Using CMAKE_PREFIX_PATH: /opt/ros/noetic
+[0.893s] -- This workspace overlays: /opt/ros/noetic
+[0.915s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.916s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.916s] -- Using Debian Python package layout
+[0.943s] -- Found PY_em: /usr/lib/python3/dist-packages/em.py  
+[0.943s] -- Using empy: /usr/lib/python3/dist-packages/em.py
+[1.053s] -- Using CATKIN_ENABLE_TESTING: ON
+[1.053s] -- Call enable_testing()
+[1.055s] -- Using CATKIN_TEST_RESULTS_DIR: /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100/test_results
+[1.258s] -- Forcing gtest/gmock from source, though one was otherwise available.
+[1.258s] -- Found gtest sources under '/usr/src/googletest': gtests will be built
+[1.258s] -- Found gmock sources under '/usr/src/googletest': gmock will be built
+[1.259s] [0mCMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:4 (cmake_minimum_required):
+[1.259s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[1.259s]   CMake.
+[1.259s] 
+[1.259s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[1.259s]   CMake that the project does not need compatibility with older versions.
+[1.259s] 
+[1.259s] [0m
+[1.264s] [0mCMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:45 (cmake_minimum_required):
+[1.265s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[1.265s]   CMake.
+[1.265s] 
+[1.265s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[1.265s]   CMake that the project does not need compatibility with older versions.
+[1.265s] 
+[1.265s] [0m
+[1.266s] [0mCMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (cmake_minimum_required):
+[1.266s]   Compatibility with CMake < 2.8.12 will be removed from a future version of
+[1.266s]   CMake.
+[1.266s] 
+[1.266s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[1.266s]   CMake that the project does not need compatibility with older versions.
+[1.266s] 
+[1.266s] [0m
+[1.288s] -- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+[1.290s] -- Found Threads: TRUE  
+[1.293s] -- Using Python nosetests: /usr/bin/nosetests3
+[1.341s] -- catkin 0.8.10
+[1.342s] -- BUILD_SHARED_LIBS is on
+[1.496s] -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
+[1.705s] -- Configuring done
+[1.730s] -- Generating done
+[1.733s] -- Build files have been written to: /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100
+[1.739s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake /home/max/Documents/Hiwi/ROS2_volksbots/lms100 -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100
+[1.741s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 -- -j8 -l8
+[1.760s] [ 60%] [32mBuilding CXX object CMakeFiles/sicksensor.dir/src/sicksensor.cc.o[0m
+[1.760s] [ 60%] [32mBuilding CXX object CMakeFiles/scanlistener.dir/src/scanlistener.cc.o[0m
+[1.760s] [ 60%] [32mBuilding CXX object CMakeFiles/sicksensor.dir/src/lms100_cola.cc.o[0m
+[1.945s] make[2]: *** [CMakeFiles/scanlistener.dir/build.make:76: CMakeFiles/scanlistener.dir/src/scanlistener.cc.o] Interrupt
+[1.945s] make[2]: *** [CMakeFiles/sicksensor.dir/build.make:76: CMakeFiles/sicksensor.dir/src/sicksensor.cc.o] Interrupt
+[1.945s] make[2]: *** [CMakeFiles/sicksensor.dir/build.make:90: CMakeFiles/sicksensor.dir/src/lms100_cola.cc.o] Interrupt
+[1.945s] make[1]: *** [CMakeFiles/Makefile2:701: CMakeFiles/sicksensor.dir/all] Interrupt
+[1.945s] make[1]: *** [CMakeFiles/Makefile2:675: CMakeFiles/scanlistener.dir/all] Interrupt
+[1.945s] make: *** [Makefile:146: all] Interrupt
+[1.947s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '-2': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 -- -j8 -l8

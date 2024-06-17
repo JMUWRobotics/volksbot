@@ -1,0 +1,6 @@
+Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 -- -j8 -l8
+Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 -- -j8 -l8
+Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 --target tests -- -j8 -l8
+Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100 --target tests -- -j8 -l8
+Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100
+Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100' returned '0': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100

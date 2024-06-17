@@ -1,0 +1,26 @@
+-- Using CATKIN_DEVEL_PREFIX: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/devel
+-- Using CMAKE_PREFIX_PATH: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100;/opt/ros/noetic
+-- This workspace overlays: /home/max/Documents/Hiwi/ROS2_volksbots/install/lms100;/opt/ros/noetic
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using Debian Python package layout
+-- Using empy: /usr/lib/python3/dist-packages/em.py
+-- Using CATKIN_ENABLE_TESTING: ON
+-- Call enable_testing()
+-- Using CATKIN_TEST_RESULTS_DIR: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot/test_results
+-- Forcing gtest/gmock from source, though one was otherwise available.
+-- Found gtest sources under '/usr/src/googletest': gtests will be built
+-- Found gmock sources under '/usr/src/googletest': gmock will be built
+-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+-- Using Python nosetests: /usr/bin/nosetests3
+-- catkin 0.8.10
+-- BUILD_SHARED_LIBS is on
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/max/Documents/Hiwi/ROS2_volksbots/build/volksbot
+Built target tests
+-- Install configuration: ""
+-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/lib/pkgconfig/volksbot.pc
+-- Installing: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbotConfig.cmake
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/cmake/volksbotConfig-version.cmake
+-- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/volksbot/share/volksbot/package.xml

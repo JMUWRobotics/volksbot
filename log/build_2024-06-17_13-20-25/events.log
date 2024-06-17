@@ -1,0 +1,116 @@
+[0.000000] (-) TimerEvent: {}
+[0.000268] (lms100) JobQueued: {'identifier': 'lms100', 'dependencies': OrderedDict()}
+[0.000478] (volksbot) JobQueued: {'identifier': 'volksbot', 'dependencies': OrderedDict([('lms100', '/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100')])}
+[0.000512] (lms100) JobStarted: {'identifier': 'lms100'}
+[0.099914] (-) TimerEvent: {}
+[0.200452] (-) TimerEvent: {}
+[0.300932] (-) TimerEvent: {}
+[0.401367] (-) TimerEvent: {}
+[0.418759] (lms100) JobProgress: {'identifier': 'lms100', 'progress': 'cmake'}
+[0.419076] (lms100) Command: {'cmd': ['/usr/bin/cmake', '/home/max/Documents/Hiwi/ROS2_volksbots/lms100', '-DCMAKE_EXPORT_COMPILE_COMMANDS=ON', '-DCATKIN_INSTALL_INTO_PREFIX_ROOT=0', '-DCMAKE_INSTALL_PREFIX=/home/max/Documents/Hiwi/ROS2_volksbots/install/lms100'], 'cwd': '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max'), ('LC_TIME', 'de_DE.UTF-8'), ('SSH_AGENT_PID', '1591'), ('ROS_PACKAGE_PATH', '/opt/ros/noetic/share'), ('XDG_SESSION_TYPE', 'x11'), ('STM32CubeMX_PATH', '/home/max/STM32CubeMX'), ('ROS_ETC_DIR', '/opt/ros/noetic/etc/ros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/noetic/lib'), ('HOME', '/home/max'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/max/Documents/Hiwi'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'de_DE.UTF-8'), ('MANAGERPID', '1485'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'noetic'), ('LOGNAME', 'max'), ('JOURNAL_STREAM', '8:50520'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '1'), ('PKG_CONFIG_PATH', '/opt/ros/noetic/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'max'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/max/anaconda3/condabin:/home/max/bin:/opt/ros/noetic/bin:/home/max/.local/bin:/home/max/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/max-HP-Pavilion-Laptop-14-ce3xxx:@/tmp/.ICE-unix/1629,unix/max-HP-Pavilion-Laptop-14-ce3xxx:/tmp/.ICE-unix/1629'), ('INVOCATION_ID', '4d256b2204b544ea913be31a24df8d15'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/978f606b_b41d_4695_a0fa_1d3739bd9a6c'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('ROSLISP_PACKAGE_DIRECTORIES', ''), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.128'), ('ROS_ROOT', '/opt/ros/noetic/share/ros'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('CONDA_PYTHON_EXE', '/home/max/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/max/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/noetic/lib/python3/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/noetic')]), 'shell': False}
+[0.448006] (lms100) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[0.448446] (lms100) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[0.448619] (lms100) StderrLine: {'line': b'  CMake.\n'}
+[0.448790] (lms100) StderrLine: {'line': b'\n'}
+[0.448886] (lms100) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[0.448975] (lms100) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[0.449063] (lms100) StderrLine: {'line': b'\n'}
+[0.449150] (lms100) StderrLine: {'line': b'\x1b[0m\n'}
+[0.501565] (-) TimerEvent: {}
+[0.602115] (-) TimerEvent: {}
+[0.622831] (lms100) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.702226] (-) TimerEvent: {}
+[0.749818] (lms100) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.765366] (lms100) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.802344] (-) TimerEvent: {}
+[0.816051] (lms100) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.823987] (lms100) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.824393] (lms100) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.825097] (lms100) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.829152] (lms100) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.880415] (lms100) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.888476] (lms100) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.889018] (lms100) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.889604] (lms100) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.893668] (lms100) StdoutLine: {'line': b'-- Using CATKIN_DEVEL_PREFIX: /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100/devel\n'}
+[0.893876] (lms100) StdoutLine: {'line': b'-- Using CMAKE_PREFIX_PATH: /opt/ros/noetic\n'}
+[0.893939] (lms100) StdoutLine: {'line': b'-- This workspace overlays: /opt/ros/noetic\n'}
+[0.902453] (-) TimerEvent: {}
+[0.915894] (lms100) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.916044] (lms100) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.916101] (lms100) StdoutLine: {'line': b'-- Using Debian Python package layout\n'}
+[0.943516] (lms100) StdoutLine: {'line': b'-- Found PY_em: /usr/lib/python3/dist-packages/em.py  \n'}
+[0.943664] (lms100) StdoutLine: {'line': b'-- Using empy: /usr/lib/python3/dist-packages/em.py\n'}
+[1.002574] (-) TimerEvent: {}
+[1.053465] (lms100) StdoutLine: {'line': b'-- Using CATKIN_ENABLE_TESTING: ON\n'}
+[1.053628] (lms100) StdoutLine: {'line': b'-- Call enable_testing()\n'}
+[1.055731] (lms100) StdoutLine: {'line': b'-- Using CATKIN_TEST_RESULTS_DIR: /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100/test_results\n'}
+[1.102775] (-) TimerEvent: {}
+[1.203101] (-) TimerEvent: {}
+[1.258164] (lms100) StdoutLine: {'line': b'-- Forcing gtest/gmock from source, though one was otherwise available.\n'}
+[1.258401] (lms100) StdoutLine: {'line': b"-- Found gtest sources under '/usr/src/googletest': gtests will be built\n"}
+[1.258498] (lms100) StdoutLine: {'line': b"-- Found gmock sources under '/usr/src/googletest': gmock will be built\n"}
+[1.259312] (lms100) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /usr/src/googletest/CMakeLists.txt:4 (cmake_minimum_required):\n'}
+[1.259439] (lms100) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[1.259527] (lms100) StderrLine: {'line': b'  CMake.\n'}
+[1.259609] (lms100) StderrLine: {'line': b'\n'}
+[1.259687] (lms100) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[1.259765] (lms100) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[1.259841] (lms100) StderrLine: {'line': b'\n'}
+[1.259919] (lms100) StderrLine: {'line': b'\x1b[0m\n'}
+[1.264754] (lms100) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /usr/src/googletest/googlemock/CMakeLists.txt:45 (cmake_minimum_required):\n'}
+[1.264964] (lms100) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[1.265066] (lms100) StderrLine: {'line': b'  CMake.\n'}
+[1.265183] (lms100) StderrLine: {'line': b'\n'}
+[1.265255] (lms100) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[1.265326] (lms100) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[1.265397] (lms100) StderrLine: {'line': b'\n'}
+[1.265465] (lms100) StderrLine: {'line': b'\x1b[0m\n'}
+[1.266027] (lms100) StderrLine: {'line': b'\x1b[0mCMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (cmake_minimum_required):\n'}
+[1.266166] (lms100) StderrLine: {'line': b'  Compatibility with CMake < 2.8.12 will be removed from a future version of\n'}
+[1.266248] (lms100) StderrLine: {'line': b'  CMake.\n'}
+[1.266323] (lms100) StderrLine: {'line': b'\n'}
+[1.266394] (lms100) StderrLine: {'line': b'  Update the VERSION argument <min> value or use a ...<max> suffix to tell\n'}
+[1.266464] (lms100) StderrLine: {'line': b'  CMake that the project does not need compatibility with older versions.\n'}
+[1.266540] (lms100) StderrLine: {'line': b'\n'}
+[1.266609] (lms100) StderrLine: {'line': b'\x1b[0m\n'}
+[1.288055] (lms100) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[1.290070] (lms100) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[1.293642] (lms100) StdoutLine: {'line': b'-- Using Python nosetests: /usr/bin/nosetests3\n'}
+[1.303272] (-) TimerEvent: {}
+[1.341822] (lms100) StdoutLine: {'line': b'-- catkin 0.8.10\n'}
+[1.342064] (lms100) StdoutLine: {'line': b'-- BUILD_SHARED_LIBS is on\n'}
+[1.403406] (-) TimerEvent: {}
+[1.496571] (lms100) StdoutLine: {'line': b'-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy\n'}
+[1.503581] (-) TimerEvent: {}
+[1.603916] (-) TimerEvent: {}
+[1.704269] (-) TimerEvent: {}
+[1.705623] (lms100) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.730657] (lms100) StdoutLine: {'line': b'-- Generating done\n'}
+[1.733138] (lms100) StdoutLine: {'line': b'-- Build files have been written to: /home/max/Documents/Hiwi/ROS2_volksbots/build/lms100\n'}
+[1.739201] (lms100) CommandEnded: {'returncode': 0}
+[1.739835] (lms100) JobProgress: {'identifier': 'lms100', 'progress': 'build'}
+[1.740485] (lms100) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100', '--', '-j8', '-l8'], 'cwd': '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'max'), ('LC_TIME', 'de_DE.UTF-8'), ('SSH_AGENT_PID', '1591'), ('ROS_PACKAGE_PATH', '/opt/ros/noetic/share'), ('XDG_SESSION_TYPE', 'x11'), ('STM32CubeMX_PATH', '/home/max/STM32CubeMX'), ('ROS_ETC_DIR', '/opt/ros/noetic/etc/ros'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/noetic/lib'), ('HOME', '/home/max'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/max/Documents/Hiwi'), ('DESKTOP_SESSION', 'ubuntu'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('LC_MONETARY', 'de_DE.UTF-8'), ('MANAGERPID', '1485'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('_CE_M', ''), ('IM_CONFIG_PHASE', '1'), ('ROS_DISTRO', 'noetic'), ('LOGNAME', 'max'), ('JOURNAL_STREAM', '8:50520'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '1'), ('PKG_CONFIG_PATH', '/opt/ros/noetic/lib/pkgconfig'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'max'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('_CE_CONDA', ''), ('WINDOWPATH', '2'), ('PATH', '/home/max/anaconda3/condabin:/home/max/bin:/opt/ros/noetic/bin:/home/max/.local/bin:/home/max/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/max-HP-Pavilion-Laptop-14-ce3xxx:@/tmp/.ICE-unix/1629,unix/max-HP-Pavilion-Laptop-14-ce3xxx:/tmp/.ICE-unix/1629'), ('INVOCATION_ID', '4d256b2204b544ea913be31a24df8d15'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'de_DE.UTF-8'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/978f606b_b41d_4695_a0fa_1d3739bd9a6c'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('LC_TELEPHONE', 'de_DE.UTF-8'), ('XMODIFIERS', '@im=ibus'), ('ROSLISP_PACKAGE_DIRECTORIES', ''), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('GNOME_TERMINAL_SERVICE', ':1.128'), ('ROS_ROOT', '/opt/ros/noetic/share/ros'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('CONDA_PYTHON_EXE', '/home/max/anaconda3/bin/python'), ('SHELL', '/bin/bash'), ('LC_NAME', 'de_DE.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('ROS_MASTER_URI', 'http://localhost:11311'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'de_DE.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'de_DE.UTF-8'), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/max/Documents/Hiwi/ROS2_volksbots/build/lms100'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/max/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/noetic/lib/python3/dist-packages'), ('LC_NUMERIC', 'de_DE.UTF-8'), ('LC_PAPER', 'de_DE.UTF-8'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('CMAKE_PREFIX_PATH', '/opt/ros/noetic')]), 'shell': False}
+[1.759882] (lms100) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/sicksensor.dir/src/sicksensor.cc.o\x1b[0m\n'}
+[1.760126] (lms100) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/scanlistener.dir/src/scanlistener.cc.o\x1b[0m\n'}
+[1.760235] (lms100) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/sicksensor.dir/src/lms100_cola.cc.o\x1b[0m\n'}
+[1.804380] (-) TimerEvent: {}
+[1.904760] (-) TimerEvent: {}
+[1.945222] (lms100) StderrLine: {'line': b'make[2]: *** [CMakeFiles/scanlistener.dir/build.make:76: CMakeFiles/scanlistener.dir/src/scanlistener.cc.o] Interrupt\n'}
+[1.945436] (lms100) StderrLine: {'line': b'make[2]: *** [CMakeFiles/sicksensor.dir/build.make:76: CMakeFiles/sicksensor.dir/src/sicksensor.cc.o] Interrupt\n'}
+[1.945529] (lms100) StderrLine: {'line': b'make[2]: *** [CMakeFiles/sicksensor.dir/build.make:90: CMakeFiles/sicksensor.dir/src/lms100_cola.cc.o] Interrupt\n'}
+[1.945605] (lms100) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:701: CMakeFiles/sicksensor.dir/all] Interrupt\n'}
+[1.945683] (lms100) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:675: CMakeFiles/scanlistener.dir/all] Interrupt\n'}
+[1.945849] (lms100) StderrLine: {'line': b'make: *** [Makefile:146: all] Interrupt\n'}
+[1.947634] (lms100) CommandEnded: {'returncode': -2}
+[2.006051] (-) TimerEvent: {}
+[2.107202] (-) TimerEvent: {}
+[2.207994] (-) TimerEvent: {}
+[2.309305] (-) TimerEvent: {}
+[2.410340] (-) TimerEvent: {}
+[2.512215] (-) TimerEvent: {}
+[2.612735] (-) TimerEvent: {}
+[2.715588] (-) TimerEvent: {}
+[2.725737] (lms100) JobEnded: {'identifier': 'lms100', 'rc': 'SIGINT'}
+[2.736360] (volksbot) JobSkipped: {'identifier': 'volksbot'}
+[2.736433] (-) EventReactorShutdown: {}

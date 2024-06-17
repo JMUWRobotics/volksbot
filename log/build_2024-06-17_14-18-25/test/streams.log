@@ -1,0 +1,12 @@
+[0.378s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/test -- -j8 -l8
+[0.391s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/test -- -j8 -l8
+[0.409s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/test --target tests -- -j8 -l8
+[0.430s] Built target tests
+[0.434s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/test --target tests -- -j8 -l8
+[0.454s] Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/test
+[0.458s] -- Install configuration: ""
+[0.458s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/test/lib/pkgconfig/test.pc
+[0.458s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/test/share/test/cmake/testConfig.cmake
+[0.458s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/test/share/test/cmake/testConfig-version.cmake
+[0.458s] -- Up-to-date: /home/max/Documents/Hiwi/ROS2_volksbots/install/test/share/test/package.xml
+[0.459s] Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test' returned '0': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/test
