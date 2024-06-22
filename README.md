@@ -27,6 +27,7 @@ If so, just make sure to comment any source commands for ROS1 in your `.bashrc`
 Potential Problems:
 
 - when calling ```sudo apt update && sudo apt install -y ...``` resulting in:
+
         E: The repository 'cdrom://Ubuntu 20.04.6 LTS _Focal Fossa_ - Release amd64 (20230316) focal Release' does not have a Release file.
         N: Updating from such a repository can't be done securely, and is therefore disabled by default.
         N: See apt-secure(8) manpage for repository creation and user configuration details.
