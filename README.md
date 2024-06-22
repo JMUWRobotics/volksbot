@@ -18,8 +18,7 @@
 
 Generally ROS2 can be installed alongside of ROS without any problems
 
-### For Ubuntu 20.04 Focal Fosse
-See official [installation](https://docs.ros.org/en/humble/Installation/Alternatives/Ubuntu-Development-Setup.html) guide
+### [installation](https://docs.ros.org/en/humble/Installation/Alternatives/Ubuntu-Development-Setup.html) guide for Ubuntu 20.04 Focal Fossa
 
 ROS2 can only be installed over source for Ubuntu 20.04.
 If so, just make sure to comment any source commands for ROS1 in your `.bashrc`
