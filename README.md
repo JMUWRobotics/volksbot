@@ -32,4 +32,4 @@ Potential Problems:
         N: Updating from such a repository can't be done securely, and is therefore disabled by default.
         N: See apt-secure(8) manpage for repository creation and user configuration details.
     
-Go to `Software & Updates` and disable the option `Cdro with Ubuntu 20.04 'Focal Fossa'`
+Go to `Software & Updates` and disable the option `Cdrom with Ubuntu 20.04 'Focal Fossa'`
