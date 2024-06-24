@@ -69,23 +69,23 @@ add_dependencies(calibration volksbot_generate_messages_cpp)
 add_executable(jscontrol src/joystick/jscontrol.cc src/joystick/joystick.cc
   src/joystick/firejet.cc src/joystick/predator.cc src/joystick/logitechf710.cc)
 find_package(ament_cmake REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(tf2 REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
-set(INCLUDE_DIRS ${ament_cmake_INCLUDE_DIRS} ${std_msgs_INCLUDE_DIRS}
-  ${tf2_INCLUDE_DIRS} ${rosidl_default_generators_INCLUDE_DIRS}
-  ${rclcpp_INCLUDE_DIRS})
+set(INCLUDE_DIRS ${ament_cmake_INCLUDE_DIRS}
+  ${rosidl_default_generators_INCLUDE_DIRS} ${tf2_INCLUDE_DIRS}
+  ${std_msgs_INCLUDE_DIRS} ${rclcpp_INCLUDE_DIRS})
 include_directories(${INCLUDE_DIRS})
-set(LIBRARY_DIRS ${ament_cmake_LIBRARIES} ${std_msgs_LIBRARIES} ${tf2_LIBRARIES}
-  ${rosidl_default_generators_LIBRARIES} ${rclcpp_LIBRARIES})
+set(LIBRARY_DIRS ${ament_cmake_LIBRARIES} ${rosidl_default_generators_LIBRARIES}
+  ${tf2_LIBRARIES} ${std_msgs_LIBRARIES} ${rclcpp_LIBRARIES})
 target_link_libraries(volksbot ${LIBRARY_DIRS})
 target_link_libraries(kbcontrol ${LIBRARY_DIRS})
 target_link_libraries(odometry ${LIBRARY_DIRS})
 target_link_libraries(calibration ${LIBRARY_DIRS})
 target_link_libraries(jscontrol ${LIBRARY_DIRS})
-set(LIBS ${ament_cmake_LIBRARIES} ${std_msgs_LIBRARIES} ${tf2_LIBRARIES}
-  ${rosidl_default_generators_LIBRARIES} ${rclcpp_LIBRARIES})
+set(LIBS ${ament_cmake_LIBRARIES} ${rosidl_default_generators_LIBRARIES}
+  ${tf2_LIBRARIES} ${std_msgs_LIBRARIES} ${rclcpp_LIBRARIES})
 rosidl_generate_interfaces(${PROJECT_NAME} "msg/pose2d.msg" "msg/ticks.msg"
   "msg/vels.msg" "srv/velocities.srv"
   DEPENDENCIES builtin_interfaces std_msgs)
@@ -111,9 +111,9 @@ install(TARGETS odo VMCLIB DESTINATION lib EXPORT volksbot-targets)
 install(EXPORT volksbot-targets DESTINATION lib/volksbot)
 
 ament_export_dependencies(ament_cmake)
-ament_export_dependencies(std_msgs)
-ament_export_dependencies(tf2)
 ament_export_dependencies(rosidl_default_generators)
+ament_export_dependencies(tf2)
+ament_export_dependencies(std_msgs)
 ament_export_dependencies(rclcpp)
 ament_export_include_directories(${INCLUDE_DIRS})
 ament_export_libraries(EPOS2 VMCLIB odo ${LIBS})

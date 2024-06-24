@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(volksbot) #added this so that the ros->ros2 migration package could run, maybe remove again
+project(volksbot)
 find_package(ament_cmake REQUIRED)
 set(INCLUDE_DIRS ${ament_cmake_INCLUDE_DIRS})
 include_directories(${INCLUDE_DIRS})
