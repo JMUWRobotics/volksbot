@@ -1,10 +1,16 @@
 devel/
+install/
+
 logs/
+log/
+
 build/
 bin/
 lib/
+
 msg_gen/
 srv_gen/
+
 msg/*Action.msg
 msg/*ActionFeedback.msg
 msg/*ActionGoal.msg
@@ -13,6 +19,7 @@ msg/*Feedback.msg
 msg/*Goal.msg
 msg/*Result.msg
 msg/_*.py
+
 build_isolated/
 devel_isolated/
 
@@ -48,4 +55,4 @@ qtcreator-*
 .#*
 
 # Catkin custom files
-CATKIN_IGNORE
+# CATKIN_IGNORE
