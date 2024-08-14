@@ -1,8 +1,0 @@
-Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test': /usr/bin/cmake /home/max/Documents/Hiwi/ROS2_volksbots/test -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/max/Documents/Hiwi/ROS2_volksbots/install/test
-Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test' returned '0': /usr/bin/cmake /home/max/Documents/Hiwi/ROS2_volksbots/test -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/max/Documents/Hiwi/ROS2_volksbots/install/test
-Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/test -- -j8 -l8
-Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/test -- -j8 -l8
-Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/test --target tests -- -j8 -l8
-Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test' returned '0': /usr/bin/cmake --build /home/max/Documents/Hiwi/ROS2_volksbots/build/test --target tests -- -j8 -l8
-Invoking command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/test
-Invoked command in '/home/max/Documents/Hiwi/ROS2_volksbots/build/test' returned '0': /usr/bin/cmake --install /home/max/Documents/Hiwi/ROS2_volksbots/build/test
