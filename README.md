@@ -46,3 +46,23 @@ But make sure to comment out any source commands for ROS1 in your `.bashrc`
         
         - Step 2: build the source with a reduced set of jobs:
             > `$ MAKEFLAGS=-j8 colcon build --parallel-workers=2 --symlink-install`
+    
+    #### Post-Installation Problems:
+
+    - calling subcommands like `ros2 node ...` or `ros2 topic ...` fails or results in an error:
+    
+        - make sure that the daemon is running by calling `ros2 daemon status`
+
+        - if daemon is not running, start daemon with `ros2 daemon start`
+
+    - calling subcommands like `ros2 node list` or `ros2 daemon start` results in a ros-internal python error in scripts like _`create_daemon`_ etc.:
+
+        for **Ubuntu 20.04 LTS**:
+        
+        - remove your local ros2 source code
+            > $ rm -rf ~/ros2_humble/
+        
+        - reinstall ros2 humble for **Ubuntu 20.04 LTS** by following the [installation guide](https://docs.ros.org/en/humble/Installation/Alternatives/Ubuntu-Development-Setup.html) from above.
+
+        for other distros: **N/A**
+
