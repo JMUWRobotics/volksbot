@@ -1,0 +1,5 @@
+source;share/lms100/local_setup.bash
+source;share/lms100/local_setup.dsv
+source;share/lms100/local_setup.ps1
+source;share/lms100/local_setup.sh
+source;share/lms100/local_setup.zsh

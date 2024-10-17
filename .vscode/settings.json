@@ -1,0 +1,7 @@
+{
+    "cmake.ignoreCMakeListsMissing": true,
+    "ros2.rosRootDir": "/home/nls/ros2_humble",
+    "ros2.additionalSearchDirs": ["/home/nls/ros2_humble"],
+    // "ros.distro": "noetic",
+    "ros.distro": "humble"
+}

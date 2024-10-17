@@ -1,0 +1,53 @@
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/scanlistener.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/scanlistener.cc:24:24:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Ksubscribe[m[K’
+   24 |   auto chatter_sub = n.[01;31m[Ksubscribe[m[K("LMS100", 1, chatterCallback);
+      |                        [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/scanlistener.cc:25:16:[m[K [01;31m[Kerror: [m[K‘[01m[Knode[m[K’ was not declared in this scope
+   25 |   rclcpp::spin([01;31m[Knode[m[K);
+      |                [01;31m[K^~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:20:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Kadvertise[m[K’
+   20 |   auto publisher = n.[01;31m[Kadvertise[m[K<sensor_msgs::msg::LaserScan>("LMS",100);
+      |                      [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:20:59:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   20 |   auto publisher = n.advertise<sensor_msgs::msg::LaserScan[01;31m[K>[m[K("LMS",100);
+      |                                                           [01;31m[K^[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:24:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Kparam[m[K’
+   24 |   n.[01;31m[Kparam[m[K<std::string>("sick/ip", hostname, "192.168.0.2");
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:24:22:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   24 |   n.param<std::string[01;31m[K>[m[K("sick/ip", hostname, "192.168.0.2");
+      |                      [01;31m[K^[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:27:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Kparam[m[K’
+   27 |   n.[01;31m[Kparam[m[K("sick/port", port, 2111);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:30:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Kparam[m[K’
+   30 |   n.[01;31m[Kparam[m[K("sick/fov/min", min, -45.0);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:31:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Kparam[m[K’
+   31 |   n.[01;31m[Kparam[m[K("sick/fov/max", max, 225.0);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:32:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Kparam[m[K’
+   32 |   n.[01;31m[Kparam[m[K("sick/fov/resolution", res, 0.5);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:33:5:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Kparam[m[K’
+   33 |   n.[01;31m[Kparam[m[K("sick/rate", freq, 50.0);
+      |     [01;31m[K^~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:43:7:[m[K [01;31m[Kerror: [m[K‘[01m[Kusleep[m[K’ was not declared in this scope
+   43 |       [01;31m[Kusleep[m[K(500000);
+      |       [01;31m[K^~~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:81:11:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass std::shared_ptr<rclcpp::Node>[m[K’ has no member named ‘[01m[Kok[m[K’
+   81 |   while(n.[01;31m[Kok[m[K())
+      |           [01;31m[K^~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:87:45:[m[K [01;31m[Kerror: [m[K‘[01m[Know[m[K’ is not a member of ‘[01m[Krclcpp::Time[m[K’
+   87 |       laserMsg.header.stamp = rclcpp::Time::[01;31m[Know[m[K();
+      |                                             [01;31m[K^~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/lms100/src/sicksensor.cc:116:23:[m[K [01;31m[Kerror: [m[K‘[01m[Knode[m[K’ was not declared in this scope
+  116 |     rclcpp::spin_some([01;31m[Knode[m[K);
+      |                       [01;31m[K^~~~[m[K
+make[2]: *** [CMakeFiles/scanlistener.dir/build.make:76: CMakeFiles/scanlistener.dir/src/scanlistener.cc.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:139: CMakeFiles/scanlistener.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/sicksensor.dir/build.make:76: CMakeFiles/sicksensor.dir/src/sicksensor.cc.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:165: CMakeFiles/sicksensor.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2
