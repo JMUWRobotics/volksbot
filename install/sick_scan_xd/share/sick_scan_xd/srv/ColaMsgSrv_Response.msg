@@ -1,7 +1,0 @@
-
-
-# 
-# Response (output)
-# 
-
-string response
