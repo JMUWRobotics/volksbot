@@ -1,8 +1,8 @@
 catkin_ws/build/
 catkin_ws/devel/
 
-devel/
-logs/
+install/
+log/
 build/
 bin/
 lib/
