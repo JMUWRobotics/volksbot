@@ -1,9 +1,9 @@
 catkin_ws/build/
 catkin_ws/devel/
 
-install/
-log/
-build/
+**/install/
+**/log/
+**/build/
 bin/
 lib/
 msg_gen/
