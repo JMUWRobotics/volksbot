@@ -1,0 +1,45 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sick_scan_xd/msg/RadarPreHeaderStatusBlock.msg
+// generated code does not contain a copyright notice
+
+
+module sick_scan_xd {
+  module msg {
+    @verbatim (language="comment", text=
+      " ROS-1:" "\n"
+      "uint32 uiTelegramCount # telegram number" "\n"
+      "uint32 uiCycleCount # \"scan number\"" "\n"
+      "uint32 udiSystemCountScan # system time since power on of scan gen. [us]" "\n"
+      "uint32 udiSystemCountTransmit # system time since power on of scan transmission [us]" "\n"
+      "uint16 uiInputs # state of digital inputs" "\n"
+      "uint16 uiOutputs # state of digital outputs")
+    struct RadarPreHeaderStatusBlock {
+      @verbatim (language="comment", text=
+        "ROS-2:" "\n"
+        "telegram number")
+      uint32 uitelegramcount;
+
+      @verbatim (language="comment", text=
+        "\"scan number\"")
+      uint32 uicyclecount;
+
+      @verbatim (language="comment", text=
+        "system time since power on of scan gen.")
+      @unit (value="us")
+      uint32 udisystemcountscan;
+
+      @verbatim (language="comment", text=
+        "system time since power on of scan transmission")
+      @unit (value="us")
+      uint32 udisystemcounttransmit;
+
+      @verbatim (language="comment", text=
+        "state of digital inputs")
+      uint16 uiinputs;
+
+      @verbatim (language="comment", text=
+        "state of digital outputs")
+      uint16 uioutputs;
+    };
+  };
+};

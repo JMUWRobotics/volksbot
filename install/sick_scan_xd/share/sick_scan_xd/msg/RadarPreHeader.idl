@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sick_scan_xd/msg/RadarPreHeader.msg
+// generated code does not contain a copyright notice
+
+#include "sick_scan_xd/msg/RadarPreHeaderDeviceBlock.idl"
+#include "sick_scan_xd/msg/RadarPreHeaderEncoderBlock.idl"
+#include "sick_scan_xd/msg/RadarPreHeaderMeasurementParam1Block.idl"
+#include "sick_scan_xd/msg/RadarPreHeaderStatusBlock.idl"
+
+module sick_scan_xd {
+  module msg {
+    @verbatim (language="comment", text=
+      "Version information for this whole structure (MeasurementData)")
+    struct RadarPreHeader {
+      uint16 uiversionno;
+
+      sick_scan_xd::msg::RadarPreHeaderDeviceBlock radarpreheaderdeviceblock;
+
+      sick_scan_xd::msg::RadarPreHeaderStatusBlock radarpreheaderstatusblock;
+
+      sick_scan_xd::msg::RadarPreHeaderMeasurementParam1Block radarpreheadermeasurementparam1block;
+
+      sequence<sick_scan_xd::msg::RadarPreHeaderEncoderBlock> radarpreheaderarrayencoderblock;
+    };
+  };
+};

@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from sick_scan_xd/srv/ColaMsgSrv.srv
+// generated code does not contain a copyright notice
+
+
+module sick_scan_xd {
+  module srv {
+    @verbatim (language="comment", text=
+      "Definition of ROS service ColaMsg for sick_scan_xd" "\n"
+      "Send a cola message to the Lidar" "\n"
+      "Example call (ROS1):" "\n"
+      "rosservice call /sick_tim_7xx/ColaMsg \"{request: 'sEN LIDoutputstate 1'}\"" "\n"
+      "")
+    struct ColaMsgSrv_Request {
+      @verbatim (language="comment", text=
+        "Request (input)")
+      string request;
+    };
+    struct ColaMsgSrv_Response {
+      @verbatim (language="comment", text=
+        "Response (output)")
+      string response;
+    };
+  };
+};

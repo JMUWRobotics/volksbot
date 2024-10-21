@@ -1,0 +1,2 @@
+Invoking command in '/home/nls/SHK_Arbeit/volksbot/build/volksbot': /usr/local/bin/cmake /home/nls/SHK_Arbeit/volksbot/src/volksbot -DROS_VERSION=2 -DLDMRS=0 -DSCANSEGMENT_XD=0 -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/nls/SHK_Arbeit/volksbot/install/volksbot
+Invoked command in '/home/nls/SHK_Arbeit/volksbot/build/volksbot' returned '1': /usr/local/bin/cmake /home/nls/SHK_Arbeit/volksbot/src/volksbot -DROS_VERSION=2 -DLDMRS=0 -DSCANSEGMENT_XD=0 -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/nls/SHK_Arbeit/volksbot/install/volksbot

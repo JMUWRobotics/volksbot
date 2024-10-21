@@ -1,0 +1,4 @@
+source;share/sick_scan_xd/environment/ament_prefix_path.sh
+source;share/sick_scan_xd/environment/library_path.sh
+source;share/sick_scan_xd/environment/path.sh
+source;share/sick_scan_xd/environment/pythonpath.sh

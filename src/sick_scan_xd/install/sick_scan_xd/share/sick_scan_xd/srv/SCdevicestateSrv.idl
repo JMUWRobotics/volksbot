@@ -1,0 +1,28 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from sick_scan_xd/srv/SCdevicestateSrv.srv
+// generated code does not contain a copyright notice
+
+
+module sick_scan_xd {
+  module srv {
+    @verbatim (language="comment", text=
+      "Definition of ROS service SCdevicestate for sick_scan_xd" "\n"
+      "Example call (ROS1):" "\n"
+      "rosservice call /sick_tim_7xx/SCdevicestate \"{}\"" "\n"
+      "")
+    struct SCdevicestateSrv_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct SCdevicestateSrv_Response {
+      @verbatim (language="comment", text=
+        "Response (output)" "\n"
+        "" "\n"
+        "device state: busy:0, ready:1, error:2")
+      int32 state;
+
+      @verbatim (language="comment", text=
+        "true: success response received from lidar, false: service failed (timeout or error status from controller)")
+      boolean success;
+    };
+  };
+};

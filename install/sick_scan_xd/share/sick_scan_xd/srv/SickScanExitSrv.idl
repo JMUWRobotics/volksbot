@@ -1,0 +1,25 @@
+// generated from rosidl_adapter/resource/srv.idl.em
+// with input from sick_scan_xd/srv/SickScanExitSrv.srv
+// generated code does not contain a copyright notice
+
+
+module sick_scan_xd {
+  module srv {
+    @verbatim (language="comment", text=
+      "Definition of ROS service SickScanExit for sick_scan_xd." "\n"
+      "SickScanExit stops the scanner and exits sick_generic_caller." "\n"
+      "Example call (ROS1):" "\n"
+      "rosservice call /sick_nav_3xx/SickScanExit \"{}\"" "\n"
+      "")
+    struct SickScanExitSrv_Request {
+      uint8 structure_needs_at_least_one_member;
+    };
+    struct SickScanExitSrv_Response {
+      @verbatim (language="comment", text=
+        "Response (output)" "\n"
+        "" "\n"
+        "true: success response received from lidar, false: service failed (timeout or error status from controller)")
+      boolean success;
+    };
+  };
+};

@@ -1,0 +1,140 @@
+[0.222s] Invoking command in '/home/nls/SHK_Arbeit/volksbot/build/libsick_ldmrs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nls/ros2_humble/install/rqt_bag_plugins:/home/nls/ros2_humble/install/rqt_bag:/home/nls/ros2_humble/install/ros2bag:/home/nls/ros2_humble/install/tracetools_test:/home/nls/ros2_humble/install/tracetools_launch:/home/nls/ros2_humble/install/topic_monitor:/home/nls/ros2_humble/install/tf2_tools:/home/nls/ros2_humble/install/examples_tf2_py:/home/nls/ros2_humble/install/tf2_ros_py:/home/nls/ros2_humble/install/sros2:/home/nls/ros2_humble/install/rqt_topic:/home/nls/ros2_humble/install/rqt_srv:/home/nls/ros2_humble/install/rqt_shell:/home/nls/ros2_humble/install/rqt_service_caller:/home/nls/ros2_humble/install/rqt_reconfigure:/home/nls/ros2_humble/install/rqt_py_console:/home/nls/ros2_humble/install/rqt_publisher:/home/nls/ros2_humble/install/rqt_plot:/home/nls/ros2_humble/install/rqt_action:/home/nls/ros2_humble/install/rqt_msg:/home/nls/ros2_humble/install/rqt_console:/home/nls/ros2_humble/install/rqt:/home/nls/ros2_humble/install/rqt_graph:/home/nls/ros2_humble/install/rqt_gui_py:/home/nls/ros2_humble/install/rqt_gui:/home/nls/ros2_humble/install/ros2trace:/home/nls/ros2_humble/install/ros2topic:/home/nls/ros2_humble/install/ros2test:/home/nls/ros2_humble/install/ros2component:/home/nls/ros2_humble/install/ros2param:/home/nls/ros2_humble/install/ros2lifecycle:/home/nls/ros2_humble/install/ros2service:/home/nls/ros2_humble/install/ros2run:/home/nls/ros2_humble/install/ros2launch:/home/nls/ros2_humble/install/ros2pkg:/home/nls/ros2_humble/install/ros2node:/home/nls/ros2_humble/install/ros2multicast:/home/nls/ros2_humble/install/ros2interface:/home/nls/ros2_humble/install/ros2doctor:/home/nls/ros2_humble/install/ros2action:/home/nls/ros2_humble/install/ros2cli:/home/nls/ros2_humble/install/quality_of_service_demo_py:/home/nls/ros2_humble/install/lifecycle_py:/home/nls/ros2_humble/install/launch_testing_ros:/home/nls/ros2_humble/install/launch_ros:/home/nls/ros2_humble/install/examples_rclpy_pointcloud_publisher:/home/nls/ros2_humble/install/examples_rclpy_minimal_subscriber:/home/nls/ros2_humble/install/examples_rclpy_minimal_service:/home/nls/ros2_humble/install/examples_rclpy_minimal_publisher:/home/nls/ros2_humble/install/examples_rclpy_minimal_client:/home/nls/ros2_humble/install/examples_rclpy_minimal_action_server:/home/nls/ros2_humble/install/examples_rclpy_minimal_action_client:/home/nls/ros2_humble/install/examples_rclpy_guard_conditions:/home/nls/ros2_humble/install/examples_rclpy_executors:/home/nls/ros2_humble/install/demo_nodes_py:/home/nls/ros2_humble/install/action_tutorials_py:/home/nls/ros2_humble/install/ament_uncrustify:/home/nls/ros2_humble/install/tracetools_trace:/home/nls/ros2_humble/install/tracetools_read:/home/nls/ros2_humble/install/test_tracetools_launch:/home/nls/ros2_humble/install/test_launch_ros:/home/nls/ros2_humble/install/sensor_msgs_py:/home/nls/ros2_humble/install/rpyutils:/home/nls/ros2_humble/install/rosidl_runtime_py:/home/nls/ros2_humble/install/rosidl_cli:/home/nls/ros2_humble/install/launch_pytest:/home/nls/ros2_humble/install/launch_testing:/home/nls/ros2_humble/install/launch_yaml:/home/nls/ros2_humble/install/launch_xml:/home/nls/ros2_humble/install/launch:/home/nls/ros2_humble/install/osrf_pycommon:/home/nls/ros2_humble/install/launch_testing_examples:/home/nls/ros2_humble/install/domain_coordinator:/home/nls/ros2_humble/install/ament_xmllint:/home/nls/ros2_humble/install/ament_pyflakes:/home/nls/ros2_humble/install/ament_pycodestyle:/home/nls/ros2_humble/install/ament_pep257:/home/nls/ros2_humble/install/ament_pclint:/home/nls/ros2_humble/install/ament_package:/home/nls/ros2_humble/install/ament_mypy:/home/nls/ros2_humble/install/ament_lint_cmake:/home/nls/ros2_humble/install/ament_flake8:/home/nls/ros2_humble/install/ament_copyright:/home/nls/ros2_humble/install/ament_lint:/home/nls/ros2_humble/install/ament_index_python:/home/nls/ros2_humble/install/ament_cpplint:/home/nls/ros2_humble/install/ament_cppcheck:/home/nls/ros2_humble/install/ament_clang_tidy:/home/nls/ros2_humble/install/ament_clang_format /usr/local/bin/cmake /home/nls/SHK_Arbeit/volksbot/src/sick_scan_xd/src/libsick_ldmrs -DROS_VERSION=2 -DLDMRS=0 -DSCANSEGMENT_XD=0 -DCMAKE_INSTALL_PREFIX=/home/nls/SHK_Arbeit/volksbot/install/libsick_ldmrs
+[0.273s] [0mCMake Deprecation Warning at CMakeLists.txt:1 (cmake_minimum_required):
+[0.273s]   Compatibility with CMake < 3.5 will be removed from a future version of
+[0.274s]   CMake.
+[0.274s] 
+[0.275s]   Update the VERSION argument <min> value or use a ...<max> suffix to tell
+[0.280s]   CMake that the project does not need compatibility with older versions.
+[0.281s] 
+[0.281s] [0m
+[0.598s] -- The C compiler identification is GNU 9.4.0
+[0.853s] -- The CXX compiler identification is GNU 9.4.0
+[0.905s] -- Detecting C compiler ABI info
+[1.238s] -- Detecting C compiler ABI info - done
+[1.314s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.315s] -- Detecting C compile features
+[1.316s] -- Detecting C compile features - done
+[1.329s] -- Detecting CXX compiler ABI info
+[1.682s] -- Detecting CXX compiler ABI info - done
+[1.742s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.743s] -- Detecting CXX compile features
+[1.745s] -- Detecting CXX compile features - done
+[1.756s] -- Configuring done (1.5s)
+[1.809s] -- Generating done (0.0s)
+[1.810s] [33mCMake Warning:
+[1.811s]   Manually-specified variables were not used by the project:
+[1.811s] 
+[1.811s]     LDMRS
+[1.811s]     ROS_VERSION
+[1.812s]     SCANSEGMENT_XD
+[1.812s] 
+[1.812s] [0m
+[1.812s] -- Build files have been written to: /home/nls/SHK_Arbeit/volksbot/build/libsick_ldmrs
+[1.825s] Invoked command in '/home/nls/SHK_Arbeit/volksbot/build/libsick_ldmrs' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nls/ros2_humble/install/rqt_bag_plugins:/home/nls/ros2_humble/install/rqt_bag:/home/nls/ros2_humble/install/ros2bag:/home/nls/ros2_humble/install/tracetools_test:/home/nls/ros2_humble/install/tracetools_launch:/home/nls/ros2_humble/install/topic_monitor:/home/nls/ros2_humble/install/tf2_tools:/home/nls/ros2_humble/install/examples_tf2_py:/home/nls/ros2_humble/install/tf2_ros_py:/home/nls/ros2_humble/install/sros2:/home/nls/ros2_humble/install/rqt_topic:/home/nls/ros2_humble/install/rqt_srv:/home/nls/ros2_humble/install/rqt_shell:/home/nls/ros2_humble/install/rqt_service_caller:/home/nls/ros2_humble/install/rqt_reconfigure:/home/nls/ros2_humble/install/rqt_py_console:/home/nls/ros2_humble/install/rqt_publisher:/home/nls/ros2_humble/install/rqt_plot:/home/nls/ros2_humble/install/rqt_action:/home/nls/ros2_humble/install/rqt_msg:/home/nls/ros2_humble/install/rqt_console:/home/nls/ros2_humble/install/rqt:/home/nls/ros2_humble/install/rqt_graph:/home/nls/ros2_humble/install/rqt_gui_py:/home/nls/ros2_humble/install/rqt_gui:/home/nls/ros2_humble/install/ros2trace:/home/nls/ros2_humble/install/ros2topic:/home/nls/ros2_humble/install/ros2test:/home/nls/ros2_humble/install/ros2component:/home/nls/ros2_humble/install/ros2param:/home/nls/ros2_humble/install/ros2lifecycle:/home/nls/ros2_humble/install/ros2service:/home/nls/ros2_humble/install/ros2run:/home/nls/ros2_humble/install/ros2launch:/home/nls/ros2_humble/install/ros2pkg:/home/nls/ros2_humble/install/ros2node:/home/nls/ros2_humble/install/ros2multicast:/home/nls/ros2_humble/install/ros2interface:/home/nls/ros2_humble/install/ros2doctor:/home/nls/ros2_humble/install/ros2action:/home/nls/ros2_humble/install/ros2cli:/home/nls/ros2_humble/install/quality_of_service_demo_py:/home/nls/ros2_humble/install/lifecycle_py:/home/nls/ros2_humble/install/launch_testing_ros:/home/nls/ros2_humble/install/launch_ros:/home/nls/ros2_humble/install/examples_rclpy_pointcloud_publisher:/home/nls/ros2_humble/install/examples_rclpy_minimal_subscriber:/home/nls/ros2_humble/install/examples_rclpy_minimal_service:/home/nls/ros2_humble/install/examples_rclpy_minimal_publisher:/home/nls/ros2_humble/install/examples_rclpy_minimal_client:/home/nls/ros2_humble/install/examples_rclpy_minimal_action_server:/home/nls/ros2_humble/install/examples_rclpy_minimal_action_client:/home/nls/ros2_humble/install/examples_rclpy_guard_conditions:/home/nls/ros2_humble/install/examples_rclpy_executors:/home/nls/ros2_humble/install/demo_nodes_py:/home/nls/ros2_humble/install/action_tutorials_py:/home/nls/ros2_humble/install/ament_uncrustify:/home/nls/ros2_humble/install/tracetools_trace:/home/nls/ros2_humble/install/tracetools_read:/home/nls/ros2_humble/install/test_tracetools_launch:/home/nls/ros2_humble/install/test_launch_ros:/home/nls/ros2_humble/install/sensor_msgs_py:/home/nls/ros2_humble/install/rpyutils:/home/nls/ros2_humble/install/rosidl_runtime_py:/home/nls/ros2_humble/install/rosidl_cli:/home/nls/ros2_humble/install/launch_pytest:/home/nls/ros2_humble/install/launch_testing:/home/nls/ros2_humble/install/launch_yaml:/home/nls/ros2_humble/install/launch_xml:/home/nls/ros2_humble/install/launch:/home/nls/ros2_humble/install/osrf_pycommon:/home/nls/ros2_humble/install/launch_testing_examples:/home/nls/ros2_humble/install/domain_coordinator:/home/nls/ros2_humble/install/ament_xmllint:/home/nls/ros2_humble/install/ament_pyflakes:/home/nls/ros2_humble/install/ament_pycodestyle:/home/nls/ros2_humble/install/ament_pep257:/home/nls/ros2_humble/install/ament_pclint:/home/nls/ros2_humble/install/ament_package:/home/nls/ros2_humble/install/ament_mypy:/home/nls/ros2_humble/install/ament_lint_cmake:/home/nls/ros2_humble/install/ament_flake8:/home/nls/ros2_humble/install/ament_copyright:/home/nls/ros2_humble/install/ament_lint:/home/nls/ros2_humble/install/ament_index_python:/home/nls/ros2_humble/install/ament_cpplint:/home/nls/ros2_humble/install/ament_cppcheck:/home/nls/ros2_humble/install/ament_clang_tidy:/home/nls/ros2_humble/install/ament_clang_format /usr/local/bin/cmake /home/nls/SHK_Arbeit/volksbot/src/sick_scan_xd/src/libsick_ldmrs -DROS_VERSION=2 -DLDMRS=0 -DSCANSEGMENT_XD=0 -DCMAKE_INSTALL_PREFIX=/home/nls/SHK_Arbeit/volksbot/install/libsick_ldmrs
+[1.829s] Invoking command in '/home/nls/SHK_Arbeit/volksbot/build/libsick_ldmrs': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/nls/ros2_humble/install/rqt_bag_plugins:/home/nls/ros2_humble/install/rqt_bag:/home/nls/ros2_humble/install/ros2bag:/home/nls/ros2_humble/install/tracetools_test:/home/nls/ros2_humble/install/tracetools_launch:/home/nls/ros2_humble/install/topic_monitor:/home/nls/ros2_humble/install/tf2_tools:/home/nls/ros2_humble/install/examples_tf2_py:/home/nls/ros2_humble/install/tf2_ros_py:/home/nls/ros2_humble/install/sros2:/home/nls/ros2_humble/install/rqt_topic:/home/nls/ros2_humble/install/rqt_srv:/home/nls/ros2_humble/install/rqt_shell:/home/nls/ros2_humble/install/rqt_service_caller:/home/nls/ros2_humble/install/rqt_reconfigure:/home/nls/ros2_humble/install/rqt_py_console:/home/nls/ros2_humble/install/rqt_publisher:/home/nls/ros2_humble/install/rqt_plot:/home/nls/ros2_humble/install/rqt_action:/home/nls/ros2_humble/install/rqt_msg:/home/nls/ros2_humble/install/rqt_console:/home/nls/ros2_humble/install/rqt:/home/nls/ros2_humble/install/rqt_graph:/home/nls/ros2_humble/install/rqt_gui_py:/home/nls/ros2_humble/install/rqt_gui:/home/nls/ros2_humble/install/ros2trace:/home/nls/ros2_humble/install/ros2topic:/home/nls/ros2_humble/install/ros2test:/home/nls/ros2_humble/install/ros2component:/home/nls/ros2_humble/install/ros2param:/home/nls/ros2_humble/install/ros2lifecycle:/home/nls/ros2_humble/install/ros2service:/home/nls/ros2_humble/install/ros2run:/home/nls/ros2_humble/install/ros2launch:/home/nls/ros2_humble/install/ros2pkg:/home/nls/ros2_humble/install/ros2node:/home/nls/ros2_humble/install/ros2multicast:/home/nls/ros2_humble/install/ros2interface:/home/nls/ros2_humble/install/ros2doctor:/home/nls/ros2_humble/install/ros2action:/home/nls/ros2_humble/install/ros2cli:/home/nls/ros2_humble/install/quality_of_service_demo_py:/home/nls/ros2_humble/install/lifecycle_py:/home/nls/ros2_humble/install/launch_testing_ros:/home/nls/ros2_humble/install/launch_ros:/home/nls/ros2_humble/install/examples_rclpy_pointcloud_publisher:/home/nls/ros2_humble/install/examples_rclpy_minimal_subscriber:/home/nls/ros2_humble/install/examples_rclpy_minimal_service:/home/nls/ros2_humble/install/examples_rclpy_minimal_publisher:/home/nls/ros2_humble/install/examples_rclpy_minimal_client:/home/nls/ros2_humble/install/examples_rclpy_minimal_action_server:/home/nls/ros2_humble/install/examples_rclpy_minimal_action_client:/home/nls/ros2_humble/install/examples_rclpy_guard_conditions:/home/nls/ros2_humble/install/examples_rclpy_executors:/home/nls/ros2_humble/install/demo_nodes_py:/home/nls/ros2_humble/install/action_tutorials_py:/home/nls/ros2_humble/install/ament_uncrustify:/home/nls/ros2_humble/install/tracetools_trace:/home/nls/ros2_humble/install/tracetools_read:/home/nls/ros2_humble/install/test_tracetools_launch:/home/nls/ros2_humble/install/test_launch_ros:/home/nls/ros2_humble/install/sensor_msgs_py:/home/nls/ros2_humble/install/rpyutils:/home/nls/ros2_humble/install/rosidl_runtime_py:/home/nls/ros2_humble/install/rosidl_cli:/home/nls/ros2_humble/install/launch_pytest:/home/nls/ros2_humble/install/launch_testing:/home/nls/ros2_humble/install/launch_yaml:/home/nls/ros2_humble/install/launch_xml:/home/nls/ros2_humble/install/launch:/home/nls/ros2_humble/install/osrf_pycommon:/home/nls/ros2_humble/install/launch_testing_examples:/home/nls/ros2_humble/install/domain_coordinator:/home/nls/ros2_humble/install/ament_xmllint:/home/nls/ros2_humble/install/ament_pyflakes:/home/nls/ros2_humble/install/ament_pycodestyle:/home/nls/ros2_humble/install/ament_pep257:/home/nls/ros2_humble/install/ament_pclint:/home/nls/ros2_humble/install/ament_package:/home/nls/ros2_humble/install/ament_mypy:/home/nls/ros2_humble/install/ament_lint_cmake:/home/nls/ros2_humble/install/ament_flake8:/home/nls/ros2_humble/install/ament_copyright:/home/nls/ros2_humble/install/ament_lint:/home/nls/ros2_humble/install/ament_index_python:/home/nls/ros2_humble/install/ament_cpplint:/home/nls/ros2_humble/install/ament_cppcheck:/home/nls/ros2_humble/install/ament_clang_tidy:/home/nls/ros2_humble/install/ament_clang_format /usr/local/bin/cmake --build /home/nls/SHK_Arbeit/volksbot/build/libsick_ldmrs -- -j12 -l12
+[2.019s] [  0%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/application/LdmrsApp.cpp.o[0m
+[2.022s] [  3%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/application/LdmrsSectorChangeApp.cpp.o[0m
+[2.022s] [  3%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/application/LdmrsApp.cpp.o[0m
+[2.023s] [  3%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/application/LdmrsNtpTimeApp.cpp.o[0m
+[2.023s] [  4%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/application/LdmrsScanpointCoordinateApp.cpp.o[0m
+[2.025s] [  3%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/application/LdmrsFieldApp.cpp.o[0m
+[2.026s] [  5%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/application/LdmrsFieldApp.cpp.o[0m
+[2.031s] [  6%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/devices/BasicDevice.cpp.o[0m
+[2.034s] [  7%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/application/LdmrsSectorChangeApp.cpp.o[0m
+[2.050s] [  8%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/application/BasicApplication.cpp.o[0m
+[2.053s] [  9%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/devices/LD_MRS.cpp.o[0m
+[2.063s] [ 10%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/devices/LuxBase.cpp.o[0m
+[3.016s] [ 11%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/sopas/LdmrsSopasLayer.cpp.o[0m
+[3.076s] [ 12%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/sopas/SopasBase.cpp.o[0m
+[3.803s] [ 13%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/sopas/colaa.cpp.o[0m
+[3.912s] [ 14%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/application/LdmrsNtpTimeApp.cpp.o[0m
+[4.086s] [ 15%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/application/LdmrsScanpointCoordinateApp.cpp.o[0m
+[4.530s] [ 16%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/application/BasicApplication.cpp.o[0m
+[4.557s] [ 17%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/devices/BasicDevice.cpp.o[0m
+[4.593s] [ 18%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/sopas/colab.cpp.o[0m
+[4.593s] [ 19%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/devices/LD_MRS.cpp.o[0m
+[4.722s] [ 20%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Measurement.cpp.o[0m
+[4.861s] [ 21%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/SensorStateInfo.cpp.o[0m
+[4.867s] [ 22%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/devices/LuxBase.cpp.o[0m
+[5.409s] [ 23%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Fields.cpp.o[0m
+[5.463s] [ 24%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/sopas/LdmrsSopasLayer.cpp.o[0m
+[5.491s] [ 25%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/FieldParameter.cpp.o[0m
+[5.496s] [ 26%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/sopas/SopasBase.cpp.o[0m
+[5.651s] [ 27%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/FieldDescription.cpp.o[0m
+[5.920s] [ 28%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/sopas/colaa.cpp.o[0m
+[6.226s] [ 29%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/sopas/colab.cpp.o[0m
+[6.566s] [ 30%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Measurement.cpp.o[0m
+[6.965s] [ 31%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/SensorStateInfo.cpp.o[0m
+[7.030s] [ 32%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/EvalCase.cpp.o[0m
+[7.055s] [ 33%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Fields.cpp.o[0m
+[7.090s] [ 34%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/FieldParameter.cpp.o[0m
+[7.156s] [ 35%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/EvalCases.cpp.o[0m
+[7.174s] [ 36%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/FieldDescription.cpp.o[0m
+[7.378s] [ 37%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/EvalCaseResult.cpp.o[0m
+[7.427s] [ 38%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/EvalCase.cpp.o[0m
+[7.659s] [ 39%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/EvalCaseResults.cpp.o[0m
+[8.167s] [ 40%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Polygon2D.cpp.o[0m
+[8.218s] [ 41%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/EvalCases.cpp.o[0m
+[8.292s] [ 42%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/EvalCaseResult.cpp.o[0m
+[8.397s] [ 43%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/EvalCaseResults.cpp.o[0m
+[8.461s] [ 44%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Polygon2D.cpp.o[0m
+[8.500s] [ 45%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Polygon3D.cpp.o[0m
+[8.611s] [ 46%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Trigger.cpp.o[0m
+[8.622s] [ 47%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Polygon3D.cpp.o[0m
+[9.023s] [ 48%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Trigger.cpp.o[0m
+[9.086s] [ 49%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Point2D.cpp.o[0m
+[9.305s] [ 49%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Point3D.cpp.o[0m
+[9.490s] [ 50%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Position3D.cpp.o[0m
+[9.584s] [ 51%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/PositionWGS84.cpp.o[0m
+[9.625s] [ 52%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Circle2D.cpp.o[0m
+[9.671s] [ 53%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Ellipse2D.cpp.o[0m
+[9.778s] [ 54%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Box2D.cpp.o[0m
+[10.244s] [ 55%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Line2D.cpp.o[0m
+[10.282s] [ 55%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Point3D.cpp.o[0m
+[10.289s] [ 56%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Point2D.cpp.o[0m
+[10.420s] [ 57%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Msg.cpp.o[0m
+[10.593s] [ 58%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Scan.cpp.o[0m
+[10.627s] [ 59%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Position3D.cpp.o[0m
+[10.819s] [ 60%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/PositionWGS84.cpp.o[0m
+[11.046s] [ 61%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/ScanPoint.cpp.o[0m
+[11.078s] [ 62%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/ScannerInfo.cpp.o[0m
+[11.141s] [ 63%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/datatypes/Object.cpp.o[0m
+[11.300s] [ 64%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Circle2D.cpp.o[0m
+[11.503s] [ 65%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/interfaces/tcp.cpp.o[0m
+[11.602s] [ 66%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Ellipse2D.cpp.o[0m
+[11.663s] [ 67%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/interfaces/file.cpp.o[0m
+[11.878s] [ 68%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Box2D.cpp.o[0m
+[12.017s] [ 69%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/errorhandler.cpp.o[0m
+[12.098s] [ 70%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Line2D.cpp.o[0m
+[12.425s] [ 71%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/SickThread.cpp.o[0m
+[12.642s] [ 72%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Msg.cpp.o[0m
+[12.674s] [ 73%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Scan.cpp.o[0m
+[12.731s] [ 74%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/Mutex.cpp.o[0m
+[12.783s] [ 75%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/toolbox.cpp.o[0m
+[12.959s] [ 76%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/MathToolbox.cpp.o[0m
+[12.964s] [ 77%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/ScanPoint.cpp.o[0m
+[13.108s] [ 78%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/ScannerInfo.cpp.o[0m
+[13.177s] [ 79%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/BasicDataBuffer.cpp.o[0m
+[13.189s] [ 80%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/Timer.cpp.o[0m
+[13.220s] [ 81%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/Time.cpp.o[0m
+[13.564s] [ 82%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/tools/WatchdogTimer.cpp.o[0m
+[13.638s] [ 83%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/datatypes/Object.cpp.o[0m
+[13.774s] [ 84%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/interfaces/tcp.cpp.o[0m
+[13.829s] [ 85%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/interfaces/file.cpp.o[0m
+[14.036s] [ 86%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/manager.cpp.o[0m
+[14.101s] [ 87%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/errorhandler.cpp.o[0m
+[14.278s] [ 88%] [32mBuilding CXX object src/CMakeFiles/sick_ldmrs.dir/main.cpp.o[0m
+[14.290s] [ 89%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/Mutex.cpp.o[0m
+[14.295s] [ 90%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/SickThread.cpp.o[0m
+[14.411s] [ 91%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/toolbox.cpp.o[0m
+[14.563s] [ 92%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/MathToolbox.cpp.o[0m
+[14.629s] [ 93%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/BasicDataBuffer.cpp.o[0m
+[15.005s] [ 94%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/Timer.cpp.o[0m
+[15.018s] [ 95%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/Time.cpp.o[0m
+[15.070s] [ 96%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/tools/WatchdogTimer.cpp.o[0m
+[15.130s] [ 97%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/manager.cpp.o[0m
+[15.188s] [ 98%] [32mBuilding CXX object src/CMakeFiles/LDMRS_Example.dir/main.cpp.o[0m
+[16.164s] [ 99%] [32m[1mLinking CXX shared library libsick_ldmrs.so[0m
+[16.701s] [ 99%] Built target sick_ldmrs
+[16.963s] [100%] [32m[1mLinking CXX executable LDMRS_Example[0m
+[17.451s] [100%] Built target LDMRS_Example

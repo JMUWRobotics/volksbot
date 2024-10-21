@@ -1,0 +1,14 @@
+source;share/sick_scan_xd/hook/cmake_prefix_path.ps1
+source;share/sick_scan_xd/hook/cmake_prefix_path.dsv
+source;share/sick_scan_xd/hook/cmake_prefix_path.sh
+source;share/sick_scan_xd/hook/ld_library_path_lib.ps1
+source;share/sick_scan_xd/hook/ld_library_path_lib.dsv
+source;share/sick_scan_xd/hook/ld_library_path_lib.sh
+source;share/sick_scan_xd/hook/pythonpath.ps1
+source;share/sick_scan_xd/hook/pythonpath.dsv
+source;share/sick_scan_xd/hook/pythonpath.sh
+source;share/sick_scan_xd/local_setup.bash
+source;share/sick_scan_xd/local_setup.dsv
+source;share/sick_scan_xd/local_setup.ps1
+source;share/sick_scan_xd/local_setup.sh
+source;share/sick_scan_xd/local_setup.zsh

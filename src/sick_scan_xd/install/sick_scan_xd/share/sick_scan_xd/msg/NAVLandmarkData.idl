@@ -1,0 +1,22 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sick_scan_xd/msg/NAVLandmarkData.msg
+// generated code does not contain a copyright notice
+
+#include "sick_scan_xd/msg/NAVReflectorData.idl"
+#include "std_msgs/msg/Header.idl"
+
+module sick_scan_xd {
+  module msg {
+    @verbatim (language="comment", text=
+      "ROS message of NAV350LandmarkData, see sick_nav_scandata_parser.h and NAV-350 telegram listing for details.")
+    struct NAVLandmarkData {
+      std_msgs::msg::Header header;
+
+      uint8 landmark_filter;
+
+      uint16 num_reflectors;
+
+      sequence<sick_scan_xd::msg::NAVReflectorData> reflectors;
+    };
+  };
+};

@@ -1,0 +1,38 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from sick_scan_xd/msg/ros2/ldmrs/SickLdmrsObject.msg
+// generated code does not contain a copyright notice
+
+#include "builtin_interfaces/msg/Time.idl"
+#include "geometry_msgs/msg/Point.idl"
+#include "geometry_msgs/msg/Pose.idl"
+#include "geometry_msgs/msg/PoseWithCovariance.idl"
+#include "geometry_msgs/msg/TwistWithCovariance.idl"
+#include "geometry_msgs/msg/Vector3.idl"
+
+module sick_scan_xd {
+  module msg {
+    struct SickLdmrsObject {
+      int32 id;
+
+      @verbatim (language="comment", text=
+        "ROS1: time tracking_time # since when the object is tracked")
+      builtin_interfaces::msg::Time tracking_time;
+
+      @verbatim (language="comment", text=
+        "ROS1: time last_seen")
+      builtin_interfaces::msg::Time last_seen;
+
+      geometry_msgs::msg::TwistWithCovariance velocity;
+
+      geometry_msgs::msg::Pose bounding_box_center;
+
+      geometry_msgs::msg::Vector3 bounding_box_size;
+
+      geometry_msgs::msg::PoseWithCovariance object_box_center;
+
+      geometry_msgs::msg::Vector3 object_box_size;
+
+      sequence<geometry_msgs::msg::Point> contour_points;
+    };
+  };
+};
