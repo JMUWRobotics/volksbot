@@ -5,13 +5,13 @@
 #include <pthread.h>
 #include <stdint.h>
 #include <cmath>
-#include "ros/ros.h"
-#include "volksbot/ticks.h"
-#include "volksbot/velocities.h"
-#include "std_srvs/Empty.h"
-#include "std_msgs/String.h"
-#include "geometry_msgs/Twist.h"
-#include "volksbot/vels.h"
+#include "rclcpp/rclcpp.hpp"
+#include <volksbot/msg/ticks.hpp>
+#include <volksbot/srv/velocities.hpp>
+#include <std_srvs/srv/empty.hpp>
+#include <std_msgs/msg/string.hpp>
+#include <geometry_msgs/msg/twist.hpp>
+#include <volksbot/msg/vels.hpp>
 
 #define MAX_RPM 4000 // MOTOR MAX IS REALLY 12000 BUT IS TOO FAST!!!
 
@@ -30,21 +30,21 @@ public:
 private:
 
 	//ROS Callback Functions
-	bool callback(volksbot::velocities::Request& vel, volksbot::velocities::Response& response);
-	void Vcallback(const volksbot::velsConstPtr& vel);
-	void CVcallback(const geometry_msgs::Twist::ConstPtr& cmd_vel);
+	bool callback(volksbot::srv::velocities::Request& vel, volksbot::srv::velocities::Response& response);
+	void Vcallback(const volksbot::msg::vels::ConstSharedPtr& vel);
+	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr& cmd_vel);
 
 	//Thread Loop Function
 	static void* threadFunction(void* param);
 
 	//ROS Node Variables
-	ros::NodeHandle n;
+	rclcpp::Node n;
 	ros::Publisher pub;
 	ros::Subscriber sub;
 	ros::Subscriber cmd_vel_sub_;
 	ros::ServiceServer service;
 
-	ros::Time lastcommand;
+	rclcpp::Time lastcommand;
 
 	//Other Variables
 	pthread_t threadId;

@@ -1,14 +1,14 @@
 #include "predator.h"
 
 // service
-#include "volksbot/velocities.h"
-#include "volksbot/vels.h"
+#include <volksbot/srv/velocities.hpp>
+#include <volksbot/msg/vels.hpp>
 
-#include "std_srvs/Empty.h"
+#include <std_srvs/srv/empty.hpp>
 #include <math.h>
 
 void Predator::handleButton(uint8_t number, bool pressed, uint32_t time) {
-  std_srvs::Empty e;
+  std_srvs::srv::Empty e;
   switch(number) {
     case TRIANGLE:
       ros::service::call("stopMeasuring",e);
@@ -98,9 +98,9 @@ void Predator::handleAxis(uint8_t number, int16_t value, uint32_t time) {
 
 
 void Predator::sendSpeed() {
-  volksbot::vels velocity;
+  volksbot::msg::vels velocity;
   velocity.left = leftvel * speed;
   velocity.right = rightvel * speed;
-  ROS_INFO("%f %f SPEED %f \n", leftvel, rightvel, speed);
+  RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "%f %f SPEED %f \n", leftvel, rightvel, speed);
   publisher.publish(velocity);
 }

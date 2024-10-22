@@ -1,14 +1,14 @@
 #include "logitechf710.h"
 
 // service
-#include "volksbot/velocities.h"
-#include "volksbot/vels.h"
+#include <volksbot/srv/velocities.hpp>
+#include <volksbot/msg/vels.hpp>
 
-#include "std_srvs/Empty.h"
+#include <std_srvs/srv/empty.hpp>
 #include <math.h>
 
 void LogitechF::handleButton(uint8_t number, bool pressed, uint32_t time) {
-  std_srvs::Empty e;
+  std_srvs::srv::Empty e;
   switch(number) {
     case BUTTON_A:
       ros::service::call("startMeasuring",e);
@@ -31,14 +31,14 @@ void LogitechF::handleButton(uint8_t number, bool pressed, uint32_t time) {
       break;
     case BUTTON_RIGHT:
       if (pressed) {
-      ROS_ERROR("FASTER");
+      RCLCPP_ERROR(rclcpp::get_logger("Volksbot"), "FASTER");
       speed = fmin(100.0, speed+10.0);
       sendSpeed();
       }
       break;
     case START:
       if(pressed) {
-        ROS_ERROR("START THERMO SCAN");
+        RCLCPP_ERROR(rclcpp::get_logger("Volksbot"), "START THERMO SCAN");
         ros::service::call("startImageScan",e);
       }
       break;
@@ -113,9 +113,9 @@ void LogitechF::handleAxis(uint8_t number, int16_t value, uint32_t time) {
 
 
 void LogitechF::sendSpeed() {
-  volksbot::vels velocity;
+  volksbot::msg::vels velocity;
   velocity.left = leftvel * speed;
   velocity.right = rightvel * speed;
-  //ROS_INFO("%f %f SPEED %f \n", leftvel, rightvel, speed);
+  //RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "%f %f SPEED %f \n", leftvel, rightvel, speed);
   publisher.publish(velocity);
 }

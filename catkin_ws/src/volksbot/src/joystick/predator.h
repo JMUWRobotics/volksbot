@@ -2,9 +2,9 @@
 #define PREDATOR_HH
 
 #include "joystick.h"
-#include <ros/ros.h>
-#include "volksbot/vels.h"
-#include <std_msgs/String.h>
+#include "rclcpp/rclcpp.hpp"
+#include <volksbot/msg/vels.hpp>
+#include <std_msgs/msg/string.hpp>
 
 #define TRIANGLE 0x00
 #define CIRCLE   0x01
@@ -37,7 +37,7 @@ class Predator : public Joystick {
     inline double getRightVel() {return rightvel;}
 
   private:
-    ros::NodeHandle n;
+    rclcpp::Node n;
     ros::Publisher publisher;
 
 
@@ -46,7 +46,7 @@ class Predator : public Joystick {
     inline void init() {
       speed = 20.0;
       rightvel = leftvel = 0.0;
-      publisher = n.advertise<volksbot::vels>("Vel", 100);
+      publisher = n.advertise<volksbot::msg::vels>("Vel", 100);
     }
 
     double leftvel, rightvel;

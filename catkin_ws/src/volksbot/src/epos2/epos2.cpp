@@ -24,9 +24,9 @@ bool EPOS2::isConnected() {
 
 }
 
-bool EPOS2::callback(volksbot::velocities::Request& vel, volksbot::velocities::Response& response) {
+bool EPOS2::callback(volksbot::srv::velocities::Request& vel, volksbot::srv::velocities::Response& response) {
 
-	lastcommand = ros::Time::now();
+	lastcommand = rclcpp::Time::now();
 	leftvel = vel.left;
 	rightvel = vel.right;
 
@@ -35,18 +35,18 @@ bool EPOS2::callback(volksbot::velocities::Request& vel, volksbot::velocities::R
 }
 
 
-void EPOS2::Vcallback(const volksbot::velsConstPtr& vel ) {
+void EPOS2::Vcallback(const volksbot::msg::vels::ConstSharedPtr& vel ) {
 
-	//ROS_INFO("Velocity Callback");
-	lastcommand = ros::Time::now();
+	//RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Velocity Callback");
+	lastcommand = rclcpp::Time::now();
 	leftvel = vel->left;
 	rightvel = vel->right;
 
 }
 
-void EPOS2::CVcallback(const geometry_msgs::Twist::ConstPtr& cmd_vel) {
+void EPOS2::CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr& cmd_vel) {
 
-	lastcommand = ros::Time::now();
+	lastcommand = rclcpp::Time::now();
 	vx = cmd_vel->linear.x;
 	vth = cmd_vel->angular.z;
 	double linear = -cmd_vel->linear.x * 100.0;  // from m/s to cm/s
@@ -90,38 +90,38 @@ void* EPOS2::threadFunction(void* param) {
 
 	EPOS2* ref = (EPOS2*) param;
 
-	volksbot::ticks t;
+	volksbot::msg::ticks t;
 
 	t.header.frame_id = "base_link";
 
 	if ( VCS_ActivateProfileVelocityMode(ref->g_pKeyHandle, 0, &ref->g_pErrorCode) == 0 ||
 		 VCS_ActivateProfileVelocityMode(ref->g_pKeyHandle, 1, &ref->g_pErrorCode) == 0 ) {
 
-		ROS_INFO("Cannot Activate Velocity Mode in EPOS2 Device! (0x%x)", ref->g_pErrorCode);
+		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Activate Velocity Mode in EPOS2 Device! (0x%x)", ref->g_pErrorCode);
 
 	}
 
 	while ( ref->isConnected() ) {
 
-		ros::Time current = ros::Time::now();
-		t.header.stamp = ros::Time::now();
+		rclcpp::Time current = rclcpp::Time::now();
+		t.header.stamp = rclcpp::Time::now();
 
 		int tics_left = 0;
 		int tics_right = 0;
 
-		if (current - ref->lastcommand < ros::Duration(50.5) ) {
+		if (current - ref->lastcommand < rclcpp::Duration(50.5) ) {
 
 			if ( VCS_MoveWithVelocity(ref->g_pKeyHandle, 1, - ref->rightvel * MAX_RPM / 100.0, &ref->g_pErrorCode) == 0 ||
 				 VCS_MoveWithVelocity(ref->g_pKeyHandle, 0, ref->leftvel * MAX_RPM / 100, &ref->g_pErrorCode) == 0 ) {
 
-				ROS_INFO("Cannot Send Move Instruction to EPOS2 Device! (0x%x)", ref->g_pErrorCode);
+				RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Send Move Instruction to EPOS2 Device! (0x%x)", ref->g_pErrorCode);
 
 			}
 
 			if ( VCS_GetPositionIs(ref->g_pKeyHandle, 1, &tics_right, &ref->g_pErrorCode) == 0 ||
 				 VCS_GetPositionIs(ref->g_pKeyHandle, 0, &tics_left, &ref->g_pErrorCode) == 0 ) {
 
-				ROS_INFO("Cannot Get Position of EPOS2 Device! (0x%x)", ref->g_pErrorCode);
+				RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Get Position of EPOS2 Device! (0x%x)", ref->g_pErrorCode);
 			}
 
 		} else {
@@ -129,7 +129,7 @@ void* EPOS2::threadFunction(void* param) {
 			if ( VCS_MoveWithVelocity(ref->g_pKeyHandle, 1, 0, &ref->g_pErrorCode) == 0 ||
 				 VCS_MoveWithVelocity(ref->g_pKeyHandle, 0, 0, &ref->g_pErrorCode) == 0 ) {
 
-				ROS_INFO("Cannot Send Move Instruction to EPOS2 Device! (0x%x)", ref->g_pErrorCode);
+				RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Send Move Instruction to EPOS2 Device! (0x%x)", ref->g_pErrorCode);
 
 			}
 
@@ -150,7 +150,7 @@ void* EPOS2::threadFunction(void* param) {
 	if ( VCS_HaltVelocityMovement(ref->g_pKeyHandle, 1, &ref->g_pErrorCode) == 0 ||
 		 VCS_HaltVelocityMovement(ref->g_pKeyHandle, 0, &ref->g_pErrorCode) == 0) {
 
-		ROS_INFO("Cannot Stop Velocity Mode in EPOS2 Device! (0x%x)", ref->g_pErrorCode);
+		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Stop Velocity Mode in EPOS2 Device! (0x%x)", ref->g_pErrorCode);
 
 	}
 
@@ -173,21 +173,21 @@ void EPOS2::init(const char* port) {
 
 	if ( !openEPOSDevice() ) {
 
-		ROS_INFO("Cannot Open EPOS2 Device! (0x%x)", g_pErrorCode);
+		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Open EPOS2 Device! (0x%x)", g_pErrorCode);
 
 	} else {
 
 		if ( !prepareEPOSDevice(0) || !prepareEPOSDevice(1) ) { //R = 0, L = 1
 
-			ROS_INFO("Error Preparing EPOS2 Device! (0x%x)", g_pErrorCode);
+			RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Error Preparing EPOS2 Device! (0x%x)", g_pErrorCode);
 
 		} else {
 
 			g_isConnected = true;
 
-			pub = n.advertise<volksbot::ticks>("VMC", 20);
+			pub = n.advertise<volksbot::msg::ticks>("VMC", 20);
 			sub = n.subscribe("Vel", 100, &EPOS2::Vcallback, this, ros::TransportHints().reliable().udp().maxDatagramSize(100));
-			cmd_vel_sub_ = n.subscribe<geometry_msgs::Twist>("cmd_vel", 10, &EPOS2::CVcallback, this, ros::TransportHints().reliable().udp().maxDatagramSize(100));
+			cmd_vel_sub_ = n.subscribe<geometry_msgs::msg::Twist>("cmd_vel", 10, &EPOS2::CVcallback, this, ros::TransportHints().reliable().udp().maxDatagramSize(100));
 			service = n.advertiseService("Controls", &EPOS2::callback, this);
 
 			pthread_create(&threadId, NULL, &EPOS2::threadFunction, this);
@@ -243,7 +243,7 @@ bool EPOS2::prepareEPOSDevice(int g_usNodeId) {
 
 	if ( VCS_GetFaultState(g_pKeyHandle, g_usNodeId, &oIsFault, &g_pErrorCode ) == 0 ) {
 
-		ROS_INFO("GetFaultState");
+		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "GetFaultState");
 		lResult = false;
 
 	}
@@ -254,7 +254,7 @@ bool EPOS2::prepareEPOSDevice(int g_usNodeId) {
 
 			if ( VCS_ClearFault(g_pKeyHandle, g_usNodeId, &g_pErrorCode) == 0) {
 
-				ROS_INFO("ClearFault");
+				RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "ClearFault");
 				lResult = false;
 
 			}
@@ -267,7 +267,7 @@ bool EPOS2::prepareEPOSDevice(int g_usNodeId) {
 
 			if ( VCS_GetEnableState(g_pKeyHandle, g_usNodeId, &oIsEnabled, &g_pErrorCode) == 0 ) {
 
-				ROS_INFO("GetEnableState");
+				RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "GetEnableState");
 				lResult = false;
 
 			}
@@ -278,7 +278,7 @@ bool EPOS2::prepareEPOSDevice(int g_usNodeId) {
 
 					if( VCS_SetEnableState(g_pKeyHandle, g_usNodeId, &g_pErrorCode) == 0 ) {
 
-						ROS_INFO("SetEnableState");
+						RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "SetEnableState");
 						lResult = false;
 
 					}

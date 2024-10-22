@@ -1,4 +1,4 @@
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 #include "stdio.h"
 
 #include <unistd.h>
@@ -12,8 +12,8 @@
 #include <stdexcept>
 
 // messages
-#include "volksbot/ticks.h"
-#include "volksbot/pose2d.h"
+#include <volksbot/msg/ticks.hpp>
+#include <volksbot/msg/pose2d.hpp>
 
 #include "volksbot/odometry.h"
 
@@ -31,8 +31,8 @@ const double Odometry::covariance[36] = { 0.01, 0, 0, 0, 0, 0,
                                           0, 0, 0, 0.174532925, 0, 0,
                                           0, 0, 0, 0, 9999, 0,
                                           0, 0, 0, 0, 0, 99999};
-ros::Time old;
-void Odometry::convertTicks2Odom(const ticksConstPtr& cticks)
+rclcpp::Time old;
+void Odometry::convertTicks2Odom(const ticks::ConstSharedPtr& cticks)
 {
   if (firstticks) {
     oldlticks = cticks->left;
@@ -42,7 +42,7 @@ void Odometry::convertTicks2Odom(const ticksConstPtr& cticks)
     return;
   }
 
-  ros::Time current = cticks->header.stamp; 
+  rclcpp::Time current = cticks->header.stamp; 
 
 //  int left = cticks->left - oldticks.left;
 //  int right = cticks->right - oldticks.right;
@@ -54,7 +54,7 @@ void Odometry::convertTicks2Odom(const ticksConstPtr& cticks)
   oldlticks = cticks->left;
   oldrticks = cticks->right;
   
-  ros::Duration dt = current - old;
+  rclcpp::Duration dt = current - old;
   old  = current;
 
 
@@ -114,7 +114,7 @@ void Odometry::convertTicks2Odom(const ticksConstPtr& cticks)
   publisher.publish(odom);
 
   if(publish_tf) {
-    ros::Time current_time = ros::Time::now();
+    rclcpp::Time current_time = rclcpp::Time::now();
     odom_trans.header.stamp = current_time;// no timestamp data TODO
     odom_trans.header.frame_id = "odom_combined";
     odom_trans.child_frame_id = "base_link";
@@ -126,7 +126,7 @@ void Odometry::convertTicks2Odom(const ticksConstPtr& cticks)
    
     odom_broadcaster.sendTransform(odom_trans);
   }
-  ros::spinOnce();
+  rclcpp::spin_some(node);
   //send the transform
 }
 
@@ -139,9 +139,9 @@ Odometry::Odometry(bool _publish_tf) {
 //file = fopen("/tmp/ist.txt", "w");
   publish_tf = _publish_tf;
   if(publish_tf) {
-    ROS_INFO("With odometry tf");
+    RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "With odometry tf");
   } else {
-    ROS_INFO("Without odometry tf");
+    RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Without odometry tf");
   }
   x = 0;
   z = 0;
@@ -149,7 +149,7 @@ Odometry::Odometry(bool _publish_tf) {
   lastvx = 0;
   lastvth = 0;
 
-  publisher = n.advertise<nav_msgs::Odometry>("odom", 100);
+  publisher = n.advertise<nav_msgs::msg::Odometry>("odom", 100);
   subscriber = n.subscribe("VMC", 20, &Odometry::convertTicks2Odom, this);
   firstticks = true;
   
@@ -181,10 +181,10 @@ Odometry::Odometry(bool _publish_tf) {
 }
 
 void Odometry::update(int rate) {
-  ros::Rate loop_rate(rate);
+  rclcpp::Rate loop_rate(rate);
 
-  while (ros::ok()) {
-    ros::Time current = ros::Time::now();
+  while (rclcpp::ok()) {
+    rclcpp::Time current = rclcpp::Time::now();
     odom.header.stamp= current;// no timestamp data TODO
 
     publisher.publish(odom);
@@ -193,7 +193,7 @@ void Odometry::update(int rate) {
       odom_trans.header.stamp = current;
       odom_broadcaster.sendTransform(odom_trans);
     }
-    ros::spinOnce();
+    rclcpp::spin_some(node);
     loop_rate.sleep();
   }
 

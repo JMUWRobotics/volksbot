@@ -13,7 +13,7 @@ using std::cout;
 using std::endl;
 using std::ifstream;
 
-void ekffilter::addOdom(const nav_msgs::Odometry& odom) {
+void ekffilter::addOdom(const nav_msgs::msg::Odometry& odom) {
   odom_stamp_ = odom.header.stamp;
   tf::quaternionMsgToTF(odom.pose.pose.orientation, q);
   odom_meas_  = tf::Transform(q, tf::Vector3(odom.pose.pose.position.x, odom.pose.pose.position.y, 0));
@@ -21,19 +21,19 @@ void ekffilter::addOdom(const nav_msgs::Odometry& odom) {
     for (unsigned int j=0; j<6; j++) 
       odom_covariance_(i+1, j+1) = odom.pose.covariance[6*i+j];
 
-  my_filter_.addMeasurement(tf::StampedTransform(odom_meas_.inverse(), odom_stamp_, "base_link", "wheelodom"), odom_covariance_);
+  my_filter_.addMeasurement(tf2::StampedTransform(odom_meas_.inverse(), odom_stamp_, "base_link", "wheelodom"), odom_covariance_);
 
 
   // initialize filer with odometry frame
   if ( !my_filter_.isInitialized()){
     my_filter_.initialize(odom_meas_, odom_stamp_);
-    ROS_INFO("Kalman filter initialized with odom measurement");
+    RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Kalman filter initialized with odom measurement");
   }
   updateHistory();
 }
   
 
-void ekffilter::addImu(const sensor_msgs::Imu& imu) {
+void ekffilter::addImu(const sensor_msgs::msg::Imu& imu) {
   imu_stamp_ = imu.header.stamp;
   tf::quaternionMsgToTF(imu.orientation, orientation);
   imu_meas_ = tf::Transform(orientation, tf::Vector3(0,0,0));
@@ -54,7 +54,7 @@ void ekffilter::addImu(const sensor_msgs::Imu& imu) {
     imu_covariance_ = measNoiseImu_Cov;
   }
 
-  my_filter_.addMeasurement(tf::StampedTransform(imu_meas_.inverse(), imu_stamp_, "base_link", "imu"), imu_covariance_);
+  my_filter_.addMeasurement(tf2::StampedTransform(imu_meas_.inverse(), imu_stamp_, "base_link", "imu"), imu_covariance_);
 
   updateHistory();
 }
@@ -64,7 +64,7 @@ void ekffilter::addImu(const sensor_msgs::Imu& imu) {
 
 void ekffilter::updateHistory() {
   // initial value for filter stamp; keep this stamp when no sensors are active
-  filter_stamp_ = ros::Time(INT_MAX, INT_MAX);
+  filter_stamp_ = rclcpp::Time(INT_MAX, INT_MAX);
   filter_stamp_ = std::min(filter_stamp_, odom_stamp_);
   filter_stamp_ = std::min(filter_stamp_, imu_stamp_);  // TODO check wether this will fail at the beginning
 
@@ -79,16 +79,16 @@ void ekffilter::updateHistory() {
       //          ekf_sent_counter_++;
 
       // broadcast most recent estimate to TransformArray
-      tf::StampedTransform tmp;
-      my_filter_.getEstimate(ros::Time(), tmp);
+      tf2::StampedTransform tmp;
+      my_filter_.getEstimate(rclcpp::Time(), tmp);
       //         odom_broadcaster_.sendTransform(StampedTransform(tmp, tmp.stamp_, publish_name, "base_link"));
       // TODO
-      listener->setTransform(tf::StampedTransform(tmp, tmp.stamp_, "odom_combined", "base_link"));
+      listener->setTransform(tf2::StampedTransform(tmp, tmp.stamp_, "odom_combined", "base_link"));
       //std::cout << tmp.stamp_ << std::endl;
 
     }
     if (!diagnostics)
-      ROS_WARN("Robot pose ekf diagnostics discovered a potential problem");
+      RCLCPP_WARN(rclcpp::get_logger("Volksbot"), "Robot pose ekf diagnostics discovered a potential problem");
   }
 
   

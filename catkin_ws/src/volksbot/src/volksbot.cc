@@ -1,4 +1,4 @@
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 #include "stdio.h"
 #include "CVmc.h"
 
@@ -44,8 +44,8 @@ int main(int argc, char* argv[]) {
 
 	printf("Ros init...\n");
 
-	ros::init(argc, argv, "VMC_Module");
-	ros::NodeHandle n;
+	rclcpp::init(argc, argv);
+	auto n = rclcpp::Node::make_shared("VMC_Module");
 
 	std::string controller;
 	std::string device;
@@ -87,7 +87,7 @@ int main(int argc, char* argv[]) {
 
 
 	signal(SIGINT,quit);
-	ros::spin();
+	rclcpp::spin(node);
 
 	if ( controller == "VMC" ) {
 

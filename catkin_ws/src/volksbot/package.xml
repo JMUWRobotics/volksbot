@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
-<package>
+<?xml-model
+  href="http://download.ros.org/schema/package_format3.xsd"
+  schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>volksbot</name>
   <version>0.0.1</version>
   <description>volksbot</description>
@@ -7,25 +10,29 @@
   <license>BSD</license>
   <url>http://ros.org/wiki/volksbot</url>
 
-  <buildtool_depend>catkin</buildtool_depend>
-  <build_depend>std_msgs</build_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+  <depend>std_msgs</depend>
   <build_depend>message_generation</build_depend>
-  <build_depend>roscpp</build_depend>
   <build_depend>std_srvs</build_depend>
   <build_depend>geometry_msgs</build_depend>
-  <build_depend>tf</build_depend>
   <build_depend>nav_msgs</build_depend>
   <build_depend>move_base</build_depend>
-  <run_depend>amcl</run_depend>
-  <run_depend>gmapping</run_depend>
   <build_depend>lms100</build_depend>
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>rclcpp</build_depend>
+  <exec_depend>amcl</exec_depend>
+  <exec_depend>gmapping</exec_depend>
+  <exec_depend>message_runtime</exec_depend>
+  <exec_depend>rosidl_default_runtime</exec_depend>
 
-  <run_depend>roscpp</run_depend>
-  <run_depend>std_msgs</run_depend>
-  <run_depend>message_runtime</run_depend>
+  <!-- relict from ROS implementation, not sure if still necessary -->
+  <!--run_depend>roscpp</run_depend-->
 
   <export>
-    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lodo" />
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lodo"/>
+    <build_type>ament_cmake</build_type>
   </export>
+  <member_of_group>rosidl_interface_packages</member_of_group>
 
 </package>

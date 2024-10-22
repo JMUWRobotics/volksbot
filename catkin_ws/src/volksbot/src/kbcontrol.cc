@@ -1,4 +1,4 @@
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 #include "stdio.h"
 
 #include <unistd.h>
@@ -22,7 +22,7 @@
 #define KEYCODE_Y 0x79
 
 // service
-#include "volksbot/velocities.h"
+#include <volksbot/srv/velocities.hpp>
 
 #include "kbcontrol.h"
 
@@ -73,9 +73,9 @@ void kbcontrol::run() {
   cooked.c_cc[VEOF] = 2;
   tcsetattr(kfd, TCSANOW, &cooked);
   
-  ros::Rate loop_rate(5);
+  rclcpp::Rate loop_rate(5);
 
-  while (ros::ok() ) {
+  while (rclcpp::ok() ) {
     c = KEYCODE_Q;
     read(kfd, &c, 1);
     
@@ -98,7 +98,7 @@ void kbcontrol::run() {
     printf("Call servic: %f %f\n", velocity.request.left, velocity.request.right);
     ros::service::call("Controls", velocity);
     
-    ros::spinOnce();
+    rclcpp::spin_some(node);
     loop_rate.sleep();
   }
 }
@@ -107,7 +107,8 @@ void kbcontrol::run() {
 
 int main(int argc, char* argv[])
 {
-  ros::init(argc, argv, "keyboard_control");
+  rclcpp::init(argc, argv);
+  auto node = rclcpp::Node::make_shared("keyboard_control");
   volksbot::kbcontrol controller;
   controller.run();
 	return 0;

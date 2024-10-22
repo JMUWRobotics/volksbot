@@ -2,9 +2,9 @@
 #define FIREJET_HH
 
 #include "joystick.h"
-#include <ros/ros.h>
-#include "volksbot/vels.h"
-#include <std_msgs/String.h>
+#include "rclcpp/rclcpp.hpp"
+#include <volksbot/msg/vels.hpp>
+#include <std_msgs/msg/string.hpp>
 
 #define BUTTON1   0x00
 #define BUTTON2   0x01
@@ -39,7 +39,7 @@ class Firejet : public Joystick {
     inline double getRightVel() {return rightvel;}
 
   private:
-    ros::NodeHandle n;
+    rclcpp::Node n;
     ros::Publisher publisher;
 
 
@@ -48,7 +48,7 @@ class Firejet : public Joystick {
 
     inline void init() {
       stickx = sticky = speed = 0.0;
-      publisher = n.advertise<volksbot::vels>("Vel", 100);
+      publisher = n.advertise<volksbot::msg::vels>("Vel", 100);
       /*
       gnuplot = popen("gnuplot -persist", "w");
       fprintf(gnuplot, "set xrange[-1:1]\n");

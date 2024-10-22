@@ -1,10 +1,10 @@
 #ifndef ODOMETRY_HH
 #define ODOMETRY_HH
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 
 // messages
-#include "volksbot/ticks.h"
-#include <nav_msgs/Odometry.h>
+#include <volksbot/msg/ticks.hpp>
+#include <nav_msgs/msg/odometry.hpp>
 #include <tf/transform_broadcaster.h>
 
 namespace volksbot {
@@ -12,7 +12,7 @@ namespace volksbot {
   class Odometry {
     private:
 
-      ros::NodeHandle n; 
+      rclcpp::Node n; 
       ros::Publisher publisher;
       tf::TransformBroadcaster odom_broadcaster;
       ros::Subscriber subscriber;
@@ -33,11 +33,11 @@ namespace volksbot {
       static const double covariance[36];
       
 
-      nav_msgs::Odometry odom;
+      nav_msgs::msg::Odometry odom;
       
-      geometry_msgs::Quaternion odom_quat; //quaternion rotation
+      geometry_msgs::msg::Quaternion odom_quat; //quaternion rotation
   
-      geometry_msgs::TransformStamped odom_trans;
+      geometry_msgs::msg::TransformStamped odom_trans;
 
     public:
       Odometry() : Odometry(false) { };
@@ -53,9 +53,9 @@ namespace volksbot {
         B = b;
       }
 
-      void convertTicks2Odom(const ticksConstPtr& cticks);
+      void convertTicks2Odom(const ticks::ConstSharedPtr& cticks);
 
-      const nav_msgs::Odometry& getCurrentOdom() {
+      const nav_msgs::msg::Odometry& getCurrentOdom() {
         return odom;
       }
 

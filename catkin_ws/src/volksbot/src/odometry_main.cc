@@ -2,7 +2,8 @@
 
 int main(int argc, char* argv[])
 {
-  ros::init(argc, argv, "Odometry");
+  rclcpp::init(argc, argv);
+  auto node = rclcpp::Node::make_shared("Odometry");
 
   bool publish_tf = true;
 
@@ -11,7 +12,7 @@ int main(int argc, char* argv[])
   }
 
   volksbot::Odometry odo(publish_tf);
-  ros::spin();
+  rclcpp::spin(node);
   //odo.update(70);
 
 	return 0;

@@ -6,17 +6,17 @@
 #include <native/task.h>
 #include <native/timer.h>
 #endif
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 #include <stdint.h>
-#include "volksbot/ticks.h"
-#include "volksbot/velocities.h"
-#include <std_msgs/String.h>
-#include <geometry_msgs/Twist.h>
-#include "volksbot/vels.h"
+#include <volksbot/msg/ticks.hpp>
+#include <volksbot/srv/velocities.hpp>
+#include <std_msgs/msg/string.hpp>
+#include <geometry_msgs/msg/twist.hpp>
+#include <volksbot/msg/vels.hpp>
 
 #include <cmath>
 
-#include "std_srvs/Empty.h"
+#include <std_srvs/srv/empty.hpp>
 double leftvel = 0.0;
 double rightvel = 0.0;
 
@@ -26,30 +26,30 @@ double rightvel = 0.0;
 //
 //
 
-ros::Time lastcommand;
+rclcpp::Time lastcommand;
 
 namespace VMC {
 
-	bool callback(volksbot::velocities::Request& vel, volksbot::velocities::Response& response) {
-		lastcommand = ros::Time::now();
+	bool callback(volksbot::srv::velocities::Request& vel, volksbot::srv::velocities::Response& response) {
+		lastcommand = rclcpp::Time::now();
 		leftvel = vel.left;
 		rightvel = vel.right;
 		return true;
 	}
 
 
-	void Vcallback(const volksbot::velsConstPtr& vel ) {
-		lastcommand = ros::Time::now();
+	void Vcallback(const volksbot::msg::vels::ConstSharedPtr& vel ) {
+		lastcommand = rclcpp::Time::now();
 		leftvel = vel->left;
 		rightvel = vel->right;
-		//ROS_INFO("Received [%f %f @ %ld]", vel->left, vel->right, vel->id);
+		//RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Received [%f %f @ %ld]", vel->left, vel->right, vel->id);
 	}
 
 	double vx = 0;
 	double vth = 0;
 
-	void CVcallback(const geometry_msgs::Twist::ConstPtr& cmd_vel) {
-		lastcommand = ros::Time::now();
+	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr& cmd_vel) {
+		lastcommand = rclcpp::Time::now();
 		vx = cmd_vel->linear.x;
 		vth = cmd_vel->angular.z;
 		double linear = -cmd_vel->linear.x * 100.0;  // from m/s to cm/s
@@ -93,14 +93,14 @@ namespace VMC {
 
 		CVmc* pThread = (CVmc*)param;  // typecast
 
-		ros::NodeHandle n;
-		ros::Publisher pub = n.advertise<volksbot::ticks>("VMC", 20);
-		volksbot::ticks t;
+		rclcpp::Node n;
+		auto pub = n.advertise<volksbot::msg::ticks>("VMC", 20);
+		volksbot::msg::ticks t;
 		t.header.frame_id = "base_link";
 
-		ros::Subscriber sub = n.subscribe("Vel", 100, Vcallback, ros::TransportHints().reliable().udp().maxDatagramSize(100));
+		auto sub = n.subscribe("Vel", 100, Vcallback, ros::TransportHints().reliable().udp().maxDatagramSize(100));
 
-		ros::Subscriber cmd_vel_sub_ = n.subscribe<geometry_msgs::Twist>("cmd_vel", 10, CVcallback, ros::TransportHints().reliable().udp().maxDatagramSize(100));
+		auto cmd_vel_sub_ = n.subscribe<geometry_msgs::msg::Twist>("cmd_vel", 10, CVcallback, ros::TransportHints().reliable().udp().maxDatagramSize(100));
 		//      ros::TransportHints().reliable().tcp().tcpNoDelay(true));
 
 		ros::ServiceServer service = n.advertiseService("Controls", callback);
@@ -108,12 +108,12 @@ namespace VMC {
 		pThread->clearResponseList();
 		pThread->addStateToResponseList(CVmc::MOTOR_TICKS_ABSOLUTE);
 
-		ROS_INFO("VolksBot starting main loop!");
+		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "VolksBot starting main loop!");
 		pThread->enterCriticalSection();
 		while(pThread->isConnected()) {
-			ros::Time current = ros::Time::now();
+			rclcpp::Time current = rclcpp::Time::now();
 
-			if (current - lastcommand < ros::Duration(50.5) ) {
+			if (current - lastcommand < rclcpp::Duration(50.5) ) {
 
 #ifdef REAL_TIME
 				pThread->setMotors(leftvel, rightvel);
@@ -148,7 +148,7 @@ namespace VMC {
 			t.header.stamp.sec = ts / 1000000000;
 			t.header.stamp.nsec = ts % 1000000000;
 #else
-			t.header.stamp = ros::Time::now();
+			t.header.stamp = rclcpp::Time::now();
 #endif
 
 			t.left = -1* (int) ((long)store.Motor[1].AbsolutRotations.getValue());

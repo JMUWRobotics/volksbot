@@ -1,15 +1,15 @@
 #include "firejet.h"
 
 // service
-#include "volksbot/velocities.h"
-#include "volksbot/vels.h"
+#include <volksbot/srv/velocities.hpp>
+#include <volksbot/msg/vels.hpp>
 
-#include "std_srvs/Empty.h"
+#include <std_srvs/srv/empty.hpp>
 
 #define EPS 0.0000001
 
 void Firejet::handleButton(uint8_t number, bool pressed, uint32_t time) {
-  std_srvs::Empty e;
+  std_srvs::srv::Empty e;
   switch(number) {
     case BUTTON1:
       ros::service::call("startMeasuring",e);
@@ -141,7 +141,7 @@ void Firejet::setSpeed() {
  * Sends commands to the subcribers (robot)
  */
 void Firejet::sendSpeed() {
-  volksbot::vels velocity;
+  volksbot::msg::vels velocity;
   velocity.left = leftvel;
   velocity.right = rightvel;
   publisher.publish(velocity);

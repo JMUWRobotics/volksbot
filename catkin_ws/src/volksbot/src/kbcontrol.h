@@ -1,16 +1,16 @@
-#include <ros/ros.h>
+#include "rclcpp/rclcpp.hpp"
 
 // service
-#include "volksbot/velocities.h"
+#include <volksbot/srv/velocities.hpp>
 
 namespace volksbot {
 
   class kbcontrol {
     private:
 
-      ros::NodeHandle n;
+      rclcpp::Node n;
       ros::ServiceClient client;
-      volksbot::velocities velocity;
+      volksbot::srv::velocities velocity;
       double speed;
       int kfd;
 

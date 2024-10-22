@@ -30,7 +30,7 @@ CCommunicationLayer::~CCommunicationLayer() {
 }
 
 //////////////////////////////////////////////////////////////////////////////
-///  @brief initilize the device so it´s ready to communicate
+///  @brief initilize the device so it's ready to communicate
 ///  @returns true = OK / false = Error
 //////////////////////////////////////////////////////////////////////////////
 bool CCommunicationLayer::initDevice() {
