@@ -1,0 +1,308 @@
+\hypertarget{classTiXmlHandle}{}\doxysection{Ti\+Xml\+Handle Class Reference}
+\label{classTiXmlHandle}\index{TiXmlHandle@{TiXmlHandle}}
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}{Ti\+Xml\+Handle}} (\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$\+\_\+node)
+\begin{DoxyCompactList}\small\item\em Create a handle from any node (at any depth of the tree.) This can be a null pointer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlHandle_a236d7855e1e56ccc7b980630c48c7fd7}{Ti\+Xml\+Handle}} (const \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \&ref)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_ad8e5dcf6a87882674203157f29f8e4db}{operator=}} (const \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \&ref)
+\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_afb1b4c0eda970b320dfd262304cc1d04}{First\+Child}} () const
+\begin{DoxyCompactList}\small\item\em Return a handle to the first child node. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_a586ebaca4a4d0909db65a765d95d5e59}{First\+Child}} (const char $\ast$value) const
+\begin{DoxyCompactList}\small\item\em Return a handle to the first child node with the given name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_af0643f8683f3f2b779b8c9d78c67b2c0}{First\+Child\+Element}} () const
+\begin{DoxyCompactList}\small\item\em Return a handle to the first child element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_a3eaf2d2d4c087cd8a48da261042e75bc}{First\+Child\+Element}} (const char $\ast$value) const
+\begin{DoxyCompactList}\small\item\em Return a handle to the first child element with the given name. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_a9903b035444ee36450fe00ede403f920}{Child}} (const char $\ast$value, int index) const
+\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_a32585942abb28e03eea9c5223f38a659}{Child}} (int index) const
+\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_afccc59d8a0daa8c5d78474fbed430ddb}{Child\+Element}} (const char $\ast$value, int index) const
+\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_a57a639ab0ac99ff9358f675a1b73049a}{Child\+Element}} (int index) const
+\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_afd813aae06c0449b04ccf0237076495e}{First\+Child}} (const std\+::string \&\+\_\+value) const
+\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_ad048deff008dbb4b6887e9ac0d91f7df}{First\+Child\+Element}} (const std\+::string \&\+\_\+value) const
+\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_abc163863954f3e3cf38d08c0773ce066}{Child}} (const std\+::string \&\+\_\+value, int index) const
+\item 
+\mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \mbox{\hyperlink{classTiXmlHandle_afac0eed86787294829cca36c44626be2}{Child\+Element}} (const std\+::string \&\+\_\+value, int index) const
+\item 
+\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$ \mbox{\hyperlink{classTiXmlHandle_a0e436dea2dd869a859e3a4486023f0fa}{To\+Node}} () const
+\item 
+\mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}} $\ast$ \mbox{\hyperlink{classTiXmlHandle_a0e3a5333550237d899b1df2b965611a1}{To\+Element}} () const
+\item 
+\mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} $\ast$ \mbox{\hyperlink{classTiXmlHandle_abde286bce1d5db0d20ec30e573278cdf}{To\+Text}} () const
+\item 
+\mbox{\hyperlink{classTiXmlUnknown}{Ti\+Xml\+Unknown}} $\ast$ \mbox{\hyperlink{classTiXmlHandle_a450ec91dac1ded02d72eb918d062ad31}{To\+Unknown}} () const
+\item 
+\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$ \mbox{\hyperlink{classTiXmlHandle_aec0e3ea58ff98a45cd13507a02e2ca1e}{Node}} () const
+\item 
+\mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}} $\ast$ \mbox{\hyperlink{classTiXmlHandle_ae9b22d71bf5f69ee5fda28f5ad21f19c}{Element}} () const
+\item 
+\mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} $\ast$ \mbox{\hyperlink{classTiXmlHandle_ad3b502c72059421e4dfcc7bda3c392fe}{Text}} () const
+\item 
+\mbox{\hyperlink{classTiXmlUnknown}{Ti\+Xml\+Unknown}} $\ast$ \mbox{\hyperlink{classTiXmlHandle_a12b32f098c7daa5facbc04e9618262c5}{Unknown}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} is a class that wraps a node pointer with null checks; this is an incredibly useful thing. Note that \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} is not part of the Tiny\+Xml D\+OM structure. It is a separate utility class.
+
+Take an example\+: \begin{DoxyVerb}<Document>
+    <Element attributeA = "valueA">
+        <Child attributeB = "value1" />
+        <Child attributeB = "value2" />
+    </Element>
+<Document>
+\end{DoxyVerb}
+
+
+Assuming you want the value of \char`\"{}attribute\+B\char`\"{} in the 2nd \char`\"{}\+Child\char`\"{} element, it\textquotesingle{}s very easy to write a {\itshape lot} of code that looks like\+:
+
+\begin{DoxyVerb}TiXmlElement* root = document.FirstChildElement( "Document" );
+if ( root )
+{
+    TiXmlElement* element = root->FirstChildElement( "Element" );
+    if ( element )
+    {
+        TiXmlElement* child = element->FirstChildElement( "Child" );
+        if ( child )
+        {
+            TiXmlElement* child2 = child->NextSiblingElement( "Child" );
+            if ( child2 )
+            {
+                // Finally do something useful.
+\end{DoxyVerb}
+
+
+And that doesn\textquotesingle{}t even cover \char`\"{}else\char`\"{} cases. \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} addresses the verbosity of such code. A \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} checks for null pointers so it is perfectly safe and correct to use\+:
+
+\begin{DoxyVerb}TiXmlHandle docHandle( &document );
+TiXmlElement* child2 = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).Child( "Child", 1 ).ToElement();
+if ( child2 )
+{
+    // do something useful
+\end{DoxyVerb}
+
+
+Which is M\+U\+CH more concise and useful.
+
+It is also safe to copy handles -\/ internally they are nothing more than node pointers. \begin{DoxyVerb}TiXmlHandle handleCopy = handle;
+\end{DoxyVerb}
+
+
+What they should not be used for is iteration\+:
+
+\begin{DoxyVerb}int i=0; 
+while ( true )
+{
+    TiXmlElement* child = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).Child( "Child", i ).ToElement();
+    if ( !child )
+        break;
+    // do something
+    ++i;
+}
+\end{DoxyVerb}
+
+
+It seems reasonable, but it is in fact two embedded while loops. The Child method is a linear walk to find the element, so this code would iterate much more than it needs to. Instead, prefer\+:
+
+\begin{DoxyVerb}TiXmlElement* child = docHandle.FirstChild( "Document" ).FirstChild( "Element" ).FirstChild( "Child" ).ToElement();
+
+for( child; child; child=child->NextSiblingElement() )
+{
+    // do something
+}
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}\label{classTiXmlHandle_aba18fd7bdefb942ecdea4bf4b8e29ec8}} 
+\index{TiXmlHandle@{TiXmlHandle}!TiXmlHandle@{TiXmlHandle}}
+\index{TiXmlHandle@{TiXmlHandle}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{TiXmlHandle()}{TiXmlHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Ti\+Xml\+Handle\+::\+Ti\+Xml\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$}]{\+\_\+node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Create a handle from any node (at any depth of the tree.) This can be a null pointer. 
+
+\mbox{\Hypertarget{classTiXmlHandle_a236d7855e1e56ccc7b980630c48c7fd7}\label{classTiXmlHandle_a236d7855e1e56ccc7b980630c48c7fd7}} 
+\index{TiXmlHandle@{TiXmlHandle}!TiXmlHandle@{TiXmlHandle}}
+\index{TiXmlHandle@{TiXmlHandle}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{TiXmlHandle()}{TiXmlHandle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Ti\+Xml\+Handle\+::\+Ti\+Xml\+Handle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTiXmlHandle_a9903b035444ee36450fe00ede403f920}\label{classTiXmlHandle_a9903b035444ee36450fe00ede403f920}} 
+\index{TiXmlHandle@{TiXmlHandle}!Child@{Child}}
+\index{Child@{Child}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+Child (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value,  }\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Return a handle to the \char`\"{}index\char`\"{} child with the given name. The first child is 0, the second 1, etc. \mbox{\Hypertarget{classTiXmlHandle_abc163863954f3e3cf38d08c0773ce066}\label{classTiXmlHandle_abc163863954f3e3cf38d08c0773ce066}} 
+\index{TiXmlHandle@{TiXmlHandle}!Child@{Child}}
+\index{Child@{Child}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+value,  }\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTiXmlHandle_a32585942abb28e03eea9c5223f38a659}\label{classTiXmlHandle_a32585942abb28e03eea9c5223f38a659}} 
+\index{TiXmlHandle@{TiXmlHandle}!Child@{Child}}
+\index{Child@{Child}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{Child()}{Child()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+Child (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Return a handle to the \char`\"{}index\char`\"{} child. The first child is 0, the second 1, etc. \mbox{\Hypertarget{classTiXmlHandle_afccc59d8a0daa8c5d78474fbed430ddb}\label{classTiXmlHandle_afccc59d8a0daa8c5d78474fbed430ddb}} 
+\index{TiXmlHandle@{TiXmlHandle}!ChildElement@{ChildElement}}
+\index{ChildElement@{ChildElement}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{ChildElement()}{ChildElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+Child\+Element (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value,  }\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Return a handle to the \char`\"{}index\char`\"{} child element with the given name. The first child element is 0, the second 1, etc. Note that only Ti\+Xml\+Elements are indexed\+: other types are not counted. \mbox{\Hypertarget{classTiXmlHandle_afac0eed86787294829cca36c44626be2}\label{classTiXmlHandle_afac0eed86787294829cca36c44626be2}} 
+\index{TiXmlHandle@{TiXmlHandle}!ChildElement@{ChildElement}}
+\index{ChildElement@{ChildElement}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{ChildElement()}{ChildElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+Child\+Element (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+value,  }\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTiXmlHandle_a57a639ab0ac99ff9358f675a1b73049a}\label{classTiXmlHandle_a57a639ab0ac99ff9358f675a1b73049a}} 
+\index{TiXmlHandle@{TiXmlHandle}!ChildElement@{ChildElement}}
+\index{ChildElement@{ChildElement}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{ChildElement()}{ChildElement()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+Child\+Element (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const}
+
+Return a handle to the \char`\"{}index\char`\"{} child element. The first child element is 0, the second 1, etc. Note that only Ti\+Xml\+Elements are indexed\+: other types are not counted. \mbox{\Hypertarget{classTiXmlHandle_ae9b22d71bf5f69ee5fda28f5ad21f19c}\label{classTiXmlHandle_ae9b22d71bf5f69ee5fda28f5ad21f19c}} 
+\index{TiXmlHandle@{TiXmlHandle}!Element@{Element}}
+\index{Element@{Element}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{Element()}{Element()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}}$\ast$ Ti\+Xml\+Handle\+::\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]use To\+Element. Return the handle as a \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}}. This may return null. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classTiXmlHandle_afb1b4c0eda970b320dfd262304cc1d04}\label{classTiXmlHandle_afb1b4c0eda970b320dfd262304cc1d04}} 
+\index{TiXmlHandle@{TiXmlHandle}!FirstChild@{FirstChild}}
+\index{FirstChild@{FirstChild}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{FirstChild()}{FirstChild()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+First\+Child (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return a handle to the first child node. 
+
+\mbox{\Hypertarget{classTiXmlHandle_a586ebaca4a4d0909db65a765d95d5e59}\label{classTiXmlHandle_a586ebaca4a4d0909db65a765d95d5e59}} 
+\index{TiXmlHandle@{TiXmlHandle}!FirstChild@{FirstChild}}
+\index{FirstChild@{FirstChild}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{FirstChild()}{FirstChild()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+First\+Child (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Return a handle to the first child node with the given name. 
+
+\mbox{\Hypertarget{classTiXmlHandle_afd813aae06c0449b04ccf0237076495e}\label{classTiXmlHandle_afd813aae06c0449b04ccf0237076495e}} 
+\index{TiXmlHandle@{TiXmlHandle}!FirstChild@{FirstChild}}
+\index{FirstChild@{FirstChild}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{FirstChild()}{FirstChild()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+First\+Child (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTiXmlHandle_af0643f8683f3f2b779b8c9d78c67b2c0}\label{classTiXmlHandle_af0643f8683f3f2b779b8c9d78c67b2c0}} 
+\index{TiXmlHandle@{TiXmlHandle}!FirstChildElement@{FirstChildElement}}
+\index{FirstChildElement@{FirstChildElement}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{FirstChildElement()}{FirstChildElement()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+First\+Child\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return a handle to the first child element. 
+
+\mbox{\Hypertarget{classTiXmlHandle_a3eaf2d2d4c087cd8a48da261042e75bc}\label{classTiXmlHandle_a3eaf2d2d4c087cd8a48da261042e75bc}} 
+\index{TiXmlHandle@{TiXmlHandle}!FirstChildElement@{FirstChildElement}}
+\index{FirstChildElement@{FirstChildElement}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{FirstChildElement()}{FirstChildElement()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+First\+Child\+Element (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Return a handle to the first child element with the given name. 
+
+\mbox{\Hypertarget{classTiXmlHandle_ad048deff008dbb4b6887e9ac0d91f7df}\label{classTiXmlHandle_ad048deff008dbb4b6887e9ac0d91f7df}} 
+\index{TiXmlHandle@{TiXmlHandle}!FirstChildElement@{FirstChildElement}}
+\index{FirstChildElement@{FirstChildElement}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{FirstChildElement()}{FirstChildElement()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::\+First\+Child\+Element (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTiXmlHandle_aec0e3ea58ff98a45cd13507a02e2ca1e}\label{classTiXmlHandle_aec0e3ea58ff98a45cd13507a02e2ca1e}} 
+\index{TiXmlHandle@{TiXmlHandle}!Node@{Node}}
+\index{Node@{Node}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}}$\ast$ Ti\+Xml\+Handle\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]use To\+Node. Return the handle as a \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}}. This may return null. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classTiXmlHandle_ad8e5dcf6a87882674203157f29f8e4db}\label{classTiXmlHandle_ad8e5dcf6a87882674203157f29f8e4db}} 
+\index{TiXmlHandle@{TiXmlHandle}!operator=@{operator=}}
+\index{operator=@{operator=}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} Ti\+Xml\+Handle\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlHandle}{Ti\+Xml\+Handle}} \&}]{ref }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTiXmlHandle_ad3b502c72059421e4dfcc7bda3c392fe}\label{classTiXmlHandle_ad3b502c72059421e4dfcc7bda3c392fe}} 
+\index{TiXmlHandle@{TiXmlHandle}!Text@{Text}}
+\index{Text@{Text}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{Text()}{Text()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}}$\ast$ Ti\+Xml\+Handle\+::\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]use \mbox{\hyperlink{classTiXmlHandle_abde286bce1d5db0d20ec30e573278cdf}{To\+Text()}} Return the handle as a \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}}. This may return null. \end{DoxyRefDesc}
+\mbox{\Hypertarget{classTiXmlHandle_a0e3a5333550237d899b1df2b965611a1}\label{classTiXmlHandle_a0e3a5333550237d899b1df2b965611a1}} 
+\index{TiXmlHandle@{TiXmlHandle}!ToElement@{ToElement}}
+\index{ToElement@{ToElement}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{ToElement()}{ToElement()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}}$\ast$ Ti\+Xml\+Handle\+::\+To\+Element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the handle as a \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}}. This may return null. \mbox{\Hypertarget{classTiXmlHandle_a0e436dea2dd869a859e3a4486023f0fa}\label{classTiXmlHandle_a0e436dea2dd869a859e3a4486023f0fa}} 
+\index{TiXmlHandle@{TiXmlHandle}!ToNode@{ToNode}}
+\index{ToNode@{ToNode}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{ToNode()}{ToNode()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}}$\ast$ Ti\+Xml\+Handle\+::\+To\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the handle as a \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}}. This may return null. \mbox{\Hypertarget{classTiXmlHandle_abde286bce1d5db0d20ec30e573278cdf}\label{classTiXmlHandle_abde286bce1d5db0d20ec30e573278cdf}} 
+\index{TiXmlHandle@{TiXmlHandle}!ToText@{ToText}}
+\index{ToText@{ToText}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{ToText()}{ToText()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}}$\ast$ Ti\+Xml\+Handle\+::\+To\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the handle as a \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}}. This may return null. \mbox{\Hypertarget{classTiXmlHandle_a450ec91dac1ded02d72eb918d062ad31}\label{classTiXmlHandle_a450ec91dac1ded02d72eb918d062ad31}} 
+\index{TiXmlHandle@{TiXmlHandle}!ToUnknown@{ToUnknown}}
+\index{ToUnknown@{ToUnknown}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{ToUnknown()}{ToUnknown()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlUnknown}{Ti\+Xml\+Unknown}}$\ast$ Ti\+Xml\+Handle\+::\+To\+Unknown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Return the handle as a \mbox{\hyperlink{classTiXmlUnknown}{Ti\+Xml\+Unknown}}. This may return null. \mbox{\Hypertarget{classTiXmlHandle_a12b32f098c7daa5facbc04e9618262c5}\label{classTiXmlHandle_a12b32f098c7daa5facbc04e9618262c5}} 
+\index{TiXmlHandle@{TiXmlHandle}!Unknown@{Unknown}}
+\index{Unknown@{Unknown}!TiXmlHandle@{TiXmlHandle}}
+\doxysubsubsection{\texorpdfstring{Unknown()}{Unknown()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlUnknown}{Ti\+Xml\+Unknown}}$\ast$ Ti\+Xml\+Handle\+::\+Unknown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]use \mbox{\hyperlink{classTiXmlHandle_a450ec91dac1ded02d72eb918d062ad31}{To\+Unknown()}} Return the handle as a \mbox{\hyperlink{classTiXmlUnknown}{Ti\+Xml\+Unknown}}. This may return null. \end{DoxyRefDesc}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/tinyxml/\mbox{\hyperlink{tinyxml_8h}{tinyxml.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/\mbox{\hyperlink{tinyxml_8cpp}{tinyxml.\+cpp}}\end{DoxyCompactItemize}

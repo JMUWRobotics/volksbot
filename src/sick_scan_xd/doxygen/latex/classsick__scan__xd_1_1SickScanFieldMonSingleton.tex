@@ -1,0 +1,118 @@
+\hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Field\+Mon\+Singleton Class Reference}
+\label{classsick__scan__xd_1_1SickScanFieldMonSingleton}\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+field\+\_\+mon.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonField}{Sick\+Scan\+Mon\+Field}} $>$ \& \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton_af818626334f23e897714053796d42db2}{get\+Mon\+Fields}} (void) const
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton_a440ea094581ec7a9950f68c05b71d7eb}{set\+Active\+Fieldset}} (int active\+\_\+fieldset)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton_adc95a2229b7e7eda854fbb26286d0439}{get\+Active\+Fieldset}} (void)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton_a5b8864959d8de012db1950e6416beb53}{parse\+Ascii\+L\+I\+Dinputstate\+Msg}} (unsigned char $\ast$datagram, int datagram\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Parse binary L\+I\+Dinputstate message and set active field set. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton_a178e864eea92a6ac8b330f2fbd957d8d}{parse\+Binary\+L\+I\+Dinputstate\+Msg}} (unsigned char $\ast$datagram, int datagram\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Parse binary L\+I\+Dinputstate message and set active field set. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton_a25682d6ecb9d9c139bde6f8afffcc3ed}{parse\+Binary\+Datagram}} (std\+::vector$<$ unsigned char $>$ datagramm, float rect\+Field\+Angle\+Ref\+Point\+Offset\+Rad)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton_a50891ce9295774bd216cd1a758646e29}{parse\+Ascii\+Datagram}} (std\+::vector$<$ unsigned char $>$ datagramm, float rect\+Field\+Angle\+Ref\+Point\+Offset\+Rad)
+\begin{DoxyCompactList}\small\item\em Parsing Ascii datagram. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton}{Sick\+Scan\+Field\+Mon\+Singleton}} $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton_a3baed55849d50b101fb8f5e47ba3cb6c}{get\+Instance}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton_adc95a2229b7e7eda854fbb26286d0439}\label{classsick__scan__xd_1_1SickScanFieldMonSingleton_adc95a2229b7e7eda854fbb26286d0439}} 
+\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}!getActiveFieldset@{getActiveFieldset}}
+\index{getActiveFieldset@{getActiveFieldset}!sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+\doxysubsubsection{\texorpdfstring{getActiveFieldset()}{getActiveFieldset()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Field\+Mon\+Singleton\+::get\+Active\+Fieldset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton_a3baed55849d50b101fb8f5e47ba3cb6c}\label{classsick__scan__xd_1_1SickScanFieldMonSingleton_a3baed55849d50b101fb8f5e47ba3cb6c}} 
+\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickScanFieldMonSingleton}{Sick\+Scan\+Field\+Mon\+Singleton}} $\ast$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Field\+Mon\+Singleton\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton_af818626334f23e897714053796d42db2}\label{classsick__scan__xd_1_1SickScanFieldMonSingleton_af818626334f23e897714053796d42db2}} 
+\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}!getMonFields@{getMonFields}}
+\index{getMonFields@{getMonFields}!sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+\doxysubsubsection{\texorpdfstring{getMonFields()}{getMonFields()}}
+{\footnotesize\ttfamily const std\+::vector$<$\mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonField}{Sick\+Scan\+Mon\+Field}}$>$\& sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Field\+Mon\+Singleton\+::get\+Mon\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton_a50891ce9295774bd216cd1a758646e29}\label{classsick__scan__xd_1_1SickScanFieldMonSingleton_a50891ce9295774bd216cd1a758646e29}} 
+\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}!parseAsciiDatagram@{parseAsciiDatagram}}
+\index{parseAsciiDatagram@{parseAsciiDatagram}!sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+\doxysubsubsection{\texorpdfstring{parseAsciiDatagram()}{parseAsciiDatagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Field\+Mon\+Singleton\+::parse\+Ascii\+Datagram (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$}]{datagramm,  }\item[{float}]{rect\+Field\+Angle\+Ref\+Point\+Offset\+Rad }\end{DoxyParamCaption})}
+
+
+
+Parsing Ascii datagram. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton_a5b8864959d8de012db1950e6416beb53}\label{classsick__scan__xd_1_1SickScanFieldMonSingleton_a5b8864959d8de012db1950e6416beb53}} 
+\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}!parseAsciiLIDinputstateMsg@{parseAsciiLIDinputstateMsg}}
+\index{parseAsciiLIDinputstateMsg@{parseAsciiLIDinputstateMsg}!sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+\doxysubsubsection{\texorpdfstring{parseAsciiLIDinputstateMsg()}{parseAsciiLIDinputstateMsg()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Field\+Mon\+Singleton\+::parse\+Ascii\+L\+I\+Dinputstate\+Msg (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{datagram,  }\item[{int}]{datagram\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Parse binary L\+I\+Dinputstate message and set active field set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagramm} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton_a25682d6ecb9d9c139bde6f8afffcc3ed}\label{classsick__scan__xd_1_1SickScanFieldMonSingleton_a25682d6ecb9d9c139bde6f8afffcc3ed}} 
+\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}!parseBinaryDatagram@{parseBinaryDatagram}}
+\index{parseBinaryDatagram@{parseBinaryDatagram}!sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+\doxysubsubsection{\texorpdfstring{parseBinaryDatagram()}{parseBinaryDatagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Field\+Mon\+Singleton\+::parse\+Binary\+Datagram (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$}]{datagramm,  }\item[{float}]{rect\+Field\+Angle\+Ref\+Point\+Offset\+Rad }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton_a178e864eea92a6ac8b330f2fbd957d8d}\label{classsick__scan__xd_1_1SickScanFieldMonSingleton_a178e864eea92a6ac8b330f2fbd957d8d}} 
+\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}!parseBinaryLIDinputstateMsg@{parseBinaryLIDinputstateMsg}}
+\index{parseBinaryLIDinputstateMsg@{parseBinaryLIDinputstateMsg}!sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+\doxysubsubsection{\texorpdfstring{parseBinaryLIDinputstateMsg()}{parseBinaryLIDinputstateMsg()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Field\+Mon\+Singleton\+::parse\+Binary\+L\+I\+Dinputstate\+Msg (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{datagramm,  }\item[{int}]{datagram\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Parse binary L\+I\+Dinputstate message and set active field set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagramm} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanFieldMonSingleton_a440ea094581ec7a9950f68c05b71d7eb}\label{classsick__scan__xd_1_1SickScanFieldMonSingleton_a440ea094581ec7a9950f68c05b71d7eb}} 
+\index{sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}!setActiveFieldset@{setActiveFieldset}}
+\index{setActiveFieldset@{setActiveFieldset}!sick\_scan\_xd::SickScanFieldMonSingleton@{sick\_scan\_xd::SickScanFieldMonSingleton}}
+\doxysubsubsection{\texorpdfstring{setActiveFieldset()}{setActiveFieldset()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Field\+Mon\+Singleton\+::set\+Active\+Fieldset (\begin{DoxyParamCaption}\item[{int}]{active\+\_\+fieldset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__field__mon_8h}{sick\+\_\+generic\+\_\+field\+\_\+mon.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__generic__field__mon_8cpp}{sick\+\_\+generic\+\_\+field\+\_\+mon.\+cpp}}\end{DoxyCompactItemize}

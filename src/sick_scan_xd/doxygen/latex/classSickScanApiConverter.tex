@@ -1,0 +1,90 @@
+\hypertarget{classSickScanApiConverter}{}\doxysection{Sick\+Scan\+Api\+Converter Class Reference}
+\label{classSickScanApiConverter}\index{SickScanApiConverter@{SickScanApiConverter}}
+
+
+{\ttfamily \#include $<$sick\+\_\+scan\+\_\+api\+\_\+converter.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static sensor\+\_\+msgs\+::\+Point\+Cloud2 \mbox{\hyperlink{classSickScanApiConverter_a8000cea50800c64df1ca93510444892f}{convert\+Point\+Cloud\+Msg}} (const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} \&src\+\_\+msg)
+\item 
+static sensor\+\_\+msgs\+::\+Point\+Cloud2 \mbox{\hyperlink{classSickScanApiConverter_ae912d7504fb7049c3a2a273cd98412cb}{convert\+Polar\+Point\+Cloud\+Msg}} (const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} \&src\+\_\+msg)
+\item 
+static sensor\+\_\+msgs\+::\+Imu \mbox{\hyperlink{classSickScanApiConverter_a103234f32bb191f0cd2b12af28f6af5e}{convert\+Imu\+Msg}} (const \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} \&src\+\_\+msg)
+\item 
+static sick\+\_\+scan\+\_\+xd\+::\+L\+F\+Erec\+Msg \mbox{\hyperlink{classSickScanApiConverter_ae676d32411b32f01c0098a88a13665d5}{convert\+L\+F\+Erec\+Msg}} (const \mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} \&src\+\_\+msg)
+\item 
+static sick\+\_\+scan\+\_\+xd\+::\+L\+I\+Doutputstate\+Msg \mbox{\hyperlink{classSickScanApiConverter_aecf852a9c1d41e30d360a256744b34cc}{convert\+L\+I\+Doutputstate\+Msg}} (const \mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} \&src\+\_\+msg)
+\item 
+static sick\+\_\+scan\+\_\+xd\+::\+Radar\+Scan \mbox{\hyperlink{classSickScanApiConverter_aa8c2fd2f777ddfbe626df22d139d0205}{convert\+Radar\+Scan\+Msg}} (const \mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} \&src\+\_\+msg)
+\item 
+static sensor\+\_\+msgs\+::\+Point\+Cloud2 \mbox{\hyperlink{classSickScanApiConverter_a6dc95c6af491041822b2ca088ac5c1ef}{convert\+Radar\+Objects\+To\+Point\+Cloud}} (const \mbox{\hyperlink{sick__scan__api_8h_a4d38c9f31a42d7a4a9566384e8529d58}{Sick\+Scan\+Header}} \&header, const sick\+\_\+scan\+\_\+xd\+::\+Radar\+Object $\ast$radar\+\_\+objects, int num\+\_\+objects)
+\item 
+static sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Object\+Array \mbox{\hyperlink{classSickScanApiConverter_a9ec7058e0f9661a93b8b55889ab396e5}{convert\+Ldmrs\+Object\+Array}} (const \mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} \&src\+\_\+msg)
+\item 
+static visualization\+\_\+msgs\+::\+Marker\+Array \mbox{\hyperlink{classSickScanApiConverter_a0cbbcff7a61652ffbb72a809f23ed092}{convert\+Visualization\+Marker\+Msg}} (const \mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} \&src\+\_\+msg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSickScanApiConverter_a103234f32bb191f0cd2b12af28f6af5e}\label{classSickScanApiConverter_a103234f32bb191f0cd2b12af28f6af5e}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertImuMsg@{convertImuMsg}}
+\index{convertImuMsg@{convertImuMsg}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertImuMsg()}{convertImuMsg()}}
+{\footnotesize\ttfamily sensor\+\_\+msgs\+::\+Imu Sick\+Scan\+Api\+Converter\+::convert\+Imu\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSickScanApiConverter_a9ec7058e0f9661a93b8b55889ab396e5}\label{classSickScanApiConverter_a9ec7058e0f9661a93b8b55889ab396e5}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertLdmrsObjectArray@{convertLdmrsObjectArray}}
+\index{convertLdmrsObjectArray@{convertLdmrsObjectArray}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertLdmrsObjectArray()}{convertLdmrsObjectArray()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Object\+Array Sick\+Scan\+Api\+Converter\+::convert\+Ldmrs\+Object\+Array (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSickScanApiConverter_ae676d32411b32f01c0098a88a13665d5}\label{classSickScanApiConverter_ae676d32411b32f01c0098a88a13665d5}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertLFErecMsg@{convertLFErecMsg}}
+\index{convertLFErecMsg@{convertLFErecMsg}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertLFErecMsg()}{convertLFErecMsg()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+L\+F\+Erec\+Msg Sick\+Scan\+Api\+Converter\+::convert\+L\+F\+Erec\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSickScanApiConverter_aecf852a9c1d41e30d360a256744b34cc}\label{classSickScanApiConverter_aecf852a9c1d41e30d360a256744b34cc}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertLIDoutputstateMsg@{convertLIDoutputstateMsg}}
+\index{convertLIDoutputstateMsg@{convertLIDoutputstateMsg}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertLIDoutputstateMsg()}{convertLIDoutputstateMsg()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+L\+I\+Doutputstate\+Msg Sick\+Scan\+Api\+Converter\+::convert\+L\+I\+Doutputstate\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSickScanApiConverter_a8000cea50800c64df1ca93510444892f}\label{classSickScanApiConverter_a8000cea50800c64df1ca93510444892f}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertPointCloudMsg@{convertPointCloudMsg}}
+\index{convertPointCloudMsg@{convertPointCloudMsg}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertPointCloudMsg()}{convertPointCloudMsg()}}
+{\footnotesize\ttfamily sensor\+\_\+msgs\+::\+Point\+Cloud2 Sick\+Scan\+Api\+Converter\+::convert\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSickScanApiConverter_ae912d7504fb7049c3a2a273cd98412cb}\label{classSickScanApiConverter_ae912d7504fb7049c3a2a273cd98412cb}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertPolarPointCloudMsg@{convertPolarPointCloudMsg}}
+\index{convertPolarPointCloudMsg@{convertPolarPointCloudMsg}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertPolarPointCloudMsg()}{convertPolarPointCloudMsg()}}
+{\footnotesize\ttfamily sensor\+\_\+msgs\+::\+Point\+Cloud2 Sick\+Scan\+Api\+Converter\+::convert\+Polar\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSickScanApiConverter_a6dc95c6af491041822b2ca088ac5c1ef}\label{classSickScanApiConverter_a6dc95c6af491041822b2ca088ac5c1ef}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertRadarObjectsToPointCloud@{convertRadarObjectsToPointCloud}}
+\index{convertRadarObjectsToPointCloud@{convertRadarObjectsToPointCloud}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertRadarObjectsToPointCloud()}{convertRadarObjectsToPointCloud()}}
+{\footnotesize\ttfamily sensor\+\_\+msgs\+::\+Point\+Cloud2 Sick\+Scan\+Api\+Converter\+::convert\+Radar\+Objects\+To\+Point\+Cloud (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_a4d38c9f31a42d7a4a9566384e8529d58}{Sick\+Scan\+Header}} \&}]{header,  }\item[{const sick\+\_\+scan\+\_\+xd\+::\+Radar\+Object $\ast$}]{radar\+\_\+objects,  }\item[{int}]{num\+\_\+objects }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSickScanApiConverter_aa8c2fd2f777ddfbe626df22d139d0205}\label{classSickScanApiConverter_aa8c2fd2f777ddfbe626df22d139d0205}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertRadarScanMsg@{convertRadarScanMsg}}
+\index{convertRadarScanMsg@{convertRadarScanMsg}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertRadarScanMsg()}{convertRadarScanMsg()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Radar\+Scan Sick\+Scan\+Api\+Converter\+::convert\+Radar\+Scan\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSickScanApiConverter_a0cbbcff7a61652ffbb72a809f23ed092}\label{classSickScanApiConverter_a0cbbcff7a61652ffbb72a809f23ed092}} 
+\index{SickScanApiConverter@{SickScanApiConverter}!convertVisualizationMarkerMsg@{convertVisualizationMarkerMsg}}
+\index{convertVisualizationMarkerMsg@{convertVisualizationMarkerMsg}!SickScanApiConverter@{SickScanApiConverter}}
+\doxysubsubsection{\texorpdfstring{convertVisualizationMarkerMsg()}{convertVisualizationMarkerMsg()}}
+{\footnotesize\ttfamily visualization\+\_\+msgs\+::\+Marker\+Array Sick\+Scan\+Api\+Converter\+::convert\+Visualization\+Marker\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan\+\_\+xd\+\_\+api/\mbox{\hyperlink{sick__scan__api__converter_8h}{sick\+\_\+scan\+\_\+api\+\_\+converter.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scan\+\_\+xd\+\_\+api/\mbox{\hyperlink{sick__scan__api__converter_8cpp}{sick\+\_\+scan\+\_\+api\+\_\+converter.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\hypertarget{classsick__scansegment__xd_1_1TimingStatistics}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Timing\+Statistics Class Reference}
+\label{classsick__scansegment__xd_1_1TimingStatistics}\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+
+
+{\ttfamily \#include $<$time\+\_\+util.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_a782bc1fd87f89ae79b76231bea278fd0}{Timing\+Statistics}} ()
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_acd81ea208101dc19fca8c50dca9a3770}{Add\+Time\+Milliseconds}} (double t)
+\item 
+double \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_ab4cad4a4e58393d01f10c18a9dece69a}{Mean\+Milliseconds}} (void) const
+\item 
+double \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_ad78db5c1a7f4fd70c85194b5ec716d3c}{Stddev\+Milliseconds}} (void) const
+\item 
+double \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_a4f5ebece6da5421709f3ddfebfc73789}{Max\+Milliseconds}} (void) const
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_ad758f66b337f3a96436f09be80ec38ed}{Print\+Hist\+Milliseconds}} (const std\+::string \&separator=\char`\"{},\char`\"{}) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_af1fd2132e16e7ec371139ce3fbea71f9}{m\+\_\+cnt}}
+\item 
+double \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_a0da5503f5b57b9ba80ea059be7542687}{m\+\_\+sum}}
+\item 
+double \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_af65e72f0d6a4c13ddc65bc36f4515aaf}{m\+\_\+sum\+\_\+sq}}
+\item 
+double \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_a49e1086a0b9aa3454b1705de7fedd7ac}{m\+\_\+max}}
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1TimingStatistics_a1cd26e25c71ac49490b8b23c08660e8b}{m\+\_\+hist}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_a782bc1fd87f89ae79b76231bea278fd0}\label{classsick__scansegment__xd_1_1TimingStatistics_a782bc1fd87f89ae79b76231bea278fd0}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!TimingStatistics@{TimingStatistics}}
+\index{TimingStatistics@{TimingStatistics}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{TimingStatistics()}{TimingStatistics()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::\+Timing\+Statistics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_acd81ea208101dc19fca8c50dca9a3770}\label{classsick__scansegment__xd_1_1TimingStatistics_acd81ea208101dc19fca8c50dca9a3770}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!AddTimeMilliseconds@{AddTimeMilliseconds}}
+\index{AddTimeMilliseconds@{AddTimeMilliseconds}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{AddTimeMilliseconds()}{AddTimeMilliseconds()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::\+Add\+Time\+Milliseconds (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_a4f5ebece6da5421709f3ddfebfc73789}\label{classsick__scansegment__xd_1_1TimingStatistics_a4f5ebece6da5421709f3ddfebfc73789}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!MaxMilliseconds@{MaxMilliseconds}}
+\index{MaxMilliseconds@{MaxMilliseconds}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{MaxMilliseconds()}{MaxMilliseconds()}}
+{\footnotesize\ttfamily double sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::\+Max\+Milliseconds (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_ab4cad4a4e58393d01f10c18a9dece69a}\label{classsick__scansegment__xd_1_1TimingStatistics_ab4cad4a4e58393d01f10c18a9dece69a}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!MeanMilliseconds@{MeanMilliseconds}}
+\index{MeanMilliseconds@{MeanMilliseconds}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{MeanMilliseconds()}{MeanMilliseconds()}}
+{\footnotesize\ttfamily double sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::\+Mean\+Milliseconds (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_ad758f66b337f3a96436f09be80ec38ed}\label{classsick__scansegment__xd_1_1TimingStatistics_ad758f66b337f3a96436f09be80ec38ed}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!PrintHistMilliseconds@{PrintHistMilliseconds}}
+\index{PrintHistMilliseconds@{PrintHistMilliseconds}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{PrintHistMilliseconds()}{PrintHistMilliseconds()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::\+Print\+Hist\+Milliseconds (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{separator = {\ttfamily \char`\"{},\char`\"{}} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_ad78db5c1a7f4fd70c85194b5ec716d3c}\label{classsick__scansegment__xd_1_1TimingStatistics_ad78db5c1a7f4fd70c85194b5ec716d3c}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!StddevMilliseconds@{StddevMilliseconds}}
+\index{StddevMilliseconds@{StddevMilliseconds}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{StddevMilliseconds()}{StddevMilliseconds()}}
+{\footnotesize\ttfamily double sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::\+Stddev\+Milliseconds (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_af1fd2132e16e7ec371139ce3fbea71f9}\label{classsick__scansegment__xd_1_1TimingStatistics_af1fd2132e16e7ec371139ce3fbea71f9}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!m\_cnt@{m\_cnt}}
+\index{m\_cnt@{m\_cnt}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{m\_cnt}{m\_cnt}}
+{\footnotesize\ttfamily size\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::m\+\_\+cnt\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_a1cd26e25c71ac49490b8b23c08660e8b}\label{classsick__scansegment__xd_1_1TimingStatistics_a1cd26e25c71ac49490b8b23c08660e8b}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!m\_hist@{m\_hist}}
+\index{m\_hist@{m\_hist}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{m\_hist}{m\_hist}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::m\+\_\+hist\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_a49e1086a0b9aa3454b1705de7fedd7ac}\label{classsick__scansegment__xd_1_1TimingStatistics_a49e1086a0b9aa3454b1705de7fedd7ac}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!m\_max@{m\_max}}
+\index{m\_max@{m\_max}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{m\_max}{m\_max}}
+{\footnotesize\ttfamily double sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::m\+\_\+max\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_a0da5503f5b57b9ba80ea059be7542687}\label{classsick__scansegment__xd_1_1TimingStatistics_a0da5503f5b57b9ba80ea059be7542687}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!m\_sum@{m\_sum}}
+\index{m\_sum@{m\_sum}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{m\_sum}{m\_sum}}
+{\footnotesize\ttfamily double sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::m\+\_\+sum\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1TimingStatistics_af65e72f0d6a4c13ddc65bc36f4515aaf}\label{classsick__scansegment__xd_1_1TimingStatistics_af65e72f0d6a4c13ddc65bc36f4515aaf}} 
+\index{sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}!m\_sum\_sq@{m\_sum\_sq}}
+\index{m\_sum\_sq@{m\_sum\_sq}!sick\_scansegment\_xd::TimingStatistics@{sick\_scansegment\_xd::TimingStatistics}}
+\doxysubsubsection{\texorpdfstring{m\_sum\_sq}{m\_sum\_sq}}
+{\footnotesize\ttfamily double sick\+\_\+scansegment\+\_\+xd\+::\+Timing\+Statistics\+::m\+\_\+sum\+\_\+sq\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{time__util_8h}{time\+\_\+util.\+h}}\end{DoxyCompactItemize}

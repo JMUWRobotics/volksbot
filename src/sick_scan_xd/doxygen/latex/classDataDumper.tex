@@ -1,0 +1,96 @@
+\hypertarget{classDataDumper}{}\doxysection{Data\+Dumper Class Reference}
+\label{classDataDumper}\index{DataDumper@{DataDumper}}
+
+
+{\ttfamily \#include $<$data\+Dumper.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDataDumper_a9ab9b31d32fdb991cd478ed134e8956c}{$\sim$\+Data\+Dumper}} ()
+\item 
+int \mbox{\hyperlink{classDataDumper_a5f2cc6e8628f4c4c0fe0dd1a46055689}{push\+Data}} (double time\+Stamp, std\+::string info, double val)
+\item 
+int \mbox{\hyperlink{classDataDumper_a8ec8d20148b0947b96799b89960f582b}{write\+Data\+To\+Csv}} (std\+::string file\+Name)
+\item 
+int \mbox{\hyperlink{classDataDumper_a937b3691ea49551f6249b6053d2898ea}{write\+To\+File\+Name\+When\+Buffer\+Is\+Full}} (std\+::string filename)
+\item 
+int \mbox{\hyperlink{classDataDumper_a740968004a790fbc009553c9db781b3e}{dump\+Uchar\+Buffer\+To\+Console}} (unsigned char $\ast$buffer, int buf\+Len)
+\item 
+int \mbox{\hyperlink{classDataDumper_a389d6a9518a3f4573ba1bb62cf1218e6}{testbed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDataDumper}{Data\+Dumper}} \& \mbox{\hyperlink{classDataDumper_a849b9f2cf75d0131699b68c16ad6135c}{instance}} ()
+\item 
+static std\+::string \mbox{\hyperlink{classDataDumper_a7969960d3ff9a8cde9b3f1e39643f741}{bin\+Data\+To\+Ascii\+String}} (const uint8\+\_\+t $\ast$binary\+\_\+data, int length)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDataDumper_a9ab9b31d32fdb991cd478ed134e8956c}\label{classDataDumper_a9ab9b31d32fdb991cd478ed134e8956c}} 
+\index{DataDumper@{DataDumper}!````~DataDumper@{$\sim$DataDumper}}
+\index{````~DataDumper@{$\sim$DataDumper}!DataDumper@{DataDumper}}
+\doxysubsubsection{\texorpdfstring{$\sim$DataDumper()}{~DataDumper()}}
+{\footnotesize\ttfamily Data\+Dumper\+::$\sim$\+Data\+Dumper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDataDumper_a7969960d3ff9a8cde9b3f1e39643f741}\label{classDataDumper_a7969960d3ff9a8cde9b3f1e39643f741}} 
+\index{DataDumper@{DataDumper}!binDataToAsciiString@{binDataToAsciiString}}
+\index{binDataToAsciiString@{binDataToAsciiString}!DataDumper@{DataDumper}}
+\doxysubsubsection{\texorpdfstring{binDataToAsciiString()}{binDataToAsciiString()}}
+{\footnotesize\ttfamily std\+::string Data\+Dumper\+::bin\+Data\+To\+Ascii\+String (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{binary\+\_\+data,  }\item[{int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts and returns binary data to ascii string with non-\/printable data represented as \char`\"{}\textbackslash{}x$<$hexvalue$>$\char`\"{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em binary\+\_\+data} & binary input data \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hex string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classDataDumper_a740968004a790fbc009553c9db781b3e}\label{classDataDumper_a740968004a790fbc009553c9db781b3e}} 
+\index{DataDumper@{DataDumper}!dumpUcharBufferToConsole@{dumpUcharBufferToConsole}}
+\index{dumpUcharBufferToConsole@{dumpUcharBufferToConsole}!DataDumper@{DataDumper}}
+\doxysubsubsection{\texorpdfstring{dumpUcharBufferToConsole()}{dumpUcharBufferToConsole()}}
+{\footnotesize\ttfamily int Data\+Dumper\+::dump\+Uchar\+Buffer\+To\+Console (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buffer,  }\item[{int}]{buf\+Len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataDumper_a849b9f2cf75d0131699b68c16ad6135c}\label{classDataDumper_a849b9f2cf75d0131699b68c16ad6135c}} 
+\index{DataDumper@{DataDumper}!instance@{instance}}
+\index{instance@{instance}!DataDumper@{DataDumper}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classDataDumper}{Data\+Dumper}}\& Data\+Dumper\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classDataDumper_a5f2cc6e8628f4c4c0fe0dd1a46055689}\label{classDataDumper_a5f2cc6e8628f4c4c0fe0dd1a46055689}} 
+\index{DataDumper@{DataDumper}!pushData@{pushData}}
+\index{pushData@{pushData}!DataDumper@{DataDumper}}
+\doxysubsubsection{\texorpdfstring{pushData()}{pushData()}}
+{\footnotesize\ttfamily int Data\+Dumper\+::push\+Data (\begin{DoxyParamCaption}\item[{double}]{time\+Stamp,  }\item[{std\+::string}]{info,  }\item[{double}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataDumper_a389d6a9518a3f4573ba1bb62cf1218e6}\label{classDataDumper_a389d6a9518a3f4573ba1bb62cf1218e6}} 
+\index{DataDumper@{DataDumper}!testbed@{testbed}}
+\index{testbed@{testbed}!DataDumper@{DataDumper}}
+\doxysubsubsection{\texorpdfstring{testbed()}{testbed()}}
+{\footnotesize\ttfamily int Data\+Dumper\+::testbed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataDumper_a8ec8d20148b0947b96799b89960f582b}\label{classDataDumper_a8ec8d20148b0947b96799b89960f582b}} 
+\index{DataDumper@{DataDumper}!writeDataToCsv@{writeDataToCsv}}
+\index{writeDataToCsv@{writeDataToCsv}!DataDumper@{DataDumper}}
+\doxysubsubsection{\texorpdfstring{writeDataToCsv()}{writeDataToCsv()}}
+{\footnotesize\ttfamily int Data\+Dumper\+::write\+Data\+To\+Csv (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classDataDumper_a937b3691ea49551f6249b6053d2898ea}\label{classDataDumper_a937b3691ea49551f6249b6053d2898ea}} 
+\index{DataDumper@{DataDumper}!writeToFileNameWhenBufferIsFull@{writeToFileNameWhenBufferIsFull}}
+\index{writeToFileNameWhenBufferIsFull@{writeToFileNameWhenBufferIsFull}!DataDumper@{DataDumper}}
+\doxysubsubsection{\texorpdfstring{writeToFileNameWhenBufferIsFull()}{writeToFileNameWhenBufferIsFull()}}
+{\footnotesize\ttfamily int Data\+Dumper\+::write\+To\+File\+Name\+When\+Buffer\+Is\+Full (\begin{DoxyParamCaption}\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{dataDumper_8h}{data\+Dumper.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{dataDumper_8cpp}{data\+Dumper.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,178 @@
+\hypertarget{classsick__scan__xd_1_1SickScanImu}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Imu Class Reference}
+\label{classsick__scan__xd_1_1SickScanImu}\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+imu.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_a9d7ab50775ff735f001ca479a28e46d5}{Sick\+Scan\+Imu}} (\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon}{Sick\+Scan\+Common}} $\ast$common\+Ptr\+\_\+, \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh\+\_\+)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_ad0e905f46b5d68041704ac36100548cf}{is\+Imu\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_aa7cd7847255a8dfe2cb56a8a3a0c9935}{is\+Imu\+Binary\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Checking A\+S\+C\+II diagram for imu message type. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_a32da015052fbb0559d4cddfc36193d1a}{is\+Imu\+Ascii\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length)
+\begin{DoxyCompactList}\small\item\em Checking A\+S\+C\+II diagram for imu message type. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_a64e2c29b1680f35fb920fb1b4b1e7e0c}{is\+Imu\+Ack\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_a3cd21ef0efdcd1478af1a954f932354d}{parse\+Datagram}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} time\+Stamp, unsigned char $\ast$receive\+Buffer, int actual\+\_\+length, bool use\+Binary\+Protocol)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_ac90f04c2555b18c86ef4ab86975b9f9b}{parse\+Ascii\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length, \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImuValue}{Sick\+Scan\+Imu\+Value}} $\ast$im\+Value\+Ptr)
+\begin{DoxyCompactList}\small\item\em Parsing Ascii datagram. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_ab5e4a0e491a1047d81e481936c94ebd3}{parse\+Binary\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length, \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImuValue}{Sick\+Scan\+Imu\+Value}} $\ast$im\+Value\+Ptr)
+\begin{DoxyCompactList}\small\item\em Parsing Ascii datagram. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_a1cd37ea21fb6725cee4c53687b4d8bbc}{simple\+Fmod\+Two\+Pi}} (double angle)
+\begin{DoxyCompactList}\small\item\em Checking angle to be in the interval \mbox{[}-\/M\+\_\+\+PI,M\+\_\+\+PI\mbox{]} Of course you can also use fmod, e.\+g. fmod(angle + M\+\_\+\+PI,2$\ast$\+M\+\_\+\+PI) -\/ M\+\_\+\+PI. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_a6f9434f4f0d9e76daedda6f80041d7ea}{imu\+Parser\+Test}} ()
+\item 
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanImu_a2e3ec0da4db602c1c101411d32286a53}{quaternion2rpy\+Test}} ()
+\begin{DoxyCompactList}\small\item\em Test barebone implemetation from quaternio to euler (Roll-\/\+Pitch-\/\+Yaw-\/\+Sequence) to avoid problems using tf.\+h against bloom. Include tf.\+h for a full test and uncomment \#0 for this case. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_a9d7ab50775ff735f001ca479a28e46d5}\label{classsick__scan__xd_1_1SickScanImu_a9d7ab50775ff735f001ca479a28e46d5}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!SickScanImu@{SickScanImu}}
+\index{SickScanImu@{SickScanImu}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{SickScanImu()}{SickScanImu()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::\+Sick\+Scan\+Imu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon}{Sick\+Scan\+Common}} $\ast$}]{common\+Ptr\+\_\+,  }\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_a6f9434f4f0d9e76daedda6f80041d7ea}\label{classsick__scan__xd_1_1SickScanImu_a6f9434f4f0d9e76daedda6f80041d7ea}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!imuParserTest@{imuParserTest}}
+\index{imuParserTest@{imuParserTest}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{imuParserTest()}{imuParserTest()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::imu\+Parser\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_a64e2c29b1680f35fb920fb1b4b1e7e0c}\label{classsick__scan__xd_1_1SickScanImu_a64e2c29b1680f35fb920fb1b4b1e7e0c}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!isImuAckDatagram@{isImuAckDatagram}}
+\index{isImuAckDatagram@{isImuAckDatagram}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{isImuAckDatagram()}{isImuAckDatagram()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::is\+Imu\+Ack\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_a32da015052fbb0559d4cddfc36193d1a}\label{classsick__scan__xd_1_1SickScanImu_a32da015052fbb0559d4cddfc36193d1a}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!isImuAsciiDatagram@{isImuAsciiDatagram}}
+\index{isImuAsciiDatagram@{isImuAsciiDatagram}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{isImuAsciiDatagram()}{isImuAsciiDatagram()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::is\+Imu\+Ascii\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Checking A\+S\+C\+II diagram for imu message type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool flag holding prof result (false -\/$>$ no ascii imu datagram, true -\/$>$ ascii imu datagram) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_aa7cd7847255a8dfe2cb56a8a3a0c9935}\label{classsick__scan__xd_1_1SickScanImu_aa7cd7847255a8dfe2cb56a8a3a0c9935}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!isImuBinaryDatagram@{isImuBinaryDatagram}}
+\index{isImuBinaryDatagram@{isImuBinaryDatagram}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{isImuBinaryDatagram()}{isImuBinaryDatagram()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::is\+Imu\+Binary\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+Checking A\+S\+C\+II diagram for imu message type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool flag holding prof result (false -\/$>$ no ascii imu datagram, true -\/$>$ ascii imu datagram) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_ad0e905f46b5d68041704ac36100548cf}\label{classsick__scan__xd_1_1SickScanImu_ad0e905f46b5d68041704ac36100548cf}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!isImuDatagram@{isImuDatagram}}
+\index{isImuDatagram@{isImuDatagram}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{isImuDatagram()}{isImuDatagram()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::is\+Imu\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_ac90f04c2555b18c86ef4ab86975b9f9b}\label{classsick__scan__xd_1_1SickScanImu_ac90f04c2555b18c86ef4ab86975b9f9b}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!parseAsciiDatagram@{parseAsciiDatagram}}
+\index{parseAsciiDatagram@{parseAsciiDatagram}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{parseAsciiDatagram()}{parseAsciiDatagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::parse\+Ascii\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanImuValue}{Sick\+Scan\+Imu\+Value}} $\ast$}]{imu\+Value }\end{DoxyParamCaption})}
+
+
+
+Parsing Ascii datagram. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_ab5e4a0e491a1047d81e481936c94ebd3}\label{classsick__scan__xd_1_1SickScanImu_ab5e4a0e491a1047d81e481936c94ebd3}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!parseBinaryDatagram@{parseBinaryDatagram}}
+\index{parseBinaryDatagram@{parseBinaryDatagram}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{parseBinaryDatagram()}{parseBinaryDatagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::parse\+Binary\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanImuValue}{Sick\+Scan\+Imu\+Value}} $\ast$}]{imu\+Value }\end{DoxyParamCaption})}
+
+
+
+Parsing Ascii datagram. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_a3cd21ef0efdcd1478af1a954f932354d}\label{classsick__scan__xd_1_1SickScanImu_a3cd21ef0efdcd1478af1a954f932354d}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!parseDatagram@{parseDatagram}}
+\index{parseDatagram@{parseDatagram}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{parseDatagram()}{parseDatagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::parse\+Datagram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}}}]{time\+Stamp,  }\item[{unsigned char $\ast$}]{receive\+Buffer,  }\item[{int}]{actual\+\_\+length,  }\item[{bool}]{use\+Binary\+Protocol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_a2e3ec0da4db602c1c101411d32286a53}\label{classsick__scan__xd_1_1SickScanImu_a2e3ec0da4db602c1c101411d32286a53}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!quaternion2rpyTest@{quaternion2rpyTest}}
+\index{quaternion2rpyTest@{quaternion2rpyTest}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{quaternion2rpyTest()}{quaternion2rpyTest()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::quaternion2rpy\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Test barebone implemetation from quaternio to euler (Roll-\/\+Pitch-\/\+Yaw-\/\+Sequence) to avoid problems using tf.\+h against bloom. Include tf.\+h for a full test and uncomment \#0 for this case. 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanImu_a1cd37ea21fb6725cee4c53687b4d8bbc}\label{classsick__scan__xd_1_1SickScanImu_a1cd37ea21fb6725cee4c53687b4d8bbc}} 
+\index{sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}!simpleFmodTwoPi@{simpleFmodTwoPi}}
+\index{simpleFmodTwoPi@{simpleFmodTwoPi}!sick\_scan\_xd::SickScanImu@{sick\_scan\_xd::SickScanImu}}
+\doxysubsubsection{\texorpdfstring{simpleFmodTwoPi()}{simpleFmodTwoPi()}}
+{\footnotesize\ttfamily double sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Imu\+::simple\+Fmod\+Two\+Pi (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})}
+
+
+
+Checking angle to be in the interval \mbox{[}-\/M\+\_\+\+PI,M\+\_\+\+PI\mbox{]} Of course you can also use fmod, e.\+g. fmod(angle + M\+\_\+\+PI,2$\ast$\+M\+\_\+\+PI) -\/ M\+\_\+\+PI. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Input angle to be checked \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+normalized angle value (normalized means here the interval -\/M\+\_\+\+PI,M\+\_\+\+PI) 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__imu_8h}{sick\+\_\+generic\+\_\+imu.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__generic__imu_8cpp}{sick\+\_\+generic\+\_\+imu.\+cpp}}\end{DoxyCompactItemize}

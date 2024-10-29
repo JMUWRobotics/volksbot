@@ -1,0 +1,200 @@
+\hypertarget{classsick__scansegment__xd_1_1MsgPackConverter}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Msg\+Pack\+Converter Class Reference}
+\label{classsick__scansegment__xd_1_1MsgPackConverter}\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+
+
+{\ttfamily \#include $<$msgpack\+\_\+converter.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scansegment\+\_\+xd\+::Msg\+Pack\+Converter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsick__scansegment__xd_1_1MsgPackConverter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a79e510c7839d5a7f2764fc113bc46ad8}{Msg\+Pack\+Converter}} ()
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_adcea4628001848e04364376656c3da80}{Msg\+Pack\+Converter}} (const \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserConfig}{Scan\+Segment\+Parser\+Config}} \&parser\+\_\+config, const \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \&add\+\_\+transform\+\_\+xyz\+\_\+rpy, \mbox{\hyperlink{classsick__scansegment__xd_1_1PayloadFifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Payload\+Fifo}} $\ast$input\+\_\+fifo, int scandataformat=2, int msgpack\+\_\+output\+\_\+fifolength=20, bool verbose=false)
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_abec5f7ba400b1ffe67b7fba801fc150c}{$\sim$\+Msg\+Pack\+Converter}} ()
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_acad89f9bd9df07fe473a426ab9a36fb0}{Start}} (void)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a100ccc5ebaffa646be4cbaa46b5517bf}{Close}} (void)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a47f976b8b560890f9088869e94597f80}{Set\+Validator}} (\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}} \&msgpack\+\_\+validator, bool msgpack\+\_\+validator\+\_\+enabled, bool discard\+\_\+msgpacks\+\_\+not\+\_\+validated, int msgpack\+\_\+validator\+\_\+check\+\_\+missing\+\_\+scandata\+\_\+interval)
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} $>$ $\ast$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a67e3eb605b6ad6286a5e24be58d910e4}{Fifo}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a6e7eebf90ea9bba41b3e3dc037d492c5}{Run}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a16b46d59aabd9108ebdc6a03164c7f5d}{m\+\_\+verbose}}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserConfig}{Scan\+Segment\+Parser\+Config}} \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_ab23267823de86fd34500a31b74512f35}{m\+\_\+parser\+\_\+config}}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1PayloadFifo}{Payload\+Fifo}} $\ast$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_ada00a4fbd5facf5a8e3393e2681b45ee}{m\+\_\+input\+\_\+fifo}}
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a08abcea52dcb15b8304ea170824b762d}{m\+\_\+scandataformat}}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} $>$ $\ast$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a3ee508d91a0e5978af497e75dcc8403c}{m\+\_\+output\+\_\+fifo}}
+\item 
+std\+::thread $\ast$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a0b2932f0caa15de84f890333825abbfa}{m\+\_\+converter\+\_\+thread}}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a7ba8d7e5bbc6ae354548f42f79cb5584}{m\+\_\+run\+\_\+converter\+\_\+thread}}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a013cf94ce7f7dd2020daabde980463b1}{m\+\_\+msgpack\+\_\+validator\+\_\+enabled}}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}} \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a8e7944ad2507c2c93a64318972fb743b}{m\+\_\+msgpack\+\_\+validator}}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a89d900925e74b043f8fb998e4956f35b}{m\+\_\+discard\+\_\+msgpacks\+\_\+not\+\_\+validated}}
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a4ea0473fcdad42d0f1389380281da788}{m\+\_\+msgpack\+\_\+validator\+\_\+check\+\_\+missing\+\_\+scandata\+\_\+interval}}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackConverter_a3bd8709187512b1361a0332a348ccd61}{m\+\_\+add\+\_\+transform\+\_\+xyz\+\_\+rpy}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a79e510c7839d5a7f2764fc113bc46ad8}\label{classsick__scansegment__xd_1_1MsgPackConverter_a79e510c7839d5a7f2764fc113bc46ad8}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!MsgPackConverter@{MsgPackConverter}}
+\index{MsgPackConverter@{MsgPackConverter}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{MsgPackConverter()}{MsgPackConverter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::\+Msg\+Pack\+Converter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_adcea4628001848e04364376656c3da80}\label{classsick__scansegment__xd_1_1MsgPackConverter_adcea4628001848e04364376656c3da80}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!MsgPackConverter@{MsgPackConverter}}
+\index{MsgPackConverter@{MsgPackConverter}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{MsgPackConverter()}{MsgPackConverter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::\+Msg\+Pack\+Converter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserConfig}{Scan\+Segment\+Parser\+Config}} \&}]{parser\+\_\+config,  }\item[{const \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \&}]{add\+\_\+transform\+\_\+xyz\+\_\+rpy,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1PayloadFifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Payload\+Fifo}} $\ast$}]{input\+\_\+fifo,  }\item[{int}]{scandataformat = {\ttfamily 2},  }\item[{int}]{msgpack\+\_\+output\+\_\+fifolength = {\ttfamily 20},  }\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_abec5f7ba400b1ffe67b7fba801fc150c}\label{classsick__scansegment__xd_1_1MsgPackConverter_abec5f7ba400b1ffe67b7fba801fc150c}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!````~MsgPackConverter@{$\sim$MsgPackConverter}}
+\index{````~MsgPackConverter@{$\sim$MsgPackConverter}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{$\sim$MsgPackConverter()}{~MsgPackConverter()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::$\sim$\+Msg\+Pack\+Converter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a100ccc5ebaffa646be4cbaa46b5517bf}\label{classsick__scansegment__xd_1_1MsgPackConverter_a100ccc5ebaffa646be4cbaa46b5517bf}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!Close@{Close}}
+\index{Close@{Close}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::\+Close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a67e3eb605b6ad6286a5e24be58d910e4}\label{classsick__scansegment__xd_1_1MsgPackConverter_a67e3eb605b6ad6286a5e24be58d910e4}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!Fifo@{Fifo}}
+\index{Fifo@{Fifo}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{Fifo()}{Fifo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$\mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}}$>$$\ast$ sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::\+Fifo (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a6e7eebf90ea9bba41b3e3dc037d492c5}\label{classsick__scansegment__xd_1_1MsgPackConverter_a6e7eebf90ea9bba41b3e3dc037d492c5}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!Run@{Run}}
+\index{Run@{Run}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::\+Run (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a47f976b8b560890f9088869e94597f80}\label{classsick__scansegment__xd_1_1MsgPackConverter_a47f976b8b560890f9088869e94597f80}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!SetValidator@{SetValidator}}
+\index{SetValidator@{SetValidator}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{SetValidator()}{SetValidator()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::\+Set\+Validator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}} \&}]{msgpack\+\_\+validator,  }\item[{bool}]{msgpack\+\_\+validator\+\_\+enabled,  }\item[{bool}]{discard\+\_\+msgpacks\+\_\+not\+\_\+validated,  }\item[{int}]{msgpack\+\_\+validator\+\_\+check\+\_\+missing\+\_\+scandata\+\_\+interval }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_acad89f9bd9df07fe473a426ab9a36fb0}\label{classsick__scansegment__xd_1_1MsgPackConverter_acad89f9bd9df07fe473a426ab9a36fb0}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!Start@{Start}}
+\index{Start@{Start}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a3bd8709187512b1361a0332a348ccd61}\label{classsick__scansegment__xd_1_1MsgPackConverter_a3bd8709187512b1361a0332a348ccd61}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_add\_transform\_xyz\_rpy@{m\_add\_transform\_xyz\_rpy}}
+\index{m\_add\_transform\_xyz\_rpy@{m\_add\_transform\_xyz\_rpy}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_add\_transform\_xyz\_rpy}{m\_add\_transform\_xyz\_rpy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+add\+\_\+transform\+\_\+xyz\+\_\+rpy\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a0b2932f0caa15de84f890333825abbfa}\label{classsick__scansegment__xd_1_1MsgPackConverter_a0b2932f0caa15de84f890333825abbfa}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_converter\_thread@{m\_converter\_thread}}
+\index{m\_converter\_thread@{m\_converter\_thread}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_converter\_thread}{m\_converter\_thread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+converter\+\_\+thread\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a89d900925e74b043f8fb998e4956f35b}\label{classsick__scansegment__xd_1_1MsgPackConverter_a89d900925e74b043f8fb998e4956f35b}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_discard\_msgpacks\_not\_validated@{m\_discard\_msgpacks\_not\_validated}}
+\index{m\_discard\_msgpacks\_not\_validated@{m\_discard\_msgpacks\_not\_validated}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_discard\_msgpacks\_not\_validated}{m\_discard\_msgpacks\_not\_validated}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+discard\+\_\+msgpacks\+\_\+not\+\_\+validated\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_ada00a4fbd5facf5a8e3393e2681b45ee}\label{classsick__scansegment__xd_1_1MsgPackConverter_ada00a4fbd5facf5a8e3393e2681b45ee}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_input\_fifo@{m\_input\_fifo}}
+\index{m\_input\_fifo@{m\_input\_fifo}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_input\_fifo}{m\_input\_fifo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1PayloadFifo}{Payload\+Fifo}}$\ast$ sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+input\+\_\+fifo\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a8e7944ad2507c2c93a64318972fb743b}\label{classsick__scansegment__xd_1_1MsgPackConverter_a8e7944ad2507c2c93a64318972fb743b}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_msgpack\_validator@{m\_msgpack\_validator}}
+\index{m\_msgpack\_validator@{m\_msgpack\_validator}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_msgpack\_validator}{m\_msgpack\_validator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}} sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+msgpack\+\_\+validator\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a4ea0473fcdad42d0f1389380281da788}\label{classsick__scansegment__xd_1_1MsgPackConverter_a4ea0473fcdad42d0f1389380281da788}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_msgpack\_validator\_check\_missing\_scandata\_interval@{m\_msgpack\_validator\_check\_missing\_scandata\_interval}}
+\index{m\_msgpack\_validator\_check\_missing\_scandata\_interval@{m\_msgpack\_validator\_check\_missing\_scandata\_interval}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_msgpack\_validator\_check\_missing\_scandata\_interval}{m\_msgpack\_validator\_check\_missing\_scandata\_interval}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+msgpack\+\_\+validator\+\_\+check\+\_\+missing\+\_\+scandata\+\_\+interval\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a013cf94ce7f7dd2020daabde980463b1}\label{classsick__scansegment__xd_1_1MsgPackConverter_a013cf94ce7f7dd2020daabde980463b1}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_msgpack\_validator\_enabled@{m\_msgpack\_validator\_enabled}}
+\index{m\_msgpack\_validator\_enabled@{m\_msgpack\_validator\_enabled}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_msgpack\_validator\_enabled}{m\_msgpack\_validator\_enabled}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+msgpack\+\_\+validator\+\_\+enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a3ee508d91a0e5978af497e75dcc8403c}\label{classsick__scansegment__xd_1_1MsgPackConverter_a3ee508d91a0e5978af497e75dcc8403c}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_output\_fifo@{m\_output\_fifo}}
+\index{m\_output\_fifo@{m\_output\_fifo}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_output\_fifo}{m\_output\_fifo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$\mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}}$>$$\ast$ sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+output\+\_\+fifo\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_ab23267823de86fd34500a31b74512f35}\label{classsick__scansegment__xd_1_1MsgPackConverter_ab23267823de86fd34500a31b74512f35}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_parser\_config@{m\_parser\_config}}
+\index{m\_parser\_config@{m\_parser\_config}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_parser\_config}{m\_parser\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserConfig}{Scan\+Segment\+Parser\+Config}} sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+parser\+\_\+config\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a7ba8d7e5bbc6ae354548f42f79cb5584}\label{classsick__scansegment__xd_1_1MsgPackConverter_a7ba8d7e5bbc6ae354548f42f79cb5584}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_run\_converter\_thread@{m\_run\_converter\_thread}}
+\index{m\_run\_converter\_thread@{m\_run\_converter\_thread}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_run\_converter\_thread}{m\_run\_converter\_thread}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+run\+\_\+converter\+\_\+thread\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a08abcea52dcb15b8304ea170824b762d}\label{classsick__scansegment__xd_1_1MsgPackConverter_a08abcea52dcb15b8304ea170824b762d}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_scandataformat@{m\_scandataformat}}
+\index{m\_scandataformat@{m\_scandataformat}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_scandataformat}{m\_scandataformat}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+scandataformat\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackConverter_a16b46d59aabd9108ebdc6a03164c7f5d}\label{classsick__scansegment__xd_1_1MsgPackConverter_a16b46d59aabd9108ebdc6a03164c7f5d}} 
+\index{sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}!m\_verbose@{m\_verbose}}
+\index{m\_verbose@{m\_verbose}!sick\_scansegment\_xd::MsgPackConverter@{sick\_scansegment\_xd::MsgPackConverter}}
+\doxysubsubsection{\texorpdfstring{m\_verbose}{m\_verbose}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Converter\+::m\+\_\+verbose\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{msgpack__converter_8h}{msgpack\+\_\+converter.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{msgpack__converter_8cpp}{msgpack\+\_\+converter.\+cpp}}\end{DoxyCompactItemize}

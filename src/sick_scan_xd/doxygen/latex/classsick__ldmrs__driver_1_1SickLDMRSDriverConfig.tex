@@ -1,0 +1,461 @@
+\hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig}{}\doxysection{sick\+\_\+ldmrs\+\_\+driver\+::Sick\+L\+D\+M\+R\+S\+Driver\+Config Class Reference}
+\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+
+
+{\ttfamily \#include $<$sick\+\_\+ldmrs\+\_\+config.\+hpp$>$}
+
+
+
+Collaboration diagram for sick\+\_\+ldmrs\+\_\+driver\+::Sick\+L\+D\+M\+R\+S\+Driver\+Config\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78e}{scan\+\_\+freq\+\_\+enum}} \{ \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea9b7826d92364e838533febcd2a66b65c}{Scan\+Freq1250}} = 0, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea568de2f001a835d1855a37fd008f7202}{Scan\+Freq2500}} = 1, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea89fc0b844defa79011c85f1538f6b9d1}{Scan\+Freq5000}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436c}{contour\+\_\+enum}} \{ \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca338d405ab2f324094bca11a7af648730}{Closest\+Point\+Only}} = 0, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca9cdcc06e2c0ac2e75598f50ca99eee74}{Low\+Density}} = 1, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca1e054106fef859427e5640f660187eec}{High\+Density}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8}{angular\+\_\+res\+\_\+enum}} \{ \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8a43650e81ecc9db678878e17a0125ba44}{Focused\+Res}} = 0, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8a5720a3b7ab4ac1ff829caeaf91077640}{Constant\+Res}} = 1, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8ae48d0b8b15354fbcf61e03eccde674f4}{Flex\+Res}} = 2
+ \}
+\item 
+enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875d}{range\+\_\+reduction\+\_\+enum}} \{ \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da319ff08bf0a753c492fa85dbb24a6a39}{Range\+Full}} = 0, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da729cd5a3b320330d8afeacf94e0b6b1a}{Range\+Lower\+Reduced}} = 1, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da993bbea3088ef20de6a77ae17e2cc5d5}{Range\+Upper\+Reduced}} = 2, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da5ba253daeddb297cb481ef1f544eb5de}{Range\+All\+Reduced}} = 3
+ \}
+\item 
+enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060}{resolution\+\_\+enum}} \{ \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060ab9f819f2a8a67db04f5ecde1575e1a27}{Res0125}} = 4, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060a3df39eea761688ec4f78092f323d7205}{Res0250}} = 8, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060aa725dd43a225ada6b8a00763d5ce6523}{Res0500}} = 16, 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060ac055f7f75bf7e2cb9c970d3fcb539c50}{Res1000}} = 32
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a7890c58aa4f2e80be87f97344d561c73}{Sick\+L\+D\+M\+R\+S\+Driver\+Config}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh=0)
+\item 
+bool \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a75d2197ad2641aef4b2d007e4682098d}{set\+\_\+parameter}} (const std\+::string \&name, const bool \&value)
+\item 
+bool \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab15bc87fe085dfdaabf6acc5f49965fb}{set\+\_\+parameter}} (const std\+::string \&name, const int64\+\_\+t \&value)
+\item 
+bool \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a62f735cf146f26c519c6078e236578be}{set\+\_\+parameter}} (const std\+::string \&name, const double \&value)
+\item 
+bool \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aee0b3673ba5e9ddd17c9f3e8b255737b}{set\+\_\+parameter}} (const std\+::string \&name, const std\+::string \&value)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a001a4c0f995b329b50d35afa848384ff}{deg2rad}} (double angle)
+\item 
+static const double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a10af57233e64004972a4674abf5c2525}{tics2rad}} (double tics)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a861434ee5e08c13c531f4fa1790fd4c5}{frame\+\_\+id}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aaf90ac4a0cfec4376580baad8c9e01a1}{start\+\_\+angle}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a5509302f9c9ff1d93fb4c100ff5cd64b}{end\+\_\+angle}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0167b869c287a9eed5ce95c348ea30af}{scan\+\_\+frequency}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ac5d839d4f04d35b6c5b04ca21dd7129b}{sync\+\_\+angle\+\_\+offset}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adff69857fe3a0ba24f03e76802a56680}{angular\+\_\+resolution\+\_\+type}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a334545f2bff6009d527856dfa8845c91}{layer\+\_\+range\+\_\+reduction}}
+\item 
+bool \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a4dd35df8f0b4944792c47c5fd444d768}{ignore\+\_\+near\+\_\+range}}
+\item 
+bool \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a306ea289e6ac54c9cb51e7a47fed8acf}{sensitivity\+\_\+control}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_abe62d570878bd0c4deb223637bdd4a5d}{flexres\+\_\+start\+\_\+angle1}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0344b74b1bdaa6b37ee47899ff60562c}{flexres\+\_\+start\+\_\+angle2}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a8e01688a59e5fbd5448828d8b490e022}{flexres\+\_\+start\+\_\+angle3}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0e57734cb114e9d102af23fed5af471f}{flexres\+\_\+start\+\_\+angle4}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a69a2e04287b9285e4679240ae009e481}{flexres\+\_\+start\+\_\+angle5}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_abc10b2310e6826d236c004105108db56}{flexres\+\_\+start\+\_\+angle6}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a79ae889c7586112cdd7a343bbb04f8b9}{flexres\+\_\+start\+\_\+angle7}}
+\item 
+double \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aca781b2f7e77d1f339c54580c02bb32d}{flexres\+\_\+start\+\_\+angle8}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_af751de4d2c8d583e5baea57af94c3e3f}{flexres\+\_\+resolution1}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aedabedd4550cedc589193a777d155cfc}{flexres\+\_\+resolution2}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ad017a838ba30d1ccfb9d8ae1cbe4eee4}{flexres\+\_\+resolution3}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a13869698464dce880d891179b40c6863}{flexres\+\_\+resolution4}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a6854311b04e65bd141d330e67c427380}{flexres\+\_\+resolution5}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a46255c249b2984ceaca3e43a17ed5c74}{flexres\+\_\+resolution6}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a81f1ff50dac7797e9b6305d545db951f}{flexres\+\_\+resolution7}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ac6f4e2204161f62cde3c98dba746aeac}{flexres\+\_\+resolution8}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a5e255ecc77b5f12deb278e2239152ad4}{contour\+\_\+point\+\_\+density}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a513c7786695780596beff71f5d26ae7a}{min\+\_\+object\+\_\+age}}
+\item 
+int \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aa2f0ef4170c883a56a3e98c5f314d6c6}{max\+\_\+prediction\+\_\+age}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!angular\_res\_enum@{angular\_res\_enum}}
+\index{angular\_res\_enum@{angular\_res\_enum}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{angular\_res\_enum}{angular\_res\_enum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8}{sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::angular\+\_\+res\+\_\+enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FocusedRes@{FocusedRes}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!FocusedRes@{FocusedRes}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8a43650e81ecc9db678878e17a0125ba44}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8a43650e81ecc9db678878e17a0125ba44}} 
+Focused\+Res&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ConstantRes@{ConstantRes}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!ConstantRes@{ConstantRes}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8a5720a3b7ab4ac1ff829caeaf91077640}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8a5720a3b7ab4ac1ff829caeaf91077640}} 
+Constant\+Res&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FlexRes@{FlexRes}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!FlexRes@{FlexRes}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8ae48d0b8b15354fbcf61e03eccde674f4}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a736c4fba8d55d80dd8e43da0ac0cf8d8ae48d0b8b15354fbcf61e03eccde674f4}} 
+Flex\+Res&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436c}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436c}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!contour\_enum@{contour\_enum}}
+\index{contour\_enum@{contour\_enum}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{contour\_enum}{contour\_enum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436c}{sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::contour\+\_\+enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ClosestPointOnly@{ClosestPointOnly}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!ClosestPointOnly@{ClosestPointOnly}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca338d405ab2f324094bca11a7af648730}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca338d405ab2f324094bca11a7af648730}} 
+Closest\+Point\+Only&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LowDensity@{LowDensity}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!LowDensity@{LowDensity}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca9cdcc06e2c0ac2e75598f50ca99eee74}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca9cdcc06e2c0ac2e75598f50ca99eee74}} 
+Low\+Density&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HighDensity@{HighDensity}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!HighDensity@{HighDensity}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca1e054106fef859427e5640f660187eec}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a03a8808201a3403db536c4c2d495436ca1e054106fef859427e5640f660187eec}} 
+High\+Density&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875d}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875d}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!range\_reduction\_enum@{range\_reduction\_enum}}
+\index{range\_reduction\_enum@{range\_reduction\_enum}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{range\_reduction\_enum}{range\_reduction\_enum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875d}{sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::range\+\_\+reduction\+\_\+enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RangeFull@{RangeFull}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!RangeFull@{RangeFull}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da319ff08bf0a753c492fa85dbb24a6a39}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da319ff08bf0a753c492fa85dbb24a6a39}} 
+Range\+Full&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RangeLowerReduced@{RangeLowerReduced}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!RangeLowerReduced@{RangeLowerReduced}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da729cd5a3b320330d8afeacf94e0b6b1a}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da729cd5a3b320330d8afeacf94e0b6b1a}} 
+Range\+Lower\+Reduced&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RangeUpperReduced@{RangeUpperReduced}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!RangeUpperReduced@{RangeUpperReduced}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da993bbea3088ef20de6a77ae17e2cc5d5}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da993bbea3088ef20de6a77ae17e2cc5d5}} 
+Range\+Upper\+Reduced&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RangeAllReduced@{RangeAllReduced}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!RangeAllReduced@{RangeAllReduced}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da5ba253daeddb297cb481ef1f544eb5de}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_acbef22fdeea9c42553e124560d8e875da5ba253daeddb297cb481ef1f544eb5de}} 
+Range\+All\+Reduced&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!resolution\_enum@{resolution\_enum}}
+\index{resolution\_enum@{resolution\_enum}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{resolution\_enum}{resolution\_enum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060}{sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::resolution\+\_\+enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Res0125@{Res0125}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!Res0125@{Res0125}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060ab9f819f2a8a67db04f5ecde1575e1a27}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060ab9f819f2a8a67db04f5ecde1575e1a27}} 
+Res0125&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Res0250@{Res0250}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!Res0250@{Res0250}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060a3df39eea761688ec4f78092f323d7205}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060a3df39eea761688ec4f78092f323d7205}} 
+Res0250&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Res0500@{Res0500}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!Res0500@{Res0500}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060aa725dd43a225ada6b8a00763d5ce6523}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060aa725dd43a225ada6b8a00763d5ce6523}} 
+Res0500&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Res1000@{Res1000}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!Res1000@{Res1000}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060ac055f7f75bf7e2cb9c970d3fcb539c50}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab3d3c041c3216f565ae196b1c8cdc060ac055f7f75bf7e2cb9c970d3fcb539c50}} 
+Res1000&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78e}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78e}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!scan\_freq\_enum@{scan\_freq\_enum}}
+\index{scan\_freq\_enum@{scan\_freq\_enum}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{scan\_freq\_enum}{scan\_freq\_enum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78e}{sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::scan\+\_\+freq\+\_\+enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScanFreq1250@{ScanFreq1250}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!ScanFreq1250@{ScanFreq1250}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea9b7826d92364e838533febcd2a66b65c}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea9b7826d92364e838533febcd2a66b65c}} 
+Scan\+Freq1250&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScanFreq2500@{ScanFreq2500}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!ScanFreq2500@{ScanFreq2500}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea568de2f001a835d1855a37fd008f7202}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea568de2f001a835d1855a37fd008f7202}} 
+Scan\+Freq2500&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ScanFreq5000@{ScanFreq5000}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!ScanFreq5000@{ScanFreq5000}}}\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea89fc0b844defa79011c85f1538f6b9d1}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adb60dae4989949c0f85636d7770db78ea89fc0b844defa79011c85f1538f6b9d1}} 
+Scan\+Freq5000&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a7890c58aa4f2e80be87f97344d561c73}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a7890c58aa4f2e80be87f97344d561c73}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!SickLDMRSDriverConfig@{SickLDMRSDriverConfig}}
+\index{SickLDMRSDriverConfig@{SickLDMRSDriverConfig}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{SickLDMRSDriverConfig()}{SickLDMRSDriverConfig()}}
+{\footnotesize\ttfamily sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a001a4c0f995b329b50d35afa848384ff}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a001a4c0f995b329b50d35afa848384ff}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!deg2rad@{deg2rad}}
+\index{deg2rad@{deg2rad}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{deg2rad()}{deg2rad()}}
+{\footnotesize\ttfamily static const double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::deg2rad (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a75d2197ad2641aef4b2d007e4682098d}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a75d2197ad2641aef4b2d007e4682098d}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!set\_parameter@{set\_parameter}}
+\index{set\_parameter@{set\_parameter}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{set\_parameter()}{set\_parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::set\+\_\+parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const bool \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a62f735cf146f26c519c6078e236578be}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a62f735cf146f26c519c6078e236578be}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!set\_parameter@{set\_parameter}}
+\index{set\_parameter@{set\_parameter}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{set\_parameter()}{set\_parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::set\+\_\+parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const double \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab15bc87fe085dfdaabf6acc5f49965fb}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ab15bc87fe085dfdaabf6acc5f49965fb}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!set\_parameter@{set\_parameter}}
+\index{set\_parameter@{set\_parameter}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{set\_parameter()}{set\_parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::set\+\_\+parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const int64\+\_\+t \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aee0b3673ba5e9ddd17c9f3e8b255737b}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aee0b3673ba5e9ddd17c9f3e8b255737b}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!set\_parameter@{set\_parameter}}
+\index{set\_parameter@{set\_parameter}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{set\_parameter()}{set\_parameter()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::set\+\_\+parameter (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name,  }\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a10af57233e64004972a4674abf5c2525}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a10af57233e64004972a4674abf5c2525}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!tics2rad@{tics2rad}}
+\index{tics2rad@{tics2rad}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{tics2rad()}{tics2rad()}}
+{\footnotesize\ttfamily static const double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::tics2rad (\begin{DoxyParamCaption}\item[{double}]{tics }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adff69857fe3a0ba24f03e76802a56680}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_adff69857fe3a0ba24f03e76802a56680}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!angular\_resolution\_type@{angular\_resolution\_type}}
+\index{angular\_resolution\_type@{angular\_resolution\_type}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{angular\_resolution\_type}{angular\_resolution\_type}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::angular\+\_\+resolution\+\_\+type}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a5e255ecc77b5f12deb278e2239152ad4}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a5e255ecc77b5f12deb278e2239152ad4}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!contour\_point\_density@{contour\_point\_density}}
+\index{contour\_point\_density@{contour\_point\_density}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{contour\_point\_density}{contour\_point\_density}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::contour\+\_\+point\+\_\+density}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a5509302f9c9ff1d93fb4c100ff5cd64b}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a5509302f9c9ff1d93fb4c100ff5cd64b}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!end\_angle@{end\_angle}}
+\index{end\_angle@{end\_angle}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{end\_angle}{end\_angle}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::end\+\_\+angle}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_af751de4d2c8d583e5baea57af94c3e3f}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_af751de4d2c8d583e5baea57af94c3e3f}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_resolution1@{flexres\_resolution1}}
+\index{flexres\_resolution1@{flexres\_resolution1}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_resolution1}{flexres\_resolution1}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+resolution1}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aedabedd4550cedc589193a777d155cfc}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aedabedd4550cedc589193a777d155cfc}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_resolution2@{flexres\_resolution2}}
+\index{flexres\_resolution2@{flexres\_resolution2}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_resolution2}{flexres\_resolution2}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+resolution2}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ad017a838ba30d1ccfb9d8ae1cbe4eee4}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ad017a838ba30d1ccfb9d8ae1cbe4eee4}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_resolution3@{flexres\_resolution3}}
+\index{flexres\_resolution3@{flexres\_resolution3}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_resolution3}{flexres\_resolution3}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+resolution3}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a13869698464dce880d891179b40c6863}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a13869698464dce880d891179b40c6863}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_resolution4@{flexres\_resolution4}}
+\index{flexres\_resolution4@{flexres\_resolution4}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_resolution4}{flexres\_resolution4}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+resolution4}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a6854311b04e65bd141d330e67c427380}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a6854311b04e65bd141d330e67c427380}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_resolution5@{flexres\_resolution5}}
+\index{flexres\_resolution5@{flexres\_resolution5}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_resolution5}{flexres\_resolution5}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+resolution5}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a46255c249b2984ceaca3e43a17ed5c74}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a46255c249b2984ceaca3e43a17ed5c74}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_resolution6@{flexres\_resolution6}}
+\index{flexres\_resolution6@{flexres\_resolution6}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_resolution6}{flexres\_resolution6}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+resolution6}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a81f1ff50dac7797e9b6305d545db951f}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a81f1ff50dac7797e9b6305d545db951f}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_resolution7@{flexres\_resolution7}}
+\index{flexres\_resolution7@{flexres\_resolution7}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_resolution7}{flexres\_resolution7}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+resolution7}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ac6f4e2204161f62cde3c98dba746aeac}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ac6f4e2204161f62cde3c98dba746aeac}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_resolution8@{flexres\_resolution8}}
+\index{flexres\_resolution8@{flexres\_resolution8}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_resolution8}{flexres\_resolution8}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+resolution8}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_abe62d570878bd0c4deb223637bdd4a5d}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_abe62d570878bd0c4deb223637bdd4a5d}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_start\_angle1@{flexres\_start\_angle1}}
+\index{flexres\_start\_angle1@{flexres\_start\_angle1}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_start\_angle1}{flexres\_start\_angle1}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+start\+\_\+angle1}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0344b74b1bdaa6b37ee47899ff60562c}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0344b74b1bdaa6b37ee47899ff60562c}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_start\_angle2@{flexres\_start\_angle2}}
+\index{flexres\_start\_angle2@{flexres\_start\_angle2}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_start\_angle2}{flexres\_start\_angle2}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+start\+\_\+angle2}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a8e01688a59e5fbd5448828d8b490e022}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a8e01688a59e5fbd5448828d8b490e022}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_start\_angle3@{flexres\_start\_angle3}}
+\index{flexres\_start\_angle3@{flexres\_start\_angle3}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_start\_angle3}{flexres\_start\_angle3}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+start\+\_\+angle3}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0e57734cb114e9d102af23fed5af471f}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0e57734cb114e9d102af23fed5af471f}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_start\_angle4@{flexres\_start\_angle4}}
+\index{flexres\_start\_angle4@{flexres\_start\_angle4}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_start\_angle4}{flexres\_start\_angle4}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+start\+\_\+angle4}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a69a2e04287b9285e4679240ae009e481}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a69a2e04287b9285e4679240ae009e481}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_start\_angle5@{flexres\_start\_angle5}}
+\index{flexres\_start\_angle5@{flexres\_start\_angle5}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_start\_angle5}{flexres\_start\_angle5}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+start\+\_\+angle5}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_abc10b2310e6826d236c004105108db56}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_abc10b2310e6826d236c004105108db56}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_start\_angle6@{flexres\_start\_angle6}}
+\index{flexres\_start\_angle6@{flexres\_start\_angle6}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_start\_angle6}{flexres\_start\_angle6}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+start\+\_\+angle6}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a79ae889c7586112cdd7a343bbb04f8b9}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a79ae889c7586112cdd7a343bbb04f8b9}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_start\_angle7@{flexres\_start\_angle7}}
+\index{flexres\_start\_angle7@{flexres\_start\_angle7}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_start\_angle7}{flexres\_start\_angle7}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+start\+\_\+angle7}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aca781b2f7e77d1f339c54580c02bb32d}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aca781b2f7e77d1f339c54580c02bb32d}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!flexres\_start\_angle8@{flexres\_start\_angle8}}
+\index{flexres\_start\_angle8@{flexres\_start\_angle8}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{flexres\_start\_angle8}{flexres\_start\_angle8}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::flexres\+\_\+start\+\_\+angle8}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a861434ee5e08c13c531f4fa1790fd4c5}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a861434ee5e08c13c531f4fa1790fd4c5}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!frame\_id@{frame\_id}}
+\index{frame\_id@{frame\_id}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{frame\_id}{frame\_id}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::frame\+\_\+id}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a4dd35df8f0b4944792c47c5fd444d768}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a4dd35df8f0b4944792c47c5fd444d768}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!ignore\_near\_range@{ignore\_near\_range}}
+\index{ignore\_near\_range@{ignore\_near\_range}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{ignore\_near\_range}{ignore\_near\_range}}
+{\footnotesize\ttfamily bool sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::ignore\+\_\+near\+\_\+range}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a334545f2bff6009d527856dfa8845c91}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a334545f2bff6009d527856dfa8845c91}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!layer\_range\_reduction@{layer\_range\_reduction}}
+\index{layer\_range\_reduction@{layer\_range\_reduction}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{layer\_range\_reduction}{layer\_range\_reduction}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::layer\+\_\+range\+\_\+reduction}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aa2f0ef4170c883a56a3e98c5f314d6c6}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aa2f0ef4170c883a56a3e98c5f314d6c6}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!max\_prediction\_age@{max\_prediction\_age}}
+\index{max\_prediction\_age@{max\_prediction\_age}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{max\_prediction\_age}{max\_prediction\_age}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::max\+\_\+prediction\+\_\+age}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a513c7786695780596beff71f5d26ae7a}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a513c7786695780596beff71f5d26ae7a}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!min\_object\_age@{min\_object\_age}}
+\index{min\_object\_age@{min\_object\_age}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{min\_object\_age}{min\_object\_age}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::min\+\_\+object\+\_\+age}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0167b869c287a9eed5ce95c348ea30af}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a0167b869c287a9eed5ce95c348ea30af}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!scan\_frequency@{scan\_frequency}}
+\index{scan\_frequency@{scan\_frequency}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{scan\_frequency}{scan\_frequency}}
+{\footnotesize\ttfamily int sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::scan\+\_\+frequency}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a306ea289e6ac54c9cb51e7a47fed8acf}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_a306ea289e6ac54c9cb51e7a47fed8acf}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!sensitivity\_control@{sensitivity\_control}}
+\index{sensitivity\_control@{sensitivity\_control}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{sensitivity\_control}{sensitivity\_control}}
+{\footnotesize\ttfamily bool sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::sensitivity\+\_\+control}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aaf90ac4a0cfec4376580baad8c9e01a1}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_aaf90ac4a0cfec4376580baad8c9e01a1}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!start\_angle@{start\_angle}}
+\index{start\_angle@{start\_angle}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{start\_angle}{start\_angle}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::start\+\_\+angle}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ac5d839d4f04d35b6c5b04ca21dd7129b}\label{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig_ac5d839d4f04d35b6c5b04ca21dd7129b}} 
+\index{sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}!sync\_angle\_offset@{sync\_angle\_offset}}
+\index{sync\_angle\_offset@{sync\_angle\_offset}!sick\_ldmrs\_driver::SickLDMRSDriverConfig@{sick\_ldmrs\_driver::SickLDMRSDriverConfig}}
+\doxysubsubsection{\texorpdfstring{sync\_angle\_offset}{sync\_angle\_offset}}
+{\footnotesize\ttfamily double sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config\+::sync\+\_\+angle\+\_\+offset}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/ldmrs/\mbox{\hyperlink{sick__ldmrs__config_8hpp}{sick\+\_\+ldmrs\+\_\+config.\+hpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/ldmrs/\mbox{\hyperlink{sick__ldmrs__config_8cpp}{sick\+\_\+ldmrs\+\_\+config.\+cpp}}\end{DoxyCompactItemize}

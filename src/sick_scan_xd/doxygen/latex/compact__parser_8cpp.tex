@@ -1,0 +1,110 @@
+\hypertarget{compact__parser_8cpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/compact\+\_\+parser.cpp File Reference}
+\label{compact__parser_8cpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/sick\_scansegment\_xd/compact\_parser.cpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/sick\_scansegment\_xd/compact\_parser.cpp}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{unionCOMPACT__4BYTE__UNION}{C\+O\+M\+P\+A\+C\+T\+\_\+4\+B\+Y\+T\+E\+\_\+\+U\+N\+I\+ON}}
+\item 
+union \mbox{\hyperlink{unionCOMPACT__8BYTE__UNION}{C\+O\+M\+P\+A\+C\+T\+\_\+8\+B\+Y\+T\+E\+\_\+\+U\+N\+I\+ON}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef enum \mbox{\hyperlink{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867}{Read\+Beam\+Azim\+Order\+Enum}} \mbox{\hyperlink{compact__parser_8cpp_a3ef669ccb6f3807b51f022033a82180d}{Read\+Beam\+Azim\+Order}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867}{Read\+Beam\+Azim\+Order\+Enum}} \{ \mbox{\hyperlink{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867ac1ca2357f496c32552b745e7b627ff3e}{R\+E\+A\+D\+\_\+\+B\+E\+A\+M\+\_\+\+A\+Z\+IM}}, 
+\mbox{\hyperlink{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867ab881a8353c5373dab91b1476b0933fc4}{R\+E\+A\+D\+\_\+\+B\+E\+A\+M\+\_\+\+P\+R\+OP}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static T \mbox{\hyperlink{compact__parser_8cpp_ae06cb6d26c0129634ed0151e5d106a28}{read\+Unsigned}} (const uint8\+\_\+t $\ast$scandata, uint32\+\_\+t $\ast$byte\+\_\+cnt)
+\item 
+static float \mbox{\hyperlink{compact__parser_8cpp_a7dc9a45190945bf99faee7de14f109d1}{read\+Float32}} (const uint8\+\_\+t $\ast$scandata, uint32\+\_\+t $\ast$byte\+\_\+cnt)
+\item 
+static bool \mbox{\hyperlink{compact__parser_8cpp_ab93ff740eb0ec0a18862743bf8725860}{end\+Of\+Buffer}} (uint32\+\_\+t byte\+\_\+cnt, size\+\_\+t bytes\+\_\+to\+\_\+read, uint32\+\_\+t num\+\_\+bytes)
+\item 
+static void \mbox{\hyperlink{compact__parser_8cpp_a2ff7014bab77355232523ea7fb1cff78}{print\+\_\+error}} (const std\+::string \&err\+\_\+msg, int line\+\_\+number, double print\+\_\+rate=1)
+\item 
+static bool \mbox{\hyperlink{compact__parser_8cpp_afe5ea9f0e6075d33f56598f404aec94d}{get\+Max\+Azimuth\+Aperture\+Within\+Cube}} (const std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput_1_1Scangroup}{sick\+\_\+scansegment\+\_\+xd\+::\+Scan\+Segment\+Parser\+Output\+::\+Scangroup}} $>$ \&scandata, float x\+\_\+min, float x\+\_\+max, float y\+\_\+min, float y\+\_\+max, float z\+\_\+min, float z\+\_\+max, float azimuth\+\_\+min, float azimuth\+\_\+max, double \&azimuth\+\_\+aperture, uint64\+\_\+t \&timestamp\+\_\+microsec)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ int $>$ \mbox{\hyperlink{compact__parser_8cpp_aef91dd36b6dacc4072c0185814e17772}{s\+\_\+layer\+\_\+elevation\+\_\+table\+\_\+mdeg}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{compact__parser_8cpp_a3ef669ccb6f3807b51f022033a82180d}\label{compact__parser_8cpp_a3ef669ccb6f3807b51f022033a82180d}} 
+\index{compact\_parser.cpp@{compact\_parser.cpp}!ReadBeamAzimOrder@{ReadBeamAzimOrder}}
+\index{ReadBeamAzimOrder@{ReadBeamAzimOrder}!compact\_parser.cpp@{compact\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{ReadBeamAzimOrder}{ReadBeamAzimOrder}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867}{Read\+Beam\+Azim\+Order\+Enum}} \mbox{\hyperlink{compact__parser_8cpp_a3ef669ccb6f3807b51f022033a82180d}{Read\+Beam\+Azim\+Order}}}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867}\label{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867}} 
+\index{compact\_parser.cpp@{compact\_parser.cpp}!ReadBeamAzimOrderEnum@{ReadBeamAzimOrderEnum}}
+\index{ReadBeamAzimOrderEnum@{ReadBeamAzimOrderEnum}!compact\_parser.cpp@{compact\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{ReadBeamAzimOrderEnum}{ReadBeamAzimOrderEnum}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867}{Read\+Beam\+Azim\+Order\+Enum}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{READ\_BEAM\_AZIM@{READ\_BEAM\_AZIM}!compact\_parser.cpp@{compact\_parser.cpp}}\index{compact\_parser.cpp@{compact\_parser.cpp}!READ\_BEAM\_AZIM@{READ\_BEAM\_AZIM}}}\mbox{\Hypertarget{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867ac1ca2357f496c32552b745e7b627ff3e}\label{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867ac1ca2357f496c32552b745e7b627ff3e}} 
+R\+E\+A\+D\+\_\+\+B\+E\+A\+M\+\_\+\+A\+Z\+IM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{READ\_BEAM\_PROP@{READ\_BEAM\_PROP}!compact\_parser.cpp@{compact\_parser.cpp}}\index{compact\_parser.cpp@{compact\_parser.cpp}!READ\_BEAM\_PROP@{READ\_BEAM\_PROP}}}\mbox{\Hypertarget{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867ab881a8353c5373dab91b1476b0933fc4}\label{compact__parser_8cpp_a1dd401cebfefe898c323fece847eb867ab881a8353c5373dab91b1476b0933fc4}} 
+R\+E\+A\+D\+\_\+\+B\+E\+A\+M\+\_\+\+P\+R\+OP&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{compact__parser_8cpp_ab93ff740eb0ec0a18862743bf8725860}\label{compact__parser_8cpp_ab93ff740eb0ec0a18862743bf8725860}} 
+\index{compact\_parser.cpp@{compact\_parser.cpp}!endOfBuffer@{endOfBuffer}}
+\index{endOfBuffer@{endOfBuffer}!compact\_parser.cpp@{compact\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{endOfBuffer()}{endOfBuffer()}}
+{\footnotesize\ttfamily static bool end\+Of\+Buffer (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{byte\+\_\+cnt,  }\item[{size\+\_\+t}]{bytes\+\_\+to\+\_\+read,  }\item[{uint32\+\_\+t}]{num\+\_\+bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{compact__parser_8cpp_afe5ea9f0e6075d33f56598f404aec94d}\label{compact__parser_8cpp_afe5ea9f0e6075d33f56598f404aec94d}} 
+\index{compact\_parser.cpp@{compact\_parser.cpp}!getMaxAzimuthApertureWithinCube@{getMaxAzimuthApertureWithinCube}}
+\index{getMaxAzimuthApertureWithinCube@{getMaxAzimuthApertureWithinCube}!compact\_parser.cpp@{compact\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{getMaxAzimuthApertureWithinCube()}{getMaxAzimuthApertureWithinCube()}}
+{\footnotesize\ttfamily static bool get\+Max\+Azimuth\+Aperture\+Within\+Cube (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput_1_1Scangroup}{sick\+\_\+scansegment\+\_\+xd\+::\+Scan\+Segment\+Parser\+Output\+::\+Scangroup}} $>$ \&}]{scandata,  }\item[{float}]{x\+\_\+min,  }\item[{float}]{x\+\_\+max,  }\item[{float}]{y\+\_\+min,  }\item[{float}]{y\+\_\+max,  }\item[{float}]{z\+\_\+min,  }\item[{float}]{z\+\_\+max,  }\item[{float}]{azimuth\+\_\+min,  }\item[{float}]{azimuth\+\_\+max,  }\item[{double \&}]{azimuth\+\_\+aperture,  }\item[{uint64\+\_\+t \&}]{timestamp\+\_\+microsec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{compact__parser_8cpp_a2ff7014bab77355232523ea7fb1cff78}\label{compact__parser_8cpp_a2ff7014bab77355232523ea7fb1cff78}} 
+\index{compact\_parser.cpp@{compact\_parser.cpp}!print\_error@{print\_error}}
+\index{print\_error@{print\_error}!compact\_parser.cpp@{compact\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_error()}{print\_error()}}
+{\footnotesize\ttfamily static void print\+\_\+error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{err\+\_\+msg,  }\item[{int}]{line\+\_\+number,  }\item[{double}]{print\+\_\+rate = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{compact__parser_8cpp_a7dc9a45190945bf99faee7de14f109d1}\label{compact__parser_8cpp_a7dc9a45190945bf99faee7de14f109d1}} 
+\index{compact\_parser.cpp@{compact\_parser.cpp}!readFloat32@{readFloat32}}
+\index{readFloat32@{readFloat32}!compact\_parser.cpp@{compact\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{readFloat32()}{readFloat32()}}
+{\footnotesize\ttfamily static float read\+Float32 (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{scandata,  }\item[{uint32\+\_\+t $\ast$}]{byte\+\_\+cnt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{compact__parser_8cpp_ae06cb6d26c0129634ed0151e5d106a28}\label{compact__parser_8cpp_ae06cb6d26c0129634ed0151e5d106a28}} 
+\index{compact\_parser.cpp@{compact\_parser.cpp}!readUnsigned@{readUnsigned}}
+\index{readUnsigned@{readUnsigned}!compact\_parser.cpp@{compact\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{readUnsigned()}{readUnsigned()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static T read\+Unsigned (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{scandata,  }\item[{uint32\+\_\+t $\ast$}]{byte\+\_\+cnt }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{compact__parser_8cpp_aef91dd36b6dacc4072c0185814e17772}\label{compact__parser_8cpp_aef91dd36b6dacc4072c0185814e17772}} 
+\index{compact\_parser.cpp@{compact\_parser.cpp}!s\_layer\_elevation\_table\_mdeg@{s\_layer\_elevation\_table\_mdeg}}
+\index{s\_layer\_elevation\_table\_mdeg@{s\_layer\_elevation\_table\_mdeg}!compact\_parser.cpp@{compact\_parser.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_layer\_elevation\_table\_mdeg}{s\_layer\_elevation\_table\_mdeg}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ s\+\_\+layer\+\_\+elevation\+\_\+table\+\_\+mdeg\hspace{0.3cm}{\ttfamily [static]}}
+

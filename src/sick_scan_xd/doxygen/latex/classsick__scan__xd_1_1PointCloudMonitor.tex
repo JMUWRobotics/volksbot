@@ -1,0 +1,145 @@
+\hypertarget{classsick__scan__xd_1_1PointCloudMonitor}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Point\+Cloud\+Monitor Class Reference}
+\label{classsick__scan__xd_1_1PointCloudMonitor}\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+monitoring.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scan\+\_\+xd\+::Point\+Cloud\+Monitor\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=244pt]{classsick__scan__xd_1_1PointCloudMonitor__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a7e526384b779a859c4a195fd71746094}{Point\+Cloud\+Monitor}} ()
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a11e970f2eaf03314449b13838f1a7634}{$\sim$\+Point\+Cloud\+Monitor}} ()
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a3f8c16c3d1825837329674da050811d4}{start\+Point\+Cloud\+Monitoring}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, int timeout\+\_\+millisec=R\+E\+A\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+I\+L\+L\+I\+S\+E\+C\+\_\+\+K\+I\+L\+L\+\_\+\+N\+O\+DE, const std\+::string \&ros\+\_\+cloud\+\_\+topic=\char`\"{}cloud\char`\"{})
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a201ee4fe4104d540a27e549eff434176}{stop\+Point\+Cloud\+Monitoring}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a25b4842adc52694b111d4a59c2d03971}{message\+Cb\+Point\+Cloud}} (const ros\+\_\+sensor\+\_\+msgs\+::\+Point\+Cloud2 \&msg)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a6ca1e161303795b0e2ad43c19850450e}{message\+Cb\+Point\+Cloud\+R\+O\+S2}} (const std\+::shared\+\_\+ptr$<$ ros\+\_\+sensor\+\_\+msgs\+::\+Point\+Cloud2 $>$ msg)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a83d812146d15e107fb968a0c314aef00}{run\+Monitoring\+Thread\+Cb}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a85c70480602edf811da44e6b90d984ef}{m\+\_\+nh}}
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a8089633e03ea3c204492d3e7bb9fcc5e}{m\+\_\+timeout\+\_\+millisec}}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a82f3b7309caa619a4f37c7f9b366f5b4}{m\+\_\+ros\+\_\+cloud\+\_\+topic}}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a116c041a97839521743d19f0a7cd83b5}{m\+\_\+last\+\_\+msg\+\_\+timestamp\+\_\+nanosec}}
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_a90acd4bdc0f401b13651faeb0063b72d}{m\+\_\+monitoring\+\_\+thread\+\_\+running}}
+\item 
+std\+::thread $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1PointCloudMonitor_ab9a64ebf4ee2cc95e91367a0211a1cc7}{m\+\_\+monitoring\+\_\+thread}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a7e526384b779a859c4a195fd71746094}\label{classsick__scan__xd_1_1PointCloudMonitor_a7e526384b779a859c4a195fd71746094}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!PointCloudMonitor@{PointCloudMonitor}}
+\index{PointCloudMonitor@{PointCloudMonitor}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{PointCloudMonitor()}{PointCloudMonitor()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::\+Point\+Cloud\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a11e970f2eaf03314449b13838f1a7634}\label{classsick__scan__xd_1_1PointCloudMonitor_a11e970f2eaf03314449b13838f1a7634}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!````~PointCloudMonitor@{$\sim$PointCloudMonitor}}
+\index{````~PointCloudMonitor@{$\sim$PointCloudMonitor}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{$\sim$PointCloudMonitor()}{~PointCloudMonitor()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::$\sim$\+Point\+Cloud\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a25b4842adc52694b111d4a59c2d03971}\label{classsick__scan__xd_1_1PointCloudMonitor_a25b4842adc52694b111d4a59c2d03971}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!messageCbPointCloud@{messageCbPointCloud}}
+\index{messageCbPointCloud@{messageCbPointCloud}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{messageCbPointCloud()}{messageCbPointCloud()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::message\+Cb\+Point\+Cloud (\begin{DoxyParamCaption}\item[{const ros\+\_\+sensor\+\_\+msgs\+::\+Point\+Cloud2 \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Callback for point cloud messages \mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a6ca1e161303795b0e2ad43c19850450e}\label{classsick__scan__xd_1_1PointCloudMonitor_a6ca1e161303795b0e2ad43c19850450e}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!messageCbPointCloudROS2@{messageCbPointCloudROS2}}
+\index{messageCbPointCloudROS2@{messageCbPointCloudROS2}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{messageCbPointCloudROS2()}{messageCbPointCloudROS2()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::message\+Cb\+Point\+Cloud\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ ros\+\_\+sensor\+\_\+msgs\+::\+Point\+Cloud2 $>$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+R\+O\+S2-\/callback for point cloud messages ~\newline
+ \mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a83d812146d15e107fb968a0c314aef00}\label{classsick__scan__xd_1_1PointCloudMonitor_a83d812146d15e107fb968a0c314aef00}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!runMonitoringThreadCb@{runMonitoringThreadCb}}
+\index{runMonitoringThreadCb@{runMonitoringThreadCb}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{runMonitoringThreadCb()}{runMonitoringThreadCb()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::run\+Monitoring\+Thread\+Cb (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a3f8c16c3d1825837329674da050811d4}\label{classsick__scan__xd_1_1PointCloudMonitor_a3f8c16c3d1825837329674da050811d4}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!startPointCloudMonitoring@{startPointCloudMonitoring}}
+\index{startPointCloudMonitoring@{startPointCloudMonitoring}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{startPointCloudMonitoring()}{startPointCloudMonitoring()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::start\+Point\+Cloud\+Monitoring (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{int}]{timeout\+\_\+millisec = {\ttfamily READ\+\_\+TIMEOUT\+\_\+MILLISEC\+\_\+KILL\+\_\+NODE},  }\item[{const std\+::string \&}]{ros\+\_\+cloud\+\_\+topic = {\ttfamily \char`\"{}cloud\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a201ee4fe4104d540a27e549eff434176}\label{classsick__scan__xd_1_1PointCloudMonitor_a201ee4fe4104d540a27e549eff434176}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!stopPointCloudMonitoring@{stopPointCloudMonitoring}}
+\index{stopPointCloudMonitoring@{stopPointCloudMonitoring}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{stopPointCloudMonitoring()}{stopPointCloudMonitoring()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::stop\+Point\+Cloud\+Monitoring (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a116c041a97839521743d19f0a7cd83b5}\label{classsick__scan__xd_1_1PointCloudMonitor_a116c041a97839521743d19f0a7cd83b5}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!m\_last\_msg\_timestamp\_nanosec@{m\_last\_msg\_timestamp\_nanosec}}
+\index{m\_last\_msg\_timestamp\_nanosec@{m\_last\_msg\_timestamp\_nanosec}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{m\_last\_msg\_timestamp\_nanosec}{m\_last\_msg\_timestamp\_nanosec}}
+{\footnotesize\ttfamily uint64\+\_\+t sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::m\+\_\+last\+\_\+msg\+\_\+timestamp\+\_\+nanosec\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_ab9a64ebf4ee2cc95e91367a0211a1cc7}\label{classsick__scan__xd_1_1PointCloudMonitor_ab9a64ebf4ee2cc95e91367a0211a1cc7}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!m\_monitoring\_thread@{m\_monitoring\_thread}}
+\index{m\_monitoring\_thread@{m\_monitoring\_thread}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{m\_monitoring\_thread}{m\_monitoring\_thread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::m\+\_\+monitoring\+\_\+thread\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a90acd4bdc0f401b13651faeb0063b72d}\label{classsick__scan__xd_1_1PointCloudMonitor_a90acd4bdc0f401b13651faeb0063b72d}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!m\_monitoring\_thread\_running@{m\_monitoring\_thread\_running}}
+\index{m\_monitoring\_thread\_running@{m\_monitoring\_thread\_running}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{m\_monitoring\_thread\_running}{m\_monitoring\_thread\_running}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::m\+\_\+monitoring\+\_\+thread\+\_\+running\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a85c70480602edf811da44e6b90d984ef}\label{classsick__scan__xd_1_1PointCloudMonitor_a85c70480602edf811da44e6b90d984ef}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!m\_nh@{m\_nh}}
+\index{m\_nh@{m\_nh}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{m\_nh}{m\_nh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::m\+\_\+nh\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a82f3b7309caa619a4f37c7f9b366f5b4}\label{classsick__scan__xd_1_1PointCloudMonitor_a82f3b7309caa619a4f37c7f9b366f5b4}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!m\_ros\_cloud\_topic@{m\_ros\_cloud\_topic}}
+\index{m\_ros\_cloud\_topic@{m\_ros\_cloud\_topic}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{m\_ros\_cloud\_topic}{m\_ros\_cloud\_topic}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::m\+\_\+ros\+\_\+cloud\+\_\+topic\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1PointCloudMonitor_a8089633e03ea3c204492d3e7bb9fcc5e}\label{classsick__scan__xd_1_1PointCloudMonitor_a8089633e03ea3c204492d3e7bb9fcc5e}} 
+\index{sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}!m\_timeout\_millisec@{m\_timeout\_millisec}}
+\index{m\_timeout\_millisec@{m\_timeout\_millisec}!sick\_scan\_xd::PointCloudMonitor@{sick\_scan\_xd::PointCloudMonitor}}
+\doxysubsubsection{\texorpdfstring{m\_timeout\_millisec}{m\_timeout\_millisec}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud\+Monitor\+::m\+\_\+timeout\+\_\+millisec\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__monitoring_8h}{sick\+\_\+generic\+\_\+monitoring.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__generic__monitoring_8cpp}{sick\+\_\+generic\+\_\+monitoring.\+cpp}}\end{DoxyCompactItemize}

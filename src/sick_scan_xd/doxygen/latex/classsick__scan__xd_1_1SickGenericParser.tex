@@ -1,0 +1,374 @@
+\hypertarget{classsick__scan__xd_1_1SickGenericParser}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Generic\+Parser Class Reference}
+\label{classsick__scan__xd_1_1SickGenericParser}\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+parser.\+h$>$}
+
+
+
+Inheritance diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Generic\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classsick__scan__xd_1_1SickGenericParser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Generic\+Parser\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classsick__scan__xd_1_1SickGenericParser__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a7053c3af040de5f28eb0223f3e71fed3}{Sick\+Generic\+Parser}} (std\+::string scanner\+Type)
+\begin{DoxyCompactList}\small\item\em Construction of parser object. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a54b3648809d9432783858cabe48f65d0}{$\sim$\+Sick\+Generic\+Parser}} ()
+\begin{DoxyCompactList}\small\item\em Destructor of parser. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a7cab1c3a34e467e3df8c67561c0c11d0}{parse\+\_\+datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length, \mbox{\hyperlink{classsick__scan__xd_1_1SickScanConfig}{Sick\+Scan\+Config}} \&config, ros\+\_\+sensor\+\_\+msgs\+::\+Laser\+Scan \&msg, int \&num\+Echos, int \&echo\+Mask)
+\begin{DoxyCompactList}\small\item\em Parsing Ascii datagram. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a9e9a71e042fac525394bc8f56fb3678e}{check\+Scan\+Timing}} (float time\+\_\+increment, float scan\+\_\+time, float angle\+\_\+increment, float tol)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_aae9ea6a71fc2a56aa89a7dc8eaba1145}{set\+\_\+range\+\_\+min}} (float min)
+\begin{DoxyCompactList}\small\item\em Setting minimum range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_adeb4bf8fb9f518132d2968c1ee5131a6}{set\+\_\+range\+\_\+max}} (float max)
+\begin{DoxyCompactList}\small\item\em Setting maximum range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a56f65c974a4fcb64c8a2f78465dd68de}{get\+\_\+range\+\_\+min}} (void)
+\begin{DoxyCompactList}\small\item\em Getting minimum range. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a00ce334a70e297d10d438afea51e6075}{get\+\_\+range\+\_\+max}} (void)
+\begin{DoxyCompactList}\small\item\em Getting maximum range. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_aeebee0baee71bbd4bd2e040b8de0cee4}{set\+\_\+range\+\_\+filter\+\_\+config}} (\mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}} range\+\_\+filter\+\_\+handling)
+\begin{DoxyCompactList}\small\item\em Set range filter handling (range filter deactivated, drop, set to nan, etc.\+pp.) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}} \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_ad05d17d21b7a0751c2fee54f004e0aa0}{get\+\_\+range\+\_\+filter\+\_\+config}} (void) const
+\begin{DoxyCompactList}\small\item\em Get range filter handling (range filter deactivated, drop, set to nan, etc.\+pp.) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a566a8282a775a9bc73d2e82863ea0a54}{set\+\_\+time\+\_\+increment}} (float time)
+\begin{DoxyCompactList}\small\item\em setting time increment between shots \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a6084c165aba9bd9efe31bc93dbf9d5a9}{get\+\_\+time\+\_\+increment}} (void)
+\begin{DoxyCompactList}\small\item\em getting time increment between shots \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_ad9d4596e0ab19d9898b0196f3ed5b193}{set\+Scanner\+Type}} (std\+::string s)
+\begin{DoxyCompactList}\small\item\em setting scannertype \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a28a9c659f074bab511cc896a545b4e7b}{get\+Scanner\+Type}} (void)
+\begin{DoxyCompactList}\small\item\em getting scannertype \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_ae38bf5355c77b46c92370c06e635e174}{look\+Up\+For\+Allowed\+Scanner}} (std\+::string scanner\+Name)
+\begin{DoxyCompactList}\small\item\em checks the given scanner\+Name/scanner\+Type of validity \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a983c952b816ac6fe4c85d9e882bb927a}{set\+Current\+Param\+Ptr}} (\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam}{Scanner\+Basic\+Param}} $\ast$\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Set pointer to corresponding parameter object to the parser. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam}{Scanner\+Basic\+Param}} $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a9f535befe2e7c374b36517818a4e0cc0}{get\+Current\+Param\+Ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets Pointer to parameter object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a5788584c168dfe25ca135cfcc1390335}{check\+For\+Dist\+And\+R\+S\+SI}} (std\+::vector$<$ char $\ast$ $>$ \&fields, int expected\+\_\+number\+\_\+of\+\_\+data, int \&dist\+Num, int \&rssi\+Num, std\+::vector$<$ float $>$ \&dist\+Val, std\+::vector$<$ float $>$ \&rssi\+Val, int \&dist\+Mask)
+\begin{DoxyCompactList}\small\item\em check for D\+I\+ST and R\+S\+S\+I-\/entries in the datagram. Helper routine for parser \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a7053c3af040de5f28eb0223f3e71fed3}\label{classsick__scan__xd_1_1SickGenericParser_a7053c3af040de5f28eb0223f3e71fed3}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!SickGenericParser@{SickGenericParser}}
+\index{SickGenericParser@{SickGenericParser}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{SickGenericParser()}{SickGenericParser()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::\+Sick\+Generic\+Parser (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+scan\+Type }\end{DoxyParamCaption})}
+
+
+
+Construction of parser object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+scan\+Type} & Type of the Laserscanner \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a54b3648809d9432783858cabe48f65d0}\label{classsick__scan__xd_1_1SickGenericParser_a54b3648809d9432783858cabe48f65d0}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!````~SickGenericParser@{$\sim$SickGenericParser}}
+\index{````~SickGenericParser@{$\sim$SickGenericParser}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickGenericParser()}{~SickGenericParser()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::$\sim$\+Sick\+Generic\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor of parser. 
+
+\begin{DoxySeeAlso}{See also}
+Constructor \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser}{Sick\+Generic\+Parser}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a5788584c168dfe25ca135cfcc1390335}\label{classsick__scan__xd_1_1SickGenericParser_a5788584c168dfe25ca135cfcc1390335}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!checkForDistAndRSSI@{checkForDistAndRSSI}}
+\index{checkForDistAndRSSI@{checkForDistAndRSSI}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{checkForDistAndRSSI()}{checkForDistAndRSSI()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::check\+For\+Dist\+And\+R\+S\+SI (\begin{DoxyParamCaption}\item[{std\+::vector$<$ char $\ast$ $>$ \&}]{fields,  }\item[{int}]{expected\+\_\+number\+\_\+of\+\_\+data,  }\item[{int \&}]{dist\+Num,  }\item[{int \&}]{rssi\+Num,  }\item[{std\+::vector$<$ float $>$ \&}]{dist\+Val,  }\item[{std\+::vector$<$ float $>$ \&}]{rssi\+Val,  }\item[{int \&}]{dist\+Mask }\end{DoxyParamCaption})}
+
+
+
+check for D\+I\+ST and R\+S\+S\+I-\/entries in the datagram. Helper routine for parser 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fields} & String entries holding the information \\
+\hline
+{\em expected\+\_\+number\+\_\+of\+\_\+data} & Warning, if the number of found entries does not correspond to this entries \\
+\hline
+{\em dist\+Num} & Number of found D\+I\+S\+T-\/entries \\
+\hline
+{\em rssi\+Num} & Number of found R\+S\+S\+I-\/entries \\
+\hline
+{\em dist\+Val} & parsed istance values \\
+\hline
+{\em rssi\+Val} & parsed R\+S\+S\+I-\/values \\
+\hline
+{\em dist\+Mask} & Bit-\/\+Masking holds the information of found D\+I\+S\+T-\/entries (e.\+g. D\+I\+S\+T1 -\/$>$ Bit 0, D\+I\+S\+T2 -\/$>$ B\+IT 1 and so on) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Errorcode 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a7cab1c3a34e467e3df8c67561c0c11d0}{parse\+\_\+datagram}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a9e9a71e042fac525394bc8f56fb3678e}\label{classsick__scan__xd_1_1SickGenericParser_a9e9a71e042fac525394bc8f56fb3678e}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!checkScanTiming@{checkScanTiming}}
+\index{checkScanTiming@{checkScanTiming}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{checkScanTiming()}{checkScanTiming()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::check\+Scan\+Timing (\begin{DoxyParamCaption}\item[{float}]{time\+\_\+increment,  }\item[{float}]{scan\+\_\+time,  }\item[{float}]{angle\+\_\+increment,  }\item[{float}]{tol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_ad05d17d21b7a0751c2fee54f004e0aa0}\label{classsick__scan__xd_1_1SickGenericParser_ad05d17d21b7a0751c2fee54f004e0aa0}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!get\_range\_filter\_config@{get\_range\_filter\_config}}
+\index{get\_range\_filter\_config@{get\_range\_filter\_config}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{get\_range\_filter\_config()}{get\_range\_filter\_config()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::get\+\_\+range\+\_\+filter\+\_\+config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get range filter handling (range filter deactivated, drop, set to nan, etc.\+pp.) 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a00ce334a70e297d10d438afea51e6075}\label{classsick__scan__xd_1_1SickGenericParser_a00ce334a70e297d10d438afea51e6075}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!get\_range\_max@{get\_range\_max}}
+\index{get\_range\_max@{get\_range\_max}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{get\_range\_max()}{get\_range\_max()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::get\+\_\+range\+\_\+max (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Getting maximum range. 
+
+\begin{DoxyReturn}{Returns}
+range in \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_adeb4bf8fb9f518132d2968c1ee5131a6}{set\+\_\+range\+\_\+max}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a56f65c974a4fcb64c8a2f78465dd68de}\label{classsick__scan__xd_1_1SickGenericParser_a56f65c974a4fcb64c8a2f78465dd68de}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!get\_range\_min@{get\_range\_min}}
+\index{get\_range\_min@{get\_range\_min}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{get\_range\_min()}{get\_range\_min()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::get\+\_\+range\+\_\+min (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Getting minimum range. 
+
+\begin{DoxyReturn}{Returns}
+range in \mbox{[}m\mbox{]} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_aae9ea6a71fc2a56aa89a7dc8eaba1145}{set\+\_\+range\+\_\+min}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a6084c165aba9bd9efe31bc93dbf9d5a9}\label{classsick__scan__xd_1_1SickGenericParser_a6084c165aba9bd9efe31bc93dbf9d5a9}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!get\_time\_increment@{get\_time\_increment}}
+\index{get\_time\_increment@{get\_time\_increment}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{get\_time\_increment()}{get\_time\_increment()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::get\+\_\+time\+\_\+increment (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+getting time increment between shots 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & increment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a9f535befe2e7c374b36517818a4e0cc0}\label{classsick__scan__xd_1_1SickGenericParser_a9f535befe2e7c374b36517818a4e0cc0}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!getCurrentParamPtr@{getCurrentParamPtr}}
+\index{getCurrentParamPtr@{getCurrentParamPtr}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{getCurrentParamPtr()}{getCurrentParamPtr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam}{Scanner\+Basic\+Param}} $\ast$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::get\+Current\+Param\+Ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets Pointer to parameter object. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to parameter object holding information about protocol usage and scanner type specific parameter 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a28a9c659f074bab511cc896a545b4e7b}\label{classsick__scan__xd_1_1SickGenericParser_a28a9c659f074bab511cc896a545b4e7b}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!getScannerType@{getScannerType}}
+\index{getScannerType@{getScannerType}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{getScannerType()}{getScannerType()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::get\+Scanner\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+getting scannertype 
+
+\begin{DoxyReturn}{Returns}
+scanner\+Type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_ae38bf5355c77b46c92370c06e635e174}\label{classsick__scan__xd_1_1SickGenericParser_ae38bf5355c77b46c92370c06e635e174}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!lookUpForAllowedScanner@{lookUpForAllowedScanner}}
+\index{lookUpForAllowedScanner@{lookUpForAllowedScanner}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{lookUpForAllowedScanner()}{lookUpForAllowedScanner()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::look\+Up\+For\+Allowed\+Scanner (\begin{DoxyParamCaption}\item[{std\+::string}]{scanner\+Name }\end{DoxyParamCaption})}
+
+
+
+checks the given scanner\+Name/scanner\+Type of validity 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scanner\+Name} & as string (e.\+g. \char`\"{}tim\+\_\+5xx\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of found scanner. -\/1 corresponds to \char`\"{}not found\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a7cab1c3a34e467e3df8c67561c0c11d0}\label{classsick__scan__xd_1_1SickGenericParser_a7cab1c3a34e467e3df8c67561c0c11d0}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!parse\_datagram@{parse\_datagram}}
+\index{parse\_datagram@{parse\_datagram}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{parse\_datagram()}{parse\_datagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::parse\+\_\+datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanConfig}{Sick\+Scan\+Config}} \&}]{config,  }\item[{ros\+\_\+sensor\+\_\+msgs\+::\+Laser\+Scan \&}]{msg,  }\item[{int \&}]{num\+Echos,  }\item[{int \&}]{echo\+Mask }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Parsing Ascii datagram. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+{\em config} & Pointer to Configdata \\
+\hline
+{\em msg} & Holds result of Parsing \\
+\hline
+{\em num\+Echos} & Number of D\+I\+S\+T-\/blocks found in message \\
+\hline
+{\em echo\+Mask} & Mask corresponding to D\+I\+S\+T-\/block-\/identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+set\+\_\+range\+\_\+max 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classsick__scan__xd_1_1AbstractParser_a3adfaddaf40cf52e026a15f6736b7119}{sick\+\_\+scan\+\_\+xd\+::\+Abstract\+Parser}}.
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_aeebee0baee71bbd4bd2e040b8de0cee4}\label{classsick__scan__xd_1_1SickGenericParser_aeebee0baee71bbd4bd2e040b8de0cee4}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!set\_range\_filter\_config@{set\_range\_filter\_config}}
+\index{set\_range\_filter\_config@{set\_range\_filter\_config}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{set\_range\_filter\_config()}{set\_range\_filter\_config()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::set\+\_\+range\+\_\+filter\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}}}]{range\+\_\+filter\+\_\+handling }\end{DoxyParamCaption})}
+
+
+
+Set range filter handling (range filter deactivated, drop, set to nan, etc.\+pp.) 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_adeb4bf8fb9f518132d2968c1ee5131a6}\label{classsick__scan__xd_1_1SickGenericParser_adeb4bf8fb9f518132d2968c1ee5131a6}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!set\_range\_max@{set\_range\_max}}
+\index{set\_range\_max@{set\_range\_max}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{set\_range\_max()}{set\_range\_max()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::set\+\_\+range\+\_\+max (\begin{DoxyParamCaption}\item[{float}]{max }\end{DoxyParamCaption})}
+
+
+
+Setting maximum range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em max} & range in \mbox{[}m\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_aae9ea6a71fc2a56aa89a7dc8eaba1145}{set\+\_\+range\+\_\+min}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_aae9ea6a71fc2a56aa89a7dc8eaba1145}\label{classsick__scan__xd_1_1SickGenericParser_aae9ea6a71fc2a56aa89a7dc8eaba1145}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!set\_range\_min@{set\_range\_min}}
+\index{set\_range\_min@{set\_range\_min}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{set\_range\_min()}{set\_range\_min()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::set\+\_\+range\+\_\+min (\begin{DoxyParamCaption}\item[{float}]{min }\end{DoxyParamCaption})}
+
+
+
+Setting minimum range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min} & range in \mbox{[}m\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_adeb4bf8fb9f518132d2968c1ee5131a6}{set\+\_\+range\+\_\+max}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a566a8282a775a9bc73d2e82863ea0a54}\label{classsick__scan__xd_1_1SickGenericParser_a566a8282a775a9bc73d2e82863ea0a54}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!set\_time\_increment@{set\_time\_increment}}
+\index{set\_time\_increment@{set\_time\_increment}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{set\_time\_increment()}{set\_time\_increment()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::set\+\_\+time\+\_\+increment (\begin{DoxyParamCaption}\item[{float}]{time }\end{DoxyParamCaption})}
+
+
+
+setting time increment between shots 
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & increment \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_a983c952b816ac6fe4c85d9e882bb927a}\label{classsick__scan__xd_1_1SickGenericParser_a983c952b816ac6fe4c85d9e882bb927a}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!setCurrentParamPtr@{setCurrentParamPtr}}
+\index{setCurrentParamPtr@{setCurrentParamPtr}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{setCurrentParamPtr()}{setCurrentParamPtr()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::set\+Current\+Param\+Ptr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam}{Scanner\+Basic\+Param}} $\ast$}]{\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Set pointer to corresponding parameter object to the parser. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+ptr} & to parameter object \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a9f535befe2e7c374b36517818a4e0cc0}{get\+Current\+Param\+Ptr}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickGenericParser_ad9d4596e0ab19d9898b0196f3ed5b193}\label{classsick__scan__xd_1_1SickGenericParser_ad9d4596e0ab19d9898b0196f3ed5b193}} 
+\index{sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}!setScannerType@{setScannerType}}
+\index{setScannerType@{setScannerType}!sick\_scan\_xd::SickGenericParser@{sick\_scan\_xd::SickGenericParser}}
+\doxysubsubsection{\texorpdfstring{setScannerType()}{setScannerType()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser\+::set\+Scanner\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+scanner\+Type }\end{DoxyParamCaption})}
+
+
+
+setting scannertype 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+scanner\+Type} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser_a28a9c659f074bab511cc896a545b4e7b}{get\+Scanner\+Type}} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__parser_8h}{sick\+\_\+generic\+\_\+parser.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__generic__parser_8cpp}{sick\+\_\+generic\+\_\+parser.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,881 @@
+\hypertarget{classmsgpack11_1_1MsgPack}{}\doxysection{msgpack11\+::Msg\+Pack Class Reference}
+\label{classmsgpack11_1_1MsgPack}\index{msgpack11::MsgPack@{msgpack11::MsgPack}}
+
+
+{\ttfamily \#include $<$msgpack11.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}{Type}} \{ \newline
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a5348b41d8c1da466d9d7bb9ecc71dbcf}{N\+U\+M\+B\+ER}} = 1, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05affedf50ebc26096ff082fdb103109e1f}{I\+NT}} = 2 $\vert$ N\+U\+M\+B\+ER, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0f49d57780815f2ca98003657cdbe4e6}{N\+UL}} = 1 $<$$<$ 2, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0b2d58f24b145d093b038b930547bbd8}{F\+L\+O\+A\+T32}} = 2 $<$$<$ 2 $\vert$ N\+U\+M\+B\+ER, 
+\newline
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a357cbb2ddeb281328d314f00d3259418}{F\+L\+O\+A\+T64}} = 3 $<$$<$ 2 $\vert$ N\+U\+M\+B\+ER, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05abc04651d58824f885263ab919527e357}{I\+N\+T8}} = 4 $<$$<$ 2 $\vert$ I\+NT, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ad2cf955e3ff43da4dcbe770e264c335e}{I\+N\+T16}} = 5 $<$$<$ 2 $\vert$ I\+NT, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ae2ad9c3ea0d1f20facf968d791f197d1}{I\+N\+T32}} = 6 $<$$<$ 2 $\vert$ I\+NT, 
+\newline
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a7c6527457562af1f118e2d3867a59510}{I\+N\+T64}} = 7 $<$$<$ 2 $\vert$ I\+NT, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ab53b5603f04cdba3fd6d6b9858bc27a9}{U\+I\+N\+T8}} = 8 $<$$<$ 2 $\vert$ I\+NT, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0836c1450fba98690b48cce096c0a42f}{U\+I\+N\+T16}} = 9 $<$$<$ 2 $\vert$ I\+NT, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a7d7a99fa849f963a2b64d7cb70de2999}{U\+I\+N\+T32}} = 10 $<$$<$ 2 $\vert$ I\+NT, 
+\newline
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a1c9a6de37c21f2595468dc855888eaa5}{U\+I\+N\+T64}} = 11 $<$$<$ 2 $\vert$ I\+NT, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a9edcc254d631e4ca41fcd03af94c459c}{B\+O\+OL}} = 12 $<$$<$ 2, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a542e972b36999da02b4f7a00bfbe7d9e}{S\+T\+R\+I\+NG}} = 13 $<$$<$ 2, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a126b12309f3e9acf398fb9f3fcf31a2f}{B\+I\+N\+A\+RY}} = 14 $<$$<$ 2, 
+\newline
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ade1e4804137e1812441dacdca8d42bf5}{A\+R\+R\+AY}} = 15 $<$$<$ 2, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a6897dbce32e4653668e3582fc25817ad}{O\+B\+J\+E\+CT}} = 16 $<$$<$ 2, 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a07f2d3119031e14378e8ec3fe3c0988d}{E\+X\+T\+E\+N\+S\+I\+ON}} = 17 $<$$<$ 2
+ \}
+\item 
+typedef std\+::vector$<$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} $>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}{array}}
+\item 
+typedef std\+::map$<$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}, \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} $>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}{object}}
+\item 
+typedef std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{binary}}
+\item 
+typedef std\+::tuple$<$ int8\+\_\+t, \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{binary}} $>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{extension}}
+\item 
+typedef std\+::initializer\+\_\+list$<$ std\+::pair$<$ std\+::string, \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}{Type}} $>$ $>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a55784a9b07fac26afe6e55671d0e6274}{shape}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a8e22306b574ef368f5da09ef5af6d6b7}{Msg\+Pack}} () noexcept
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a899172ae3063f9a4bd88fbf93137b428}{Msg\+Pack}} (std\+::nullptr\+\_\+t) noexcept
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab3ee4acb4b702664b11a121b85d9cbb8}{Msg\+Pack}} (float value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a2123cca2d8b94d1e9fafb76af37e57f8}{Msg\+Pack}} (double value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a99c112fedf1d346e874480ed1e67e160}{Msg\+Pack}} (int8\+\_\+t value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a7341efd44b4343f756c64d20ebffbd67}{Msg\+Pack}} (int16\+\_\+t value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac31b980940654f28714adff9625de2a2}{Msg\+Pack}} (int32\+\_\+t value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0b00b3ac51cae85d96b6bef6e1b6ad7c}{Msg\+Pack}} (int64\+\_\+t value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a5c0606018de0227540ff0ceffebb8348}{Msg\+Pack}} (uint8\+\_\+t value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a641dfdd88698bfd82051dd779d08d5f1}{Msg\+Pack}} (uint16\+\_\+t value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a99e2bc2e9503760514466dc9f5c7d5af}{Msg\+Pack}} (uint32\+\_\+t value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_acb0a7a1430c428d8788fb5995bb34012}{Msg\+Pack}} (uint64\+\_\+t value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_afdf8eb131034ac2940ce3ef340064813}{Msg\+Pack}} (bool value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ad694a98ab756e36bdd179a472b3b91d5}{Msg\+Pack}} (const std\+::string \&value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a5c39178554659a32b63970b11ef4501f}{Msg\+Pack}} (std\+::string \&\&value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_abd0546b0d3f377b4a5bcf4b7b28c08ee}{Msg\+Pack}} (const char $\ast$value)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab1cd1f0e4c91848fcfde32773151dd9b}{Msg\+Pack}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}{array}} \&values)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac7a6ed41236fd829d9383569d57c266b}{Msg\+Pack}} (\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}{array}} \&\&values)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a42ce2e21b7c95e4e3448fdf8298fd3bc}{Msg\+Pack}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}{object}} \&values)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_aa491661e7c0d0290dd6e58064ec02e12}{Msg\+Pack}} (\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}{object}} \&\&values)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a27fde4644610d4b0f41a1237abcdb658}{Msg\+Pack}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{binary}} \&values)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a2818ea208bf7217a614b535237c184f3}{Msg\+Pack}} (\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{binary}} \&\&values)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a8e8806ee626517a2ba57bc452bb16867}{Msg\+Pack}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{extension}} \&values)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a04673b75368dd615a45ea58c00acf71d}{Msg\+Pack}} (\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{extension}} \&\&values)
+\item 
+{\footnotesize template$<$class T , class  = decltype(\&\+T\+::to\+\_\+msgpack)$>$ }\\\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a4edab815163c12ac91364e6b49c920b9}{Msg\+Pack}} (const T \&t)
+\item 
+{\footnotesize template$<$class M , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+constructible$<$ Msg\+Pack, typename M\+::key\+\_\+type $>$\+::value \&\&std\+::is\+\_\+constructible$<$ Msg\+Pack, typename M\+::mapped\+\_\+type $>$\+::value, int $>$\+::type  = 0$>$ }\\\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a82aab1fbbf4374df69698db78caa1141}{Msg\+Pack}} (const M \&m)
+\item 
+{\footnotesize template$<$class V , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+constructible$<$ Msg\+Pack, typename V\+::value\+\_\+type $>$\+::value \&\&!std\+::is\+\_\+same$<$ typename binary\+::value\+\_\+type, typename V\+::value\+\_\+type $>$\+::value, int $>$\+::type  = 0$>$ }\\\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a9c13ea862ff4cefb48b1e0c7149ace8a}{Msg\+Pack}} (const V \&v)
+\item 
+{\footnotesize template$<$class V , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+constructible$<$ Msg\+Pack, typename V\+::value\+\_\+type $>$\+::value \&\&std\+::is\+\_\+same$<$ typename binary\+::value\+\_\+type, typename V\+::value\+\_\+type $>$\+::value, int $>$\+::type  = 0$>$ }\\\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a9c13ea862ff4cefb48b1e0c7149ace8a}{Msg\+Pack}} (const V \&v)
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a2deecb681eed120ebd8d6f0278a30e51}{Msg\+Pack}} (void $\ast$)=delete
+\item 
+\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}{Type}} \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ae2f5ad0b44ce6205df108b9008c8d5f4}{type}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9843d1ef8572278b18102a9d038d0b0}{is\+\_\+null}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a6fc20eeb93010d4cd2322f46d154020a}{is\+\_\+bool}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a83457f6d13b650026ab23f8945d2057f}{is\+\_\+number}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a3f37c2126f411526476c3b449c6854ac}{is\+\_\+float32}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_af3a584403dd2de3590626a9fe203d912}{is\+\_\+float64}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a21fa4cd07fa4734fcaac8bb6284db3ce}{is\+\_\+int}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a94771234b45ea603c351d73eef8fd904}{is\+\_\+int8}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0625e42e8b4f2f6a9b8f0323209d6a3c}{is\+\_\+int16}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0019e77f0f7d7b117e697039985a85b8}{is\+\_\+int32}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a275ccc4c41e0be54864bb17fec77e838}{is\+\_\+int64}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a246d367a7f5e1d190bc0ff8df3997eb2}{is\+\_\+uint8}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac9af493a5420ce8f8d0c181d1741cb7d}{is\+\_\+uint16}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a2ae81d68edd537bc5a983a606f2c6b3d}{is\+\_\+uint32}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac31adeeead06aae9d8d49c282ac81e4b}{is\+\_\+uint64}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a5128e471c6f9c8fcf57c00e5299070c1}{is\+\_\+string}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_aa190fc1db329edcc345281c33c3f0a8a}{is\+\_\+array}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a84206415f65b9b465eb9f61174dc8245}{is\+\_\+binary}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_aabc5ec95f615596c34297c80fd0f8bb2}{is\+\_\+object}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_adf97938b12eb9277ecd774157c51e162}{is\+\_\+extension}} () const
+\item 
+double \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ae10504b2cf55dcef6ebe0a80a217e0bc}{number\+\_\+value}} () const
+\item 
+float \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a5c2267469f16515c025d90211c1ea6a5}{float32\+\_\+value}} () const
+\item 
+double \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a38d1cd6fb18a50045d76420b3e304e10}{float64\+\_\+value}} () const
+\item 
+int32\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a530cc3cb80445e683203832b7a340338}{int\+\_\+value}} () const
+\item 
+int8\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_abc5bd28763d8a4977bb2528bf06705b8}{int8\+\_\+value}} () const
+\item 
+int16\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_afd9a5f5d2ca7be93637a170762357627}{int16\+\_\+value}} () const
+\item 
+int32\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a557965c84f33c63911b4943b060c010a}{int32\+\_\+value}} () const
+\item 
+int64\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a8676af59451c6eef312fd537f591db3d}{int64\+\_\+value}} () const
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_aed73aae59e3880f548cd754331ed6eaa}{uint8\+\_\+value}} () const
+\item 
+uint16\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_af03da18dda29742abe4ebcf423f3be79}{uint16\+\_\+value}} () const
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a329fd710a505501e5d236c3173b27e55}{uint32\+\_\+value}} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a47f9a4fac2bfcf8c05129f14fc6a365f}{uint64\+\_\+value}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a4b83e7a6351b70a94661e6085efac666}{bool\+\_\+value}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a8b0e6bdb1e6b007b5d425f6e907bbb4d}{string\+\_\+value}} () const
+\item 
+const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}{array}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac2c8a3983b0e70be2a5fc2372f13d4cd}{array\+\_\+items}} () const
+\item 
+const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}{object}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab6b92125042d48cf1f513788d5123904}{object\+\_\+items}} () const
+\item 
+const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{binary}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a71d15cde9e97410058590db271309d9b}{binary\+\_\+items}} () const
+\item 
+const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{extension}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a9885984baa08a5b7f735e1d2b069d1e6}{extension\+\_\+items}} () const
+\item 
+const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_af44d1067eca6575821a4214b25b66009}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i) const
+\item 
+const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a155b6ec764f01317ec3800da18000dcb}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::string \&key) const
+\item 
+void \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac255026f6cd1a6113a25c1e5315dfb3b}{dump}} (std\+::string \&out) const
+\item 
+std\+::string \mbox{\hyperlink{classmsgpack11_1_1MsgPack_aca79b71e3616e8768e517c72450d2574}{dump}} () const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a5bc676fa8e240012a49449c3b07f51d2}{operator==}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a27af362f704e25ea06b254654221a737}{operator$<$}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a3ddbe799b0463b11ade871a8eaa1a6d8}{operator!=}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a2beb5b318e23e9bda8b7bab614f7faf0}{operator$<$=}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1a9275701f5f7e4dc8da4ffd38aee13c}{operator$>$}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_af3d889a5f99ed0b7a6e690d20a2ad4e2}{operator$>$=}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&rhs) const
+\item 
+bool \mbox{\hyperlink{classmsgpack11_1_1MsgPack_aa15b06b347bf1697f71d9e09fdcd367d}{has\+\_\+shape}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a55784a9b07fac26afe6e55671d0e6274}{shape}} \&types, std\+::string \&err) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a3696d7f81f0f346dd1c08a468b7868fd}{parse}} (const std\+::string \&in, std\+::string \&err)
+\item 
+static \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a79ec809f053d535c5755e2100930a74a}{parse}} (std\+::istream \&is, std\+::string \&err)
+\item 
+static \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab095408493a6d902f1d57c2598e829ef}{parse}} (std\+::istream \&is)
+\item 
+static \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a19e722ef86dc90ecf4b6b472908c2931}{parse}} (const char $\ast$in, size\+\_\+t len, std\+::string \&err)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} $>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_aeed975ecb05f5454d0cb6a1004a77a0b}{parse\+\_\+multi}} (const std\+::string \&in, std\+::string\+::size\+\_\+type \&parser\+\_\+stop\+\_\+pos, std\+::string \&err)
+\item 
+static std\+::vector$<$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} $>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a18f1c01f6968cf3e6e29bc82d1315af9}{parse\+\_\+multi}} (const std\+::string \&in, std\+::string \&err)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a2a32ee82d0ed6154ff31e5b54aaec470}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&msgpack)
+\item 
+std\+::istream \& \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a93c6860bd17fa0eab0ad797fec78283c}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&msgpack)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}\label{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!array@{array}}
+\index{array@{array}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{array}{array}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}$>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}{msgpack11\+::\+Msg\+Pack\+::array}}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}\label{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!binary@{binary}}
+\index{binary@{binary}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{binary}{binary}}
+{\footnotesize\ttfamily typedef std\+::vector$<$uint8\+\_\+t$>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{msgpack11\+::\+Msg\+Pack\+::binary}}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}\label{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!extension@{extension}}
+\index{extension@{extension}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{extension}{extension}}
+{\footnotesize\ttfamily typedef std\+::tuple$<$int8\+\_\+t, \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{binary}}$>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{msgpack11\+::\+Msg\+Pack\+::extension}}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}\label{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!object@{object}}
+\index{object@{object}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{object}{object}}
+{\footnotesize\ttfamily typedef std\+::map$<$\mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}, \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}$>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}{msgpack11\+::\+Msg\+Pack\+::object}}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a55784a9b07fac26afe6e55671d0e6274}\label{classmsgpack11_1_1MsgPack_a55784a9b07fac26afe6e55671d0e6274}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!shape@{shape}}
+\index{shape@{shape}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{shape}{shape}}
+{\footnotesize\ttfamily typedef std\+::initializer\+\_\+list$<$std\+::pair$<$std\+::string, \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}{Type}}$>$ $>$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a55784a9b07fac26afe6e55671d0e6274}{msgpack11\+::\+Msg\+Pack\+::shape}}}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!Type@{Type}}
+\index{Type@{Type}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}{msgpack11\+::\+Msg\+Pack\+::\+Type}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUMBER@{NUMBER}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!NUMBER@{NUMBER}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a5348b41d8c1da466d9d7bb9ecc71dbcf}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a5348b41d8c1da466d9d7bb9ecc71dbcf}} 
+N\+U\+M\+B\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT@{INT}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!INT@{INT}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05affedf50ebc26096ff082fdb103109e1f}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05affedf50ebc26096ff082fdb103109e1f}} 
+I\+NT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NUL@{NUL}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!NUL@{NUL}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0f49d57780815f2ca98003657cdbe4e6}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0f49d57780815f2ca98003657cdbe4e6}} 
+N\+UL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOAT32@{FLOAT32}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!FLOAT32@{FLOAT32}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0b2d58f24b145d093b038b930547bbd8}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0b2d58f24b145d093b038b930547bbd8}} 
+F\+L\+O\+A\+T32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FLOAT64@{FLOAT64}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!FLOAT64@{FLOAT64}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a357cbb2ddeb281328d314f00d3259418}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a357cbb2ddeb281328d314f00d3259418}} 
+F\+L\+O\+A\+T64&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT8@{INT8}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!INT8@{INT8}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05abc04651d58824f885263ab919527e357}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05abc04651d58824f885263ab919527e357}} 
+I\+N\+T8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT16@{INT16}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!INT16@{INT16}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ad2cf955e3ff43da4dcbe770e264c335e}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ad2cf955e3ff43da4dcbe770e264c335e}} 
+I\+N\+T16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT32@{INT32}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!INT32@{INT32}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ae2ad9c3ea0d1f20facf968d791f197d1}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ae2ad9c3ea0d1f20facf968d791f197d1}} 
+I\+N\+T32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INT64@{INT64}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!INT64@{INT64}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a7c6527457562af1f118e2d3867a59510}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a7c6527457562af1f118e2d3867a59510}} 
+I\+N\+T64&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UINT8@{UINT8}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!UINT8@{UINT8}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ab53b5603f04cdba3fd6d6b9858bc27a9}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ab53b5603f04cdba3fd6d6b9858bc27a9}} 
+U\+I\+N\+T8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UINT16@{UINT16}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!UINT16@{UINT16}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0836c1450fba98690b48cce096c0a42f}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a0836c1450fba98690b48cce096c0a42f}} 
+U\+I\+N\+T16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UINT32@{UINT32}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!UINT32@{UINT32}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a7d7a99fa849f963a2b64d7cb70de2999}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a7d7a99fa849f963a2b64d7cb70de2999}} 
+U\+I\+N\+T32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UINT64@{UINT64}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!UINT64@{UINT64}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a1c9a6de37c21f2595468dc855888eaa5}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a1c9a6de37c21f2595468dc855888eaa5}} 
+U\+I\+N\+T64&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BOOL@{BOOL}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!BOOL@{BOOL}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a9edcc254d631e4ca41fcd03af94c459c}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a9edcc254d631e4ca41fcd03af94c459c}} 
+B\+O\+OL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STRING@{STRING}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!STRING@{STRING}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a542e972b36999da02b4f7a00bfbe7d9e}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a542e972b36999da02b4f7a00bfbe7d9e}} 
+S\+T\+R\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BINARY@{BINARY}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!BINARY@{BINARY}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a126b12309f3e9acf398fb9f3fcf31a2f}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a126b12309f3e9acf398fb9f3fcf31a2f}} 
+B\+I\+N\+A\+RY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ARRAY@{ARRAY}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!ARRAY@{ARRAY}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ade1e4804137e1812441dacdca8d42bf5}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05ade1e4804137e1812441dacdca8d42bf5}} 
+A\+R\+R\+AY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OBJECT@{OBJECT}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!OBJECT@{OBJECT}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a6897dbce32e4653668e3582fc25817ad}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a6897dbce32e4653668e3582fc25817ad}} 
+O\+B\+J\+E\+CT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXTENSION@{EXTENSION}!msgpack11::MsgPack@{msgpack11::MsgPack}}\index{msgpack11::MsgPack@{msgpack11::MsgPack}!EXTENSION@{EXTENSION}}}\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a07f2d3119031e14378e8ec3fe3c0988d}\label{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05a07f2d3119031e14378e8ec3fe3c0988d}} 
+E\+X\+T\+E\+N\+S\+I\+ON&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a8e22306b574ef368f5da09ef5af6d6b7}\label{classmsgpack11_1_1MsgPack_a8e22306b574ef368f5da09ef5af6d6b7}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [1/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a899172ae3063f9a4bd88fbf93137b428}\label{classmsgpack11_1_1MsgPack_a899172ae3063f9a4bd88fbf93137b428}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [2/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{std\+::nullptr\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ab3ee4acb4b702664b11a121b85d9cbb8}\label{classmsgpack11_1_1MsgPack_ab3ee4acb4b702664b11a121b85d9cbb8}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [3/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a2123cca2d8b94d1e9fafb76af37e57f8}\label{classmsgpack11_1_1MsgPack_a2123cca2d8b94d1e9fafb76af37e57f8}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [4/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a99c112fedf1d346e874480ed1e67e160}\label{classmsgpack11_1_1MsgPack_a99c112fedf1d346e874480ed1e67e160}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [5/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a7341efd44b4343f756c64d20ebffbd67}\label{classmsgpack11_1_1MsgPack_a7341efd44b4343f756c64d20ebffbd67}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [6/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ac31b980940654f28714adff9625de2a2}\label{classmsgpack11_1_1MsgPack_ac31b980940654f28714adff9625de2a2}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [7/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a0b00b3ac51cae85d96b6bef6e1b6ad7c}\label{classmsgpack11_1_1MsgPack_a0b00b3ac51cae85d96b6bef6e1b6ad7c}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [8/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a5c0606018de0227540ff0ceffebb8348}\label{classmsgpack11_1_1MsgPack_a5c0606018de0227540ff0ceffebb8348}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [9/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a641dfdd88698bfd82051dd779d08d5f1}\label{classmsgpack11_1_1MsgPack_a641dfdd88698bfd82051dd779d08d5f1}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [10/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a99e2bc2e9503760514466dc9f5c7d5af}\label{classmsgpack11_1_1MsgPack_a99e2bc2e9503760514466dc9f5c7d5af}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [11/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_acb0a7a1430c428d8788fb5995bb34012}\label{classmsgpack11_1_1MsgPack_acb0a7a1430c428d8788fb5995bb34012}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [12/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_afdf8eb131034ac2940ce3ef340064813}\label{classmsgpack11_1_1MsgPack_afdf8eb131034ac2940ce3ef340064813}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [13/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ad694a98ab756e36bdd179a472b3b91d5}\label{classmsgpack11_1_1MsgPack_ad694a98ab756e36bdd179a472b3b91d5}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [14/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a5c39178554659a32b63970b11ef4501f}\label{classmsgpack11_1_1MsgPack_a5c39178554659a32b63970b11ef4501f}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [15/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{std\+::string \&\&}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_abd0546b0d3f377b4a5bcf4b7b28c08ee}\label{classmsgpack11_1_1MsgPack_abd0546b0d3f377b4a5bcf4b7b28c08ee}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [16/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ab1cd1f0e4c91848fcfde32773151dd9b}\label{classmsgpack11_1_1MsgPack_ab1cd1f0e4c91848fcfde32773151dd9b}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [17/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}{array}} \&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ac7a6ed41236fd829d9383569d57c266b}\label{classmsgpack11_1_1MsgPack_ac7a6ed41236fd829d9383569d57c266b}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [18/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}{Msg\+Pack\+::array}} \&\&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a42ce2e21b7c95e4e3448fdf8298fd3bc}\label{classmsgpack11_1_1MsgPack_a42ce2e21b7c95e4e3448fdf8298fd3bc}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [19/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}{object}} \&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_aa491661e7c0d0290dd6e58064ec02e12}\label{classmsgpack11_1_1MsgPack_aa491661e7c0d0290dd6e58064ec02e12}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [20/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}{Msg\+Pack\+::object}} \&\&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a27fde4644610d4b0f41a1237abcdb658}\label{classmsgpack11_1_1MsgPack_a27fde4644610d4b0f41a1237abcdb658}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [21/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{binary}} \&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a2818ea208bf7217a614b535237c184f3}\label{classmsgpack11_1_1MsgPack_a2818ea208bf7217a614b535237c184f3}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [22/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{Msg\+Pack\+::binary}} \&\&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a8e8806ee626517a2ba57bc452bb16867}\label{classmsgpack11_1_1MsgPack_a8e8806ee626517a2ba57bc452bb16867}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [23/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{extension}} \&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a04673b75368dd615a45ea58c00acf71d}\label{classmsgpack11_1_1MsgPack_a04673b75368dd615a45ea58c00acf71d}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [24/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{Msg\+Pack\+::extension}} \&\&}]{values }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a4edab815163c12ac91364e6b49c920b9}\label{classmsgpack11_1_1MsgPack_a4edab815163c12ac91364e6b49c920b9}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [25/29]}}
+{\footnotesize\ttfamily template$<$class T , class  = decltype(\&\+T\+::to\+\_\+msgpack)$>$ \\
+msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const T \&}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a82aab1fbbf4374df69698db78caa1141}\label{classmsgpack11_1_1MsgPack_a82aab1fbbf4374df69698db78caa1141}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [26/29]}}
+{\footnotesize\ttfamily template$<$class M , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+constructible$<$ Msg\+Pack, typename M\+::key\+\_\+type $>$\+::value \&\&std\+::is\+\_\+constructible$<$ Msg\+Pack, typename M\+::mapped\+\_\+type $>$\+::value, int $>$\+::type  = 0$>$ \\
+msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const M \&}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a9c13ea862ff4cefb48b1e0c7149ace8a}\label{classmsgpack11_1_1MsgPack_a9c13ea862ff4cefb48b1e0c7149ace8a}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [27/29]}}
+{\footnotesize\ttfamily template$<$class V , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+constructible$<$ Msg\+Pack, typename V\+::value\+\_\+type $>$\+::value \&\&!std\+::is\+\_\+same$<$ typename binary\+::value\+\_\+type, typename V\+::value\+\_\+type $>$\+::value, int $>$\+::type  = 0$>$ \\
+msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const V \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a9c13ea862ff4cefb48b1e0c7149ace8a}\label{classmsgpack11_1_1MsgPack_a9c13ea862ff4cefb48b1e0c7149ace8a}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [28/29]}}
+{\footnotesize\ttfamily template$<$class V , typename std\+::enable\+\_\+if$<$ std\+::is\+\_\+constructible$<$ Msg\+Pack, typename V\+::value\+\_\+type $>$\+::value \&\&std\+::is\+\_\+same$<$ typename binary\+::value\+\_\+type, typename V\+::value\+\_\+type $>$\+::value, int $>$\+::type  = 0$>$ \\
+msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{const V \&}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a2deecb681eed120ebd8d6f0278a30e51}\label{classmsgpack11_1_1MsgPack_a2deecb681eed120ebd8d6f0278a30e51}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!MsgPack@{MsgPack}}
+\index{MsgPack@{MsgPack}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{MsgPack()}{MsgPack()}\hspace{0.1cm}{\footnotesize\ttfamily [29/29]}}
+{\footnotesize\ttfamily msgpack11\+::\+Msg\+Pack\+::\+Msg\+Pack (\begin{DoxyParamCaption}\item[{void $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ac2c8a3983b0e70be2a5fc2372f13d4cd}\label{classmsgpack11_1_1MsgPack_ac2c8a3983b0e70be2a5fc2372f13d4cd}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!array\_items@{array\_items}}
+\index{array\_items@{array\_items}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{array\_items()}{array\_items()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} $>$ \& msgpack11\+::\+Msg\+Pack\+::array\+\_\+items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a71d15cde9e97410058590db271309d9b}\label{classmsgpack11_1_1MsgPack_a71d15cde9e97410058590db271309d9b}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!binary\_items@{binary\_items}}
+\index{binary\_items@{binary\_items}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{binary\_items()}{binary\_items()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{Msg\+Pack\+::binary}} \& msgpack11\+::\+Msg\+Pack\+::binary\+\_\+items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a4b83e7a6351b70a94661e6085efac666}\label{classmsgpack11_1_1MsgPack_a4b83e7a6351b70a94661e6085efac666}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!bool\_value@{bool\_value}}
+\index{bool\_value@{bool\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{bool\_value()}{bool\_value()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::bool\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_aca79b71e3616e8768e517c72450d2574}\label{classmsgpack11_1_1MsgPack_aca79b71e3616e8768e517c72450d2574}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!dump@{dump}}
+\index{dump@{dump}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string msgpack11\+::\+Msg\+Pack\+::dump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ac255026f6cd1a6113a25c1e5315dfb3b}\label{classmsgpack11_1_1MsgPack_ac255026f6cd1a6113a25c1e5315dfb3b}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!dump@{dump}}
+\index{dump@{dump}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void msgpack11\+::\+Msg\+Pack\+::dump (\begin{DoxyParamCaption}\item[{std\+::string \&}]{out }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a9885984baa08a5b7f735e1d2b069d1e6}\label{classmsgpack11_1_1MsgPack_a9885984baa08a5b7f735e1d2b069d1e6}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!extension\_items@{extension\_items}}
+\index{extension\_items@{extension\_items}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{extension\_items()}{extension\_items()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{Msg\+Pack\+::extension}} \& msgpack11\+::\+Msg\+Pack\+::extension\+\_\+items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a5c2267469f16515c025d90211c1ea6a5}\label{classmsgpack11_1_1MsgPack_a5c2267469f16515c025d90211c1ea6a5}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!float32\_value@{float32\_value}}
+\index{float32\_value@{float32\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{float32\_value()}{float32\_value()}}
+{\footnotesize\ttfamily float msgpack11\+::\+Msg\+Pack\+::float32\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a38d1cd6fb18a50045d76420b3e304e10}\label{classmsgpack11_1_1MsgPack_a38d1cd6fb18a50045d76420b3e304e10}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!float64\_value@{float64\_value}}
+\index{float64\_value@{float64\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{float64\_value()}{float64\_value()}}
+{\footnotesize\ttfamily double msgpack11\+::\+Msg\+Pack\+::float64\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_aa15b06b347bf1697f71d9e09fdcd367d}\label{classmsgpack11_1_1MsgPack_aa15b06b347bf1697f71d9e09fdcd367d}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!has\_shape@{has\_shape}}
+\index{has\_shape@{has\_shape}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{has\_shape()}{has\_shape()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::has\+\_\+shape (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a55784a9b07fac26afe6e55671d0e6274}{shape}} \&}]{types,  }\item[{std\+::string \&}]{err }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_afd9a5f5d2ca7be93637a170762357627}\label{classmsgpack11_1_1MsgPack_afd9a5f5d2ca7be93637a170762357627}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!int16\_value@{int16\_value}}
+\index{int16\_value@{int16\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{int16\_value()}{int16\_value()}}
+{\footnotesize\ttfamily int16\+\_\+t msgpack11\+::\+Msg\+Pack\+::int16\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a557965c84f33c63911b4943b060c010a}\label{classmsgpack11_1_1MsgPack_a557965c84f33c63911b4943b060c010a}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!int32\_value@{int32\_value}}
+\index{int32\_value@{int32\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{int32\_value()}{int32\_value()}}
+{\footnotesize\ttfamily int32\+\_\+t msgpack11\+::\+Msg\+Pack\+::int32\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a8676af59451c6eef312fd537f591db3d}\label{classmsgpack11_1_1MsgPack_a8676af59451c6eef312fd537f591db3d}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!int64\_value@{int64\_value}}
+\index{int64\_value@{int64\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{int64\_value()}{int64\_value()}}
+{\footnotesize\ttfamily int64\+\_\+t msgpack11\+::\+Msg\+Pack\+::int64\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_abc5bd28763d8a4977bb2528bf06705b8}\label{classmsgpack11_1_1MsgPack_abc5bd28763d8a4977bb2528bf06705b8}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!int8\_value@{int8\_value}}
+\index{int8\_value@{int8\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{int8\_value()}{int8\_value()}}
+{\footnotesize\ttfamily int8\+\_\+t msgpack11\+::\+Msg\+Pack\+::int8\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a530cc3cb80445e683203832b7a340338}\label{classmsgpack11_1_1MsgPack_a530cc3cb80445e683203832b7a340338}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!int\_value@{int\_value}}
+\index{int\_value@{int\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{int\_value()}{int\_value()}}
+{\footnotesize\ttfamily int32\+\_\+t msgpack11\+::\+Msg\+Pack\+::int\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_aa190fc1db329edcc345281c33c3f0a8a}\label{classmsgpack11_1_1MsgPack_aa190fc1db329edcc345281c33c3f0a8a}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_array@{is\_array}}
+\index{is\_array@{is\_array}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_array()}{is\_array()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a84206415f65b9b465eb9f61174dc8245}\label{classmsgpack11_1_1MsgPack_a84206415f65b9b465eb9f61174dc8245}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_binary@{is\_binary}}
+\index{is\_binary@{is\_binary}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_binary()}{is\_binary()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+binary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a6fc20eeb93010d4cd2322f46d154020a}\label{classmsgpack11_1_1MsgPack_a6fc20eeb93010d4cd2322f46d154020a}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_bool@{is\_bool}}
+\index{is\_bool@{is\_bool}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_bool()}{is\_bool()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+bool (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_adf97938b12eb9277ecd774157c51e162}\label{classmsgpack11_1_1MsgPack_adf97938b12eb9277ecd774157c51e162}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_extension@{is\_extension}}
+\index{is\_extension@{is\_extension}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_extension()}{is\_extension()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+extension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a3f37c2126f411526476c3b449c6854ac}\label{classmsgpack11_1_1MsgPack_a3f37c2126f411526476c3b449c6854ac}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_float32@{is\_float32}}
+\index{is\_float32@{is\_float32}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_float32()}{is\_float32()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+float32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_af3a584403dd2de3590626a9fe203d912}\label{classmsgpack11_1_1MsgPack_af3a584403dd2de3590626a9fe203d912}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_float64@{is\_float64}}
+\index{is\_float64@{is\_float64}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_float64()}{is\_float64()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+float64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a21fa4cd07fa4734fcaac8bb6284db3ce}\label{classmsgpack11_1_1MsgPack_a21fa4cd07fa4734fcaac8bb6284db3ce}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_int@{is\_int}}
+\index{is\_int@{is\_int}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_int()}{is\_int()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a0625e42e8b4f2f6a9b8f0323209d6a3c}\label{classmsgpack11_1_1MsgPack_a0625e42e8b4f2f6a9b8f0323209d6a3c}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_int16@{is\_int16}}
+\index{is\_int16@{is\_int16}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_int16()}{is\_int16()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+int16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a0019e77f0f7d7b117e697039985a85b8}\label{classmsgpack11_1_1MsgPack_a0019e77f0f7d7b117e697039985a85b8}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_int32@{is\_int32}}
+\index{is\_int32@{is\_int32}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_int32()}{is\_int32()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+int32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a275ccc4c41e0be54864bb17fec77e838}\label{classmsgpack11_1_1MsgPack_a275ccc4c41e0be54864bb17fec77e838}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_int64@{is\_int64}}
+\index{is\_int64@{is\_int64}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_int64()}{is\_int64()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+int64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a94771234b45ea603c351d73eef8fd904}\label{classmsgpack11_1_1MsgPack_a94771234b45ea603c351d73eef8fd904}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_int8@{is\_int8}}
+\index{is\_int8@{is\_int8}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_int8()}{is\_int8()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+int8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ab9843d1ef8572278b18102a9d038d0b0}\label{classmsgpack11_1_1MsgPack_ab9843d1ef8572278b18102a9d038d0b0}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_null@{is\_null}}
+\index{is\_null@{is\_null}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_null()}{is\_null()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a83457f6d13b650026ab23f8945d2057f}\label{classmsgpack11_1_1MsgPack_a83457f6d13b650026ab23f8945d2057f}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_number@{is\_number}}
+\index{is\_number@{is\_number}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_number()}{is\_number()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_aabc5ec95f615596c34297c80fd0f8bb2}\label{classmsgpack11_1_1MsgPack_aabc5ec95f615596c34297c80fd0f8bb2}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_object@{is\_object}}
+\index{is\_object@{is\_object}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_object()}{is\_object()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a5128e471c6f9c8fcf57c00e5299070c1}\label{classmsgpack11_1_1MsgPack_a5128e471c6f9c8fcf57c00e5299070c1}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_string@{is\_string}}
+\index{is\_string@{is\_string}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_string()}{is\_string()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ac9af493a5420ce8f8d0c181d1741cb7d}\label{classmsgpack11_1_1MsgPack_ac9af493a5420ce8f8d0c181d1741cb7d}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_uint16@{is\_uint16}}
+\index{is\_uint16@{is\_uint16}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_uint16()}{is\_uint16()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+uint16 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a2ae81d68edd537bc5a983a606f2c6b3d}\label{classmsgpack11_1_1MsgPack_a2ae81d68edd537bc5a983a606f2c6b3d}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_uint32@{is\_uint32}}
+\index{is\_uint32@{is\_uint32}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_uint32()}{is\_uint32()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+uint32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ac31adeeead06aae9d8d49c282ac81e4b}\label{classmsgpack11_1_1MsgPack_ac31adeeead06aae9d8d49c282ac81e4b}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_uint64@{is\_uint64}}
+\index{is\_uint64@{is\_uint64}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_uint64()}{is\_uint64()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+uint64 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a246d367a7f5e1d190bc0ff8df3997eb2}\label{classmsgpack11_1_1MsgPack_a246d367a7f5e1d190bc0ff8df3997eb2}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!is\_uint8@{is\_uint8}}
+\index{is\_uint8@{is\_uint8}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{is\_uint8()}{is\_uint8()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::is\+\_\+uint8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ae10504b2cf55dcef6ebe0a80a217e0bc}\label{classmsgpack11_1_1MsgPack_ae10504b2cf55dcef6ebe0a80a217e0bc}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!number\_value@{number\_value}}
+\index{number\_value@{number\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{number\_value()}{number\_value()}}
+{\footnotesize\ttfamily double msgpack11\+::\+Msg\+Pack\+::number\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ab6b92125042d48cf1f513788d5123904}\label{classmsgpack11_1_1MsgPack_ab6b92125042d48cf1f513788d5123904}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!object\_items@{object\_items}}
+\index{object\_items@{object\_items}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{object\_items()}{object\_items()}}
+{\footnotesize\ttfamily const map$<$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}, \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} $>$ \& msgpack11\+::\+Msg\+Pack\+::object\+\_\+items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a3ddbe799b0463b11ade871a8eaa1a6d8}\label{classmsgpack11_1_1MsgPack_a3ddbe799b0463b11ade871a8eaa1a6d8}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a27af362f704e25ea06b254654221a737}\label{classmsgpack11_1_1MsgPack_a27af362f704e25ea06b254654221a737}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a2beb5b318e23e9bda8b7bab614f7faf0}\label{classmsgpack11_1_1MsgPack_a2beb5b318e23e9bda8b7bab614f7faf0}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a5bc676fa8e240012a49449c3b07f51d2}\label{classmsgpack11_1_1MsgPack_a5bc676fa8e240012a49449c3b07f51d2}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator==@{operator==}}
+\index{operator==@{operator==}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a1a9275701f5f7e4dc8da4ffd38aee13c}\label{classmsgpack11_1_1MsgPack_a1a9275701f5f7e4dc8da4ffd38aee13c}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator$>$()}{operator>()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_af3d889a5f99ed0b7a6e690d20a2ad4e2}\label{classmsgpack11_1_1MsgPack_af3d889a5f99ed0b7a6e690d20a2ad4e2}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a155b6ec764f01317ec3800da18000dcb}\label{classmsgpack11_1_1MsgPack_a155b6ec764f01317ec3800da18000dcb}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}\& msgpack11\+::\+Msg\+Pack\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_af44d1067eca6575821a4214b25b66009}\label{classmsgpack11_1_1MsgPack_af44d1067eca6575821a4214b25b66009}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \& msgpack11\+::\+Msg\+Pack\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a19e722ef86dc90ecf4b6b472908c2931}\label{classmsgpack11_1_1MsgPack_a19e722ef86dc90ecf4b6b472908c2931}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!parse@{parse}}
+\index{parse@{parse}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} msgpack11\+::\+Msg\+Pack\+::parse (\begin{DoxyParamCaption}\item[{const char $\ast$}]{in,  }\item[{size\+\_\+t}]{len,  }\item[{std\+::string \&}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a3696d7f81f0f346dd1c08a468b7868fd}\label{classmsgpack11_1_1MsgPack_a3696d7f81f0f346dd1c08a468b7868fd}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!parse@{parse}}
+\index{parse@{parse}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} msgpack11\+::\+Msg\+Pack\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{in,  }\item[{std\+::string \&}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ab095408493a6d902f1d57c2598e829ef}\label{classmsgpack11_1_1MsgPack_ab095408493a6d902f1d57c2598e829ef}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!parse@{parse}}
+\index{parse@{parse}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} msgpack11\+::\+Msg\+Pack\+::parse (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a79ec809f053d535c5755e2100930a74a}\label{classmsgpack11_1_1MsgPack_a79ec809f053d535c5755e2100930a74a}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!parse@{parse}}
+\index{parse@{parse}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} msgpack11\+::\+Msg\+Pack\+::parse (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{std\+::string \&}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a18f1c01f6968cf3e6e29bc82d1315af9}\label{classmsgpack11_1_1MsgPack_a18f1c01f6968cf3e6e29bc82d1315af9}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!parse\_multi@{parse\_multi}}
+\index{parse\_multi@{parse\_multi}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{parse\_multi()}{parse\_multi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static std\+::vector$<$\mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}$>$ msgpack11\+::\+Msg\+Pack\+::parse\+\_\+multi (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{in,  }\item[{std\+::string \&}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_aeed975ecb05f5454d0cb6a1004a77a0b}\label{classmsgpack11_1_1MsgPack_aeed975ecb05f5454d0cb6a1004a77a0b}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!parse\_multi@{parse\_multi}}
+\index{parse\_multi@{parse\_multi}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{parse\_multi()}{parse\_multi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::vector$<$\mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}$>$ msgpack11\+::\+Msg\+Pack\+::parse\+\_\+multi (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{in,  }\item[{std\+::string\+::size\+\_\+type \&}]{parser\+\_\+stop\+\_\+pos,  }\item[{std\+::string \&}]{err }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a8b0e6bdb1e6b007b5d425f6e907bbb4d}\label{classmsgpack11_1_1MsgPack_a8b0e6bdb1e6b007b5d425f6e907bbb4d}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!string\_value@{string\_value}}
+\index{string\_value@{string\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{string\_value()}{string\_value()}}
+{\footnotesize\ttfamily const string \& msgpack11\+::\+Msg\+Pack\+::string\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_ae2f5ad0b44ce6205df108b9008c8d5f4}\label{classmsgpack11_1_1MsgPack_ae2f5ad0b44ce6205df108b9008c8d5f4}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!type@{type}}
+\index{type@{type}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}{Msg\+Pack\+::\+Type}} msgpack11\+::\+Msg\+Pack\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_af03da18dda29742abe4ebcf423f3be79}\label{classmsgpack11_1_1MsgPack_af03da18dda29742abe4ebcf423f3be79}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!uint16\_value@{uint16\_value}}
+\index{uint16\_value@{uint16\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{uint16\_value()}{uint16\_value()}}
+{\footnotesize\ttfamily uint16\+\_\+t msgpack11\+::\+Msg\+Pack\+::uint16\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a329fd710a505501e5d236c3173b27e55}\label{classmsgpack11_1_1MsgPack_a329fd710a505501e5d236c3173b27e55}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!uint32\_value@{uint32\_value}}
+\index{uint32\_value@{uint32\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{uint32\_value()}{uint32\_value()}}
+{\footnotesize\ttfamily uint32\+\_\+t msgpack11\+::\+Msg\+Pack\+::uint32\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a47f9a4fac2bfcf8c05129f14fc6a365f}\label{classmsgpack11_1_1MsgPack_a47f9a4fac2bfcf8c05129f14fc6a365f}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!uint64\_value@{uint64\_value}}
+\index{uint64\_value@{uint64\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{uint64\_value()}{uint64\_value()}}
+{\footnotesize\ttfamily uint64\+\_\+t msgpack11\+::\+Msg\+Pack\+::uint64\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_aed73aae59e3880f548cd754331ed6eaa}\label{classmsgpack11_1_1MsgPack_aed73aae59e3880f548cd754331ed6eaa}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!uint8\_value@{uint8\_value}}
+\index{uint8\_value@{uint8\_value}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{uint8\_value()}{uint8\_value()}}
+{\footnotesize\ttfamily uint8\+\_\+t msgpack11\+::\+Msg\+Pack\+::uint8\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a2a32ee82d0ed6154ff31e5b54aaec470}\label{classmsgpack11_1_1MsgPack_a2a32ee82d0ed6154ff31e5b54aaec470}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{msgpack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPack_a93c6860bd17fa0eab0ad797fec78283c}\label{classmsgpack11_1_1MsgPack_a93c6860bd17fa0eab0ad797fec78283c}} 
+\index{msgpack11::MsgPack@{msgpack11::MsgPack}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!msgpack11::MsgPack@{msgpack11::MsgPack}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{msgpack }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/msgpack11/\mbox{\hyperlink{msgpack11_8hpp}{msgpack11.\+hpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/msgpack11/\mbox{\hyperlink{msgpack11_8cpp}{msgpack11.\+cpp}}\end{DoxyCompactItemize}

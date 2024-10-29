@@ -1,0 +1,70 @@
+\hypertarget{classapi_1_1sick__scan__api_1_1SickScanVisualizationMarker}{}\doxysection{api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Visualization\+Marker Class Reference}
+\label{classapi_1_1sick__scan__api_1_1SickScanVisualizationMarker}\index{api.sick\_scan\_api.SickScanVisualizationMarker@{api.sick\_scan\_api.SickScanVisualizationMarker}}
+
+
+Inheritance diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Visualization\+Marker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanVisualizationMarker__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Visualization\+Marker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanVisualizationMarker__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}equivalent to visualization_msgs::Marker
+
+Attributes
+----------
+header : SickScanHeader
+    message timestamp
+ns : ctypes.c_char * 1024
+    Namespace to place this object in... used in conjunction with id to create a unique name for the object
+id : ctypes.c_int32
+    object ID useful in conjunction with the namespace for manipulating and deleting the object later
+type : ctypes.c_int32
+    Type of object
+action : ctypes.c_int32
+    0 add/modify an object, 1 (deprecated), 2 deletes an object, 3 deletes all objects
+pose_position : SickScanVector3Msg
+    Pose of the object (positional part)
+pose_orientation : SickScanQuaternionMsg
+    Pose of the object (rotational part)
+scale : SickScanVector3Msg
+    Scale of the object 1,1,1 means default (usually 1 meter square)
+color : SickScanColorRGBA
+    Color [0.0-1.0]
+lifetime_sec : ctypes.c_uint32
+    How long the object should last before being automatically deleted.  0 means forever (seconds part)
+lifetime_nsec : ctypes.c_uint32
+    How long the object should last before being automatically deleted.  0 means forever (nanoseconds part)
+frame_locked : ctypes.c_uint8
+    boolean, If this marker should be frame-locked, i.e. retransformed into its frame every timestep
+points : SickScanPointArray
+    Only used if the type specified has some use for them (eg. POINTS, LINE_STRIP, ...)
+colors : SickScanColorRGBAArray
+    Only used if the type specified has some use for them (eg. POINTS, LINE_STRIP, ...). Number of colors must either be 0 or equal to the number of points. NOTE: alpha is not yet used
+text : ctypes.c_char * 1024
+    NOTE: only used for text markers
+mesh_resource : ctypes.c_char * 1024
+    NOTE: only used for MESH_RESOURCE markers
+mesh_use_embedded_materials : ctypes.c_uint8
+    boolean
+\end{DoxyVerb}
+ ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/python/api/\mbox{\hyperlink{sick__scan__api_8py}{sick\+\_\+scan\+\_\+api.\+py}}\end{DoxyCompactItemize}

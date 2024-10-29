@@ -1,0 +1,63 @@
+\hypertarget{errorhandler_8cpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tcp/errorhandler.cpp File Reference}
+\label{errorhandler_8cpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/tcp/errorhandler.cpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/tcp/errorhandler.cpp}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{errorhandler_8cpp_aac1c542c76d7a31cb58b1f53019c9935}{do\+Nothing}} ()
+\item 
+void \mbox{\hyperlink{errorhandler_8cpp_a2c9a042707a4f59a13ec6e249184e2cf}{die\+With\+Error}} (std\+::string error\+Message)
+\item 
+void \mbox{\hyperlink{errorhandler_8cpp_afa46a4e7e3b0e74075a75547e2798251}{info\+Message}} (std\+::string message, bool print)
+\item 
+void \mbox{\hyperlink{errorhandler_8cpp_a7396fbdf77efe1b8a8177c4b5b77d4aa}{print\+Warning}} (std\+::string message)
+\item 
+void \mbox{\hyperlink{errorhandler_8cpp_ab79682cb72f9274d417b80846628f58f}{print\+Error}} (std\+::string message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::mutex \mbox{\hyperlink{errorhandler_8cpp_acc132ed3c454fb40a354988d01a0182b}{m\+\_\+print\+Mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{errorhandler_8cpp_a2c9a042707a4f59a13ec6e249184e2cf}\label{errorhandler_8cpp_a2c9a042707a4f59a13ec6e249184e2cf}} 
+\index{errorhandler.cpp@{errorhandler.cpp}!dieWithError@{dieWithError}}
+\index{dieWithError@{dieWithError}!errorhandler.cpp@{errorhandler.cpp}}
+\doxysubsubsection{\texorpdfstring{dieWithError()}{dieWithError()}}
+{\footnotesize\ttfamily void die\+With\+Error (\begin{DoxyParamCaption}\item[{std\+::string}]{error\+Message }\end{DoxyParamCaption})}
+
+Fehler-\/\char`\"{}behandlung\char`\"{}\+: Schreibe die Fehlermeldung und beende das Programm. \mbox{\Hypertarget{errorhandler_8cpp_aac1c542c76d7a31cb58b1f53019c9935}\label{errorhandler_8cpp_aac1c542c76d7a31cb58b1f53019c9935}} 
+\index{errorhandler.cpp@{errorhandler.cpp}!doNothing@{doNothing}}
+\index{doNothing@{doNothing}!errorhandler.cpp@{errorhandler.cpp}}
+\doxysubsubsection{\texorpdfstring{doNothing()}{doNothing()}}
+{\footnotesize\ttfamily void do\+Nothing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Der Name ist Programm... \mbox{\Hypertarget{errorhandler_8cpp_afa46a4e7e3b0e74075a75547e2798251}\label{errorhandler_8cpp_afa46a4e7e3b0e74075a75547e2798251}} 
+\index{errorhandler.cpp@{errorhandler.cpp}!infoMessage@{infoMessage}}
+\index{infoMessage@{infoMessage}!errorhandler.cpp@{errorhandler.cpp}}
+\doxysubsubsection{\texorpdfstring{infoMessage()}{infoMessage()}}
+{\footnotesize\ttfamily void info\+Message (\begin{DoxyParamCaption}\item[{std\+::string}]{message,  }\item[{bool}]{print }\end{DoxyParamCaption})}
+
+Info-\/\+Text auf die Ausgabe schreiben. \mbox{\Hypertarget{errorhandler_8cpp_ab79682cb72f9274d417b80846628f58f}\label{errorhandler_8cpp_ab79682cb72f9274d417b80846628f58f}} 
+\index{errorhandler.cpp@{errorhandler.cpp}!printError@{printError}}
+\index{printError@{printError}!errorhandler.cpp@{errorhandler.cpp}}
+\doxysubsubsection{\texorpdfstring{printError()}{printError()}}
+{\footnotesize\ttfamily void print\+Error (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{errorhandler_8cpp_a7396fbdf77efe1b8a8177c4b5b77d4aa}\label{errorhandler_8cpp_a7396fbdf77efe1b8a8177c4b5b77d4aa}} 
+\index{errorhandler.cpp@{errorhandler.cpp}!printWarning@{printWarning}}
+\index{printWarning@{printWarning}!errorhandler.cpp@{errorhandler.cpp}}
+\doxysubsubsection{\texorpdfstring{printWarning()}{printWarning()}}
+{\footnotesize\ttfamily void print\+Warning (\begin{DoxyParamCaption}\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{errorhandler_8cpp_acc132ed3c454fb40a354988d01a0182b}\label{errorhandler_8cpp_acc132ed3c454fb40a354988d01a0182b}} 
+\index{errorhandler.cpp@{errorhandler.cpp}!m\_printMutex@{m\_printMutex}}
+\index{m\_printMutex@{m\_printMutex}!errorhandler.cpp@{errorhandler.cpp}}
+\doxysubsubsection{\texorpdfstring{m\_printMutex}{m\_printMutex}}
+{\footnotesize\ttfamily std\+::mutex m\+\_\+print\+Mutex}
+
+Error\+Handler. 

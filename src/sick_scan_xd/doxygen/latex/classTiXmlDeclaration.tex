@@ -1,0 +1,235 @@
+\hypertarget{classTiXmlDeclaration}{}\doxysection{Ti\+Xml\+Declaration Class Reference}
+\label{classTiXmlDeclaration}\index{TiXmlDeclaration@{TiXmlDeclaration}}
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+
+
+Inheritance diagram for Ti\+Xml\+Declaration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=181pt]{classTiXmlDeclaration__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ti\+Xml\+Declaration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classTiXmlDeclaration__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}{Ti\+Xml\+Declaration}} ()
+\begin{DoxyCompactList}\small\item\em Construct an empty declaration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlDeclaration_acd5556007c3c72209465081de39d9836}{Ti\+Xml\+Declaration}} (const std\+::string \&\+\_\+version, const std\+::string \&\+\_\+encoding, const std\+::string \&\+\_\+standalone)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlDeclaration_a3b618d1c30c25e4b7a71f31a595ee298}{Ti\+Xml\+Declaration}} (const char $\ast$\+\_\+version, const char $\ast$\+\_\+encoding, const char $\ast$\+\_\+standalone)
+\begin{DoxyCompactList}\small\item\em Construct. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlDeclaration_a58ac9042c342f7845c8491da0bb091e8}{Ti\+Xml\+Declaration}} (const \mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} \&\mbox{\hyperlink{driver_2src_2sick__scansegment__xd_2msgpack11_2LICENSE_8txt_af77238a13603775a1f60ae9206d86600}{copy}})
+\item 
+\mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} \& \mbox{\hyperlink{classTiXmlDeclaration_a3bc617efe11014ff2b1a9c5727c37a9a}{operator=}} (const \mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} \&\mbox{\hyperlink{driver_2src_2sick__scansegment__xd_2msgpack11_2LICENSE_8txt_af77238a13603775a1f60ae9206d86600}{copy}})
+\item 
+virtual \mbox{\hyperlink{classTiXmlDeclaration_ad5f37a673f4c507fd7e550470f9cec25}{$\sim$\+Ti\+Xml\+Declaration}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{classTiXmlDeclaration_a95cdcb9354ea220065bd378ffcacc7bd}{Version}} () const
+\begin{DoxyCompactList}\small\item\em Version. Will return an empty string if none was found. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classTiXmlDeclaration_a8d3d1b5b226daa8353276d719497be80}{Encoding}} () const
+\begin{DoxyCompactList}\small\item\em Encoding. Will return an empty string if none was found. \end{DoxyCompactList}\item 
+const char $\ast$ \mbox{\hyperlink{classTiXmlDeclaration_a1f2f8a741593d15a61e491e5024cacef}{Standalone}} () const
+\begin{DoxyCompactList}\small\item\em Is this a standalone document? \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$ \mbox{\hyperlink{classTiXmlDeclaration_a35dc1455f69b79e81cae28e186944610}{Clone}} () const
+\begin{DoxyCompactList}\small\item\em Creates a copy of this Declaration and returns it. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTiXmlDeclaration_ace687d02a5a25a060ae3802abb1b3f55}{Print}} (F\+I\+LE $\ast$cfile, int depth, T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+NG $\ast$str) const
+\item 
+virtual void \mbox{\hyperlink{classTiXmlDeclaration_ae46cff6565f299210ab945e78bf28514}{Print}} (F\+I\+LE $\ast$cfile, int depth) const
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{classTiXmlDeclaration_a9839ea97ed687a2b7342fd7b0f04361b}{Parse}} (const char $\ast$p, \mbox{\hyperlink{classTiXmlParsingData}{Ti\+Xml\+Parsing\+Data}} $\ast$data, \mbox{\hyperlink{tinyxml_8h_a88d51847a13ee0f4b4d320d03d2c4d96}{Ti\+Xml\+Encoding}} encoding)
+\item 
+virtual bool \mbox{\hyperlink{classTiXmlDeclaration_aa1b6bade6c989407ce9881bdfc73c1e6}{Accept}} (\mbox{\hyperlink{classTiXmlVisitor}{Ti\+Xml\+Visitor}} $\ast$visitor) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTiXmlDeclaration_a189de17b3e04d4e5b1c385336f214af1}{Copy\+To}} (\mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} $\ast$target) const
+\item 
+virtual void \mbox{\hyperlink{classTiXmlDeclaration_af90df1c54c89b0f8dd56168419967610}{Stream\+In}} (std\+::istream $\ast$in, T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+NG $\ast$tag)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+In correct X\+ML the declaration is the first entry in the file. \begin{DoxyVerb}    <?xml version="1.0" standalone="yes"?>
+\end{DoxyVerb}
+
+
+Tiny\+Xml will happily read or write files without a declaration, however. There are 3 possible attributes to the declaration\+: version, encoding, and standalone.
+
+Note\+: In this version of the code, the attributes are handled as special cases, not generic attributes, simply because there can only be at most 3 and they are always the same. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}\label{classTiXmlDeclaration_aa0484d059bea0ea1acb47c9094382d79}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\index{TiXmlDeclaration@{TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{TiXmlDeclaration()}{TiXmlDeclaration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Ti\+Xml\+Declaration\+::\+Ti\+Xml\+Declaration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct an empty declaration. 
+
+\mbox{\Hypertarget{classTiXmlDeclaration_acd5556007c3c72209465081de39d9836}\label{classTiXmlDeclaration_acd5556007c3c72209465081de39d9836}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\index{TiXmlDeclaration@{TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{TiXmlDeclaration()}{TiXmlDeclaration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Ti\+Xml\+Declaration\+::\+Ti\+Xml\+Declaration (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+version,  }\item[{const std\+::string \&}]{\+\_\+encoding,  }\item[{const std\+::string \&}]{\+\_\+standalone }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a3b618d1c30c25e4b7a71f31a595ee298}\label{classTiXmlDeclaration_a3b618d1c30c25e4b7a71f31a595ee298}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\index{TiXmlDeclaration@{TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{TiXmlDeclaration()}{TiXmlDeclaration()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Ti\+Xml\+Declaration\+::\+Ti\+Xml\+Declaration (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+version,  }\item[{const char $\ast$}]{\+\_\+encoding,  }\item[{const char $\ast$}]{\+\_\+standalone }\end{DoxyParamCaption})}
+
+
+
+Construct. 
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a58ac9042c342f7845c8491da0bb091e8}\label{classTiXmlDeclaration_a58ac9042c342f7845c8491da0bb091e8}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\index{TiXmlDeclaration@{TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{TiXmlDeclaration()}{TiXmlDeclaration()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Ti\+Xml\+Declaration\+::\+Ti\+Xml\+Declaration (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} \&}]{copy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTiXmlDeclaration_ad5f37a673f4c507fd7e550470f9cec25}\label{classTiXmlDeclaration_ad5f37a673f4c507fd7e550470f9cec25}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!````~TiXmlDeclaration@{$\sim$TiXmlDeclaration}}
+\index{````~TiXmlDeclaration@{$\sim$TiXmlDeclaration}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{$\sim$TiXmlDeclaration()}{~TiXmlDeclaration()}}
+{\footnotesize\ttfamily virtual Ti\+Xml\+Declaration\+::$\sim$\+Ti\+Xml\+Declaration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTiXmlDeclaration_aa1b6bade6c989407ce9881bdfc73c1e6}\label{classTiXmlDeclaration_aa1b6bade6c989407ce9881bdfc73c1e6}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!Accept@{Accept}}
+\index{Accept@{Accept}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{Accept()}{Accept()}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Declaration\+::\+Accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlVisitor}{Ti\+Xml\+Visitor}} $\ast$}]{visitor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Walk the X\+ML tree visiting this node and all of its children. 
+
+Implements \mbox{\hyperlink{classTiXmlNode_acc0f88b7462c6cb73809d410a4f5bb86}{Ti\+Xml\+Node}}.
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a35dc1455f69b79e81cae28e186944610}\label{classTiXmlDeclaration_a35dc1455f69b79e81cae28e186944610}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!Clone@{Clone}}
+\index{Clone@{Clone}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$ Ti\+Xml\+Declaration\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Creates a copy of this Declaration and returns it. 
+
+
+
+Implements \mbox{\hyperlink{classTiXmlNode_a4508cc3a2d7a98e96a54cc09c37a78a4}{Ti\+Xml\+Node}}.
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a189de17b3e04d4e5b1c385336f214af1}\label{classTiXmlDeclaration_a189de17b3e04d4e5b1c385336f214af1}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!CopyTo@{CopyTo}}
+\index{CopyTo@{CopyTo}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{CopyTo()}{CopyTo()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Declaration\+::\+Copy\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} $\ast$}]{target }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a8d3d1b5b226daa8353276d719497be80}\label{classTiXmlDeclaration_a8d3d1b5b226daa8353276d719497be80}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!Encoding@{Encoding}}
+\index{Encoding@{Encoding}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{Encoding()}{Encoding()}}
+{\footnotesize\ttfamily const char$\ast$ Ti\+Xml\+Declaration\+::\+Encoding (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Encoding. Will return an empty string if none was found. 
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a3bc617efe11014ff2b1a9c5727c37a9a}\label{classTiXmlDeclaration_a3bc617efe11014ff2b1a9c5727c37a9a}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!operator=@{operator=}}
+\index{operator=@{operator=}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} \& Ti\+Xml\+Declaration\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} \&}]{copy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a9839ea97ed687a2b7342fd7b0f04361b}\label{classTiXmlDeclaration_a9839ea97ed687a2b7342fd7b0f04361b}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!Parse@{Parse}}
+\index{Parse@{Parse}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily const char $\ast$ Ti\+Xml\+Declaration\+::\+Parse (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p,  }\item[{\mbox{\hyperlink{classTiXmlParsingData}{Ti\+Xml\+Parsing\+Data}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{tinyxml_8h_a88d51847a13ee0f4b4d320d03d2c4d96}{Ti\+Xml\+Encoding}}}]{encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classTiXmlBase_a00e4edb0219d00a1379c856e5a1d2025}{Ti\+Xml\+Base}}.
+
+\mbox{\Hypertarget{classTiXmlDeclaration_ae46cff6565f299210ab945e78bf28514}\label{classTiXmlDeclaration_ae46cff6565f299210ab945e78bf28514}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!Print@{Print}}
+\index{Print@{Print}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void Ti\+Xml\+Declaration\+::\+Print (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{cfile,  }\item[{int}]{depth }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+All Tiny\+Xml classes can print themselves to a filestream or the string class (\mbox{\hyperlink{classTiXmlString}{Ti\+Xml\+String}} in non-\/\+S\+TL mode, std\+::string in S\+TL mode.) Either or both cfile and str can be null.
+
+This is a formatted print, and will insert tabs and newlines.
+
+(For an unformatted stream, use the $<$$<$ operator.) 
+
+Implements \mbox{\hyperlink{classTiXmlBase_a0de56b3f2ef14c65091a3b916437b512}{Ti\+Xml\+Base}}.
+
+\mbox{\Hypertarget{classTiXmlDeclaration_ace687d02a5a25a060ae3802abb1b3f55}\label{classTiXmlDeclaration_ace687d02a5a25a060ae3802abb1b3f55}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!Print@{Print}}
+\index{Print@{Print}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Ti\+Xml\+Declaration\+::\+Print (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{cfile,  }\item[{int}]{depth,  }\item[{T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+NG $\ast$}]{str }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a1f2f8a741593d15a61e491e5024cacef}\label{classTiXmlDeclaration_a1f2f8a741593d15a61e491e5024cacef}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!Standalone@{Standalone}}
+\index{Standalone@{Standalone}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{Standalone()}{Standalone()}}
+{\footnotesize\ttfamily const char$\ast$ Ti\+Xml\+Declaration\+::\+Standalone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Is this a standalone document? 
+
+\mbox{\Hypertarget{classTiXmlDeclaration_af90df1c54c89b0f8dd56168419967610}\label{classTiXmlDeclaration_af90df1c54c89b0f8dd56168419967610}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!StreamIn@{StreamIn}}
+\index{StreamIn@{StreamIn}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{StreamIn()}{StreamIn()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Declaration\+::\+Stream\+In (\begin{DoxyParamCaption}\item[{std\+::istream $\ast$}]{in,  }\item[{T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+NG $\ast$}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classTiXmlNode_ab4b4af1a6b486dcbc0e327cf291270af}{Ti\+Xml\+Node}}.
+
+\mbox{\Hypertarget{classTiXmlDeclaration_a95cdcb9354ea220065bd378ffcacc7bd}\label{classTiXmlDeclaration_a95cdcb9354ea220065bd378ffcacc7bd}} 
+\index{TiXmlDeclaration@{TiXmlDeclaration}!Version@{Version}}
+\index{Version@{Version}!TiXmlDeclaration@{TiXmlDeclaration}}
+\doxysubsubsection{\texorpdfstring{Version()}{Version()}}
+{\footnotesize\ttfamily const char$\ast$ Ti\+Xml\+Declaration\+::\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Version. Will return an empty string if none was found. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/tinyxml/\mbox{\hyperlink{tinyxml_8h}{tinyxml.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/\mbox{\hyperlink{tinyxml_8cpp}{tinyxml.\+cpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/\mbox{\hyperlink{tinyxmlparser_8cpp}{tinyxmlparser.\+cpp}}\end{DoxyCompactItemize}

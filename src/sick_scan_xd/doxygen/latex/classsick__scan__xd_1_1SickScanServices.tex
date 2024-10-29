@@ -1,0 +1,540 @@
+\hypertarget{classsick__scan__xd_1_1SickScanServices}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Services Class Reference}
+\label{classsick__scan__xd_1_1SickScanServices}\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+
+
+{\ttfamily \#include $<$sick\+\_\+scan\+\_\+services.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Services\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsick__scan__xd_1_1SickScanServices__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_aaa7ef71ea66ccfdf14e7efec5161236d}{Sick\+Scan\+Services}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh=0, \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp}} $\ast$common\+\_\+tcp=0, \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam}{Scanner\+Basic\+Param}} $\ast$lidar\+\_\+param=0)
+\item 
+virtual \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_ae4f47783d4ee33df2a2671028f62d343}{$\sim$\+Sick\+Scan\+Services}} ()
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a4f7f6008bc57b2ede1dab06fe29a5e25}{send\+Authorization}} ()
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_af87f16006f51fec8c9932e3e731bfd3c}{send\+Sopas\+Cmd\+Check\+Response}} (const std\+::string \&sopas\+\_\+request, const std\+::string \&expected\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a5af9369ea3fb5693dd9885ae5691c04b}{service\+Cb\+Cola\+Msg}} (sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv\+::\+Request \&service\+\_\+request, sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv\+::\+Response \&service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a9849967de9b7f4a20bfa93f2c75316eb}{service\+Cb\+Cola\+Msg\+R\+O\+S2}} (std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv\+::\+Request $>$ service\+\_\+request, std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv\+::\+Response $>$ service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a434b3bd209da8d90f5dec274751c9fd1}{service\+Cb\+E\+C\+R\+Change\+Arr}} (sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv\+::\+Request \&service\+\_\+request, sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv\+::\+Response \&service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a1e39cdff0373d7de7e5c376aeabd3a13}{service\+Cb\+E\+C\+R\+Change\+Arr\+R\+O\+S2}} (std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv\+::\+Request $>$ service\+\_\+request, std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv\+::\+Response $>$ service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a7a5fa31957af5e675a7aa8029e5bb2d1}{service\+Cb\+Get\+Contamination\+Result}} (sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv\+::\+Request \&service\+\_\+request, sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv\+::\+Response \&service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a1fa473654ae24a881b4ee9d9da27ee12}{service\+Cb\+Get\+Contamination\+Result\+R\+O\+S2}} (std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv\+::\+Request $>$ service\+\_\+request, std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv\+::\+Response $>$ service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a2547c2f9c812d7711ac84946ae2300e1}{service\+Cb\+L\+I\+Doutputstate}} (sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv\+::\+Request \&service\+\_\+request, sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv\+::\+Response \&service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a19d6aacee2b78f8530a9442eaa820166}{service\+Cb\+L\+I\+Doutputstate\+R\+O\+S2}} (std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv\+::\+Request $>$ service\+\_\+request, std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv\+::\+Response $>$ service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_aff8cafb657f9d9d5d3fb72512b49ac06}{service\+Cb\+S\+Cdevicestate}} (sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv\+::\+Request \&service\+\_\+request, sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv\+::\+Response \&service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a590b573ffabfde3d433ff9d578ee9824}{service\+Cb\+S\+Cdevicestate\+R\+O\+S2}} (std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv\+::\+Request $>$ service\+\_\+request, std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv\+::\+Response $>$ service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a529d54b6d808216f484193bab2612b35}{service\+Cb\+S\+Creboot}} (sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv\+::\+Request \&service\+\_\+request, sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv\+::\+Response \&service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a37d92dd6632461bca13022079efb858b}{service\+Cb\+S\+Creboot\+R\+O\+S2}} (std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv\+::\+Request $>$ service\+\_\+request, std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv\+::\+Response $>$ service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a9718cfef5cfc333f937902ef67ea9901}{service\+Cb\+S\+Csoftreset}} (sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv\+::\+Request \&service\+\_\+request, sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv\+::\+Response \&service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a19e48a2d78781acdbcc17cdb45510589}{service\+Cb\+S\+Csoftreset\+R\+O\+S2}} (std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv\+::\+Request $>$ service\+\_\+request, std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv\+::\+Response $>$ service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_af8685fc936bad196c921012f86209bea}{service\+Cb\+Sick\+Scan\+Exit}} (sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv\+::\+Request \&service\+\_\+request, sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv\+::\+Response \&service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_abbd278a78165e8a71c445b92e772627e}{service\+Cb\+Sick\+Scan\+Exit\+R\+O\+S2}} (std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv\+::\+Request $>$ service\+\_\+request, std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv\+::\+Response $>$ service\+\_\+response)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a16a32548bbc213dcce5886a2039731f1}{send\+Multi\+Scan\+Start\+Cmd}} (const std\+::string \&hostname, int port, const std\+::string \&scanner\+\_\+type, int scandataformat, bool imu\+\_\+enable, int imu\+\_\+udp\+\_\+port, int performanceprofilenumber)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a625c739757e00502b83d610699425d32}{send\+Multi\+Scan\+Stop\+Cmd}} (bool imu\+\_\+enable)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a9eec3d8282020e5a6a34c72746d4e7c6}{query\+Multi\+Scan\+Filtersettings}} (int \&host\+\_\+\+F\+R\+Echo\+Filter, std\+::string \&host\+\_\+\+L\+F\+Pangle\+Range\+Filter, std\+::string \&host\+\_\+\+L\+F\+Player\+Filter, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgpackValidatorFilterConfig}{sick\+\_\+scansegment\+\_\+xd\+::\+Msgpack\+Validator\+Filter\+Config}} \&msgpack\+\_\+validator\+\_\+filter\+\_\+settings, const std\+::string \&scanner\+\_\+type)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_ab32e71c481000ebb21616664ebe618e7}{write\+Multi\+Scan\+Filtersettings}} (int host\+\_\+\+F\+R\+Echo\+Filter, const std\+::string \&host\+\_\+\+L\+F\+Pangle\+Range\+Filter, const std\+::string \&host\+\_\+\+L\+F\+Player\+Filter, const std\+::string \&host\+\_\+\+L\+F\+Pinterval\+Filter, const std\+::string \&scanner\+\_\+type)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a1fc2fb42a185dcbb5ba7e747d266fef9}{send\+Sopas\+And\+Check\+Answer}} (const std\+::string \&sopas\+Cmd, std\+::vector$<$ unsigned char $>$ \&sopas\+Reply\+Bin, std\+::string \&sopas\+Reply\+String)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static float \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a5c4a7abdf1346f24f42b43f0f63f6530}{convert\+Hex\+String\+To\+Float}} (const std\+::string \&hex\+\_\+str, bool hex\+Str\+Is\+Big\+Endian)
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a658832066a54e8fbf015542f744da7c0}{convert\+Float\+To\+Hex\+String}} (float value, bool hex\+Str\+Is\+Big\+Endian)
+\item 
+static float \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_af14d78250fd43914811feae2aa94fb35}{convert\+Hex\+String\+To\+Angle\+Deg}} (const std\+::string \&hex\+\_\+str, bool hex\+Str\+Is\+Big\+Endian)
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_afefeffb95ff93e98762a695006fd9b8a}{convert\+Angle\+Deg\+To\+Hex\+String}} (float angle\+\_\+deg, bool hex\+Str\+Is\+Big\+Endian)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a3a8cfee95cda9766101b4c6b5afbc708}{send\+Run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a831adf4b064a5cd40a92fc6f3ae16180}{m\+\_\+cola\+\_\+binary}}
+\begin{DoxyCompactList}\small\item\em cola ascii or cola binary messages \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp}} $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_adb0408dcfccfa558b91b38a8624642ad}{m\+\_\+common\+\_\+tcp}}
+\begin{DoxyCompactList}\small\item\em common tcp handler \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a4040a8605673014da10f798cfc165fac}{m\+\_\+client\+\_\+authorization\+\_\+pw}}
+\item 
+\mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$ sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a03b46c83dc2dc8724c7393c18125567c}{m\+\_\+srv\+\_\+server\+\_\+\+Cola\+Msg}}
+\begin{DoxyCompactList}\small\item\em service \char`\"{}\+Cola\+Msg\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+Cola\+Msg \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$ sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_af9a4d393c0b485013c8188caf4cecc8b}{m\+\_\+srv\+\_\+server\+\_\+\+E\+C\+R\+Change\+Arr}}
+\begin{DoxyCompactList}\small\item\em service \char`\"{}\+E\+C\+R\+Change\+Arr\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+E\+C\+R\+Change\+Arr \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$ sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a05866045d5f9a7949673b3aff8d002e3}{m\+\_\+srv\+\_\+server\+\_\+\+Get\+Contamination\+Result}}
+\begin{DoxyCompactList}\small\item\em service \char`\"{}\+Get\+Contamination\+Result\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+Get\+Contamination\+Result \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$ sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a421fbf1ce6181160eecb2afd39207d93}{m\+\_\+srv\+\_\+server\+\_\+\+L\+I\+Doutputstate}}
+\begin{DoxyCompactList}\small\item\em service \char`\"{}\+L\+I\+Doutputstate\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+L\+I\+Doutputstate \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a0a8776331d2298fda58c77bf92b9b4a9}{m\+\_\+srv\+\_\+server\+\_\+\+S\+Cdevicestate}}
+\begin{DoxyCompactList}\small\item\em service \char`\"{}\+S\+Cdevicestate\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Cdevicestate \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a82cbb5d40b416c9605121cad27dd1296}{m\+\_\+srv\+\_\+server\+\_\+\+S\+Creboot}}
+\begin{DoxyCompactList}\small\item\em service \char`\"{}\+S\+Creboot\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Creboot \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_ae9ff0712818841316880fdf55071eb44}{m\+\_\+srv\+\_\+server\+\_\+\+S\+Csoftreset}}
+\begin{DoxyCompactList}\small\item\em service \char`\"{}\+S\+Csoftreset\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Csoftreset \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$ sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices_a553d30eff88fc0c3e90e73454c33661f}{m\+\_\+srv\+\_\+server\+\_\+\+Sick\+Scan\+Exit}}
+\begin{DoxyCompactList}\small\item\em service \char`\"{}\+Sick\+Scan\+Exit\+Srv\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+Sick\+Scan\+Exit \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_aaa7ef71ea66ccfdf14e7efec5161236d}\label{classsick__scan__xd_1_1SickScanServices_aaa7ef71ea66ccfdf14e7efec5161236d}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!SickScanServices@{SickScanServices}}
+\index{SickScanServices@{SickScanServices}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{SickScanServices()}{SickScanServices()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::\+Sick\+Scan\+Services (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp}} $\ast$}]{common\+\_\+tcp = {\ttfamily 0},  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam}{Scanner\+Basic\+Param}} $\ast$}]{lidar\+\_\+param = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_ae4f47783d4ee33df2a2671028f62d343}\label{classsick__scan__xd_1_1SickScanServices_ae4f47783d4ee33df2a2671028f62d343}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!````~SickScanServices@{$\sim$SickScanServices}}
+\index{````~SickScanServices@{$\sim$SickScanServices}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickScanServices()}{~SickScanServices()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::$\sim$\+Sick\+Scan\+Services (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_afefeffb95ff93e98762a695006fd9b8a}\label{classsick__scan__xd_1_1SickScanServices_afefeffb95ff93e98762a695006fd9b8a}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!convertAngleDegToHexString@{convertAngleDegToHexString}}
+\index{convertAngleDegToHexString@{convertAngleDegToHexString}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{convertAngleDegToHexString()}{convertAngleDegToHexString()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::convert\+Angle\+Deg\+To\+Hex\+String (\begin{DoxyParamCaption}\item[{float}]{angle\+\_\+deg,  }\item[{bool}]{hex\+Str\+Is\+Big\+Endian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts an angle in \mbox{[}deg\mbox{]} to hex string coded in 1/10000 deg (hex\+\_\+str\+: 4 byte hex value as string, little or big endian). \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a658832066a54e8fbf015542f744da7c0}\label{classsick__scan__xd_1_1SickScanServices_a658832066a54e8fbf015542f744da7c0}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!convertFloatToHexString@{convertFloatToHexString}}
+\index{convertFloatToHexString@{convertFloatToHexString}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{convertFloatToHexString()}{convertFloatToHexString()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::convert\+Float\+To\+Hex\+String (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{bool}]{hex\+Str\+Is\+Big\+Endian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts a float value to hex string (hex\+\_\+str\+: 4 byte hex value as string, little or big endian). Check f.\+e. by \href{https://www.h-schmidt.net/FloatConverter/IEEE754.html}{\texttt{ https\+://www.\+h-\/schmidt.\+net/\+Float\+Converter/\+I\+E\+E\+E754.\+html}} Examples\+: convert\+Float\+To\+Hex\+String(-\/3.\+14, true) returns \char`\"{}\+C0490\+F\+D\+B\char`\"{} convert\+Float\+To\+Hex\+String(+1.\+57, true) returns \char`\"{}3\+F\+C90\+F\+F8\char`\"{} \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_af14d78250fd43914811feae2aa94fb35}\label{classsick__scan__xd_1_1SickScanServices_af14d78250fd43914811feae2aa94fb35}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!convertHexStringToAngleDeg@{convertHexStringToAngleDeg}}
+\index{convertHexStringToAngleDeg@{convertHexStringToAngleDeg}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{convertHexStringToAngleDeg()}{convertHexStringToAngleDeg()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::convert\+Hex\+String\+To\+Angle\+Deg (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hex\+\_\+str,  }\item[{bool}]{hex\+Str\+Is\+Big\+Endian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts a hex string coded in 1/10000 deg (hex\+\_\+str\+: 4 byte hex value as string, little or big endian) to an angle in \mbox{[}deg\mbox{]} (float). \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a5c4a7abdf1346f24f42b43f0f63f6530}\label{classsick__scan__xd_1_1SickScanServices_a5c4a7abdf1346f24f42b43f0f63f6530}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!convertHexStringToFloat@{convertHexStringToFloat}}
+\index{convertHexStringToFloat@{convertHexStringToFloat}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{convertHexStringToFloat()}{convertHexStringToFloat()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::convert\+Hex\+String\+To\+Float (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hex\+\_\+str,  }\item[{bool}]{hex\+Str\+Is\+Big\+Endian }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Converts a hex string (hex\+\_\+str\+: 4 byte hex value as string, little or big endian) to float. Check f.\+e. by \href{https://www.h-schmidt.net/FloatConverter/IEEE754.html}{\texttt{ https\+://www.\+h-\/schmidt.\+net/\+Float\+Converter/\+I\+E\+E\+E754.\+html}} Examples\+: convert\+Hex\+String\+To\+Float(\char`\"{}\+C0490\+F\+F9\char`\"{}, true) returns -\/3.\+14 convert\+Hex\+String\+To\+Float(\char`\"{}3\+F\+C90\+F\+F9\char`\"{}, true) returns +1.\+57 \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a9eec3d8282020e5a6a34c72746d4e7c6}\label{classsick__scan__xd_1_1SickScanServices_a9eec3d8282020e5a6a34c72746d4e7c6}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!queryMultiScanFiltersettings@{queryMultiScanFiltersettings}}
+\index{queryMultiScanFiltersettings@{queryMultiScanFiltersettings}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{queryMultiScanFiltersettings()}{queryMultiScanFiltersettings()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::query\+Multi\+Scan\+Filtersettings (\begin{DoxyParamCaption}\item[{int \&}]{host\+\_\+\+F\+R\+Echo\+Filter,  }\item[{std\+::string \&}]{host\+\_\+\+L\+F\+Pangle\+Range\+Filter,  }\item[{std\+::string \&}]{host\+\_\+\+L\+F\+Player\+Filter,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgpackValidatorFilterConfig}{sick\+\_\+scansegment\+\_\+xd\+::\+Msgpack\+Validator\+Filter\+Config}} \&}]{msgpack\+\_\+validator\+\_\+filter\+\_\+settings,  }\item[{const std\+::string \&}]{scanner\+\_\+type }\end{DoxyParamCaption})}
+
+Sends the S\+O\+P\+AS command to query multi\+Scan136 filter settings (F\+R\+Echo\+Filter, L\+F\+Pangle\+Range\+Filter, host\+\_\+\+L\+F\+Player\+Filter) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em host\+\_\+\+F\+R\+Echo\+Filter} & F\+R\+Echo\+Filter settings, default\+: 1, otherwise 0 for F\+I\+R\+S\+T\+\_\+\+E\+C\+HO (Echo\+Count=1), 1 for A\+L\+L\+\_\+\+E\+C\+H\+OS (Echo\+Count=3), or 2 for L\+A\+S\+T\+\_\+\+E\+C\+HO (Echo\+Count=1) \\
+\hline
+\mbox{\texttt{ out}}  & {\em host\+\_\+\+L\+F\+Pangle\+Range\+Filter} & L\+F\+Pangle\+Range\+Filter settings, default\+: \char`\"{}0 -\/180.\+0 +180.\+0 -\/90.\+0 +90.\+0 1\char`\"{}, otherwise \char`\"{}$<$enabled$>$ $<$azimuth\+\_\+start$>$ $<$azimuth\+\_\+stop$>$ $<$elevation\+\_\+start$>$ $<$elevation\+\_\+stop$>$ $<$beam\+\_\+increment$>$\char`\"{} with azimuth and elevation given in degree \\
+\hline
+\mbox{\texttt{ out}}  & {\em host\+\_\+\+L\+F\+Player\+Filter} & L\+F\+Player\+Filter settings, default\+: \char`\"{}0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\char`\"{}, otherwise \char`\"{}$<$enabled$>$ $<$layer0-\/enabled$>$ $<$layer1-\/enabled$>$ $<$layer2-\/enabled$>$ ... $<$layer15-\/enabled$>$\char`\"{} with 1 for enabled and 0 for disabled \\
+\hline
+\mbox{\texttt{ out}}  & {\em msgpack\+\_\+validator\+\_\+filter\+\_\+settings;} & // filter settings for msgpack validator\+: required\+\_\+echos, azimuth\+\_\+start, azimuth\+\_\+end. elevation\+\_\+start, elevation\+\_\+end, layer\+\_\+filter \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a4f7f6008bc57b2ede1dab06fe29a5e25}\label{classsick__scan__xd_1_1SickScanServices_a4f7f6008bc57b2ede1dab06fe29a5e25}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!sendAuthorization@{sendAuthorization}}
+\index{sendAuthorization@{sendAuthorization}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{sendAuthorization()}{sendAuthorization()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::send\+Authorization (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Sends the S\+O\+P\+AS authorization command \char`\"{}s\+M\+N Set\+Access\+Mode 3 F4724744\char`\"{}. \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a16a32548bbc213dcce5886a2039731f1}\label{classsick__scan__xd_1_1SickScanServices_a16a32548bbc213dcce5886a2039731f1}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!sendMultiScanStartCmd@{sendMultiScanStartCmd}}
+\index{sendMultiScanStartCmd@{sendMultiScanStartCmd}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{sendMultiScanStartCmd()}{sendMultiScanStartCmd()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::send\+Multi\+Scan\+Start\+Cmd (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hostname,  }\item[{int}]{port,  }\item[{const std\+::string \&}]{scanner\+\_\+type,  }\item[{int}]{scandataformat,  }\item[{bool}]{imu\+\_\+enable,  }\item[{int}]{imu\+\_\+udp\+\_\+port,  }\item[{int}]{performanceprofilenumber }\end{DoxyParamCaption})}
+
+Sends the multi\+Scan start commands \char`\"{}s\+W\+N Scan\+Data\+Format\char`\"{}, \char`\"{}s\+W\+N Scan\+Data\+Preformatting\char`\"{}, \char`\"{}s\+W\+N Scan\+Data\+Eth\+Settings\char`\"{}, \char`\"{}s\+W\+N Scan\+Data\+Enable 1\char`\"{}, \char`\"{}s\+M\+N L\+M\+Cstartmeas\char`\"{}, \char`\"{}s\+M\+N Run\char`\"{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em hostname} & IP address of multi\+Scan136, default 192.\+168.\+0.\+1 \\
+\hline
+\mbox{\texttt{ in}}  & {\em port} & IP port of multi\+Scan136, default 2115 \\
+\hline
+\mbox{\texttt{ in}}  & {\em scanner\+\_\+type} & type of scanner, currently supported are multi\+Scan136 and pico\+Scan150 \\
+\hline
+\mbox{\texttt{ in}}  & {\em scandataformat} & Scan\+Data\+Format\+: 1 for msgpack or 2 for compact scandata, default\+: 1 \\
+\hline
+\mbox{\texttt{ in}}  & {\em imu\+\_\+enable} & Imu data transfer enabled \\
+\hline
+\mbox{\texttt{ in}}  & {\em imu\+\_\+udp\+\_\+port} & U\+DP port of imu data (if imu\+\_\+enable is true)\\
+\hline
+\end{DoxyParams}
+Sends the multi\+Scan start commands \char`\"{}s\+W\+N Scan\+Data\+Format\char`\"{}, \char`\"{}s\+W\+N Scan\+Data\+Preformatting\char`\"{}, \char`\"{}s\+W\+N Scan\+Data\+Eth\+Settings\char`\"{}, \char`\"{}s\+W\+N Scan\+Data\+Enable 1\char`\"{}, \char`\"{}s\+M\+N L\+M\+Cstartmeas\char`\"{}, \char`\"{}s\+M\+N Run\char`\"{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em hostname} & IP address of multi\+Scan136, default 192.\+168.\+0.\+1 \\
+\hline
+\mbox{\texttt{ in}}  & {\em port} & IP port of multi\+Scan136, default 2115 \\
+\hline
+\mbox{\texttt{ in}}  & {\em scanner\+\_\+type} & type of scanner, currently supported are multi\+Scan136 and pico\+Scan150 \\
+\hline
+\mbox{\texttt{ in}}  & {\em scandataformat} & Scan\+Data\+Format\+: 1 for msgpack or 2 for compact scandata, default\+: 2 \\
+\hline
+\mbox{\texttt{ in}}  & {\em imu\+\_\+enable} & Imu data transfer enabled \\
+\hline
+\mbox{\texttt{ in}}  & {\em imu\+\_\+udp\+\_\+port} & U\+DP port of imu data (if imu\+\_\+enable is true) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a625c739757e00502b83d610699425d32}\label{classsick__scan__xd_1_1SickScanServices_a625c739757e00502b83d610699425d32}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!sendMultiScanStopCmd@{sendMultiScanStopCmd}}
+\index{sendMultiScanStopCmd@{sendMultiScanStopCmd}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{sendMultiScanStopCmd()}{sendMultiScanStopCmd()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::send\+Multi\+Scan\+Stop\+Cmd (\begin{DoxyParamCaption}\item[{bool}]{imu\+\_\+enable }\end{DoxyParamCaption})}
+
+Sends the multi\+Scan stop commands \char`\"{}s\+W\+N Scan\+Data\+Enable 0\char`\"{} and \char`\"{}s\+M\+N Run\char`\"{} 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em imu\+\_\+enable} & Imu data transfer enabled\\
+\hline
+\end{DoxyParams}
+Sends the multi\+Scan136 stop commands \char`\"{}s\+W\+N Scan\+Data\+Enable 0\char`\"{} and \char`\"{}s\+M\+N Run\char`\"{} \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a3a8cfee95cda9766101b4c6b5afbc708}\label{classsick__scan__xd_1_1SickScanServices_a3a8cfee95cda9766101b4c6b5afbc708}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!sendRun@{sendRun}}
+\index{sendRun@{sendRun}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{sendRun()}{sendRun()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::send\+Run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Sends the S\+O\+P\+AS command \char`\"{}s\+M\+N Run\char`\"{}, which applies previous send settings \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a1fc2fb42a185dcbb5ba7e747d266fef9}\label{classsick__scan__xd_1_1SickScanServices_a1fc2fb42a185dcbb5ba7e747d266fef9}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!sendSopasAndCheckAnswer@{sendSopasAndCheckAnswer}}
+\index{sendSopasAndCheckAnswer@{sendSopasAndCheckAnswer}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{sendSopasAndCheckAnswer()}{sendSopasAndCheckAnswer()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::send\+Sopas\+And\+Check\+Answer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sopas\+Cmd,  }\item[{std\+::vector$<$ unsigned char $>$ \&}]{sopas\+Reply\+Bin,  }\item[{std\+::string \&}]{sopas\+Reply\+String }\end{DoxyParamCaption})}
+
+Sends a sopas command and returns the lidar reply. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sopas\+Cmd} & sopas command to send, f.\+e. \char`\"{}s\+E\+N E\+C\+R\+Change\+Arr 1\char`\"{} \\
+\hline
+\mbox{\texttt{ out}}  & {\em sopas\+Reply\+Bin} & response from lidar incl. start/stop byte \\
+\hline
+\mbox{\texttt{ out}}  & {\em sopas\+Reply\+String} & sopas\+Reply\+Bin converted to string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false in case of errors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_af87f16006f51fec8c9932e3e731bfd3c}\label{classsick__scan__xd_1_1SickScanServices_af87f16006f51fec8c9932e3e731bfd3c}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!sendSopasCmdCheckResponse@{sendSopasCmdCheckResponse}}
+\index{sendSopasCmdCheckResponse@{sendSopasCmdCheckResponse}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{sendSopasCmdCheckResponse()}{sendSopasCmdCheckResponse()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::send\+Sopas\+Cmd\+Check\+Response (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sopas\+\_\+request,  }\item[{const std\+::string \&}]{expected\+\_\+response }\end{DoxyParamCaption})}
+
+Sends a multi\+Scan136 command \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a5af9369ea3fb5693dd9885ae5691c04b}\label{classsick__scan__xd_1_1SickScanServices_a5af9369ea3fb5693dd9885ae5691c04b}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbColaMsg@{serviceCbColaMsg}}
+\index{serviceCbColaMsg@{serviceCbColaMsg}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbColaMsg()}{serviceCbColaMsg()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+Cola\+Msg (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv\+::\+Request \&}]{service\+\_\+request,  }\item[{sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv\+::\+Response \&}]{service\+\_\+response }\end{DoxyParamCaption})}
+
+Callback for service Cola\+Msg (Cola\+Msg, send a cola message to lidar). 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em service\+\_\+request} & ros service request to lidar \\
+\hline
+\mbox{\texttt{ out}}  & {\em service\+\_\+response} & service response from lidar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false in case of errors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a9849967de9b7f4a20bfa93f2c75316eb}\label{classsick__scan__xd_1_1SickScanServices_a9849967de9b7f4a20bfa93f2c75316eb}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbColaMsgROS2@{serviceCbColaMsgROS2}}
+\index{serviceCbColaMsgROS2@{serviceCbColaMsgROS2}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbColaMsgROS2()}{serviceCbColaMsgROS2()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+Cola\+Msg\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv\+::\+Request $>$}]{service\+\_\+request,  }\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv\+::\+Response $>$}]{service\+\_\+response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a434b3bd209da8d90f5dec274751c9fd1}\label{classsick__scan__xd_1_1SickScanServices_a434b3bd209da8d90f5dec274751c9fd1}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbECRChangeArr@{serviceCbECRChangeArr}}
+\index{serviceCbECRChangeArr@{serviceCbECRChangeArr}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbECRChangeArr()}{serviceCbECRChangeArr()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+E\+C\+R\+Change\+Arr (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv\+::\+Request \&}]{service\+\_\+request,  }\item[{sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv\+::\+Response \&}]{service\+\_\+response }\end{DoxyParamCaption})}
+
+Callback for service messages (E\+C\+R\+Change\+Arr, Request status change of monitoring fields on event). Sends a cola telegram \char`\"{}s\+E\+N E\+C\+R\+Change\+Arr \{0$\vert$1\}\char`\"{} and receives the response from the lidar device. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em service\+\_\+request} & ros service request to lidar \\
+\hline
+\mbox{\texttt{ out}}  & {\em service\+\_\+response} & service response from lidar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false in case of errors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a1e39cdff0373d7de7e5c376aeabd3a13}\label{classsick__scan__xd_1_1SickScanServices_a1e39cdff0373d7de7e5c376aeabd3a13}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbECRChangeArrROS2@{serviceCbECRChangeArrROS2}}
+\index{serviceCbECRChangeArrROS2@{serviceCbECRChangeArrROS2}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbECRChangeArrROS2()}{serviceCbECRChangeArrROS2()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+E\+C\+R\+Change\+Arr\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv\+::\+Request $>$}]{service\+\_\+request,  }\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv\+::\+Response $>$}]{service\+\_\+response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a7a5fa31957af5e675a7aa8029e5bb2d1}\label{classsick__scan__xd_1_1SickScanServices_a7a5fa31957af5e675a7aa8029e5bb2d1}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbGetContaminationResult@{serviceCbGetContaminationResult}}
+\index{serviceCbGetContaminationResult@{serviceCbGetContaminationResult}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbGetContaminationResult()}{serviceCbGetContaminationResult()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+Get\+Contamination\+Result (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv\+::\+Request \&}]{service\+\_\+request,  }\item[{sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv\+::\+Response \&}]{service\+\_\+response }\end{DoxyParamCaption})}
+
+Callback for service messages (Get\+Contamination\+Result, Read contamination indication result). Sends a cola telegram \char`\"{}s\+R\+N Contamination\+Result\char`\"{} and receives the response from the lidar device. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em service\+\_\+request} & ros service request to lidar \\
+\hline
+\mbox{\texttt{ out}}  & {\em service\+\_\+response} & service response from lidar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false in case of errors.
+\end{DoxyReturn}
+Callbacks for service messages. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em service\+\_\+request} & ros service request to lidar \\
+\hline
+\mbox{\texttt{ out}}  & {\em service\+\_\+response} & service response from lidar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false in case of errors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a1fa473654ae24a881b4ee9d9da27ee12}\label{classsick__scan__xd_1_1SickScanServices_a1fa473654ae24a881b4ee9d9da27ee12}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbGetContaminationResultROS2@{serviceCbGetContaminationResultROS2}}
+\index{serviceCbGetContaminationResultROS2@{serviceCbGetContaminationResultROS2}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbGetContaminationResultROS2()}{serviceCbGetContaminationResultROS2()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+Get\+Contamination\+Result\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv\+::\+Request $>$}]{service\+\_\+request,  }\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv\+::\+Response $>$}]{service\+\_\+response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a2547c2f9c812d7711ac84946ae2300e1}\label{classsick__scan__xd_1_1SickScanServices_a2547c2f9c812d7711ac84946ae2300e1}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbLIDoutputstate@{serviceCbLIDoutputstate}}
+\index{serviceCbLIDoutputstate@{serviceCbLIDoutputstate}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbLIDoutputstate()}{serviceCbLIDoutputstate()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+L\+I\+Doutputstate (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv\+::\+Request \&}]{service\+\_\+request,  }\item[{sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv\+::\+Response \&}]{service\+\_\+response }\end{DoxyParamCaption})}
+
+Callback for service messages (L\+I\+Doutputstate, Request status change of monitoring fields on event). Sends a cola telegram \char`\"{}s\+E\+N L\+I\+Doutputstate \{0$\vert$1\}\char`\"{} and receives the response from the lidar device. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em service\+\_\+request} & ros service request to lidar \\
+\hline
+\mbox{\texttt{ out}}  & {\em service\+\_\+response} & service response from lidar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false in case of errors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a19d6aacee2b78f8530a9442eaa820166}\label{classsick__scan__xd_1_1SickScanServices_a19d6aacee2b78f8530a9442eaa820166}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbLIDoutputstateROS2@{serviceCbLIDoutputstateROS2}}
+\index{serviceCbLIDoutputstateROS2@{serviceCbLIDoutputstateROS2}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbLIDoutputstateROS2()}{serviceCbLIDoutputstateROS2()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+L\+I\+Doutputstate\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv\+::\+Request $>$}]{service\+\_\+request,  }\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv\+::\+Response $>$}]{service\+\_\+response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_aff8cafb657f9d9d5d3fb72512b49ac06}\label{classsick__scan__xd_1_1SickScanServices_aff8cafb657f9d9d5d3fb72512b49ac06}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbSCdevicestate@{serviceCbSCdevicestate}}
+\index{serviceCbSCdevicestate@{serviceCbSCdevicestate}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbSCdevicestate()}{serviceCbSCdevicestate()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Cdevicestate (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv\+::\+Request \&}]{service\+\_\+request,  }\item[{sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv\+::\+Response \&}]{service\+\_\+response }\end{DoxyParamCaption})}
+
+Callbacks for service messages. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em service\+\_\+request} & ros service request to lidar \\
+\hline
+\mbox{\texttt{ out}}  & {\em service\+\_\+response} & service response from lidar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true on success, false in case of errors. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a590b573ffabfde3d433ff9d578ee9824}\label{classsick__scan__xd_1_1SickScanServices_a590b573ffabfde3d433ff9d578ee9824}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbSCdevicestateROS2@{serviceCbSCdevicestateROS2}}
+\index{serviceCbSCdevicestateROS2@{serviceCbSCdevicestateROS2}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbSCdevicestateROS2()}{serviceCbSCdevicestateROS2()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Cdevicestate\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv\+::\+Request $>$}]{service\+\_\+request,  }\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv\+::\+Response $>$}]{service\+\_\+response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a529d54b6d808216f484193bab2612b35}\label{classsick__scan__xd_1_1SickScanServices_a529d54b6d808216f484193bab2612b35}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbSCreboot@{serviceCbSCreboot}}
+\index{serviceCbSCreboot@{serviceCbSCreboot}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbSCreboot()}{serviceCbSCreboot()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Creboot (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv\+::\+Request \&}]{service\+\_\+request,  }\item[{sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv\+::\+Response \&}]{service\+\_\+response }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a37d92dd6632461bca13022079efb858b}\label{classsick__scan__xd_1_1SickScanServices_a37d92dd6632461bca13022079efb858b}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbSCrebootROS2@{serviceCbSCrebootROS2}}
+\index{serviceCbSCrebootROS2@{serviceCbSCrebootROS2}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbSCrebootROS2()}{serviceCbSCrebootROS2()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Creboot\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv\+::\+Request $>$}]{service\+\_\+request,  }\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv\+::\+Response $>$}]{service\+\_\+response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a9718cfef5cfc333f937902ef67ea9901}\label{classsick__scan__xd_1_1SickScanServices_a9718cfef5cfc333f937902ef67ea9901}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbSCsoftreset@{serviceCbSCsoftreset}}
+\index{serviceCbSCsoftreset@{serviceCbSCsoftreset}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbSCsoftreset()}{serviceCbSCsoftreset()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Csoftreset (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv\+::\+Request \&}]{service\+\_\+request,  }\item[{sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv\+::\+Response \&}]{service\+\_\+response }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a19e48a2d78781acdbcc17cdb45510589}\label{classsick__scan__xd_1_1SickScanServices_a19e48a2d78781acdbcc17cdb45510589}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbSCsoftresetROS2@{serviceCbSCsoftresetROS2}}
+\index{serviceCbSCsoftresetROS2@{serviceCbSCsoftresetROS2}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbSCsoftresetROS2()}{serviceCbSCsoftresetROS2()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Csoftreset\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv\+::\+Request $>$}]{service\+\_\+request,  }\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv\+::\+Response $>$}]{service\+\_\+response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_af8685fc936bad196c921012f86209bea}\label{classsick__scan__xd_1_1SickScanServices_af8685fc936bad196c921012f86209bea}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbSickScanExit@{serviceCbSickScanExit}}
+\index{serviceCbSickScanExit@{serviceCbSickScanExit}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbSickScanExit()}{serviceCbSickScanExit()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+Sick\+Scan\+Exit (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv\+::\+Request \&}]{service\+\_\+request,  }\item[{sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv\+::\+Response \&}]{service\+\_\+response }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_abbd278a78165e8a71c445b92e772627e}\label{classsick__scan__xd_1_1SickScanServices_abbd278a78165e8a71c445b92e772627e}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!serviceCbSickScanExitROS2@{serviceCbSickScanExitROS2}}
+\index{serviceCbSickScanExitROS2@{serviceCbSickScanExitROS2}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{serviceCbSickScanExitROS2()}{serviceCbSickScanExitROS2()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::service\+Cb\+Sick\+Scan\+Exit\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv\+::\+Request $>$}]{service\+\_\+request,  }\item[{std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv\+::\+Response $>$}]{service\+\_\+response }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_ab32e71c481000ebb21616664ebe618e7}\label{classsick__scan__xd_1_1SickScanServices_ab32e71c481000ebb21616664ebe618e7}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!writeMultiScanFiltersettings@{writeMultiScanFiltersettings}}
+\index{writeMultiScanFiltersettings@{writeMultiScanFiltersettings}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{writeMultiScanFiltersettings()}{writeMultiScanFiltersettings()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::write\+Multi\+Scan\+Filtersettings (\begin{DoxyParamCaption}\item[{int}]{host\+\_\+\+F\+R\+Echo\+Filter,  }\item[{const std\+::string \&}]{host\+\_\+\+L\+F\+Pangle\+Range\+Filter,  }\item[{const std\+::string \&}]{host\+\_\+\+L\+F\+Player\+Filter,  }\item[{const std\+::string \&}]{host\+\_\+\+L\+F\+Pinterval\+Filter,  }\item[{const std\+::string \&}]{scanner\+\_\+type }\end{DoxyParamCaption})}
+
+Sends the S\+O\+P\+AS command to write multi\+Scan136 filter settings (F\+R\+Echo\+Filter, L\+F\+Pangle\+Range\+Filter, host\+\_\+\+L\+F\+Player\+Filter) 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em host\+\_\+\+F\+R\+Echo\+Filter} & F\+R\+Echo\+Filter settings, default\+: 1, otherwise 0 for F\+I\+R\+S\+T\+\_\+\+E\+C\+HO (Echo\+Count=1), 1 for A\+L\+L\+\_\+\+E\+C\+H\+OS (Echo\+Count=3), or 2 for L\+A\+S\+T\+\_\+\+E\+C\+HO (Echo\+Count=1) \\
+\hline
+\mbox{\texttt{ in}}  & {\em host\+\_\+\+L\+F\+Pangle\+Range\+Filter} & L\+F\+Pangle\+Range\+Filter settings, default\+: \char`\"{}0 -\/180.\+0 +180.\+0 -\/90.\+0 +90.\+0 1\char`\"{}, otherwise \char`\"{}$<$enabled$>$ $<$azimuth\+\_\+start$>$ $<$azimuth\+\_\+stop$>$ $<$elevation\+\_\+start$>$ $<$elevation\+\_\+stop$>$ $<$beam\+\_\+increment$>$\char`\"{} with azimuth and elevation given in degree \\
+\hline
+\mbox{\texttt{ in}}  & {\em host\+\_\+\+L\+F\+Player\+Filter} & L\+F\+Player\+Filter settings, default\+: \char`\"{}0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1\char`\"{}, otherwise \char`\"{}$<$enabled$>$ $<$layer0-\/enabled$>$ $<$layer1-\/enabled$>$ $<$layer2-\/enabled$>$ ... $<$layer15-\/enabled$>$\char`\"{} with 1 for enabled and 0 for disabled \\
+\hline
+\mbox{\texttt{ in}}  & {\em host\+\_\+\+L\+F\+Pinterval\+Filter} & Optionally set L\+F\+Pinterval\+Filter to \char`\"{}$<$enabled$>$ $<$\+N$>$\char`\"{} with 1 for enabled and 0 for disabled and N to reduce output to every N-\/th scan \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a4040a8605673014da10f798cfc165fac}\label{classsick__scan__xd_1_1SickScanServices_a4040a8605673014da10f798cfc165fac}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_client\_authorization\_pw@{m\_client\_authorization\_pw}}
+\index{m\_client\_authorization\_pw@{m\_client\_authorization\_pw}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_client\_authorization\_pw}{m\_client\_authorization\_pw}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+client\+\_\+authorization\+\_\+pw\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a831adf4b064a5cd40a92fc6f3ae16180}\label{classsick__scan__xd_1_1SickScanServices_a831adf4b064a5cd40a92fc6f3ae16180}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_cola\_binary@{m\_cola\_binary}}
+\index{m\_cola\_binary@{m\_cola\_binary}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_cola\_binary}{m\_cola\_binary}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+cola\+\_\+binary\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+cola ascii or cola binary messages 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_adb0408dcfccfa558b91b38a8624642ad}\label{classsick__scan__xd_1_1SickScanServices_adb0408dcfccfa558b91b38a8624642ad}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_common\_tcp@{m\_common\_tcp}}
+\index{m\_common\_tcp@{m\_common\_tcp}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_common\_tcp}{m\_common\_tcp}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp}}$\ast$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+common\+\_\+tcp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+common tcp handler 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a03b46c83dc2dc8724c7393c18125567c}\label{classsick__scan__xd_1_1SickScanServices_a03b46c83dc2dc8724c7393c18125567c}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_srv\_server\_ColaMsg@{m\_srv\_server\_ColaMsg}}
+\index{m\_srv\_server\_ColaMsg@{m\_srv\_server\_ColaMsg}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_srv\_server\_ColaMsg}{m\_srv\_server\_ColaMsg}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$sick\+\_\+scan\+\_\+srv\+::\+Cola\+Msg\+Srv$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+srv\+\_\+server\+\_\+\+Cola\+Msg\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+service \char`\"{}\+Cola\+Msg\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+Cola\+Msg 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_af9a4d393c0b485013c8188caf4cecc8b}\label{classsick__scan__xd_1_1SickScanServices_af9a4d393c0b485013c8188caf4cecc8b}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_srv\_server\_ECRChangeArr@{m\_srv\_server\_ECRChangeArr}}
+\index{m\_srv\_server\_ECRChangeArr@{m\_srv\_server\_ECRChangeArr}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_srv\_server\_ECRChangeArr}{m\_srv\_server\_ECRChangeArr}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$sick\+\_\+scan\+\_\+srv\+::\+E\+C\+R\+Change\+Arr\+Srv$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+srv\+\_\+server\+\_\+\+E\+C\+R\+Change\+Arr\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+service \char`\"{}\+E\+C\+R\+Change\+Arr\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+E\+C\+R\+Change\+Arr 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a05866045d5f9a7949673b3aff8d002e3}\label{classsick__scan__xd_1_1SickScanServices_a05866045d5f9a7949673b3aff8d002e3}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_srv\_server\_GetContaminationResult@{m\_srv\_server\_GetContaminationResult}}
+\index{m\_srv\_server\_GetContaminationResult@{m\_srv\_server\_GetContaminationResult}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_srv\_server\_GetContaminationResult}{m\_srv\_server\_GetContaminationResult}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$sick\+\_\+scan\+\_\+srv\+::\+Get\+Contamination\+Result\+Srv$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+srv\+\_\+server\+\_\+\+Get\+Contamination\+Result\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+service \char`\"{}\+Get\+Contamination\+Result\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+Get\+Contamination\+Result 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a421fbf1ce6181160eecb2afd39207d93}\label{classsick__scan__xd_1_1SickScanServices_a421fbf1ce6181160eecb2afd39207d93}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_srv\_server\_LIDoutputstate@{m\_srv\_server\_LIDoutputstate}}
+\index{m\_srv\_server\_LIDoutputstate@{m\_srv\_server\_LIDoutputstate}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_srv\_server\_LIDoutputstate}{m\_srv\_server\_LIDoutputstate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$sick\+\_\+scan\+\_\+srv\+::\+L\+I\+Doutputstate\+Srv$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+srv\+\_\+server\+\_\+\+L\+I\+Doutputstate\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+service \char`\"{}\+L\+I\+Doutputstate\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+L\+I\+Doutputstate 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a0a8776331d2298fda58c77bf92b9b4a9}\label{classsick__scan__xd_1_1SickScanServices_a0a8776331d2298fda58c77bf92b9b4a9}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_srv\_server\_SCdevicestate@{m\_srv\_server\_SCdevicestate}}
+\index{m\_srv\_server\_SCdevicestate@{m\_srv\_server\_SCdevicestate}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_srv\_server\_SCdevicestate}{m\_srv\_server\_SCdevicestate}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$sick\+\_\+scan\+\_\+srv\+::\+S\+Cdevicestate\+Srv$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+srv\+\_\+server\+\_\+\+S\+Cdevicestate\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+service \char`\"{}\+S\+Cdevicestate\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Cdevicestate 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a82cbb5d40b416c9605121cad27dd1296}\label{classsick__scan__xd_1_1SickScanServices_a82cbb5d40b416c9605121cad27dd1296}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_srv\_server\_SCreboot@{m\_srv\_server\_SCreboot}}
+\index{m\_srv\_server\_SCreboot@{m\_srv\_server\_SCreboot}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_srv\_server\_SCreboot}{m\_srv\_server\_SCreboot}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$sick\+\_\+scan\+\_\+srv\+::\+S\+Creboot\+Srv$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+srv\+\_\+server\+\_\+\+S\+Creboot\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+service \char`\"{}\+S\+Creboot\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Creboot 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_ae9ff0712818841316880fdf55071eb44}\label{classsick__scan__xd_1_1SickScanServices_ae9ff0712818841316880fdf55071eb44}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_srv\_server\_SCsoftreset@{m\_srv\_server\_SCsoftreset}}
+\index{m\_srv\_server\_SCsoftreset@{m\_srv\_server\_SCsoftreset}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_srv\_server\_SCsoftreset}{m\_srv\_server\_SCsoftreset}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$sick\+\_\+scan\+\_\+srv\+::\+S\+Csoftreset\+Srv$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+srv\+\_\+server\+\_\+\+S\+Csoftreset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+service \char`\"{}\+S\+Csoftreset\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+S\+Csoftreset 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanServices_a553d30eff88fc0c3e90e73454c33661f}\label{classsick__scan__xd_1_1SickScanServices_a553d30eff88fc0c3e90e73454c33661f}} 
+\index{sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}!m\_srv\_server\_SickScanExit@{m\_srv\_server\_SickScanExit}}
+\index{m\_srv\_server\_SickScanExit@{m\_srv\_server\_SickScanExit}!sick\_scan\_xd::SickScanServices@{sick\_scan\_xd::SickScanServices}}
+\doxysubsubsection{\texorpdfstring{m\_srv\_server\_SickScanExit}{m\_srv\_server\_SickScanExit}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server}}$<$sick\+\_\+scan\+\_\+srv\+::\+Sick\+Scan\+Exit\+Srv$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services\+::m\+\_\+srv\+\_\+server\+\_\+\+Sick\+Scan\+Exit\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+service \char`\"{}\+Sick\+Scan\+Exit\+Srv\char`\"{}, \&sick\+\_\+scan\+::\+Sick\+Scan\+Services\+::service\+Cb\+Sick\+Scan\+Exit 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__scan__services_8h}{sick\+\_\+scan\+\_\+services.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__scan__services_8cpp}{sick\+\_\+scan\+\_\+services.\+cpp}}\end{DoxyCompactItemize}

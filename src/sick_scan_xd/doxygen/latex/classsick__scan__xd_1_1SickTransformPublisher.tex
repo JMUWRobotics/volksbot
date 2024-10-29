@@ -1,0 +1,136 @@
+\hypertarget{classsick__scan__xd_1_1SickTransformPublisher}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Transform\+Publisher Class Reference}
+\label{classsick__scan__xd_1_1SickTransformPublisher}\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+
+
+{\ttfamily \#include $<$sick\+\_\+tf\+\_\+publisher.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Transform\+Publisher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classsick__scan__xd_1_1SickTransformPublisher__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a90864267f2f09baf8ca84b8555d73e23}{Sick\+Transform\+Publisher}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} \+\_\+nh=0)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_aa02880ed480952c38be69639ed030b0b}{run}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a3599eac5669516c96fa28ec9365bde6f}{stop}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_ac02ef8cbac9f697ef98c7c8e829ea50a}{run\+T\+Fpublish\+Thread\+Cb}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a52d9536914d6e2a7ca3b47e86f378796}{nh}} = 0
+\item 
+double \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_afed6348300624b69a2fa6cd2f3385b2f}{tf\+\_\+publish\+\_\+rate}} = 10.\+0
+\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a00e34bd605b5135f046840e5008d8225}{tf\+\_\+lidar\+\_\+frame\+\_\+id}} = \char`\"{}cloud\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a957a762c67c6e332e81da47c556954e8}{tf\+\_\+base\+\_\+frame\+\_\+id}} = \char`\"{}map\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a8b3bcda34cd83d1aeaa3b163a2ede3a2}{tf\+\_\+base\+\_\+lidar\+\_\+xyz\+\_\+rpy}} = \char`\"{}0,0,0,0,0,0\char`\"{}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a887a0dc9e0cdd52df5d07e7a5dbf9f49}{tf\+\_\+base\+\_\+lidar\+\_\+pose\+\_\+vec}}
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a953b13c4e9f2d69cdfebcf519505aa19}{tf\+\_\+publish\+\_\+thread\+\_\+running}} = false
+\item 
+std\+::thread $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickTransformPublisher_a9e80caa96cdd92c8bc2447e29007637e}{tf\+\_\+publish\+\_\+thread}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a90864267f2f09baf8ca84b8555d73e23}\label{classsick__scan__xd_1_1SickTransformPublisher_a90864267f2f09baf8ca84b8555d73e23}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!SickTransformPublisher@{SickTransformPublisher}}
+\index{SickTransformPublisher@{SickTransformPublisher}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{SickTransformPublisher()}{SickTransformPublisher()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::\+Sick\+Transform\+Publisher (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{\+\_\+nh = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_aa02880ed480952c38be69639ed030b0b}\label{classsick__scan__xd_1_1SickTransformPublisher_aa02880ed480952c38be69639ed030b0b}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!run@{run}}
+\index{run@{run}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_ac02ef8cbac9f697ef98c7c8e829ea50a}\label{classsick__scan__xd_1_1SickTransformPublisher_ac02ef8cbac9f697ef98c7c8e829ea50a}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!runTFpublishThreadCb@{runTFpublishThreadCb}}
+\index{runTFpublishThreadCb@{runTFpublishThreadCb}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{runTFpublishThreadCb()}{runTFpublishThreadCb()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::run\+T\+Fpublish\+Thread\+Cb (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a3599eac5669516c96fa28ec9365bde6f}\label{classsick__scan__xd_1_1SickTransformPublisher_a3599eac5669516c96fa28ec9365bde6f}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!stop@{stop}}
+\index{stop@{stop}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a52d9536914d6e2a7ca3b47e86f378796}\label{classsick__scan__xd_1_1SickTransformPublisher_a52d9536914d6e2a7ca3b47e86f378796}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!nh@{nh}}
+\index{nh@{nh}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{nh}{nh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::nh = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a957a762c67c6e332e81da47c556954e8}\label{classsick__scan__xd_1_1SickTransformPublisher_a957a762c67c6e332e81da47c556954e8}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!tf\_base\_frame\_id@{tf\_base\_frame\_id}}
+\index{tf\_base\_frame\_id@{tf\_base\_frame\_id}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{tf\_base\_frame\_id}{tf\_base\_frame\_id}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::tf\+\_\+base\+\_\+frame\+\_\+id = \char`\"{}map\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a887a0dc9e0cdd52df5d07e7a5dbf9f49}\label{classsick__scan__xd_1_1SickTransformPublisher_a887a0dc9e0cdd52df5d07e7a5dbf9f49}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!tf\_base\_lidar\_pose\_vec@{tf\_base\_lidar\_pose\_vec}}
+\index{tf\_base\_lidar\_pose\_vec@{tf\_base\_lidar\_pose\_vec}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{tf\_base\_lidar\_pose\_vec}{tf\_base\_lidar\_pose\_vec}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::tf\+\_\+base\+\_\+lidar\+\_\+pose\+\_\+vec\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a8b3bcda34cd83d1aeaa3b163a2ede3a2}\label{classsick__scan__xd_1_1SickTransformPublisher_a8b3bcda34cd83d1aeaa3b163a2ede3a2}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!tf\_base\_lidar\_xyz\_rpy@{tf\_base\_lidar\_xyz\_rpy}}
+\index{tf\_base\_lidar\_xyz\_rpy@{tf\_base\_lidar\_xyz\_rpy}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{tf\_base\_lidar\_xyz\_rpy}{tf\_base\_lidar\_xyz\_rpy}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::tf\+\_\+base\+\_\+lidar\+\_\+xyz\+\_\+rpy = \char`\"{}0,0,0,0,0,0\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a00e34bd605b5135f046840e5008d8225}\label{classsick__scan__xd_1_1SickTransformPublisher_a00e34bd605b5135f046840e5008d8225}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!tf\_lidar\_frame\_id@{tf\_lidar\_frame\_id}}
+\index{tf\_lidar\_frame\_id@{tf\_lidar\_frame\_id}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{tf\_lidar\_frame\_id}{tf\_lidar\_frame\_id}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::tf\+\_\+lidar\+\_\+frame\+\_\+id = \char`\"{}cloud\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_afed6348300624b69a2fa6cd2f3385b2f}\label{classsick__scan__xd_1_1SickTransformPublisher_afed6348300624b69a2fa6cd2f3385b2f}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!tf\_publish\_rate@{tf\_publish\_rate}}
+\index{tf\_publish\_rate@{tf\_publish\_rate}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{tf\_publish\_rate}{tf\_publish\_rate}}
+{\footnotesize\ttfamily double sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::tf\+\_\+publish\+\_\+rate = 10.\+0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a9e80caa96cdd92c8bc2447e29007637e}\label{classsick__scan__xd_1_1SickTransformPublisher_a9e80caa96cdd92c8bc2447e29007637e}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!tf\_publish\_thread@{tf\_publish\_thread}}
+\index{tf\_publish\_thread@{tf\_publish\_thread}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{tf\_publish\_thread}{tf\_publish\_thread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::tf\+\_\+publish\+\_\+thread = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickTransformPublisher_a953b13c4e9f2d69cdfebcf519505aa19}\label{classsick__scan__xd_1_1SickTransformPublisher_a953b13c4e9f2d69cdfebcf519505aa19}} 
+\index{sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}!tf\_publish\_thread\_running@{tf\_publish\_thread\_running}}
+\index{tf\_publish\_thread\_running@{tf\_publish\_thread\_running}!sick\_scan\_xd::SickTransformPublisher@{sick\_scan\_xd::SickTransformPublisher}}
+\doxysubsubsection{\texorpdfstring{tf\_publish\_thread\_running}{tf\_publish\_thread\_running}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Transform\+Publisher\+::tf\+\_\+publish\+\_\+thread\+\_\+running = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__tf__publisher_8h}{sick\+\_\+tf\+\_\+publisher.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__tf__publisher_8cpp}{sick\+\_\+tf\+\_\+publisher.\+cpp}}\end{DoxyCompactItemize}

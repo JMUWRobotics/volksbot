@@ -1,0 +1,264 @@
+\hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Custom\+Point\+Cloud\+Configuration Class Reference}
+\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration}\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+
+
+Configuration of customized pointclouds.  
+
+
+
+
+{\ttfamily \#include $<$ros\+\_\+msgpack\+\_\+publisher.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scansegment\+\_\+xd\+::Custom\+Point\+Cloud\+Configuration\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{classsick__scansegment__xd_1_1CustomPointCloudConfiguration__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a1f6de32d35b78e9bcae31c88590b5d23}{Custom\+Point\+Cloud\+Configuration}} ()
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a7ad710d5fdf77fcd1aee06f4161f733e}{Custom\+Point\+Cloud\+Configuration}} (const std\+::string \&cfg\+\_\+name, const std\+::string \&cfg\+\_\+str)
+\item 
+const std\+::string \& \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a7cdd2736f67a8d0ed34450f54e0c2beb}{cfg\+Name}} (void) const
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a2115325ec49d23123407f2b0ed3d048b}{publish}} (void) const
+\item 
+const std\+::string \& \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a551bada4106892fa5baec17f8d0b0d98}{topic}} (void) const
+\item 
+const std\+::string \& \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a21635eeae0fe23edce6014eeff9ada1a}{frameid}} (void) const
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ac93d83e7994490347d56f2856fcf57fe}{fullframe}} (void) const
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a6588c0f952e5f4ec2f62a135b92239ba}{coordinate\+Notation}} (void) const
+\item 
+\mbox{\hyperlink{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}{Point\+Cloud2\+Msg\+Publisher}} \& \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a559f50b8183c61f92581cc70ba33a441}{publisher}} (void)
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a63edb928b86422291dbddd45348cbe1d}{field\+Enabled}} (const std\+::string \&fieldname)
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a98bc2a225c92941ee96b3fafb025f4a2}{point\+Enabled}} (\mbox{\hyperlink{classsick__scansegment__xd_1_1PointXYZRAEI32f}{sick\+\_\+scansegment\+\_\+xd\+::\+Point\+X\+Y\+Z\+R\+A\+E\+I32f}} \&lidar\+\_\+point)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a0df17731caedcb5f98be4489e21d4264}{print}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_acb8926031897dff5775d02cd4744bae1}{print\+Values\+Enabled}} (const std\+::map$<$ std\+::string, bool $>$ \&mapped\+\_\+values, const std\+::string \&delim=\char`\"{},\char`\"{})
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ad81b900a1c663c0475c847d11233e0dd}{print\+Values\+Enabled}} (const std\+::map$<$ int8\+\_\+t, bool $>$ \&mapped\+\_\+values, const std\+::string \&delim=\char`\"{},\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a30c6d45d78daf10a845b93d09a43a068}{m\+\_\+cfg\+\_\+name}} = \char`\"{}\char`\"{}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a489b051d89ddd6340768c00620f98a17}{m\+\_\+publish}} = false
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a57c144c2126ec0cad11ea45389ae6ef2}{m\+\_\+topic}} = \char`\"{}\char`\"{}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a3fdae6c26887635d7a4351b47574106c}{m\+\_\+frameid}} = \char`\"{}\char`\"{}
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_aae549908443e2dc1d97c430145734206}{m\+\_\+coordinate\+\_\+notation}} = 0
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_acc4994068f95a25eb3b0a2f7c5e7cd5c}{m\+\_\+update\+\_\+method}} = 0
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter}} \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a058499f7e3e3007c9960dfe0b750d16a}{m\+\_\+range\+\_\+filter}}
+\item 
+std\+::map$<$ std\+::string, bool $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_abe69e8272cc51e4625f5616e7410f214}{m\+\_\+field\+\_\+enabled}}
+\item 
+std\+::map$<$ int8\+\_\+t, bool $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ad1379646afac05d3e68fed5d6df75158}{m\+\_\+echo\+\_\+enabled}}
+\item 
+std\+::map$<$ int8\+\_\+t, bool $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a2feb1f2218214ecde0d79804bf6eb466}{m\+\_\+layer\+\_\+enabled}}
+\item 
+std\+::map$<$ int8\+\_\+t, bool $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_afee02073101ad3edca66d56c5dd5fab9}{m\+\_\+reflector\+\_\+enabled}}
+\item 
+std\+::map$<$ int8\+\_\+t, bool $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_aa6caee2b231db3b96ac09edce3cce4c7}{m\+\_\+infringed\+\_\+enabled}}
+\item 
+\mbox{\hyperlink{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}{Point\+Cloud2\+Msg\+Publisher}} \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a960bd01ebef69a993f88014ad959711f}{m\+\_\+publisher}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Configuration of customized pointclouds. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a1f6de32d35b78e9bcae31c88590b5d23}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a1f6de32d35b78e9bcae31c88590b5d23}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!CustomPointCloudConfiguration@{CustomPointCloudConfiguration}}
+\index{CustomPointCloudConfiguration@{CustomPointCloudConfiguration}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{CustomPointCloudConfiguration()}{CustomPointCloudConfiguration()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::\+Custom\+Point\+Cloud\+Configuration (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a7ad710d5fdf77fcd1aee06f4161f733e}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a7ad710d5fdf77fcd1aee06f4161f733e}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!CustomPointCloudConfiguration@{CustomPointCloudConfiguration}}
+\index{CustomPointCloudConfiguration@{CustomPointCloudConfiguration}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{CustomPointCloudConfiguration()}{CustomPointCloudConfiguration()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::\+Custom\+Point\+Cloud\+Configuration (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cfg\+\_\+name,  }\item[{const std\+::string \&}]{cfg\+\_\+str }\end{DoxyParamCaption})}
+
+Configuration of customized pointclouds 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a7cdd2736f67a8d0ed34450f54e0c2beb}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a7cdd2736f67a8d0ed34450f54e0c2beb}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!cfgName@{cfgName}}
+\index{cfgName@{cfgName}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{cfgName()}{cfgName()}}
+{\footnotesize\ttfamily const std\+::string\& sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::cfg\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a6588c0f952e5f4ec2f62a135b92239ba}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a6588c0f952e5f4ec2f62a135b92239ba}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!coordinateNotation@{coordinateNotation}}
+\index{coordinateNotation@{coordinateNotation}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{coordinateNotation()}{coordinateNotation()}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::coordinate\+Notation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a63edb928b86422291dbddd45348cbe1d}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a63edb928b86422291dbddd45348cbe1d}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!fieldEnabled@{fieldEnabled}}
+\index{fieldEnabled@{fieldEnabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{fieldEnabled()}{fieldEnabled()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::field\+Enabled (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{fieldname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a21635eeae0fe23edce6014eeff9ada1a}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a21635eeae0fe23edce6014eeff9ada1a}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!frameid@{frameid}}
+\index{frameid@{frameid}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{frameid()}{frameid()}}
+{\footnotesize\ttfamily const std\+::string\& sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::frameid (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ac93d83e7994490347d56f2856fcf57fe}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ac93d83e7994490347d56f2856fcf57fe}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!fullframe@{fullframe}}
+\index{fullframe@{fullframe}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{fullframe()}{fullframe()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::fullframe (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a98bc2a225c92941ee96b3fafb025f4a2}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a98bc2a225c92941ee96b3fafb025f4a2}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!pointEnabled@{pointEnabled}}
+\index{pointEnabled@{pointEnabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{pointEnabled()}{pointEnabled()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::point\+Enabled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1PointXYZRAEI32f}{sick\+\_\+scansegment\+\_\+xd\+::\+Point\+X\+Y\+Z\+R\+A\+E\+I32f}} \&}]{lidar\+\_\+point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a0df17731caedcb5f98be4489e21d4264}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a0df17731caedcb5f98be4489e21d4264}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!print@{print}}
+\index{print@{print}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ad81b900a1c663c0475c847d11233e0dd}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ad81b900a1c663c0475c847d11233e0dd}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!printValuesEnabled@{printValuesEnabled}}
+\index{printValuesEnabled@{printValuesEnabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{printValuesEnabled()}{printValuesEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::print\+Values\+Enabled (\begin{DoxyParamCaption}\item[{const std\+::map$<$ int8\+\_\+t, bool $>$ \&}]{mapped\+\_\+values,  }\item[{const std\+::string \&}]{delim = {\ttfamily \char`\"{},\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_acb8926031897dff5775d02cd4744bae1}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_acb8926031897dff5775d02cd4744bae1}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!printValuesEnabled@{printValuesEnabled}}
+\index{printValuesEnabled@{printValuesEnabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{printValuesEnabled()}{printValuesEnabled()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::print\+Values\+Enabled (\begin{DoxyParamCaption}\item[{const std\+::map$<$ std\+::string, bool $>$ \&}]{mapped\+\_\+values,  }\item[{const std\+::string \&}]{delim = {\ttfamily \char`\"{},\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a2115325ec49d23123407f2b0ed3d048b}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a2115325ec49d23123407f2b0ed3d048b}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!publish@{publish}}
+\index{publish@{publish}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{publish()}{publish()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::publish (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a559f50b8183c61f92581cc70ba33a441}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a559f50b8183c61f92581cc70ba33a441}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!publisher@{publisher}}
+\index{publisher@{publisher}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{publisher()}{publisher()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}{Point\+Cloud2\+Msg\+Publisher}}\& sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::publisher (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a551bada4106892fa5baec17f8d0b0d98}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a551bada4106892fa5baec17f8d0b0d98}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!topic@{topic}}
+\index{topic@{topic}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{topic()}{topic()}}
+{\footnotesize\ttfamily const std\+::string\& sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::topic (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a30c6d45d78daf10a845b93d09a43a068}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a30c6d45d78daf10a845b93d09a43a068}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_cfg\_name@{m\_cfg\_name}}
+\index{m\_cfg\_name@{m\_cfg\_name}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_cfg\_name}{m\_cfg\_name}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+cfg\+\_\+name = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_aae549908443e2dc1d97c430145734206}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_aae549908443e2dc1d97c430145734206}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_coordinate\_notation@{m\_coordinate\_notation}}
+\index{m\_coordinate\_notation@{m\_coordinate\_notation}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_coordinate\_notation}{m\_coordinate\_notation}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+coordinate\+\_\+notation = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ad1379646afac05d3e68fed5d6df75158}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_ad1379646afac05d3e68fed5d6df75158}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_echo\_enabled@{m\_echo\_enabled}}
+\index{m\_echo\_enabled@{m\_echo\_enabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_echo\_enabled}{m\_echo\_enabled}}
+{\footnotesize\ttfamily std\+::map$<$int8\+\_\+t, bool$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+echo\+\_\+enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_abe69e8272cc51e4625f5616e7410f214}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_abe69e8272cc51e4625f5616e7410f214}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_field\_enabled@{m\_field\_enabled}}
+\index{m\_field\_enabled@{m\_field\_enabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_field\_enabled}{m\_field\_enabled}}
+{\footnotesize\ttfamily std\+::map$<$std\+::string, bool$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+field\+\_\+enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a3fdae6c26887635d7a4351b47574106c}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a3fdae6c26887635d7a4351b47574106c}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_frameid@{m\_frameid}}
+\index{m\_frameid@{m\_frameid}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_frameid}{m\_frameid}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+frameid = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_aa6caee2b231db3b96ac09edce3cce4c7}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_aa6caee2b231db3b96ac09edce3cce4c7}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_infringed\_enabled@{m\_infringed\_enabled}}
+\index{m\_infringed\_enabled@{m\_infringed\_enabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_infringed\_enabled}{m\_infringed\_enabled}}
+{\footnotesize\ttfamily std\+::map$<$int8\+\_\+t, bool$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+infringed\+\_\+enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a2feb1f2218214ecde0d79804bf6eb466}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a2feb1f2218214ecde0d79804bf6eb466}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_layer\_enabled@{m\_layer\_enabled}}
+\index{m\_layer\_enabled@{m\_layer\_enabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_layer\_enabled}{m\_layer\_enabled}}
+{\footnotesize\ttfamily std\+::map$<$int8\+\_\+t, bool$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+layer\+\_\+enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a489b051d89ddd6340768c00620f98a17}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a489b051d89ddd6340768c00620f98a17}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_publish@{m\_publish}}
+\index{m\_publish@{m\_publish}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_publish}{m\_publish}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+publish = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a960bd01ebef69a993f88014ad959711f}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a960bd01ebef69a993f88014ad959711f}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_publisher@{m\_publisher}}
+\index{m\_publisher@{m\_publisher}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_publisher}{m\_publisher}}
+{\footnotesize\ttfamily \mbox{\hyperlink{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}{Point\+Cloud2\+Msg\+Publisher}} sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+publisher\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a058499f7e3e3007c9960dfe0b750d16a}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a058499f7e3e3007c9960dfe0b750d16a}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_range\_filter@{m\_range\_filter}}
+\index{m\_range\_filter@{m\_range\_filter}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_range\_filter}{m\_range\_filter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter}} sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+range\+\_\+filter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_afee02073101ad3edca66d56c5dd5fab9}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_afee02073101ad3edca66d56c5dd5fab9}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_reflector\_enabled@{m\_reflector\_enabled}}
+\index{m\_reflector\_enabled@{m\_reflector\_enabled}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_reflector\_enabled}{m\_reflector\_enabled}}
+{\footnotesize\ttfamily std\+::map$<$int8\+\_\+t, bool$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+reflector\+\_\+enabled\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a57c144c2126ec0cad11ea45389ae6ef2}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_a57c144c2126ec0cad11ea45389ae6ef2}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_topic@{m\_topic}}
+\index{m\_topic@{m\_topic}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_topic}{m\_topic}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+topic = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_acc4994068f95a25eb3b0a2f7c5e7cd5c}\label{classsick__scansegment__xd_1_1CustomPointCloudConfiguration_acc4994068f95a25eb3b0a2f7c5e7cd5c}} 
+\index{sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}!m\_update\_method@{m\_update\_method}}
+\index{m\_update\_method@{m\_update\_method}!sick\_scansegment\_xd::CustomPointCloudConfiguration@{sick\_scansegment\_xd::CustomPointCloudConfiguration}}
+\doxysubsubsection{\texorpdfstring{m\_update\_method}{m\_update\_method}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Custom\+Point\+Cloud\+Configuration\+::m\+\_\+update\+\_\+method = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{ros__msgpack__publisher_8h}{ros\+\_\+msgpack\+\_\+publisher.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{ros__msgpack__publisher_8cpp}{ros\+\_\+msgpack\+\_\+publisher.\+cpp}}\end{DoxyCompactItemize}

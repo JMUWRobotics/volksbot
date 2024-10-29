@@ -1,0 +1,188 @@
+\hypertarget{classsick__scansegment__xd_1_1Fifo}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Fifo$<$ T $>$ Class Template Reference}
+\label{classsick__scansegment__xd_1_1Fifo}\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+
+
+{\ttfamily \#include $<$fifo.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_acfa31835c23d9b2894fd9af0b501870a}{Fifo}} (int fifo\+\_\+length=20)
+\item 
+virtual \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a6004e4e50850bd75d5adf623db285bcc}{$\sim$\+Fifo}} ()
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a14f42cab107bf7a6ff9a32bec12325b1}{Push}} (const T \&element, const \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} timestamp=fifo\+\_\+clock\+::now(), size\+\_\+t counter=0)
+\item 
+virtual bool \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a5d7504297fd86f2470fbdaab8ee25497}{Pop}} (T \&element, \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} \&timestamp, size\+\_\+t \&counter)
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_af23beb98851fbd6620dfa5febda6440c}{Size}} (void)
+\item 
+virtual void \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a051124fcb6e66ffad1340c21ffa7aa16}{Shutdown}} (void)
+\item 
+virtual size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_ab140df018ef467566a48bda850f15701}{Total\+Messages\+Pushed}} ()
+\item 
+virtual double \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_ab031e1c5a853bbc0d62b01eaa37abbdf}{Seconds\+Since\+Last\+Push}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a3ef568129449b8be5dc4706b670a9cfa}{Seconds}} (const \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} \&timestamp\+\_\+start, const \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} \&timestamp\+\_\+end=fifo\+\_\+clock\+::now())
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::tuple$<$ T, \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}}, size\+\_\+t $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_ad78a2fdbbf6192dd245076b26d8f3eb3}{fifo\+\_\+element}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::queue$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_ad78a2fdbbf6192dd245076b26d8f3eb3}{fifo\+\_\+element}} $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a393d5c1a9f0c6e9dd617c6063d74a927}{m\+\_\+queue}}
+\item 
+std\+::mutex \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_ab9ae80ade658d8eacb47aeb63fd855e6}{m\+\_\+mutex}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a3a048e032dd45357c29e892743dbce79}{m\+\_\+cond}}
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a1544cadfc98403dfc051da4976e3aaf8}{m\+\_\+fifo\+\_\+length}}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a8bc5ca5ff17c9af09e01478b796c3ff3}{m\+\_\+shutdown}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a404f4f0d3456678cdf445189cf5fd010}{m\+\_\+num\+\_\+messages\+\_\+received}}
+\item 
+\mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_a6797c34e4882cc89bc905526d7bd5f10}{m\+\_\+timestamp\+\_\+last\+\_\+msg\+\_\+received}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_ad78a2fdbbf6192dd245076b26d8f3eb3}\label{classsick__scansegment__xd_1_1Fifo_ad78a2fdbbf6192dd245076b26d8f3eb3}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!fifo\_element@{fifo\_element}}
+\index{fifo\_element@{fifo\_element}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{fifo\_element}{fifo\_element}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+typedef std\+::tuple$<$T, \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}}, size\+\_\+t$>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::\mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_ad78a2fdbbf6192dd245076b26d8f3eb3}{fifo\+\_\+element}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_acfa31835c23d9b2894fd9af0b501870a}\label{classsick__scansegment__xd_1_1Fifo_acfa31835c23d9b2894fd9af0b501870a}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!Fifo@{Fifo}}
+\index{Fifo@{Fifo}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Fifo()}{Fifo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::\mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{Fifo}} (\begin{DoxyParamCaption}\item[{int}]{fifo\+\_\+length = {\ttfamily 20} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a6004e4e50850bd75d5adf623db285bcc}\label{classsick__scansegment__xd_1_1Fifo_a6004e4e50850bd75d5adf623db285bcc}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!````~Fifo@{$\sim$Fifo}}
+\index{````~Fifo@{$\sim$Fifo}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$Fifo()}{~Fifo()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::$\sim$\mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{Fifo}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a5d7504297fd86f2470fbdaab8ee25497}\label{classsick__scansegment__xd_1_1Fifo_a5d7504297fd86f2470fbdaab8ee25497}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!Pop@{Pop}}
+\index{Pop@{Pop}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Pop()}{Pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual bool \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::Pop (\begin{DoxyParamCaption}\item[{T \&}]{element,  }\item[{\mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} \&}]{timestamp,  }\item[{size\+\_\+t \&}]{counter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a14f42cab107bf7a6ff9a32bec12325b1}\label{classsick__scansegment__xd_1_1Fifo_a14f42cab107bf7a6ff9a32bec12325b1}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!Push@{Push}}
+\index{Push@{Push}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Push()}{Push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::Push (\begin{DoxyParamCaption}\item[{const T \&}]{element,  }\item[{const \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}}}]{timestamp = {\ttfamily fifo\+\_\+clock\+:\+:now()},  }\item[{size\+\_\+t}]{counter = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a3ef568129449b8be5dc4706b670a9cfa}\label{classsick__scansegment__xd_1_1Fifo_a3ef568129449b8be5dc4706b670a9cfa}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!Seconds@{Seconds}}
+\index{Seconds@{Seconds}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Seconds()}{Seconds()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static double \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::Seconds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} \&}]{timestamp\+\_\+start,  }\item[{const \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} \&}]{timestamp\+\_\+end = {\ttfamily fifo\+\_\+clock\+:\+:now()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_ab031e1c5a853bbc0d62b01eaa37abbdf}\label{classsick__scansegment__xd_1_1Fifo_ab031e1c5a853bbc0d62b01eaa37abbdf}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!SecondsSinceLastPush@{SecondsSinceLastPush}}
+\index{SecondsSinceLastPush@{SecondsSinceLastPush}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{SecondsSinceLastPush()}{SecondsSinceLastPush()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual double \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::Seconds\+Since\+Last\+Push (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a051124fcb6e66ffad1340c21ffa7aa16}\label{classsick__scansegment__xd_1_1Fifo_a051124fcb6e66ffad1340c21ffa7aa16}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Shutdown()}{Shutdown()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual void \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::Shutdown (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_af23beb98851fbd6620dfa5febda6440c}\label{classsick__scansegment__xd_1_1Fifo_af23beb98851fbd6620dfa5febda6440c}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!Size@{Size}}
+\index{Size@{Size}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::Size (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_ab140df018ef467566a48bda850f15701}\label{classsick__scansegment__xd_1_1Fifo_ab140df018ef467566a48bda850f15701}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!TotalMessagesPushed@{TotalMessagesPushed}}
+\index{TotalMessagesPushed@{TotalMessagesPushed}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{TotalMessagesPushed()}{TotalMessagesPushed()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+virtual size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::Total\+Messages\+Pushed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a3a048e032dd45357c29e892743dbce79}\label{classsick__scansegment__xd_1_1Fifo_a3a048e032dd45357c29e892743dbce79}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!m\_cond@{m\_cond}}
+\index{m\_cond@{m\_cond}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_cond}{m\_cond}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::condition\+\_\+variable \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::m\+\_\+cond\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a1544cadfc98403dfc051da4976e3aaf8}\label{classsick__scansegment__xd_1_1Fifo_a1544cadfc98403dfc051da4976e3aaf8}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!m\_fifo\_length@{m\_fifo\_length}}
+\index{m\_fifo\_length@{m\_fifo\_length}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_fifo\_length}{m\_fifo\_length}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::m\+\_\+fifo\+\_\+length\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_ab9ae80ade658d8eacb47aeb63fd855e6}\label{classsick__scansegment__xd_1_1Fifo_ab9ae80ade658d8eacb47aeb63fd855e6}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!m\_mutex@{m\_mutex}}
+\index{m\_mutex@{m\_mutex}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_mutex}{m\_mutex}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::mutex \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::m\+\_\+mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a404f4f0d3456678cdf445189cf5fd010}\label{classsick__scansegment__xd_1_1Fifo_a404f4f0d3456678cdf445189cf5fd010}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!m\_num\_messages\_received@{m\_num\_messages\_received}}
+\index{m\_num\_messages\_received@{m\_num\_messages\_received}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_num\_messages\_received}{m\_num\_messages\_received}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+size\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::m\+\_\+num\+\_\+messages\+\_\+received\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a393d5c1a9f0c6e9dd617c6063d74a927}\label{classsick__scansegment__xd_1_1Fifo_a393d5c1a9f0c6e9dd617c6063d74a927}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!m\_queue@{m\_queue}}
+\index{m\_queue@{m\_queue}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_queue}{m\_queue}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::queue$<$\mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo_ad78a2fdbbf6192dd245076b26d8f3eb3}{fifo\+\_\+element}}$>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::m\+\_\+queue\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a8bc5ca5ff17c9af09e01478b796c3ff3}\label{classsick__scansegment__xd_1_1Fifo_a8bc5ca5ff17c9af09e01478b796c3ff3}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!m\_shutdown@{m\_shutdown}}
+\index{m\_shutdown@{m\_shutdown}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_shutdown}{m\_shutdown}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::m\+\_\+shutdown\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1Fifo_a6797c34e4882cc89bc905526d7bd5f10}\label{classsick__scansegment__xd_1_1Fifo_a6797c34e4882cc89bc905526d7bd5f10}} 
+\index{sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}!m\_timestamp\_last\_msg\_received@{m\_timestamp\_last\_msg\_received}}
+\index{m\_timestamp\_last\_msg\_received@{m\_timestamp\_last\_msg\_received}!sick\_scansegment\_xd::Fifo$<$ T $>$@{sick\_scansegment\_xd::Fifo$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{m\_timestamp\_last\_msg\_received}{m\_timestamp\_last\_msg\_received}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} \mbox{\hyperlink{classsick__scansegment__xd_1_1Fifo}{sick\+\_\+scansegment\+\_\+xd\+::\+Fifo}}$<$ T $>$\+::m\+\_\+timestamp\+\_\+last\+\_\+msg\+\_\+received\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{fifo_8h}{fifo.\+h}}\end{DoxyCompactItemize}

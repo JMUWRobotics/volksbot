@@ -1,0 +1,101 @@
+\hypertarget{namespacepolar__to__cartesian__pointcloud__ros1}{}\doxysection{polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1 Namespace Reference}
+\label{namespacepolar__to__cartesian__pointcloud__ros1}\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classpolar__to__cartesian__pointcloud__ros1_1_1Node}{Node}}
+\item 
+class \mbox{\hyperlink{classpolar__to__cartesian__pointcloud__ros1_1_1PointCloudSubscriber}{Point\+Cloud\+Subscriber}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_ac34ab73950d2696a8c1d939f4cab0f00}{convert\+Polar\+To\+Cartesian\+Point\+Cloud}} (polar\+\_\+pointcloud)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_acb89635876a2810ca0e49ae1eef2af55}{subscriber\+\_\+topic}} = \char`\"{}/cloud\+\_\+polar\+\_\+unstructured\+\_\+fullframe\char`\"{}
+\item 
+string \mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_a8d2fb3c25827fabba2b4b55cfdf4808e}{publisher\+\_\+topic}} = \char`\"{}/cloud\+\_\+polar\+\_\+to\+\_\+cartesian\char`\"{}
+\item 
+\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_abed994fbcbf138588403ec988e75e1f2}{arg\+\_\+parser}} = argparse.\+Argument\+Parser()
+\item 
+\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_abfaa6ae85fffbb4ef25c83bf4156fa86}{help}}
+\item 
+\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_ab354ec1136cd1bb41e9e0e8443fedb80}{default}}
+\item 
+\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_a11cf8ae1b97c55f1995ae2f2cecf6541}{type}}
+\item 
+\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_a39e01f635076cefda840241728dc5dd1}{cli\+\_\+args}} = arg\+\_\+parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_a263df5e9be2efc4460c983f4b1e8e833}{node}} = rospy.\+init\+\_\+node(\char`\"{}polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\char`\"{})
+\item 
+\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_acbd2ff74d78a56656e5b503e5fa304f2}{subscriber}} = \mbox{\hyperlink{classpolar__to__cartesian__pointcloud__ros1_1_1PointCloudSubscriber}{Point\+Cloud\+Subscriber}}(\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_acb89635876a2810ca0e49ae1eef2af55}{subscriber\+\_\+topic}}, \mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_a8d2fb3c25827fabba2b4b55cfdf4808e}{publisher\+\_\+topic}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_ac34ab73950d2696a8c1d939f4cab0f00}\label{namespacepolar__to__cartesian__pointcloud__ros1_ac34ab73950d2696a8c1d939f4cab0f00}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!convertPolarToCartesianPointCloud@{convertPolarToCartesianPointCloud}}
+\index{convertPolarToCartesianPointCloud@{convertPolarToCartesianPointCloud}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{convertPolarToCartesianPointCloud()}{convertPolarToCartesianPointCloud()}}
+{\footnotesize\ttfamily def polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+convert\+Polar\+To\+Cartesian\+Point\+Cloud (\begin{DoxyParamCaption}\item[{}]{polar\+\_\+pointcloud }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_abed994fbcbf138588403ec988e75e1f2}\label{namespacepolar__to__cartesian__pointcloud__ros1_abed994fbcbf138588403ec988e75e1f2}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!arg\_parser@{arg\_parser}}
+\index{arg\_parser@{arg\_parser}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{arg\_parser}{arg\_parser}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+arg\+\_\+parser = argparse.\+Argument\+Parser()}
+
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_a39e01f635076cefda840241728dc5dd1}\label{namespacepolar__to__cartesian__pointcloud__ros1_a39e01f635076cefda840241728dc5dd1}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!cli\_args@{cli\_args}}
+\index{cli\_args@{cli\_args}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{cli\_args}{cli\_args}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+cli\+\_\+args = arg\+\_\+parser.\+parse\+\_\+args()}
+
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_ab354ec1136cd1bb41e9e0e8443fedb80}\label{namespacepolar__to__cartesian__pointcloud__ros1_ab354ec1136cd1bb41e9e0e8443fedb80}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!default@{default}}
+\index{default@{default}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{default}{default}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+default}
+
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_abfaa6ae85fffbb4ef25c83bf4156fa86}\label{namespacepolar__to__cartesian__pointcloud__ros1_abfaa6ae85fffbb4ef25c83bf4156fa86}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!help@{help}}
+\index{help@{help}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{help}{help}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+help}
+
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_a263df5e9be2efc4460c983f4b1e8e833}\label{namespacepolar__to__cartesian__pointcloud__ros1_a263df5e9be2efc4460c983f4b1e8e833}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!node@{node}}
+\index{node@{node}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{node}{node}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+node = rospy.\+init\+\_\+node(\char`\"{}polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\char`\"{})}
+
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_a8d2fb3c25827fabba2b4b55cfdf4808e}\label{namespacepolar__to__cartesian__pointcloud__ros1_a8d2fb3c25827fabba2b4b55cfdf4808e}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!publisher\_topic@{publisher\_topic}}
+\index{publisher\_topic@{publisher\_topic}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{publisher\_topic}{publisher\_topic}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+publisher\+\_\+topic = \char`\"{}/cloud\+\_\+polar\+\_\+to\+\_\+cartesian\char`\"{}}
+
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_acbd2ff74d78a56656e5b503e5fa304f2}\label{namespacepolar__to__cartesian__pointcloud__ros1_acbd2ff74d78a56656e5b503e5fa304f2}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!subscriber@{subscriber}}
+\index{subscriber@{subscriber}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{subscriber}{subscriber}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+subscriber = \mbox{\hyperlink{classpolar__to__cartesian__pointcloud__ros1_1_1PointCloudSubscriber}{Point\+Cloud\+Subscriber}}(\mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_acb89635876a2810ca0e49ae1eef2af55}{subscriber\+\_\+topic}}, \mbox{\hyperlink{namespacepolar__to__cartesian__pointcloud__ros1_a8d2fb3c25827fabba2b4b55cfdf4808e}{publisher\+\_\+topic}})}
+
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_acb89635876a2810ca0e49ae1eef2af55}\label{namespacepolar__to__cartesian__pointcloud__ros1_acb89635876a2810ca0e49ae1eef2af55}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!subscriber\_topic@{subscriber\_topic}}
+\index{subscriber\_topic@{subscriber\_topic}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{subscriber\_topic}{subscriber\_topic}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+subscriber\+\_\+topic = \char`\"{}/cloud\+\_\+polar\+\_\+unstructured\+\_\+fullframe\char`\"{}}
+
+\mbox{\Hypertarget{namespacepolar__to__cartesian__pointcloud__ros1_a11cf8ae1b97c55f1995ae2f2cecf6541}\label{namespacepolar__to__cartesian__pointcloud__ros1_a11cf8ae1b97c55f1995ae2f2cecf6541}} 
+\index{polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}!type@{type}}
+\index{type@{type}!polar\_to\_cartesian\_pointcloud\_ros1@{polar\_to\_cartesian\_pointcloud\_ros1}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily polar\+\_\+to\+\_\+cartesian\+\_\+pointcloud\+\_\+ros1.\+type}
+

@@ -1,0 +1,115 @@
+\hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Udp\+Sender\+Socket\+Impl Class Reference}
+\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl}\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+
+
+class \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl}{Udp\+Sender\+Socket\+Impl}} implements the udp socket for sending udp packages  
+
+
+
+
+{\ttfamily \#include $<$udp\+\_\+sockets.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scansegment\+\_\+xd\+::Udp\+Sender\+Socket\+Impl\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classsick__scansegment__xd_1_1UdpSenderSocketImpl__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl_ae5b9283ba587c3d518d96d4096d56789}{Udp\+Sender\+Socket\+Impl}} (const std\+::string \&server\+\_\+address=\char`\"{}192.\+168.\+0.\+1\char`\"{}, int udp\+\_\+port=2115)
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a7831394cf4b2110656967d40d3650b9d}{$\sim$\+Udp\+Sender\+Socket\+Impl}} ()
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a27bea4bddfa789154a9f1d50770d7fde}{Is\+Open}} (void) const
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a0203adc126cac1b08b5bb02e208145d2}{Send}} (std\+::vector$<$ uint8\+\_\+t $>$ \&message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a018d8e66406c34145df7a1017bcc921e}{m\+\_\+socket\+\_\+opened}}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a97e8d15f36af4d02f4782536a415ea1c}{m\+\_\+server\+\_\+address}}
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a656e8b21227fde80fd216bc854dce933}{m\+\_\+udp\+\_\+port}}
+\item 
+\mbox{\hyperlink{udp__sockets_8h_a8dc8083897335125630f1af5dafd5831}{S\+O\+C\+K\+ET}} \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl_abb59cc8f516385f00db7f80edfa6e790}{m\+\_\+udp\+\_\+socket}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+class \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpSenderSocketImpl}{Udp\+Sender\+Socket\+Impl}} implements the udp socket for sending udp packages 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl_ae5b9283ba587c3d518d96d4096d56789}\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl_ae5b9283ba587c3d518d96d4096d56789}} 
+\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}!UdpSenderSocketImpl@{UdpSenderSocketImpl}}
+\index{UdpSenderSocketImpl@{UdpSenderSocketImpl}!sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+\doxysubsubsection{\texorpdfstring{UdpSenderSocketImpl()}{UdpSenderSocketImpl()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Sender\+Socket\+Impl\+::\+Udp\+Sender\+Socket\+Impl (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{server\+\_\+address = {\ttfamily \char`\"{}192.168.0.1\char`\"{}},  }\item[{int}]{udp\+\_\+port = {\ttfamily 2115} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor, opens an udp socket. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em server\+\_\+address} & ip address \\
+\hline
+\mbox{\texttt{ in}}  & {\em udp\+\_\+port} & udp port \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a7831394cf4b2110656967d40d3650b9d}\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a7831394cf4b2110656967d40d3650b9d}} 
+\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}!````~UdpSenderSocketImpl@{$\sim$UdpSenderSocketImpl}}
+\index{````~UdpSenderSocketImpl@{$\sim$UdpSenderSocketImpl}!sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+\doxysubsubsection{\texorpdfstring{$\sim$UdpSenderSocketImpl()}{~UdpSenderSocketImpl()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Sender\+Socket\+Impl\+::$\sim$\+Udp\+Sender\+Socket\+Impl (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Destructor, closes the socket 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a27bea4bddfa789154a9f1d50770d7fde}\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a27bea4bddfa789154a9f1d50770d7fde}} 
+\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}!IsOpen@{IsOpen}}
+\index{IsOpen@{IsOpen}!sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+\doxysubsubsection{\texorpdfstring{IsOpen()}{IsOpen()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Sender\+Socket\+Impl\+::\+Is\+Open (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns true if the udp socket is opened and ready to send, or false otherwise. \mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a0203adc126cac1b08b5bb02e208145d2}\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a0203adc126cac1b08b5bb02e208145d2}} 
+\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}!Send@{Send}}
+\index{Send@{Send}!sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+\doxysubsubsection{\texorpdfstring{Send()}{Send()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Sender\+Socket\+Impl\+::\+Send (\begin{DoxyParamCaption}\item[{std\+::vector$<$ uint8\+\_\+t $>$ \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Sends a binary message. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a97e8d15f36af4d02f4782536a415ea1c}\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a97e8d15f36af4d02f4782536a415ea1c}} 
+\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}!m\_server\_address@{m\_server\_address}}
+\index{m\_server\_address@{m\_server\_address}!sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+\doxysubsubsection{\texorpdfstring{m\_server\_address}{m\_server\_address}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Sender\+Socket\+Impl\+::m\+\_\+server\+\_\+address\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a018d8e66406c34145df7a1017bcc921e}\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a018d8e66406c34145df7a1017bcc921e}} 
+\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}!m\_socket\_opened@{m\_socket\_opened}}
+\index{m\_socket\_opened@{m\_socket\_opened}!sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+\doxysubsubsection{\texorpdfstring{m\_socket\_opened}{m\_socket\_opened}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Sender\+Socket\+Impl\+::m\+\_\+socket\+\_\+opened\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a656e8b21227fde80fd216bc854dce933}\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl_a656e8b21227fde80fd216bc854dce933}} 
+\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}!m\_udp\_port@{m\_udp\_port}}
+\index{m\_udp\_port@{m\_udp\_port}!sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+\doxysubsubsection{\texorpdfstring{m\_udp\_port}{m\_udp\_port}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Sender\+Socket\+Impl\+::m\+\_\+udp\+\_\+port\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpSenderSocketImpl_abb59cc8f516385f00db7f80edfa6e790}\label{classsick__scansegment__xd_1_1UdpSenderSocketImpl_abb59cc8f516385f00db7f80edfa6e790}} 
+\index{sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}!m\_udp\_socket@{m\_udp\_socket}}
+\index{m\_udp\_socket@{m\_udp\_socket}!sick\_scansegment\_xd::UdpSenderSocketImpl@{sick\_scansegment\_xd::UdpSenderSocketImpl}}
+\doxysubsubsection{\texorpdfstring{m\_udp\_socket}{m\_udp\_socket}}
+{\footnotesize\ttfamily \mbox{\hyperlink{udp__sockets_8h_a8dc8083897335125630f1af5dafd5831}{S\+O\+C\+K\+ET}} sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Sender\+Socket\+Impl\+::m\+\_\+udp\+\_\+socket\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{udp__sockets_8h}{udp\+\_\+sockets.\+h}}\end{DoxyCompactItemize}

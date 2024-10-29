@@ -1,0 +1,176 @@
+\hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Compact\+Module\+Meta\+Data Class Reference}
+\label{classsick__scansegment__xd_1_1CompactModuleMetaData}\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+
+
+{\ttfamily \#include $<$compact\+\_\+parser.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a3cf07071e5a619f7571b8fbe9df80cca}{to\+\_\+string}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_aafabcc3a6a953597d7da2d129442be30}{Segment\+Counter}} = 0
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_aa635827285a3604c821eb16b1a57ae9c}{Frame\+Number}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a6422ee6b3cee883e7d82668a7ea1a2ec}{Sender\+Id}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a8f89f54071636fb0e8323ec3e3a0b101}{Number\+Of\+Lines\+In\+Module}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_abfbcef5301da82586400a85eed098411}{Number\+Of\+Beams\+Per\+Scan}} = 0
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a37945f864e57dff63098b0a6bee24ecb}{Number\+Of\+Echos\+Per\+Beam}} = 0
+\item 
+std\+::vector$<$ uint64\+\_\+t $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a96cf184755aca3043d325c47bef07ed9}{Time\+Stamp\+Start}}
+\item 
+std\+::vector$<$ uint64\+\_\+t $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a55a59514e6c5bf2e810c2d7ce90ce7d5}{Time\+Stamp\+Stop}}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a016544eaaa5e4d1bafb8e5673e1f13d8}{Phi}}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a49975584418aff314c83a0c6831c2941}{Theta\+Start}}
+\item 
+std\+::vector$<$ float $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_ae9daac0942cee725dcfb67a82b7dac09}{Theta\+Stop}}
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a8107d6978ffccddfe076aa474db76c17}{Distance\+Scaling\+Factor}} = 1
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_acfa5cbd574fe20cb7f5f1fac1903ca0c}{Next\+Module\+Size}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a41f60aa97ebf7723c7e09ef6c72e8bb4}{Availability}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a72d489987daf07533fdfdd15a93eff4b}{Data\+Content\+Echos}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a805158f2966cf7de6570c4c47f7948a6}{Data\+Content\+Beams}} = 0
+\item 
+uint8\+\_\+t \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a386d9e4abbe2e4587a9faeeee42d8f6a}{reserved}} = 0
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData_a04622f924c30a4d96db3f3cd9f389990}{valid}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a3cf07071e5a619f7571b8fbe9df80cca}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a3cf07071e5a619f7571b8fbe9df80cca}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!to\_string@{to\_string}}
+\index{to\_string@{to\_string}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{to\_string()}{to\_string()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::to\+\_\+string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+returns a human readable description of the module metadata 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a41f60aa97ebf7723c7e09ef6c72e8bb4}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a41f60aa97ebf7723c7e09ef6c72e8bb4}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!Availability@{Availability}}
+\index{Availability@{Availability}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{Availability}{Availability}}
+{\footnotesize\ttfamily uint8\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Availability = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a805158f2966cf7de6570c4c47f7948a6}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a805158f2966cf7de6570c4c47f7948a6}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!DataContentBeams@{DataContentBeams}}
+\index{DataContentBeams@{DataContentBeams}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{DataContentBeams}{DataContentBeams}}
+{\footnotesize\ttfamily uint8\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Data\+Content\+Beams = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a72d489987daf07533fdfdd15a93eff4b}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a72d489987daf07533fdfdd15a93eff4b}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!DataContentEchos@{DataContentEchos}}
+\index{DataContentEchos@{DataContentEchos}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{DataContentEchos}{DataContentEchos}}
+{\footnotesize\ttfamily uint8\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Data\+Content\+Echos = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a8107d6978ffccddfe076aa474db76c17}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a8107d6978ffccddfe076aa474db76c17}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!DistanceScalingFactor@{DistanceScalingFactor}}
+\index{DistanceScalingFactor@{DistanceScalingFactor}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{DistanceScalingFactor}{DistanceScalingFactor}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Distance\+Scaling\+Factor = 1}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_aa635827285a3604c821eb16b1a57ae9c}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_aa635827285a3604c821eb16b1a57ae9c}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!FrameNumber@{FrameNumber}}
+\index{FrameNumber@{FrameNumber}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{FrameNumber}{FrameNumber}}
+{\footnotesize\ttfamily uint64\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Frame\+Number = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_acfa5cbd574fe20cb7f5f1fac1903ca0c}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_acfa5cbd574fe20cb7f5f1fac1903ca0c}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!NextModuleSize@{NextModuleSize}}
+\index{NextModuleSize@{NextModuleSize}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{NextModuleSize}{NextModuleSize}}
+{\footnotesize\ttfamily uint32\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Next\+Module\+Size = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_abfbcef5301da82586400a85eed098411}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_abfbcef5301da82586400a85eed098411}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!NumberOfBeamsPerScan@{NumberOfBeamsPerScan}}
+\index{NumberOfBeamsPerScan@{NumberOfBeamsPerScan}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{NumberOfBeamsPerScan}{NumberOfBeamsPerScan}}
+{\footnotesize\ttfamily uint32\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Number\+Of\+Beams\+Per\+Scan = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a37945f864e57dff63098b0a6bee24ecb}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a37945f864e57dff63098b0a6bee24ecb}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!NumberOfEchosPerBeam@{NumberOfEchosPerBeam}}
+\index{NumberOfEchosPerBeam@{NumberOfEchosPerBeam}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{NumberOfEchosPerBeam}{NumberOfEchosPerBeam}}
+{\footnotesize\ttfamily uint32\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Number\+Of\+Echos\+Per\+Beam = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a8f89f54071636fb0e8323ec3e3a0b101}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a8f89f54071636fb0e8323ec3e3a0b101}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!NumberOfLinesInModule@{NumberOfLinesInModule}}
+\index{NumberOfLinesInModule@{NumberOfLinesInModule}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{NumberOfLinesInModule}{NumberOfLinesInModule}}
+{\footnotesize\ttfamily uint32\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Number\+Of\+Lines\+In\+Module = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a016544eaaa5e4d1bafb8e5673e1f13d8}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a016544eaaa5e4d1bafb8e5673e1f13d8}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!Phi@{Phi}}
+\index{Phi@{Phi}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{Phi}{Phi}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Phi}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a386d9e4abbe2e4587a9faeeee42d8f6a}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a386d9e4abbe2e4587a9faeeee42d8f6a}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!reserved@{reserved}}
+\index{reserved@{reserved}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily uint8\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::reserved = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_aafabcc3a6a953597d7da2d129442be30}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_aafabcc3a6a953597d7da2d129442be30}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!SegmentCounter@{SegmentCounter}}
+\index{SegmentCounter@{SegmentCounter}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{SegmentCounter}{SegmentCounter}}
+{\footnotesize\ttfamily uint64\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Segment\+Counter = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a6422ee6b3cee883e7d82668a7ea1a2ec}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a6422ee6b3cee883e7d82668a7ea1a2ec}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!SenderId@{SenderId}}
+\index{SenderId@{SenderId}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{SenderId}{SenderId}}
+{\footnotesize\ttfamily uint32\+\_\+t sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Sender\+Id = 0}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a49975584418aff314c83a0c6831c2941}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a49975584418aff314c83a0c6831c2941}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!ThetaStart@{ThetaStart}}
+\index{ThetaStart@{ThetaStart}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{ThetaStart}{ThetaStart}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Theta\+Start}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_ae9daac0942cee725dcfb67a82b7dac09}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_ae9daac0942cee725dcfb67a82b7dac09}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!ThetaStop@{ThetaStop}}
+\index{ThetaStop@{ThetaStop}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{ThetaStop}{ThetaStop}}
+{\footnotesize\ttfamily std\+::vector$<$float$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Theta\+Stop}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a96cf184755aca3043d325c47bef07ed9}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a96cf184755aca3043d325c47bef07ed9}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!TimeStampStart@{TimeStampStart}}
+\index{TimeStampStart@{TimeStampStart}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{TimeStampStart}{TimeStampStart}}
+{\footnotesize\ttfamily std\+::vector$<$uint64\+\_\+t$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Time\+Stamp\+Start}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a55a59514e6c5bf2e810c2d7ce90ce7d5}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a55a59514e6c5bf2e810c2d7ce90ce7d5}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!TimeStampStop@{TimeStampStop}}
+\index{TimeStampStop@{TimeStampStop}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{TimeStampStop}{TimeStampStop}}
+{\footnotesize\ttfamily std\+::vector$<$uint64\+\_\+t$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::\+Time\+Stamp\+Stop}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactModuleMetaData_a04622f924c30a4d96db3f3cd9f389990}\label{classsick__scansegment__xd_1_1CompactModuleMetaData_a04622f924c30a4d96db3f3cd9f389990}} 
+\index{sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}!valid@{valid}}
+\index{valid@{valid}!sick\_scansegment\_xd::CompactModuleMetaData@{sick\_scansegment\_xd::CompactModuleMetaData}}
+\doxysubsubsection{\texorpdfstring{valid}{valid}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data\+::valid = false}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{compact__parser_8h}{compact\+\_\+parser.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{compact__parser_8cpp}{compact\+\_\+parser.\+cpp}}\end{DoxyCompactItemize}

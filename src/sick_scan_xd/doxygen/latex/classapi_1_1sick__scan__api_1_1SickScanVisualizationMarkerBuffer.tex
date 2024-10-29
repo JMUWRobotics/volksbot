@@ -1,0 +1,41 @@
+\hypertarget{classapi_1_1sick__scan__api_1_1SickScanVisualizationMarkerBuffer}{}\doxysection{api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Visualization\+Marker\+Buffer Class Reference}
+\label{classapi_1_1sick__scan__api_1_1SickScanVisualizationMarkerBuffer}\index{api.sick\_scan\_api.SickScanVisualizationMarkerBuffer@{api.sick\_scan\_api.SickScanVisualizationMarkerBuffer}}
+
+
+Inheritance diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Visualization\+Marker\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanVisualizationMarkerBuffer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Visualization\+Marker\+Buffer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanVisualizationMarkerBuffer__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Array of SickScanVisualizationMarkers
+
+Attributes
+----------
+capacity : ctypes.c_uint64
+    Number of allocated elements, i.e. max. number of elements in buffer, allocated buffer size is capacity * sizeof(SickScanVisualizationMarker)
+size : ctypes.c_uint64
+    Number of currently used elements in the buffer
+buffer : ctypes.POINTER(SickScanVisualizationMarker)
+    Memory, data in plain order and system endianess (buffer == 0, if size == 0 && capacity == 0, otherwise allocated memory), allocation/deallocation always managed by the caller.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/python/api/\mbox{\hyperlink{sick__scan__api_8py}{sick\+\_\+scan\+\_\+api.\+py}}\end{DoxyCompactItemize}

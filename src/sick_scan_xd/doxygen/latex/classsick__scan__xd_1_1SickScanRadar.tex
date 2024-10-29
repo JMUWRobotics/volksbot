@@ -1,0 +1,117 @@
+\hypertarget{classsick__scan__xd_1_1SickScanRadar}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Radar Class Reference}
+\label{classsick__scan__xd_1_1SickScanRadar}\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+field\+\_\+mon.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_ac9cfd5aa7dc426c3c8889a8de0b0daac}{Sick\+Scan\+Radar}} (\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon}{Sick\+Scan\+Common}} $\ast$common\+Ptr\+\_\+)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_a9133dfa752e71a9d5e79d063dac9ab3f}{set\+Emulation}} (bool \+\_\+emul)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_a5e3556b2485859b08c0132c4c631638e}{get\+Emulation}} (void)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_aeb88637e3adcb42d7568057bdf69a690}{parse\+Datagram}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} time\+Stamp, unsigned char $\ast$receive\+Buffer, int actual\+\_\+length, bool use\+Binary\+Protocol)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_a1dadbc2e77b80a3adae738b16cca849f}{parse\+Ascii\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length, sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan $\ast$msg\+Ptr, std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarObject}{Sick\+Scan\+Radar\+Object}} $>$ \&object\+List, std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarRawTarget}{Sick\+Scan\+Radar\+Raw\+Target}} $>$ \&raw\+Target\+List)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_a95dafb100c1028a351087d259495637f}{simulate\+Ascii\+Datagram}} (unsigned char $\ast$receive\+Buffer, int $\ast$actual\+\_\+length)
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_ac9cfd5aa7dc426c3c8889a8de0b0daac}{Sick\+Scan\+Radar}} (\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon}{Sick\+Scan\+Common}} $\ast$common\+Ptr\+\_\+)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_a9133dfa752e71a9d5e79d063dac9ab3f}{set\+Emulation}} (bool \+\_\+emul)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_a5e3556b2485859b08c0132c4c631638e}{get\+Emulation}} (void)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_aeb88637e3adcb42d7568057bdf69a690}{parse\+Datagram}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} time\+Stamp, unsigned char $\ast$receive\+Buffer, int actual\+\_\+length, bool use\+Binary\+Protocol)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_a1dadbc2e77b80a3adae738b16cca849f}{parse\+Ascii\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length, sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan $\ast$msg\+Ptr, std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarObject}{Sick\+Scan\+Radar\+Object}} $>$ \&object\+List, std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarRawTarget}{Sick\+Scan\+Radar\+Raw\+Target}} $>$ \&raw\+Target\+List)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadar_a95dafb100c1028a351087d259495637f}{simulate\+Ascii\+Datagram}} (unsigned char $\ast$receive\+Buffer, int $\ast$actual\+\_\+length)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_ac9cfd5aa7dc426c3c8889a8de0b0daac}\label{classsick__scan__xd_1_1SickScanRadar_ac9cfd5aa7dc426c3c8889a8de0b0daac}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!SickScanRadar@{SickScanRadar}}
+\index{SickScanRadar@{SickScanRadar}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{SickScanRadar()}{SickScanRadar()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::\+Sick\+Scan\+Radar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon}{Sick\+Scan\+Common}} $\ast$}]{common\+Ptr\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_ac9cfd5aa7dc426c3c8889a8de0b0daac}\label{classsick__scan__xd_1_1SickScanRadar_ac9cfd5aa7dc426c3c8889a8de0b0daac}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!SickScanRadar@{SickScanRadar}}
+\index{SickScanRadar@{SickScanRadar}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{SickScanRadar()}{SickScanRadar()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::\+Sick\+Scan\+Radar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon}{Sick\+Scan\+Common}} $\ast$}]{common\+Ptr\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_a5e3556b2485859b08c0132c4c631638e}\label{classsick__scan__xd_1_1SickScanRadar_a5e3556b2485859b08c0132c4c631638e}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!getEmulation@{getEmulation}}
+\index{getEmulation@{getEmulation}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{getEmulation()}{getEmulation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::get\+Emulation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_a5e3556b2485859b08c0132c4c631638e}\label{classsick__scan__xd_1_1SickScanRadar_a5e3556b2485859b08c0132c4c631638e}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!getEmulation@{getEmulation}}
+\index{getEmulation@{getEmulation}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{getEmulation()}{getEmulation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::get\+Emulation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_a1dadbc2e77b80a3adae738b16cca849f}\label{classsick__scan__xd_1_1SickScanRadar_a1dadbc2e77b80a3adae738b16cca849f}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!parseAsciiDatagram@{parseAsciiDatagram}}
+\index{parseAsciiDatagram@{parseAsciiDatagram}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{parseAsciiDatagram()}{parseAsciiDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::parse\+Ascii\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length,  }\item[{sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan $\ast$}]{msg\+Ptr,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarObject}{Sick\+Scan\+Radar\+Object}} $>$ \&}]{object\+List,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarRawTarget}{Sick\+Scan\+Radar\+Raw\+Target}} $>$ \&}]{raw\+Target\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_a1dadbc2e77b80a3adae738b16cca849f}\label{classsick__scan__xd_1_1SickScanRadar_a1dadbc2e77b80a3adae738b16cca849f}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!parseAsciiDatagram@{parseAsciiDatagram}}
+\index{parseAsciiDatagram@{parseAsciiDatagram}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{parseAsciiDatagram()}{parseAsciiDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::parse\+Ascii\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length,  }\item[{sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan $\ast$}]{msg\+Ptr,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarObject}{Sick\+Scan\+Radar\+Object}} $>$ \&}]{object\+List,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarRawTarget}{Sick\+Scan\+Radar\+Raw\+Target}} $>$ \&}]{raw\+Target\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_aeb88637e3adcb42d7568057bdf69a690}\label{classsick__scan__xd_1_1SickScanRadar_aeb88637e3adcb42d7568057bdf69a690}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!parseDatagram@{parseDatagram}}
+\index{parseDatagram@{parseDatagram}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{parseDatagram()}{parseDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::parse\+Datagram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}}}]{time\+Stamp,  }\item[{unsigned char $\ast$}]{receive\+Buffer,  }\item[{int}]{actual\+\_\+length,  }\item[{bool}]{use\+Binary\+Protocol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_aeb88637e3adcb42d7568057bdf69a690}\label{classsick__scan__xd_1_1SickScanRadar_aeb88637e3adcb42d7568057bdf69a690}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!parseDatagram@{parseDatagram}}
+\index{parseDatagram@{parseDatagram}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{parseDatagram()}{parseDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::parse\+Datagram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}}}]{time\+Stamp,  }\item[{unsigned char $\ast$}]{receive\+Buffer,  }\item[{int}]{actual\+\_\+length,  }\item[{bool}]{use\+Binary\+Protocol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_a9133dfa752e71a9d5e79d063dac9ab3f}\label{classsick__scan__xd_1_1SickScanRadar_a9133dfa752e71a9d5e79d063dac9ab3f}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!setEmulation@{setEmulation}}
+\index{setEmulation@{setEmulation}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{setEmulation()}{setEmulation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::set\+Emulation (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+emul }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_a9133dfa752e71a9d5e79d063dac9ab3f}\label{classsick__scan__xd_1_1SickScanRadar_a9133dfa752e71a9d5e79d063dac9ab3f}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!setEmulation@{setEmulation}}
+\index{setEmulation@{setEmulation}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{setEmulation()}{setEmulation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::set\+Emulation (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+emul }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_a95dafb100c1028a351087d259495637f}\label{classsick__scan__xd_1_1SickScanRadar_a95dafb100c1028a351087d259495637f}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!simulateAsciiDatagram@{simulateAsciiDatagram}}
+\index{simulateAsciiDatagram@{simulateAsciiDatagram}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{simulateAsciiDatagram()}{simulateAsciiDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::simulate\+Ascii\+Datagram (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{receive\+Buffer,  }\item[{int $\ast$}]{actual\+\_\+length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadar_a95dafb100c1028a351087d259495637f}\label{classsick__scan__xd_1_1SickScanRadar_a95dafb100c1028a351087d259495637f}} 
+\index{sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}!simulateAsciiDatagram@{simulateAsciiDatagram}}
+\index{simulateAsciiDatagram@{simulateAsciiDatagram}!sick\_scan\_xd::SickScanRadar@{sick\_scan\_xd::SickScanRadar}}
+\doxysubsubsection{\texorpdfstring{simulateAsciiDatagram()}{simulateAsciiDatagram()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+::simulate\+Ascii\+Datagram (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{receive\+Buffer,  }\item[{int $\ast$}]{actual\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__field__mon_8h}{sick\+\_\+generic\+\_\+field\+\_\+mon.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__radar_8h}{sick\+\_\+generic\+\_\+radar.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,198 @@
+\hypertarget{classTime}{}\doxysection{Time Class Reference}
+\label{classTime}\index{Time@{Time}}
+
+
+{\ttfamily \#include $<$Time.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTime_a4245e409c7347d1d671858962c2ca3b5}{Time}} ()
+\item 
+\mbox{\hyperlink{classTime_ab65010a2baa9852181e87dc86728c442}{Time}} (timeval time)
+\item 
+\mbox{\hyperlink{classTime_a1e92dbe963fa3cdd6bea207680f5f6d1}{$\sim$\+Time}} ()
+\item 
+void \mbox{\hyperlink{classTime_aae04a79412afbbd5116a6b892c1abe26}{set}} (double time)
+\item 
+void \mbox{\hyperlink{classTime_ab8d00b5e9da7d205069ee5d2202e7dd1}{set}} (timeval time)
+\item 
+void \mbox{\hyperlink{classTime_ae913040e2973bab755a484b003efec98}{set}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a95df6cdb32afc350ff070f2fe8a54a67}{U\+I\+N\+T64}} ntp\+Seconds, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} ntp\+Fractional\+Seconds)
+\item 
+void \mbox{\hyperlink{classTime_ab69fee3685f5a972cd4d2d3a98a74615}{set}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a95df6cdb32afc350ff070f2fe8a54a67}{U\+I\+N\+T64}} ntp\+Time)
+\item 
+double \mbox{\hyperlink{classTime_abc699fa48c8b89bdd889b9ec1edc9cd3}{seconds}} ()
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \mbox{\hyperlink{classTime_af2a9720493982887e6f132397dd89578}{total\+\_\+milliseconds}} ()
+\item 
+\mbox{\hyperlink{classTime}{Time}} \mbox{\hyperlink{classTime_aa9605598c530590d1cae5f65271280e2}{operator+}} (const \mbox{\hyperlink{classTimeDuration}{Time\+Duration}} \&dur) const
+\item 
+\mbox{\hyperlink{classTime}{Time}} \& \mbox{\hyperlink{classTime_a8b4dbd2773e42130e0d1cf5eeca6f6d7}{operator+=}} (const \mbox{\hyperlink{classTime}{Time}} \&other)
+\item 
+\mbox{\hyperlink{classTime}{Time}} \mbox{\hyperlink{classTime_acc7c3d913d26e9e05592feae2c3af32e}{operator+}} (const \mbox{\hyperlink{classTime}{Time}} \&other) const
+\item 
+\mbox{\hyperlink{classTime}{Time}} \mbox{\hyperlink{classTime_a190a528ef979071753f32a8ae13a0e3f}{operator-\/}} (const \mbox{\hyperlink{classTime}{Time}} \&other) const
+\item 
+\mbox{\hyperlink{classTime}{Time}} \mbox{\hyperlink{classTime_a9911c6e4caf8a004ca5e1dedcf4e1a3b}{operator-\/}} (const double \&\mbox{\hyperlink{classTime_abc699fa48c8b89bdd889b9ec1edc9cd3}{seconds}}) const
+\item 
+bool \mbox{\hyperlink{classTime_a5ba0751f4e73911d5c9e7cb03e79cde9}{operator$>$=}} (const \mbox{\hyperlink{classTime}{Time}} \&other) const
+\item 
+bool \mbox{\hyperlink{classTime_a59a0b94a48a14950cca38b29c78c5ebd}{operator$<$}} (const \mbox{\hyperlink{classTime}{Time}} \&other) const
+\item 
+bool \mbox{\hyperlink{classTime_a6641072fd269c2d810b98956f80dacd3}{operator==}} (const \mbox{\hyperlink{classTime}{Time}} \&other) const
+\item 
+std\+::string \mbox{\hyperlink{classTime_ad7d1fc07643f5c7127e5713de205289a}{to\+String}} () const
+\item 
+std\+::string \mbox{\hyperlink{classTime_a35de3cb0b1ad7ae6a5e1ad78b01ecbe3}{to\+Long\+String}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classTime}{Time}} \mbox{\hyperlink{classTime_ae8fbd439523940b5545d45af7b649446}{now}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const \mbox{\hyperlink{BasicDatatypes_8hpp_a95df6cdb32afc350ff070f2fe8a54a67}{U\+I\+N\+T64}} \mbox{\hyperlink{classTime_a2f6235357ae11b3a94b25a3471e3a00c}{seconds\+From1900to1970}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTime_a4245e409c7347d1d671858962c2ca3b5}\label{classTime_a4245e409c7347d1d671858962c2ca3b5}} 
+\index{Time@{Time}!Time@{Time}}
+\index{Time@{Time}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{Time()}{Time()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Time\+::\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTime_ab65010a2baa9852181e87dc86728c442}\label{classTime_ab65010a2baa9852181e87dc86728c442}} 
+\index{Time@{Time}!Time@{Time}}
+\index{Time@{Time}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{Time()}{Time()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Time\+::\+Time (\begin{DoxyParamCaption}\item[{timeval}]{time }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTime_a1e92dbe963fa3cdd6bea207680f5f6d1}\label{classTime_a1e92dbe963fa3cdd6bea207680f5f6d1}} 
+\index{Time@{Time}!````~Time@{$\sim$Time}}
+\index{````~Time@{$\sim$Time}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{$\sim$Time()}{~Time()}}
+{\footnotesize\ttfamily Time\+::$\sim$\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTime_ae8fbd439523940b5545d45af7b649446}\label{classTime_ae8fbd439523940b5545d45af7b649446}} 
+\index{Time@{Time}!now@{now}}
+\index{now@{now}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{now()}{now()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTime}{Time}} Time\+::now (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classTime_acc7c3d913d26e9e05592feae2c3af32e}\label{classTime_acc7c3d913d26e9e05592feae2c3af32e}} 
+\index{Time@{Time}!operator+@{operator+}}
+\index{operator+@{operator+}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTime}{Time}} Time\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTime}{Time}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTime_aa9605598c530590d1cae5f65271280e2}\label{classTime_aa9605598c530590d1cae5f65271280e2}} 
+\index{Time@{Time}!operator+@{operator+}}
+\index{operator+@{operator+}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTime}{Time}} Time\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTimeDuration}{Time\+Duration}} \&}]{dur }\end{DoxyParamCaption}) const}
+
+Result = (this) + Duration \mbox{\Hypertarget{classTime_a8b4dbd2773e42130e0d1cf5eeca6f6d7}\label{classTime_a8b4dbd2773e42130e0d1cf5eeca6f6d7}} 
+\index{Time@{Time}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTime}{Time}} \& Time\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTime}{Time}} \&}]{other }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTime_a9911c6e4caf8a004ca5e1dedcf4e1a3b}\label{classTime_a9911c6e4caf8a004ca5e1dedcf4e1a3b}} 
+\index{Time@{Time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTime}{Time}} Time\+::operator-\/ (\begin{DoxyParamCaption}\item[{const double \&}]{seconds }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTime_a190a528ef979071753f32a8ae13a0e3f}\label{classTime_a190a528ef979071753f32a8ae13a0e3f}} 
+\index{Time@{Time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTime}{Time}} Time\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTime}{Time}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTime_a59a0b94a48a14950cca38b29c78c5ebd}\label{classTime_a59a0b94a48a14950cca38b29c78c5ebd}} 
+\index{Time@{Time}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Time\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTime}{Time}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTime_a6641072fd269c2d810b98956f80dacd3}\label{classTime_a6641072fd269c2d810b98956f80dacd3}} 
+\index{Time@{Time}!operator==@{operator==}}
+\index{operator==@{operator==}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Time\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTime}{Time}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTime_a5ba0751f4e73911d5c9e7cb03e79cde9}\label{classTime_a5ba0751f4e73911d5c9e7cb03e79cde9}} 
+\index{Time@{Time}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
+{\footnotesize\ttfamily bool Time\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTime}{Time}} \&}]{other }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTime_abc699fa48c8b89bdd889b9ec1edc9cd3}\label{classTime_abc699fa48c8b89bdd889b9ec1edc9cd3}} 
+\index{Time@{Time}!seconds@{seconds}}
+\index{seconds@{seconds}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{seconds()}{seconds()}}
+{\footnotesize\ttfamily double Time\+::seconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Zeit, in \mbox{[}s\mbox{]}. \mbox{\Hypertarget{classTime_aae04a79412afbbd5116a6b892c1abe26}\label{classTime_aae04a79412afbbd5116a6b892c1abe26}} 
+\index{Time@{Time}!set@{set}}
+\index{set@{set}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Time\+::set (\begin{DoxyParamCaption}\item[{double}]{time }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTime_ab8d00b5e9da7d205069ee5d2202e7dd1}\label{classTime_ab8d00b5e9da7d205069ee5d2202e7dd1}} 
+\index{Time@{Time}!set@{set}}
+\index{set@{set}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Time\+::set (\begin{DoxyParamCaption}\item[{timeval}]{time }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTime_ae913040e2973bab755a484b003efec98}\label{classTime_ae913040e2973bab755a484b003efec98}} 
+\index{Time@{Time}!set@{set}}
+\index{set@{set}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Time\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a95df6cdb32afc350ff070f2fe8a54a67}{U\+I\+N\+T64}}}]{ntp\+Seconds,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{ntp\+Fractional\+Seconds }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTime_ab69fee3685f5a972cd4d2d3a98a74615}\label{classTime_ab69fee3685f5a972cd4d2d3a98a74615}} 
+\index{Time@{Time}!set@{set}}
+\index{set@{set}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Time\+::set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a95df6cdb32afc350ff070f2fe8a54a67}{U\+I\+N\+T64}}}]{ntp\+Time }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTime_a35de3cb0b1ad7ae6a5e1ad78b01ecbe3}\label{classTime_a35de3cb0b1ad7ae6a5e1ad78b01ecbe3}} 
+\index{Time@{Time}!toLongString@{toLongString}}
+\index{toLongString@{toLongString}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{toLongString()}{toLongString()}}
+{\footnotesize\ttfamily std\+::string Time\+::to\+Long\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTime_ad7d1fc07643f5c7127e5713de205289a}\label{classTime_ad7d1fc07643f5c7127e5713de205289a}} 
+\index{Time@{Time}!toString@{toString}}
+\index{toString@{toString}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily std\+::string Time\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classTime_af2a9720493982887e6f132397dd89578}\label{classTime_af2a9720493982887e6f132397dd89578}} 
+\index{Time@{Time}!total\_milliseconds@{total\_milliseconds}}
+\index{total\_milliseconds@{total\_milliseconds}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{total\_milliseconds()}{total\_milliseconds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} Time\+::total\+\_\+milliseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classTime_a2f6235357ae11b3a94b25a3471e3a00c}\label{classTime_a2f6235357ae11b3a94b25a3471e3a00c}} 
+\index{Time@{Time}!secondsFrom1900to1970@{secondsFrom1900to1970}}
+\index{secondsFrom1900to1970@{secondsFrom1900to1970}!Time@{Time}}
+\doxysubsubsection{\texorpdfstring{secondsFrom1900to1970}{secondsFrom1900to1970}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{BasicDatatypes_8hpp_a95df6cdb32afc350ff070f2fe8a54a67}{U\+I\+N\+T64}} Time\+::seconds\+From1900to1970\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/tcp/\mbox{\hyperlink{Time_8hpp}{Time.\+hpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tcp/\mbox{\hyperlink{Time_8cpp}{Time.\+cpp}}\end{DoxyCompactItemize}

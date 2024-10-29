@@ -1,0 +1,158 @@
+\hypertarget{sick__scan__common_8cpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scan\+\_\+common.cpp File Reference}
+\label{sick__scan__common_8cpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/sick\_scan\_common.cpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/sick\_scan\_common.cpp}}
+
+
+Laser Scanner communication main routine.  
+
+
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sick__scan__common_8cpp_a646df46979930ec174d15547a0ba06cc}{swap\+\_\+endian}} (unsigned char $\ast$ptr, int num\+Bytes)
+\begin{DoxyCompactList}\small\item\em Universal swapping function. \end{DoxyCompactList}\item 
+std\+::vector$<$ unsigned char $>$ \mbox{\hyperlink{sick__scan__common_8cpp_afd59c3b4a081773e3bfb923820d0e1ae}{string\+To\+Vector}} (std\+::string s)
+\begin{DoxyCompactList}\small\item\em Universal swapping function. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{sick__scan__common_8cpp_a365980e8f18659ba36d6daf44970bdac}{get\+Diagnostic\+Error\+Code}} ()
+\begin{DoxyCompactList}\small\item\em return diagnostic error code (small helper function) This small helper function was introduced to allow the compiling under Visual c++. \end{DoxyCompactList}\item 
+const std\+::string \mbox{\hyperlink{sick__scan__common_8cpp_aa6a15a83e11d7ae53fc93a5add7c7a7c}{bin\+Scanf\+Get\+String\+From\+Vec}} (std\+::vector$<$ unsigned char $>$ $\ast$reply\+Dummy, int off, long len)
+\begin{DoxyCompactList}\small\item\em Convert part of unsigned char vector into a std\+::string. \end{DoxyCompactList}\item 
+static std\+::vector$<$ int $>$ \mbox{\hyperlink{sick__scan__common_8cpp_a5acddbe3b743d8181752a2a88033596f}{parse\+Firmware\+Version}} (const std\+::string \&scannertype, const std\+::string \&device\+Ident\+Str)
+\item 
+static bool \& \mbox{\hyperlink{sick__scan__common_8cpp_a0716e68578420377a6df15313926bb7a}{is\+Field\+Evaluation\+Active}} ()
+\item 
+unsigned char \mbox{\hyperlink{namespacesick__scan__xd_a2d0dfacfa009f4e1cf5f69ef1bbb7d01}{sick\+\_\+scan\+\_\+xd\+::sick\+\_\+crc8}} (unsigned char $\ast$msg\+Block, int len)
+\begin{DoxyCompactList}\small\item\em calculate crc-\/code for last byte of binary message X\+O\+R-\/calucation is done O\+N\+LY over message content (i.\+e. skipping the first 8 Bytes holding 0x02020202 $<$Length Information as 4-\/byte long$>$) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{namespacesick__scan__xd_a6722edcb1387edb1e766185eedce0428}{sick\+\_\+scan\+\_\+xd\+::strip\+Control}} (std\+::vector$<$ unsigned char $>$ s, int max\+\_\+strlen=-\/1)
+\begin{DoxyCompactList}\small\item\em Converts a S\+O\+P\+AS command to a human readable string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Laser Scanner communication main routine. 
+
+Copyright (C) 2013, Osnabrueck University Copyright (C) 2017-\/2022, Ing.-\/Buero Dr. Michael Lehning, Hildesheim Copyright (C) 2017-\/2022, S\+I\+CK AG, Waldkirch
+
+All rights reserved.
+
+Licensed under the Apache License, Version 2.\+0 (the \char`\"{}\+License\char`\"{}); you may not use this file except in compliance with the License. You may obtain a copy of the License at \begin{DoxyVerb}  http://www.apache.org/licenses/LICENSE-2.0
+\end{DoxyVerb}
+
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \char`\"{}\+A\+S I\+S\char`\"{} B\+A\+S\+IS, W\+I\+T\+H\+O\+UT W\+A\+R\+R\+A\+N\+T\+I\+ES OR C\+O\+N\+D\+I\+T\+I\+O\+NS OF A\+NY K\+I\+ND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met\+: \begin{DoxyVerb}* Redistributions of source code must retain the above copyright
+  notice, this list of conditions and the following disclaimer.
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+* Neither the name of Osnabrueck University nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission.
+* Neither the name of SICK AG nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission
+* Neither the name of Ing.-Buero Dr. Michael Lehning nor the names of its
+  contributors may be used to endorse or promote products derived from
+  this software without specific prior written permission
+\end{DoxyVerb}
+
+
+T\+H\+IS S\+O\+F\+T\+W\+A\+RE IS P\+R\+O\+V\+I\+D\+ED BY T\+HE C\+O\+P\+Y\+R\+I\+G\+HT H\+O\+L\+D\+E\+RS A\+ND C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS \char`\"{}\+A\+S I\+S\char`\"{} A\+ND A\+NY E\+X\+P\+R\+E\+SS OR I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES, I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, T\+HE I\+M\+P\+L\+I\+ED W\+A\+R\+R\+A\+N\+T\+I\+ES OF M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY A\+ND F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE A\+RE D\+I\+S\+C\+L\+A\+I\+M\+ED. IN NO E\+V\+E\+NT S\+H\+A\+LL T\+HE C\+O\+P\+Y\+R\+I\+G\+HT O\+W\+N\+ER OR C\+O\+N\+T\+R\+I\+B\+U\+T\+O\+RS BE L\+I\+A\+B\+LE F\+OR A\+NY D\+I\+R\+E\+CT, I\+N\+D\+I\+R\+E\+CT, I\+N\+C\+I\+D\+E\+N\+T\+AL, S\+P\+E\+C\+I\+AL, E\+X\+E\+M\+P\+L\+A\+RY, OR C\+O\+N\+S\+E\+Q\+U\+E\+N\+T\+I\+AL D\+A\+M\+A\+G\+ES (I\+N\+C\+L\+U\+D\+I\+NG, B\+UT N\+OT L\+I\+M\+I\+T\+ED TO, P\+R\+O\+C\+U\+R\+E\+M\+E\+NT OF S\+U\+B\+S\+T\+I\+T\+U\+TE G\+O\+O\+DS OR S\+E\+R\+V\+I\+C\+ES; L\+O\+SS OF U\+SE, D\+A\+TA, OR P\+R\+O\+F\+I\+TS; OR B\+U\+S\+I\+N\+E\+SS I\+N\+T\+E\+R\+R\+U\+P\+T\+I\+ON) H\+O\+W\+E\+V\+ER C\+A\+U\+S\+ED A\+ND ON A\+NY T\+H\+E\+O\+RY OF L\+I\+A\+B\+I\+L\+I\+TY, W\+H\+E\+T\+H\+ER IN C\+O\+N\+T\+R\+A\+CT, S\+T\+R\+I\+CT L\+I\+A\+B\+I\+L\+I\+TY, OR T\+O\+RT (I\+N\+C\+L\+U\+D\+I\+NG N\+E\+G\+L\+I\+G\+E\+N\+CE OR O\+T\+H\+E\+R\+W\+I\+SE) A\+R\+I\+S\+I\+NG IN A\+NY W\+AY O\+UT OF T\+HE U\+SE OF T\+H\+IS S\+O\+F\+T\+W\+A\+RE, E\+V\+EN IF A\+D\+V\+I\+S\+ED OF T\+HE P\+O\+S\+S\+I\+B\+I\+L\+I\+TY OF S\+U\+CH D\+A\+M\+A\+GE.
+
+Last modified\+: 28th May 2018 \begin{DoxyVerb}Authors:
+   Michael Lehning <michael.lehning@lehning.de>
+   Jochen Sprickerhof <jochen@sprickerhof.de>
+   Martin Günther <mguenthe@uos.de>
+\end{DoxyVerb}
+
+
+Based on the TiM communication example by S\+I\+CK AG. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sick__scan__common_8cpp_aa6a15a83e11d7ae53fc93a5add7c7a7c}\label{sick__scan__common_8cpp_aa6a15a83e11d7ae53fc93a5add7c7a7c}} 
+\index{sick\_scan\_common.cpp@{sick\_scan\_common.cpp}!binScanfGetStringFromVec@{binScanfGetStringFromVec}}
+\index{binScanfGetStringFromVec@{binScanfGetStringFromVec}!sick\_scan\_common.cpp@{sick\_scan\_common.cpp}}
+\doxysubsubsection{\texorpdfstring{binScanfGetStringFromVec()}{binScanfGetStringFromVec()}}
+{\footnotesize\ttfamily const std\+::string bin\+Scanf\+Get\+String\+From\+Vec (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ $\ast$}]{reply\+Dummy,  }\item[{int}]{off,  }\item[{long}]{len }\end{DoxyParamCaption})}
+
+
+
+Convert part of unsigned char vector into a std\+::string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reply\+Dummy} & Pointer to byte block hold in vector \\
+\hline
+{\em off} & Starting Position for copy command \\
+\hline
+{\em len} & Number of bytes which should be copied \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result of copy action as std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sick__scan__common_8cpp_a365980e8f18659ba36d6daf44970bdac}\label{sick__scan__common_8cpp_a365980e8f18659ba36d6daf44970bdac}} 
+\index{sick\_scan\_common.cpp@{sick\_scan\_common.cpp}!getDiagnosticErrorCode@{getDiagnosticErrorCode}}
+\index{getDiagnosticErrorCode@{getDiagnosticErrorCode}!sick\_scan\_common.cpp@{sick\_scan\_common.cpp}}
+\doxysubsubsection{\texorpdfstring{getDiagnosticErrorCode()}{getDiagnosticErrorCode()}}
+{\footnotesize\ttfamily static int get\+Diagnostic\+Error\+Code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+return diagnostic error code (small helper function) This small helper function was introduced to allow the compiling under Visual c++. 
+
+\begin{DoxyReturn}{Returns}
+Diagnostic error code (value 2) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sick__scan__common_8cpp_a0716e68578420377a6df15313926bb7a}\label{sick__scan__common_8cpp_a0716e68578420377a6df15313926bb7a}} 
+\index{sick\_scan\_common.cpp@{sick\_scan\_common.cpp}!isFieldEvaluationActive@{isFieldEvaluationActive}}
+\index{isFieldEvaluationActive@{isFieldEvaluationActive}!sick\_scan\_common.cpp@{sick\_scan\_common.cpp}}
+\doxysubsubsection{\texorpdfstring{isFieldEvaluationActive()}{isFieldEvaluationActive()}}
+{\footnotesize\ttfamily static bool\& is\+Field\+Evaluation\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__common_8cpp_a5acddbe3b743d8181752a2a88033596f}\label{sick__scan__common_8cpp_a5acddbe3b743d8181752a2a88033596f}} 
+\index{sick\_scan\_common.cpp@{sick\_scan\_common.cpp}!parseFirmwareVersion@{parseFirmwareVersion}}
+\index{parseFirmwareVersion@{parseFirmwareVersion}!sick\_scan\_common.cpp@{sick\_scan\_common.cpp}}
+\doxysubsubsection{\texorpdfstring{parseFirmwareVersion()}{parseFirmwareVersion()}}
+{\footnotesize\ttfamily static std\+::vector$<$int$>$ parse\+Firmware\+Version (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{scannertype,  }\item[{const std\+::string \&}]{device\+Ident\+Str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__common_8cpp_afd59c3b4a081773e3bfb923820d0e1ae}\label{sick__scan__common_8cpp_afd59c3b4a081773e3bfb923820d0e1ae}} 
+\index{sick\_scan\_common.cpp@{sick\_scan\_common.cpp}!stringToVector@{stringToVector}}
+\index{stringToVector@{stringToVector}!sick\_scan\_common.cpp@{sick\_scan\_common.cpp}}
+\doxysubsubsection{\texorpdfstring{stringToVector()}{stringToVector()}}
+{\footnotesize\ttfamily std\+::vector$<$unsigned char$>$ string\+To\+Vector (\begin{DoxyParamCaption}\item[{std\+::string}]{s }\end{DoxyParamCaption})}
+
+
+
+Universal swapping function. 
+
+$<$todo$>$ doku. 
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Pointer to datablock \\
+\hline
+{\em num\+Bytes} & \+: size of variable in bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sick__scan__common_8cpp_a646df46979930ec174d15547a0ba06cc}\label{sick__scan__common_8cpp_a646df46979930ec174d15547a0ba06cc}} 
+\index{sick\_scan\_common.cpp@{sick\_scan\_common.cpp}!swap\_endian@{swap\_endian}}
+\index{swap\_endian@{swap\_endian}!sick\_scan\_common.cpp@{sick\_scan\_common.cpp}}
+\doxysubsubsection{\texorpdfstring{swap\_endian()}{swap\_endian()}}
+{\footnotesize\ttfamily void swap\+\_\+endian (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{ptr,  }\item[{int}]{num\+Bytes }\end{DoxyParamCaption})}
+
+
+
+Universal swapping function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & Pointer to datablock \\
+\hline
+{\em num\+Bytes} & \+: size of variable in bytes \\
+\hline
+\end{DoxyParams}

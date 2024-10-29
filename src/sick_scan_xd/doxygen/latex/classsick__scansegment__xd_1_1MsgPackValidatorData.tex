@@ -1,0 +1,244 @@
+\hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Msg\+Pack\+Validator\+Data Class Reference}
+\label{classsick__scansegment__xd_1_1MsgPackValidatorData}\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+
+
+{\ttfamily \#include $<$msgpack\+\_\+validator.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, int $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a4e1199bc1a67dba773ff8e77b5fd50f0}{Azimuth\+Histogram}}
+\item 
+typedef std\+::map$<$ int, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a4e1199bc1a67dba773ff8e77b5fd50f0}{Azimuth\+Histogram}} $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a1e7a0c3e77f970b767cb52da67266147}{Azimuth\+Histogram\+Per\+Elevation}}
+\item 
+typedef std\+::map$<$ int, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a1e7a0c3e77f970b767cb52da67266147}{Azimuth\+Histogram\+Per\+Elevation}} $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a9b0d2b6572ee23a6bd0e1c7b26448dca}{Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment}}
+\item 
+typedef std\+::map$<$ int, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a9b0d2b6572ee23a6bd0e1c7b26448dca}{Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment}} $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a487a1022cb76ec1c9e487037b4cdb492}{Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment\+Per\+Echo}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a5fdf32477cc728552581c01a5da24f63}{Msg\+Pack\+Validator\+Data}} ()
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a8824fe3947d574094ae0a4793d46180e}{$\sim$\+Msg\+Pack\+Validator\+Data}} ()
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_ac1a014e2cfd4dd160eee6ca72d468c7d}{update}} (int echo\+\_\+idx, int segment\+\_\+idx, float azimuth, float elevation)
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a8c1640b8d652bf06559988de709487bc}{get\+Azimuth\+Histogram\+Resolution\+Deg}} (void) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_af96e22c9106140a662da7862b24d527e}{get\+Azimuth\+Histogram\+Resolution\+Rad}} (void) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a7258ed7a038cc7edbcffcd5ae3593658}{get\+Elevation\+Histogram\+Resolution\+Deg}} (void) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_aceb28f5be6195fea35e6c69e356d083f}{get\+Elevation\+Histogram\+Resolution\+Rad}} (void) const
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a8e26557b7e77e60a11f82654f3f0bf88}{print}} (void) const
+\item 
+const \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a487a1022cb76ec1c9e487037b4cdb492}{Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment\+Per\+Echo}} \& \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a8bbb5efa41cdab4a2a476bde88f2d7a3}{get\+Histogram}} (void) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_af9d104cb2f68b40ad4fe6a7f42305f22}{azimuth\+Index\+To\+Rad}} (int azimuth\+\_\+idx) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a7411e8f8a3565ab45da85ab0e7d83e2f}{azimuth\+Index\+To\+Deg}} (int azimuth\+\_\+idx) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a56990ea881e3bceacd9cee26e4feaa86}{elevation\+Index\+To\+Rad}} (int elevation\+\_\+idx) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_af30dd86b22ed43aeb848716fc09abb70}{elevation\+Index\+To\+Deg}} (int elevation\+\_\+idx) const
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_af846a614ebfe351493cfd74991ee43fd}{azimuth\+Rad\+To\+Index}} (float azimuth\+\_\+rad) const
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a3f9d4ec750f5305d515c0be0f11ef467}{elevation\+Rad\+To\+Index}} (float elevation\+\_\+rad) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a442a43731ee69d1eaf30384c735cafd2}{deg2rad}} (float angle) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a8566c57cbefa58d5d550f0dc37cc2636}{rad2deg}} (float angle) const
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a899fbf569c1f0058d16ff37a05bd5799}{azimuth\+To\+Int}} (float azimuth\+\_\+rad) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a1eed890ef895230f13ee1a5fa5e3d0ff}{int\+To\+Azimuth}} (int azimuth\+\_\+idx) const
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a13968378d892be543d40286240970181}{elevation\+To\+Int}} (float elevation\+\_\+rad) const
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a43fe0b1ae3d672c75063a0d6b7a6714f}{int\+To\+Elevation}} (int elevation\+\_\+idx) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a487a1022cb76ec1c9e487037b4cdb492}{Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment\+Per\+Echo}} \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a4f8543b1ac532f288f3bdb88c8773979}{m\+\_\+azimuth\+\_\+histogram}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a4e1199bc1a67dba773ff8e77b5fd50f0}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a4e1199bc1a67dba773ff8e77b5fd50f0}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!AzimuthHistogram@{AzimuthHistogram}}
+\index{AzimuthHistogram@{AzimuthHistogram}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{AzimuthHistogram}{AzimuthHistogram}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, int$>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a4e1199bc1a67dba773ff8e77b5fd50f0}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::\+Azimuth\+Histogram}}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a1e7a0c3e77f970b767cb52da67266147}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a1e7a0c3e77f970b767cb52da67266147}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!AzimuthHistogramPerElevation@{AzimuthHistogramPerElevation}}
+\index{AzimuthHistogramPerElevation@{AzimuthHistogramPerElevation}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{AzimuthHistogramPerElevation}{AzimuthHistogramPerElevation}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a4e1199bc1a67dba773ff8e77b5fd50f0}{Azimuth\+Histogram}}$>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a1e7a0c3e77f970b767cb52da67266147}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::\+Azimuth\+Histogram\+Per\+Elevation}}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a9b0d2b6572ee23a6bd0e1c7b26448dca}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a9b0d2b6572ee23a6bd0e1c7b26448dca}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!AzimuthHistogramPerElevationPerSegment@{AzimuthHistogramPerElevationPerSegment}}
+\index{AzimuthHistogramPerElevationPerSegment@{AzimuthHistogramPerElevationPerSegment}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{AzimuthHistogramPerElevationPerSegment}{AzimuthHistogramPerElevationPerSegment}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a1e7a0c3e77f970b767cb52da67266147}{Azimuth\+Histogram\+Per\+Elevation}}$>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a9b0d2b6572ee23a6bd0e1c7b26448dca}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::\+Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment}}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a487a1022cb76ec1c9e487037b4cdb492}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a487a1022cb76ec1c9e487037b4cdb492}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!AzimuthHistogramPerElevationPerSegmentPerEcho@{AzimuthHistogramPerElevationPerSegmentPerEcho}}
+\index{AzimuthHistogramPerElevationPerSegmentPerEcho@{AzimuthHistogramPerElevationPerSegmentPerEcho}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{AzimuthHistogramPerElevationPerSegmentPerEcho}{AzimuthHistogramPerElevationPerSegmentPerEcho}}
+{\footnotesize\ttfamily typedef std\+::map$<$int, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a9b0d2b6572ee23a6bd0e1c7b26448dca}{Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment}}$>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a487a1022cb76ec1c9e487037b4cdb492}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::\+Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment\+Per\+Echo}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a5fdf32477cc728552581c01a5da24f63}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a5fdf32477cc728552581c01a5da24f63}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!MsgPackValidatorData@{MsgPackValidatorData}}
+\index{MsgPackValidatorData@{MsgPackValidatorData}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{MsgPackValidatorData()}{MsgPackValidatorData()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::\+Msg\+Pack\+Validator\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a8824fe3947d574094ae0a4793d46180e}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a8824fe3947d574094ae0a4793d46180e}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!````~MsgPackValidatorData@{$\sim$MsgPackValidatorData}}
+\index{````~MsgPackValidatorData@{$\sim$MsgPackValidatorData}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{$\sim$MsgPackValidatorData()}{~MsgPackValidatorData()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::$\sim$\+Msg\+Pack\+Validator\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a7411e8f8a3565ab45da85ab0e7d83e2f}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a7411e8f8a3565ab45da85ab0e7d83e2f}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!azimuthIndexToDeg@{azimuthIndexToDeg}}
+\index{azimuthIndexToDeg@{azimuthIndexToDeg}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{azimuthIndexToDeg()}{azimuthIndexToDeg()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::azimuth\+Index\+To\+Deg (\begin{DoxyParamCaption}\item[{int}]{azimuth\+\_\+idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_af9d104cb2f68b40ad4fe6a7f42305f22}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_af9d104cb2f68b40ad4fe6a7f42305f22}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!azimuthIndexToRad@{azimuthIndexToRad}}
+\index{azimuthIndexToRad@{azimuthIndexToRad}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{azimuthIndexToRad()}{azimuthIndexToRad()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::azimuth\+Index\+To\+Rad (\begin{DoxyParamCaption}\item[{int}]{azimuth\+\_\+idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_af846a614ebfe351493cfd74991ee43fd}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_af846a614ebfe351493cfd74991ee43fd}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!azimuthRadToIndex@{azimuthRadToIndex}}
+\index{azimuthRadToIndex@{azimuthRadToIndex}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{azimuthRadToIndex()}{azimuthRadToIndex()}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::azimuth\+Rad\+To\+Index (\begin{DoxyParamCaption}\item[{float}]{azimuth\+\_\+rad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a899fbf569c1f0058d16ff37a05bd5799}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a899fbf569c1f0058d16ff37a05bd5799}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!azimuthToInt@{azimuthToInt}}
+\index{azimuthToInt@{azimuthToInt}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{azimuthToInt()}{azimuthToInt()}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::azimuth\+To\+Int (\begin{DoxyParamCaption}\item[{float}]{azimuth\+\_\+rad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Converts an azimuth angle in radians to an integer in 0.\+5 degree resolution \mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a442a43731ee69d1eaf30384c735cafd2}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a442a43731ee69d1eaf30384c735cafd2}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!deg2rad@{deg2rad}}
+\index{deg2rad@{deg2rad}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{deg2rad()}{deg2rad()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::deg2rad (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_af30dd86b22ed43aeb848716fc09abb70}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_af30dd86b22ed43aeb848716fc09abb70}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!elevationIndexToDeg@{elevationIndexToDeg}}
+\index{elevationIndexToDeg@{elevationIndexToDeg}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{elevationIndexToDeg()}{elevationIndexToDeg()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::elevation\+Index\+To\+Deg (\begin{DoxyParamCaption}\item[{int}]{elevation\+\_\+idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a56990ea881e3bceacd9cee26e4feaa86}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a56990ea881e3bceacd9cee26e4feaa86}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!elevationIndexToRad@{elevationIndexToRad}}
+\index{elevationIndexToRad@{elevationIndexToRad}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{elevationIndexToRad()}{elevationIndexToRad()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::elevation\+Index\+To\+Rad (\begin{DoxyParamCaption}\item[{int}]{elevation\+\_\+idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a3f9d4ec750f5305d515c0be0f11ef467}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a3f9d4ec750f5305d515c0be0f11ef467}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!elevationRadToIndex@{elevationRadToIndex}}
+\index{elevationRadToIndex@{elevationRadToIndex}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{elevationRadToIndex()}{elevationRadToIndex()}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::elevation\+Rad\+To\+Index (\begin{DoxyParamCaption}\item[{float}]{elevation\+\_\+rad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a13968378d892be543d40286240970181}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a13968378d892be543d40286240970181}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!elevationToInt@{elevationToInt}}
+\index{elevationToInt@{elevationToInt}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{elevationToInt()}{elevationToInt()}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::elevation\+To\+Int (\begin{DoxyParamCaption}\item[{float}]{elevation\+\_\+rad }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+Converts an elevation angle in radians to an integer in 0.\+5 degree resolution \mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a8c1640b8d652bf06559988de709487bc}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a8c1640b8d652bf06559988de709487bc}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!getAzimuthHistogramResolutionDeg@{getAzimuthHistogramResolutionDeg}}
+\index{getAzimuthHistogramResolutionDeg@{getAzimuthHistogramResolutionDeg}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{getAzimuthHistogramResolutionDeg()}{getAzimuthHistogramResolutionDeg()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::get\+Azimuth\+Histogram\+Resolution\+Deg (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_af96e22c9106140a662da7862b24d527e}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_af96e22c9106140a662da7862b24d527e}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!getAzimuthHistogramResolutionRad@{getAzimuthHistogramResolutionRad}}
+\index{getAzimuthHistogramResolutionRad@{getAzimuthHistogramResolutionRad}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{getAzimuthHistogramResolutionRad()}{getAzimuthHistogramResolutionRad()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::get\+Azimuth\+Histogram\+Resolution\+Rad (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a7258ed7a038cc7edbcffcd5ae3593658}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a7258ed7a038cc7edbcffcd5ae3593658}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!getElevationHistogramResolutionDeg@{getElevationHistogramResolutionDeg}}
+\index{getElevationHistogramResolutionDeg@{getElevationHistogramResolutionDeg}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{getElevationHistogramResolutionDeg()}{getElevationHistogramResolutionDeg()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::get\+Elevation\+Histogram\+Resolution\+Deg (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_aceb28f5be6195fea35e6c69e356d083f}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_aceb28f5be6195fea35e6c69e356d083f}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!getElevationHistogramResolutionRad@{getElevationHistogramResolutionRad}}
+\index{getElevationHistogramResolutionRad@{getElevationHistogramResolutionRad}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{getElevationHistogramResolutionRad()}{getElevationHistogramResolutionRad()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::get\+Elevation\+Histogram\+Resolution\+Rad (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a8bbb5efa41cdab4a2a476bde88f2d7a3}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a8bbb5efa41cdab4a2a476bde88f2d7a3}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!getHistogram@{getHistogram}}
+\index{getHistogram@{getHistogram}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{getHistogram()}{getHistogram()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a487a1022cb76ec1c9e487037b4cdb492}{Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment\+Per\+Echo}}\& sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::get\+Histogram (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a1eed890ef895230f13ee1a5fa5e3d0ff}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a1eed890ef895230f13ee1a5fa5e3d0ff}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!intToAzimuth@{intToAzimuth}}
+\index{intToAzimuth@{intToAzimuth}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{intToAzimuth()}{intToAzimuth()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::int\+To\+Azimuth (\begin{DoxyParamCaption}\item[{int}]{azimuth\+\_\+idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a43fe0b1ae3d672c75063a0d6b7a6714f}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a43fe0b1ae3d672c75063a0d6b7a6714f}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!intToElevation@{intToElevation}}
+\index{intToElevation@{intToElevation}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{intToElevation()}{intToElevation()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::int\+To\+Elevation (\begin{DoxyParamCaption}\item[{int}]{elevation\+\_\+idx }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a8e26557b7e77e60a11f82654f3f0bf88}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a8e26557b7e77e60a11f82654f3f0bf88}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!print@{print}}
+\index{print@{print}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a8566c57cbefa58d5d550f0dc37cc2636}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a8566c57cbefa58d5d550f0dc37cc2636}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!rad2deg@{rad2deg}}
+\index{rad2deg@{rad2deg}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{rad2deg()}{rad2deg()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::rad2deg (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_ac1a014e2cfd4dd160eee6ca72d468c7d}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_ac1a014e2cfd4dd160eee6ca72d468c7d}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!update@{update}}
+\index{update@{update}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::update (\begin{DoxyParamCaption}\item[{int}]{echo\+\_\+idx,  }\item[{int}]{segment\+\_\+idx,  }\item[{float}]{azimuth,  }\item[{float}]{elevation }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackValidatorData_a4f8543b1ac532f288f3bdb88c8773979}\label{classsick__scansegment__xd_1_1MsgPackValidatorData_a4f8543b1ac532f288f3bdb88c8773979}} 
+\index{sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}!m\_azimuth\_histogram@{m\_azimuth\_histogram}}
+\index{m\_azimuth\_histogram@{m\_azimuth\_histogram}!sick\_scansegment\_xd::MsgPackValidatorData@{sick\_scansegment\_xd::MsgPackValidatorData}}
+\doxysubsubsection{\texorpdfstring{m\_azimuth\_histogram}{m\_azimuth\_histogram}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData_a487a1022cb76ec1c9e487037b4cdb492}{Azimuth\+Histogram\+Per\+Elevation\+Per\+Segment\+Per\+Echo}} sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data\+::m\+\_\+azimuth\+\_\+histogram\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{msgpack__validator_8h}{msgpack\+\_\+validator.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{msgpack__validator_8cpp}{msgpack\+\_\+validator.\+cpp}}\end{DoxyCompactItemize}
