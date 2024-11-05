@@ -1,7 +1,21 @@
-# ROS to ROS2 migration tool
+# ROS 2 lms100 test branch
 
-This branch contains the Magical ROS2 Conversion tool which is located in the catkin_ws.
-The tool changes the packages inside the workspace according to the official ROS to ROS2 Migration guide.
-For compiling the project you need to use ROS and not ROS2. 
+## Info
+The library used is the [official ROS2 library](https://github.com/SICKAG/sick_scan_xd/tree/master) version 3.5.0 for sick scanners. 
 
-GitHub: https://github.com/DLu/roscompile/blob/main/magical_ros2_conversion_tool/README.md
+## [Building](https://github.com/SICKAG/sick_scan_xd/blob/master/INSTALL-ROS2.md#summary-for-the-different-build-options)
+
+Building the library for the lms100
+
+    colcon build --packages-select sick_scan_xd --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" " -DSCANSEGMENT_XD=0" --event-handlers console_direct+
+
+> TODO: (if possible?) add cmake args to the cmake file used for building
+
+## [Running / Launching](https://github.com/SICKAG/sick_scan_xd/blob/develop/USAGE.md#run-sick_scan_xd-driver)
+
+Launching the sick driver for the lms100 ! Attention: must set the correct host-ip manually
+
+    ros2 run sick_scan_xd sick_generic_caller ./src/sick_scan_xd/launch/sick_lms_1xx.launch hostname:=192.168.0.XX
+
+> TODO: configure and add laser specific settings like in the ROS1 volksbot parameter.yaml
+

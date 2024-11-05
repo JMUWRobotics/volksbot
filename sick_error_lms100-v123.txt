@@ -1,0 +1,251 @@
+[INFO] [1730824076.975597303] [sick_scan_xd]: ROS2 signal handler are installed
+[INFO] [1730824076.976018380] [sick_scan_xd]: ROS2 signal handler uninstalled
+[INFO] [1730824077.027722172] [sick_scan_xd]: sick_generic_caller V. 3.5.0 githash:"2e6e6613b73d42a7cd36cf6c061504ff0f719c6d" gitinfo:"2024-10-29 11:43:21 +0100	Nico Schubert	demoduled sickscan and added it as a plain directory"
+[INFO] [1730824077.027809539] [sick_scan_xd]: Program argument 1: /home/nls/SHK_Arbeit/volksbot/install/sick_scan_xd/lib/sick_scan_xd/sick_generic_caller
+[INFO] [1730824077.027831531] [sick_scan_xd]: Program argument 2: ./src/sick_scan_xd/launch/sick_lms_1xx.launch
+[INFO] [1730824077.027850988] [sick_scan_xd]: Program argument 3: hostname:=192.168.0.51
+[INFO] [1730824077.027870185] [sick_scan_xd]: ==========================================
+[INFO] [1730824077.028231027] [sick_scan_xd]: Try loading launchfile : ./src/sick_scan_xd/launch/sick_lms_1xx.launch
+[INFO] [1730824077.029093149] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["hostname"]="192.168.0.1"
+[INFO] [1730824077.029135720] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["cloud_topic"]="cloud"
+[INFO] [1730824077.029156761] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["laserscan_topic"]="scan"
+[INFO] [1730824077.029173453] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["frame_id"]="cloud"
+[INFO] [1730824077.029193751] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["sw_pll_only_publish"]="true"
+[INFO] [1730824077.029216645] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["nodename"]="sick_lms_1xx"
+[INFO] [1730824077.029235381] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["add_transform_xyz_rpy"]="0,0,0,0,0,0"
+[INFO] [1730824077.029257303] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["add_transform_check_dynamic_updates"]="false"
+[INFO] [1730824077.029280307] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["encoder_mode"]="-1"
+[INFO] [1730824077.029302871] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): default_args["tf_publish_rate"]="10.0"
+[INFO] [1730824077.029416939] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="intensity", type="bool", value="False"
+[INFO] [1730824077.029441646] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="intensity_resolution_16bit", type="bool", value="false"
+[INFO] [1730824077.029463478] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="min_ang", type="double", value="-2.35619"
+[INFO] [1730824077.029482835] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="max_ang", type="double", value="2.35619"
+[INFO] [1730824077.029507593] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="frame_id", type="str", value="$(arg frame_id)" overwritten by default value "cloud"
+[INFO] [1730824077.029525878] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="frame_id", type="str", value="cloud"
+[INFO] [1730824077.029541508] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="use_binary_protocol", type="bool", value="true"
+[INFO] [1730824077.029556837] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="scanner_type", type="string", value="sick_lms_1xx"
+[INFO] [1730824077.029571926] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="range_min", type="double", value="0.05"
+[INFO] [1730824077.029636259] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="range_max", type="double", value="25.0"
+[INFO] [1730824077.029654324] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="range_filter_handling", type="int", value="0"
+[INFO] [1730824077.029674372] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="hostname", type="string", value="$(arg hostname)" overwritten by default value "192.168.0.1"
+[INFO] [1730824077.029695062] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="hostname", type="string", value="192.168.0.1"
+[INFO] [1730824077.029713598] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="cloud_topic", type="string", value="$(arg cloud_topic)" overwritten by default value "cloud"
+[INFO] [1730824077.029729027] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="cloud_topic", type="string", value="cloud"
+[INFO] [1730824077.029745098] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="laserscan_topic", type="string", value="$(arg laserscan_topic)" overwritten by default value "scan"
+[INFO] [1730824077.029760618] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="laserscan_topic", type="string", value="scan"
+[INFO] [1730824077.029775947] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="port", type="string", value="2112"
+[INFO] [1730824077.029791126] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="timelimit", type="int", value="5"
+[INFO] [1730824077.029807928] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="sw_pll_only_publish", type="bool", value="$(arg sw_pll_only_publish)" overwritten by default value "true"
+[INFO] [1730824077.029823518] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="sw_pll_only_publish", type="bool", value="true"
+[INFO] [1730824077.029840541] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="use_generation_timestamp", type="bool", value="true"
+[INFO] [1730824077.029856341] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="start_services", type="bool", value="True"
+[INFO] [1730824077.029871560] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="activate_lferec", type="bool", value="True"
+[INFO] [1730824077.029886860] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="activate_lidoutputstate", type="bool", value="True"
+[INFO] [1730824077.029902570] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="activate_lidinputstate", type="bool", value="True"
+[INFO] [1730824077.029917669] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="min_intensity", type="double", value="0.0"
+[INFO] [1730824077.029934200] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="encoder_mode", type="int", value="$(arg encoder_mode)" overwritten by default value "-1"
+[INFO] [1730824077.029949840] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="encoder_mode", type="int", value="-1"
+[INFO] [1730824077.029965440] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="scandatacfg_timingflag", type="int", value="-1"
+[INFO] [1730824077.029980609] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="ang_res", type="double", value="0.5"
+[INFO] [1730824077.029995738] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="scan_freq", type="double", value="50"
+[INFO] [1730824077.030032168] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="add_transform_xyz_rpy", type="string", value="$(arg add_transform_xyz_rpy)" overwritten by default value "0,0,0,0,0,0"
+[INFO] [1730824077.030048580] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="add_transform_xyz_rpy", type="string", value="0,0,0,0,0,0"
+[INFO] [1730824077.030065442] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="add_transform_check_dynamic_updates", type="bool", value="$(arg add_transform_check_dynamic_updates)" overwritten by default value "false"
+[INFO] [1730824077.030082124] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="add_transform_check_dynamic_updates", type="bool", value="false"
+[INFO] [1730824077.030097794] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="message_monitoring_enabled", type="bool", value="True"
+[INFO] [1730824077.030113744] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="read_timeout_millisec_default", type="int", value="5000"
+[INFO] [1730824077.030129565] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="read_timeout_millisec_startup", type="int", value="120000"
+[INFO] [1730824077.030144854] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="read_timeout_millisec_kill_node", type="int", value="150000"
+[INFO] [1730824077.030170934] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="client_authorization_pw", type="string", value="F4724744"
+[INFO] [1730824077.030186594] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="ros_qos", type="int", value="-1"
+[INFO] [1730824077.030202194] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="tf_base_frame_id", type="string", value="map"
+[INFO] [1730824077.030217814] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="tf_base_lidar_xyz_rpy", type="string", value="0,0,0,0,0,0"
+[INFO] [1730824077.030234285] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="tf_publish_rate", type="double", value="$(arg tf_publish_rate)" overwritten by default value "10.0"
+[INFO] [1730824077.030252260] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="tf_publish_rate", type="double", value="10.0"
+[INFO] [1730824077.030273190] [sick_scan_xd]: LaunchParser::parseFile(./src/sick_scan_xd/launch/sick_lms_1xx.launch): name="tick_to_timestamp_mode", type="int", value="0"
+[INFO] [1730824077.038199750] [sick_scan_xd]: SickTransformPublisher: broadcasting TF messages parent_frame_id="map", child_frame_id="cloud", (x,y,z,roll,pitch,yaw)=(0.0,0.0,0.0,0.0,0.0,0.0), rate=10.0
+[INFO] [1730824077.038670622] [sick_scan_xd]: Range filter configuration: range_min=0.05, range_max=25, range_filter_handling=0
+[INFO] [1730824077.039551711] [sick_scan_xd]: Found emul_sensor overwriting default settings. Emulation:False
+[INFO] [1730824077.039730614] [sick_scan_xd]: Found sopas_protocol_type param overwriting default protocol:
+[INFO] [1730824077.039753197] [sick_scan_xd]: Binary protocol activated
+[INFO] [1730824077.040267783] [sick_scan_xd]: PointCloudMonitor started.
+[INFO] [1730824077.040393374] [sick_scan_xd]: Start initialising scanner [Ip: 192.168.0.51] [Port:2112]
+[INFO] [1730824077.040478136] [sick_scan_xd]: PointCloudMonitor: subscribing to topic cloud, qos=0
+[INFO] [1730824077.042265050] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/lferec", qos=0
+[INFO] [1730824077.053535188] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/lidoutputstate", qos=0
+[INFO] [1730824077.054953285] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/marker", qos=0
+[INFO] [1730824077.059364769] [sick_scan_xd]: SickCloudTransform: add_transform_xyz_rpy = (0,0,0,0,0,0)
+[INFO] [1730824077.059510488] [sick_scan_xd]: SickCloudTransform: azimuth_offset = 0 [deg]
+[INFO] [1730824077.059541968] [sick_scan_xd]: SickCloudTransform: additional 3x3 rotation matrix = { (1,0,0), (0,1,0), (0,0,1) }
+[INFO] [1730824077.059557749] [sick_scan_xd]: SickCloudTransform: apply 3x3 rotation = false
+[INFO] [1730824077.059577647] [sick_scan_xd]: SickCloudTransform: additional translation = (0,0,0)
+[INFO] [1730824077.059593227] [sick_scan_xd]: SickCloudTransform: check_dynamic_updates = false
+[INFO] [1730824077.059612874] [sick_scan_xd]: Publishing lidar pointcloud2 to cloud
+[INFO] [1730824077.059659784] [sick_scan_xd]: Publishing on topic "cloud", qos=0
+[INFO] [1730824077.060911232] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/imu", qos=0
+[INFO] [1730824077.062553930] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/encoder", qos=0
+[INFO] [1730824077.063992207] [sick_scan_xd]: Publishing on topic "scan", qos=0
+[INFO] [1730824077.065429691] [sick_scan_xd]: SickCloudTransform: add_transform_xyz_rpy = (0,0,0,0,0,0)
+[INFO] [1730824077.065523361] [sick_scan_xd]: SickCloudTransform: azimuth_offset = 0 [deg]
+[INFO] [1730824077.065564279] [sick_scan_xd]: SickCloudTransform: additional 3x3 rotation matrix = { (1,0,0), (0,1,0), (0,0,1) }
+[INFO] [1730824077.065585850] [sick_scan_xd]: SickCloudTransform: apply 3x3 rotation = false
+[INFO] [1730824077.065613203] [sick_scan_xd]: SickCloudTransform: additional translation = (0,0,0)
+[INFO] [1730824077.065634524] [sick_scan_xd]: SickCloudTransform: check_dynamic_updates = false
+[INFO] [1730824077.065728103] [sick_scan_xd]: sick_scan_xd: Tcp::open: connecting to 192.168.0.51:2112 ...
+[INFO] [1730824077.066679656] [sick_scan_xd]: sick_scan_xd Tcp::open: connected to 192.168.0.51:2112
+[INFO] [1730824077.066759069] [sick_scan_xd]: SickThread TcpRecvThread started.
+[INFO] [1730824077.067501040] [sick_scan_xd]: Parameter setting for <active_echo: 0>
+[INFO] [1730824077.067714840] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0017>sRN SCdevicestate CRC:<0x30>
+[INFO] [1730824077.070338758] [sick_scan_xd]: Receiving: <STX>sRA SCdevicestate \x00<ETX>
+[INFO] [1730824077.070478085] [sick_scan_xd]: checkColaDialect: lidar response in configured Cola-dialect Cola-B
+[INFO] [1730824077.270844052] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0023>sMN SetAccessMode 0x03 0xf4 0x72 0x47 0x44 CRC:<0xb3>
+[INFO] [1730824077.272707153] [sick_scan_xd]: Receiving: <STX>sAN SetAccessMode \x01<ETX>
+[INFO] [1730824077.473043522] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0015>sWN EIHstCola 0x01 CRC:<0x09>
+[INFO] [1730824077.474684978] [sick_scan_xd]: Receiving: <STX>sWA EIHstCola <ETX>
+[INFO] [1730824077.675252781] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0019>sRN FirmwareVersion CRC:<0x24>
+[INFO] [1730824077.676859671] [sick_scan_xd]: Receiving: <STX>sRA FirmwareVersion \x00\x0a\x56\x31\x2e\x32\x33\x20\x20\x20\x20\x20<ETX>
+[INFO] [1730824077.877441631] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0017>sRN SCdevicestate CRC:<0x30>
+[INFO] [1730824077.879063890] [sick_scan_xd]: Receiving: <STX>sRA SCdevicestate \x00<ETX>
+[INFO] [1730824078.079471377] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0010>sRN ODoprh CRC:<0x41>
+[INFO] [1730824078.080986891] [sick_scan_xd]: Receiving: <STX>sRA ODoprh \x00\x00\x63\xf7<ETX>
+[INFO] [1730824078.282206787] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0010>sRN ODpwrc CRC:<0x52>
+[INFO] [1730824078.283589136] [sick_scan_xd]: Receiving: <STX>sRA ODpwrc \x00\x00\x1b\xdb<ETX>
+[INFO] [1730824078.484413904] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0016>sRN LocationName CRC:<0x55>
+[INFO] [1730824078.486008680] [sick_scan_xd]: Receiving: <STX>sRA LocationName \x00\x0b\x6e\x6f\x74\x20\x64\x65\x66\x69\x6e\x65\x64<ETX>
+[INFO] [1730824078.486956286] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0018>sRN LMPoutputRange CRC:<0x5e>
+[INFO] [1730824078.488448416] [sick_scan_xd]: Receiving: <STX>sRA LMPoutputRange \x00\x01\x00\x00\x13\x88\xff\xf9\x22\x30\x00\x22\x55\x10<ETX>
+[INFO] [1730824078.488622660] [sick_scan_xd]: Angle resolution of scanner is 0.5 [deg]  (in 1/10000th deg: 5000)
+[INFO] [1730824078.488665201] [sick_scan_xd]: [From:To] -45 [deg] to 225 [deg] (in 1/10000th deg: from -450000 to 2250000)
+[INFO] [1730824078.488693566] [sick_scan_xd]: MIN_ANG: -2.35619 [rad] -135 [deg]
+[INFO] [1730824078.488720658] [sick_scan_xd]: MAX_ANG: 2.35619 [rad] 135 [deg]
+[INFO] [1730824078.488783258] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 0x00 0x13 0x88 0xff 0xf9 0x22 0x33 0x00 0x22 0x55 0x0d CRC:<0x8c>
+[INFO] [1730824078.490384516] [sick_scan_xd]: Receiving: <STX>sFA\x00\x0a<ETX>
+[WARN] [1730824078.490473026] [sick_scan_xd]: Error Sopas answer mismatch: Error unexpected Sopas answer for request <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 ..., received answer: "sFA\x00\x0a", expected patterns: "sWA LMPoutputRange","sAN LMPoutputRange"
+[WARN] [1730824083.490627615] [sick_scan_xd]: Timeout during waiting for new datagram
+[WARN] [1730824083.490752043] [sick_scan_xd]: Error Sopas answer mismatch: Error unexpected Sopas answer for request <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 ..., received answer: "", expected patterns: "sWA LMPoutputRange","sAN LMPoutputRange"
+[ERROR] [1730824083.490800226] [sick_scan_xd]: Error unexpected Sopas answer for request <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 ..., giving up after 1 unexpected answers.
+[INFO] [1730824083.490857125] [sick_scan_xd]: Failed to init scanner Error Code: 1
+Waiting for timeout...
+If the communication mode set in the scanner memory is different from that used by the driver, the scanner's communication mode is changed.
+This requires a restart of the TCP-IP connection, which can extend the start time by up to 30 seconds. There are two ways to prevent this:
+1. [Recommended] Set the communication mode with the SOPAS ET software to binary and save this setting in the scanner's EEPROM.
+2. Use the parameter "use_binary_protocol" to overwrite the default settings of the driver.
+[ERROR] [1730824083.490914034] [sick_scan_xd]: ## ERROR in mainGenericLaser: init failed, retrying...
+[INFO] [1730824083.490961384] [sick_scan_xd]: Start initialising scanner [Ip: 192.168.0.51] [Port:2112]
+[WARN] [1730824083.490991161] [sick_scan_xd]: Disconnecting TCP-Connection.
+[ERROR] [1730824083.491142912] [sick_scan_xd]: Tcp::readInputData: Read 0 bytes, connection is lost!
+[INFO] [1730824083.491208498] [sick_scan_xd]: SickThread TcpRecvThread finished (flags: threadShouldRun=0, endThread=0).
+[INFO] [1730824083.492152557] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/lferec", qos=0
+[INFO] [1730824083.493149488] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/lidoutputstate", qos=0
+[INFO] [1730824083.493935604] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/marker", qos=0
+[INFO] [1730824083.495057024] [sick_scan_xd]: SickCloudTransform: add_transform_xyz_rpy = (0,0,0,0,0,0)
+[INFO] [1730824083.495121427] [sick_scan_xd]: SickCloudTransform: azimuth_offset = 0 [deg]
+[INFO] [1730824083.495153218] [sick_scan_xd]: SickCloudTransform: additional 3x3 rotation matrix = { (1,0,0), (0,1,0), (0,0,1) }
+[INFO] [1730824083.495168788] [sick_scan_xd]: SickCloudTransform: apply 3x3 rotation = false
+[INFO] [1730824083.495188295] [sick_scan_xd]: SickCloudTransform: additional translation = (0,0,0)
+[INFO] [1730824083.495207211] [sick_scan_xd]: SickCloudTransform: check_dynamic_updates = false
+[INFO] [1730824083.495230917] [sick_scan_xd]: Publishing lidar pointcloud2 to cloud
+[INFO] [1730824083.495285792] [sick_scan_xd]: Publishing on topic "cloud", qos=0
+[INFO] [1730824083.496296379] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/imu", qos=0
+[INFO] [1730824083.496971422] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/encoder", qos=0
+[INFO] [1730824083.497667967] [sick_scan_xd]: Publishing on topic "scan", qos=0
+[INFO] [1730824083.498399068] [sick_scan_xd]: SickCloudTransform: add_transform_xyz_rpy = (0,0,0,0,0,0)
+[INFO] [1730824083.498459294] [sick_scan_xd]: SickCloudTransform: azimuth_offset = 0 [deg]
+[INFO] [1730824083.498556911] [sick_scan_xd]: SickCloudTransform: additional 3x3 rotation matrix = { (1,0,0), (0,1,0), (0,0,1) }
+[INFO] [1730824083.498580245] [sick_scan_xd]: SickCloudTransform: apply 3x3 rotation = false
+[INFO] [1730824083.498607878] [sick_scan_xd]: SickCloudTransform: additional translation = (0,0,0)
+[INFO] [1730824083.498629019] [sick_scan_xd]: SickCloudTransform: check_dynamic_updates = false
+[INFO] [1730824083.498714883] [sick_scan_xd]: sick_scan_xd: Tcp::open: connecting to 192.168.0.51:2112 ...
+[INFO] [1730824083.499402661] [sick_scan_xd]: sick_scan_xd Tcp::open: connected to 192.168.0.51:2112
+[INFO] [1730824083.499437348] [sick_scan_xd]: SickThread TcpRecvThread started.
+[INFO] [1730824083.499600360] [sick_scan_xd]: Parameter setting for <active_echo: 0>
+[INFO] [1730824083.499720541] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0017>sRN SCdevicestate CRC:<0x30>
+[INFO] [1730824083.503055001] [sick_scan_xd]: Receiving: <STX>sRA SCdevicestate \x00<ETX>
+[INFO] [1730824083.503130636] [sick_scan_xd]: checkColaDialect: lidar response in configured Cola-dialect Cola-B
+[INFO] [1730824083.703379102] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0023>sMN SetAccessMode 0x03 0xf4 0x72 0x47 0x44 CRC:<0xb3>
+[INFO] [1730824083.705284263] [sick_scan_xd]: Receiving: <STX>sAN SetAccessMode \x01<ETX>
+[INFO] [1730824083.905849106] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0015>sWN EIHstCola 0x01 CRC:<0x09>
+[INFO] [1730824083.907321077] [sick_scan_xd]: Receiving: <STX>sWA EIHstCola <ETX>
+[INFO] [1730824084.107893356] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0019>sRN FirmwareVersion CRC:<0x24>
+[INFO] [1730824084.109434770] [sick_scan_xd]: Receiving: <STX>sRA FirmwareVersion \x00\x0a\x56\x31\x2e\x32\x33\x20\x20\x20\x20\x20<ETX>
+[INFO] [1730824084.310004094] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0017>sRN SCdevicestate CRC:<0x30>
+[INFO] [1730824084.311535007] [sick_scan_xd]: Receiving: <STX>sRA SCdevicestate \x00<ETX>
+[INFO] [1730824084.512117867] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0010>sRN ODoprh CRC:<0x41>
+[INFO] [1730824084.513547828] [sick_scan_xd]: Receiving: <STX>sRA ODoprh \x00\x00\x63\xf7<ETX>
+[INFO] [1730824084.714526396] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0010>sRN ODpwrc CRC:<0x52>
+[INFO] [1730824084.715909266] [sick_scan_xd]: Receiving: <STX>sRA ODpwrc \x00\x00\x1b\xdb<ETX>
+[INFO] [1730824084.916670708] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0016>sRN LocationName CRC:<0x55>
+[INFO] [1730824084.918172746] [sick_scan_xd]: Receiving: <STX>sRA LocationName \x00\x0b\x6e\x6f\x74\x20\x64\x65\x66\x69\x6e\x65\x64<ETX>
+[INFO] [1730824084.918691451] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0018>sRN LMPoutputRange CRC:<0x5e>
+[INFO] [1730824084.920079260] [sick_scan_xd]: Receiving: <STX>sRA LMPoutputRange \x00\x01\x00\x00\x13\x88\xff\xf9\x22\x30\x00\x22\x55\x10<ETX>
+[INFO] [1730824084.920202346] [sick_scan_xd]: Angle resolution of scanner is 0.5 [deg]  (in 1/10000th deg: 5000)
+[INFO] [1730824084.920230931] [sick_scan_xd]: [From:To] -45 [deg] to 225 [deg] (in 1/10000th deg: from -450000 to 2250000)
+[INFO] [1730824084.920259155] [sick_scan_xd]: MIN_ANG: -2.35619 [rad] -135 [deg]
+[INFO] [1730824084.920284594] [sick_scan_xd]: MAX_ANG: 2.35619 [rad] 135 [deg]
+[INFO] [1730824084.920350059] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 0x00 0x13 0x88 0xff 0xf9 0x22 0x33 0x00 0x22 0x55 0x0d CRC:<0x8c>
+[INFO] [1730824084.921991615] [sick_scan_xd]: Receiving: <STX>sFA\x00\x0a<ETX>
+[WARN] [1730824084.922062531] [sick_scan_xd]: Error Sopas answer mismatch: Error unexpected Sopas answer for request <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 ..., received answer: "sFA\x00\x0a", expected patterns: "sWA LMPoutputRange","sAN LMPoutputRange"
+[WARN] [1730824089.922473450] [sick_scan_xd]: Timeout during waiting for new datagram
+[WARN] [1730824089.922609180] [sick_scan_xd]: Error Sopas answer mismatch: Error unexpected Sopas answer for request <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 ..., received answer: "", expected patterns: "sWA LMPoutputRange","sAN LMPoutputRange"
+[ERROR] [1730824089.922717358] [sick_scan_xd]: Error unexpected Sopas answer for request <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 ..., giving up after 1 unexpected answers.
+[INFO] [1730824089.922743528] [sick_scan_xd]: Failed to init scanner Error Code: 1
+Waiting for timeout...
+If the communication mode set in the scanner memory is different from that used by the driver, the scanner's communication mode is changed.
+This requires a restart of the TCP-IP connection, which can extend the start time by up to 30 seconds. There are two ways to prevent this:
+1. [Recommended] Set the communication mode with the SOPAS ET software to binary and save this setting in the scanner's EEPROM.
+2. Use the parameter "use_binary_protocol" to overwrite the default settings of the driver.
+[ERROR] [1730824089.922767123] [sick_scan_xd]: ## ERROR in mainGenericLaser: init failed, retrying...
+[INFO] [1730824089.922807260] [sick_scan_xd]: Start initialising scanner [Ip: 192.168.0.51] [Port:2112]
+[WARN] [1730824089.922823461] [sick_scan_xd]: Disconnecting TCP-Connection.
+[ERROR] [1730824089.922991633] [sick_scan_xd]: Tcp::readInputData: Read 0 bytes, connection is lost!
+[INFO] [1730824089.923058131] [sick_scan_xd]: SickThread TcpRecvThread finished (flags: threadShouldRun=0, endThread=0).
+[INFO] [1730824089.923786236] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/lferec", qos=0
+[INFO] [1730824089.924675631] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/lidoutputstate", qos=0
+[INFO] [1730824089.925311660] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/marker", qos=0
+[INFO] [1730824089.925887473] [sick_scan_xd]: SickCloudTransform: add_transform_xyz_rpy = (0,0,0,0,0,0)
+[INFO] [1730824089.925940765] [sick_scan_xd]: SickCloudTransform: azimuth_offset = 0 [deg]
+[INFO] [1730824089.925971564] [sick_scan_xd]: SickCloudTransform: additional 3x3 rotation matrix = { (1,0,0), (0,1,0), (0,0,1) }
+[INFO] [1730824089.925987345] [sick_scan_xd]: SickCloudTransform: apply 3x3 rotation = false
+[INFO] [1730824089.926007363] [sick_scan_xd]: SickCloudTransform: additional translation = (0,0,0)
+[INFO] [1730824089.926025267] [sick_scan_xd]: SickCloudTransform: check_dynamic_updates = false
+[INFO] [1730824089.926049474] [sick_scan_xd]: Publishing lidar pointcloud2 to cloud
+[INFO] [1730824089.926099249] [sick_scan_xd]: Publishing on topic "cloud", qos=0
+[INFO] [1730824089.926739777] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/imu", qos=0
+[INFO] [1730824089.927336941] [sick_scan_xd]: Publishing on topic "sick_lms_1xx/encoder", qos=0
+[INFO] [1730824089.927972259] [sick_scan_xd]: Publishing on topic "scan", qos=0
+[INFO] [1730824089.928642613] [sick_scan_xd]: SickCloudTransform: add_transform_xyz_rpy = (0,0,0,0,0,0)
+[INFO] [1730824089.928707828] [sick_scan_xd]: SickCloudTransform: azimuth_offset = 0 [deg]
+[INFO] [1730824089.928747655] [sick_scan_xd]: SickCloudTransform: additional 3x3 rotation matrix = { (1,0,0), (0,1,0), (0,0,1) }
+[INFO] [1730824089.928768926] [sick_scan_xd]: SickCloudTransform: apply 3x3 rotation = false
+[INFO] [1730824089.928795827] [sick_scan_xd]: SickCloudTransform: additional translation = (0,0,0)
+[INFO] [1730824089.928816797] [sick_scan_xd]: SickCloudTransform: check_dynamic_updates = false
+[INFO] [1730824089.928888755] [sick_scan_xd]: sick_scan_xd: Tcp::open: connecting to 192.168.0.51:2112 ...
+[INFO] [1730824089.929661005] [sick_scan_xd]: sick_scan_xd Tcp::open: connected to 192.168.0.51:2112
+[INFO] [1730824089.929696834] [sick_scan_xd]: SickThread TcpRecvThread started.
+[INFO] [1730824089.929859345] [sick_scan_xd]: Parameter setting for <active_echo: 0>
+[INFO] [1730824089.929962713] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0017>sRN SCdevicestate CRC:<0x30>
+[INFO] [1730824089.933910379] [sick_scan_xd]: Receiving: <STX>sRA SCdevicestate \x00<ETX>
+[INFO] [1730824089.934003297] [sick_scan_xd]: checkColaDialect: lidar response in configured Cola-dialect Cola-B
+[INFO] [1730824090.134326893] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0023>sMN SetAccessMode 0x03 0xf4 0x72 0x47 0x44 CRC:<0xb3>
+[INFO] [1730824090.136108217] [sick_scan_xd]: Receiving: <STX>sAN SetAccessMode \x01<ETX>
+[INFO] [1730824090.336529022] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0015>sWN EIHstCola 0x01 CRC:<0x09>
+[INFO] [1730824090.338010000] [sick_scan_xd]: Receiving: <STX>sWA EIHstCola <ETX>
+[INFO] [1730824090.538337686] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0019>sRN FirmwareVersion CRC:<0x24>
+[INFO] [1730824090.539889149] [sick_scan_xd]: Receiving: <STX>sRA FirmwareVersion \x00\x0a\x56\x31\x2e\x32\x33\x20\x20\x20\x20\x20<ETX>
+[INFO] [1730824090.740507912] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0017>sRN SCdevicestate CRC:<0x30>
+[INFO] [1730824090.742097228] [sick_scan_xd]: Receiving: <STX>sRA SCdevicestate \x00<ETX>
+[INFO] [1730824090.942501210] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0010>sRN ODoprh CRC:<0x41>
+[INFO] [1730824090.943953313] [sick_scan_xd]: Receiving: <STX>sRA ODoprh \x00\x00\x63\xf7<ETX>
+[INFO] [1730824091.144727466] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0010>sRN ODpwrc CRC:<0x52>
+[INFO] [1730824091.146129954] [sick_scan_xd]: Receiving: <STX>sRA ODpwrc \x00\x00\x1b\xdb<ETX>
+[INFO] [1730824091.347090405] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0016>sRN LocationName CRC:<0x55>
+[INFO] [1730824091.348613644] [sick_scan_xd]: Receiving: <STX>sRA LocationName \x00\x0b\x6e\x6f\x74\x20\x64\x65\x66\x69\x6e\x65\x64<ETX>
+[INFO] [1730824091.349120195] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0018>sRN LMPoutputRange CRC:<0x5e>
+[INFO] [1730824091.350500059] [sick_scan_xd]: Receiving: <STX>sRA LMPoutputRange \x00\x01\x00\x00\x13\x88\xff\xf9\x22\x30\x00\x22\x55\x10<ETX>
+[INFO] [1730824091.350609439] [sick_scan_xd]: Angle resolution of scanner is 0.5 [deg]  (in 1/10000th deg: 5000)
+[INFO] [1730824091.350648314] [sick_scan_xd]: [From:To] -45 [deg] to 225 [deg] (in 1/10000th deg: from -450000 to 2250000)
+[INFO] [1730824091.350677630] [sick_scan_xd]: MIN_ANG: -2.35619 [rad] -135 [deg]
+[INFO] [1730824091.350728217] [sick_scan_xd]: MAX_ANG: 2.35619 [rad] 135 [deg]
+[INFO] [1730824091.350788633] [sick_scan_xd]: Sending  : <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 0x00 0x13 0x88 0xff 0xf9 0x22 0x33 0x00 0x22 0x55 0x0d CRC:<0x8c>
+[INFO] [1730824091.352400872] [sick_scan_xd]: Receiving: <STX>sFA\x00\x0a<ETX>
+[WARN] [1730824091.352484833] [sick_scan_xd]: Error Sopas answer mismatch: Error unexpected Sopas answer for request <STX><STX><STX><STX><Len=0033>sWN LMPoutputRange 0x00 0x01 0x00 ..., received answer: "sFA\x00\x0a", expected patterns: "sWA LMPoutputRange","sAN LMPoutputRange"
