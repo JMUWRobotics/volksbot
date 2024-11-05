@@ -1,0 +1,5 @@
+source;share/volksbot/local_setup.bash
+source;share/volksbot/local_setup.dsv
+source;share/volksbot/local_setup.ps1
+source;share/volksbot/local_setup.sh
+source;share/volksbot/local_setup.zsh
