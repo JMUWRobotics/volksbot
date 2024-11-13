@@ -12,8 +12,8 @@
 #include <stdexcept>
 
 // messages
-#include "volksbot/msg/ticks.hpp"
-#include "volksbot/msg/pose2d.hpp"
+#include <volksbot/msg/ticks.hpp>
+#include <volksbot/msg/pose2d.hpp>
 
 #include "volksbot/odometry.h"
 

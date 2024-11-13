@@ -22,7 +22,7 @@
 #define KEYCODE_Y 0x79
 
 // service
-#include "volksbot/srv/velocities.hpp"
+#include <volksbot/srv/velocities.hpp>
 
 #include "kbcontrol.h"
 

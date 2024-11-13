@@ -1,8 +1,8 @@
 #include "firejet.h"
 
 // service
-#include "volksbot/srv/velocities.hpp"
-#include "volksbot/msg/vels.hpp"
+#include <volksbot/srv/velocities.hpp>
+#include <volksbot/msg/vels.hpp>
 
 #include <std_srvs/srv/empty.hpp>
 

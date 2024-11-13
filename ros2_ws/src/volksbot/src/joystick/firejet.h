@@ -3,7 +3,7 @@
 
 #include "joystick.h"
 #include "rclcpp/rclcpp.hpp"
-#include "volksbot/msg/vels.hpp"
+#include <volksbot/msg/vels.hpp>
 #include <std_msgs/msg/string.hpp>
 
 #define BUTTON1   0x00

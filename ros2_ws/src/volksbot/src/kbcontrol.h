@@ -1,7 +1,7 @@
 #include "rclcpp/rclcpp.hpp"
 
 // service
-#include "volksbot/srv/velocities.hpp"
+#include <volksbot/srv/velocities.hpp>
 
 namespace volksbot {
 

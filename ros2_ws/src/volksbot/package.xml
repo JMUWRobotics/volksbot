@@ -25,15 +25,15 @@
   <exec_depend>gmapping</exec_depend>
   <exec_depend>message_runtime</exec_depend>
   <exec_depend>rosidl_default_runtime</exec_depend>
-  
 
-  <!-- relict from ROS implementation, not sure if still necessary -->
-  <!--run_depend>roscpp</run_depend-->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
 
   <export>
     <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lodo"/>
     <build_type>ament_cmake</build_type>
   </export>
+
   <member_of_group>rosidl_interface_packages</member_of_group>
 
 </package>
