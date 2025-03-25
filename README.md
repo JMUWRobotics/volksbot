@@ -11,7 +11,7 @@ Building the library for the lms100
 
 > TODO: (if possible?) add cmake args to the cmake file used for building
 
-## [Running / Launching](https://github.com/SICKAG/sick_scan_xd/blob/develop/USAGE.md#run-sick_scan_xd-driver)
+## [Running / Launching](https://github.com/SICKAG/sick_scan_xd?tab=readme-ov-file#running-the-driver)
 
 Launching the sick driver for the lms100 ! Attention: must set the correct host-ip manually
 
