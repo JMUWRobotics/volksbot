@@ -113,9 +113,9 @@ void LogitechF::handleAxis(uint8_t number, int16_t value, uint32_t time) {
 
 
 void LogitechF::sendSpeed() {
-  volksbot::msg::vels velocity;
+  volksbot::msg::Vels velocity;
   velocity.left = leftvel * speed;
   velocity.right = rightvel * speed;
   //RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "%f %f SPEED %f \n", leftvel, rightvel, speed);
-  publisher.publish(velocity);
+  publisher_->publish(velocity);
 }

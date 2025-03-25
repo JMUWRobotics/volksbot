@@ -48,7 +48,7 @@ class Firejet : public Joystick {
 
     inline void init() {
       stickx = sticky = speed = 0.0;
-      publisher = n.advertise<volksbot::msg::vels>("Vel", 100);
+      publisher = n.advertise<volksbot::msg::Vels>("Vel", 100);
       /*
       gnuplot = popen("gnuplot -persist", "w");
       fprintf(gnuplot, "set xrange[-1:1]\n");

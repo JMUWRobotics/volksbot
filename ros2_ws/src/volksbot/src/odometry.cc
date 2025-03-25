@@ -25,6 +25,15 @@ namespace volksbot {
 // 44.4 cm is the wheel base
 //const double Odometry::B = 44.4;
 
+//FIXME: Not sure if this is correct placed here, necessary for publisher and subscriber declaration but not sure how to do with seperate header and cpp file
+// Initilization subscriber and publisher
+Odometry(): Node("n"){
+  publisher_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", 100);
+  //FIXME: Check which message type is published on "VMC" and change here
+  subscriber_ = this->create_subscription<std_msgs::msg::String>("VMC", 20, &Odometry::convertTicks2Odom, this, _1);
+}
+    
+
 const double Odometry::covariance[36] = { 0.01, 0, 0, 0, 0, 0,
                                           0, 0.01, 0, 0, 0, 0,
                                           0, 0, 99999, 0, 0, 0,
@@ -32,7 +41,7 @@ const double Odometry::covariance[36] = { 0.01, 0, 0, 0, 0, 0,
                                           0, 0, 0, 0, 9999, 0,
                                           0, 0, 0, 0, 0, 99999};
 rclcpp::Time old;
-void Odometry::convertTicks2Odom(const ticks::ConstSharedPtr& cticks)
+void Odometry::convertTicks2Odom(const volksbot::msg::Ticks::ConstSharedPtr& cticks)
 {
   if (firstticks) {
     oldlticks = cticks->left;
@@ -76,7 +85,7 @@ void Odometry::convertTicks2Odom(const ticks::ConstSharedPtr& cticks)
   z -= ((M*right + M*left)/2.0) * sin(theta);
 
   //since all odometry is 6DOF we'll need a quaternion created from yaw
-  odom_quat = tf::createQuaternionMsgFromYaw(-theta);
+  odom_quat = tf2_ros::createQuaternionMsgFromYaw(-theta);
   
   //next, we'll publish the odometry message over ROS
   //odom.header.stamp = cticks->timestamp;
@@ -111,7 +120,7 @@ void Odometry::convertTicks2Odom(const ticks::ConstSharedPtr& cticks)
   }
 
   // send odometry message
-  publisher.publish(odom);
+  publisher_->publish(odom);
 
   if(publish_tf) {
     rclcpp::Time current_time = rclcpp::Time::now();
@@ -149,15 +158,17 @@ Odometry::Odometry(bool _publish_tf) {
   lastvx = 0;
   lastvth = 0;
 
-  publisher = n.advertise<nav_msgs::msg::Odometry>("odom", 100);
-  subscriber = n.subscribe("VMC", 20, &Odometry::convertTicks2Odom, this);
+  //TODO: Do I need to initilize here again?
+  //publisher_ = n.advertise<nav_msgs::msg::Odometry>("odom", 100);
+  //subscriber_ = n.subscribe("VMC", 20, &Odometry::convertTicks2Odom, this);
+
   firstticks = true;
   
   // message frames
   odom.header.frame_id = "odom_combined";
   odom.child_frame_id = "base_link";
   
-  odom_quat = tf::createQuaternionMsgFromYaw(0.0);
+  odom_quat = tf2_ros::createQuaternionMsgFromYaw(0.0);
 
   odom.pose.pose.position.x = 0.0;
   odom.pose.pose.position.y = 0.0;
@@ -187,13 +198,13 @@ void Odometry::update(int rate) {
     rclcpp::Time current = rclcpp::Time::now();
     odom.header.stamp= current;// no timestamp data TODO
 
-    publisher.publish(odom);
+    publisher_->publish(odom);
   
     if(publish_tf) {
       odom_trans.header.stamp = current;
       odom_broadcaster.sendTransform(odom_trans);
     }
-    rclcpp::spin_some(node);
+    rclcpp::spin_some(std::make_shared<Odometry>());
     loop_rate.sleep();
   }
 

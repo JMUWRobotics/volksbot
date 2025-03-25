@@ -85,7 +85,6 @@ void ekffilter::updateHistory() {
       // TODO
       listener->setTransform(tf2::StampedTransform(tmp, tmp.stamp_, "odom_combined", "base_link"));
       //std::cout << tmp.stamp_ << std::endl;
-
     }
     if (!diagnostics)
       RCLCPP_WARN(rclcpp::get_logger("Volksbot"), "Robot pose ekf diagnostics discovered a potential problem");

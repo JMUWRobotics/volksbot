@@ -141,7 +141,7 @@ void Firejet::setSpeed() {
  * Sends commands to the subcribers (robot)
  */
 void Firejet::sendSpeed() {
-  volksbot::msg::vels velocity;
+  volksbot::msg::Vels velocity;
   velocity.left = leftvel;
   velocity.right = rightvel;
   publisher.publish(velocity);

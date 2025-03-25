@@ -5,17 +5,44 @@
 // messages
 #include <volksbot/msg/ticks.hpp>
 #include <nav_msgs/msg/odometry.hpp>
-#include <tf2/transform_broadcaster.h>
+#include <tf2_ros/transform_broadcaster.h>
+
+using std::placeholders::_1;
 
 namespace volksbot {
 
-  class Odometry {
+  class Odometry : public rclcpp::Node{
+
+    public:
+
+      Odometry() : Odometry(false) { };
+
+      Odometry(bool _publish_tf);
+      ~Odometry();
+
+      void setTicks(double m) {
+        M = 1.0 / m;
+      }
+
+      void setWheelBase(double b) {
+        B = b;
+      }
+
+      void convertTicks2Odom(const volksbot::msg::Ticks::ConstSharedPtr& cticks);
+
+      const nav_msgs::msg::Odometry& getCurrentOdom() {
+        return odom;
+      }
+
+      void update(int ms);
+
     private:
 
-      rclcpp::Node n; 
-      ros::Publisher publisher;
-      tf::TransformBroadcaster odom_broadcaster;
-      ros::Subscriber subscriber;
+      //rclcpp::Node n; 
+      //ros::Publisher publisher;
+      //ros::Subscriber subscriber;
+
+      tf2_ros::TransformBroadcaster odom_broadcaster;
       bool firstticks;
       bool publish_tf = false;
       double x,z,theta;
@@ -31,7 +58,6 @@ namespace volksbot {
       double B;
 
       static const double covariance[36];
-      
 
       nav_msgs::msg::Odometry odom;
       
@@ -39,28 +65,9 @@ namespace volksbot {
   
       geometry_msgs::msg::TransformStamped odom_trans;
 
-    public:
-      Odometry() : Odometry(false) { };
-
-      Odometry(bool _publish_tf);
-      ~Odometry();
-
-      void setTicks(double m) {
-        M = 1.0 / m;
-      }
-
-      void setWheelBase(double b) {
-        B = b;
-      }
-
-      void convertTicks2Odom(const ticks::ConstSharedPtr& cticks);
-
-      const nav_msgs::msg::Odometry& getCurrentOdom() {
-        return odom;
-      }
-
-      void update(int ms);
-
+      // Declaration of Publisher and Subscriber
+      rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
+      rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscriber_;
 
   };
 }

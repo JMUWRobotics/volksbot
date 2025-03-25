@@ -46,7 +46,7 @@ class Predator : public Joystick {
     inline void init() {
       speed = 20.0;
       rightvel = leftvel = 0.0;
-      publisher = n.advertise<volksbot::msg::vels>("Vel", 100);
+      publisher = n.advertise<volksbot::msg::Vels>("Vel", 100);
     }
 
     double leftvel, rightvel;

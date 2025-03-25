@@ -27,11 +27,11 @@
 
 #define STICK_MIN_ACTIVITY   1000
 
-class LogitechF : public Joystick {
+class LogitechF : public Joystick, public rclcpp::Node {
   public:
 
-    LogitechF() : Joystick() { init(); };
-    LogitechF(const char* fn) : Joystick(fn) { init(); };
+    LogitechF() : Joystick(), Node("logitech_f") { init(); };
+    LogitechF(const char* fn) : Joystick(fn), Node("logitech_f") { init(); };
 
     virtual void handleButton(uint8_t number, bool pressed, uint32_t time);
     virtual void handleAxis(uint8_t number, int16_t value, uint32_t time);
@@ -40,16 +40,14 @@ class LogitechF : public Joystick {
     inline double getRightVel() {return rightvel;}
 
   private:
-    rclcpp::Node n;
-    ros::Publisher publisher;
-
+    rclcpp::Publisher<volksbot::msg::Vels>::SharedPtr publisher_;
 
     void sendSpeed();
 
     inline void init() {
       speed = 20.0;
       rightvel = leftvel = 0.0;
-      publisher = n.advertise<volksbot::msg::vels>("Vel", 100);
+      publisher_ = this->create_publisher<volksbot::msg::Vels>("Vel", 10);
     }
 
     double leftvel, rightvel;
