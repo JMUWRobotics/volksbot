@@ -38,11 +38,11 @@ namespace volksbot {
 
     private:
 
-      //rclcpp::Node n; 
-      //ros::Publisher publisher;
-      //ros::Subscriber subscriber;
+      // Declaration of Publisher and Subscriber
+      rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
+      rclcpp::Subscription<volksbot::msg::Ticks>::SharedPtr subscriber_;
 
-      tf2_ros::TransformBroadcaster odom_broadcaster;
+      std::shared_ptr<tf2_ros::TransformBroadcaster> odom_broadcaster_;
       bool firstticks;
       bool publish_tf = false;
       double x,z,theta;
@@ -50,7 +50,6 @@ namespace volksbot {
       double lastvx, lastvth;
 
       int oldlticks, oldrticks;
-
 
       // -461.817 ticks to cm
       double M;
@@ -64,11 +63,6 @@ namespace volksbot {
       geometry_msgs::msg::Quaternion odom_quat; //quaternion rotation
   
       geometry_msgs::msg::TransformStamped odom_trans;
-
-      // Declaration of Publisher and Subscriber
-      rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
-      rclcpp::Subscription<std_msgs::msg::String>::SharedPtr subscriber_;
-
   };
 }
 
