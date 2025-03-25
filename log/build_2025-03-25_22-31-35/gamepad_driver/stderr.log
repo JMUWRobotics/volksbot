@@ -1,0 +1,22 @@
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.cpp:[m[K In member function ‘[01m[Kvoid Gamepad::publish_state()[m[K’:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.cpp:41:23:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Kprintf[m[K’
+   41 |     printf( "\x1b[s" )
+      |                       [01;31m[K^[m[K
+      |                       [32m[K;[m[K
+   42 | 
+   43 |     [32m[Kprintf[m[K( "ID: %d\n", id );
+      |     [32m[K~~~~~~[m[K             
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.cpp:73:23:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+   73 |     printf( "\x1b[u" )
+      |                       [01;31m[K^[m[K
+      |                       [32m[K;[m[K
+   74 | [32m[K}[m[K
+      | [32m[K~[m[K                      
+In file included from [01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.cpp:4[m[K:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.hpp:[m[K At global scope:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.hpp:67:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kuint16_t map_s16_to_u16(int16_t)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+   67 | static uint16_t [01;35m[Kmap_s16_to_u16[m[K( const int16_t val ) {
+      |                 [01;35m[K^~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/gamepad.dir/build.make:90: CMakeFiles/gamepad.dir/src/gamepad.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gamepad.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

@@ -1,0 +1,20 @@
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:5:14:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargc[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+    5 | int main([01;35m[Kint argc[m[K, char* argv[]) {
+      |          [01;35m[K~~~~^~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:5:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+    5 | int main(int argc, [01;35m[Kchar* argv[][m[K) {
+      |                    [01;35m[K~~~~~~^~~~~~[m[K
+/usr/bin/ld: CMakeFiles/gamepad.dir/src/gamepad_control.cpp.o: in function `main':
+gamepad_control.cpp:(.text+0x3e): undefined reference to `Gamepad::wait_for_event()'
+/usr/bin/ld: gamepad_control.cpp:(.text+0x4a): undefined reference to `Gamepad::publish_state()'
+/usr/bin/ld: CMakeFiles/gamepad.dir/src/gamepad_control.cpp.o: in function `LogitechF::LogitechF(char const*)':
+gamepad_control.cpp:(.text._ZN9LogitechFC2EPKc[_ZN9LogitechFC5EPKc]+0x23): undefined reference to `Gamepad::Gamepad(char const*)'
+/usr/bin/ld: gamepad_control.cpp:(.text._ZN9LogitechFC2EPKc[_ZN9LogitechFC5EPKc]+0x2a): undefined reference to `vtable for LogitechF'
+/usr/bin/ld: CMakeFiles/gamepad.dir/src/gamepad_control.cpp.o: in function `LogitechF::~LogitechF()':
+gamepad_control.cpp:(.text._ZN9LogitechFD2Ev[_ZN9LogitechFD5Ev]+0x13): undefined reference to `vtable for LogitechF'
+/usr/bin/ld: gamepad_control.cpp:(.text._ZN9LogitechFD2Ev[_ZN9LogitechFD5Ev]+0x26): undefined reference to `Gamepad::~Gamepad()'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/gamepad.dir/build.make:97: gamepad] Error 1
+make[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gamepad.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

@@ -1,0 +1,11 @@
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:12:5:[m[K [01;31m[Kerror: [m[K‘[01m[KXBoxOne[m[K’ was not declared in this scope
+   12 |     [01;31m[KXBoxOne[m[K gp = XBoxOne("/dev/input/js0");
+      |     [01;31m[K^~~~~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:16:9:[m[K [01;31m[Kerror: [m[K‘[01m[Kgp[m[K’ was not declared in this scope
+   16 |         [01;31m[Kgp[m[K.wait_for_event();
+      |         [01;31m[K^~[m[K
+make[2]: *** [CMakeFiles/gamepad.dir/build.make:76: CMakeFiles/gamepad.dir/src/gamepad_control.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/gamepad.dir/all] Error 2
+make: *** [Makefile:146: all] Error 2

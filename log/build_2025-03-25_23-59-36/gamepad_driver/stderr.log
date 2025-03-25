@@ -1,0 +1,16 @@
+In file included from [01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:2[m[K:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/xboxONE.h:15:[m[K [01;35m[Kwarning: [m[K"BUTTON_LSTICK" redefined
+   15 | #define BUTTON_LSTICK   0x09
+      | 
+In file included from [01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:1[m[K:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/logitechf710.h:15:[m[K [01;36m[Knote: [m[Kthis is the location of the previous definition
+   15 | #define BUTTON_LSTICK   0x0B
+      | 
+In file included from [01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:2[m[K:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/xboxONE.h:16:[m[K [01;35m[Kwarning: [m[K"BUTTON_RSTICK" redefined
+   16 | #define BUTTON_RSTICK   0x0A
+      | 
+In file included from [01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:1[m[K:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/logitechf710.h:16:[m[K [01;36m[Knote: [m[Kthis is the location of the previous definition
+   16 | #define BUTTON_RSTICK   0x0C
+      | 

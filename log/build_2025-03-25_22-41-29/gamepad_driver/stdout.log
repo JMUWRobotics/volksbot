@@ -1,0 +1,4 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/gamepad.dir/src/gamepad_control.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/gamepad.dir/src/gamepad.cpp.o[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/gamepad.dir/src/logitechf710.cpp.o[0m
+[100%] [32m[1mLinking CXX executable gamepad[0m

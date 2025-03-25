@@ -1,0 +1,31 @@
+[ 25%] [32mBuilding CXX object CMakeFiles/gamepad.dir/src/gamepad_control.cpp.o[0m
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:5:14:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargc[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+    5 | int main([01;35m[Kint argc[m[K, char* argv[]) {
+      |          [01;35m[K~~~~^~~~[m[K
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:5:26:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kargv[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+    5 | int main(int argc, [01;35m[Kchar* argv[][m[K) {
+      |                    [01;35m[K~~~~~~^~~~~~[m[K
+In file included from [01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/logitechf710.hpp:4[m[K,
+                 from [01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad_control.cpp:1[m[K:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.hpp:[m[K At global scope:
+[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.hpp:70:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kuint16_t map_s16_to_u16(int16_t)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
+   70 | static uint16_t [01;35m[Kmap_s16_to_u16[m[K( const int16_t val ) {
+      |                 [01;35m[K^~~~~~~~~~~~~~[m[K
+[ 50%] [32m[1mLinking CXX executable gamepad[0m
+[100%] Built target gamepad
+-- Install configuration: ""
+-- Installing: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/lib/gamepad_driver/gamepad
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/ament_index/resource_index/package_run_dependencies/gamepad_driver
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/ament_index/resource_index/parent_prefix_path/gamepad_driver
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/environment/path.dsv
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/local_setup.bash
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/local_setup.sh
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/local_setup.zsh
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/local_setup.dsv
+-- Installing: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/package.dsv
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/ament_index/resource_index/packages/gamepad_driver
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/cmake/gamepad_driverConfig.cmake
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/cmake/gamepad_driverConfig-version.cmake
+-- Up-to-date: /home/nls/SHK_Arbeit/volksbot/install/gamepad_driver/share/gamepad_driver/package.xml
