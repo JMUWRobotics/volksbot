@@ -22,12 +22,12 @@ int main(int argc, char** argv){
 
   rclcpp::Rate r(50);
 
-  tf::TransformBroadcaster broadcaster;
+  std::shared_ptr<tf2_ros::TransformBroadcaster> broadcaster;
 
   while(n.ok()){
-    broadcaster.sendTransform(
+    broadcaster->sendTransform(
       tf2::StampedTransform(
-        tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.12, 0.0, 0.24)), // 24 cm to the top and 12 to the front
+        tf2::Transform(tf2::Quaternion(0, 0, 0, 1), tf2::Vector3(0.12, 0.0, 0.24)), // 24 cm to the top and 12 to the front
         rclcpp::Time::now(),"base_link", "front_laser"));
     r.sleep();
   }

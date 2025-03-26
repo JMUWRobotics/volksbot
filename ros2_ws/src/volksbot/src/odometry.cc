@@ -11,18 +11,6 @@
 #include <fcntl.h>
 #include <stdexcept>
 
-#include "tf2/LinearMath/Quaternion.h"
-#include "tf2_ros/transform_broadcaster.h"
-#include "tf2_ros/transform_broadcaster.h"
-
-// msgs
-#include "geometry_msgs/msg/quaternion.hpp"
-#include "nav_msgs/msg/odometry.hpp"
-
-// custom msgs
-#include <volksbot/msg/ticks.hpp>
-#include <volksbot/msg/pose2d.hpp>
-
 #include "volksbot/odometry.h"
 
 using std::placeholders::_1;
@@ -196,7 +184,7 @@ void Odometry::convertTicks2Odom(const volksbot::msg::Ticks::ConstSharedPtr& cti
    
     odom_broadcaster_->sendTransform(odom_trans);
   }
-  rclcpp::spin_some(node);
+  rclcpp::spin_some(std::make_shared<Odometry>());
   //send the transform
 }
 

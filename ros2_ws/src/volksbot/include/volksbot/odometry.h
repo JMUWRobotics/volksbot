@@ -2,10 +2,17 @@
 #define ODOMETRY_HH
 #include "rclcpp/rclcpp.hpp"
 
-// messages
+// msgs
+#include "geometry_msgs/msg/quaternion.hpp"
+#include "nav_msgs/msg/odometry.hpp"
+
+// custom msgs
 #include <volksbot/msg/ticks.hpp>
-#include <nav_msgs/msg/odometry.hpp>
+#include <volksbot/msg/pose2d.hpp>
+
+
 #include <tf2_ros/transform_broadcaster.h>
+#include <tf2/LinearMath/Quaternion.h>
 
 using std::placeholders::_1;
 
