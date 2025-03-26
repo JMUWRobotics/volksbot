@@ -18,7 +18,7 @@ struct js_event {
   uint32_t time;     /* event timestamp in milliseconds */
   int16_t value;     /* value */
   uint8_t type;      /* event type */
-  uint8_t number;    /* axis/button number */
+  uint8_t code;    /* axis/button number */
 };
 
 
@@ -38,7 +38,7 @@ class Gamepad {
   private:
     struct js_event je;
     void init(const char *filename);
-    int fd;
+    int fd_read;
 };
 
 #endif

@@ -1,7 +1,0 @@
-[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/logitechf710.cpp:[m[K In member function ‘[01m[Kvirtual void LogitechF::apply_event(js_event)[m[K’:
-[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/logitechf710.cpp:56:21:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kelse[m[K’ clause does not guard... [[01;35m[K-Wmisleading-indentation[m[K]
-   56 |                     [01;35m[Kelse[m[K
-      |                     [01;35m[K^~~~[m[K
-[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/logitechf710.cpp:58:25:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kelse[m[K’
-   58 |                         [01;36m[Kbreak[m[K;
-      |                         [01;36m[K^~~~~[m[K

@@ -3,12 +3,12 @@
 
 #include "xboxONE.h"
 
-void XBoxOne::apply_event( const js_event event ) {
+void XBoxOne::apply_event( const input_event event ) {
     switch ( event.type ) {
-        case BUTTON_TYPE:
+        case EV_TYPE_BUTTON:
         {
             button_t btn = (button_t) event.value;
-            switch ( event.number ) {
+            switch ( event.code ) {
                 case XBOX_BUTTON_A     : jss.buttons.A      = btn; break;
                 case XBOX_BUTTON_B     : jss.buttons.B      = btn; break;
                 case XBOX_BUTTON_X     : jss.buttons.X      = btn; break;
@@ -29,17 +29,17 @@ void XBoxOne::apply_event( const js_event event ) {
             break;
         }
         
-        case AXIS_TYPE:
+        case EV_TYPE_AXIS:
         {
-            axis_t val = (axis_t) event.value;
-            switch ( event.number ) {
+            axis_t val = (axis_t) ( event.value < AXIS_VALUE_MIN ? AXIS_VALUE_MIN : event.value );
+            switch ( event.code ) {
                 case XBOX_AXIS_LSTICK_LEFTRIGHT: jss.thumb_stick_left.left_right  = -val; break;
                 case XBOX_AXIS_LSTICK_UPDOWN   : jss.thumb_stick_left.up_down     = -val; break;
                 case XBOX_AXIS_RSTICK_LEFTRIGHT: jss.thumb_stick_right.left_right = -val; break;
                 case XBOX_AXIS_RSTICK_UPDOWN   : jss.thumb_stick_right.up_down    = -val; break;
                 
-                case XBOX_AXIS_THROTTLE_LEFT   : jss.throttle.left  = (axis_t) map_s16_to_u16( val ); break;
-                case XBOX_AXIS_THROTTLE_RIGHT  : jss.throttle.right = (axis_t) map_s16_to_u16( val ); break;
+                case XBOX_AXIS_THROTTLE_LEFT   : jss.throttle.left  = (axis_t) ( val / (float)MAX_THROTTLE_VALUE * AXIS_VALUE_MAX ); break;
+                case XBOX_AXIS_THROTTLE_RIGHT  : jss.throttle.right = (axis_t) ( val / (float)MAX_THROTTLE_VALUE * AXIS_VALUE_MAX ); break;
                 
                 case XBOX_AXIS_HUD_LEFTRIGHT:
                     jss.hud.left  = val < 0;

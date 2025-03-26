@@ -1,4 +1,0 @@
-[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.cpp:[m[K In member function ‘[01m[Kvoid Gamepad::publish_state()[m[K’:
-[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.cpp:53:13:[m[K [01;35m[Kwarning: [m[Khex escape sequence out of range
-   53 |     printf( [01;35m[K"\x9b17F"[m[K );
-      |             [01;35m[K^~~~~~~~~[m[K

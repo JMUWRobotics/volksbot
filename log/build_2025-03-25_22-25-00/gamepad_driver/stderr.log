@@ -1,4 +1,0 @@
-In file included from [01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.cpp:4[m[K:
-[01m[K/home/nls/SHK_Arbeit/volksbot/src/gamepad_driver/src/gamepad.hpp:67:17:[m[K [01;35m[Kwarning: [m[K‘[01m[Kuint16_t map_s16_to_u16(int16_t)[m[K’ defined but not used [[01;35m[K-Wunused-function[m[K]
-   67 | static uint16_t [01;35m[Kmap_s16_to_u16[m[K( const int16_t val ) {
-      |                 [01;35m[K^~~~~~~~~~~~~~[m[K

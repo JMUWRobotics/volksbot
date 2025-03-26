@@ -23,9 +23,9 @@ void Joystick::waitforevents() {
   
   while(true) {
     if (read(fd, &je, 8) == 8) {
-      if (je.type == BUTTON_TYPE) {
+      if (je.type == EV_TYPE_BUTTON) {
         handleButton(je.number, je.value==1, je.time);
-      } else if(je.type == AXIS_TYPE) {
+      } else if(je.type == EV_TYPE_AXIS) {
         handleAxis(je.number, je.value, je.time);
       }
     }
@@ -36,9 +36,9 @@ void Joystick::waitforevents() {
 
 void Joystick::waitforevent() {
     if (read(fd, &je, 8) == 8) {
-      if (je.type == BUTTON_TYPE) {
+      if (je.type == EV_TYPE_BUTTON) {
         handleButton(je.number, je.value==1, je.time);
-      } else if(je.type == AXIS_TYPE) {
+      } else if(je.type == EV_TYPE_AXIS) {
         handleAxis(je.number, je.value, je.time);
       }
     }

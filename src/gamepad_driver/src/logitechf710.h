@@ -3,35 +3,35 @@
 
 #include "gamepad.h"
 
-#define LOGI_BUTTON_A        0x00
-#define LOGI_BUTTON_B        0x01
-#define LOGI_BUTTON_X        0x02
-#define LOGI_BUTTON_Y        0x03
-#define LOGI_BUTTON_LEFT     0x04
-#define LOGI_BUTTON_RIGHT    0x05
-#define LOGI_BUTTON_START    0x06
-#define LOGI_BUTTON_LOGITECH 0x07
-#define LOGI_BUTTON_BACK     0x0A
-#define LOGI_BUTTON_LSTICK   0x0B
-#define LOGI_BUTTON_RSTICK   0x0C
+#define LOGI_BUTTON_A        BTN_A
+#define LOGI_BUTTON_B        BTN_B
+#define LOGI_BUTTON_X        BTN_X
+#define LOGI_BUTTON_Y        BTN_Y
+#define LOGI_BUTTON_LEFT     BTN_TL
+#define LOGI_BUTTON_RIGHT    BTN_TR
+#define LOGI_BUTTON_START    BTN_SELECT
+#define LOGI_BUTTON_BACK     BTN_START
+#define LOGI_BUTTON_LOGITECH BTN_MODE
+#define LOGI_BUTTON_LSTICK   BTN_THUMBL
+#define LOGI_BUTTON_RSTICK   BTN_THUMBR
 
-#define LOGI_AXIS_LSTICK_LEFTRIGHT  0x00
-#define LOGI_AXIS_LSTICK_UPDOWN     0x01
-#define LOGI_AXIS_THROTTLE_LEFT     0x02
-#define LOGI_AXIS_RSTICK_LEFTRIGHT  0x03
-#define LOGI_AXIS_RSTICK_UPDOWN     0x04
-#define LOGI_AXIS_THROTTLE_RIGHT    0x05
-#define LOGI_AXIS_HUD_LEFTRIGHT     0x06
-#define LOGI_AXIS_HUD_UPDOWN        0x07
+#define LOGI_AXIS_LSTICK_LEFTRIGHT  ABS_X
+#define LOGI_AXIS_LSTICK_UPDOWN     ABS_Y
+#define LOGI_AXIS_THROTTLE_LEFT     ABS_Z
+#define LOGI_AXIS_RSTICK_LEFTRIGHT  ABS_RX
+#define LOGI_AXIS_RSTICK_UPDOWN     ABS_RY
+#define LOGI_AXIS_THROTTLE_RIGHT    ABS_RZ
+#define LOGI_AXIS_HUD_LEFTRIGHT     ABS_HAT0X
+#define LOGI_AXIS_HUD_UPDOWN        ABS_HAT0Y
 
-#define STICK_DEADZONE    1000
+#define MAX_THROTTLE_VALUE  1023
 
 class LogitechF : public Gamepad {
     public:
         LogitechF(const char* fn) : Gamepad(fn) {};
 
-        virtual void apply_event( const js_event event );
-        virtual void receive_service() {};
+        virtual void apply_event( const input_event event );
+        // virtual void set_rumble( const uint16_t left_motor, const uint16_t right_motor ) {};
 };
 
 #endif
