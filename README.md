@@ -8,15 +8,14 @@ The new implementation will no longer use the `/dev/input/js*` joystick devices 
 
 ### Information
 
-To use the general event interface the joysticks event file handle needs to be ruled to a non dynamic device handle. At the moment only the **Logitech F710** joystick is used and will be fully integrated. Therefor the backend will currently only implement this joystick.
+To use the general event interface the joysticks event file handle needs to be ruled to a non dynamic device handle. At the moment only the **Logitech F710** and the **Microsoft X-Box One** joysticks are _used_ and will be fully integrated. Therefor the backend will currently only implement these joysticks.
 
-However integrating further joysticks is possible by adapting the applied rules and adding the necessary interface implementations.
-
-
-### Instructions
+However integrating further joysticks is easily possible by adapting the applied rules and adding the necessary interface implementations.
 
 
-### Details
+### How to use
 
+Unlike the old implementation it is no longer necessary to preemptively define the joysticks `/dev/input/*` Path.
+It will now automatically select one of the connected (and implemented) Joysticks.
 
-### TODOs
+If multiple implemented joysticks are recognized, the one with the lowest number of its `/dev/input/js*` handle will be selected. This is usually the first connected joystick device.

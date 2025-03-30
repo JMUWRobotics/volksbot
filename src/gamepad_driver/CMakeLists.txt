@@ -10,13 +10,15 @@ find_package(ament_cmake REQUIRED)
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
+find_package(Threads REQUIRED)
 
 add_executable(gamepad
-    src/gamepad_control.cpp
-    src/gamepad.cpp
-    src/logitechf710.cpp
-    src/xboxONE.cpp
+src/gamepad_control.cpp
+src/gamepad.cpp
+src/logitechf710.cpp
+src/xboxONE.cpp
 )
+target_link_libraries(gamepad PRIVATE Threads::Threads)
 target_include_directories(gamepad PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
   $<INSTALL_INTERFACE:include>)

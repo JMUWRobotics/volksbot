@@ -29,10 +29,9 @@
 
 class XBoxOne : public Gamepad {
     public:
-        XBoxOne(const char* fn) : Gamepad(fn) {};
+        const char* evio_id_name() override { return "Microsoft X-Box One"; }
 
-        virtual void apply_event( const input_event event );
-        // virtual void set_rumble( const uint16_t left_motor, const uint16_t right_motor ) {};
+        void apply_event( const input_event event ) override;
 };
 
 #endif

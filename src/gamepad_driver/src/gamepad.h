@@ -8,6 +8,7 @@
 #include <stdint.h>
 
 #include <linux/input.h>
+#include <pthread.h>
 
 #define EV_TYPE_BUTTON EV_KEY
 #define EV_TYPE_AXIS   EV_ABS
@@ -16,6 +17,7 @@
 #define AXIS_VALUE_MAX  32767
 #define AXIS_VALUE_MIN -32767
 
+#define MAX_UPDATE_RATE_FF_MS   100u
 
 typedef bool    button_t;
 typedef int16_t axis_t;
@@ -26,7 +28,7 @@ struct thumb_stick_t {
     button_t pressed;
 };
 
-struct js_state {
+struct gp_state {
     struct { button_t A, B, X, Y, back, start, home; } buttons;
     struct { button_t up, down, left, right; } hud;
     struct { button_t left, right; } shoulder;
@@ -38,28 +40,65 @@ struct js_state {
 
 class Gamepad {
     public:
-        Gamepad(const char* filename);
+        virtual const char* evio_id_name() { return "NULL"; }
+
+        Gamepad();
         ~Gamepad();
+
+        void init( const char* filename );
         
+        /**
+         * @brief busy waits for incoming events and applies them after reception
+         * 
+         */
         void wait_for_event();
 
+        /**
+         * @brief maps a given input event to the general gamepad state.
+         *        Must be implemented by every inherited implementation. 
+         * @param event input event to be applied/mapped onto its gamepad state
+         */
         virtual void apply_event( const input_event event ) = 0;
-        virtual void set_rumble( const uint16_t mag_strong, const uint16_t mag_weak );
 
-        void publish_event();
-        void publish_state();
+        /**
+         * @brief Set the strength of rumble effect of the gamepad.
+         * @note  Has no effect on gamepads that dont have rumble capabilities  
+         * 
+         * @param mag_strong [min:0x0000-max:0xffff] magnitude of the strong rumble effect
+         * @param mag_weak   [min:0x0000-max:0xffff] magnitude of the weak rumble effect
+         */
+        void set_rumble( const uint16_t mag_strong, const uint16_t mag_weak );
 
-        // Manly for debuging
+        uint32_t    get_last_event_id() const { return id;  }
+        input_event get_last_event()    const { return gpe; }
+        gp_state    get_state()         const { return gps; }
+    
+        // for debuging
         void print_state();
         void print_event();
         void print_evio();
-
-        uint16_t    id;
-        input_event jse;
-        js_state    jss;
+        
     protected:
+        /**
+         * @brief handles and writes the rumble effect to the event file handle.
+         *        Can be overriden if base implementation does not work for a gamepad implementation.
+         */
+        virtual void handle_rumble();
+
+        // state variables
+        uint32_t    id;     /* rolling input event id */
+        input_event gpe;    /* last gamepad event */
+        gp_state    gps;    /* current gamepad state */
+    
         ff_effect effect;
+
         int fd_read, fd_write;
+
+    private:
+        // Threading utilities for the rumble effect management
+        friend void* rumble_function(void*);
+        pthread_mutex_t mux_rumble = PTHREAD_MUTEX_INITIALIZER;
+        pthread_t thread_rumble;
 };
 
 
