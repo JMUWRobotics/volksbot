@@ -11,6 +11,13 @@
 // 
 //         Author:  Jan Elseberg (), jelseber@uos.de
 //        Company:  Universitaet Osnabrueck
+//
+//        -----------------------
+//        Updated to ROS2
+//
+//        Author: Maximilian Gmoehling 
+//        Company: Universitaet Wuerzburg
+//        Date: 2025-03-31
 // 
 // =====================================================================================
 #include "rclcpp/rclcpp.hpp"
