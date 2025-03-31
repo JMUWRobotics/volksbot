@@ -15,20 +15,42 @@
 // =====================================================================================
 #include "rclcpp/rclcpp.hpp"
 #include <tf2_ros/transform_broadcaster.h>
+#include <geometry_msgs/msg/transform_stamped.hpp>
+#include <tf2/LinearMath/Quaternion.h>
 
 int main(int argc, char** argv){
   rclcpp::init(argc, argv);
-  auto n = rclcpp::Node::make_shared("volksbot_calibration");
 
-  rclcpp::Rate r(50);
+  //creates node and shared pointer to this node
+  auto node = rclcpp::Node::make_shared("volksbot_calibration"); 
 
-  std::shared_ptr<tf2_ros::TransformBroadcaster> broadcaster;
+  // 50Hz loop frequency
+  rclcpp::Rate r(50); 
 
-  while(n.ok()){
-    broadcaster->sendTransform(
-      tf2::StampedTransform(
-        tf2::Transform(tf2::Quaternion(0, 0, 0, 1), tf2::Vector3(0.12, 0.0, 0.24)), // 24 cm to the top and 12 to the front
-        rclcpp::Time::now(),"base_link", "front_laser"));
+  // create broadcaster for node
+  auto broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(node);
+
+  //checks if ROS2 is still running
+  while(rclcpp::ok()){ 
+    geometry_msgs::msg::TransformStamped transformStamped;
+    
+    // set header
+    transformStamped.header.stamp = this->get_clock()->now();
+    transformStamped.header.frame_id = "base_link";
+    transformStamped.child_frame_id = "front_laser";
+
+    // 24 cm to the top and 12 to the front
+    transformStamped.transform.translation.x = 0.12;
+    transformStamped.transform.translation.y = 0.0;
+    transformStamped.transform.translation.z = 0.24;
+
+    // identity quaternion
+    transformStamped.transform.rotation.x = 0.0;
+    transformStamped.transform.rotation.y = 0.0;
+    transformStamped.transform.rotation.z = 0.0;
+    transformStamped.transform.rotation.w = 1.0;
+
+    broadcaster_->sendTransform(transformStamped);
     r.sleep();
   }
 }
