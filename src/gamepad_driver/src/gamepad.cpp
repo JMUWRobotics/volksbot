@@ -1,10 +1,22 @@
+/////////////////////////////////////////////////////////////////////////////
+// @file    gamepad.cpp
+// @brief   implementation of gamepad and joystick event in- and outputs
+// @author  Nico Schubert
+// @date    31.03.2025
+/////////////////////////////////////////////////////////////////////////////
+
+
 #ifndef __GAMEPAD_CPP__
 #define __GAMEPAD_CPP__
 
 #include "gamepad.h"
+#include "device_utils.h"
 
 #include <linux/input.h>
+#include <dirent.h>
+
 #include <sys/ioctl.h>
+#include <sys/stat.h>
 #include <string.h>
 #include <time.h>
 #include <pthread.h>
@@ -24,67 +36,14 @@
 #define COL(code, str)  "\x1b[" #code "m" str "\x1b[0m"
 
 
-void* rumble_function(void* arg);
+//-----------------------------------------------------------------------------
+// Gamepad Implementation
+//-----------------------------------------------------------------------------
 
-Gamepad::Gamepad() : id(0), gpe(), gps(), fd_read(-1), fd_write(-1) {}
-
-void Gamepad::init( const char* filename ) {
-    if( !(fd_read == -1 && fd_write == -1) ) {
-        printf( COL(93, "Gamepad is already initialized!\n") );
-        return;
-    }
-
-    fd_read  = open( filename, O_RDONLY | O_NONBLOCK );
-    fd_write = open( filename, O_WRONLY );
-    
-    if ( fd_read < 0 || fd_write < 0 ) {
-        printf( COL(91, "Gamepad %s not found!\n"), filename);
-        exit(0);
-    }
-
-    // setup force feedback
-    effect.id = -1;
-    effect.type = FF_RUMBLE;
-
-    effect.replay.length = MAX_UPDATE_RATE_FF_MS;
-    effect.replay.delay = 0;
-
-    int ret = pthread_create( &thread_rumble, NULL, &rumble_function, this );
-
-    if( ret ) {
-        printf( COL(93, "Failed to initiate backend rumble thread! Rumbling of the gamepad will now not work!\n" ) );
-        printf( COL(93, "Try to restart the Application if rumbling of the gamepad is required." ) );
-    }
-
-    pthread_detach( thread_rumble );
-}
+Gamepad::Gamepad() : id(0), gpe(), gps(), fd_rw(-1) {}
 
 Gamepad::~Gamepad() {
-    input_event stop;
-
-    /* Stop the effect */
-    stop.type = EV_FF;
-    stop.code = effect.id;
-    stop.value = 0;
-
-    write( fd_write, &stop, sizeof(stop) );
-
-    close(fd_read);
-    close(fd_write);
-}
-
-
-void Gamepad::wait_for_event() {
-    input_event js;
-
-    if( read(fd_read, &js, sizeof(input_event) ) == sizeof(input_event) ) {   
-        // EV_SYN: Event separator -> Ignore
-        if( js.type == EV_SYN )
-            return;
-        
-        id++;
-        apply_event( js );
-    }
+    disconnect();
 }
 
 
@@ -104,12 +63,111 @@ void* rumble_function(void* arg) {
     }
 }
 
+void Gamepad::connect( const char* filename ) {
+    if( fd_rw != -1 ) {
+        printf( COL(93, "Gamepad is already connected!\n") );
+        return;
+    }
+
+    fd_rw = open( filename, O_RDWR | O_NONBLOCK );
+    
+    if( fd_rw < 0 ) {
+        fd_rw = -1;
+        printf( COL(91, "Gamepad %s not found!\n"), filename);
+        return;
+    }
+
+    // setup name and serial number of device
+    device_serial_number = "";
+    device_util::get_usb_serial_of_input_event( filename, device_serial_number );
+    
+    char buff[512];
+    ioctl( fd_rw, EVIOCGNAME(sizeof(buff)), buff );
+    name = std::string( buff );
+    
+
+    // setup force feedback - rumble
+    effect.id = -1;
+    effect.type = FF_RUMBLE;
+
+    effect.replay.length = MAX_UPDATE_RATE_FF_MS;
+    effect.replay.delay = 0;
+
+    if( has_rumble() ) {
+        int ret = pthread_create( &thread_rumble, NULL, &rumble_function, this );
+    
+        if( ret ) {
+            printf( COL(93, "Failed to initiate backend rumble thread! Rumbling of the gamepad will now not work!\n" ) );
+            printf( COL(93, "Try to restart the Application if rumbling of the gamepad is required." ) );
+        } else {
+            pthread_detach( thread_rumble );
+        }
+    }
+}
+
+void Gamepad::disconnect() {
+    if( fd_rw == -1 ) {
+        printf( COL(93, "Gamepad is already disconnected!\n") );
+        return;
+    }
+
+    input_event stop;
+
+    /* Stop the effect */
+    stop.type = EV_FF;
+    stop.code = effect.id;
+    stop.value = 0;
+
+    write( fd_rw, &stop, sizeof(stop) );
+
+    close( fd_rw );
+    fd_rw = -1;
+}
+
+bool Gamepad::has_connection() const {
+    if( fd_rw == -1 ) {
+        return false;
+    }
+    
+    struct stat s;
+
+    fstat(fd_rw, &s);
+    if( s.st_nlink < 1 ){
+        return false;
+    }
+    
+    return true;
+}
+
+
+void Gamepad::wait_for_event() {
+    input_event js;
+
+    if( read(fd_rw, &js, sizeof(input_event) ) == sizeof(input_event) ) {   
+        // EV_SYN: Event separator -> Ignore
+        if( js.type == EV_SYN )
+            return;
+        
+        id++;
+        apply_event( js );
+    }
+}
+
+
 void Gamepad::set_rumble( const uint16_t mag_strong, const uint16_t mag_weak ) {
     LOCK( &mux_rumble );
     effect.u.rumble.strong_magnitude = mag_strong;
     effect.u.rumble.weak_magnitude   = mag_weak;
     UNLOCK( &mux_rumble );
 }
+
+bool Gamepad::has_rumble() const {
+    uint64_t evtype_b = 0;
+    ioctl(fd_rw, EVIOCGBIT(0, EV_MAX), &evtype_b);
+
+    return bool(evtype_b & (1 << EV_FF));
+}
+
 
 void Gamepad::handle_rumble() {
     input_event ie;
@@ -122,15 +180,16 @@ void Gamepad::handle_rumble() {
     // write( fd_write, &ie, sizeof(ie) );
 
     /* Setting the effect */
-    ioctl( fd_write, EVIOCSFF, &effect );
+    ioctl( fd_rw, EVIOCSFF, &effect );
 
     /* Play the effect */
     ie.value = 1;
-    write( fd_write, &ie, sizeof(ie) );
+    write( fd_rw, &ie, sizeof(ie) );
 }
 
 
-void Gamepad::print_event() {
+
+void Gamepad::print_event() const {
     printf( "ID: " COL(94, "%d") "\n", id );
     printf( "time : \n");
     printf( "  sec: " COL(94, "%8ld") "\n", gpe.time.tv_sec   );
@@ -144,7 +203,7 @@ void Gamepad::print_event() {
 
 #define STR_BOOL(s, v) ( (v) ? COL(42, " " s " ") : COL(41,  " " s " ") )
 #define PERCENT(x) ( (int16_t)( 100.0 * (x) / 32767.0 ) )
-void Gamepad::print_state() {
+void Gamepad::print_state() const {
     printf( "ID: " COL(94, "%d") "\n", id );
     printf( "Buttons: %s %s %s %s  %s %s %s  %s %s\n", 
         STR_BOOL( "A", gps.buttons.A ),
@@ -193,14 +252,37 @@ void Gamepad::print_state() {
 
     printf( "\x1b[11F" );
 }
-void Gamepad::print_evio() {
-    char name[256];
-    ioctl( fd_write, EVIOCGNAME(sizeof(name)), name );
-    printf( "\nDevice Name: " COL(1;94, "%s") "\n", name );
+void Gamepad::print_evio() const {
+    if( !has_connection() ) {
+        return;
+    }
+
+    printf( COL(1, "\nSerial Number: ") COL(1;94, "%s") "\n", device_serial_number.c_str() );
+
+    char buff[512];
+    ioctl( fd_rw, EVIOCGNAME(sizeof(buff)), buff );
+    printf( "Device Name: " COL(1;94, "%s") "\n", buff );
+
+    ioctl( fd_rw, EVIOCGPHYS(sizeof(buff)), buff );
+    printf( "Physical Path: " COL(94, "%s") "\n", buff );
+
+    ioctl( fd_rw, EVIOCGUNIQ(sizeof(buff)), buff );
+    printf( "Unique ID: " COL(94, "%s") "\n", buff );
+
+    ioctl( fd_rw, EVIOCGPROP(sizeof(buff)), buff );
+    printf( "Device Properties: " COL(94, "%s") "\n", buff );
+
+    input_id id;
+    ioctl( fd_rw, EVIOCGID, &id );
+    printf("\nID:\n");
+    printf("bustype: " COL(94, "0x%4x") "\n", id.bustype);
+    printf("vendor : " COL(94, "0x%4x") "\n", id.vendor );
+    printf("product: " COL(94, "0x%4x") "\n", id.product);
+    printf("version: " COL(94, "0x%4x") "\n", id.version);
 
 
     uint64_t evtype_b = 0;
-    ioctl(fd_write, EVIOCGBIT(0, EV_MAX), &evtype_b);    
+    ioctl(fd_rw, EVIOCGBIT(0, EV_MAX), &evtype_b);  
     printf("\nSupported event types:\n");
     for ( int yalv = 0; yalv < EV_MAX; yalv++ ) {
         if ((evtype_b >> yalv) & 1) {
@@ -225,7 +307,7 @@ void Gamepad::print_evio() {
     
 
     __uint128_t features = 0;
-    ioctl( fd_write, EVIOCGBIT(EV_FF, sizeof(features)), &features );
+    ioctl( fd_rw, EVIOCGBIT(EV_FF, sizeof(features)), &features );
     printf("\nSupported force feedback features:\n");
     for ( int yalv = 0; yalv < FF_MAX; yalv++ ) {
         if ((features >> yalv) & 1) {
@@ -254,8 +336,8 @@ void Gamepad::print_evio() {
     }
 
     int eff_cnt = 0;
-    ioctl( fd_write, EVIOCGEFFECTS, &eff_cnt );
-    printf( "\nEffect count: " COL(94, "%d\n"), eff_cnt );
+    ioctl( fd_rw, EVIOCGEFFECTS, &eff_cnt );
+    printf( "\nEffect count: " COL(94, "%d") "\n", eff_cnt );
 }
 
 

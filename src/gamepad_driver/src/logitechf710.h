@@ -1,3 +1,11 @@
+/////////////////////////////////////////////////////////////////////////////
+// @file    logitechf710.h
+// @brief   Implementation of Gamepad interface for the logitech F710 gamepad
+// @author  Nico Schubert
+// @date    31.03.2025
+/////////////////////////////////////////////////////////////////////////////
+
+
 #ifndef __LOGITECHF170_HPP__
 #define __LOGITECHF170_HPP__
 
@@ -28,7 +36,7 @@
 
 class LogitechF : public Gamepad {
     public:
-        const char* evio_id_name() override { return "Logitech Gamepad F710"; }
+        const char* evio_id_name() const override { return "Logitech Gamepad F710"; }
 
         void apply_event( const input_event event ) override;
 };

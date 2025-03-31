@@ -1,3 +1,11 @@
+/////////////////////////////////////////////////////////////////////////////
+// @file    xboxONE.h
+// @brief   Implementation of Gamepad interface for the Microsoft X-Box ONE gamepad
+// @author  Nico Schubert
+// @date    31.03.2025
+/////////////////////////////////////////////////////////////////////////////
+
+
 #ifndef __XBOXONE_HPP__
 #define __XBOXONE_HPP__
 
@@ -29,7 +37,7 @@
 
 class XBoxOne : public Gamepad {
     public:
-        const char* evio_id_name() override { return "Microsoft X-Box One"; }
+        const char* evio_id_name() const override { return "Microsoft X-Box One"; }
 
         void apply_event( const input_event event ) override;
 };

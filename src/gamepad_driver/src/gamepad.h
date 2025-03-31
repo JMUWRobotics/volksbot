@@ -1,3 +1,11 @@
+/////////////////////////////////////////////////////////////////////////////
+// @file    gamepad.h
+// @brief   Gamepad interface to implement gamepad and joystick event in- and outputs
+// @author  Nico Schubert
+// @date    31.03.2025
+/////////////////////////////////////////////////////////////////////////////
+
+
 #ifndef __GAMEPAD_HPP__
 #define __GAMEPAD_HPP__
 
@@ -7,6 +15,7 @@
 #include <fcntl.h>
 #include <stdint.h>
 
+#include <string>
 #include <linux/input.h>
 #include <pthread.h>
 
@@ -40,16 +49,35 @@ struct gp_state {
 
 class Gamepad {
     public:
-        virtual const char* evio_id_name() { return "NULL"; }
+        virtual const char* evio_id_name() const { return "NULL"; }
 
         Gamepad();
         ~Gamepad();
 
-        void init( const char* filename );
+        /**
+         * @brief Connect this Gamepad to an event handle 
+         * 
+         * @param filename file name of the input event file handle to be connected to
+         *                 (must be an input event in `/dev/input/`)
+         */
+        void connect( const char* filename );
+
+        /**
+         * @brief disconnect from any previously connected event handles
+         */
+        void disconnect();
+
+        /**
+         * @brief returns true iff a valid data connection to the gamepad device is present.
+         * 
+         * @return true if gamepad device is still connected to the pc
+         * @return false if gamepad device has no connection to the pc 
+         */
+        bool has_connection() const;
         
         /**
          * @brief busy waits for incoming events and applies them after reception
-         * 
+         * @note  will not block when disconnected
          */
         void wait_for_event();
 
@@ -68,15 +96,21 @@ class Gamepad {
          * @param mag_weak   [min:0x0000-max:0xffff] magnitude of the weak rumble effect
          */
         void set_rumble( const uint16_t mag_strong, const uint16_t mag_weak );
+        
+        ff_rumble_effect get_rumble() const { return effect.u.rumble; };
+        
+        bool has_rumble() const;
 
+        std::string get_serial_number() const { return device_serial_number; }
+        std::string get_name()          const { return name; }
         uint32_t    get_last_event_id() const { return id;  }
         input_event get_last_event()    const { return gpe; }
         gp_state    get_state()         const { return gps; }
     
         // for debuging
-        void print_state();
-        void print_event();
-        void print_evio();
+        void print_state() const;
+        void print_event() const;
+        void print_evio()  const;
         
     protected:
         /**
@@ -90,9 +124,12 @@ class Gamepad {
         input_event gpe;    /* last gamepad event */
         gp_state    gps;    /* current gamepad state */
     
-        ff_effect effect;
+        ff_effect effect;   /* force feed back effect  */
 
-        int fd_read, fd_write;
+        int fd_rw;          /* event file descriptor */
+        
+        std::string device_serial_number; /* USB Serial number - to ID individual gamepads */
+        std::string name;                 /* Gamepad Name */
 
     private:
         // Threading utilities for the rumble effect management
