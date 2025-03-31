@@ -172,7 +172,7 @@ void Odometry::convertTicks2Odom(const volksbot::msg::Ticks::ConstSharedPtr& cti
   publisher_->publish(odom);
 
   if(publish_tf) {
-    rclcpp::Time current_time = rclcpp::Time::now();
+    rclcpp::Time current_time = this->get_clock()->now();
     odom_trans.header.stamp = current_time;// no timestamp data TODO
     odom_trans.header.frame_id = "odom_combined";
     odom_trans.child_frame_id = "base_link";
@@ -192,7 +192,7 @@ void Odometry::update(int rate) {
   rclcpp::Rate loop_rate(rate);
 
   while (rclcpp::ok()) {
-    rclcpp::Time current = rclcpp::Time::now();
+    rclcpp::Time current = this->get_clock()->now();
     odom.header.stamp= current;// no timestamp data TODO
 
     publisher_->publish(odom);

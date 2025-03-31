@@ -28,7 +28,7 @@
 int main(int argc, char** argv){
   rclcpp::init(argc, argv);
 
-  //creates node and shared pointer to this node
+  //shared pointer to node
   auto node = rclcpp::Node::make_shared("volksbot_calibration"); 
 
   // 50Hz loop frequency
@@ -42,7 +42,7 @@ int main(int argc, char** argv){
     geometry_msgs::msg::TransformStamped transformStamped;
     
     // set header
-    transformStamped.header.stamp = this->get_clock()->now();
+    transformStamped.header.stamp = node->get_clock()->now();
     transformStamped.header.frame_id = "base_link";
     transformStamped.child_frame_id = "front_laser";
 

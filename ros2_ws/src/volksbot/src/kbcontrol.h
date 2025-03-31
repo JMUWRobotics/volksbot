@@ -5,14 +5,15 @@
 
 namespace volksbot {
 
-  class kbcontrol {
+  class kbcontrol : public rclcpp::Node {
     private:
 
-      rclcpp::Node n;
-      ros::ServiceClient client;
-      volksbot::srv::velocities velocity;
-      double speed;
-      int kfd;
+      // declare client and request pointer 
+      rclcpp::Client<volksbot::srv::Velocities>::SharedPtr client_;
+      std::shared_ptr<volksbot::srv::Velocities::Request> velocity_;
+
+      double speed_;
+      int kfd_;
 
       void setVelocity(char c);
 

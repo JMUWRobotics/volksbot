@@ -3,7 +3,7 @@
 #include "rclcpp/rclcpp.hpp"
 
 // msgs
-#include "geometry_msgs/msg/quaternion.hpp"
+#include <geometry_msgs/msg/transform_stamped.hpp>
 #include "nav_msgs/msg/odometry.hpp"
 
 // custom msgs

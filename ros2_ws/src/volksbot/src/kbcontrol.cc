@@ -21,43 +21,45 @@
 #define KEYCODE_A 0x61
 #define KEYCODE_Y 0x79
 
-// service
-#include <volksbot/srv/velocities.hpp>
-
 #include "kbcontrol.h"
 
 namespace volksbot {
 
-kbcontrol::kbcontrol() {
-  velocity.request.left = 0;
-  velocity.request.right = 0;
-  speed = 0.0;
-  kfd = 0;
+kbcontrol::kbcontrol() : Node("kbcontrol_node") {
+
+  //initilize client and request pointer
+  client_ = this->create_client<volksbot::srv::Velocities>("kbcontrol_client");
+  velocity_ = std::make_shared<volksbot::srv::Velocities::Request>();
+
+  velocity_->left = 0;
+  velocity_->right = 0;
+  speed_ = 0.0;
+  kfd_ = 0;
 }
 
 void kbcontrol::setVelocity(char c) {
     switch(c)
     {
       case KEYCODE_L:
-        velocity.request.left = -speed;
-        velocity.request.right = speed;
+        velocity_->left = -speed_;
+        velocity_->right = speed_;
         break;
       case KEYCODE_R:
-        velocity.request.left = speed;
-        velocity.request.right = -speed;
+        velocity_->left = speed_;
+        velocity_->right = -speed_;
         break;
       case KEYCODE_U:
-        velocity.request.left = -speed;
-        velocity.request.right = -speed;
+        velocity_->left = -speed_;
+        velocity_->right = -speed_;
         break;
       case KEYCODE_D:
-        velocity.request.left = speed;
-        velocity.request.right = speed;
+        velocity_->left = speed_;
+        velocity_->right = speed_;
         break;
       case KEYCODE_Q:
         speed = 0;
-        velocity.request.left = speed;
-        velocity.request.right = speed;
+        velocity_->left = speed_;
+        velocity_->right = speed_;
         break;
     }
 }
@@ -66,28 +68,28 @@ void kbcontrol::run() {
   char c,previous;
   previous = KEYCODE_Q;
   struct termios cooked;
-  tcgetattr(kfd, &cooked);
+  tcgetattr(kfd_, &cooked);
   cooked.c_lflag &=~ (ICANON | ECHO);
   // Setting a new line, then end of file                         
   cooked.c_cc[VEOL] = 1;
   cooked.c_cc[VEOF] = 2;
-  tcsetattr(kfd, TCSANOW, &cooked);
+  tcsetattr(kfd_, TCSANOW, &cooked);
   
   rclcpp::Rate loop_rate(5);
 
   while (rclcpp::ok() ) {
     c = KEYCODE_Q;
-    read(kfd, &c, 1);
+    read(kfd_, &c, 1);
     
     switch(c)
     {
       case KEYCODE_A:
-        speed += 10;
-        if (speed > 100.0) speed = 100.0;
+        speed_ += 10;
+        if (speed_ > 100.0) speed_ = 100.0;
         setVelocity(previous);
         break;
       case KEYCODE_Y:
-        speed *= 0.9;
+        speed_ *= 0.9;
         setVelocity(previous);
         break;
       default:
@@ -95,9 +97,11 @@ void kbcontrol::run() {
         break;
     }
     setVelocity(c);
-    printf("Call servic: %f %f\n", velocity.request.left, velocity.request.right);
-    ros::service::call("Controls", velocity);
+    printf("Call servic: %f %f\n", velocity_->left, velocity_->right);
+    //FIXME: migrate service call to ros2
+    ros::service::call("Controls", velocity_);
     
+    //FIXME: error spin_some
     rclcpp::spin_some(node);
     loop_rate.sleep();
   }
@@ -108,8 +112,7 @@ void kbcontrol::run() {
 int main(int argc, char* argv[])
 {
   rclcpp::init(argc, argv);
-  auto node = rclcpp::Node::make_shared("keyboard_control");
-  volksbot::kbcontrol controller;
-  controller.run();
+  auto controller = std::make_shared<volksbot::kbcontrol>();
+  controller->run();
 	return 0;
 }
