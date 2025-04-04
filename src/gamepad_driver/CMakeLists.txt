@@ -14,7 +14,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(Threads REQUIRED)
-
+find_package(volksface REQUIRED)
 
 add_executable(gamepad
   src/volksbot_adapter.cpp
@@ -23,14 +23,17 @@ add_executable(gamepad
   src/logitechf710.cpp
   src/xboxONE.cpp
 )
-ament_target_dependencies(gamepad rclcpp std_msgs Threads)
-target_include_directories(gamepad PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
-  $<INSTALL_INTERFACE:include>)
-target_compile_features(gamepad PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+ament_target_dependencies(gamepad rclcpp Threads volksface)
+
+# target_include_directories(gamepad PUBLIC
+#   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+#   $<INSTALL_INTERFACE:include>)
+# target_compile_features(gamepad PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
 
 install(TARGETS gamepad
-  DESTINATION lib/${PROJECT_NAME})
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

@@ -11,6 +11,7 @@
 
 #include "gamepad.h"
 
+
 #define LOGI_BUTTON_A        BTN_A
 #define LOGI_BUTTON_B        BTN_B
 #define LOGI_BUTTON_X        BTN_X
@@ -37,8 +38,9 @@
 class LogitechF : public Gamepad {
     public:
         const char* evio_id_name() const override { return "Logitech Gamepad F710"; }
+        axis_t get_default_deadzone() const override { return 1000; }
 
-        void apply_event( const input_event event ) override;
+        gp_event_t map_event( const input_event event ) override;
 };
 
 #endif

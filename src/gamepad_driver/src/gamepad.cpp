@@ -40,7 +40,7 @@
 // Gamepad Implementation
 //-----------------------------------------------------------------------------
 
-Gamepad::Gamepad() : id(0), gpe(), gps(), fd_rw(-1) {}
+Gamepad::Gamepad() : id(0), gp_ie(), gp_s(), gp_e(), fd_rw(-1) {}
 
 Gamepad::~Gamepad() {
     disconnect();
@@ -85,6 +85,7 @@ void Gamepad::connect( const char* filename ) {
     ioctl( fd_rw, EVIOCGNAME(sizeof(buff)), buff );
     name = std::string( buff );
     
+    deadzone = get_default_deadzone();
 
     // setup force feedback - rumble
     effect.id = -1;
@@ -140,6 +141,19 @@ bool Gamepad::has_connection() const {
 }
 
 
+void Gamepad::apply_event( const gp_event_t event ) {
+    gp_e = event;
+
+    uint8_t* byte_ptr = (uint8_t*) &gp_s;
+    
+    byte_ptr[ event.code ] = event.value.btn;
+
+    if( event.is_axis ) {
+        byte_ptr[ event.code+1 ] = (uint8_t)( (uint16_t)event.value.axis >> 8 );
+    }
+}
+
+
 void Gamepad::wait_for_event() {
     input_event js;
 
@@ -149,7 +163,7 @@ void Gamepad::wait_for_event() {
             return;
         
         id++;
-        apply_event( js );
+        apply_event( map_event( js ) );
     }
 }
 
@@ -188,17 +202,41 @@ void Gamepad::handle_rumble() {
 }
 
 
+static constexpr char gp_index_LUT[][20] = {
+    // buttons
+    "A", "B", "X", "Y", "BACK", "START", "HOME",
+    
+    // shoulder
+    "LB", "RB", "",
+    
+    // throttle
+    "LT", "", "RT", "",
 
+    // hud
+    "HUD_LEFT_RIGHT", "", "HUD_UP_DOWN", "",
+
+    // thumb sticks
+    "THUMB_L_LEFT_RIGHT", "", "THUMB_L_UP_DOWN", "", "THUMB_L_PRESSED", "",
+    "THUMB_R_LEFT_RIGHT", "", "THUMB_R_UP_DOWN", "", "THUMB_R_PRESSED", ""
+};
 void Gamepad::print_event() const {
+    printf( "INPUT EVENT --------------------------\n" );
     printf( "ID: " COL(94, "%d") "\n", id );
     printf( "time : \n");
-    printf( "  sec: " COL(94, "%8ld") "\n", gpe.time.tv_sec   );
-    printf( " µsec: " COL(94, "%8ld") "\n", gpe.time.tv_usec  );
-    printf( "type : " COL(94, "%6x" ) "\n", gpe.type   );
-    printf( "code : " COL(94, "%6x" ) "\n", gpe.code   );
-    printf( "value: " COL(94, "%6d" ) "\n", gpe.value  );
+    printf( "  sec: " COL(94, "%8ld") "\n", gp_ie.time.tv_sec   );
+    printf( " µsec: " COL(94, "%8ld") "\n", gp_ie.time.tv_usec  );
+    printf( "type : " COL(94, "%6x" ) "\n", gp_ie.type   );
+    printf( "code : " COL(94, "%6x" ) "\n", gp_ie.code   );
+    printf( "value: " COL(94, "%6d" ) "\n", gp_ie.value  );
 
-    printf( "\x1b[7F" );
+    printf( "\nGAMEPAD EVENT ------------------------\n" );
+    printf( "       is_axis: " COL(94, "%5s") "\n", gp_e.is_axis ? "true" : "false" );
+    printf( "       code-id: " COL(94, "%2d") "\n", gp_e.code );
+    printf( "          code: " COL(94, "%-20s") "\n", gp_e.code==gp_index::INVALID ? "INVALID" : gp_index_LUT[ gp_e.code ] );
+    printf( "value (axis)  : " COL(94, "%6d") "\n", gp_e.value.axis );
+    printf( "value (button): " COL(94, "%5s") "\n", gp_e.value.btn ? "true" : "false" );
+
+    printf( "\x1b[15F" );
 }
 
 #define STR_BOOL(s, v) ( (v) ? COL(42, " " s " ") : COL(41,  " " s " ") )
@@ -206,43 +244,40 @@ void Gamepad::print_event() const {
 void Gamepad::print_state() const {
     printf( "ID: " COL(94, "%d") "\n", id );
     printf( "Buttons: %s %s %s %s  %s %s %s  %s %s\n", 
-        STR_BOOL( "A", gps.buttons.A ),
-        STR_BOOL( "B", gps.buttons.B ),
-        STR_BOOL( "X", gps.buttons.X ),
-        STR_BOOL( "Y", gps.buttons.Y ),
+        STR_BOOL( "A", gp_s.buttons.A ),
+        STR_BOOL( "B", gp_s.buttons.B ),
+        STR_BOOL( "X", gp_s.buttons.X ),
+        STR_BOOL( "Y", gp_s.buttons.Y ),
 
-        STR_BOOL( "start", gps.buttons.start ),
-        STR_BOOL( "back" , gps.buttons.back  ),
-        STR_BOOL( "home" , gps.buttons.home  ),
+        STR_BOOL( "start", gp_s.buttons.start ),
+        STR_BOOL( "back" , gp_s.buttons.back  ),
+        STR_BOOL( "home" , gp_s.buttons.home  ),
 
-        STR_BOOL( "LB", gps.shoulder.left ),
-        STR_BOOL( "RB", gps.shoulder.right )
+        STR_BOOL( "LB", gp_s.shoulder.left ),
+        STR_BOOL( "RB", gp_s.shoulder.right )
     );
-    printf( "HUD:     %s %s %s %s\n", 
-        STR_BOOL( "UP"   , gps.hud.up    ),
-        STR_BOOL( "DOWN" , gps.hud.down  ),
-        STR_BOOL( "LEFT" , gps.hud.left  ),
-        STR_BOOL( "RIGHT", gps.hud.right )
-    );
+    printf( "HUD:\n" );
+    printf( "LEFT_RIGHT: %s\n",  gp_s.hud.left_right == 0 ? "       " : ( gp_s.hud.left_right > 0 ? COL(42, " LEFT ") : COL(42, " RIGHT ") ) );
+    printf( "UP_DOWN:     %s\n", gp_s.hud.up_down    == 0 ? "       " : ( gp_s.hud.up_down    > 0 ? COL(42, "  UP  ") : COL(42, " DOWN ")  ) );
     
     printf( "\n" );
-    printf( "LT: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n", gps.throttle.left , PERCENT(gps.throttle.left) );
-    printf( "RT: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n", gps.throttle.right, PERCENT(gps.throttle.right) );
+    printf( "LT: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n", gp_s.throttle.left , PERCENT(gp_s.throttle.left) );
+    printf( "RT: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n", gp_s.throttle.right, PERCENT(gp_s.throttle.right) );
     printf("\n");
     
     printf( "L Stick (left, up): %s " COL(94, "%6d") ", " COL(94, "%6d") " ( " COL(94, "%4d") "%%, " COL(94, "%4d") "%%)\n",
-        STR_BOOL("btn", gps.thumb_stick_left.pressed ),
-        gps.thumb_stick_left.left_right ,
-        gps.thumb_stick_left.up_down ,
-        PERCENT(gps.thumb_stick_left.left_right) ,
-        PERCENT(gps.thumb_stick_left.up_down) 
+        STR_BOOL("btn", gp_s.thumb_stick_left.pressed ),
+        gp_s.thumb_stick_left.left_right ,
+        gp_s.thumb_stick_left.up_down ,
+        PERCENT(gp_s.thumb_stick_left.left_right) ,
+        PERCENT(gp_s.thumb_stick_left.up_down) 
     );
     printf( "R Stick (left, up): %s " COL(94, "%6d") ", " COL(94, "%6d") " ( " COL(94, "%4d") "%%, " COL(94, "%4d") "%%)\n",
-        STR_BOOL("btn", gps.thumb_stick_right.pressed),
-        gps.thumb_stick_right.left_right,
-        gps.thumb_stick_right.up_down,
-        PERCENT(gps.thumb_stick_right.left_right),
-        PERCENT(gps.thumb_stick_right.up_down)
+        STR_BOOL("btn", gp_s.thumb_stick_right.pressed),
+        gp_s.thumb_stick_right.left_right,
+        gp_s.thumb_stick_right.up_down,
+        PERCENT(gp_s.thumb_stick_right.left_right),
+        PERCENT(gp_s.thumb_stick_right.up_down)
     );
 
     printf( "\nRumble: strong: " COL(94, "%6d") " (" COL(94, "%3d") "%%), weak: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n",
@@ -250,7 +285,7 @@ void Gamepad::print_state() const {
         effect.u.rumble.weak_magnitude, PERCENT(effect.u.rumble.weak_magnitude)
     );
 
-    printf( "\x1b[11F" );
+    printf( "\x1b[13F" );
 }
 void Gamepad::print_evio() const {
     if( !has_connection() ) {
