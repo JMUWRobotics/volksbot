@@ -20,6 +20,7 @@ find_package(tf2_ros REQUIRED)
 find_package(std_srvs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 
 # Define ROS 2 messages and services
 rosidl_generate_interfaces(${PROJECT_NAME}
@@ -60,7 +61,7 @@ install(FILES ${EPOS2_CMD_LIBRARY} DESTINATION lib)
 
 # Define EPOS2 library
 add_library(EPOS2 src/epos2/epos2.cpp)
-ament_target_dependencies(EPOS2 rclcpp)
+ament_target_dependencies(EPOS2 rclcpp std_srvs geometry_msgs)
 target_link_libraries(EPOS2 ${EPOS2_CMD_LIBRARY} "${cpp_typesupport_target}")
 
 # Define VMCLIB library
@@ -82,12 +83,17 @@ add_library(VMCLIB
   src/SupportClasses/CMultisend.cpp
   src/SupportClasses/CTimestamp.cpp
 )
-ament_target_dependencies(VMCLIB rclcpp)
+ament_target_dependencies(VMCLIB rclcpp geometry_msgs std_srvs)
 target_link_libraries(VMCLIB "${cpp_typesupport_target}") 
 
 # Define Odo library
 add_library(odo src/odometry.cc)
-ament_target_dependencies(odo rclcpp)
+ament_target_dependencies(odo 
+  rclcpp 
+  geometry_msgs 
+  nav_msgs 
+  tf2_geometry_msgs
+)
 target_link_libraries(odo "${cpp_typesupport_target}") 
 
 # Define volksbot_node executable

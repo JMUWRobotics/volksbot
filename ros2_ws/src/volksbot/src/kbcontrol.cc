@@ -57,7 +57,7 @@ void kbcontrol::setVelocity(char c) {
         velocity_->right = speed_;
         break;
       case KEYCODE_Q:
-        speed = 0;
+        speed_ = 0;
         velocity_->left = speed_;
         velocity_->right = speed_;
         break;
