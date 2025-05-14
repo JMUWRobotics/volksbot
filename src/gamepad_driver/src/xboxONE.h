@@ -33,7 +33,7 @@
 #define XBOX_AXIS_HUD_LEFTRIGHT     ABS_HAT0X
 #define XBOX_AXIS_HUD_UPDOWN        ABS_HAT0Y
 
-#define MAX_THROTTLE_VALUE  1023
+#define XBOX_MAX_THROTTLE_VALUE  1023
 
 class XBoxOne : public Gamepad {
     public:

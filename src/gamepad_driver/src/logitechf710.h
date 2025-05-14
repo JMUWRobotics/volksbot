@@ -33,7 +33,7 @@
 #define LOGI_AXIS_HUD_LEFTRIGHT     ABS_HAT0X
 #define LOGI_AXIS_HUD_UPDOWN        ABS_HAT0Y
 
-#define MAX_THROTTLE_VALUE  1023
+#define LOGI_MAX_THROTTLE_VALUE  255
 
 class LogitechF : public Gamepad {
     public:

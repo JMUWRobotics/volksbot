@@ -54,8 +54,8 @@ gp_event_t XBoxOne::map_event( const input_event event ) {
                 case XBOX_AXIS_RSTICK_LEFTRIGHT: ev.code = gp_index::THUMB_R_LEFT_RIGHT; ev.value.axis = DEADZONE( deadzone, -val ); break;
                 case XBOX_AXIS_RSTICK_UPDOWN   : ev.code = gp_index::THUMB_R_UP_DOWN   ; ev.value.axis = DEADZONE( deadzone, -val ); break;
                 
-                case XBOX_AXIS_THROTTLE_LEFT   : ev.code = gp_index::LT; ev.value.axis = (axis_t) ( val / (float)MAX_THROTTLE_VALUE * AXIS_VALUE_MAX ); break;
-                case XBOX_AXIS_THROTTLE_RIGHT  : ev.code = gp_index::RT; ev.value.axis = (axis_t) ( val / (float)MAX_THROTTLE_VALUE * AXIS_VALUE_MAX ); break;
+                case XBOX_AXIS_THROTTLE_LEFT   : ev.code = gp_index::LT; ev.value.axis = (axis_t) ( val / (float)XBOX_MAX_THROTTLE_VALUE * AXIS_VALUE_MAX ); break;
+                case XBOX_AXIS_THROTTLE_RIGHT  : ev.code = gp_index::RT; ev.value.axis = (axis_t) ( val / (float)XBOX_MAX_THROTTLE_VALUE * AXIS_VALUE_MAX ); break;
                 
                 case XBOX_AXIS_HUD_LEFTRIGHT: ev.code = gp_index::HUD_LEFT_RIGHT; ev.value.axis = -val; break;
                 case XBOX_AXIS_HUD_UPDOWN   : ev.code = gp_index::HUD_UP_DOWN   ; ev.value.axis = -val; break;
