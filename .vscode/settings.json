@@ -63,7 +63,8 @@
         "typeinfo": "cpp",
         "bit": "cpp",
         "list": "cpp",
-        "*.ipp": "cpp"
+        "*.ipp": "cpp",
+        "*.txx": "cpp"
     },
     "python.autoComplete.extraPaths": [
         "/home/nls/ros2_humble/build/rqt_bag_plugins/src",

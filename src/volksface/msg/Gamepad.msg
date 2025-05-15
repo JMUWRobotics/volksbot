@@ -25,3 +25,6 @@ int16 hud_up_down
 # Thumb Sticks
 GpThumbStick thumb_left
 GpThumbStick thumb_right
+
+# connection status
+bool connected

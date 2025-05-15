@@ -39,10 +39,10 @@ using namespace std::chrono_literals;
 #define PUBLISH_PERIOD  10ms
 
 
-// #define PRINT_STATE
+#define PRINT_STATE
 // #define PRINT_EVENT
-#define PRINT_VEL_CTRL
-#define ACCEL_FORCE_FEEDBACK
+// #define PRINT_VEL_CTRL
+// #define ACCEL_FORCE_FEEDBACK
 
 
 
@@ -75,8 +75,14 @@ struct vel_ctrl_t {
     /* cm/s */
     static constexpr int speed_min = 10, speed_max = 100, speed_step = 10;
     msg_Vel vel; /* vel msg */
+
     void update( Gamepad* gp ) {
         this->gp = gp;
+
+        if( gp == nullptr || !gp->has_connection() ) {
+            vel.left = vel.right = 0;
+            return;
+        }
 
         auto now = system_clock::now();
         dt = now - last_update;
@@ -201,12 +207,12 @@ struct vel_ctrl_t {
             float new_vel_left  = speed * factor_left;
             float new_vel_right = speed * factor_right;
             
-            float accel_left  = abs( new_vel_left  - vel.left  ) / ( duration_cast<nanoseconds>(dt).count() / 1e9 );
-            float accel_right = abs( new_vel_right - vel.right ) / ( duration_cast<nanoseconds>(dt).count() / 1e9 );
-
-            float max_accel = max( accel_left, accel_right );
-            
             #ifdef ACCEL_FORCE_FEEDBACK
+                float accel_left  = abs( new_vel_left  - vel.left  ) / ( duration_cast<nanoseconds>(dt).count() / 1e9 );
+                float accel_right = abs( new_vel_right - vel.right ) / ( duration_cast<nanoseconds>(dt).count() / 1e9 );
+
+                float max_accel = max( accel_left, accel_right );
+                
                 if( max_accel > ff_feedback_min_accel ) {
                     float factor = (max_accel-ff_feedback_min_accel) / (ff_feedback_max_accel-ff_feedback_min_accel);
                     uint16_t val = (uint16_t)(0xFFFF * min( factor, 1.0f));
@@ -276,10 +282,11 @@ class Volks_gamepad : public rclcpp::Node {
                     #endif
                     
                     // custom
-                    if( active_gamepad->get_state().buttons.B ) {
-                        active_gamepad->set_rumble( active_gamepad->get_state().throttle.left, active_gamepad->get_state().throttle.right );
-                    }
+                    // if( active_gamepad->get_state().buttons.B ) {
+                    //     active_gamepad->set_rumble( 2*active_gamepad->get_state().throttle.left, 2*active_gamepad->get_state().throttle.right );
+                    // }
                     
+                    // continue;
                     publish();
 
                     t1 = get_clock()->now();
@@ -292,11 +299,14 @@ class Volks_gamepad : public rclcpp::Node {
                 // try to reconnect
                 printf( COL(91, "Gamepad got disconnected!") " Trying to reconnect to " COL(1;94, "%s") "\n", active_gamepad->get_name().c_str() );
 
-                if( device_util::try_reconnect( active_gamepad) ) {
+                if( device_util::try_reconnect( active_gamepad ) ) {
                     printf( COL(92, "Successfully reconnected to %s\n"), active_gamepad->get_name().c_str() );
                 } else {
                     rclcpp::sleep_for( nanoseconds( 1000ms ) );
                 }
+
+                publish();
+                executor.spin_once( nanoseconds( 10ms ) );
             }
         }
 
@@ -321,14 +331,16 @@ class Volks_gamepad : public rclcpp::Node {
             }
         }
         void publish_state() {
-            static_assert( sizeof(msg_Gamepad) == sizeof(gp_state), "Gamepad message is not of same size as the gamepad state struct" );
-
             if( active_gamepad == nullptr )
                 return;
-            
+
             msg_Gamepad msg_gp;
-            gp_state state_gp = active_gamepad->get_state();
-            memcpy( (void*)&msg_gp, (void*)&state_gp, sizeof(state_gp) );
+            msg_gp.connected = active_gamepad->has_connection();
+
+            if( msg_gp.connected ) {
+                gp_state state_gp = active_gamepad->get_state();
+                memcpy( (void*)&msg_gp, (void*)&state_gp, sizeof(state_gp) );
+            }
 
             _pub_gp->publish( msg_gp );
         }

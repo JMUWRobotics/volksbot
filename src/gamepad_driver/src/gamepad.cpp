@@ -191,7 +191,7 @@ void Gamepad::handle_rumble() {
     /* not required since rumble_function will only callback this handler when the previous effect is over */
     /* Stop the effect */
     // ie.value = 0;
-    // write( fd_write, &ie, sizeof(ie) );
+    // write( fd_rw, &ie, sizeof(ie) );
 
     /* Setting the effect */
     ioctl( fd_rw, EVIOCSFF, &effect );
@@ -240,7 +240,7 @@ void Gamepad::print_event() const {
 }
 
 #define STR_BOOL(s, v) ( (v) ? COL(42, " " s " ") : COL(41,  " " s " ") )
-#define PERCENT(x) ( (int16_t)( 100.0 * (x) / 32767.0 ) )
+#define PERCENT(x) ( (int16_t)( 100.0 * (x) / (float)(AXIS_VALUE_MAX) ) )
 void Gamepad::print_state() const {
     printf( "ID: " COL(94, "%d") "\n", id );
     printf( "Buttons: %s %s %s %s  %s %s %s  %s %s\n", 
@@ -281,8 +281,8 @@ void Gamepad::print_state() const {
     );
 
     printf( "\nRumble: strong: " COL(94, "%6d") " (" COL(94, "%3d") "%%), weak: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n",
-        effect.u.rumble.strong_magnitude, PERCENT(effect.u.rumble.strong_magnitude), 
-        effect.u.rumble.weak_magnitude, PERCENT(effect.u.rumble.weak_magnitude)
+        effect.u.rumble.strong_magnitude, PERCENT(0.5*effect.u.rumble.strong_magnitude), 
+        effect.u.rumble.weak_magnitude, PERCENT(0.5*effect.u.rumble.weak_magnitude)
     );
 
     printf( "\x1b[13F" );
