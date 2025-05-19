@@ -5,6 +5,8 @@
 #include <pthread.h>
 #include <stdint.h>
 #include <cmath>
+#include <chrono>
+#include <thread>
 #include "rclcpp/rclcpp.hpp"
 #include <volksbot/msg/ticks.hpp>
 #include <volksbot/srv/velocities.hpp>
@@ -17,7 +19,7 @@
 
 // 148000 tics per rev, 26 cm diameter, 81.68 cm per rev, 1811.9178 tics/cm
 
-class EPOS2 {
+class EPOS2 : public rclcpp::Node{
 
 public:
 
@@ -29,20 +31,19 @@ public:
 
 private:
 
-	//ROS Callback Functions
-	bool callback(volksbot::srv::velocities::Request& vel, volksbot::srv::velocities::Response& response);
-	void Vcallback(const volksbot::msg::vels::ConstSharedPtr& vel);
+	//ROS2 Callback Functions
+	bool callback(const std::shared_ptr<volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response);
+	void Vcallback(const volksbot::msg::Vels::ConstSharedPtr& vel);
 	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr& cmd_vel);
 
 	//Thread Loop Function
 	static void* threadFunction(void* param);
 
-	//ROS Node Variables
-	rclcpp::Node n;
-	ros::Publisher pub;
-	ros::Subscriber sub;
-	ros::Subscriber cmd_vel_sub_;
-	ros::ServiceServer service;
+	//ROS2 Node Variables
+	rclcpp::Publisher<volksbot::msg::Ticks>::SharedPtr pub_;
+    rclcpp::Subscription<volksbot::msg::Vels>::SharedPtr sub_;
+    rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
+	rclcpp::Service<volksbot::srv::Velocities>::SharedPtr service_;
 
 	rclcpp::Time lastcommand;
 

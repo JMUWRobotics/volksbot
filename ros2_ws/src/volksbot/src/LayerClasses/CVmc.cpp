@@ -30,16 +30,16 @@ rclcpp::Time lastcommand;
 
 namespace VMC {
 
-	bool callback(volksbot::srv::velocities::Request& vel, volksbot::srv::velocities::Response& response) {
-		lastcommand = rclcpp::Time::now();
+	bool callback(volksbot::srv::Velocities::Request& vel, volksbot::srv::Velocities::Response& response) {
+		lastcommand = this->get_clock()->now();
 		leftvel = vel.left;
 		rightvel = vel.right;
 		return true;
 	}
 
 
-	void Vcallback(const volksbot::msg::vels::ConstSharedPtr& vel ) {
-		lastcommand = rclcpp::Time::now();
+	void Vcallback(const volksbot::msg::Vels::ConstSharedPtr& vel ) {
+		lastcommand = this->get_clock()->now();
 		leftvel = vel->left;
 		rightvel = vel->right;
 		//RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Received [%f %f @ %ld]", vel->left, vel->right, vel->id);
@@ -94,8 +94,8 @@ namespace VMC {
 		CVmc* pThread = (CVmc*)param;  // typecast
 
 		rclcpp::Node n;
-		auto pub = n.advertise<volksbot::msg::ticks>("VMC", 20);
-		volksbot::msg::ticks t;
+		auto pub = n.advertise<volksbot::msg::Ticks>("VMC", 20);
+		volksbot::msg::Ticks t;
 		t.header.frame_id = "base_link";
 
 		auto sub = n.subscribe("Vel", 100, Vcallback, ros::TransportHints().reliable().udp().maxDatagramSize(100));
@@ -111,7 +111,7 @@ namespace VMC {
 		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "VolksBot starting main loop!");
 		pThread->enterCriticalSection();
 		while(pThread->isConnected()) {
-			rclcpp::Time current = rclcpp::Time::now();
+			rclcpp::Time current = this->get_clock()->now();
 
 			if (current - lastcommand < rclcpp::Duration(50.5) ) {
 
@@ -148,7 +148,7 @@ namespace VMC {
 			t.header.stamp.sec = ts / 1000000000;
 			t.header.stamp.nsec = ts % 1000000000;
 #else
-			t.header.stamp = rclcpp::Time::now();
+			t.header.stamp = this->get_clock()->now();
 #endif
 
 			t.left = -1* (int) ((long)store.Motor[1].AbsolutRotations.getValue());

@@ -24,21 +24,21 @@ bool EPOS2::isConnected() {
 
 }
 
-bool EPOS2::callback(volksbot::srv::velocities::Request& vel, volksbot::srv::velocities::Response& response) {
+bool EPOS2::callback(const std::shared_ptr<volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response) {
 
-	lastcommand = rclcpp::Time::now();
-	leftvel = vel.left;
-	rightvel = vel.right;
+	lastcommand = this->get_clock()->now();
+	leftvel = vel->left;
+	rightvel = vel->right;
 
 	return true;
 
 }
 
 
-void EPOS2::Vcallback(const volksbot::msg::vels::ConstSharedPtr& vel ) {
+void EPOS2::Vcallback(const volksbot::msg::Vels::ConstSharedPtr& vel ) {
 
 	//RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Velocity Callback");
-	lastcommand = rclcpp::Time::now();
+	lastcommand = this->get_clock()->now();
 	leftvel = vel->left;
 	rightvel = vel->right;
 
@@ -46,7 +46,7 @@ void EPOS2::Vcallback(const volksbot::msg::vels::ConstSharedPtr& vel ) {
 
 void EPOS2::CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr& cmd_vel) {
 
-	lastcommand = rclcpp::Time::now();
+	lastcommand = this->get_clock()->now();
 	vx = cmd_vel->linear.x;
 	vth = cmd_vel->angular.z;
 	double linear = -cmd_vel->linear.x * 100.0;  // from m/s to cm/s
@@ -90,7 +90,7 @@ void* EPOS2::threadFunction(void* param) {
 
 	EPOS2* ref = (EPOS2*) param;
 
-	volksbot::msg::ticks t;
+	volksbot::msg::Ticks t;
 
 	t.header.frame_id = "base_link";
 
@@ -103,8 +103,8 @@ void* EPOS2::threadFunction(void* param) {
 
 	while ( ref->isConnected() ) {
 
-		rclcpp::Time current = rclcpp::Time::now();
-		t.header.stamp = rclcpp::Time::now();
+		rclcpp::Time current = ref->get_clock()->now();
+		t.header.stamp = ref->get_clock()->now();
 
 		int tics_left = 0;
 		int tics_right = 0;
@@ -141,9 +141,9 @@ void* EPOS2::threadFunction(void* param) {
 		t.vx = ref->vx;
 		t.vth = ref->vth;
 
-		ref->pub.publish(t);
+		ref->pub_->publish(t);
 
-		usleep(50000);
+		std::this_thread::sleep_for(std::chrono::milliseconds(50));
 
 	}
 
@@ -185,10 +185,10 @@ void EPOS2::init(const char* port) {
 
 			g_isConnected = true;
 
-			pub = n.advertise<volksbot::msg::ticks>("VMC", 20);
-			sub = n.subscribe("Vel", 100, &EPOS2::Vcallback, this, ros::TransportHints().reliable().udp().maxDatagramSize(100));
-			cmd_vel_sub_ = n.subscribe<geometry_msgs::msg::Twist>("cmd_vel", 10, &EPOS2::CVcallback, this, ros::TransportHints().reliable().udp().maxDatagramSize(100));
-			service = n.advertiseService("Controls", &EPOS2::callback, this);
+			pub_ = this->create_publisher<volksbot::msg::Ticks>("VMC", 20);
+			sub_ = this->create_subscription<volksbot::msg::Vels>("Vel", rclcpp::QoS(100).reliable(), std::bind(&EPOS2::Vcallback, this, std::placeholders::_1));
+			cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(10).reliable(), std::bind(&EPOS2::CVcallback, this, std::placeholders::_1));
+			service_ = this->create_service<volksbot::srv::Velocities>("Controls", std::bind(&EPOS2::callback, this, std::placeholders::_1));
 
 			pthread_create(&threadId, NULL, &EPOS2::threadFunction, this);
 

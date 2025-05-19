@@ -1,11 +1,12 @@
 #include "rclcpp/rclcpp.hpp"
+#include <chrono>
 
 // service
 #include <volksbot/srv/velocities.hpp>
 
 namespace volksbot {
 
-  class kbcontrol : public rclcpp::Node {
+  class kbcontrol : public rclcpp::Node, public std::enable_shared_from_this<kbcontrol> {
     private:
 
       // declare client and request pointer 

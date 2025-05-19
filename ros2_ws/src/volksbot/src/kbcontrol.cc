@@ -28,7 +28,7 @@ namespace volksbot {
 kbcontrol::kbcontrol() : Node("kbcontrol_node") {
 
   //initilize client and request pointer
-  client_ = this->create_client<volksbot::srv::Velocities>("kbcontrol_client");
+  client_ = this->create_client<volksbot::srv::Velocities>("Controls");
   velocity_ = std::make_shared<volksbot::srv::Velocities::Request>();
 
   velocity_->left = 0;
@@ -97,12 +97,31 @@ void kbcontrol::run() {
         break;
     }
     setVelocity(c);
-    printf("Call servic: %f %f\n", velocity_->left, velocity_->right);
-    //FIXME: migrate service call to ros2
-    ros::service::call("Controls", velocity_);
-    
-    //FIXME: error spin_some
-    rclcpp::spin_some(node);
+    printf("Call service: %f %f\n", velocity_->left, velocity_->right);
+
+    // Check if service is active
+    while (!client_->wait_for_service(std::chrono::seconds(1))) {
+      // If ROS is shutdown before the service is activated, show this error
+      if (!rclcpp::ok()) {
+        RCLCPP_ERROR(rclcpp::get_logger("kbcontrol"), "Interrupted while waiting for the service.");
+        return;
+      }
+      RCLCPP_INFO(rclcpp::get_logger("kbcontrol"), "Service not available");
+    }
+    // Send request to service
+    auto feedback = client_->async_send_request(velocity_);
+
+    // blocks the thread until feedback is received -> synchronous service call
+    if (rclcpp::spin_until_future_complete(this->std::enable_shared_from_this<kbcontrol>::shared_from_this(), feedback) == rclcpp::FutureReturnCode::SUCCESS){
+      RCLCPP_INFO(this->get_logger(), "Service call succeeded.");
+    } else {
+      RCLCPP_ERROR(this->get_logger(), "Service call failed.");
+    }
+
+    // We have to use 'this' since run() is a member function
+    // 'shared_from_this()' returns shared_pointer to 'this'
+    // clarify that function from kbcontrol class is used and not from Node class (ambiguity)
+    rclcpp::spin_some(std::enable_shared_from_this<kbcontrol>::shared_from_this());
     loop_rate.sleep();
   }
 }

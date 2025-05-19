@@ -195,13 +195,18 @@ void Odometry::update(int rate) {
     rclcpp::Time current = this->get_clock()->now();
     odom.header.stamp= current;// no timestamp data TODO
 
+    //create shared pointer from class Odometry
+    auto node = std::make_shared<Odometry>();
+
     publisher_->publish(odom);
   
     if(publish_tf) {
       odom_trans.header.stamp = current;
       odom_broadcaster_->sendTransform(odom_trans);
     }
-    rclcpp::spin_some(std::make_shared<Odometry>());
+    //TODO: Check if spin_some() is fine, else test with spin() or spin_all()
+    // spin the callbacks from node (pointer to odometry node object)
+    rclcpp::spin_some(node);
     loop_rate.sleep();
   }
 

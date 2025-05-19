@@ -165,26 +165,6 @@ ament_target_dependencies(calibration
 )
 target_link_libraries(calibration "${cpp_typesupport_target}") 
 
-# Define jscontrol executable
-add_executable(jscontrol
-  src/joystick/jscontrol.cc
-  src/joystick/joystick.cc
-  src/joystick/firejet.cc
-  src/joystick/predator.cc
-  src/joystick/logitechf710.cc
-)
-set_target_properties(jscontrol PROPERTIES LINK_FLAGS "-pthread")
-ament_target_dependencies(jscontrol
-  tf2_ros
-  std_msgs
-  geometry_msgs
-  std_srvs
-  rclcpp
-  sensor_msgs
-  nav_msgs
-)
-target_link_libraries(jscontrol "${cpp_typesupport_target}") 
-
 # Install libraries
 install(
   TARGETS EPOS2 VMCLIB odo
@@ -199,7 +179,7 @@ install(EXPORT volksbot-targets DESTINATION lib/volksbot)
 
 # Install executables
 install(
-  TARGETS volksbot_node kbcontrol odometry calibration jscontrol
+  TARGETS volksbot_node kbcontrol odometry calibration
   DESTINATION lib/${PROJECT_NAME}
 )
 
