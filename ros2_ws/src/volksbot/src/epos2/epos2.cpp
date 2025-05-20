@@ -1,12 +1,12 @@
 #include "epos2.h"
 
-EPOS2::EPOS2() {
+EPOS2::EPOS2() : Node("epos2") {
 
 	EPOS2::init("USB0");
 
 }
 
-EPOS2::EPOS2(const char* port) {
+EPOS2::EPOS2(const char* port) : Node("epos2") {
 
 	EPOS2::init(port);
 
@@ -24,18 +24,21 @@ bool EPOS2::isConnected() {
 
 }
 
-bool EPOS2::callback(const std::shared_ptr<volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response) {
+// in contrast to ROS, service callbacks return void and not bool
+void EPOS2::callback(const std::shared_ptr<const volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response) {
 
 	lastcommand = this->get_clock()->now();
+
+	// get request values
 	leftvel = vel->left;
 	rightvel = vel->right;
 
-	return true;
-
+	// set service response 
+	response->success = true;
 }
 
 
-void EPOS2::Vcallback(const volksbot::msg::Vels::ConstSharedPtr& vel ) {
+void EPOS2::Vcallback(const volksbot::msg::Vels::ConstSharedPtr vel ) {
 
 	//RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Velocity Callback");
 	lastcommand = this->get_clock()->now();
@@ -44,7 +47,7 @@ void EPOS2::Vcallback(const volksbot::msg::Vels::ConstSharedPtr& vel ) {
 
 }
 
-void EPOS2::CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr& cmd_vel) {
+void EPOS2::CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr cmd_vel) {
 
 	lastcommand = this->get_clock()->now();
 	vx = cmd_vel->linear.x;
@@ -109,7 +112,7 @@ void* EPOS2::threadFunction(void* param) {
 		int tics_left = 0;
 		int tics_right = 0;
 
-		if (current - ref->lastcommand < rclcpp::Duration(50.5) ) {
+		if (current - ref->lastcommand < rclcpp::Duration::from_seconds(0.0505) ) { // 50.5 milliseconds
 
 			if ( VCS_MoveWithVelocity(ref->g_pKeyHandle, 1, - ref->rightvel * MAX_RPM / 100.0, &ref->g_pErrorCode) == 0 ||
 				 VCS_MoveWithVelocity(ref->g_pKeyHandle, 0, ref->leftvel * MAX_RPM / 100, &ref->g_pErrorCode) == 0 ) {
@@ -185,10 +188,14 @@ void EPOS2::init(const char* port) {
 
 			g_isConnected = true;
 
+			// initilize publisher and subscribers
 			pub_ = this->create_publisher<volksbot::msg::Ticks>("VMC", 20);
 			sub_ = this->create_subscription<volksbot::msg::Vels>("Vel", rclcpp::QoS(100).reliable(), std::bind(&EPOS2::Vcallback, this, std::placeholders::_1));
 			cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(10).reliable(), std::bind(&EPOS2::CVcallback, this, std::placeholders::_1));
-			service_ = this->create_service<volksbot::srv::Velocities>("Controls", std::bind(&EPOS2::callback, this, std::placeholders::_1));
+
+			// placeholders are for setting the number of parameters in the binded function
+			// services commonly have two parameters (Request, Response) 
+			service_ = this->create_service<volksbot::srv::Velocities>("Controls", std::bind(&EPOS2::callback, this, std::placeholders::_1, std::placeholders::_2));
 
 			pthread_create(&threadId, NULL, &EPOS2::threadFunction, this);
 

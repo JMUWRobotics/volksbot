@@ -6,6 +6,7 @@
 
 namespace volksbot {
 
+  // enable shared pointer to this class
   class kbcontrol : public rclcpp::Node, public std::enable_shared_from_this<kbcontrol> {
     private:
 

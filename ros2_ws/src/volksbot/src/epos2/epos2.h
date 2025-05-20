@@ -23,8 +23,13 @@ class EPOS2 : public rclcpp::Node{
 
 public:
 
+	// constructor with default port
 	EPOS2();
+
+	// constructor with custom port
 	EPOS2(const char* port);
+
+	// deconstructor
 	~EPOS2();
 
 	bool isConnected();
@@ -32,9 +37,9 @@ public:
 private:
 
 	//ROS2 Callback Functions
-	bool callback(const std::shared_ptr<volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response);
-	void Vcallback(const volksbot::msg::Vels::ConstSharedPtr& vel);
-	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr& cmd_vel);
+	void callback(const std::shared_ptr<const volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response);
+	void Vcallback(const volksbot::msg::Vels::ConstSharedPtr vel);
+	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr cmd_vel);
 
 	//Thread Loop Function
 	static void* threadFunction(void* param);

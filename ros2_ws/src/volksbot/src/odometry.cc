@@ -41,11 +41,14 @@ Odometry::Odometry(bool _publish_tf) : Node("odometry_node"), publish_tf(_publis
     RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Without odometry tf");
   }
 
+  // create ROS2 subscriber and publisher
   publisher_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", 100);
   subscriber_ = this->create_subscription<volksbot::msg::Ticks>("VMC", 20, std::bind(&Odometry::convertTicks2Odom, this, _1));
   
+  // create ROS2 broadcaster
   odom_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(*this);  
 
+  // initilize variables
   x = 0;
   z = 0;
   theta = 0;
