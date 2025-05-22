@@ -30,16 +30,22 @@ rclcpp::Time lastcommand;
 
 namespace VMC {
 
-	bool callback(volksbot::srv::Velocities::Request& vel, volksbot::srv::Velocities::Response& response) {
-		lastcommand = this->get_clock()->now();
-		leftvel = vel.left;
-		rightvel = vel.right;
-		return true;
+	// in contrast to ROS, service callbacks return void and not bool
+	void callback(const std::shared_ptr<const volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response, const std::shared_ptr<rclcpp::Node> &node) {
+		
+		lastcommand = node->get_clock()->now();
+
+		// get request values
+		leftvel = vel->left;
+		rightvel = vel->right;
+
+		// set service response 
+		response->success = true;
 	}
 
-
-	void Vcallback(const volksbot::msg::Vels::ConstSharedPtr& vel ) {
-		lastcommand = this->get_clock()->now();
+	void Vcallback(const volksbot::msg::Vels::ConstSharedPtr vel, const std::shared_ptr<rclcpp::Node> &node) {
+		
+		//lastcommand = node->get_clock()->now();
 		leftvel = vel->left;
 		rightvel = vel->right;
 		//RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Received [%f %f @ %ld]", vel->left, vel->right, vel->id);
@@ -48,8 +54,9 @@ namespace VMC {
 	double vx = 0;
 	double vth = 0;
 
-	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr& cmd_vel) {
-		lastcommand = rclcpp::Time::now();
+	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr cmd_vel, const std::shared_ptr<rclcpp::Node> &node) {
+		
+		//lastcommand = node->get_clock()->now();
 		vx = cmd_vel->linear.x;
 		vth = cmd_vel->angular.z;
 		double linear = -cmd_vel->linear.x * 100.0;  // from m/s to cm/s
@@ -78,7 +85,6 @@ namespace VMC {
 
 	}
 
-
 #ifdef WIN32
 	DWORD WINAPI vmcThreadFunction(LPVOID param)
 #elif REAL_TIME
@@ -93,17 +99,47 @@ namespace VMC {
 
 		CVmc* pThread = (CVmc*)param;  // typecast
 
-		rclcpp::Node n;
-		auto pub = n.advertise<volksbot::msg::Ticks>("VMC", 20);
+		// create node object 
+		auto node = std::make_shared<rclcpp::Node>("vmc_node");
+
+		auto pub = node->create_publisher<volksbot::msg::Ticks>("VMC", 20);
 		volksbot::msg::Ticks t;
 		t.header.frame_id = "base_link";
 
-		auto sub = n.subscribe("Vel", 100, Vcallback, ros::TransportHints().reliable().udp().maxDatagramSize(100));
+		/** 
+		 * For creating publisher and subcriber in ROS2 they need to be placed
+		 * inside a class, which is not the case here. The same applies for the 
+		 * callback functions which are not member functions but defined as free functions.
+		 * Thus a node object 'vmc_node' is declared for creating the publisher and subscriber.
+		 * This object is also given to the callback functions to get the clock time.
+		 * Instead of the std::bind() function which would expect a 'this', lambda is used
+		 * which then calls the individual callback.
+		 * (alternative solution by declaring the node object as global variable)
+		 */
 
-		auto cmd_vel_sub_ = n.subscribe<geometry_msgs::msg::Twist>("cmd_vel", 10, CVcallback, ros::TransportHints().reliable().udp().maxDatagramSize(100));
-		//      ros::TransportHints().reliable().tcp().tcpNoDelay(true));
+		auto sub = node->create_subscription<volksbot::msg::Vels>(
+			"Vel", 
+			rclcpp::QoS(100).reliable(), 
+        	[node](const volksbot::msg::Vels::ConstSharedPtr msg) {
+            	Vcallback(msg, node);
+			}
+		);
 
-		ros::ServiceServer service = n.advertiseService("Controls", callback);
+		auto cmd_vel_sub_ = node->create_subscription<geometry_msgs::msg::Twist>(
+			"cmd_vel", 
+			rclcpp::QoS(10).reliable(), 
+        	[node](const geometry_msgs::msg::Twist::ConstSharedPtr msg) {
+            	CVcallback(msg, node);
+			}
+		);
+
+		// create 'Controls' service
+		// 'create_service' only expects request and response parameter 
+		// Use std::bind() for passing the node object to service callback
+		rclcpp::Service<volksbot::srv::Velocities>::SharedPtr service = node->create_service<volksbot::srv::Velocities>(
+			"Controls", 
+			std::bind(callback, std::placeholders::_1, std::placeholders::_2, node)
+		);
 
 		pThread->clearResponseList();
 		pThread->addStateToResponseList(CVmc::MOTOR_TICKS_ABSOLUTE);
@@ -111,9 +147,9 @@ namespace VMC {
 		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "VolksBot starting main loop!");
 		pThread->enterCriticalSection();
 		while(pThread->isConnected()) {
-			rclcpp::Time current = this->get_clock()->now();
+			rclcpp::Time current = node->get_clock()->now();
 
-			if (current - lastcommand < rclcpp::Duration(50.5) ) {
+			if (current - lastcommand < rclcpp::Duration::from_seconds(0.0505) ) { // 50.5 milliseconds
 
 #ifdef REAL_TIME
 				pThread->setMotors(leftvel, rightvel);
@@ -148,7 +184,7 @@ namespace VMC {
 			t.header.stamp.sec = ts / 1000000000;
 			t.header.stamp.nsec = ts % 1000000000;
 #else
-			t.header.stamp = this->get_clock()->now();
+			t.header.stamp = node->get_clock()->now();
 #endif
 
 			t.left = -1* (int) ((long)store.Motor[1].AbsolutRotations.getValue());
@@ -157,7 +193,7 @@ namespace VMC {
 			t.vx = vx;
 			t.vth = vth;
 			
-			pub.publish(t);
+			pub->publish(t);
 #ifdef REAL_TIME
 			rt_task_wait_period(NULL);
 #else

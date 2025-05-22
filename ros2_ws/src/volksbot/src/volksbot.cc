@@ -26,7 +26,6 @@
 #include <sys/mman.h>
 
 
-
 #include "epos2/epos2.h"
 
 
@@ -45,12 +44,14 @@ int main(int argc, char* argv[]) {
 	printf("Ros init...\n");
 
 	rclcpp::init(argc, argv);
-	auto n = rclcpp::Node::make_shared("VMC_Module");
+	auto node = std::make_shared<rclcpp::Node>("VMC_Module");
 
 	std::string controller;
 	std::string device;
-	n.param<std::string>("/devices/controller", controller, "VMC");
-	n.param<std::string>("/devices/volksbot", device, "/dev/ttyS5");
+	
+	// declare parameters
+	controller = node->declare_parameter<std::string>("devices/controller", "VMC");
+	device = node->declare_parameter<std::string>("/devices/volksbot", "/dev/ttyS5");
 
 	VMC::CVmc *vmc;
 	EPOS2* epos;

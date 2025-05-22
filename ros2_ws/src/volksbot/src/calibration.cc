@@ -35,7 +35,7 @@ int main(int argc, char** argv){
   rclcpp::Rate r(50); 
 
   // create broadcaster for node
-  auto broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(node);
+  auto broadcaster = std::make_shared<tf2_ros::TransformBroadcaster>(node);
 
   //checks if ROS2 is still running
   while(rclcpp::ok()){ 
@@ -57,7 +57,7 @@ int main(int argc, char** argv){
     transformStamped.transform.rotation.z = 0.0;
     transformStamped.transform.rotation.w = 1.0;
 
-    broadcaster_->sendTransform(transformStamped);
+    broadcaster->sendTransform(transformStamped);
     r.sleep();
   }
 }

@@ -3,7 +3,8 @@
 int main(int argc, char* argv[])
 {
   rclcpp::init(argc, argv);
-  auto node = rclcpp::Node::make_shared("Odometry");
+	auto node = std::make_shared<rclcpp::Node>("Odometry");
+
 
   bool publish_tf = true;
 
