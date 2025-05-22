@@ -1,3 +1,12 @@
+source;share/volksbot/hook/cmake_prefix_path.ps1
+source;share/volksbot/hook/cmake_prefix_path.dsv
+source;share/volksbot/hook/cmake_prefix_path.sh
+source;share/volksbot/hook/ld_library_path_lib.ps1
+source;share/volksbot/hook/ld_library_path_lib.dsv
+source;share/volksbot/hook/ld_library_path_lib.sh
+source;share/volksbot/hook/pythonpath.ps1
+source;share/volksbot/hook/pythonpath.dsv
+source;share/volksbot/hook/pythonpath.sh
 source;share/volksbot/local_setup.bash
 source;share/volksbot/local_setup.dsv
 source;share/volksbot/local_setup.ps1

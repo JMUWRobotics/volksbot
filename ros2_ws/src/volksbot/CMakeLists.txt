@@ -144,6 +144,7 @@ ament_target_dependencies(odometry
   rclcpp
   sensor_msgs
   nav_msgs
+  tf2_geometry_msgs
 )
 target_link_libraries(odometry "${cpp_typesupport_target}") 
 
@@ -190,7 +191,7 @@ install(DIRECTORY include/
 
 # Export dependencies and libraries
 ament_export_include_directories(include)
-ament_export_dependencies(rclcpp std_msgs sensor_msgs nav_msgs tf2 tf2_ros rosidl_default_runtime)
+ament_export_dependencies(rclcpp std_msgs sensor_msgs nav_msgs tf2 tf2_ros tf2_geometry_msgs rosidl_default_runtime)
 
 
 if(BUILD_TESTING)
