@@ -104,24 +104,6 @@ ament_target_dependencies(volksbot_node
 )
 target_link_libraries(volksbot_node VMCLIB EPOS2)
 
-# Define kbcontrol executable
-add_executable(kbcontrol 
-  src/kbcontrol.cc
-)
-set_target_properties(kbcontrol PROPERTIES LINK_FLAGS "-pthread")
-ament_target_dependencies(kbcontrol
-  tf2_ros
-  std_msgs
-  geometry_msgs
-  std_srvs
-  rclcpp
-  sensor_msgs
-  nav_msgs
-  volksbot_interfaces
-)
-target_link_libraries(kbcontrol "${cpp_typesupport_target}") 
-
-
 # Define odometry executable
 add_executable(odometry 
   src/odometry.cc 
@@ -174,7 +156,7 @@ install(EXPORT volksbot-targets DESTINATION lib/volksbot)
 
 # Install executables
 install(
-  TARGETS volksbot_node kbcontrol odometry calibration
+  TARGETS volksbot_node odometry calibration
   DESTINATION lib/${PROJECT_NAME}
 )
 
@@ -184,6 +166,8 @@ install(DIRECTORY include/
 )
 
 # Export dependencies and libraries
+# if other packages includes the 'volksbot' package, it automatically gets access 
+# to the exported dependencies
 ament_export_include_directories(include)
 ament_export_dependencies(rclcpp std_msgs sensor_msgs nav_msgs tf2 tf2_ros tf2_geometry_msgs)
 

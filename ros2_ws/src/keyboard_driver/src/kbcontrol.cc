@@ -40,6 +40,7 @@ kbcontrol::kbcontrol() : Node("kbcontrol_node") {
 void kbcontrol::setVelocity(char c) {
     switch(c)
     {
+      // if 'L' is pressed, send request to service to set speed as below
       case KEYCODE_L:
         velocity_->left = -speed_;
         velocity_->right = speed_;
