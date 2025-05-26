@@ -43,7 +43,7 @@ Odometry::Odometry(bool _publish_tf) : Node("odometry_node"), publish_tf(_publis
 
   // create ROS2 subscriber and publisher
   publisher_ = this->create_publisher<nav_msgs::msg::Odometry>("odom", 100);
-  subscriber_ = this->create_subscription<volksbot::msg::Ticks>("VMC", 20, std::bind(&Odometry::convertTicks2Odom, this, _1));
+  subscriber_ = this->create_subscription<volksbot_interfaces::msg::Ticks>("VMC", 20, std::bind(&Odometry::convertTicks2Odom, this, _1));
   
   // create ROS2 broadcaster
   odom_broadcaster_ = std::make_shared<tf2_ros::TransformBroadcaster>(*this);  
@@ -95,7 +95,7 @@ Odometry::~Odometry() {
 //fclose(file);
 }
 
-void Odometry::convertTicks2Odom(const volksbot::msg::Ticks::ConstSharedPtr& cticks)
+void Odometry::convertTicks2Odom(const volksbot_interfaces::msg::Ticks::ConstSharedPtr& cticks)
 {
   if (firstticks) {
     oldlticks = cticks->left;

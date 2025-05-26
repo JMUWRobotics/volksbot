@@ -7,9 +7,8 @@
 #include "nav_msgs/msg/odometry.hpp"
 
 // custom msgs
-#include <volksbot/msg/ticks.hpp>
-#include <volksbot/msg/pose2d.hpp>
-
+#include "volksbot_interfaces/msg/ticks.hpp"
+#include "volksbot_interfaces/msg/pose2d.hpp"
 
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <tf2_ros/transform_broadcaster.h>
@@ -36,7 +35,7 @@ namespace volksbot {
         B = b;
       }
 
-      void convertTicks2Odom(const volksbot::msg::Ticks::ConstSharedPtr& cticks);
+      void convertTicks2Odom(const volksbot_interfaces::msg::Ticks::ConstSharedPtr& cticks);
 
       const nav_msgs::msg::Odometry& getCurrentOdom() {
         return odom;
@@ -48,7 +47,7 @@ namespace volksbot {
 
       // Declaration of Publisher and Subscriber
       rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
-      rclcpp::Subscription<volksbot::msg::Ticks>::SharedPtr subscriber_;
+      rclcpp::Subscription<volksbot_interfaces::msg::Ticks>::SharedPtr subscriber_;
 
       std::shared_ptr<tf2_ros::TransformBroadcaster> odom_broadcaster_;
       bool firstticks;

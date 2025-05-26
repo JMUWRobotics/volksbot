@@ -8,11 +8,11 @@
 #endif
 #include "rclcpp/rclcpp.hpp"
 #include <stdint.h>
-#include <volksbot/msg/ticks.hpp>
-#include <volksbot/srv/velocities.hpp>
+#include "volksbot_interfaces/msg/ticks.hpp"
+#include "volksbot_interfaces/srv/velocities.hpp"
 #include <std_msgs/msg/string.hpp>
 #include <geometry_msgs/msg/twist.hpp>
-#include <volksbot/msg/vels.hpp>
+#include "volksbot_interfaces/msg/vels.hpp"
 
 #include <cmath>
 
@@ -31,7 +31,7 @@ rclcpp::Time lastcommand;
 namespace VMC {
 
 	// in contrast to ROS, service callbacks return void and not bool
-	void callback(const std::shared_ptr<const volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response, const std::shared_ptr<rclcpp::Node> &node) {
+	void callback(const std::shared_ptr<const volksbot_interfaces::srv::Velocities::Request> vel, std::shared_ptr<volksbot_interfaces::srv::Velocities::Response> response, const std::shared_ptr<rclcpp::Node> &node) {
 		
 		lastcommand = node->get_clock()->now();
 
@@ -43,7 +43,7 @@ namespace VMC {
 		response->success = true;
 	}
 
-	void Vcallback(const volksbot::msg::Vels::ConstSharedPtr vel, const std::shared_ptr<rclcpp::Node> &node) {
+	void Vcallback(const volksbot_interfaces::msg::Vels::ConstSharedPtr vel, const std::shared_ptr<rclcpp::Node> &node) {
 		
 		//lastcommand = node->get_clock()->now();
 		leftvel = vel->left;
@@ -102,8 +102,8 @@ namespace VMC {
 		// create node object 
 		auto node = std::make_shared<rclcpp::Node>("vmc_node");
 
-		auto pub = node->create_publisher<volksbot::msg::Ticks>("VMC", 20);
-		volksbot::msg::Ticks t;
+		auto pub = node->create_publisher<volksbot_interfaces::msg::Ticks>("VMC", 20);
+		volksbot_interfaces::msg::Ticks t;
 		t.header.frame_id = "base_link";
 
 		/** 
@@ -117,10 +117,10 @@ namespace VMC {
 		 * (alternative solution by declaring the node object as global variable)
 		 */
 
-		auto sub = node->create_subscription<volksbot::msg::Vels>(
+		auto sub = node->create_subscription<volksbot_interfaces::msg::Vels>(
 			"Vel", 
 			rclcpp::QoS(100).reliable(), 
-        	[node](const volksbot::msg::Vels::ConstSharedPtr msg) {
+        	[node](const volksbot_interfaces::msg::Vels::ConstSharedPtr msg) {
             	Vcallback(msg, node);
 			}
 		);
@@ -136,7 +136,7 @@ namespace VMC {
 		// create 'Controls' service
 		// 'create_service' only expects request and response parameter 
 		// Use std::bind() for passing the node object to service callback
-		rclcpp::Service<volksbot::srv::Velocities>::SharedPtr service = node->create_service<volksbot::srv::Velocities>(
+		rclcpp::Service<volksbot_interfaces::srv::Velocities>::SharedPtr service = node->create_service<volksbot_interfaces::srv::Velocities>(
 			"Controls", 
 			std::bind(callback, std::placeholders::_1, std::placeholders::_2, node)
 		);

@@ -8,12 +8,12 @@
 #include <chrono>
 #include <thread>
 #include "rclcpp/rclcpp.hpp"
-#include <volksbot/msg/ticks.hpp>
-#include <volksbot/srv/velocities.hpp>
+#include "volksbot_interfaces/msg/ticks.hpp"
+#include "volksbot_interfaces/srv/velocities.hpp"
 #include <std_srvs/srv/empty.hpp>
 #include <std_msgs/msg/string.hpp>
 #include <geometry_msgs/msg/twist.hpp>
-#include <volksbot/msg/vels.hpp>
+#include "volksbot_interfaces/msg/vels.hpp"
 
 #define MAX_RPM 4000 // MOTOR MAX IS REALLY 12000 BUT IS TOO FAST!!!
 
@@ -37,18 +37,18 @@ public:
 private:
 
 	//ROS2 Callback Functions
-	void callback(const std::shared_ptr<const volksbot::srv::Velocities::Request> vel, std::shared_ptr<volksbot::srv::Velocities::Response> response);
-	void Vcallback(const volksbot::msg::Vels::ConstSharedPtr vel);
+	void callback(const std::shared_ptr<const volksbot_interfaces::srv::Velocities::Request> vel, std::shared_ptr<volksbot_interfaces::srv::Velocities::Response> response);
+	void Vcallback(const volksbot_interfaces::msg::Vels::ConstSharedPtr vel);
 	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr cmd_vel);
 
 	//Thread Loop Function
 	static void* threadFunction(void* param);
 
 	//ROS2 Node Variables
-	rclcpp::Publisher<volksbot::msg::Ticks>::SharedPtr pub_;
-    rclcpp::Subscription<volksbot::msg::Vels>::SharedPtr sub_;
+	rclcpp::Publisher<volksbot_interfaces::msg::Ticks>::SharedPtr pub_;
+    rclcpp::Subscription<volksbot_interfaces::msg::Vels>::SharedPtr sub_;
     rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_sub_;
-	rclcpp::Service<volksbot::srv::Velocities>::SharedPtr service_;
+	rclcpp::Service<volksbot_interfaces::srv::Velocities>::SharedPtr service_;
 
 	rclcpp::Time lastcommand;
 
