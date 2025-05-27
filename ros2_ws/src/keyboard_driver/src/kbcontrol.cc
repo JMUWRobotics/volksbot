@@ -28,8 +28,8 @@ namespace volksbot {
 kbcontrol::kbcontrol() : Node("kbcontrol_node") {
 
   //initilize client and request pointer
-  client_ = this->create_client<volksbot_interfaces::srv::Velocities>("Controls");
-  velocity_ = std::make_shared<volksbot_interfaces::srv::Velocities::Request>();
+  client_ = this->create_client<volksface::srv::Velocities>("Controls");
+  velocity_ = std::make_shared<volksface::srv::Velocities::Request>();
 
   velocity_->left = 0;
   velocity_->right = 0;

@@ -8,7 +8,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(volksbot_interfaces REQUIRED)
+find_package(volksface REQUIRED)
 
 # Define kbcontrol executable
 add_executable(kbcontrol 
@@ -18,7 +18,7 @@ set_target_properties(kbcontrol PROPERTIES LINK_FLAGS "-pthread")
 ament_target_dependencies(kbcontrol
   std_msgs
   rclcpp
-  volksbot_interfaces
+  volksface
 )
 target_link_libraries(kbcontrol "${cpp_typesupport_target}") 
 

@@ -20,7 +20,7 @@ find_package(std_srvs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
-find_package(volksbot_interfaces REQUIRED)
+find_package(volksface REQUIRED)
  
 
 # uncomment the following line if msg/srv/action files are placed within this package
@@ -49,7 +49,7 @@ install(FILES ${EPOS2_CMD_LIBRARY} DESTINATION lib)
 
 # Define EPOS2 library
 add_library(EPOS2 src/epos2/epos2.cpp)
-ament_target_dependencies(EPOS2 rclcpp std_srvs geometry_msgs volksbot_interfaces)
+ament_target_dependencies(EPOS2 rclcpp std_srvs geometry_msgs volksface)
 target_link_libraries(EPOS2 ${EPOS2_CMD_LIBRARY} "${cpp_typesupport_target}")
 
 # Define VMCLIB library
@@ -71,7 +71,7 @@ add_library(VMCLIB
   src/SupportClasses/CMultisend.cpp
   src/SupportClasses/CTimestamp.cpp
 )
-ament_target_dependencies(VMCLIB rclcpp geometry_msgs std_srvs volksbot_interfaces)
+ament_target_dependencies(VMCLIB rclcpp geometry_msgs std_srvs volksface)
 target_link_libraries(VMCLIB "${cpp_typesupport_target}") 
 
 # Define volksbot_node executable

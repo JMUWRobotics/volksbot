@@ -12,7 +12,7 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <depend>std_msgs</depend>
-  <depend>volksbot_interfaces</depend>
+  <depend>volksface</depend>
   <depend>std_srvs</depend>
   <depend>geometry_msgs</depend>
   <depend>nav_msgs</depend>

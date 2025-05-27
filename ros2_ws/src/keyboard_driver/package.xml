@@ -10,7 +10,7 @@
   <!-- 'depend' does 'build_depend' and 'exec_depend' -->
   <depend>rclcpp</depend>
   <depend>std_msgs</depend>
-  <depend>volksbot_interfaces</depend>
+  <depend>volksface</depend>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

@@ -25,7 +25,7 @@ bool EPOS2::isConnected() {
 }
 
 // in contrast to ROS, service callbacks return void and not bool
-void EPOS2::callback(const std::shared_ptr<const volksbot_interfaces::srv::Velocities::Request> vel, std::shared_ptr<volksbot_interfaces::srv::Velocities::Response> response) {
+void EPOS2::callback(const std::shared_ptr<const volksface::srv::Velocities::Request> vel, std::shared_ptr<volksface::srv::Velocities::Response> response) {
 
 	lastcommand = this->get_clock()->now();
 
@@ -38,7 +38,7 @@ void EPOS2::callback(const std::shared_ptr<const volksbot_interfaces::srv::Veloc
 }
 
 
-void EPOS2::Vcallback(const volksbot_interfaces::msg::Vels::ConstSharedPtr vel ) {
+void EPOS2::Vcallback(const volksface::msg::Vel::ConstSharedPtr vel ) {
 
 	//RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Velocity Callback");
 	lastcommand = this->get_clock()->now();
@@ -93,7 +93,7 @@ void* EPOS2::threadFunction(void* param) {
 
 	EPOS2* ref = (EPOS2*) param;
 
-	volksbot_interfaces::msg::Ticks t;
+	volksface::msg::Ticks t;
 
 	t.header.frame_id = "base_link";
 
@@ -189,13 +189,13 @@ void EPOS2::init(const char* port) {
 			g_isConnected = true;
 
 			// initilize publisher and subscribers
-			pub_ = this->create_publisher<volksbot_interfaces::msg::Ticks>("VMC", 20);
-			sub_ = this->create_subscription<volksbot_interfaces::msg::Vels>("Vel", rclcpp::QoS(100).reliable(), std::bind(&EPOS2::Vcallback, this, std::placeholders::_1));
+			pub_ = this->create_publisher<volksface::msg::Ticks>("VMC", 20);
+			sub_ = this->create_subscription<volksface::msg::Vel>("Vel", rclcpp::QoS(100).reliable(), std::bind(&EPOS2::Vcallback, this, std::placeholders::_1));
 			cmd_vel_sub_ = this->create_subscription<geometry_msgs::msg::Twist>("cmd_vel", rclcpp::QoS(10).reliable(), std::bind(&EPOS2::CVcallback, this, std::placeholders::_1));
 
 			// placeholders are for setting the number of parameters in the binded function
 			// services commonly have two parameters (Request, Response) 
-			service_ = this->create_service<volksbot_interfaces::srv::Velocities>("Controls", std::bind(&EPOS2::callback, this, std::placeholders::_1, std::placeholders::_2));
+			service_ = this->create_service<volksface::srv::Velocities>("Controls", std::bind(&EPOS2::callback, this, std::placeholders::_1, std::placeholders::_2));
 
 			pthread_create(&threadId, NULL, &EPOS2::threadFunction, this);
 

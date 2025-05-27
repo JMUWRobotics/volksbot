@@ -2,7 +2,7 @@
 #include <chrono>
 
 // service
-#include "volksbot_interfaces/srv/velocities.hpp"
+#include "volksface/srv/velocities.hpp"
 
 namespace volksbot {
 
@@ -11,8 +11,8 @@ namespace volksbot {
     private:
 
       // declare client and request pointer 
-      rclcpp::Client<volksbot_interfaces::srv::Velocities>::SharedPtr client_;
-      std::shared_ptr<volksbot_interfaces::srv::Velocities::Request> velocity_;
+      rclcpp::Client<volksface::srv::Velocities>::SharedPtr client_;
+      std::shared_ptr<volksface::srv::Velocities::Request> velocity_;
 
       double speed_;
       int kfd_;

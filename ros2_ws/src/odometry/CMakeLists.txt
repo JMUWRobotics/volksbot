@@ -13,7 +13,7 @@ find_package(geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
-find_package(volksbot_interfaces REQUIRED)
+find_package(volksface REQUIRED)
 
 include_directories(include)
 
@@ -26,7 +26,7 @@ ament_target_dependencies(odo
   tf2
   tf2_ros
   tf2_geometry_msgs
-  volksbot_interfaces
+  volksface
 )
 target_link_libraries(odo "${cpp_typesupport_target}") 
 
@@ -43,7 +43,7 @@ ament_target_dependencies(odometry
   tf2
   tf2_ros
   tf2_geometry_msgs
-  volksbot_interfaces
+  volksface
 )
 target_link_libraries(odometry "${cpp_typesupport_target}") 
 
