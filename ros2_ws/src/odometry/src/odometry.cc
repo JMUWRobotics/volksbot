@@ -11,7 +11,7 @@
 #include <fcntl.h>
 #include <stdexcept>
 
-#include "volksbot/odometry.h"
+#include "odometry/odometry.h"
 
 using std::placeholders::_1;
 
