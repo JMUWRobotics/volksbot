@@ -16,6 +16,10 @@
 
 #include <cmath>
 
+#include <chrono>
+using namespace std::chrono_literals;
+
+
 #include <std_srvs/srv/empty.hpp>
 double leftvel = 0.0;
 double rightvel = 0.0;
@@ -45,10 +49,10 @@ namespace VMC {
 
 	void Vcallback(const volksface::msg::Vel::ConstSharedPtr vel, const std::shared_ptr<rclcpp::Node> &node) {
 		
-		//lastcommand = node->get_clock()->now();
+		lastcommand = node->get_clock()->now();
 		leftvel = vel->left;
 		rightvel = vel->right;
-		//RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Received [%f %f @ %ld]", vel->left, vel->right, vel->id);
+		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Received [%f %f]", vel->left, vel->right);
 	}
 
 	double vx = 0;
@@ -102,6 +106,8 @@ namespace VMC {
 		// create node object 
 		auto node = std::make_shared<rclcpp::Node>("vmc_node");
 
+		lastcommand = node->get_clock()->now();
+
 		auto pub = node->create_publisher<volksface::msg::Ticks>("VMC", 20);
 		volksface::msg::Ticks t;
 		t.header.frame_id = "base_link";
@@ -148,9 +154,8 @@ namespace VMC {
 		pThread->enterCriticalSection();
 		while(pThread->isConnected()) {
 			rclcpp::Time current = node->get_clock()->now();
-
-			if (current - lastcommand < rclcpp::Duration::from_seconds(0.0505) ) { // 50.5 milliseconds
-
+			
+			if (current - lastcommand < 50.5ms ) { // 50.5 milliseconds
 #ifdef REAL_TIME
 				pThread->setMotors(leftvel, rightvel);
 #else

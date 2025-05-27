@@ -51,7 +51,7 @@ int main(int argc, char* argv[]) {
 	
 	// declare parameters
 	controller = node->declare_parameter<std::string>("devices/controller", "VMC");
-	device = node->declare_parameter<std::string>("/devices/volksbot", "/dev/ttyS5");
+	device = node->declare_parameter<std::string>("/devices/volksbot", "/dev/ttyUSB1");
 
 	VMC::CVmc *vmc;
 	EPOS2* epos;
