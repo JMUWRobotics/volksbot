@@ -29,99 +29,26 @@ find_package(volksface REQUIRED)
 
 link_directories(launch)
 
-# Automatically detect architecture and link correct libEposCmd version
-include(cmake/TargetArch.cmake)
-target_architecture(TARGET_ARCH)
-message("Detected architecture: ${TARGET_ARCH}")
-if(${TARGET_ARCH} STREQUAL "x86_64")
-  set(EPOS2_CMD_LIBRARY "${PROJECT_SOURCE_DIR}/libEposCmd/x86_64/libEposCmd.so")
-elseif(${TARGET_ARCH} STREQUAL "i386")
-  set(EPOS2_CMD_LIBRARY "${PROJECT_SOURCE_DIR}/libEposCmd/x86/libEposCmd.so")
-elseif(${TARGET_ARCH} STREQUAL "armv7")
-  set(EPOS2_CMD_LIBRARY "${PROJECT_SOURCE_DIR}/libEposCmd/armv7hf/libEposCmd.so")
-else()
-  message("Unsupported architecture for libEposCmd!")
-  set(EPOS2_CMD_LIBRARY "EposCmd" PARENT_SCOPE)
-endif()
-message("Using EposCmd library: ${EPOS2_CMD_LIBRARY}")
-install(FILES ${EPOS2_CMD_LIBRARY} DESTINATION lib)
-#target_link_libraries(EPOS2 ${EPOS2_CMD_LIBRARY})
-
-# Define EPOS2 library
-add_library(EPOS2 src/epos2/epos2.cpp)
-ament_target_dependencies(EPOS2 rclcpp std_srvs geometry_msgs volksface)
-target_link_libraries(EPOS2 ${EPOS2_CMD_LIBRARY} "${cpp_typesupport_target}")
-
-# Define VMCLIB library
-add_library(VMCLIB
-  src/Adapter/CComAdapter.cpp
-  src/LayerClasses/CVmc.cpp
-  src/SupportClasses/CData.cpp
-  src/SupportClasses/CRequest.cpp
-  src/LayerClasses/CCommunicationLayer.cpp
-  src/StorageClasses/CMotor.cpp
-  src/SupportClasses/CError.cpp
-  src/SupportClasses/CSendTwo.cpp
-  src/LayerClasses/CTranslationLayer.cpp
-  src/StorageClasses/CStorage.cpp
-  src/SupportClasses/CMessage.cpp
-  src/SupportClasses/CTimer.cpp
-  src/LayerClasses/CvmcAPI.cpp
-  src/SupportClasses/CChannel.cpp
-  src/SupportClasses/CMultisend.cpp
-  src/SupportClasses/CTimestamp.cpp
-)
-ament_target_dependencies(VMCLIB rclcpp geometry_msgs std_srvs volksface)
-target_link_libraries(VMCLIB "${cpp_typesupport_target}") 
-
-# Define volksbot_node executable
-add_executable(volksbot_node 
-  src/volksbot.cc
-)
-set_target_properties(volksbot_node PROPERTIES LINK_FLAGS "-pthread")
-ament_target_dependencies(volksbot_node
-  tf2_ros
-  std_msgs
-  geometry_msgs
-  std_srvs
-  rclcpp
-  sensor_msgs
-  nav_msgs
-)
-target_link_libraries(volksbot_node VMCLIB EPOS2)
-
 # Define calibration executable
 add_executable(calibration 
   src/calibration.cc
 )
 set_target_properties(calibration PROPERTIES LINK_FLAGS "-pthread")
 ament_target_dependencies(calibration
-  tf2
-  tf2_ros
-  std_msgs
-  geometry_msgs
-  std_srvs
   rclcpp
+  std_msgs
+  std_srvs
+  geometry_msgs
   sensor_msgs
   nav_msgs
+  tf2
+  tf2_ros
 )
 target_link_libraries(calibration "${cpp_typesupport_target}") 
 
-# Install libraries
-install(
-  TARGETS EPOS2 VMCLIB
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib
-  RUNTIME DESTINATION bin
-)
-
-# export VMCLIB to use in other packages
-install(TARGETS VMCLIB DESTINATION lib EXPORT volksbot-targets)
-install(EXPORT volksbot-targets DESTINATION lib/volksbot)
-
 # Install executables
 install(
-  TARGETS volksbot_node calibration
+  TARGETS calibration
   DESTINATION lib/${PROJECT_NAME}
 )
 

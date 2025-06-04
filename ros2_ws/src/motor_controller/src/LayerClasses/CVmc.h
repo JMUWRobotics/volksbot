@@ -310,16 +310,16 @@ public:
 private:
  
 
-  bool _responseList[10];
+  	bool _responseList[10];
 	bool _isConnected;
 	char _comPort[41];
 	
-	int _pwmOut1, _pwmOut2, _pwmOut3;
+	int  _pwmOut1, _pwmOut2, _pwmOut3;
 	bool _digitalIO1, _digitalIO2, _digitalIO3;
 	bool _digitalOut1, _digitalOut2, _digitalOut3;
 	bool _digitalInputUpdate;
-	int _maxRpm;
-	int _cycleTime;
+	int  _maxRpm;
+	int  _cycleTime;
 
 #ifdef WIN32
 	CRITICAL_SECTION _cs;
@@ -329,7 +329,7 @@ private:
   friend void vmcThreadFunction(void* param);
 #else
 	pthread_mutex_t _mutex;
-  friend void* vmcThreadFunction(void* param);
+  	friend void* vmcThreadFunction(void* param);
 #endif
 
 	void enterCriticalSection();

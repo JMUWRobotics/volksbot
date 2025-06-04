@@ -8,10 +8,11 @@
 #endif
 #include "rclcpp/rclcpp.hpp"
 #include <stdint.h>
-#include "volksface/msg/ticks.hpp"
-#include "volksface/srv/velocities.hpp"
 #include <std_msgs/msg/string.hpp>
 #include <geometry_msgs/msg/twist.hpp>
+
+#include "volksface/msg/ticks.hpp"
+#include "volksface/srv/velocities.hpp"
 #include "volksface/msg/vel.hpp"
 
 #include <cmath>
@@ -21,18 +22,16 @@ using namespace std::chrono_literals;
 
 
 #include <std_srvs/srv/empty.hpp>
-double leftvel = 0.0;
-double rightvel = 0.0;
 
 ////////////////////
 //FILE *file;
 /////////////////////
-//
-//
 
-rclcpp::Time lastcommand;
 
 namespace VMC {
+	rclcpp::Time lastcommand;
+	double leftvel = 0.0;
+	double rightvel = 0.0;
 
 	// in contrast to ROS, service callbacks return void and not bool
 	void callback(const std::shared_ptr<const volksface::srv::Velocities::Request> vel, std::shared_ptr<volksface::srv::Velocities::Response> response, const std::shared_ptr<rclcpp::Node> &node) {
@@ -105,7 +104,8 @@ namespace VMC {
 
 		// create node object 
 		auto node = std::make_shared<rclcpp::Node>("vmc_node");
-
+		
+		// must initialize time variable, otherwise will fail due to incompatible clocksources
 		lastcommand = node->get_clock()->now();
 
 		auto pub = node->create_publisher<volksface::msg::Ticks>("VMC", 20);
