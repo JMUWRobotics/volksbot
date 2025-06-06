@@ -1,3 +1,5 @@
+#ifndef __CVMC_H__
+#define __CVMC_H__
 
 #ifdef WIN32
 #include <windows.h>
@@ -338,14 +340,6 @@ private:
 	VMC::CvmcAPI *_apiObject;
 };
 
-const int CVmc::MOTOR_RPM= 0;
-const int CVmc::MOTOR_PWM= 1;
-const int CVmc::MOTOR_CURRENT= 2;
-const int CVmc::MOTOR_TICKS_ABSOLUTE= 3;
-const int CVmc::MOTOR_TICKS_RELATIVE= 4;
-//const int CVmc::MOTOR_POWER= 5;
-//const int CVmc::MOTOR_TEMPERATURE= 6;
-const int CVmc::BATTERY_VOLTAGE= 7;
-const int CVmc::VMC_ERROR= 0x80000000;
-
 } // namespace VMC
+
+#endif

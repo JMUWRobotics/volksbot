@@ -6,22 +6,10 @@
 #include <native/task.h>
 #include <native/timer.h>
 #endif
-#include "rclcpp/rclcpp.hpp"
 #include <stdint.h>
-#include <std_msgs/msg/string.hpp>
-#include <geometry_msgs/msg/twist.hpp>
-
-#include "volksface/msg/ticks.hpp"
-#include "volksface/srv/velocities.hpp"
-#include "volksface/msg/vel.hpp"
 
 #include <cmath>
 
-#include <chrono>
-using namespace std::chrono_literals;
-
-
-#include <std_srvs/srv/empty.hpp>
 
 ////////////////////
 //FILE *file;
@@ -29,64 +17,15 @@ using namespace std::chrono_literals;
 
 
 namespace VMC {
-	rclcpp::Time lastcommand;
-	double leftvel = 0.0;
-	double rightvel = 0.0;
-
-	// in contrast to ROS, service callbacks return void and not bool
-	void callback(const std::shared_ptr<const volksface::srv::Velocities::Request> vel, std::shared_ptr<volksface::srv::Velocities::Response> response, const std::shared_ptr<rclcpp::Node> &node) {
-		
-		lastcommand = node->get_clock()->now();
-
-		// get request values
-		leftvel = vel->left;
-		rightvel = vel->right;
-
-		// set service response 
-		response->success = true;
-	}
-
-	void Vcallback(const volksface::msg::Vel::ConstSharedPtr vel, const std::shared_ptr<rclcpp::Node> &node) {
-		
-		lastcommand = node->get_clock()->now();
-		leftvel = vel->left;
-		rightvel = vel->right;
-		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Received [%f %f]", vel->left, vel->right);
-	}
-
-	double vx = 0;
-	double vth = 0;
-
-	void CVcallback(const geometry_msgs::msg::Twist::ConstSharedPtr cmd_vel, const std::shared_ptr<rclcpp::Node> &node) {
-		
-		//lastcommand = node->get_clock()->now();
-		vx = cmd_vel->linear.x;
-		vth = cmd_vel->angular.z;
-		double linear = -cmd_vel->linear.x * 100.0;  // from m/s to cm/s
-		double v_diff = cmd_vel->angular.z * 22.2;  // 22.2 is half of baseline of the robot
-		// for a 180° turn (= pi rad / sec) both wheels need to move half
-		// of the circumference of the circle defined by the baseline
-		// ,i.e. pi * 22.2
-		//  double v_diff = cmd_vel->angular.z * 9.4468085;
-
-		if (linear > 0) {
-			leftvel = (double) (linear - v_diff);
-			rightvel = (double) (linear + v_diff);
-		} else {
-			leftvel = (double) (linear - v_diff);
-			rightvel = (double) (linear  + v_diff);
-		}
-
-		if ( fabs(leftvel) > 100.0 ) {
-			if (leftvel > 0) leftvel = 100.0;
-			else leftvel = -100.0;
-		}
-		if ( fabs(rightvel) > 100.0 ) {
-			if (rightvel > 0) rightvel = 100.0;
-			else rightvel = -100.0;
-		}
-
-	}
+	const int CVmc::MOTOR_RPM= 0;
+	const int CVmc::MOTOR_PWM= 1;
+	const int CVmc::MOTOR_CURRENT= 2;
+	const int CVmc::MOTOR_TICKS_ABSOLUTE= 3;
+	const int CVmc::MOTOR_TICKS_RELATIVE= 4;
+	//const int CVmc::MOTOR_POWER= 5;
+	//const int CVmc::MOTOR_TEMPERATURE= 6;
+	const int CVmc::BATTERY_VOLTAGE= 7;
+	const int CVmc::VMC_ERROR= 0x80000000;
 
 #ifdef WIN32
 	DWORD WINAPI vmcThreadFunction(LPVOID param)
@@ -102,110 +41,30 @@ namespace VMC {
 
 		CVmc* pThread = (CVmc*)param;  // typecast
 
-		// create node object 
-		auto node = std::make_shared<rclcpp::Node>("vmc_node");
-		
-		// must initialize time variable, otherwise will fail due to incompatible clocksources
-		lastcommand = node->get_clock()->now();
-
-		auto pub = node->create_publisher<volksface::msg::Ticks>("VMC", 20);
-		volksface::msg::Ticks t;
-		t.header.frame_id = "base_link";
-
-		/** 
-		 * For creating publisher and subcriber in ROS2 they need to be placed
-		 * inside a class, which is not the case here. The same applies for the 
-		 * callback functions which are not member functions but defined as free functions.
-		 * Thus a node object 'vmc_node' is declared for creating the publisher and subscriber.
-		 * This object is also given to the callback functions to get the clock time.
-		 * Instead of the std::bind() function which would expect a 'this', lambda is used
-		 * which then calls the individual callback.
-		 * (alternative solution by declaring the node object as global variable)
-		 */
-
-		auto sub = node->create_subscription<volksface::msg::Vel>(
-			"Vel", 
-			rclcpp::QoS(100).reliable(), 
-        	[node](const volksface::msg::Vel::ConstSharedPtr msg) {
-            	Vcallback(msg, node);
-			}
-		);
-
-		auto cmd_vel_sub_ = node->create_subscription<geometry_msgs::msg::Twist>(
-			"cmd_vel", 
-			rclcpp::QoS(10).reliable(), 
-        	[node](const geometry_msgs::msg::Twist::ConstSharedPtr msg) {
-            	CVcallback(msg, node);
-			}
-		);
-
-		// create 'Controls' service
-		// 'create_service' only expects request and response parameter 
-		// Use std::bind() for passing the node object to service callback
-		rclcpp::Service<volksface::srv::Velocities>::SharedPtr service = node->create_service<volksface::srv::Velocities>(
-			"Controls", 
-			std::bind(callback, std::placeholders::_1, std::placeholders::_2, node)
-		);
-
 		pThread->clearResponseList();
 		pThread->addStateToResponseList(CVmc::MOTOR_TICKS_ABSOLUTE);
 
-		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "VolksBot starting main loop!");
-		pThread->enterCriticalSection();
 		while(pThread->isConnected()) {
-			rclcpp::Time current = node->get_clock()->now();
-			
-			if (current - lastcommand < 50.5ms ) { // 50.5 milliseconds
-#ifdef REAL_TIME
-				pThread->setMotors(leftvel, rightvel);
-#else
-				pThread->_pwmOut2 = -1*leftvel*pThread->_maxRpm/100;
-				pThread->_pwmOut1 = rightvel*pThread->_maxRpm/100;
-#endif
-			} else {
-#ifdef REAL_TIME
-				pThread->setMotors(0, 0);
-#else
-				pThread->_pwmOut2 = 0;
-				pThread->_pwmOut1 = 0;
-#endif
-			}
-
+			pThread->enterCriticalSection();
 			// old setting motor values could crash because of wrong mutex use
 			//    pThread->_apiObject->useVMC().MotorRPMs.Set(pThread->_pwmOut1,
 			//        pThread->_pwmOut2, pThread->_pwmOut3);
 
 			CStorage store = pThread->_apiObject->useVMC();
-			store.MotorRPMs.Set(pThread->_pwmOut1,
-								pThread->_pwmOut2, pThread->_pwmOut3);
+			store.MotorRPMs.Set( pThread->_pwmOut1, pThread->_pwmOut2, pThread->_pwmOut3 );
+			
+			pThread->leaveCriticalSection();
 
 			if(pThread->_digitalInputUpdate) {
 				pThread->_apiObject->useVMC().DigitalIN.Update();
 			}
 
-			// setup ticks message with timestamp, ticks and velocity commands
-#ifdef REAL_TIME
-			uint64_t ts = store.getTimeStamp();
-			t.header.stamp.sec = ts / 1000000000;
-			t.header.stamp.nsec = ts % 1000000000;
-#else
-			t.header.stamp = node->get_clock()->now();
-#endif
-
-			t.left = -1* (int) ((long)store.Motor[1].AbsolutRotations.getValue());
-			t.right = (int) ((long)store.Motor[0].AbsolutRotations.getValue());
-
-			t.vx = vx;
-			t.vth = vth;
-			
-			pub->publish(t);
 #ifdef REAL_TIME
 			rt_task_wait_period(NULL);
 #else
 			pThread->wait(pThread->_cycleTime);
 #endif
 		}
-		pThread->leaveCriticalSection();
 #ifndef REAL_TIME
 		return 0;
 #endif
@@ -500,7 +359,7 @@ namespace VMC {
 	void CVmc::setMotorLeft(int velocity) {
 		if((velocity < -100) || (velocity > 100)) return;
 
-		setMotorRPM(2, -1*velocity*_maxRpm/100);
+		setMotorRPM(2, -velocity*_maxRpm/100);
 	}
 
 	void CVmc::setMotorRight(int velocity) {

@@ -129,7 +129,7 @@ class IDeviceAdapter {
 		 * @post The object must be in the same state as if IDeviceAdapter() and
 		 * setDeviceName(szDeviceName) would have been called instead.
 		 */
-		IDeviceAdapter(char *szDeviceName) {};
+		IDeviceAdapter(char *szDeviceName) { (void) szDeviceName; };
 		
 		/**
 		 * Default constructor. This must initialize the object and must do the

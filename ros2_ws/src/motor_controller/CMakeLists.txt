@@ -82,11 +82,11 @@ target_link_libraries(VMCLIB "${cpp_typesupport_target}")
 # Volksbot - Executable
 #------------------------------------------------------------------------------
 # Define volksbot_node executable
-add_executable(volksbot_node 
-  src/volksbot.cc
+add_executable(motor_controller 
+  src/controller.cc
 )
-set_target_properties(volksbot_node PROPERTIES LINK_FLAGS "-pthread")
-ament_target_dependencies(volksbot_node
+set_target_properties(motor_controller PROPERTIES LINK_FLAGS "-pthread")
+ament_target_dependencies(motor_controller
   rclcpp
   tf2_ros
   std_msgs
@@ -95,7 +95,7 @@ ament_target_dependencies(volksbot_node
   sensor_msgs
   nav_msgs
 )
-target_link_libraries(volksbot_node VMCLIB EPOS2)
+target_link_libraries(motor_controller VMCLIB EPOS2)
 
 # Install libraries
 install(
@@ -111,7 +111,7 @@ install(EXPORT mc-targets DESTINATION lib/${PROJECT_NAME})
 
 # Install executables
 install(
-  TARGETS volksbot_node
+  TARGETS motor_controller
   DESTINATION lib/${PROJECT_NAME}
 )
 
