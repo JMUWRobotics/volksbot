@@ -11,6 +11,8 @@
 
 #include "CvmcAPI.h"
 
+#include "../DriverInterface.h"
+
 namespace VMC {
 
 /**
@@ -63,11 +65,25 @@ namespace VMC {
  * @author Bjoern Flintrop
  */
 
-class CVmc
-{
-
+class CVmc : public mcd::I_MCD {
 public:
 
+	// Interface implementation
+	float ticks_per_revolution() override { return -461.817; };
+
+	bool connect( const char* port ) override;
+	void disconnect() override;
+	bool is_connected() override;
+
+	void reset_ticks() override;
+	void set_max_RPM( int maxRPM ) override;
+	int  get_max_RPM() override;
+
+	void set_speeds( float left, float right ) override;
+	void get_ticks( int& left, int& right ) override;
+
+
+	// Default implementation
 	/*
 	 * These static constants describe the state values which can be read
 	 * out of the motor controller.
@@ -88,15 +104,9 @@ public:
 	 * The COM port is detected automatically in a range from COM1 to COM9. 
 	 * You can use the other constructor if this leads to problems.
 	 */
+	bool auto_connect();
+	
 	CVmc();
-
-	/**
-	 * This constructor opens a connection to the VMC.
-	 * The specified COM port is used.
-	 *
-	 * @param comPort the COM Port name (e.g. "COM1", "/dev/ttyS1" etc.)
-	 */
-	CVmc(const char* comPort);
 
 	/**
   	 * The default destructor closes the connection to VMC

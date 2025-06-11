@@ -25,9 +25,17 @@
 #include "volksface/msg/vel.hpp"
 
 #include <chrono>
-#include <math.h>
 using namespace std::chrono_literals;
 
+#define WHEEL_DIAMETER_IRMA	26.0	// cm
+#define WHEEL_DIAMETER_UTE	26.0	// cm
+#define WHEEL_BASE_IRMA 	44.4	// cm
+#define WHEEL_BASE_UTE		44.4	// cm
+
+#define PORT_NAME_VMC		"/dev/VMC"
+#define PORT_NAME_EPOS		"USB0"
+#define PORT_NAME_EPOS2L	"/dev/EPOS2L"
+#define PORT_NAME_EPOS2R	"/dev/EPOS2R"
 
 namespace controller {
 	static constexpr auto TOPIC_NAME_TICKS   = "VMC";
@@ -43,154 +51,113 @@ namespace controller {
 	using Velocities = volksface::srv::Velocities;
 	using Twist      = geometry_msgs::msg::Twist;
 
+	// ros publisher, subscribers, services and co.
 	static rclcpp::Node::SharedPtr node;
 	static rclcpp::Service<Velocities>::SharedPtr service;
 	static rclcpp::Subscription<Vel>::SharedPtr subscriber_vel;
 	static rclcpp::Subscription<Twist>::SharedPtr subscriber_cmd_vel;
 	static rclcpp::Publisher<Ticks>::SharedPtr publisher;
-	static rclcpp::TimerBase::SharedPtr _pub_timer;
+	static rclcpp::TimerBase::SharedPtr _timer_pub, _timer_fail_safe;
 	static Ticks current_motor_ticks;
 
 	static rclcpp::Time lastcommand;
+	static double last_vel_left=0, last_vel_right=0;
 
-	// Motor-Controller interfaced - lightweight interface to the underlying motor controllers, currently only VMC and EPOS2 
-	struct mc_interface {
-		enum mc_type : int {
-			NONE = 0,
-			VMC  = 1,
-			EPOS = 2
-		};
+	// motor controller drivers
+	static VMC::CVmc 	mcd_vmc;
+	static EPOS::EPOS2	mcd_epos;
+	static mcd::I_MCD* 	active_motor_controller = nullptr;
 
-		struct model_t {
-			const char* device_path;
-			const double wheel_base_cm;
-			const double ticks_per_cm;
-		};
-
-		static constexpr model_t model_NONE  = { "", 44.4, -461.817 };
-		static constexpr model_t model_VMC   = { "/dev/VMC",  44.4, -461.817 };
-		static constexpr model_t model_EPOS2 = { "/dev/volksbot", 44.4, -1811.9178 };
-		static constexpr model_t models[] = { model_NONE, model_VMC, model_EPOS2 };
-		
-		union motor_t {
-			void* none;
-			VMC::CVmc* vmc;
-			EPOS2* epos;
-		} motor_ptr = { nullptr };
-		mc_type mc_in_use = NONE;
-
-		bool search_and_select_motor_controller() {
-			if( mc_in_use != NONE ) {
-				printf( "\x1b[33mAlready connected to a motor controller\x1b[0m\n" );
-				return true;
-			}
-
-			// trying VMC
-			printf( "Trying to connect to VMC\n" );
-			motor_ptr.vmc = new VMC::CVmc( model_VMC.device_path );
-
-			if( motor_ptr.vmc->isConnected() ) {
-				printf( "\x1b[32mConnected to VMC\x1b[0m\n" );
-				mc_in_use = VMC;
-				return true;
-			}
-			delete motor_ptr.vmc;
-
-			// trying EPOS2
-			printf( "\nTrying to connect to EPOS2\n" );
-			motor_ptr.epos = new EPOS2( model_EPOS2.device_path );
-
-			if( motor_ptr.epos->isConnected() ) {
-				printf( "\x1b[32mConnected to EPOS2\x1b[0m\n" );
-				mc_in_use = EPOS;
-				return true;
-			}
-			delete motor_ptr.epos;
-			
-			// FAILED to connect to any motor controller
-			printf( "\n\x1b[31mFAILED! Could not connect to any motor controller\x1b[0m\n" );
-			mc_in_use = NONE;
-			return false; 
+	//----------------------------//
+	// Motor Controller Functions //
+	//----------------------------//
+	bool search_and_select_motor_controller() {
+		if( active_motor_controller != nullptr ) {
+			printf( "\x1b[33mAlready connected to a motor controller\x1b[0m\n" );
+			return true;
 		}
 
-		void cleanup() {
-			switch( mc_in_use ) {
-				case VMC:  if( motor_ptr.vmc  != nullptr ) delete motor_ptr.vmc; break;
-				case EPOS: if( motor_ptr.epos != nullptr ) delete motor_ptr.epos; break;
-				case NONE: break;
-				default:   break;
-			}
+		// trying VMC
+		printf( "Trying to connect to VMC\n" );
+		if( mcd_vmc.connect( PORT_NAME_VMC ) ) {
+			printf( "\x1b[32mConnected to VMC\x1b[0m\n" );
+			active_motor_controller = &mcd_vmc;
+			return true;
 		}
 
-		void set_speeds( const double vel_left, const double vel_right ) {
-			lastcommand = node->get_clock()->now();
-
-			switch( mc_in_use ) {
-				case VMC:	motor_ptr.vmc->setMotors( vel_left, vel_right ); break;
-				case EPOS: 	break;
-				case NONE: 	break;
-				default: 	break;
-			}	
-		}
-
-		void reset_ticks() {
-			switch( mc_in_use ) {
-				case VMC:	motor_ptr.vmc->resetMotorTicks(); break;
-				case EPOS: 	break;
-				case NONE: 	break;
-				default: 	break;
-			}	
+		// trying EPOS2
+		printf( "\nTrying to connect to EPOS2\n" );
+		if( mcd_epos.connect( PORT_NAME_EPOS ) ) {
+			printf( "\x1b[32mConnected to EPOS2\x1b[0m\n" );
+			active_motor_controller = &mcd_epos;
+			return true;
 		}
 		
-		void get_ticks( Ticks& ticks ) {
-			switch( mc_in_use ) {
-				case VMC:	
-					ticks.left  = motor_ptr.vmc->getMotorValueLeft(  VMC::CVmc::MOTOR_TICKS_ABSOLUTE );
-					ticks.right = motor_ptr.vmc->getMotorValueRight( VMC::CVmc::MOTOR_TICKS_ABSOLUTE );
-					break;
-				case EPOS: 	break;
-				case NONE: 	break;
-				default: 	break;
-			}
-		}
-	};
-	static mc_interface mci;
 
+		// trying EPOS2L
+		printf( "\nTrying to connect to EPOS2L\n" );
+		if( mcd_epos.connect( PORT_NAME_EPOS2L ) ) {
+			printf( "\x1b[32mConnected to EPOS2L\x1b[0m\n" );
+			active_motor_controller = &mcd_epos;
+			return true;
+		}
+		
+		// trying EPOS2R
+		printf( "\nTrying to connect to EPOS2R\n" );
+		if( mcd_epos.connect( PORT_NAME_EPOS2R ) ) {
+			printf( "\x1b[32mConnected to EPOS2R\x1b[0m\n" );
+			active_motor_controller = &mcd_epos;
+			return true;
+		}
+		
+		// FAILED to connect to any motor controller
+		printf( "\n\x1b[31mFAILED! Could not connect to any motor controller\x1b[0m\n" );
+		return false; 
+	}
+
+	void get_ticks( Ticks& ticks ) {
+		if( active_motor_controller != nullptr ) {
+			active_motor_controller->get_ticks( ticks.left, ticks.right );			
+		}
+	}
+
+	void set_speeds( double left, double right ) {
+		lastcommand = node->get_clock()->now();
+
+		mcd::util::linear_twist( WHEEL_BASE_IRMA, left, right, current_motor_ticks.vx, current_motor_ticks.vth );
+
+		if( active_motor_controller != nullptr ) {
+			last_vel_left = left;
+			last_vel_right = right;
+			active_motor_controller->set_speeds( left, right );
+		}
+	}
 
 	//-----------//
 	// Callbacks //
 	//-----------//
 	// in contrast to ROS, service callbacks return void and not bool
 	void callback( const Velocities::Request::ConstSharedPtr vel, Velocities::Response::SharedPtr response ) {
-		mci.set_speeds( -vel->right, -vel->left );
-
 		response->success = true;
+
+		set_speeds( vel->left, vel->right );
 	}
 
 	void Vcallback( const Vel::ConstSharedPtr vel ) {
-		mci.set_speeds( -vel->right, -vel->left );
+		set_speeds( vel->left, vel->right );
 	}
 
 	void CVcallback( const Twist::ConstSharedPtr cmd_vel ) {
-		//lastcommand = node->get_clock()->now();
-		double vx = cmd_vel->linear.x;
-		double vth = cmd_vel->angular.z;
 		double linear = -cmd_vel->linear.x * 100.0;  // from m/s to cm/s
-		double v_diff =  cmd_vel->angular.z * mc_interface::models[mci.mc_in_use].wheel_base_cm / 2;  // 22.2 is half of baseline of the robot
-		// for a 180° turn (= pi rad / sec) both wheels need to move half
-		// of the circumference of the circle defined by the baseline
-		// ,i.e. pi * 22.2
-		//  double v_diff = cmd_vel->angular.z * 9.4468085;
-
+		double v_diff =  cmd_vel->angular.z * WHEEL_BASE_IRMA / 2;
+		
 		double leftvel  = linear - v_diff;
 		double rightvel = linear + v_diff;
 		
 		leftvel  = copysign( fmin(fabs(leftvel) , 100), leftvel  );
 		rightvel = copysign( fmin(fabs(rightvel), 100), rightvel );
 		
-		mci.set_speeds( -rightvel, -leftvel );
-		current_motor_ticks.vx = vx;
-		current_motor_ticks.vth = vth;
+		set_speeds( leftvel, rightvel );
 	}
 
 	//----------------//
@@ -202,7 +169,10 @@ namespace controller {
 	}
 
 	void cleanup() {
-		mci.cleanup();
+		if( active_motor_controller != nullptr ) {
+			active_motor_controller->disconnect();
+		}
+		
 		rclcpp::shutdown();
 	}
 
@@ -227,17 +197,24 @@ namespace controller {
 		service = node->create_service<Velocities>( TOPIC_NAME_CONTROL, callback );
 		
 		publisher = node->create_publisher<Ticks>( TOPIC_NAME_TICKS, 20 );
-		_pub_timer = node->create_wall_timer( TIME_PUB_PERIOD_TICKS, [](){
+		
+		_timer_pub = node->create_wall_timer( TIME_PUB_PERIOD_TICKS, [](){
 			current_motor_ticks.header.stamp = node->get_clock()->now();
-			mci.get_ticks( current_motor_ticks );
+			get_ticks( current_motor_ticks );
 			publisher->publish( current_motor_ticks );
 		} );
 
-		while( !mci.search_and_select_motor_controller() ) {
+		_timer_fail_safe = node->create_wall_timer( 50.5ms / 3, [](){
+			if( node->get_clock()->now() - lastcommand >= 50.5ms ) {
+				set_speeds( 0, 0 );
+			}
+		} );
+
+		while( !search_and_select_motor_controller() ) {
 			rclcpp::sleep_for( 1s );
 		}
 
-		mci.reset_ticks();
+		active_motor_controller->reset_ticks();
 	}
 }
 

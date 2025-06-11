@@ -27,6 +27,55 @@ namespace VMC {
 	const int CVmc::BATTERY_VOLTAGE= 7;
 	const int CVmc::VMC_ERROR= 0x80000000;
 
+
+	bool CVmc::connect( const char* port ) { init( port ); return isConnected(); }
+	void CVmc::disconnect() {
+		///////////////////////////////////// @@@
+		//  fclose(file );
+
+
+		_apiObject->printAllErrors();
+
+		if(_isConnected) {
+			_pwmOut1= 0;
+			_pwmOut2= 0;
+			_pwmOut3= 0;
+
+			wait(_cycleTime);
+			wait(_cycleTime);
+			wait(_cycleTime);
+			wait(_cycleTime);
+
+			_isConnected= 0;
+			wait(_cycleTime);
+			wait(_cycleTime);
+
+			_apiObject->closeDevice();
+
+#ifdef WIN32
+			DeleteCriticalSection(&_cs);
+#elif REAL_TIME
+			rt_task_delete(&vmc_thread);
+#else
+			pthread_mutex_destroy(&_mutex);
+#endif
+		}
+		delete _apiObject;
+	}
+	bool CVmc::is_connected() { return isConnected(); }
+
+	void CVmc::reset_ticks() { resetMotorTicks(); }
+	void CVmc::set_max_RPM( int maxRPM ) { setMaximumRPM( maxRPM ); }
+	int  CVmc::get_max_RPM() { return _maxRpm; }
+
+	void CVmc::set_speeds( float left, float right ) { setMotors( -right, -left ); }
+	void CVmc::get_ticks( int& left, int& right ) {
+		left  = -getMotorValueLeft(  VMC::CVmc::MOTOR_TICKS_ABSOLUTE );
+		right =  getMotorValueRight( VMC::CVmc::MOTOR_TICKS_ABSOLUTE );
+	}
+
+
+
 #ifdef WIN32
 	DWORD WINAPI vmcThreadFunction(LPVOID param)
 #elif REAL_TIME
@@ -70,8 +119,8 @@ namespace VMC {
 #endif
 	}
 
-	CVmc::CVmc() {
-		char port[20];
+	bool CVmc::auto_connect() {
+char port[20];
 		int i;
 		int index;
 
@@ -100,44 +149,31 @@ namespace VMC {
 			init(port);
 			i++;
 		}
+
+		return _isConnected;
 	}
 
-	CVmc::CVmc(const char* comPort) {
-		init(comPort);
+	CVmc::CVmc() {
+		_maxRpm= 6000;
+		//_cycleTime= 20;
+		_cycleTime= 50;    // modified to 20 Hz, because 50 Hz (as before) is incorrect
+		_isConnected= 0;
+
+		_pwmOut1= 0;
+		_pwmOut2= 0;
+		_pwmOut3= 0;
+
+		_digitalOut1= false;
+		_digitalOut2= false;
+		_digitalOut3= false;
+
+		_digitalInputUpdate= false;
+
+		strcpy(_comPort, "No connection!");
 	}
 
 	CVmc::~CVmc() {
-		///////////////////////////////////// @@@
-		//  fclose(file );
-
-
-		_apiObject->printAllErrors();
-
-		if(_isConnected) {
-			_pwmOut1= 0;
-			_pwmOut2= 0;
-			_pwmOut3= 0;
-
-			wait(_cycleTime);
-			wait(_cycleTime);
-			wait(_cycleTime);
-			wait(_cycleTime);
-
-			_isConnected= 0;
-			wait(_cycleTime);
-			wait(_cycleTime);
-
-			_apiObject->closeDevice();
-
-#ifdef WIN32
-			DeleteCriticalSection(&_cs);
-#elif REAL_TIME
-			rt_task_delete(&vmc_thread);
-#else
-			pthread_mutex_destroy(&_mutex);
-#endif
-		}
-		delete _apiObject;
+		disconnect();
 	}
 
 	void CVmc::addStateToResponseList(int state) {
