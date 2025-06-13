@@ -83,7 +83,12 @@ void CComAdapter::init()
 	 snprintf(cmd,sizeof(cmd),"setserial %s baud_base 115200 spd_normal divisor 0",_szDeviceName);  
     else printf ("error could not setserial device %s\n",_szDeviceName);
   }
-  system(cmd);
+  
+  // we ignore the result of the system call
+  // to avoid warnings we deliberately have to "tell" the compiler that we do discard the return value
+  int ret = system(cmd);
+  (void) ret;
+
   sleep(1);
 #endif
 #endif

@@ -3,7 +3,7 @@
 
 #include <cmath>
 
-// motor controller driver
+// Motor Controller Driver
 namespace mcd {
 
     namespace util {
@@ -42,7 +42,7 @@ namespace mcd {
     }
 
     /**
-     * @brief Common interface for motor control drivers
+     * @brief Common interface for Motor Controller Drivers
      */
     class I_MCD {
     public:

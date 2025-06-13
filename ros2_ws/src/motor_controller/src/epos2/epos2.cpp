@@ -1,15 +1,8 @@
 #include "epos2.h"
 
-#include <pthread.h>
-#include <stdint.h>
+#include <stdio.h>
 #include <unistd.h>
-#include <cmath>
-#include <chrono>
-#include <thread>
 #include <string.h>
-
-#include <chrono>
-using namespace std::chrono_literals;
 
 using namespace EPOS;
 
@@ -40,7 +33,7 @@ void* EPOS2::thread_function(void* param) {
 bool EPOS2::connect( const char* port ) {
 	g_pKeyHandle  = 0;
 	g_isConnected = false;
-	strncpy( g_PortName, port, sizeof(g_PortName) );
+	strncpy( g_PortName, port, sizeof(g_PortName)-1 );
 
 	if ( !openEPOSDevice() ) {
 		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Open EPOS2 Device! (0x%x)", g_pErrorCode);

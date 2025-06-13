@@ -6,14 +6,6 @@
 #include <native/task.h>
 #include <native/timer.h>
 #endif
-#include <stdint.h>
-
-#include <cmath>
-
-
-////////////////////
-//FILE *file;
-/////////////////////
 
 
 namespace VMC {

@@ -3,7 +3,7 @@ project(motor_controller)
 
 # Add standard ROS 2 compile options
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic)
+  add_compile_options(-Wall -Wextra -Wpedantic -O3)
 endif()
 
 # Set C++ standard to C++14
@@ -13,12 +13,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Find necessary ROS 2 packages
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(std_msgs REQUIRED)
-find_package(std_srvs REQUIRED)
-find_package(sensor_msgs REQUIRED)
-find_package(nav_msgs REQUIRED)
-find_package(tf2 REQUIRED)
-find_package(tf2_ros REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(volksface REQUIRED)
  
@@ -46,11 +40,9 @@ else()
 endif()
 message("Using EposCmd library: ${EPOS2_CMD_LIBRARY}")
 install(FILES ${EPOS2_CMD_LIBRARY} DESTINATION lib)
-#target_link_libraries(EPOS2 ${EPOS2_CMD_LIBRARY})
 
 # Define EPOS2 library
 add_library(EPOS2 src/epos2/epos2.cpp)
-ament_target_dependencies(EPOS2 rclcpp std_srvs geometry_msgs volksface)
 target_link_libraries(EPOS2 ${EPOS2_CMD_LIBRARY} "${cpp_typesupport_target}")
 
 #------------------------------------------------------------------------------
@@ -75,7 +67,6 @@ add_library(VMCLIB
   src/SupportClasses/CMultisend.cpp
   src/SupportClasses/CTimestamp.cpp
 )
-ament_target_dependencies(VMCLIB rclcpp std_srvs geometry_msgs volksface)
 target_link_libraries(VMCLIB "${cpp_typesupport_target}") 
 
 #------------------------------------------------------------------------------
@@ -88,12 +79,8 @@ add_executable(motor_controller
 set_target_properties(motor_controller PROPERTIES LINK_FLAGS "-pthread")
 ament_target_dependencies(motor_controller
   rclcpp
-  tf2_ros
-  std_msgs
-  std_srvs
   geometry_msgs
-  sensor_msgs
-  nav_msgs
+  volksface
 )
 target_link_libraries(motor_controller VMCLIB EPOS2)
 
@@ -114,10 +101,5 @@ install(
   TARGETS motor_controller
   DESTINATION lib/${PROJECT_NAME}
 )
-
-# Export dependencies and libraries
-# if other packages includes the 'volksbot' package, it automatically gets access 
-# to the exported dependencies
-ament_export_dependencies(rclcpp std_msgs sensor_msgs nav_msgs tf2 tf2_ros tf2_geometry_msgs)
 
 ament_package()

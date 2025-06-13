@@ -24,10 +24,18 @@ CChannel::CChannel() {
 ///  @brief constructor
 //////////////////////////////////////////////////////////////////////////////
 CChannel::CChannel(const unsigned int Channel) {
-	if( (Channel < sm_nChannelNo) && (Channel >= 0) ) {
+	if( Channel < sm_nChannelNo ) {
 		m_nChannel = Channel;
 		m_bInitialized = true;
 	}
+}
+
+//////////////////////////////////////////////////////////////////////////////
+///  @brief copy-constructor
+//////////////////////////////////////////////////////////////////////////////
+CChannel::CChannel(const CChannel& ch) {
+	m_nChannel = ch.get();
+	m_bInitialized = true;
 }
 
 //////////////////////////////////////////////////////////////////////////////
@@ -35,7 +43,7 @@ CChannel::CChannel(const unsigned int Channel) {
 ///  @returns true = OK / false = Error
 //////////////////////////////////////////////////////////////////////////////
 bool CChannel::set(const unsigned int Channel) {
-	if( (Channel < sm_nChannelNo) && (Channel >= 0) ) {
+	if( Channel < sm_nChannelNo ) {
 		m_nChannel = Channel;
 		m_bInitialized = true;
 		return true;
@@ -72,7 +80,7 @@ CChannel CChannel::operator=(const CChannel& ch) {
 ///  @returns CChannel object
 //////////////////////////////////////////////////////////////////////////////
 CChannel CChannel::operator=(const unsigned int& i) {
-	if( (i < sm_nChannelNo) && (i >= 0) ){
+	if( i < sm_nChannelNo ){
 		m_nChannel = i;
 		m_bInitialized = true;
 	}
@@ -95,7 +103,7 @@ bool CChannel::operator==(const unsigned int& i) const {
 ///  @returns CChannel object
 //////////////////////////////////////////////////////////////////////////////
 CChannel CChannel::operator+(const unsigned int i) {
-	if( ((m_nChannel + i) < sm_nChannelNo) && ((m_nChannel + i) >= 0) ) {
+	if( m_nChannel + i < sm_nChannelNo ) {
 		m_nChannel = m_nChannel + i; 
 		m_bInitialized = true;	
 	}
@@ -108,7 +116,7 @@ CChannel CChannel::operator+(const unsigned int i) {
 ///  @returns CChannel object
 //////////////////////////////////////////////////////////////////////////////
 CChannel CChannel::operator-(const unsigned int i) {
-	if( ((m_nChannel - i) < sm_nChannelNo) && ((m_nChannel - i) >= 0) ) {
+	if( i <= m_nChannel && m_nChannel - i < sm_nChannelNo ) {
 		m_nChannel = m_nChannel - i; 
 		m_bInitialized = true;
 	}
@@ -121,7 +129,7 @@ CChannel CChannel::operator-(const unsigned int i) {
 ///  @returns CChannel object
 //////////////////////////////////////////////////////////////////////////////
 CChannel CChannel::operator++() {
-	if( ((m_nChannel + 1) < sm_nChannelNo) && ((m_nChannel + 1) >= 0) ) {
+	if( m_nChannel + 1 < sm_nChannelNo ) {
 		m_nChannel = m_nChannel + 1; 
 		m_bInitialized = true;
 	}
@@ -134,7 +142,7 @@ CChannel CChannel::operator++() {
 ///  @returns CChannel object
 //////////////////////////////////////////////////////////////////////////////
 CChannel CChannel::operator--() {
-	if( ((m_nChannel - 1) < sm_nChannelNo) && ((m_nChannel - 1) >= 0) ) {
+	if( m_nChannel >= 1 && m_nChannel - 1 < sm_nChannelNo ) {
 		m_nChannel = m_nChannel - 1; 
 		m_bInitialized = true;	
 	}
@@ -150,7 +158,7 @@ bool CChannel::validChannel() const {
 
 //	printf("validChannel--()<%06d><%06d><%06d>\n", m_nChannel, sm_nChannelNo, m_bInitialized);
 
-	if( (m_nChannel < sm_nChannelNo) && (m_nChannel >= 0) && (m_bInitialized == true))
+	if( (m_nChannel < sm_nChannelNo) && m_bInitialized )
 		return true;
 //	printf("FALSE-------validChannel--()<%06d><%06d><%06d>\n", m_nChannel, sm_nChannelNo, m_bInitialized);
 		

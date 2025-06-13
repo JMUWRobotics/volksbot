@@ -145,7 +145,7 @@ bool CvmcAPI::closeDevice() {
 ///  @returns true = OK / false = Error
 //////////////////////////////////////////////////////////////////////////////
 bool CvmcAPI::configRequestMessage(unsigned int nRequestNo, bool bActive) {
-	if(nRequestNo >= 0 && nRequestNo < m_Request.size() ) {
+	if( nRequestNo < m_Request.size() ) {
 		m_Request[nRequestNo].setActiveSwitch(bActive);
 		return true;
 	}

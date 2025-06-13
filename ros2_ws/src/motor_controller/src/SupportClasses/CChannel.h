@@ -20,6 +20,7 @@ class CChannel
 {
 public:		
 	CChannel();
+	CChannel(const CChannel&);
 	CChannel(const unsigned int Channel);
 	~CChannel(){};
 

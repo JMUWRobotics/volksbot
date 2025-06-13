@@ -62,7 +62,7 @@ std::ostream& operator<<(std::ostream& out, const CRequest& e) {
 	out << " CMD_GRP:"<< std::hex << (int)e.m_CommandGroup;
 	out << " CMD:"<< std::hex << (int)e.m_Command;
 
-	int i =0;
+	size_t i =0;
 	
 	while( i < e.m_ResponseBuildup.size() ){
 

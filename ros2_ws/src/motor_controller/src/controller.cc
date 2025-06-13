@@ -6,8 +6,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// #include <fcntl.h>
-// #include <stdexcept>
 #include <sys/mman.h>
 
 // motor controller APIs
@@ -16,8 +14,6 @@
 
 // ROS specifics
 #include "rclcpp/rclcpp.hpp"
-#include <std_srvs/srv/empty.hpp>
-#include <std_msgs/msg/string.hpp>
 #include <geometry_msgs/msg/twist.hpp>
 
 #include "volksface/msg/ticks.hpp"

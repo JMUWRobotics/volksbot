@@ -180,7 +180,7 @@ bool CTranslationLayer::findMessage(CMessage& NewMessage) {
   // node should fix this
   //delete read message out of the _ReceiveBuffer
 //	m_sReceiveBuffer.erase(m_sReceiveBuffer.begin(), m_sReceiveBuffer.begin()+(IndexEnd+1));
-  int t = (IndexEnd+1);
+  size_t t = (IndexEnd+1);
   if (t > m_sReceiveBuffer.size()) t = m_sReceiveBuffer.size();
   
   m_sReceiveBuffer.erase(m_sReceiveBuffer.begin(), m_sReceiveBuffer.begin()+t);

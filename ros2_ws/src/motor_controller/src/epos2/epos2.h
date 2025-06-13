@@ -4,11 +4,13 @@
 #include "Definitions.h"
 #include "../DriverInterface.h"
 
+#include <pthread.h>
 
-// regard this document for EPOS2 
+
+// regard this document for the EPOS2 SDK 
 // https://www.maxongroup.com/medias/sys_master/8823917281310.pdf
-// Error can be found at page 131
-// 06 June 2025
+// Error codes can be found at page 131
+// ------------------------------------------------- 06 June 2025
 
 namespace EPOS {
 	class EPOS2 : public mcd::I_MCD {
