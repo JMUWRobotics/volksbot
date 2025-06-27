@@ -187,7 +187,8 @@ void Odometry::convertTicks2Odom(const volksface::msg::Ticks::ConstSharedPtr& ct
    
     odom_broadcaster_->sendTransform(odom_trans);
   }
-  rclcpp::spin_some(std::make_shared<Odometry>());
+
+  rclcpp::spin_some( this->get_node_base_interface() );
   //send the transform
 }
 
@@ -196,10 +197,7 @@ void Odometry::update(int rate) {
 
   while (rclcpp::ok()) {
     rclcpp::Time current = this->get_clock()->now();
-    odom.header.stamp= current;// no timestamp data TODO
-
-    //create shared pointer from class Odometry
-    auto node = std::make_shared<Odometry>();
+    odom.header.stamp = current;
 
     publisher_->publish(odom);
   
@@ -209,7 +207,7 @@ void Odometry::update(int rate) {
     }
     //TODO: Check if spin_some() is fine, else test with spin() or spin_all()
     // spin the callbacks from node (pointer to odometry node object)
-    rclcpp::spin_some(node);
+    rclcpp::spin_some( this->get_node_base_interface() );
     loop_rate.sleep();
   }
 
