@@ -14,6 +14,7 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(Threads REQUIRED)
+find_package(tf2_geometry_msgs REQUIRED)
 find_package(volksface REQUIRED)
 
 add_executable(gamepad
@@ -23,7 +24,7 @@ add_executable(gamepad
   src/logitechf710.cpp
   src/xboxONE.cpp
 )
-ament_target_dependencies(gamepad rclcpp Threads volksface)
+ament_target_dependencies(gamepad rclcpp Threads geometry_msgs volksface)
 
 # target_include_directories(gamepad PUBLIC
 #   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

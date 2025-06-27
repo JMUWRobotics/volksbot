@@ -12,8 +12,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find necessary ROS 2 packages
 find_package(ament_cmake REQUIRED)
-find_package(std_msgs REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(std_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(std_srvs REQUIRED)
@@ -28,6 +28,24 @@ find_package(volksface REQUIRED)
 # rosidl_get_typesupport_target(cpp_typesupport_target ${PROJECT_NAME} "rosidl_typesupport_cpp")
 
 link_directories(launch)
+
+add_executable(volksbot
+  src/volksbot.cc
+)
+ament_target_dependencies(volksbot
+  rclcpp
+  geometry_msgs
+  volksface
+)
+target_link_libraries(volksbot "${cpp_typesupport_target}")
+
+target_include_directories(volksbot PUBLIC
+  volksface/include
+  # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  # $<INSTALL_INTERFACE:include>
+)
+
+# message( CMAKE_SOURCE_DIR="${CMAKE_SOURCE_DIR}" )
 
 # Define calibration executable
 add_executable(calibration 
@@ -48,7 +66,7 @@ target_link_libraries(calibration "${cpp_typesupport_target}")
 
 # Install executables
 install(
-  TARGETS calibration
+  TARGETS calibration volksbot
   DESTINATION lib/${PROJECT_NAME}
 )
 

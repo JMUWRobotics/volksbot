@@ -128,7 +128,9 @@
                 "/home/nls/ros2_humble/install/fastrtps/include/**",
                 "/usr/include/**",
                 "${workspaceFolder}/install/**/include/**",
-                "${workspaceFolder}/ros2_ws/install/volksface/include/volksface"
+                "${workspaceFolder}/ros2_ws/install/**/include/**",
+                "/home/nls/ros2_humble/install/std_msgs/include/std_msgs",
+                "${workspaceFolder}/ros2_ws/src/**/include"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",

@@ -1,10 +1,8 @@
 #include "odometry/odometry.h"
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
   rclcpp::init(argc, argv);
 	auto node = std::make_shared<rclcpp::Node>("Odometry");
-
 
   bool publish_tf = true;
 
@@ -13,8 +11,12 @@ int main(int argc, char* argv[])
   }
 
   volksbot::Odometry odo(publish_tf);
+  
+  // odo.update(70);
+  
   rclcpp::spin(node);
-  //odo.update(70);
+
+  rclcpp::shutdown();
 
 	return 0;
 }

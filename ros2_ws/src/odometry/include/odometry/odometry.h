@@ -7,8 +7,7 @@
 #include "nav_msgs/msg/odometry.hpp"
 
 // custom msgs
-#include "volksface/msg/ticks.hpp"
-#include "volksface/msg/pose2d.hpp"
+#include "volksface/volksbot.h"
 
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>
 #include <tf2_ros/transform_broadcaster.h>
@@ -17,60 +16,50 @@
 using std::placeholders::_1;
 
 namespace volksbot {
+	class Odometry : public rclcpp::Node {
+	public:
 
-  class Odometry : public rclcpp::Node{
+		Odometry() : Odometry(false) { };
 
-    public:
+		Odometry(bool _publish_tf);
+		~Odometry();
 
-      Odometry() : Odometry(false) { };
+		void set_rover( VB::msg::Rover::ConstSharedPtr rover );
 
-      Odometry(bool _publish_tf);
-      ~Odometry();
+		const nav_msgs::msg::Odometry& getCurrentOdom() {
+			return odom;
+		}
 
-      void setTicks(double m) {
-        M = 1.0 / m;
-      }
+		void update(int ms);
 
-      void setWheelBase(double b) {
-        B = b;
-      }
+	private:
+		void convertTicks2Odom( VB::msg::MCTicks::ConstSharedPtr cticks );
 
-      void convertTicks2Odom(const volksface::msg::Ticks::ConstSharedPtr& cticks);
+		void publish_odom( rclcpp::Time current_time, double dt, double dx, double dth );
+		void publish_transform( rclcpp::Time current_time );
 
-      const nav_msgs::msg::Odometry& getCurrentOdom() {
-        return odom;
-      }
+		// Declaration of Publisher and Subscriber
+		rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_odometry;
+		rclcpp::Subscription<VB::msg::MCTicks>::SharedPtr subscriber_ticks;
+		rclcpp::Subscription<VB::msg::Rover>::SharedPtr subscriber_rover;
 
-      void update(int ms);
+		std::shared_ptr<tf2_ros::TransformBroadcaster> odom_broadcaster_;
+		bool firstticks = true;
+		bool publish_tf = false;
 
-    private:
+		// current state
+		double x, z, theta;
+		double vx, vth;
 
-      // Declaration of Publisher and Subscriber
-      rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr publisher_;
-      rclcpp::Subscription<volksface::msg::Ticks>::SharedPtr subscriber_;
+		// last state
+		rclcpp::Time last_time;
+		int last_ticks_left, last_ticks_right;
 
-      std::shared_ptr<tf2_ros::TransformBroadcaster> odom_broadcaster_;
-      bool firstticks;
-      bool publish_tf = false;
-      double x,z,theta;
-
-      double lastvx, lastvth;
-
-      int oldlticks, oldrticks;
-
-      // -461.817 ticks to cm
-      double M;
-      // 44.4 cm is the wheel base
-      double B;
-
-      static const double covariance[36];
-
-      nav_msgs::msg::Odometry odom;
-      
-      geometry_msgs::msg::Quaternion odom_quat; //quaternion rotation
-  
-      geometry_msgs::msg::TransformStamped odom_trans;
-  };
+		// message objects
+		VB::msg::Rover active_rover;
+		nav_msgs::msg::Odometry odom;
+		geometry_msgs::msg::TransformStamped odom_trans;
+	};
 }
 
 #endif

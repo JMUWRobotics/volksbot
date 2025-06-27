@@ -5,17 +5,6 @@
 // @date    31.03.2025
 /////////////////////////////////////////////////////////////////////////////
 
-/*
-    TODOs:
-    // create simple automatic game pad detection and selection
-    // create autonomous rumble event handling (via Threading?)
-    //- add disconnection detector with reconnect ability
-    // integrate ROS2 (Services & Publishers) 
-    
-    => Integrate into Volksbot package
-*/
-
-
 
 #ifndef __VOLKSBOT_ADAPTER__
 #define __VOLKSBOT_ADAPTER__
@@ -28,9 +17,8 @@ using namespace std::chrono_literals;
 #include "rclcpp/rclcpp.hpp"
 #include "rclcpp/executors.hpp"
 
-#include "volksface/msg/gamepad.hpp"
-#include "volksface/msg/vel.hpp"
-#include "volksface/srv/rumble.hpp"
+#define VB_NO_GEOMETRY
+#include "volksface/volksbot.h"
 
 #include "device_utils.h"
 
@@ -44,11 +32,6 @@ using namespace std::chrono_literals;
 // #define PRINT_VEL_CTRL
 // #define ACCEL_FORCE_FEEDBACK
 
-
-
-using msg_Vel     = volksface::msg::Vel;
-using msg_Gamepad = volksface::msg::Gamepad;
-using srv_Rumble  = volksface::srv::Rumble;
 
 using std::placeholders::_1;
 using std::placeholders::_2;
@@ -70,11 +53,12 @@ template<typename T> T min( const T a, const T b ) { return a <= b ? a : b; }
 
 
 using namespace std::chrono;
+using namespace VB;
 struct vel_ctrl_t {
 
     /* cm/s */
     static constexpr int speed_min = 10, speed_max = 100, speed_step = 10;
-    msg_Vel vel; /* vel msg */
+    msg::VelGP vel; /* vel msg */
 
     void update( Gamepad* gp ) {
         this->gp = gp;
@@ -247,9 +231,9 @@ struct vel_ctrl_t {
 class Volks_gamepad : public rclcpp::Node {
     public:
         Volks_gamepad() : Node( "Volks_gamepad" ) {
-            _pub_vel = create_publisher<msg_Vel>( "Vel", 10 );
-            _pub_gp  = create_publisher<msg_Gamepad>( "Gamepad", 10 );
-            _service_rumble = create_service<srv_Rumble>( "Rumble", std::bind( &Volks_gamepad::set_rumble, this, _1, _2) );
+            _pub_vel = create_publisher<msg::VelGP>( VB::TOPIC_NAME_VEL_GP, 10 );
+            _pub_gp  = create_publisher<msg::Gamepad>( VB::TOPIC_NAME_GAMEPAD, 10 );
+            _service_rumble = create_service<srv::Rumble>( VB::SERVICE_NAME_RUMBLE, std::bind( &Volks_gamepad::set_rumble, this, _1, _2) );
 
 
             while( rclcpp::ok() ) {
@@ -312,9 +296,9 @@ class Volks_gamepad : public rclcpp::Node {
 
     private:
         // ros
-        rclcpp::Publisher<msg_Vel>::SharedPtr     _pub_vel;
-        rclcpp::Publisher<msg_Gamepad>::SharedPtr _pub_gp;
-        rclcpp::Service<srv_Rumble>::SharedPtr    _service_rumble;
+        rclcpp::Publisher<msg::VelGP>::SharedPtr     _pub_vel;
+        rclcpp::Publisher<msg::Gamepad>::SharedPtr _pub_gp;
+        rclcpp::Service<srv::Rumble>::SharedPtr    _service_rumble;
         
         // data
         Gamepad* active_gamepad;
@@ -334,7 +318,7 @@ class Volks_gamepad : public rclcpp::Node {
             if( active_gamepad == nullptr )
                 return;
 
-            msg_Gamepad msg_gp;
+            msg::Gamepad msg_gp;
             msg_gp.connected = active_gamepad->has_connection();
 
             if( msg_gp.connected ) {
@@ -348,8 +332,8 @@ class Volks_gamepad : public rclcpp::Node {
             _pub_vel->publish( vel_ctrl.vel );
         }
         void set_rumble(
-            srv_Rumble::Request::ConstSharedPtr request,
-            srv_Rumble::Response::SharedPtr response
+            srv::Rumble::Request::ConstSharedPtr request,
+            srv::Rumble::Response::SharedPtr response
         ) {
             (void) response; // to surpress compiler warning
 

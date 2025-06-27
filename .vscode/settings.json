@@ -82,7 +82,8 @@
         "streambuf": "cpp",
         "valarray": "cpp",
         "variant": "cpp",
-        "charconv": "cpp"
+        "charconv": "cpp",
+        "*.def": "cpp"
     },
     "python.autoComplete.extraPaths": [
         "/home/nls/ros2_humble/build/rqt_bag_plugins/src",

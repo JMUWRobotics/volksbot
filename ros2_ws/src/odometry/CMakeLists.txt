@@ -61,13 +61,13 @@ install(TARGETS
   DESTINATION lib/${PROJECT_NAME})
 
 # Install include directory
-#install(DIRECTORY include/
-#  DESTINATION include/${PROJECT_NAME}
-#)
+install(DIRECTORY include/
+ DESTINATION include/${PROJECT_NAME}
+)
 
 # export include directory
 # if other packages includes the 'odometry' package, it automatically gets access to include
-#ament_export_include_directories(include)
+ament_export_include_directories(include)
 
 
 if(BUILD_TESTING)
