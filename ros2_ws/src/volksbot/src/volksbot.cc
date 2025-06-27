@@ -120,7 +120,7 @@ static constexpr Rover ROVER_DUMMY3 {
     ip_t( 8, 8, 8, 8 )
 };
 
-static constexpr Rover ROVERS[] = { ROVER_UTE, ROVER_LARS, ROVER_IRMA, /*REMOVE AFTER TESTING*/ ROVER_DUMMY2, ROVER_DUMMY3 };
+static constexpr Rover ROVERS[] = { ROVER_UTE, ROVER_LARS, ROVER_IRMA, /*REMOVE AFTER TESTING*/ /*ROVER_DUMMY2, ROVER_DUMMY3*/ };
 static constexpr unsigned int rover_count = sizeof(ROVERS) / sizeof(Rover);
 
 
