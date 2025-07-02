@@ -1,0 +1,304 @@
+\hypertarget{sick__ros__wrapper_8h}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/sick\+\_\+ros\+\_\+wrapper.h File Reference}
+\label{sick__ros__wrapper_8h}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/sick\_ros\_wrapper.h@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/sick\_ros\_wrapper.h}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classrosPublisher}{ros\+Publisher$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classrosServiceClient}{ros\+Service\+Client$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classQoSConverter}{Qo\+S\+Converter}}
+\item 
+class \mbox{\hyperlink{classrosPublisher}{ros\+Publisher$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classrosServiceClient}{ros\+Service\+Client$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classrosServiceServer}{ros\+Service\+Server$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classsick__scan__xd_1_1DiagnosedPublishAdapter}{sick\+\_\+scan\+\_\+xd\+::\+Diagnosed\+Publish\+Adapter$<$ Diagnosed\+Publisher\+T $>$}}
+\item 
+class \mbox{\hyperlink{classsick__scan__xd_1_1SickScanConfig}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Config}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef ros\+::\+Node\+Handle $\ast$ \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}
+\item 
+typedef int \mbox{\hyperlink{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}{ros\+QoS}}
+\item 
+typedef ros\+::\+Duration \mbox{\hyperlink{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}{ros\+Duration}}
+\item 
+typedef ros\+::\+Time \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{sick__ros__wrapper_8h_a24f6b0b3284e2bba7402cb09c6908984}{param\+To\+String}} (const std\+::vector$<$ T $>$ \&param\+\_\+value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{sick__ros__wrapper_8h_a804249b56544bd3df520ff2b34876c8b}{param\+To\+String}} (const T \&param\+\_\+value)
+\item 
+bool \mbox{\hyperlink{sick__ros__wrapper_8h_ac8e62324d1f7ad28ed6cffb654842096}{shutdown\+Signal\+Received}} ()
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{sick__ros__wrapper_8h_a8610b9d1bf83d79681f4a0f3fa6bd1d2}{ros\+Declare\+Param}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, const std\+::string \&param\+\_\+name, const T \&param\+\_\+value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\bool \mbox{\hyperlink{sick__ros__wrapper_8h_aaba8af5430c3bbc9746bd586951b6070}{ros\+Get\+Param}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, const std\+::string \&param\+\_\+name, T \&param\+\_\+value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{sick__ros__wrapper_8h_a44171aead940b26b59c3fe6ae817bfcd}{ros\+Set\+Param}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, const std\+::string \&param\+\_\+name, const T \&param\+\_\+value)
+\item 
+\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \mbox{\hyperlink{sick__ros__wrapper_8h_ac1f5e903d8a660151dda383a3aa66f71}{ros\+Time\+Now}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{sick__ros__wrapper_8h_a3d707f2d63f94a34c1fdd669c8a2cba6}{sec}} (const \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&time)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{sick__ros__wrapper_8h_a766c0c373d885d61ad2f4ba849526878}{nsec}} (const \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&time)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{sick__ros__wrapper_8h_addd3f1e47b8cfc76fe2174fb83a0d100}{sec}} (const \mbox{\hyperlink{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}{ros\+Duration}} \&time)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{sick__ros__wrapper_8h_a2625b6294bff7001f4279906d2630525}{nsec}} (const \mbox{\hyperlink{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}{ros\+Duration}} \&time)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{sick__ros__wrapper_8h_a18299a8a07bcc4d3641f9f7ebaeeb2a5}{ros\+Nanosec\+Timestamp\+Now}} (void)
+\item 
+double \mbox{\hyperlink{sick__ros__wrapper_8h_a9a9bed8f45071ee9fe46b9d50e263f8c}{ros\+Time\+To\+Seconds}} (const \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&time)
+\item 
+{\footnotesize template$<$typename T $>$ }\\\mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ T $>$ \mbox{\hyperlink{sick__ros__wrapper_8h_a2f86bb406c0bd40d77519bdc1351ce3f}{ros\+Advertise}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, const std\+::string \&topic, uint32\+\_\+t queue\+\_\+size=10, \mbox{\hyperlink{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}{ros\+QoS}} qos=10)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{sick__ros__wrapper_8h_a93924c0a8ad5a563c5a1dfaa00517805}{ros\+Publish}} (\mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ T $>$ \&publisher, const T \&msg)
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::string \mbox{\hyperlink{sick__ros__wrapper_8h_aa1b2c34736bc200f95431d7d19f77240}{ros\+Topic\+Name}} (\mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ T $>$ \&publisher)
+\item 
+bool \mbox{\hyperlink{sick__ros__wrapper_8h_ad164b7c1c0e79c2f0250d01a6d86e41e}{ros\+Ok}} (void)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_a77748e21d8f83c72829c5716c5db9eef}{ros\+Spin}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_ab760c434da5d03bfc9c6fc4ab68fe4e9}{ros\+Spin\+Once}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_aecc875a15e580ac58934be74cb35a07a}{ros\+Shutdown}} (void)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_acb9b2b47c0ff294d6714ac645e89fa65}{ros\+Sleep}} (double seconds)
+\item 
+\mbox{\hyperlink{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}{ros\+Duration}} \mbox{\hyperlink{sick__ros__wrapper_8h_af4ba7603cbc26c2f5ccd15b87e658231}{ros\+Duration\+From\+Sec}} (double seconds)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_a80b79872bff2aef492844bc359d9c9d1}{ros\+Conv\+Param}} (const std\+::string \&str\+\_\+value, std\+::string \&val)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_ac31cdeef3afcb213071b3bcee9223b09}{ros\+Conv\+Param}} (const std\+::string \&str\+\_\+value, bool \&val)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_a7bfe5addde52ffa397af387a933e408a}{ros\+Conv\+Param}} (const std\+::string \&str\+\_\+value, int \&val)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_a9b65658ff4c092fc075eef40debd2f3e}{ros\+Conv\+Param}} (const std\+::string \&str\+\_\+value, float \&val)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_a2cc2a95343456edf26fea65b018b7711}{ros\+Conv\+Param}} (const std\+::string \&str\+\_\+value, double \&val)
+\item 
+void \mbox{\hyperlink{sick__ros__wrapper_8h_a6959ecf0afb225f1bddb96ce5a925ad1}{overwrite\+By\+Optional\+Q\+O\+Sconfig}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, \mbox{\hyperlink{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}{ros\+QoS}} \&qos)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}\label{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosDuration@{rosDuration}}
+\index{rosDuration@{rosDuration}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosDuration}{rosDuration}}
+{\footnotesize\ttfamily typedef rclcpp\+::\+Duration \mbox{\hyperlink{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}{ros\+Duration}}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}\label{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosNodePtr@{rosNodePtr}}
+\index{rosNodePtr@{rosNodePtr}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosNodePtr}{rosNodePtr}}
+{\footnotesize\ttfamily typedef rclcpp\+::\+Node\+::\+Shared\+Ptr \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}\label{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosQoS@{rosQoS}}
+\index{rosQoS@{rosQoS}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosQoS}{rosQoS}}
+{\footnotesize\ttfamily typedef rclcpp\+::\+QoS \mbox{\hyperlink{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}{ros\+QoS}}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}\label{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosTime@{rosTime}}
+\index{rosTime@{rosTime}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosTime}{rosTime}}
+{\footnotesize\ttfamily typedef rclcpp\+::\+Time \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a2625b6294bff7001f4279906d2630525}\label{sick__ros__wrapper_8h_a2625b6294bff7001f4279906d2630525}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!nsec@{nsec}}
+\index{nsec@{nsec}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{nsec()}{nsec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t nsec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}{ros\+Duration}} \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a766c0c373d885d61ad2f4ba849526878}\label{sick__ros__wrapper_8h_a766c0c373d885d61ad2f4ba849526878}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!nsec@{nsec}}
+\index{nsec@{nsec}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{nsec()}{nsec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t nsec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a6959ecf0afb225f1bddb96ce5a925ad1}\label{sick__ros__wrapper_8h_a6959ecf0afb225f1bddb96ce5a925ad1}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!overwriteByOptionalQOSconfig@{overwriteByOptionalQOSconfig}}
+\index{overwriteByOptionalQOSconfig@{overwriteByOptionalQOSconfig}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{overwriteByOptionalQOSconfig()}{overwriteByOptionalQOSconfig()}}
+{\footnotesize\ttfamily void overwrite\+By\+Optional\+Q\+O\+Sconfig (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}{ros\+QoS}} \&}]{qos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a24f6b0b3284e2bba7402cb09c6908984}\label{sick__ros__wrapper_8h_a24f6b0b3284e2bba7402cb09c6908984}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!paramToString@{paramToString}}
+\index{paramToString@{paramToString}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{paramToString()}{paramToString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string param\+To\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ T $>$ \&}]{param\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a804249b56544bd3df520ff2b34876c8b}\label{sick__ros__wrapper_8h_a804249b56544bd3df520ff2b34876c8b}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!paramToString@{paramToString}}
+\index{paramToString@{paramToString}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{paramToString()}{paramToString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string param\+To\+String (\begin{DoxyParamCaption}\item[{const T \&}]{param\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a2f86bb406c0bd40d77519bdc1351ce3f}\label{sick__ros__wrapper_8h_a2f86bb406c0bd40d77519bdc1351ce3f}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosAdvertise@{rosAdvertise}}
+\index{rosAdvertise@{rosAdvertise}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosAdvertise()}{rosAdvertise()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ T $>$ ros\+Advertise (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{const std\+::string \&}]{topic,  }\item[{uint32\+\_\+t}]{queue\+\_\+size = {\ttfamily 10},  }\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}{ros\+QoS}}}]{qos = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_ac31cdeef3afcb213071b3bcee9223b09}\label{sick__ros__wrapper_8h_ac31cdeef3afcb213071b3bcee9223b09}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosConvParam@{rosConvParam}}
+\index{rosConvParam@{rosConvParam}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosConvParam()}{rosConvParam()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily void ros\+Conv\+Param (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+\_\+value,  }\item[{bool \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a2cc2a95343456edf26fea65b018b7711}\label{sick__ros__wrapper_8h_a2cc2a95343456edf26fea65b018b7711}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosConvParam@{rosConvParam}}
+\index{rosConvParam@{rosConvParam}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosConvParam()}{rosConvParam()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily void ros\+Conv\+Param (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+\_\+value,  }\item[{double \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a9b65658ff4c092fc075eef40debd2f3e}\label{sick__ros__wrapper_8h_a9b65658ff4c092fc075eef40debd2f3e}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosConvParam@{rosConvParam}}
+\index{rosConvParam@{rosConvParam}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosConvParam()}{rosConvParam()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily void ros\+Conv\+Param (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+\_\+value,  }\item[{float \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a7bfe5addde52ffa397af387a933e408a}\label{sick__ros__wrapper_8h_a7bfe5addde52ffa397af387a933e408a}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosConvParam@{rosConvParam}}
+\index{rosConvParam@{rosConvParam}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosConvParam()}{rosConvParam()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily void ros\+Conv\+Param (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+\_\+value,  }\item[{int \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a80b79872bff2aef492844bc359d9c9d1}\label{sick__ros__wrapper_8h_a80b79872bff2aef492844bc359d9c9d1}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosConvParam@{rosConvParam}}
+\index{rosConvParam@{rosConvParam}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosConvParam()}{rosConvParam()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily void ros\+Conv\+Param (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str\+\_\+value,  }\item[{std\+::string \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a8610b9d1bf83d79681f4a0f3fa6bd1d2}\label{sick__ros__wrapper_8h_a8610b9d1bf83d79681f4a0f3fa6bd1d2}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosDeclareParam@{rosDeclareParam}}
+\index{rosDeclareParam@{rosDeclareParam}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosDeclareParam()}{rosDeclareParam()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void ros\+Declare\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{const std\+::string \&}]{param\+\_\+name,  }\item[{const T \&}]{param\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_af4ba7603cbc26c2f5ccd15b87e658231}\label{sick__ros__wrapper_8h_af4ba7603cbc26c2f5ccd15b87e658231}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosDurationFromSec@{rosDurationFromSec}}
+\index{rosDurationFromSec@{rosDurationFromSec}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosDurationFromSec()}{rosDurationFromSec()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}{ros\+Duration}} ros\+Duration\+From\+Sec (\begin{DoxyParamCaption}\item[{double}]{seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_aaba8af5430c3bbc9746bd586951b6070}\label{sick__ros__wrapper_8h_aaba8af5430c3bbc9746bd586951b6070}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosGetParam@{rosGetParam}}
+\index{rosGetParam@{rosGetParam}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosGetParam()}{rosGetParam()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool ros\+Get\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{const std\+::string \&}]{param\+\_\+name,  }\item[{T \&}]{param\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a18299a8a07bcc4d3641f9f7ebaeeb2a5}\label{sick__ros__wrapper_8h_a18299a8a07bcc4d3641f9f7ebaeeb2a5}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosNanosecTimestampNow@{rosNanosecTimestampNow}}
+\index{rosNanosecTimestampNow@{rosNanosecTimestampNow}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosNanosecTimestampNow()}{rosNanosecTimestampNow()}}
+{\footnotesize\ttfamily uint64\+\_\+t ros\+Nanosec\+Timestamp\+Now (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_ad164b7c1c0e79c2f0250d01a6d86e41e}\label{sick__ros__wrapper_8h_ad164b7c1c0e79c2f0250d01a6d86e41e}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosOk@{rosOk}}
+\index{rosOk@{rosOk}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosOk()}{rosOk()}}
+{\footnotesize\ttfamily bool ros\+Ok (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a93924c0a8ad5a563c5a1dfaa00517805}\label{sick__ros__wrapper_8h_a93924c0a8ad5a563c5a1dfaa00517805}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosPublish@{rosPublish}}
+\index{rosPublish@{rosPublish}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosPublish()}{rosPublish()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void ros\+Publish (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ T $>$ \&}]{publisher,  }\item[{const T \&}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a44171aead940b26b59c3fe6ae817bfcd}\label{sick__ros__wrapper_8h_a44171aead940b26b59c3fe6ae817bfcd}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosSetParam@{rosSetParam}}
+\index{rosSetParam@{rosSetParam}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosSetParam()}{rosSetParam()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void ros\+Set\+Param (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{const std\+::string \&}]{param\+\_\+name,  }\item[{const T \&}]{param\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_aecc875a15e580ac58934be74cb35a07a}\label{sick__ros__wrapper_8h_aecc875a15e580ac58934be74cb35a07a}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosShutdown@{rosShutdown}}
+\index{rosShutdown@{rosShutdown}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosShutdown()}{rosShutdown()}}
+{\footnotesize\ttfamily void ros\+Shutdown (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_acb9b2b47c0ff294d6714ac645e89fa65}\label{sick__ros__wrapper_8h_acb9b2b47c0ff294d6714ac645e89fa65}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosSleep@{rosSleep}}
+\index{rosSleep@{rosSleep}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosSleep()}{rosSleep()}}
+{\footnotesize\ttfamily void ros\+Sleep (\begin{DoxyParamCaption}\item[{double}]{seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a77748e21d8f83c72829c5716c5db9eef}\label{sick__ros__wrapper_8h_a77748e21d8f83c72829c5716c5db9eef}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosSpin@{rosSpin}}
+\index{rosSpin@{rosSpin}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosSpin()}{rosSpin()}}
+{\footnotesize\ttfamily void ros\+Spin (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_ab760c434da5d03bfc9c6fc4ab68fe4e9}\label{sick__ros__wrapper_8h_ab760c434da5d03bfc9c6fc4ab68fe4e9}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosSpinOnce@{rosSpinOnce}}
+\index{rosSpinOnce@{rosSpinOnce}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosSpinOnce()}{rosSpinOnce()}}
+{\footnotesize\ttfamily void ros\+Spin\+Once (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_ac1f5e903d8a660151dda383a3aa66f71}\label{sick__ros__wrapper_8h_ac1f5e903d8a660151dda383a3aa66f71}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosTimeNow@{rosTimeNow}}
+\index{rosTimeNow@{rosTimeNow}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosTimeNow()}{rosTimeNow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} ros\+Time\+Now (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a9a9bed8f45071ee9fe46b9d50e263f8c}\label{sick__ros__wrapper_8h_a9a9bed8f45071ee9fe46b9d50e263f8c}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosTimeToSeconds@{rosTimeToSeconds}}
+\index{rosTimeToSeconds@{rosTimeToSeconds}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosTimeToSeconds()}{rosTimeToSeconds()}}
+{\footnotesize\ttfamily double ros\+Time\+To\+Seconds (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_aa1b2c34736bc200f95431d7d19f77240}\label{sick__ros__wrapper_8h_aa1b2c34736bc200f95431d7d19f77240}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!rosTopicName@{rosTopicName}}
+\index{rosTopicName@{rosTopicName}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{rosTopicName()}{rosTopicName()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::string ros\+Topic\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ T $>$ \&}]{publisher }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_addd3f1e47b8cfc76fe2174fb83a0d100}\label{sick__ros__wrapper_8h_addd3f1e47b8cfc76fe2174fb83a0d100}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!sec@{sec}}
+\index{sec@{sec}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{sec()}{sec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t sec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__ros__wrapper_8h_a7f8366dd74c608184ee939bd5a9e81d9}{ros\+Duration}} \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_a3d707f2d63f94a34c1fdd669c8a2cba6}\label{sick__ros__wrapper_8h_a3d707f2d63f94a34c1fdd669c8a2cba6}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!sec@{sec}}
+\index{sec@{sec}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{sec()}{sec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t sec (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&}]{time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{sick__ros__wrapper_8h_ac8e62324d1f7ad28ed6cffb654842096}\label{sick__ros__wrapper_8h_ac8e62324d1f7ad28ed6cffb654842096}} 
+\index{sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}!shutdownSignalReceived@{shutdownSignalReceived}}
+\index{shutdownSignalReceived@{shutdownSignalReceived}!sick\_ros\_wrapper.h@{sick\_ros\_wrapper.h}}
+\doxysubsubsection{\texorpdfstring{shutdownSignalReceived()}{shutdownSignalReceived()}}
+{\footnotesize\ttfamily bool shutdown\+Signal\+Received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

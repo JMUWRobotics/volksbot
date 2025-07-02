@@ -1,0 +1,34 @@
+\hypertarget{colab_8hpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/tcp/colab.hpp File Reference}
+\label{colab_8hpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/tcp/colab.hpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/tcp/colab.hpp}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacecolab}{colab}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{namespacecolab_a3c0cedf9370229a719067b15ac98ccf7}{colab\+::add\+String\+To\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&pos, const std\+::string \&string\+Value)
+\item 
+void \mbox{\hyperlink{namespacecolab_a5744471fd4b220cfd842152bf22c5a63}{colab\+::add\+String\+To\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$buffer, const std\+::string \&string\+Value)
+\item 
+std\+::string \mbox{\hyperlink{namespacecolab_a77a14c1da35afe4103ce57af251b94cf}{colab\+::get\+String\+From\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&pos, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} length)
+\item 
+std\+::string \mbox{\hyperlink{namespacecolab_a61178c3c9f1f8c8edcedcc441fa302ff}{colab\+::get\+String\+From\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} length)
+\item 
+std\+::string \mbox{\hyperlink{namespacecolab_a2abe4772a1322f4a01ba54c6a06b0b19}{colab\+::get\+Command\+String\+From\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer)
+\item 
+std\+::string \mbox{\hyperlink{namespacecolab_a218252252e826862dfc4bba8748f2af6}{colab\+::get\+Identifier\+From\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&next\+Data, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} buffer\+Length)
+\item 
+void \mbox{\hyperlink{namespacecolab_a1d5a61d17cd5155b1852adbe8ff78ba6}{colab\+::add\+Frame\+To\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$send\+Buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$cmd\+Buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} $\ast$len)
+\item 
+double \mbox{\hyperlink{namespacecolab_ab2896ccabe78d1033fd3e776a65d5738}{colab\+::get\+Double\+From\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&pos)
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \mbox{\hyperlink{namespacecolab_a05ae9e5a077ea15bc34d3b80f09c6f17}{colab\+::decode\+U\+I\+N\+T16}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$buffer)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespacecolab_aeb9f84be9d24753291c043c60065b3c6}{colab\+::add\+Integer\+To\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&pos, T int\+Value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T \mbox{\hyperlink{namespacecolab_a503fb3c2ea808a5f82ff99f4e07f0a9a}{colab\+::get\+Integer\+From\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&pos)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{namespacecolab_a0369be919047eea0a8e4e6ff32bc087b}{colab\+::add\+Float\+To\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&pos, T float\+Value)
+\end{DoxyCompactItemize}

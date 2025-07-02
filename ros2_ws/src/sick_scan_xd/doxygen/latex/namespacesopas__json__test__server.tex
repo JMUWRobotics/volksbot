@@ -1,0 +1,170 @@
+\hypertarget{namespacesopas__json__test__server}{}\doxysection{sopas\+\_\+json\+\_\+test\+\_\+server Namespace Reference}
+\label{namespacesopas__json__test__server}\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsopas__json__test__server_1_1SopasTestServer}{Sopas\+Test\+Server}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacesopas__json__test__server_a521761a2fa53b13c719db3f2cc013ef6}{tcp\+\_\+port}} = 2111
+\item 
+list \mbox{\hyperlink{namespacesopas__json__test__server_a6d2c9e2d258cba8e3245391778bdb44c}{scandata\+\_\+ids}} = \mbox{[} \char`\"{}s\+SN L\+M\+Dradardata\char`\"{}, \char`\"{}s\+SN L\+M\+Dscandata\char`\"{}, \char`\"{}s\+SN Inertial\+Measurement\+Unit\char`\"{} \mbox{]}
+\item 
+string \mbox{\hyperlink{namespacesopas__json__test__server_a23ea427087a407e294fb2bbed03863e2}{json\+\_\+file}} = \char`\"{}../emulator/scandata/20221018\+\_\+rms\+\_\+1xxx\+\_\+ascii\+\_\+rawtarget\+\_\+object.\+pcapng.\+json\char`\"{}
+\item 
+int \mbox{\hyperlink{namespacesopas__json__test__server_a07d82a9e10408d4f421e76212bbf1fe7}{verbosity}} = 2
+\item 
+int \mbox{\hyperlink{namespacesopas__json__test__server_ad835e1e5852346dec401c5bb431bd2f2}{send\+\_\+rate}} = 10
+\item 
+int \mbox{\hyperlink{namespacesopas__json__test__server_af79a97ecd1ec312bbd8d456a4d20fc0f}{send\+\_\+scandata\+\_\+after}} = 5
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_aa7b127b1f718c1c2bac6c0af58ebf331}{arg\+\_\+parser}} = argparse.\+Argument\+Parser()
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_a84aedec315bc4629df2560a1d4621230}{help}}
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_a40470f741470fad00a73dcedb69f0ddf}{default}}
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_a483be48856841cf4796cc915de2c9be6}{type}}
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_ac4f3ffcb4d7c046e126ff2081e6af243}{cli\+\_\+args}} = arg\+\_\+parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_a60a014d8abfe41bae343d4496244388c}{json\+\_\+input}} = json.\+load(file\+\_\+stream)
+\item 
+list \mbox{\hyperlink{namespacesopas__json__test__server_ae700cf7edf6e3da56e13bd7c5b3647b1}{json\+\_\+tcp\+\_\+payloads}} = \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_aad5b62083d5b1d464c6c37705c37e3b8}{tcp\+\_\+description}} = json\+\_\+entry\mbox{[}\char`\"{}\+\_\+source\char`\"{}\mbox{]}\mbox{[}\char`\"{}layers\char`\"{}\mbox{]}\mbox{[}\char`\"{}tcp\char`\"{}\mbox{]}\mbox{[}\char`\"{}tcp.\+description\char`\"{}\mbox{]}
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_a6248f29ce2e6231f5375af9f79d481d7}{tcp\+\_\+payload\+\_\+json}} = json\+\_\+entry\mbox{[}\char`\"{}\+\_\+source\char`\"{}\mbox{]}\mbox{[}\char`\"{}layers\char`\"{}\mbox{]}\mbox{[}\char`\"{}tcp\char`\"{}\mbox{]}\mbox{[}\char`\"{}tcp.\+payload\char`\"{}\mbox{]}
+\item 
+string \mbox{\hyperlink{namespacesopas__json__test__server_a3bab65f8eb4d3f33b11000c0a0ad4e31}{tcp\+\_\+payload\+\_\+hex\+\_\+str}} = \char`\"{}\char`\"{}.join(tcp\+\_\+payload\+\_\+json.\+split(\char`\"{}\+:\char`\"{}))
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_ad15ec834206e314b577e82f6cace46d3}{tcp\+\_\+payload}} = bytearray.\+fromhex(\mbox{\hyperlink{namespacesopas__json__test__server_a3bab65f8eb4d3f33b11000c0a0ad4e31}{tcp\+\_\+payload\+\_\+hex\+\_\+str}})
+\item 
+\mbox{\hyperlink{namespacesopas__json__test__server_a5d3e8b1801aa02a682bfd58f69583e84}{server}} = \mbox{\hyperlink{classsopas__json__test__server_1_1SopasTestServer}{Sopas\+Test\+Server}}(\mbox{\hyperlink{namespacesopas__json__test__server_a521761a2fa53b13c719db3f2cc013ef6}{tcp\+\_\+port}}, \mbox{\hyperlink{namespacesopas__json__test__server_ae700cf7edf6e3da56e13bd7c5b3647b1}{json\+\_\+tcp\+\_\+payloads}}, \mbox{\hyperlink{namespacesopas__json__test__server_a07d82a9e10408d4f421e76212bbf1fe7}{verbosity}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    A simple sopas test server using json input. A listening tcp socket is opened, incoming connections are accepted and cola telegrams are responded on client requests.
+    After 10 seconds, datagrams are sent continously.
+    All data (sopas responses and telegrams) are read from json file, which can be created from pcapng-file by pcap_json_converter.py
+    Note: This is just a simple test server for sick_scan_xd unittests. It does not emulate any device.
+
+    Usage:
+    python sopas_json_test_server.py --tcp_port=<int> --json_file=<filepath>
+    
+    Example:
+    python ../test/python/sopas_test_server.py --tcp_port=2111 --json_file=../emulator/scandata/20221018_rms_1xxx_ascii_rawtarget_object.pcapng.json\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacesopas__json__test__server_aa7b127b1f718c1c2bac6c0af58ebf331}\label{namespacesopas__json__test__server_aa7b127b1f718c1c2bac6c0af58ebf331}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!arg\_parser@{arg\_parser}}
+\index{arg\_parser@{arg\_parser}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{arg\_parser}{arg\_parser}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+arg\+\_\+parser = argparse.\+Argument\+Parser()}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_ac4f3ffcb4d7c046e126ff2081e6af243}\label{namespacesopas__json__test__server_ac4f3ffcb4d7c046e126ff2081e6af243}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!cli\_args@{cli\_args}}
+\index{cli\_args@{cli\_args}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{cli\_args}{cli\_args}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+cli\+\_\+args = arg\+\_\+parser.\+parse\+\_\+args()}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a40470f741470fad00a73dcedb69f0ddf}\label{namespacesopas__json__test__server_a40470f741470fad00a73dcedb69f0ddf}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!default@{default}}
+\index{default@{default}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{default}{default}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+default}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a84aedec315bc4629df2560a1d4621230}\label{namespacesopas__json__test__server_a84aedec315bc4629df2560a1d4621230}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!help@{help}}
+\index{help@{help}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{help}{help}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+help}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a23ea427087a407e294fb2bbed03863e2}\label{namespacesopas__json__test__server_a23ea427087a407e294fb2bbed03863e2}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!json\_file@{json\_file}}
+\index{json\_file@{json\_file}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{json\_file}{json\_file}}
+{\footnotesize\ttfamily string sopas\+\_\+json\+\_\+test\+\_\+server.\+json\+\_\+file = \char`\"{}../emulator/scandata/20221018\+\_\+rms\+\_\+1xxx\+\_\+ascii\+\_\+rawtarget\+\_\+object.\+pcapng.\+json\char`\"{}}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a60a014d8abfe41bae343d4496244388c}\label{namespacesopas__json__test__server_a60a014d8abfe41bae343d4496244388c}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!json\_input@{json\_input}}
+\index{json\_input@{json\_input}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{json\_input}{json\_input}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+json\+\_\+input = json.\+load(file\+\_\+stream)}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_ae700cf7edf6e3da56e13bd7c5b3647b1}\label{namespacesopas__json__test__server_ae700cf7edf6e3da56e13bd7c5b3647b1}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!json\_tcp\_payloads@{json\_tcp\_payloads}}
+\index{json\_tcp\_payloads@{json\_tcp\_payloads}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{json\_tcp\_payloads}{json\_tcp\_payloads}}
+{\footnotesize\ttfamily list sopas\+\_\+json\+\_\+test\+\_\+server.\+json\+\_\+tcp\+\_\+payloads = \mbox{[}$\,$\mbox{]}}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a6d2c9e2d258cba8e3245391778bdb44c}\label{namespacesopas__json__test__server_a6d2c9e2d258cba8e3245391778bdb44c}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!scandata\_ids@{scandata\_ids}}
+\index{scandata\_ids@{scandata\_ids}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{scandata\_ids}{scandata\_ids}}
+{\footnotesize\ttfamily list sopas\+\_\+json\+\_\+test\+\_\+server.\+scandata\+\_\+ids = \mbox{[} \char`\"{}s\+SN L\+M\+Dradardata\char`\"{}, \char`\"{}s\+SN L\+M\+Dscandata\char`\"{}, \char`\"{}s\+SN Inertial\+Measurement\+Unit\char`\"{} \mbox{]}}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_ad835e1e5852346dec401c5bb431bd2f2}\label{namespacesopas__json__test__server_ad835e1e5852346dec401c5bb431bd2f2}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!send\_rate@{send\_rate}}
+\index{send\_rate@{send\_rate}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{send\_rate}{send\_rate}}
+{\footnotesize\ttfamily int sopas\+\_\+json\+\_\+test\+\_\+server.\+send\+\_\+rate = 10}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_af79a97ecd1ec312bbd8d456a4d20fc0f}\label{namespacesopas__json__test__server_af79a97ecd1ec312bbd8d456a4d20fc0f}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!send\_scandata\_after@{send\_scandata\_after}}
+\index{send\_scandata\_after@{send\_scandata\_after}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{send\_scandata\_after}{send\_scandata\_after}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+send\+\_\+scandata\+\_\+after = 5}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a5d3e8b1801aa02a682bfd58f69583e84}\label{namespacesopas__json__test__server_a5d3e8b1801aa02a682bfd58f69583e84}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!server@{server}}
+\index{server@{server}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{server}{server}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+server = \mbox{\hyperlink{classsopas__json__test__server_1_1SopasTestServer}{Sopas\+Test\+Server}}(\mbox{\hyperlink{namespacesopas__json__test__server_a521761a2fa53b13c719db3f2cc013ef6}{tcp\+\_\+port}}, \mbox{\hyperlink{namespacesopas__json__test__server_ae700cf7edf6e3da56e13bd7c5b3647b1}{json\+\_\+tcp\+\_\+payloads}}, \mbox{\hyperlink{namespacesopas__json__test__server_a07d82a9e10408d4f421e76212bbf1fe7}{verbosity}})}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_aad5b62083d5b1d464c6c37705c37e3b8}\label{namespacesopas__json__test__server_aad5b62083d5b1d464c6c37705c37e3b8}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!tcp\_description@{tcp\_description}}
+\index{tcp\_description@{tcp\_description}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{tcp\_description}{tcp\_description}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+tcp\+\_\+description = json\+\_\+entry\mbox{[}\char`\"{}\+\_\+source\char`\"{}\mbox{]}\mbox{[}\char`\"{}layers\char`\"{}\mbox{]}\mbox{[}\char`\"{}tcp\char`\"{}\mbox{]}\mbox{[}\char`\"{}tcp.\+description\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_ad15ec834206e314b577e82f6cace46d3}\label{namespacesopas__json__test__server_ad15ec834206e314b577e82f6cace46d3}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!tcp\_payload@{tcp\_payload}}
+\index{tcp\_payload@{tcp\_payload}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{tcp\_payload}{tcp\_payload}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+tcp\+\_\+payload = bytearray.\+fromhex(\mbox{\hyperlink{namespacesopas__json__test__server_a3bab65f8eb4d3f33b11000c0a0ad4e31}{tcp\+\_\+payload\+\_\+hex\+\_\+str}})}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a3bab65f8eb4d3f33b11000c0a0ad4e31}\label{namespacesopas__json__test__server_a3bab65f8eb4d3f33b11000c0a0ad4e31}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!tcp\_payload\_hex\_str@{tcp\_payload\_hex\_str}}
+\index{tcp\_payload\_hex\_str@{tcp\_payload\_hex\_str}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{tcp\_payload\_hex\_str}{tcp\_payload\_hex\_str}}
+{\footnotesize\ttfamily string sopas\+\_\+json\+\_\+test\+\_\+server.\+tcp\+\_\+payload\+\_\+hex\+\_\+str = \char`\"{}\char`\"{}.join(tcp\+\_\+payload\+\_\+json.\+split(\char`\"{}\+:\char`\"{}))}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a6248f29ce2e6231f5375af9f79d481d7}\label{namespacesopas__json__test__server_a6248f29ce2e6231f5375af9f79d481d7}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!tcp\_payload\_json@{tcp\_payload\_json}}
+\index{tcp\_payload\_json@{tcp\_payload\_json}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{tcp\_payload\_json}{tcp\_payload\_json}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+tcp\+\_\+payload\+\_\+json = json\+\_\+entry\mbox{[}\char`\"{}\+\_\+source\char`\"{}\mbox{]}\mbox{[}\char`\"{}layers\char`\"{}\mbox{]}\mbox{[}\char`\"{}tcp\char`\"{}\mbox{]}\mbox{[}\char`\"{}tcp.\+payload\char`\"{}\mbox{]}}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a521761a2fa53b13c719db3f2cc013ef6}\label{namespacesopas__json__test__server_a521761a2fa53b13c719db3f2cc013ef6}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!tcp\_port@{tcp\_port}}
+\index{tcp\_port@{tcp\_port}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{tcp\_port}{tcp\_port}}
+{\footnotesize\ttfamily int sopas\+\_\+json\+\_\+test\+\_\+server.\+tcp\+\_\+port = 2111}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a483be48856841cf4796cc915de2c9be6}\label{namespacesopas__json__test__server_a483be48856841cf4796cc915de2c9be6}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!type@{type}}
+\index{type@{type}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily sopas\+\_\+json\+\_\+test\+\_\+server.\+type}
+
+\mbox{\Hypertarget{namespacesopas__json__test__server_a07d82a9e10408d4f421e76212bbf1fe7}\label{namespacesopas__json__test__server_a07d82a9e10408d4f421e76212bbf1fe7}} 
+\index{sopas\_json\_test\_server@{sopas\_json\_test\_server}!verbosity@{verbosity}}
+\index{verbosity@{verbosity}!sopas\_json\_test\_server@{sopas\_json\_test\_server}}
+\doxysubsubsection{\texorpdfstring{verbosity}{verbosity}}
+{\footnotesize\ttfamily int sopas\+\_\+json\+\_\+test\+\_\+server.\+verbosity = 2}
+

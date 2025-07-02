@@ -1,0 +1,132 @@
+\hypertarget{namespacemsgpack11}{}\doxysection{msgpack11 Namespace Reference}
+\label{namespacemsgpack11}\index{msgpack11@{msgpack11}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacemsgpack11_1_1MsgPackParser}{Msg\+Pack\+Parser}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackArray}{Msg\+Pack\+Array}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackBinary}{Msg\+Pack\+Binary}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackBoolean}{Msg\+Pack\+Boolean}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackDouble}{Msg\+Pack\+Double}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackExtension}{Msg\+Pack\+Extension}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackFloat}{Msg\+Pack\+Float}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackInt16}{Msg\+Pack\+Int16}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackInt32}{Msg\+Pack\+Int32}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackInt64}{Msg\+Pack\+Int64}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackInt8}{Msg\+Pack\+Int8}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackNull}{Msg\+Pack\+Null}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackObject}{Msg\+Pack\+Object}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackString}{Msg\+Pack\+String}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackUint16}{Msg\+Pack\+Uint16}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackUint32}{Msg\+Pack\+Uint32}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackUint64}{Msg\+Pack\+Uint64}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackUint8}{Msg\+Pack\+Uint8}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue}{Msg\+Pack\+Value}}
+\item 
+struct \mbox{\hyperlink{structmsgpack11_1_1NullStruct}{Null\+Struct}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1NumberValue}{Number\+Value}}
+\item 
+struct \mbox{\hyperlink{structmsgpack11_1_1Statics}{Statics}}
+\item 
+class \mbox{\hyperlink{classmsgpack11_1_1Value}{Value}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespacemsgpack11_ae2d976f1e7a53146b0adb545cfd41f55}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&msgpack)
+\item 
+bool \mbox{\hyperlink{namespacemsgpack11_ac16f73edce849a32e7701f23ecfa6790}{equal\+\_\+uint64\+\_\+int64}} (uint64\+\_\+t uint64\+\_\+value, int64\+\_\+t int64\+\_\+value)
+\item 
+bool \mbox{\hyperlink{namespacemsgpack11_a40fd5f9abeb09f21f4dd8383d0bd2e9d}{less\+\_\+uint64\+\_\+int64}} (uint64\+\_\+t uint64\+\_\+value, int64\+\_\+t int64\+\_\+value)
+\item 
+bool \mbox{\hyperlink{namespacemsgpack11_a6281663ee4b640ddea486ed863995fa3}{less\+\_\+int64\+\_\+uint64}} (int64\+\_\+t int64\+\_\+value, uint64\+\_\+t uint64\+\_\+value)
+\item 
+static const \mbox{\hyperlink{structmsgpack11_1_1Statics}{Statics}} \& \mbox{\hyperlink{namespacemsgpack11_a95477e2b81c39239d2f2b6cbee9c0953}{statics}} ()
+\item 
+static const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \& \mbox{\hyperlink{namespacemsgpack11_a35d53df757196cbf14bdac91e4dbed9f}{static\+\_\+null}} ()
+\item 
+std\+::istream \& \mbox{\hyperlink{namespacemsgpack11_a67ad6b7e3c0a252e2e07f717909201b0}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&msgpack)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{namespacemsgpack11_aefd426ab4becf1520bcd7203c0c729fd}{max\+\_\+depth}} = 200
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemsgpack11_ac16f73edce849a32e7701f23ecfa6790}\label{namespacemsgpack11_ac16f73edce849a32e7701f23ecfa6790}} 
+\index{msgpack11@{msgpack11}!equal\_uint64\_int64@{equal\_uint64\_int64}}
+\index{equal\_uint64\_int64@{equal\_uint64\_int64}!msgpack11@{msgpack11}}
+\doxysubsubsection{\texorpdfstring{equal\_uint64\_int64()}{equal\_uint64\_int64()}}
+{\footnotesize\ttfamily bool msgpack11\+::equal\+\_\+uint64\+\_\+int64 (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{uint64\+\_\+value,  }\item[{int64\+\_\+t}]{int64\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemsgpack11_a6281663ee4b640ddea486ed863995fa3}\label{namespacemsgpack11_a6281663ee4b640ddea486ed863995fa3}} 
+\index{msgpack11@{msgpack11}!less\_int64\_uint64@{less\_int64\_uint64}}
+\index{less\_int64\_uint64@{less\_int64\_uint64}!msgpack11@{msgpack11}}
+\doxysubsubsection{\texorpdfstring{less\_int64\_uint64()}{less\_int64\_uint64()}}
+{\footnotesize\ttfamily bool msgpack11\+::less\+\_\+int64\+\_\+uint64 (\begin{DoxyParamCaption}\item[{int64\+\_\+t}]{int64\+\_\+value,  }\item[{uint64\+\_\+t}]{uint64\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemsgpack11_a40fd5f9abeb09f21f4dd8383d0bd2e9d}\label{namespacemsgpack11_a40fd5f9abeb09f21f4dd8383d0bd2e9d}} 
+\index{msgpack11@{msgpack11}!less\_uint64\_int64@{less\_uint64\_int64}}
+\index{less\_uint64\_int64@{less\_uint64\_int64}!msgpack11@{msgpack11}}
+\doxysubsubsection{\texorpdfstring{less\_uint64\_int64()}{less\_uint64\_int64()}}
+{\footnotesize\ttfamily bool msgpack11\+::less\+\_\+uint64\+\_\+int64 (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{uint64\+\_\+value,  }\item[{int64\+\_\+t}]{int64\+\_\+value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemsgpack11_ae2d976f1e7a53146b0adb545cfd41f55}\label{namespacemsgpack11_ae2d976f1e7a53146b0adb545cfd41f55}} 
+\index{msgpack11@{msgpack11}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!msgpack11@{msgpack11}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& msgpack11\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{msgpack }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemsgpack11_a67ad6b7e3c0a252e2e07f717909201b0}\label{namespacemsgpack11_a67ad6b7e3c0a252e2e07f717909201b0}} 
+\index{msgpack11@{msgpack11}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!msgpack11@{msgpack11}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream\& msgpack11\+::operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \&}]{msgpack }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemsgpack11_a35d53df757196cbf14bdac91e4dbed9f}\label{namespacemsgpack11_a35d53df757196cbf14bdac91e4dbed9f}} 
+\index{msgpack11@{msgpack11}!static\_null@{static\_null}}
+\index{static\_null@{static\_null}!msgpack11@{msgpack11}}
+\doxysubsubsection{\texorpdfstring{static\_null()}{static\_null()}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}\& msgpack11\+::static\+\_\+null (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacemsgpack11_a95477e2b81c39239d2f2b6cbee9c0953}\label{namespacemsgpack11_a95477e2b81c39239d2f2b6cbee9c0953}} 
+\index{msgpack11@{msgpack11}!statics@{statics}}
+\index{statics@{statics}!msgpack11@{msgpack11}}
+\doxysubsubsection{\texorpdfstring{statics()}{statics()}}
+{\footnotesize\ttfamily static const \mbox{\hyperlink{structmsgpack11_1_1Statics}{Statics}}\& msgpack11\+::statics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemsgpack11_aefd426ab4becf1520bcd7203c0c729fd}\label{namespacemsgpack11_aefd426ab4becf1520bcd7203c0c729fd}} 
+\index{msgpack11@{msgpack11}!max\_depth@{max\_depth}}
+\index{max\_depth@{max\_depth}!msgpack11@{msgpack11}}
+\doxysubsubsection{\texorpdfstring{max\_depth}{max\_depth}}
+{\footnotesize\ttfamily const int msgpack11\+::max\+\_\+depth = 200\hspace{0.3cm}{\ttfamily [static]}}
+

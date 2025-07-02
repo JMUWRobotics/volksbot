@@ -1,0 +1,173 @@
+\hypertarget{classTiXmlComment}{}\doxysection{Ti\+Xml\+Comment Class Reference}
+\label{classTiXmlComment}\index{TiXmlComment@{TiXmlComment}}
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+
+
+Inheritance diagram for Ti\+Xml\+Comment\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{classTiXmlComment__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ti\+Xml\+Comment\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{classTiXmlComment__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}{Ti\+Xml\+Comment}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty comment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlComment_a37e7802ef17bc03ebe5ae79bf0713d47}{Ti\+Xml\+Comment}} (const char $\ast$\+\_\+value)
+\begin{DoxyCompactList}\small\item\em Construct a comment from text. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlComment_afaec41ac2760ce946ba1590eb5708e50}{Ti\+Xml\+Comment}} (const \mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} \&)
+\item 
+\mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} \& \mbox{\hyperlink{classTiXmlComment_aeceedc15f8b8f9ca0b6136696339b3ac}{operator=}} (const \mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} \&base)
+\item 
+virtual \mbox{\hyperlink{classTiXmlComment_a3264ae2e9c4a127edfa03289bb2c9aa2}{$\sim$\+Ti\+Xml\+Comment}} ()
+\item 
+virtual \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$ \mbox{\hyperlink{classTiXmlComment_a1f9f06e2ed3f77875093436193b16c16}{Clone}} () const
+\begin{DoxyCompactList}\small\item\em Returns a copy of this Comment. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classTiXmlComment_a873171beac19d40f0eaae945711c98ed}{Print}} (F\+I\+LE $\ast$cfile, int depth) const
+\item 
+virtual const char $\ast$ \mbox{\hyperlink{classTiXmlComment_a43bddc18ac057734b41d84653b71d3e0}{Parse}} (const char $\ast$p, \mbox{\hyperlink{classTiXmlParsingData}{Ti\+Xml\+Parsing\+Data}} $\ast$data, \mbox{\hyperlink{tinyxml_8h_a88d51847a13ee0f4b4d320d03d2c4d96}{Ti\+Xml\+Encoding}} encoding)
+\item 
+virtual bool \mbox{\hyperlink{classTiXmlComment_ac894241530d1d266131a5026cb251a95}{Accept}} (\mbox{\hyperlink{classTiXmlVisitor}{Ti\+Xml\+Visitor}} $\ast$visitor) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classTiXmlComment_aaeb8a0b2d503f603879a2d04ceb54295}{Copy\+To}} (\mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} $\ast$target) const
+\item 
+virtual void \mbox{\hyperlink{classTiXmlComment_a619467ff29c832b101e9b704a23c0357}{Stream\+In}} (std\+::istream $\ast$in, T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+NG $\ast$tag)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+An X\+ML comment. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}\label{classTiXmlComment_aaa3252031d3e8bd3a2bf51a1c61201b7}} 
+\index{TiXmlComment@{TiXmlComment}!TiXmlComment@{TiXmlComment}}
+\index{TiXmlComment@{TiXmlComment}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{TiXmlComment()}{TiXmlComment()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Ti\+Xml\+Comment\+::\+Ti\+Xml\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an empty comment. 
+
+\mbox{\Hypertarget{classTiXmlComment_a37e7802ef17bc03ebe5ae79bf0713d47}\label{classTiXmlComment_a37e7802ef17bc03ebe5ae79bf0713d47}} 
+\index{TiXmlComment@{TiXmlComment}!TiXmlComment@{TiXmlComment}}
+\index{TiXmlComment@{TiXmlComment}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{TiXmlComment()}{TiXmlComment()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Ti\+Xml\+Comment\+::\+Ti\+Xml\+Comment (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a comment from text. 
+
+\mbox{\Hypertarget{classTiXmlComment_afaec41ac2760ce946ba1590eb5708e50}\label{classTiXmlComment_afaec41ac2760ce946ba1590eb5708e50}} 
+\index{TiXmlComment@{TiXmlComment}!TiXmlComment@{TiXmlComment}}
+\index{TiXmlComment@{TiXmlComment}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{TiXmlComment()}{TiXmlComment()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Ti\+Xml\+Comment\+::\+Ti\+Xml\+Comment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} \&}]{copy }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTiXmlComment_a3264ae2e9c4a127edfa03289bb2c9aa2}\label{classTiXmlComment_a3264ae2e9c4a127edfa03289bb2c9aa2}} 
+\index{TiXmlComment@{TiXmlComment}!````~TiXmlComment@{$\sim$TiXmlComment}}
+\index{````~TiXmlComment@{$\sim$TiXmlComment}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{$\sim$TiXmlComment()}{~TiXmlComment()}}
+{\footnotesize\ttfamily virtual Ti\+Xml\+Comment\+::$\sim$\+Ti\+Xml\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTiXmlComment_ac894241530d1d266131a5026cb251a95}\label{classTiXmlComment_ac894241530d1d266131a5026cb251a95}} 
+\index{TiXmlComment@{TiXmlComment}!Accept@{Accept}}
+\index{Accept@{Accept}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{Accept()}{Accept()}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Comment\+::\+Accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlVisitor}{Ti\+Xml\+Visitor}} $\ast$}]{visitor }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Walk the X\+ML tree visiting this node and all of its children. 
+
+Implements \mbox{\hyperlink{classTiXmlNode_acc0f88b7462c6cb73809d410a4f5bb86}{Ti\+Xml\+Node}}.
+
+\mbox{\Hypertarget{classTiXmlComment_a1f9f06e2ed3f77875093436193b16c16}\label{classTiXmlComment_a1f9f06e2ed3f77875093436193b16c16}} 
+\index{TiXmlComment@{TiXmlComment}!Clone@{Clone}}
+\index{Clone@{Clone}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$ Ti\+Xml\+Comment\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns a copy of this Comment. 
+
+
+
+Implements \mbox{\hyperlink{classTiXmlNode_a4508cc3a2d7a98e96a54cc09c37a78a4}{Ti\+Xml\+Node}}.
+
+\mbox{\Hypertarget{classTiXmlComment_aaeb8a0b2d503f603879a2d04ceb54295}\label{classTiXmlComment_aaeb8a0b2d503f603879a2d04ceb54295}} 
+\index{TiXmlComment@{TiXmlComment}!CopyTo@{CopyTo}}
+\index{CopyTo@{CopyTo}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{CopyTo()}{CopyTo()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Comment\+::\+Copy\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} $\ast$}]{target }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTiXmlComment_aeceedc15f8b8f9ca0b6136696339b3ac}\label{classTiXmlComment_aeceedc15f8b8f9ca0b6136696339b3ac}} 
+\index{TiXmlComment@{TiXmlComment}!operator=@{operator=}}
+\index{operator=@{operator=}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} \& Ti\+Xml\+Comment\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} \&}]{base }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTiXmlComment_a43bddc18ac057734b41d84653b71d3e0}\label{classTiXmlComment_a43bddc18ac057734b41d84653b71d3e0}} 
+\index{TiXmlComment@{TiXmlComment}!Parse@{Parse}}
+\index{Parse@{Parse}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily const char $\ast$ Ti\+Xml\+Comment\+::\+Parse (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p,  }\item[{\mbox{\hyperlink{classTiXmlParsingData}{Ti\+Xml\+Parsing\+Data}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{tinyxml_8h_a88d51847a13ee0f4b4d320d03d2c4d96}{Ti\+Xml\+Encoding}}}]{encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classTiXmlBase_a00e4edb0219d00a1379c856e5a1d2025}{Ti\+Xml\+Base}}.
+
+\mbox{\Hypertarget{classTiXmlComment_a873171beac19d40f0eaae945711c98ed}\label{classTiXmlComment_a873171beac19d40f0eaae945711c98ed}} 
+\index{TiXmlComment@{TiXmlComment}!Print@{Print}}
+\index{Print@{Print}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Comment\+::\+Print (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{cfile,  }\item[{int}]{depth }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+All Tiny\+Xml classes can print themselves to a filestream or the string class (\mbox{\hyperlink{classTiXmlString}{Ti\+Xml\+String}} in non-\/\+S\+TL mode, std\+::string in S\+TL mode.) Either or both cfile and str can be null.
+
+This is a formatted print, and will insert tabs and newlines.
+
+(For an unformatted stream, use the $<$$<$ operator.) 
+
+Implements \mbox{\hyperlink{classTiXmlBase_a0de56b3f2ef14c65091a3b916437b512}{Ti\+Xml\+Base}}.
+
+\mbox{\Hypertarget{classTiXmlComment_a619467ff29c832b101e9b704a23c0357}\label{classTiXmlComment_a619467ff29c832b101e9b704a23c0357}} 
+\index{TiXmlComment@{TiXmlComment}!StreamIn@{StreamIn}}
+\index{StreamIn@{StreamIn}!TiXmlComment@{TiXmlComment}}
+\doxysubsubsection{\texorpdfstring{StreamIn()}{StreamIn()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Comment\+::\+Stream\+In (\begin{DoxyParamCaption}\item[{std\+::istream $\ast$}]{in,  }\item[{T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+NG $\ast$}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classTiXmlNode_ab4b4af1a6b486dcbc0e327cf291270af}{Ti\+Xml\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/tinyxml/\mbox{\hyperlink{tinyxml_8h}{tinyxml.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/\mbox{\hyperlink{tinyxml_8cpp}{tinyxml.\+cpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/\mbox{\hyperlink{tinyxmlparser_8cpp}{tinyxmlparser.\+cpp}}\end{DoxyCompactItemize}

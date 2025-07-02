@@ -1,0 +1,104 @@
+\hypertarget{classSickThread}{}\doxysection{Sick\+Thread$<$ T, M $>$ Class Template Reference}
+\label{classSickThread}\index{SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}}
+
+
+Wrapper class for posix threads.  
+
+
+
+
+{\ttfamily \#include $<$Sick\+Thread.\+hpp$>$}
+
+
+
+Inheritance diagram for Sick\+Thread$<$ T, M $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{classSickThread__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sick\+Thread$<$ T, M $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{classSickThread__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSickThread_a6717b745bb3d30c2f4da9c551720a477}{join}} ()
+\item 
+\mbox{\hyperlink{classSickThread_aab77a09d5e63bdf7fd79142779d0ba54}{Sick\+Thread}} (const std\+::string \&thread\+\_\+name=\char`\"{}\char`\"{})
+\item 
+virtual \mbox{\hyperlink{classSickThread_a6c1e84c8f7d39b0027426835aeb41cf1}{$\sim$\+Sick\+Thread}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classSickThread_a5946dcd87b5ff72279e3b9472991d74d}{m\+\_\+thread\+Should\+Run}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T, void(\+T\+::$\ast$)(bool \&, U\+I\+N\+T16 \&) M$>$\newline
+class Sick\+Thread$<$ T, M $>$}
+
+Wrapper class for posix threads. 
+
+Usage\+: Using object must create an instance of this class, and then call start() with its callback function as argument (see start() for more details). To stop the thread execution, call stop().
+
+Setting the parameter m\+\_\+be\+Verbose to true (e.\+g. via enable\+Verbose\+Debug\+Output in function start()) will turn on {\itshape very} verbose output that should be useful for debugging.
+
+The thread callback function itself has 2 parameters\+:
+
+end\+This\+Thread\+: A bool flag that may be set by the callback function to \char`\"{}false\char`\"{} in case the thread function decides this thread needs to end.
+
+sleep\+Time\+Ms\+: The sleep time, in ms, that will be spent between subsequent calls to the callback function. Default is 10 ms, but other times may be set. Note that not all operating systems may be able to schedule very short sleep times. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSickThread_aab77a09d5e63bdf7fd79142779d0ba54}\label{classSickThread_aab77a09d5e63bdf7fd79142779d0ba54}} 
+\index{SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}!SickThread@{SickThread}}
+\index{SickThread@{SickThread}!SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}}
+\doxysubsubsection{\texorpdfstring{SickThread()}{SickThread()}}
+{\footnotesize\ttfamily template$<$typename T , void(\+T\+::$\ast$)(bool \&, U\+I\+N\+T16 \&) M$>$ \\
+\mbox{\hyperlink{classSickThread}{Sick\+Thread}}$<$ T, M $>$\+::\mbox{\hyperlink{classSickThread}{Sick\+Thread}} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{thread\+\_\+name = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSickThread_a6c1e84c8f7d39b0027426835aeb41cf1}\label{classSickThread_a6c1e84c8f7d39b0027426835aeb41cf1}} 
+\index{SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}!````~SickThread@{$\sim$SickThread}}
+\index{````~SickThread@{$\sim$SickThread}!SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickThread()}{~SickThread()}}
+{\footnotesize\ttfamily template$<$typename T , void(\+T\+::$\ast$)(bool \&, U\+I\+N\+T16 \&) M$>$ \\
+virtual \mbox{\hyperlink{classSickThread}{Sick\+Thread}}$<$ T, M $>$\+::$\sim$\mbox{\hyperlink{classSickThread}{Sick\+Thread}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSickThread_a6717b745bb3d30c2f4da9c551720a477}\label{classSickThread_a6717b745bb3d30c2f4da9c551720a477}} 
+\index{SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}!join@{join}}
+\index{join@{join}!SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily template$<$typename T , void(\+T\+::$\ast$)(bool \&, U\+I\+N\+T16 \&) M$>$ \\
+void \mbox{\hyperlink{classSickThread}{Sick\+Thread}}$<$ T, M $>$\+::join (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSickThread_a5946dcd87b5ff72279e3b9472991d74d}\label{classSickThread_a5946dcd87b5ff72279e3b9472991d74d}} 
+\index{SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}!m\_threadShouldRun@{m\_threadShouldRun}}
+\index{m\_threadShouldRun@{m\_threadShouldRun}!SickThread$<$ T, M $>$@{SickThread$<$ T, M $>$}}
+\doxysubsubsection{\texorpdfstring{m\_threadShouldRun}{m\_threadShouldRun}}
+{\footnotesize\ttfamily template$<$typename T , void(\+T\+::$\ast$)(bool \&, U\+I\+N\+T16 \&) M$>$ \\
+bool \mbox{\hyperlink{classSickThread}{Sick\+Thread}}$<$ T, M $>$\+::m\+\_\+thread\+Should\+Run}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/tcp/\mbox{\hyperlink{SickThread_8hpp}{Sick\+Thread.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,305 @@
+\hypertarget{toolbox_8hpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/tcp/toolbox.hpp File Reference}
+\label{toolbox_8hpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/tcp/toolbox.hpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/tcp/toolbox.hpp}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{toolbox_8hpp_a0ba50e643de1daea7a0ee7bf695a2b59}{hex\+Char\+To\+Value}} (char c)
+\item 
+char \mbox{\hyperlink{toolbox_8hpp_a0e628bf862e8f2c382bf402361b22c0e}{convert\+Nibble\+To\+Hex\+Char}} (int value, bool use\+Lower\+Case\+Letters=false)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_a796cc108891392cd977e1d679b190db7}{convert\+U\+I\+N\+T8to\+Hex\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} byte, char $\ast$buffer)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_a6ec9ccafe6fa394ec760addacd7042d5}{convert\+R\+G\+Bto\+Hex\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} r, \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} g, \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} b, char $\ast$buffer)
+\item 
+double \mbox{\hyperlink{toolbox_8hpp_a71187614fc963f53213a5cf8a9c5ce64}{make\+Angle\+Valid}} (double angle)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_ae9fb8c1895d69043cd93e83cc1a20ad0}{ip\+Target\+To\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} ip\+Address, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} port)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_ab25c4c58ddf882fa6acca0add240ad60}{ip\+Adr\+To\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} ip\+Address)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_a4bc2d575dc185e970e528c8d1f4e89b9}{string\+To\+Ip\+Target}} (std\+::string ip\+Adr\+Str, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&ip\+Address, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&port)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_a73deac25af602950da66f0eba53770f4}{to\+Hex\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} val)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_a2b06dcbf280fea60e3f5a6a8d824ff54}{to\+Hex\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} val)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_a61501385b56c3d2e9a66989500c3dc27}{to\+Hex\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} val)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_af0243cea3a685d8bd454afaf8424273f}{to\+Hex\+String\+Nbble}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} val)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_ad4e5dc9f89bb083e6b6a2e002dd99e1b}{to\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} val)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_ad686d32fed08be9573e98810fe53b553}{to\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a2c951cf9402cd61f04b43789471dbe7c}{I\+N\+T32}} val)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_aadb1e21944b055134eb0b08bf7e6a1c7}{to\+String}} (size\+\_\+t val)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_ab9ab1e594192e324b98c21d95486b53c}{to\+String}} (double val, int digits\+\_\+after\+\_\+decimal\+\_\+point)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_a01a8aea2e51c3f5a101f24194c952658}{double\+To\+String}} (double val, int digits\+\_\+after\+\_\+decimal\+\_\+point)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_ac51b33a9bd21310102d5846acc191b04}{double\+To\+String}} (double val, int digits\+\_\+before\+\_\+decimal\+\_\+point, int digits\+\_\+after\+\_\+decimal\+\_\+point)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_a33d257b88d0c18c8eb8e48ac126140fd}{convert\+Meter\+To\+Feet\+And\+Inch}} (double m)
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \mbox{\hyperlink{toolbox_8hpp_a81346f2a3e51dc483ca73c6963b300c3}{from\+String}} (const std\+::string \&text)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_acfab606d238d61e5634ab871ff8348f7}{to\+Lower}} (const std\+::string \&text)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_abef2a1b23ed940f3c50a6d04a6fdae3c}{trace\+Buffer}} (std\+::string header\+Text, \mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} len)
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \mbox{\hyperlink{toolbox_8hpp_a59bbe85477a43dbdfe69b58d74267117}{memread\+\_\+\+U\+I\+N\+T32}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer)
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \mbox{\hyperlink{toolbox_8hpp_a33537e5eea1967362c9c5b4022e332ed}{memread\+\_\+\+U\+I\+N\+T16}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer)
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} \mbox{\hyperlink{toolbox_8hpp_ad9b1887615476c573b09692ca9d97b8e}{memread\+\_\+\+U\+I\+N\+T8}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer)
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_a2c951cf9402cd61f04b43789471dbe7c}{I\+N\+T32}} \mbox{\hyperlink{toolbox_8hpp_ae2ba833dc55514e274b0d72233cb3ac9}{memread\+\_\+\+I\+N\+T32}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer)
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_aca6c48234f001fdbd6597515a4cc088d}{I\+N\+T16}} \mbox{\hyperlink{toolbox_8hpp_a30e9aceffd5f6d220045ebb467a8db3c}{memread\+\_\+\+I\+N\+T16}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer)
+\item 
+float \mbox{\hyperlink{toolbox_8hpp_ad162b2edc65db18845f073f1cf1b5558}{memread\+\_\+float}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer)
+\item 
+std\+::string \mbox{\hyperlink{toolbox_8hpp_a4a2f680e55466cd734dc1359308be3ca}{memread\+\_\+string}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} length)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_a385fda2fc191f263158456d8a4f99101}{memwrite\+\_\+float}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, float value)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_ac7df5d56128a9c740de9581a822d9463}{memwrite\+\_\+\+I\+N\+T32}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_a2c951cf9402cd61f04b43789471dbe7c}{I\+N\+T32}} value)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_a24c632c2a7ecb6f09ba631b7d2ec32f8}{memwrite\+\_\+\+U\+I\+N\+T32}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} value)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_aa7d5fef4d0db2554320ab6fa47ec38ca}{memwrite\+\_\+\+I\+N\+T16}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_aca6c48234f001fdbd6597515a4cc088d}{I\+N\+T16}} value)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_a2390b458e220b732faa0994d636566ba}{memwrite\+\_\+\+U\+I\+N\+T16}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} value)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_ad58a3749cf0419c4e0303c43a87f7440}{memwrite\+\_\+\+I\+N\+T8}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_a0e16e07c1525c9688ca6fbd34f334ec8}{I\+N\+T8}} value)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_a91ea6372329c6e5792cc5d1474ac818c}{memwrite\+\_\+\+U\+I\+N\+T8}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} value)
+\item 
+void \mbox{\hyperlink{toolbox_8hpp_a245811a48ea48a5c5452e3687e7a73fc}{memwrite\+\_\+string}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&buffer, std\+::string text)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{toolbox_8hpp_a33d257b88d0c18c8eb8e48ac126140fd}\label{toolbox_8hpp_a33d257b88d0c18c8eb8e48ac126140fd}} 
+\index{toolbox.hpp@{toolbox.hpp}!convertMeterToFeetAndInch@{convertMeterToFeetAndInch}}
+\index{convertMeterToFeetAndInch@{convertMeterToFeetAndInch}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{convertMeterToFeetAndInch()}{convertMeterToFeetAndInch()}}
+{\footnotesize\ttfamily std\+::string convert\+Meter\+To\+Feet\+And\+Inch (\begin{DoxyParamCaption}\item[{double}]{m }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a0e628bf862e8f2c382bf402361b22c0e}\label{toolbox_8hpp_a0e628bf862e8f2c382bf402361b22c0e}} 
+\index{toolbox.hpp@{toolbox.hpp}!convertNibbleToHexChar@{convertNibbleToHexChar}}
+\index{convertNibbleToHexChar@{convertNibbleToHexChar}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{convertNibbleToHexChar()}{convertNibbleToHexChar()}}
+{\footnotesize\ttfamily char convert\+Nibble\+To\+Hex\+Char (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{bool}]{use\+Lower\+Case\+Letters }\end{DoxyParamCaption})}
+
+Konvertierung Zahlenwert -\/$>$ Hex-\/\+Zeichen \mbox{\Hypertarget{toolbox_8hpp_a6ec9ccafe6fa394ec760addacd7042d5}\label{toolbox_8hpp_a6ec9ccafe6fa394ec760addacd7042d5}} 
+\index{toolbox.hpp@{toolbox.hpp}!convertRGBtoHexString@{convertRGBtoHexString}}
+\index{convertRGBtoHexString@{convertRGBtoHexString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{convertRGBtoHexString()}{convertRGBtoHexString()}}
+{\footnotesize\ttfamily void convert\+R\+G\+Bto\+Hex\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}}}]{r,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}}}]{g,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}}}]{b,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Konvertiert drei U\+I\+N\+T8-\/\+Werte (R, G, B) in einen H\+E\+X-\/\+String, z.\+B.\+: R = 0x12, G=0x34, B=0x56 -\/-\/$>$ String = \char`\"{}123456\char`\"{} Buffer muss mindestens 6 Byte gross sein. \mbox{\Hypertarget{toolbox_8hpp_a796cc108891392cd977e1d679b190db7}\label{toolbox_8hpp_a796cc108891392cd977e1d679b190db7}} 
+\index{toolbox.hpp@{toolbox.hpp}!convertUINT8toHexString@{convertUINT8toHexString}}
+\index{convertUINT8toHexString@{convertUINT8toHexString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{convertUINT8toHexString()}{convertUINT8toHexString()}}
+{\footnotesize\ttfamily void convert\+U\+I\+N\+T8to\+Hex\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}}}]{byte,  }\item[{char $\ast$}]{buffer }\end{DoxyParamCaption})}
+
+Konvertiert einen U\+I\+N\+T8-\/\+Wert in einen 2-\/Byte-\/\+Hex-\/\+Wert, z.\+B.\+: b = 0x07, String = \char`\"{}07\char`\"{} Buffer muss mindestens 2 Byte gross sein. \mbox{\Hypertarget{toolbox_8hpp_a01a8aea2e51c3f5a101f24194c952658}\label{toolbox_8hpp_a01a8aea2e51c3f5a101f24194c952658}} 
+\index{toolbox.hpp@{toolbox.hpp}!doubleToString@{doubleToString}}
+\index{doubleToString@{doubleToString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{doubleToString()}{doubleToString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string double\+To\+String (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{int}]{digits\+\_\+after\+\_\+decimal\+\_\+point }\end{DoxyParamCaption})}
+
+Konvertiere Double-\/\+Zahl in String. \mbox{\Hypertarget{toolbox_8hpp_ac51b33a9bd21310102d5846acc191b04}\label{toolbox_8hpp_ac51b33a9bd21310102d5846acc191b04}} 
+\index{toolbox.hpp@{toolbox.hpp}!doubleToString@{doubleToString}}
+\index{doubleToString@{doubleToString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{doubleToString()}{doubleToString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string double\+To\+String (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{int}]{digits\+\_\+before\+\_\+decimal\+\_\+point,  }\item[{int}]{digits\+\_\+after\+\_\+decimal\+\_\+point }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a81346f2a3e51dc483ca73c6963b300c3}\label{toolbox_8hpp_a81346f2a3e51dc483ca73c6963b300c3}} 
+\index{toolbox.hpp@{toolbox.hpp}!fromString@{fromString}}
+\index{fromString@{fromString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{fromString()}{fromString()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} from\+String (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a0ba50e643de1daea7a0ee7bf695a2b59}\label{toolbox_8hpp_a0ba50e643de1daea7a0ee7bf695a2b59}} 
+\index{toolbox.hpp@{toolbox.hpp}!hexCharToValue@{hexCharToValue}}
+\index{hexCharToValue@{hexCharToValue}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{hexCharToValue()}{hexCharToValue()}}
+{\footnotesize\ttfamily int hex\+Char\+To\+Value (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+Konvertierung eines Hex-\/\+Zeichens -\/$>$ Zahlenwert. \mbox{\Hypertarget{toolbox_8hpp_ab25c4c58ddf882fa6acca0add240ad60}\label{toolbox_8hpp_ab25c4c58ddf882fa6acca0add240ad60}} 
+\index{toolbox.hpp@{toolbox.hpp}!ipAdrToString@{ipAdrToString}}
+\index{ipAdrToString@{ipAdrToString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{ipAdrToString()}{ipAdrToString()}}
+{\footnotesize\ttfamily std\+::string ip\+Adr\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{ip\+Address }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_ae9fb8c1895d69043cd93e83cc1a20ad0}\label{toolbox_8hpp_ae9fb8c1895d69043cd93e83cc1a20ad0}} 
+\index{toolbox.hpp@{toolbox.hpp}!ipTargetToString@{ipTargetToString}}
+\index{ipTargetToString@{ipTargetToString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{ipTargetToString()}{ipTargetToString()}}
+{\footnotesize\ttfamily std\+::string ip\+Target\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{ip\+Address,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a71187614fc963f53213a5cf8a9c5ce64}\label{toolbox_8hpp_a71187614fc963f53213a5cf8a9c5ce64}} 
+\index{toolbox.hpp@{toolbox.hpp}!makeAngleValid@{makeAngleValid}}
+\index{makeAngleValid@{makeAngleValid}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{makeAngleValid()}{makeAngleValid()}}
+{\footnotesize\ttfamily double make\+Angle\+Valid (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})}
+
+Bringt den Winkel in den Bereich \mbox{]}PI..-\/PI\mbox{]} \mbox{\Hypertarget{toolbox_8hpp_ad162b2edc65db18845f073f1cf1b5558}\label{toolbox_8hpp_ad162b2edc65db18845f073f1cf1b5558}} 
+\index{toolbox.hpp@{toolbox.hpp}!memread\_float@{memread\_float}}
+\index{memread\_float@{memread\_float}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memread\_float()}{memread\_float()}}
+{\footnotesize\ttfamily float memread\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a30e9aceffd5f6d220045ebb467a8db3c}\label{toolbox_8hpp_a30e9aceffd5f6d220045ebb467a8db3c}} 
+\index{toolbox.hpp@{toolbox.hpp}!memread\_INT16@{memread\_INT16}}
+\index{memread\_INT16@{memread\_INT16}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memread\_INT16()}{memread\_INT16()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_aca6c48234f001fdbd6597515a4cc088d}{I\+N\+T16}} memread\+\_\+\+I\+N\+T16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_ae2ba833dc55514e274b0d72233cb3ac9}\label{toolbox_8hpp_ae2ba833dc55514e274b0d72233cb3ac9}} 
+\index{toolbox.hpp@{toolbox.hpp}!memread\_INT32@{memread\_INT32}}
+\index{memread\_INT32@{memread\_INT32}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memread\_INT32()}{memread\_INT32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_a2c951cf9402cd61f04b43789471dbe7c}{I\+N\+T32}} memread\+\_\+\+I\+N\+T32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a4a2f680e55466cd734dc1359308be3ca}\label{toolbox_8hpp_a4a2f680e55466cd734dc1359308be3ca}} 
+\index{toolbox.hpp@{toolbox.hpp}!memread\_string@{memread\_string}}
+\index{memread\_string@{memread\_string}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memread\_string()}{memread\_string()}}
+{\footnotesize\ttfamily std\+::string memread\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{length }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a33537e5eea1967362c9c5b4022e332ed}\label{toolbox_8hpp_a33537e5eea1967362c9c5b4022e332ed}} 
+\index{toolbox.hpp@{toolbox.hpp}!memread\_UINT16@{memread\_UINT16}}
+\index{memread\_UINT16@{memread\_UINT16}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memread\_UINT16()}{memread\_UINT16()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} memread\+\_\+\+U\+I\+N\+T16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a59bbe85477a43dbdfe69b58d74267117}\label{toolbox_8hpp_a59bbe85477a43dbdfe69b58d74267117}} 
+\index{toolbox.hpp@{toolbox.hpp}!memread\_UINT32@{memread\_UINT32}}
+\index{memread\_UINT32@{memread\_UINT32}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memread\_UINT32()}{memread\_UINT32()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} memread\+\_\+\+U\+I\+N\+T32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_ad9b1887615476c573b09692ca9d97b8e}\label{toolbox_8hpp_ad9b1887615476c573b09692ca9d97b8e}} 
+\index{toolbox.hpp@{toolbox.hpp}!memread\_UINT8@{memread\_UINT8}}
+\index{memread\_UINT8@{memread\_UINT8}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memread\_UINT8()}{memread\_UINT8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} memread\+\_\+\+U\+I\+N\+T8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a385fda2fc191f263158456d8a4f99101}\label{toolbox_8hpp_a385fda2fc191f263158456d8a4f99101}} 
+\index{toolbox.hpp@{toolbox.hpp}!memwrite\_float@{memwrite\_float}}
+\index{memwrite\_float@{memwrite\_float}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memwrite\_float()}{memwrite\_float()}}
+{\footnotesize\ttfamily void memwrite\+\_\+float (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{float}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_aa7d5fef4d0db2554320ab6fa47ec38ca}\label{toolbox_8hpp_aa7d5fef4d0db2554320ab6fa47ec38ca}} 
+\index{toolbox.hpp@{toolbox.hpp}!memwrite\_INT16@{memwrite\_INT16}}
+\index{memwrite\_INT16@{memwrite\_INT16}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memwrite\_INT16()}{memwrite\_INT16()}}
+{\footnotesize\ttfamily void memwrite\+\_\+\+I\+N\+T16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_aca6c48234f001fdbd6597515a4cc088d}{I\+N\+T16}}}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_ac7df5d56128a9c740de9581a822d9463}\label{toolbox_8hpp_ac7df5d56128a9c740de9581a822d9463}} 
+\index{toolbox.hpp@{toolbox.hpp}!memwrite\_INT32@{memwrite\_INT32}}
+\index{memwrite\_INT32@{memwrite\_INT32}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memwrite\_INT32()}{memwrite\_INT32()}}
+{\footnotesize\ttfamily void memwrite\+\_\+\+I\+N\+T32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a2c951cf9402cd61f04b43789471dbe7c}{I\+N\+T32}}}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_ad58a3749cf0419c4e0303c43a87f7440}\label{toolbox_8hpp_ad58a3749cf0419c4e0303c43a87f7440}} 
+\index{toolbox.hpp@{toolbox.hpp}!memwrite\_INT8@{memwrite\_INT8}}
+\index{memwrite\_INT8@{memwrite\_INT8}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memwrite\_INT8()}{memwrite\_INT8()}}
+{\footnotesize\ttfamily void memwrite\+\_\+\+I\+N\+T8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a0e16e07c1525c9688ca6fbd34f334ec8}{I\+N\+T8}}}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a245811a48ea48a5c5452e3687e7a73fc}\label{toolbox_8hpp_a245811a48ea48a5c5452e3687e7a73fc}} 
+\index{toolbox.hpp@{toolbox.hpp}!memwrite\_string@{memwrite\_string}}
+\index{memwrite\_string@{memwrite\_string}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memwrite\_string()}{memwrite\_string()}}
+{\footnotesize\ttfamily void memwrite\+\_\+string (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{std\+::string}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a2390b458e220b732faa0994d636566ba}\label{toolbox_8hpp_a2390b458e220b732faa0994d636566ba}} 
+\index{toolbox.hpp@{toolbox.hpp}!memwrite\_UINT16@{memwrite\_UINT16}}
+\index{memwrite\_UINT16@{memwrite\_UINT16}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memwrite\_UINT16()}{memwrite\_UINT16()}}
+{\footnotesize\ttfamily void memwrite\+\_\+\+U\+I\+N\+T16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a24c632c2a7ecb6f09ba631b7d2ec32f8}\label{toolbox_8hpp_a24c632c2a7ecb6f09ba631b7d2ec32f8}} 
+\index{toolbox.hpp@{toolbox.hpp}!memwrite\_UINT32@{memwrite\_UINT32}}
+\index{memwrite\_UINT32@{memwrite\_UINT32}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memwrite\_UINT32()}{memwrite\_UINT32()}}
+{\footnotesize\ttfamily void memwrite\+\_\+\+U\+I\+N\+T32 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a91ea6372329c6e5792cc5d1474ac818c}\label{toolbox_8hpp_a91ea6372329c6e5792cc5d1474ac818c}} 
+\index{toolbox.hpp@{toolbox.hpp}!memwrite\_UINT8@{memwrite\_UINT8}}
+\index{memwrite\_UINT8@{memwrite\_UINT8}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{memwrite\_UINT8()}{memwrite\_UINT8()}}
+{\footnotesize\ttfamily void memwrite\+\_\+\+U\+I\+N\+T8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$\&}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}}}]{value }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a4bc2d575dc185e970e528c8d1f4e89b9}\label{toolbox_8hpp_a4bc2d575dc185e970e528c8d1f4e89b9}} 
+\index{toolbox.hpp@{toolbox.hpp}!stringToIpTarget@{stringToIpTarget}}
+\index{stringToIpTarget@{stringToIpTarget}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{stringToIpTarget()}{stringToIpTarget()}}
+{\footnotesize\ttfamily void string\+To\+Ip\+Target (\begin{DoxyParamCaption}\item[{std\+::string}]{ip\+Adr\+Str,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&}]{ip\+Address,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \&}]{port }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a2b06dcbf280fea60e3f5a6a8d824ff54}\label{toolbox_8hpp_a2b06dcbf280fea60e3f5a6a8d824ff54}} 
+\index{toolbox.hpp@{toolbox.hpp}!toHexString@{toHexString}}
+\index{toHexString@{toHexString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toHexString()}{toHexString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily std\+::string to\+Hex\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a73deac25af602950da66f0eba53770f4}\label{toolbox_8hpp_a73deac25af602950da66f0eba53770f4}} 
+\index{toolbox.hpp@{toolbox.hpp}!toHexString@{toHexString}}
+\index{toHexString@{toHexString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toHexString()}{toHexString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily std\+::string to\+Hex\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_a61501385b56c3d2e9a66989500c3dc27}\label{toolbox_8hpp_a61501385b56c3d2e9a66989500c3dc27}} 
+\index{toolbox.hpp@{toolbox.hpp}!toHexString@{toHexString}}
+\index{toHexString@{toHexString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toHexString()}{toHexString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily std\+::string to\+Hex\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}}}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_af0243cea3a685d8bd454afaf8424273f}\label{toolbox_8hpp_af0243cea3a685d8bd454afaf8424273f}} 
+\index{toolbox.hpp@{toolbox.hpp}!toHexStringNbble@{toHexStringNbble}}
+\index{toHexStringNbble@{toHexStringNbble}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toHexStringNbble()}{toHexStringNbble()}}
+{\footnotesize\ttfamily std\+::string to\+Hex\+String\+Nbble (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}}}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_acfab606d238d61e5634ab871ff8348f7}\label{toolbox_8hpp_acfab606d238d61e5634ab871ff8348f7}} 
+\index{toolbox.hpp@{toolbox.hpp}!toLower@{toLower}}
+\index{toLower@{toLower}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toLower()}{toLower()}}
+{\footnotesize\ttfamily std\+::string to\+Lower (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_ab9ab1e594192e324b98c21d95486b53c}\label{toolbox_8hpp_ab9ab1e594192e324b98c21d95486b53c}} 
+\index{toolbox.hpp@{toolbox.hpp}!toString@{toString}}
+\index{toString@{toString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily std\+::string to\+String (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{int}]{digits\+\_\+after\+\_\+decimal\+\_\+point }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_ad686d32fed08be9573e98810fe53b553}\label{toolbox_8hpp_ad686d32fed08be9573e98810fe53b553}} 
+\index{toolbox.hpp@{toolbox.hpp}!toString@{toString}}
+\index{toString@{toString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily std\+::string to\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a2c951cf9402cd61f04b43789471dbe7c}{I\+N\+T32}}}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_aadb1e21944b055134eb0b08bf7e6a1c7}\label{toolbox_8hpp_aadb1e21944b055134eb0b08bf7e6a1c7}} 
+\index{toolbox.hpp@{toolbox.hpp}!toString@{toString}}
+\index{toString@{toString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily std\+::string to\+String (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_ad4e5dc9f89bb083e6b6a2e002dd99e1b}\label{toolbox_8hpp_ad4e5dc9f89bb083e6b6a2e002dd99e1b}} 
+\index{toolbox.hpp@{toolbox.hpp}!toString@{toString}}
+\index{toString@{toString}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily std\+::string to\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{val }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{toolbox_8hpp_abef2a1b23ed940f3c50a6d04a6fdae3c}\label{toolbox_8hpp_abef2a1b23ed940f3c50a6d04a6fdae3c}} 
+\index{toolbox.hpp@{toolbox.hpp}!traceBuffer@{traceBuffer}}
+\index{traceBuffer@{traceBuffer}!toolbox.hpp@{toolbox.hpp}}
+\doxysubsubsection{\texorpdfstring{traceBuffer()}{traceBuffer()}}
+{\footnotesize\ttfamily void trace\+Buffer (\begin{DoxyParamCaption}\item[{std\+::string}]{header\+Text,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{len }\end{DoxyParamCaption})}
+
+Toolbox. Some useful functions. 

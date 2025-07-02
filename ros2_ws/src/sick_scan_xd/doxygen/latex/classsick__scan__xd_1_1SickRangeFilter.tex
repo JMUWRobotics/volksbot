@@ -1,0 +1,114 @@
+\hypertarget{classsick__scan__xd_1_1SickRangeFilter}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Range\+Filter Class Reference}
+\label{classsick__scan__xd_1_1SickRangeFilter}\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+
+
+{\ttfamily \#include $<$sick\+\_\+range\+\_\+filter.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_a9cef969aa7201bc0f6acc6778ddfbb83}{Sick\+Range\+Filter}} (float \mbox{\hyperlink{sick__scan__test_8cpp_a1b6803d411aa54d6ef3f0eeaf3231c25}{range\+\_\+min}}=0, float \mbox{\hyperlink{sick__scan__test_8cpp_a3522208885f830fc4d5372dd638c58eb}{range\+\_\+max}}=F\+L\+T\+\_\+\+M\+AX, \mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}} settings=Range\+Filter\+Result\+Handling\+::\+R\+A\+N\+G\+E\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+D\+E\+A\+C\+T\+I\+V\+A\+T\+ED)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_a553bc48b3864330cd2a07417c918513c}{apply}} (float \&range, bool \&range\+\_\+modified) const
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_aca5fb22fbb4ca56d904e5e41b8c4d9cc}{apply\+X\+YZ}} (float \&x, float \&y, float \&z, float azimuth, float elevation)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_adc7d6db786404b6f74e702bc850bf5ba}{resize\+Point\+Cloud}} (size\+\_\+t range\+Num, ros\+\_\+sensor\+\_\+msgs\+::\+Point\+Cloud2 \&cloud)
+\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_ae4b1540e7ce49a7dca0e58498ef35946}{print}} (void) const
+\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_aa72e90b56f6e25c218716f0a6cc3a6aa}{range\+Min}} (void) const
+\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_ab1af72671a489a053230730d6b4c4391}{range\+Max}} (void) const
+\item 
+\mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}} \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_a1fc4ceb100eb122965e6776ed3558ad0}{setting}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_a0765698c4fdc989ee17c9310ea1f1619}{m\+\_\+range\+\_\+min}} = 0
+\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_aa18fd5aed87ff170bb96a0978ab585e6}{m\+\_\+range\+\_\+max}} = F\+L\+T\+\_\+\+M\+AX
+\item 
+\mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}} \mbox{\hyperlink{classsick__scan__xd_1_1SickRangeFilter_ac51b0c752dbe54b6af487b16b1efeee9}{m\+\_\+settings}} = \mbox{\hyperlink{namespacesick__scan__xd_ae6d388a5835f05fc2326eb18006b5c88aa36830e82a5343202c47e1854500698c}{R\+A\+N\+G\+E\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+D\+E\+A\+C\+T\+I\+V\+A\+T\+ED}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_a9cef969aa7201bc0f6acc6778ddfbb83}\label{classsick__scan__xd_1_1SickRangeFilter_a9cef969aa7201bc0f6acc6778ddfbb83}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!SickRangeFilter@{SickRangeFilter}}
+\index{SickRangeFilter@{SickRangeFilter}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{SickRangeFilter()}{SickRangeFilter()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::\+Sick\+Range\+Filter (\begin{DoxyParamCaption}\item[{float}]{range\+\_\+min = {\ttfamily 0},  }\item[{float}]{range\+\_\+max = {\ttfamily FLT\+\_\+MAX},  }\item[{\mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}}}]{settings = {\ttfamily RangeFilterResultHandling\+:\+:RANGE\+\_\+FILTER\+\_\+DEACTIVATED} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_a553bc48b3864330cd2a07417c918513c}\label{classsick__scan__xd_1_1SickRangeFilter_a553bc48b3864330cd2a07417c918513c}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!apply@{apply}}
+\index{apply@{apply}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{apply()}{apply()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::apply (\begin{DoxyParamCaption}\item[{float \&}]{range,  }\item[{bool \&}]{range\+\_\+modified }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_aca5fb22fbb4ca56d904e5e41b8c4d9cc}\label{classsick__scan__xd_1_1SickRangeFilter_aca5fb22fbb4ca56d904e5e41b8c4d9cc}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!applyXYZ@{applyXYZ}}
+\index{applyXYZ@{applyXYZ}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{applyXYZ()}{applyXYZ()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::apply\+X\+YZ (\begin{DoxyParamCaption}\item[{float \&}]{x,  }\item[{float \&}]{y,  }\item[{float \&}]{z,  }\item[{float}]{azimuth,  }\item[{float}]{elevation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_ae4b1540e7ce49a7dca0e58498ef35946}\label{classsick__scan__xd_1_1SickRangeFilter_ae4b1540e7ce49a7dca0e58498ef35946}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!print@{print}}
+\index{print@{print}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_ab1af72671a489a053230730d6b4c4391}\label{classsick__scan__xd_1_1SickRangeFilter_ab1af72671a489a053230730d6b4c4391}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!rangeMax@{rangeMax}}
+\index{rangeMax@{rangeMax}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{rangeMax()}{rangeMax()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::range\+Max (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_aa72e90b56f6e25c218716f0a6cc3a6aa}\label{classsick__scan__xd_1_1SickRangeFilter_aa72e90b56f6e25c218716f0a6cc3a6aa}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!rangeMin@{rangeMin}}
+\index{rangeMin@{rangeMin}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{rangeMin()}{rangeMin()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::range\+Min (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_adc7d6db786404b6f74e702bc850bf5ba}\label{classsick__scan__xd_1_1SickRangeFilter_adc7d6db786404b6f74e702bc850bf5ba}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!resizePointCloud@{resizePointCloud}}
+\index{resizePointCloud@{resizePointCloud}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{resizePointCloud()}{resizePointCloud()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::resize\+Point\+Cloud (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{range\+Num,  }\item[{ros\+\_\+sensor\+\_\+msgs\+::\+Point\+Cloud2 \&}]{cloud }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_a1fc4ceb100eb122965e6776ed3558ad0}\label{classsick__scan__xd_1_1SickRangeFilter_a1fc4ceb100eb122965e6776ed3558ad0}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!setting@{setting}}
+\index{setting@{setting}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{setting()}{setting()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::setting (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_aa18fd5aed87ff170bb96a0978ab585e6}\label{classsick__scan__xd_1_1SickRangeFilter_aa18fd5aed87ff170bb96a0978ab585e6}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!m\_range\_max@{m\_range\_max}}
+\index{m\_range\_max@{m\_range\_max}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{m\_range\_max}{m\_range\_max}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::m\+\_\+range\+\_\+max = F\+L\+T\+\_\+\+M\+AX\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_a0765698c4fdc989ee17c9310ea1f1619}\label{classsick__scan__xd_1_1SickRangeFilter_a0765698c4fdc989ee17c9310ea1f1619}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!m\_range\_min@{m\_range\_min}}
+\index{m\_range\_min@{m\_range\_min}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{m\_range\_min}{m\_range\_min}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::m\+\_\+range\+\_\+min = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickRangeFilter_ac51b0c752dbe54b6af487b16b1efeee9}\label{classsick__scan__xd_1_1SickRangeFilter_ac51b0c752dbe54b6af487b16b1efeee9}} 
+\index{sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}!m\_settings@{m\_settings}}
+\index{m\_settings@{m\_settings}!sick\_scan\_xd::SickRangeFilter@{sick\_scan\_xd::SickRangeFilter}}
+\doxysubsubsection{\texorpdfstring{m\_settings}{m\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesick__scan__xd_a7095a928e03c8050cf110da066802d0c}{Range\+Filter\+Result\+Handling}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Range\+Filter\+::m\+\_\+settings = \mbox{\hyperlink{namespacesick__scan__xd_ae6d388a5835f05fc2326eb18006b5c88aa36830e82a5343202c47e1854500698c}{R\+A\+N\+G\+E\+\_\+\+F\+I\+L\+T\+E\+R\+\_\+\+D\+E\+A\+C\+T\+I\+V\+A\+T\+ED}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__range__filter_8h}{sick\+\_\+range\+\_\+filter.\+h}}\end{DoxyCompactItemize}

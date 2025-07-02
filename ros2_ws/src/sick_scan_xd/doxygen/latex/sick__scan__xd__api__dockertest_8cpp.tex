@@ -1,0 +1,126 @@
+\hypertarget{sick__scan__xd__api__dockertest_8cpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/test/src/sick\+\_\+scan\+\_\+xd\+\_\+api/sick\+\_\+scan\+\_\+xd\+\_\+api\+\_\+dockertest.cpp File Reference}
+\label{sick__scan__xd__api__dockertest_8cpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/test/src/sick\_scan\_xd\_api/sick\_scan\_xd\_api\_dockertest.cpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/test/src/sick\_scan\_xd\_api/sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_a572a3ec9557b38019bf53184e0d6ec66}{export\+Json\+Messages}} ()
+\item 
+void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_ac6a38af50dce6ee039b74f9a2671f8a8}{signal\+Handler}} (int signal\+Recv)
+\item 
+static void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_ae85f3b3eafa82b00b2cd96bb80e81566}{exit\+On\+Error}} (const char $\ast$msg, int32\+\_\+t error\+\_\+code)
+\item 
+static void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_a568efb96344f24da4a2d7fe8f6a7480f}{api\+Message\+To\+Json}} (const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$msg, Json\+::\+Value \&json\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_a914ac21ad73ce749a06037b7235c5422}{api\+Message\+To\+Json}} (const \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $\ast$msg, Json\+::\+Value \&json\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_add871cb64ad6532165de7fa6ca8d9700}{api\+Test\+Cartesian\+Point\+Cloud\+Msg\+Callback}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$msg)
+\item 
+static void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_a3bde73941cfb3c30c2ac085c47d6f55f}{api\+Test\+Polar\+Point\+Cloud\+Msg\+Callback}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$msg)
+\item 
+static void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_af2ecc95ffb02786057890a5ffd20e693}{api\+Test\+Imu\+Msg\+Callback}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, const \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $\ast$msg)
+\item 
+void \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_a1d8244c06d2b158ee0ba7e14fcd62e72}{sick\+\_\+scan\+\_\+api\+\_\+test\+\_\+main}} (int argc, char $\ast$$\ast$argv)
+\item 
+int \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static Json\+::\+Value \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_ac41e3983740ac1868347f995c5dc0a89}{s\+\_\+json\+\_\+pointcloud\+\_\+messages}}
+\item 
+static Json\+::\+Value \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_a24ac58b48b4fa33317781754849b8efe}{s\+\_\+json\+\_\+imu\+\_\+messages}}
+\item 
+static std\+::string \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_ac98aa68e3e58db3acceee0c59359c325}{s\+\_\+json\+\_\+export\+\_\+file}}
+\item 
+static bool \mbox{\hyperlink{sick__scan__xd__api__dockertest_8cpp_a819668d723e8eb1701f88619b6c013dd}{s\+\_\+shutdown\+\_\+signal\+\_\+received}} = false
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_a914ac21ad73ce749a06037b7235c5422}\label{sick__scan__xd__api__dockertest_8cpp_a914ac21ad73ce749a06037b7235c5422}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!apiMessageToJson@{apiMessageToJson}}
+\index{apiMessageToJson@{apiMessageToJson}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{apiMessageToJson()}{apiMessageToJson()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void api\+Message\+To\+Json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $\ast$}]{msg,  }\item[{Json\+::\+Value \&}]{json\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_a568efb96344f24da4a2d7fe8f6a7480f}\label{sick__scan__xd__api__dockertest_8cpp_a568efb96344f24da4a2d7fe8f6a7480f}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!apiMessageToJson@{apiMessageToJson}}
+\index{apiMessageToJson@{apiMessageToJson}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{apiMessageToJson()}{apiMessageToJson()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void api\+Message\+To\+Json (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$}]{msg,  }\item[{Json\+::\+Value \&}]{json\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_add871cb64ad6532165de7fa6ca8d9700}\label{sick__scan__xd__api__dockertest_8cpp_add871cb64ad6532165de7fa6ca8d9700}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!apiTestCartesianPointCloudMsgCallback@{apiTestCartesianPointCloudMsgCallback}}
+\index{apiTestCartesianPointCloudMsgCallback@{apiTestCartesianPointCloudMsgCallback}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{apiTestCartesianPointCloudMsgCallback()}{apiTestCartesianPointCloudMsgCallback()}}
+{\footnotesize\ttfamily static void api\+Test\+Cartesian\+Point\+Cloud\+Msg\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_af2ecc95ffb02786057890a5ffd20e693}\label{sick__scan__xd__api__dockertest_8cpp_af2ecc95ffb02786057890a5ffd20e693}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!apiTestImuMsgCallback@{apiTestImuMsgCallback}}
+\index{apiTestImuMsgCallback@{apiTestImuMsgCallback}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{apiTestImuMsgCallback()}{apiTestImuMsgCallback()}}
+{\footnotesize\ttfamily static void api\+Test\+Imu\+Msg\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{const \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_a3bde73941cfb3c30c2ac085c47d6f55f}\label{sick__scan__xd__api__dockertest_8cpp_a3bde73941cfb3c30c2ac085c47d6f55f}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!apiTestPolarPointCloudMsgCallback@{apiTestPolarPointCloudMsgCallback}}
+\index{apiTestPolarPointCloudMsgCallback@{apiTestPolarPointCloudMsgCallback}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{apiTestPolarPointCloudMsgCallback()}{apiTestPolarPointCloudMsgCallback()}}
+{\footnotesize\ttfamily static void api\+Test\+Polar\+Point\+Cloud\+Msg\+Callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{const \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_ae85f3b3eafa82b00b2cd96bb80e81566}\label{sick__scan__xd__api__dockertest_8cpp_ae85f3b3eafa82b00b2cd96bb80e81566}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!exitOnError@{exitOnError}}
+\index{exitOnError@{exitOnError}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{exitOnError()}{exitOnError()}}
+{\footnotesize\ttfamily static void exit\+On\+Error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{msg,  }\item[{int32\+\_\+t}]{error\+\_\+code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_a572a3ec9557b38019bf53184e0d6ec66}\label{sick__scan__xd__api__dockertest_8cpp_a572a3ec9557b38019bf53184e0d6ec66}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!exportJsonMessages@{exportJsonMessages}}
+\index{exportJsonMessages@{exportJsonMessages}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{exportJsonMessages()}{exportJsonMessages()}}
+{\footnotesize\ttfamily void export\+Json\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{sick__scan__xd__api__dockertest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!main@{main}}
+\index{main@{main}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_a1d8244c06d2b158ee0ba7e14fcd62e72}\label{sick__scan__xd__api__dockertest_8cpp_a1d8244c06d2b158ee0ba7e14fcd62e72}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!sick\_scan\_api\_test\_main@{sick\_scan\_api\_test\_main}}
+\index{sick\_scan\_api\_test\_main@{sick\_scan\_api\_test\_main}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{sick\_scan\_api\_test\_main()}{sick\_scan\_api\_test\_main()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+api\+\_\+test\+\_\+main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_ac6a38af50dce6ee039b74f9a2671f8a8}\label{sick__scan__xd__api__dockertest_8cpp_ac6a38af50dce6ee039b74f9a2671f8a8}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!signalHandler@{signalHandler}}
+\index{signalHandler@{signalHandler}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{signalHandler()}{signalHandler()}}
+{\footnotesize\ttfamily void signal\+Handler (\begin{DoxyParamCaption}\item[{int}]{signal\+Recv }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_ac98aa68e3e58db3acceee0c59359c325}\label{sick__scan__xd__api__dockertest_8cpp_ac98aa68e3e58db3acceee0c59359c325}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!s\_json\_export\_file@{s\_json\_export\_file}}
+\index{s\_json\_export\_file@{s\_json\_export\_file}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_json\_export\_file}{s\_json\_export\_file}}
+{\footnotesize\ttfamily std\+::string s\+\_\+json\+\_\+export\+\_\+file\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_a24ac58b48b4fa33317781754849b8efe}\label{sick__scan__xd__api__dockertest_8cpp_a24ac58b48b4fa33317781754849b8efe}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!s\_json\_imu\_messages@{s\_json\_imu\_messages}}
+\index{s\_json\_imu\_messages@{s\_json\_imu\_messages}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_json\_imu\_messages}{s\_json\_imu\_messages}}
+{\footnotesize\ttfamily Json\+::\+Value s\+\_\+json\+\_\+imu\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_ac41e3983740ac1868347f995c5dc0a89}\label{sick__scan__xd__api__dockertest_8cpp_ac41e3983740ac1868347f995c5dc0a89}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!s\_json\_pointcloud\_messages@{s\_json\_pointcloud\_messages}}
+\index{s\_json\_pointcloud\_messages@{s\_json\_pointcloud\_messages}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_json\_pointcloud\_messages}{s\_json\_pointcloud\_messages}}
+{\footnotesize\ttfamily Json\+::\+Value s\+\_\+json\+\_\+pointcloud\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{sick__scan__xd__api__dockertest_8cpp_a819668d723e8eb1701f88619b6c013dd}\label{sick__scan__xd__api__dockertest_8cpp_a819668d723e8eb1701f88619b6c013dd}} 
+\index{sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}!s\_shutdown\_signal\_received@{s\_shutdown\_signal\_received}}
+\index{s\_shutdown\_signal\_received@{s\_shutdown\_signal\_received}!sick\_scan\_xd\_api\_dockertest.cpp@{sick\_scan\_xd\_api\_dockertest.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_shutdown\_signal\_received}{s\_shutdown\_signal\_received}}
+{\footnotesize\ttfamily bool s\+\_\+shutdown\+\_\+signal\+\_\+received = false\hspace{0.3cm}{\ttfamily [static]}}
+

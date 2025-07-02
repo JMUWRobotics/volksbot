@@ -1,0 +1,1192 @@
+\hypertarget{classdevices_1_1SopasBase}{}\doxysection{devices\+::Sopas\+Base Class Reference}
+\label{classdevices_1_1SopasBase}\index{devices::SopasBase@{devices::SopasBase}}
+
+
+{\ttfamily \#include $<$Sopas\+Base.\+hpp$>$}
+
+
+
+Collaboration diagram for devices\+::Sopas\+Base\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{classdevices_1_1SopasBase__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6}{Sopas\+Protocol}} \{ \mbox{\hyperlink{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6a8a453e97ee78cded785f1cf1512e3144}{Co\+La\+\_\+A}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6afd6c450c8ac1b1d4c4389ad25fef9741}{Co\+La\+\_\+B}}
+ \}
+\item 
+enum \mbox{\hyperlink{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0cc}{Sopas\+Encoding}} \{ \mbox{\hyperlink{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0cca0da1b36dfaf42f5892ff3b8ac6670689}{By\+Name}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0ccaeaef042a2439cd7b3bb14f3b812e3e70}{By\+Index}}
+ \}
+\item 
+enum \mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800}{Sopas\+Message\+Type}} \{ \newline
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a1bbc9bb2bfc64ae8e1cbf8190d9ef493}{M\+S\+G\+\_\+\+U\+N\+K\+N\+O\+WN}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a97f5226a0ba43113d02daed911b550b0}{M\+S\+G\+\_\+\+S\+E\+N\+D\+\_\+\+E\+V\+E\+NT}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800ade042117947ae6e8fc9728d012f93427}{M\+S\+G\+\_\+\+R\+E\+A\+D\+\_\+\+V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+A\+N\+S\+W\+ER}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800afa6416cec287c7a531c9f442de0f3fde}{M\+S\+G\+\_\+\+W\+R\+I\+T\+E\+\_\+\+V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+A\+N\+S\+W\+ER}}, 
+\newline
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a43d7fb6a31e482ba12f0686b10274627}{M\+S\+G\+\_\+\+I\+N\+V\+O\+K\+E\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+A\+N\+S\+W\+ER}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a47cdd2321dc36838c43b81181e85db05}{M\+S\+G\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+A\+N\+S\+W\+ER}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a1b07a067e9a7167e9ea88ad9d727207b}{M\+S\+G\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+E\+V\+E\+N\+T\+\_\+\+A\+N\+S\+W\+ER}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800ab10c24f810e29a2cba688865c6b6478c}{M\+S\+G\+\_\+\+E\+V\+E\+N\+T\+\_\+\+A\+C\+K\+N\+O\+W\+L\+E\+D\+GE}}, 
+\newline
+\mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a01f6d7fef1442f63d581849356c92566}{M\+S\+G\+\_\+\+E\+R\+R\+OR}}
+ \}
+\begin{DoxyCompactList}\small\item\em types of answers of the sensor \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{classdevices_1_1SopasBase_a151ba5067547401bea60bdc6692a2631}{Decoder\+Function}}) (\mbox{\hyperlink{classdevices_1_1SopasEventMessage}{Sopas\+Event\+Message}} \&frame)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1e49925ebdecd4712d2d274ca36e471e}{Sopas\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classdevices_1_1SopasBase_acabecaa8a0bb333712c33c3a7d140791}{$\sim$\+Sopas\+Base}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classdevices_1_1SopasBase_a1d3909e768d709e038d36d343b85c49c}{init}} (\mbox{\hyperlink{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6}{Sopas\+Protocol}} protocol, std\+::string ip\+Address, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} port\+Number, bool we\+Want\+Scan\+Data, bool we\+Want\+Field\+Data, bool read\+Only\+Mode, \mbox{\hyperlink{classTcp_a649c232b23d2186c1a723711d2a35d0f}{Tcp\+::\+Disconnect\+Function}} disconnect\+Function, void $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Initialization. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a17911ef35b08baf9df5cd2dfbd90802d}{connect}} ()
+\begin{DoxyCompactList}\small\item\em Connects to a sensor via tcp and reads the device name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_ad48bb0fc2936cf5939bb9abc6ac5d236}{is\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if the tcp connection is established. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_ad534c45c65d718e3cbbdf0bbd16258bf}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Closes the connection to the L\+MS. This is the opposite of \mbox{\hyperlink{classdevices_1_1SopasBase_a1d3909e768d709e038d36d343b85c49c}{init()}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a45429b5e1aff59a7745f65d7798e639a}{action\+\_\+get\+Scanner\+Type\+And\+Version}} ()
+\begin{DoxyCompactList}\small\item\em Reads the scanner type and version variable from the sensor and stores it in the member variables. This is done always by name. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevices_1_1SopasBase_a856c2984c4efbfe931eb12d3fbefff5d}{set\+Read\+Only\+Mode}} (bool mode)
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a2189829aa0fd337ee714cc0ba3553f01}{is\+Read\+Only}} ()
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a01287e7dbfdd06882970874a6e093a91}{invoke\+Method}} (const std\+::string \&methode\+Name, \mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$parameters, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} parameters\+Length, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\begin{DoxyCompactList}\small\item\em Invoke a method on the sensor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a5599d557347a3a4940951b8e1aa27c1a}{invoke\+Method}} (\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} index, \mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$parameters, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} parameters\+Length, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\begin{DoxyCompactList}\small\item\em Invoke a method on the sensor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a0452038b9f198c861805da5110055031}{read\+Variable}} (const std\+::string \&variable\+Name, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\begin{DoxyCompactList}\small\item\em Reads a variable from the sensor by name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a5644781ebd7ee8b9cfef363c4d0b7a82}{read\+Variable}} (\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} index, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\begin{DoxyCompactList}\small\item\em Reads a variable from the sensor by index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_ad8e330552ce6661f13b40a60c3226518}{write\+Variable}} (const std\+::string \&variable\+Name, \mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$parameters, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} parameters\+Length)
+\begin{DoxyCompactList}\small\item\em Write a variable to the sensor by name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_af4c9a25dcea36f7d1faba6cd8b8cbece}{write\+Variable}} (\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} index, \mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$parameters, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} parameters\+Length)
+\begin{DoxyCompactList}\small\item\em Write a variable to the sensor by index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a442df8605c248cf1c36988237c29b07b}{register\+Event}} (const std\+::string \&event\+Name)
+\begin{DoxyCompactList}\small\item\em Registers an event by name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a3c0824fe3806f16f6738fe305368b0cf}{register\+Event}} (\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} index)
+\begin{DoxyCompactList}\small\item\em Registers an event by index. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a68dc23483f257501a376cfa0cb4f56f2}{unregister\+Event}} (const std\+::string \&event\+Name)
+\begin{DoxyCompactList}\small\item\em Unregisters an event by name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_aacb56654759d5d8d0764f46c1fce360a}{unregister\+Event}} (\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} index)
+\begin{DoxyCompactList}\small\item\em Unregisters an event by index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classdevices_1_1SopasBase_a22886ece5b3bebff5a771d7b0078a2df}{set\+Event\+Callback\+Function}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a151ba5067547401bea60bdc6692a2631}{Decoder\+Function}} decoder\+Function, const std\+::string \&event\+Name)
+\item 
+void \mbox{\hyperlink{classdevices_1_1SopasBase_ac207d1e88a8b5eedaf10854c6753537d}{set\+Event\+Callback\+Function}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a151ba5067547401bea60bdc6692a2631}{Decoder\+Function}} decoder\+Function, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} event\+Index)
+\item 
+double \mbox{\hyperlink{classdevices_1_1SopasBase_a628e0966223f7bedb9f9b115cb4b03db}{make\+Angle\+Valid}} (double angle)
+\item 
+const std\+::string \& \mbox{\hyperlink{classdevices_1_1SopasBase_abc5c2620cd98c34700ee1c55dc73f317}{get\+Scanner\+Name}} () const
+\item 
+const std\+::string \& \mbox{\hyperlink{classdevices_1_1SopasBase_a4275bb67addb81b3c25abe41d46b86af}{get\+Scanner\+Version}} () const
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classdevices_1_1SopasBase_a8f68bf27798f7897696f923826a90f15}{get\+Nanosec\+Timestamp\+Last\+Tcp\+Message\+Received}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a52039906011fd14fb39be5c79b0c4841}{convert\+Sopas\+Error\+Code\+To\+Text}} (\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} error\+Code)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a2fc77c8e979e4e4ee8f29a4599fc4981}{E\+V\+E\+N\+T\+N\+A\+M\+E\+\_\+\+S\+U\+B\+S\+C\+R\+I\+B\+E\+\_\+\+E\+V\+A\+L\+C\+A\+S\+ES}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_aa673d831ae343505f70e40404af1efd1}{E\+V\+E\+N\+T\+N\+A\+M\+E\+\_\+\+S\+U\+B\+S\+C\+R\+I\+B\+E\+\_\+\+S\+C\+A\+NS}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a54e7958e9b095148ad8df8fee2e3ac07}{M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+L\+O\+G\+IN}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a85f4cb569bc3e45247ba0f01d145b264}{M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+L\+O\+G\+O\+UT}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_af93054600362fd690353f184ce8ec6a1}{M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+S\+E\+T\+\_\+\+S\+C\+A\+N\+C\+O\+N\+F\+IG}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_aeca8374be9ea3ec2592c99fe74ecd362}{M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+S\+T\+A\+R\+T\+\_\+\+M\+E\+A\+S\+U\+RE}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_aa221f3c367bf9d9e0cbfe044cbb900af}{M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+S\+T\+O\+P\+\_\+\+M\+E\+A\+S\+U\+RE}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_aef3882903737a7b4e1c3b793db13aabf}{V\+A\+R\+I\+A\+B\+L\+E\+N\+A\+M\+E\+\_\+\+D\+E\+V\+I\+C\+E\+I\+D\+E\+NT}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a92cfc43e085bf5716e88c12dec86b7ed}{V\+A\+R\+I\+A\+B\+L\+E\+N\+A\+M\+E\+\_\+\+S\+C\+A\+N\+C\+O\+N\+F\+IG}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_ad45481f008b3be902c0cc56373081187}{V\+A\+R\+I\+A\+B\+L\+E\+N\+A\+M\+E\+\_\+\+D\+A\+T\+A\+O\+U\+T\+P\+U\+T\+R\+A\+N\+GE}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_abda2f749537e3768617c7d64ab96715b}{V\+A\+R\+I\+A\+B\+L\+E\+N\+A\+M\+E\+\_\+\+S\+C\+A\+N\+D\+A\+T\+A\+C\+O\+N\+F\+IG}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_acc88b5416a47c52460c191569c2b9db8}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Read\+\_\+\+Variable\+\_\+\+By\+Index}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a497553a3e6b22b515d2bac06288b8df9}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Write\+\_\+\+Variable\+\_\+\+By\+Index}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a03c93606391783026496f867fd857dff}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Invoke\+\_\+\+Method\+\_\+\+By\+Index}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_aa97d12dc7f851600e5d6f8136aaf3f83}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Method\+\_\+\+Result\+\_\+\+By\+Index}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_ac7fedac2876354031c748e004ad45787}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Register\+\_\+\+Event\+\_\+\+By\+Index}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_ab6e58cf9f3f830219f91fb17cb92b848}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Send\+\_\+\+Event\+\_\+\+By\+Index}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a4bf6603934586587396d70fb1afe400b}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Read\+\_\+\+Variable\+\_\+\+Answer}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a6c9e221f8673076aa6e1702ea242657d}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Write\+\_\+\+Variable\+\_\+\+Answer}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a64ff49b0d2c0fb17538409e070db3998}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Invoke\+\_\+\+Method\+\_\+\+Answer}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a384e16190538b435e1001e7ddf72d0da}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Method\+\_\+\+Result\+\_\+\+Answer}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a857bf8c6d6f2e2f34b20e61ad33a1536}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Register\+\_\+\+Event\+\_\+\+Answer}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_ac61d69a37ebb4ad89237c506b845d7ea}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Event\+\_\+\+Acknowledge}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a96afa363995c2aa23347ecb6c7607485}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Read\+\_\+\+Variable\+\_\+\+By\+Name}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a793077fbd5f92238d1ab041a4d3eb0e3}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Write\+\_\+\+Variable\+\_\+\+By\+Name}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_ad363443cc00d934467121c781ae4639d}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Invoke\+\_\+\+Method\+\_\+\+By\+Name}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_aa6eb639aeadc72faa19368d53856b5f7}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Method\+\_\+\+Result\+\_\+\+By\+Name}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a2ed1e8fdde57473dfea82439e63158be}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Register\+\_\+\+Event\+\_\+\+By\+Name}}
+\item 
+static const std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_adaa11dd95e3ab588322b73da51642477}{C\+O\+M\+M\+A\+N\+D\+\_\+\+Send\+\_\+\+Event\+\_\+\+By\+Name}}
+\item 
+static const \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} \mbox{\hyperlink{classdevices_1_1SopasBase_a0d401959005fd8ce4965a4ca7c7929aa}{I\+N\+D\+E\+X\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+D\+E\+NT}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} \{ \newline
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747ad164151a6e2c4d67f1f779a3db094fad}{C\+M\+D\+\_\+\+U\+N\+K\+N\+O\+WN}} = 0, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a5b47d56de06939cb95baa7d41857098e}{RI}} = 1, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747aecd68b81f712bc88ac6238f89fc15c39}{WI}} = 2, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a17f5c89ae3e5dac092a126c9fafa37e8}{MI}} = 3, 
+\newline
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a5221be4f0107886520d5f676f62ba376}{AI}} = 4, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a10d54132b232bab69fc15efce926f9a0}{EI}} = 5, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747affd5d1c3ff652f46bacea8396a342da5}{SI}} = 6, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a2dcea4a919de7b84567e3faadf3a1bd1}{RA}} = 7, 
+\newline
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747ad30d700727e2491f6e116b0f71e639fd}{WA}} = 8, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a6b8deea02b3686af05e29878d0a4ba15}{MA}} = 9, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a12ab7203e8c1d751451d2397cd81e81e}{AA}} = 10, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a4a9802e456f95c49c42ee8377bda37ce}{EA}} = 11, 
+\newline
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a0cefdb02f891cdf1617b644cbf8625b6}{SA}} = 12, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747aa53aa7a3d164702ae49f49d7eefce560}{RN}} = 20, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a73a48b7f982d1d205e232bbcb3347420}{AN}} = 21, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747abf1ef85c1e22715c85e1660a3994b65e}{SN}} = 22, 
+\newline
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747af90d8a5ef702c1eedb7c5719ff1e241c}{FA}} = 50
+ \}
+\item 
+enum \mbox{\hyperlink{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3c}{State}} \{ \mbox{\hyperlink{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3ca5a5e11607d2c7ca1991cc0afc1a22135}{C\+O\+N\+S\+T\+R\+U\+C\+T\+ED}}, 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3ca5906a98821e4649e4dc21399a2dc106a}{C\+O\+N\+N\+E\+C\+T\+ED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_af478105ab8fda04af3a5c7a3b998bbff}{receive\+Answer}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} cmd, std\+::string name, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} timeout, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\begin{DoxyCompactList}\small\item\em Take answer from read thread and decode it. Waits for a certain answer by name. Event data (scans) are filtered and processed by read thread. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_ab981c4beff86586c7dfc77ace5cac7db}{receive\+Answer\+\_\+\+Co\+La\+\_\+A}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} cmd, std\+::string name, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} timeout, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_ac83d4aeac255e1155c67ea1a37896e8d}{receive\+Answer\+\_\+\+Co\+La\+\_\+B}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} cmd, std\+::string name, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} timeout, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a39206661b6e852355a402404ad6d1624}{receive\+Answer}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} cmd, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} index, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} timeout, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a14ee33495296562dc3e63faddef0d949}{receive\+Answer\+\_\+\+Co\+La\+\_\+A}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} cmd, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} index, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} timeout, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_aa6b4933f3e57b4a6ec413be1819640f6}{receive\+Answer\+\_\+\+Co\+La\+\_\+B}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} cmd, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} index, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} timeout, \mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&answer)
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a65d038cf431fba053f9ecdb38c058c98}{send\+Command\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} len)
+\begin{DoxyCompactList}\small\item\em Sends the content of the buffer via T\+CP to the sensor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} \mbox{\hyperlink{classdevices_1_1SopasBase_a7eed489d417be5053283c16bf26448a5}{cola\+A\+\_\+decode\+Command}} (std\+::string $\ast$rx\+Data)
+\item 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} \mbox{\hyperlink{classdevices_1_1SopasBase_a37b0a22cb61849dd2daa6f084dfbc66a}{string\+To\+Sopas\+Command}} (const std\+::string \&cmd\+String)
+\begin{DoxyCompactList}\small\item\em Converts strings in sopas answer buffer to Sopas\+Command enum. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_ad22e3479735ddb66393ce5219f000659}{sopas\+Command\+To\+String}} (\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}} cmd)
+\item 
+virtual void \mbox{\hyperlink{classdevices_1_1SopasBase_a1b0112e838ebcd9be7c85eda96844101}{eval\+Case\+Result\+Decoder}} (\mbox{\hyperlink{classdevices_1_1SopasEventMessage}{Sopas\+Event\+Message}} \&msg)=0
+\item 
+virtual void \mbox{\hyperlink{classdevices_1_1SopasBase_a6af66e8c87c5a8f293337eb0245e87e3}{scan\+Data\+Decoder}} (\mbox{\hyperlink{classdevices_1_1SopasEventMessage}{Sopas\+Event\+Message}} \&msg)=0
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a58e6453c7b99c03c091ff5132e6d7652}{m\+\_\+scan\+Event\+Is\+Registered}}
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_abe6e593ec6c28d921d5ad49b38df562a}{m\+\_\+field\+Event\+Is\+Registered}}
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a53c7fe7496bb920dce97f5166c1dd142}{m\+\_\+we\+Want\+Scan\+Data}}
+\begin{DoxyCompactList}\small\item\em Flag to enable/disable scan data reception. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a67ab271a0b6c46da1edc955f0d14a550}{m\+\_\+we\+Want\+Field\+Data}}
+\begin{DoxyCompactList}\small\item\em Flag to enable/disable protection field data reception. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3c}{State}} \mbox{\hyperlink{classdevices_1_1SopasBase_a58230c62acfafaf56c83cf25d9f8ad40}{m\+\_\+state}}
+\begin{DoxyCompactList}\small\item\em Device info. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_aa37bb36d79c8f83c9b1ef53d1f0093d9}{m\+\_\+scanner\+Name}}
+\begin{DoxyCompactList}\small\item\em Read from scanner. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classdevices_1_1SopasBase_a5571cfad0976a9f9076f4c1a0c4227e8}{m\+\_\+scanner\+Version}}
+\begin{DoxyCompactList}\small\item\em Read from scanner. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_a04c9a9ddf583d6799c27ecca3ed43de8}{m\+\_\+be\+Verbose}}
+\item 
+bool \mbox{\hyperlink{classdevices_1_1SopasBase_ab928a59e08e7161e8d512e8e32bcec00}{m\+\_\+is\+Logged\+In}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class \mbox{\hyperlink{classdevices_1_1SopasBase}{Sopas\+Base}} encapsuls the communication to a sensor via Sopas\+Protocol. It offers the functions\+:
+\begin{DoxyItemize}
+\item invoke\+Methode
+\item read\+Variable
+\item write\+Variable
+\item (un)register\+Event
+\end{DoxyItemize}
+
+Callback functions are used to inform you about incoming events (scans or eval cases). 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a151ba5067547401bea60bdc6692a2631}\label{classdevices_1_1SopasBase_a151ba5067547401bea60bdc6692a2631}} 
+\index{devices::SopasBase@{devices::SopasBase}!DecoderFunction@{DecoderFunction}}
+\index{DecoderFunction@{DecoderFunction}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{DecoderFunction}{DecoderFunction}}
+{\footnotesize\ttfamily typedef void($\ast$ devices\+::\+Sopas\+Base\+::\+Decoder\+Function) (\mbox{\hyperlink{classdevices_1_1SopasEventMessage}{Sopas\+Event\+Message}} \&frame)}
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}} 
+\index{devices::SopasBase@{devices::SopasBase}!SopasCommand@{SopasCommand}}
+\index{SopasCommand@{SopasCommand}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{SopasCommand}{SopasCommand}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{devices\+::\+Sopas\+Base\+::\+Sopas\+Command}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CMD\_UNKNOWN@{CMD\_UNKNOWN}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!CMD\_UNKNOWN@{CMD\_UNKNOWN}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747ad164151a6e2c4d67f1f779a3db094fad}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747ad164151a6e2c4d67f1f779a3db094fad}} 
+C\+M\+D\+\_\+\+U\+N\+K\+N\+O\+WN&Unknown command. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RI@{RI}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!RI@{RI}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a5b47d56de06939cb95baa7d41857098e}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a5b47d56de06939cb95baa7d41857098e}} 
+RI&Read Variable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WI@{WI}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!WI@{WI}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747aecd68b81f712bc88ac6238f89fc15c39}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747aecd68b81f712bc88ac6238f89fc15c39}} 
+WI&Write Variable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MI@{MI}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MI@{MI}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a17f5c89ae3e5dac092a126c9fafa37e8}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a17f5c89ae3e5dac092a126c9fafa37e8}} 
+MI&Invoke Method. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AI@{AI}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!AI@{AI}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a5221be4f0107886520d5f676f62ba376}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a5221be4f0107886520d5f676f62ba376}} 
+AI&Method Result. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EI@{EI}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!EI@{EI}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a10d54132b232bab69fc15efce926f9a0}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a10d54132b232bab69fc15efce926f9a0}} 
+EI&Register Event. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SI@{SI}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!SI@{SI}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747affd5d1c3ff652f46bacea8396a342da5}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747affd5d1c3ff652f46bacea8396a342da5}} 
+SI&Send Event. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RA@{RA}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!RA@{RA}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a2dcea4a919de7b84567e3faadf3a1bd1}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a2dcea4a919de7b84567e3faadf3a1bd1}} 
+RA&Read Variable Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WA@{WA}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!WA@{WA}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747ad30d700727e2491f6e116b0f71e639fd}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747ad30d700727e2491f6e116b0f71e639fd}} 
+WA&Write Variable Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MA@{MA}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MA@{MA}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a6b8deea02b3686af05e29878d0a4ba15}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a6b8deea02b3686af05e29878d0a4ba15}} 
+MA&Invoke Method Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AA@{AA}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!AA@{AA}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a12ab7203e8c1d751451d2397cd81e81e}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a12ab7203e8c1d751451d2397cd81e81e}} 
+AA&Method Result Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EA@{EA}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!EA@{EA}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a4a9802e456f95c49c42ee8377bda37ce}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a4a9802e456f95c49c42ee8377bda37ce}} 
+EA&Register Event Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SA@{SA}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!SA@{SA}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a0cefdb02f891cdf1617b644cbf8625b6}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a0cefdb02f891cdf1617b644cbf8625b6}} 
+SA&Event Acknowledge. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RN@{RN}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!RN@{RN}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747aa53aa7a3d164702ae49f49d7eefce560}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747aa53aa7a3d164702ae49f49d7eefce560}} 
+RN&Read Variable (by name) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AN@{AN}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!AN@{AN}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a73a48b7f982d1d205e232bbcb3347420}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747a73a48b7f982d1d205e232bbcb3347420}} 
+AN&Method Result (ny name) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SN@{SN}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!SN@{SN}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747abf1ef85c1e22715c85e1660a3994b65e}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747abf1ef85c1e22715c85e1660a3994b65e}} 
+SN&Send Event (by name, receive) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FA@{FA}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!FA@{FA}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747af90d8a5ef702c1eedb7c5719ff1e241c}\label{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747af90d8a5ef702c1eedb7c5719ff1e241c}} 
+FA&Error. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0cc}\label{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0cc}} 
+\index{devices::SopasBase@{devices::SopasBase}!SopasEncoding@{SopasEncoding}}
+\index{SopasEncoding@{SopasEncoding}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{SopasEncoding}{SopasEncoding}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0cc}{devices\+::\+Sopas\+Base\+::\+Sopas\+Encoding}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ByName@{ByName}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!ByName@{ByName}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0cca0da1b36dfaf42f5892ff3b8ac6670689}\label{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0cca0da1b36dfaf42f5892ff3b8ac6670689}} 
+By\+Name&read/write variable, invoke methods by name \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ByIndex@{ByIndex}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!ByIndex@{ByIndex}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0ccaeaef042a2439cd7b3bb14f3b812e3e70}\label{classdevices_1_1SopasBase_aeb3487752b6520723e5117cc14acd0ccaeaef042a2439cd7b3bb14f3b812e3e70}} 
+By\+Index&read/write variable, invoke methods by index (indexes will be generated !!!) \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800}} 
+\index{devices::SopasBase@{devices::SopasBase}!SopasMessageType@{SopasMessageType}}
+\index{SopasMessageType@{SopasMessageType}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{SopasMessageType}{SopasMessageType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800}{devices\+::\+Sopas\+Base\+::\+Sopas\+Message\+Type}}}
+
+
+
+types of answers of the sensor 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_UNKNOWN@{MSG\_UNKNOWN}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_UNKNOWN@{MSG\_UNKNOWN}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a1bbc9bb2bfc64ae8e1cbf8190d9ef493}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a1bbc9bb2bfc64ae8e1cbf8190d9ef493}} 
+M\+S\+G\+\_\+\+U\+N\+K\+N\+O\+WN&Unknown message. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_SEND\_EVENT@{MSG\_SEND\_EVENT}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_SEND\_EVENT@{MSG\_SEND\_EVENT}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a97f5226a0ba43113d02daed911b550b0}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a97f5226a0ba43113d02daed911b550b0}} 
+M\+S\+G\+\_\+\+S\+E\+N\+D\+\_\+\+E\+V\+E\+NT&Send Event. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_READ\_VARIABLE\_ANSWER@{MSG\_READ\_VARIABLE\_ANSWER}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_READ\_VARIABLE\_ANSWER@{MSG\_READ\_VARIABLE\_ANSWER}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800ade042117947ae6e8fc9728d012f93427}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800ade042117947ae6e8fc9728d012f93427}} 
+M\+S\+G\+\_\+\+R\+E\+A\+D\+\_\+\+V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+A\+N\+S\+W\+ER&Read Variable Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_WRITE\_VARIABLE\_ANSWER@{MSG\_WRITE\_VARIABLE\_ANSWER}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_WRITE\_VARIABLE\_ANSWER@{MSG\_WRITE\_VARIABLE\_ANSWER}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800afa6416cec287c7a531c9f442de0f3fde}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800afa6416cec287c7a531c9f442de0f3fde}} 
+M\+S\+G\+\_\+\+W\+R\+I\+T\+E\+\_\+\+V\+A\+R\+I\+A\+B\+L\+E\+\_\+\+A\+N\+S\+W\+ER&Write Variable Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_INVOKE\_METHOD\_ANSWER@{MSG\_INVOKE\_METHOD\_ANSWER}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_INVOKE\_METHOD\_ANSWER@{MSG\_INVOKE\_METHOD\_ANSWER}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a43d7fb6a31e482ba12f0686b10274627}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a43d7fb6a31e482ba12f0686b10274627}} 
+M\+S\+G\+\_\+\+I\+N\+V\+O\+K\+E\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+A\+N\+S\+W\+ER&Invoke Method Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_METHOD\_RESULT\_ANSWER@{MSG\_METHOD\_RESULT\_ANSWER}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_METHOD\_RESULT\_ANSWER@{MSG\_METHOD\_RESULT\_ANSWER}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a47cdd2321dc36838c43b81181e85db05}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a47cdd2321dc36838c43b81181e85db05}} 
+M\+S\+G\+\_\+\+M\+E\+T\+H\+O\+D\+\_\+\+R\+E\+S\+U\+L\+T\+\_\+\+A\+N\+S\+W\+ER&Method Result Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_REGISTER\_EVENT\_ANSWER@{MSG\_REGISTER\_EVENT\_ANSWER}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_REGISTER\_EVENT\_ANSWER@{MSG\_REGISTER\_EVENT\_ANSWER}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a1b07a067e9a7167e9ea88ad9d727207b}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a1b07a067e9a7167e9ea88ad9d727207b}} 
+M\+S\+G\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+\+E\+V\+E\+N\+T\+\_\+\+A\+N\+S\+W\+ER&Register Event Answer. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_EVENT\_ACKNOWLEDGE@{MSG\_EVENT\_ACKNOWLEDGE}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_EVENT\_ACKNOWLEDGE@{MSG\_EVENT\_ACKNOWLEDGE}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800ab10c24f810e29a2cba688865c6b6478c}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800ab10c24f810e29a2cba688865c6b6478c}} 
+M\+S\+G\+\_\+\+E\+V\+E\+N\+T\+\_\+\+A\+C\+K\+N\+O\+W\+L\+E\+D\+GE&Event Acknowledge -\/Answer to register event. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MSG\_ERROR@{MSG\_ERROR}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!MSG\_ERROR@{MSG\_ERROR}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a01f6d7fef1442f63d581849356c92566}\label{classdevices_1_1SopasBase_a5f9d130696ab71c351bd0e89cb3af800a01f6d7fef1442f63d581849356c92566}} 
+M\+S\+G\+\_\+\+E\+R\+R\+OR&Error. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6}\label{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6}} 
+\index{devices::SopasBase@{devices::SopasBase}!SopasProtocol@{SopasProtocol}}
+\index{SopasProtocol@{SopasProtocol}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{SopasProtocol}{SopasProtocol}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6}{devices\+::\+Sopas\+Base\+::\+Sopas\+Protocol}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CoLa\_A@{CoLa\_A}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!CoLa\_A@{CoLa\_A}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6a8a453e97ee78cded785f1cf1512e3144}\label{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6a8a453e97ee78cded785f1cf1512e3144}} 
+Co\+La\+\_\+A&Command Language A\+S\+CI. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CoLa\_B@{CoLa\_B}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!CoLa\_B@{CoLa\_B}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6afd6c450c8ac1b1d4c4389ad25fef9741}\label{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6afd6c450c8ac1b1d4c4389ad25fef9741}} 
+Co\+La\+\_\+B&Command Language binary. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3c}\label{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3c}} 
+\index{devices::SopasBase@{devices::SopasBase}!State@{State}}
+\index{State@{State}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3c}{devices\+::\+Sopas\+Base\+::\+State}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONSTRUCTED@{CONSTRUCTED}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!CONSTRUCTED@{CONSTRUCTED}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3ca5a5e11607d2c7ca1991cc0afc1a22135}\label{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3ca5a5e11607d2c7ca1991cc0afc1a22135}} 
+C\+O\+N\+S\+T\+R\+U\+C\+T\+ED&Object has been constructed. Use \mbox{\hyperlink{classdevices_1_1SopasBase_a1d3909e768d709e038d36d343b85c49c}{init()}} to go into C\+O\+N\+N\+E\+C\+T\+ED state. Object is now connected. Use \mbox{\hyperlink{namespacesick__scansegment__xd_a314f6452756cafda2f6fe76b57f9fe61}{run()}} to go into R\+U\+N\+N\+I\+NG state, or \mbox{\hyperlink{classdevices_1_1SopasBase_ad534c45c65d718e3cbbdf0bbd16258bf}{disconnect()}} to go back into C\+O\+N\+S\+T\+R\+U\+C\+T\+ED state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONNECTED@{CONNECTED}!devices::SopasBase@{devices::SopasBase}}\index{devices::SopasBase@{devices::SopasBase}!CONNECTED@{CONNECTED}}}\mbox{\Hypertarget{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3ca5906a98821e4649e4dc21399a2dc106a}\label{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3ca5906a98821e4649e4dc21399a2dc106a}} 
+C\+O\+N\+N\+E\+C\+T\+ED&Object is connected and emitting data. Use stop() to go back into C\+O\+N\+N\+E\+C\+T\+ED, or \mbox{\hyperlink{classdevices_1_1SopasBase_ad534c45c65d718e3cbbdf0bbd16258bf}{disconnect()}} to go back into C\+O\+N\+S\+T\+R\+U\+C\+T\+ED state. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a1e49925ebdecd4712d2d274ca36e471e}\label{classdevices_1_1SopasBase_a1e49925ebdecd4712d2d274ca36e471e}} 
+\index{devices::SopasBase@{devices::SopasBase}!SopasBase@{SopasBase}}
+\index{SopasBase@{SopasBase}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{SopasBase()}{SopasBase()}}
+{\footnotesize\ttfamily devices\+::\+Sopas\+Base\+::\+Sopas\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_acabecaa8a0bb333712c33c3a7d140791}\label{classdevices_1_1SopasBase_acabecaa8a0bb333712c33c3a7d140791}} 
+\index{devices::SopasBase@{devices::SopasBase}!````~SopasBase@{$\sim$SopasBase}}
+\index{````~SopasBase@{$\sim$SopasBase}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$SopasBase()}{~SopasBase()}}
+{\footnotesize\ttfamily devices\+::\+Sopas\+Base\+::$\sim$\+Sopas\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a45429b5e1aff59a7745f65d7798e639a}\label{classdevices_1_1SopasBase_a45429b5e1aff59a7745f65d7798e639a}} 
+\index{devices::SopasBase@{devices::SopasBase}!action\_getScannerTypeAndVersion@{action\_getScannerTypeAndVersion}}
+\index{action\_getScannerTypeAndVersion@{action\_getScannerTypeAndVersion}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{action\_getScannerTypeAndVersion()}{action\_getScannerTypeAndVersion()}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::action\+\_\+get\+Scanner\+Type\+And\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Reads the scanner type and version variable from the sensor and stores it in the member variables. This is done always by name. 
+
+\begin{DoxyReturn}{Returns}
+true if no errors occurred.
+\end{DoxyReturn}
+Get scanner type and version string Also used as connection check.
+
+true\+: Information was read, false if an error occured \mbox{\Hypertarget{classdevices_1_1SopasBase_a7eed489d417be5053283c16bf26448a5}\label{classdevices_1_1SopasBase_a7eed489d417be5053283c16bf26448a5}} 
+\index{devices::SopasBase@{devices::SopasBase}!colaA\_decodeCommand@{colaA\_decodeCommand}}
+\index{colaA\_decodeCommand@{colaA\_decodeCommand}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{colaA\_decodeCommand()}{colaA\_decodeCommand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Base\+::\+Sopas\+Command}} devices\+::\+Sopas\+Base\+::cola\+A\+\_\+decode\+Command (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{rx\+Data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Read command bytes from buffer (2 bytes followed by space) and convert string to enum value accordingly. The command string is removed from input. \mbox{\Hypertarget{classdevices_1_1SopasBase_a17911ef35b08baf9df5cd2dfbd90802d}\label{classdevices_1_1SopasBase_a17911ef35b08baf9df5cd2dfbd90802d}} 
+\index{devices::SopasBase@{devices::SopasBase}!connect@{connect}}
+\index{connect@{connect}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Connects to a sensor via tcp and reads the device name. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a52039906011fd14fb39be5c79b0c4841}\label{classdevices_1_1SopasBase_a52039906011fd14fb39be5c79b0c4841}} 
+\index{devices::SopasBase@{devices::SopasBase}!convertSopasErrorCodeToText@{convertSopasErrorCodeToText}}
+\index{convertSopasErrorCodeToText@{convertSopasErrorCodeToText}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{convertSopasErrorCodeToText()}{convertSopasErrorCodeToText()}}
+{\footnotesize\ttfamily std\+::string devices\+::\+Sopas\+Base\+::convert\+Sopas\+Error\+Code\+To\+Text (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{error\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ad534c45c65d718e3cbbdf0bbd16258bf}\label{classdevices_1_1SopasBase_ad534c45c65d718e3cbbdf0bbd16258bf}} 
+\index{devices::SopasBase@{devices::SopasBase}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the connection to the L\+MS. This is the opposite of \mbox{\hyperlink{classdevices_1_1SopasBase_a1d3909e768d709e038d36d343b85c49c}{init()}}. 
+
+Switches this device from the C\+O\+N\+N\+E\+C\+T\+ED state back in the C\+O\+N\+S\+T\+R\+U\+C\+T\+ED state.
+
+\begin{DoxyReturn}{Returns}
+True if the device is now in the C\+O\+N\+S\+T\+R\+U\+C\+T\+ED state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a1b0112e838ebcd9be7c85eda96844101}\label{classdevices_1_1SopasBase_a1b0112e838ebcd9be7c85eda96844101}} 
+\index{devices::SopasBase@{devices::SopasBase}!evalCaseResultDecoder@{evalCaseResultDecoder}}
+\index{evalCaseResultDecoder@{evalCaseResultDecoder}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{evalCaseResultDecoder()}{evalCaseResultDecoder()}}
+{\footnotesize\ttfamily virtual void devices\+::\+Sopas\+Base\+::eval\+Case\+Result\+Decoder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasEventMessage}{Sopas\+Event\+Message}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a8f68bf27798f7897696f923826a90f15}\label{classdevices_1_1SopasBase_a8f68bf27798f7897696f923826a90f15}} 
+\index{devices::SopasBase@{devices::SopasBase}!getNanosecTimestampLastTcpMessageReceived@{getNanosecTimestampLastTcpMessageReceived}}
+\index{getNanosecTimestampLastTcpMessageReceived@{getNanosecTimestampLastTcpMessageReceived}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{getNanosecTimestampLastTcpMessageReceived()}{getNanosecTimestampLastTcpMessageReceived()}}
+{\footnotesize\ttfamily uint64\+\_\+t devices\+::\+Sopas\+Base\+::get\+Nanosec\+Timestamp\+Last\+Tcp\+Message\+Received (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns a timestamp in nanoseconds of the last received tcp message (or 0 if no message received) \mbox{\Hypertarget{classdevices_1_1SopasBase_abc5c2620cd98c34700ee1c55dc73f317}\label{classdevices_1_1SopasBase_abc5c2620cd98c34700ee1c55dc73f317}} 
+\index{devices::SopasBase@{devices::SopasBase}!getScannerName@{getScannerName}}
+\index{getScannerName@{getScannerName}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{getScannerName()}{getScannerName()}}
+{\footnotesize\ttfamily const std\+::string\& devices\+::\+Sopas\+Base\+::get\+Scanner\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a4275bb67addb81b3c25abe41d46b86af}\label{classdevices_1_1SopasBase_a4275bb67addb81b3c25abe41d46b86af}} 
+\index{devices::SopasBase@{devices::SopasBase}!getScannerVersion@{getScannerVersion}}
+\index{getScannerVersion@{getScannerVersion}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{getScannerVersion()}{getScannerVersion()}}
+{\footnotesize\ttfamily const std\+::string\& devices\+::\+Sopas\+Base\+::get\+Scanner\+Version (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a1d3909e768d709e038d36d343b85c49c}\label{classdevices_1_1SopasBase_a1d3909e768d709e038d36d343b85c49c}} 
+\index{devices::SopasBase@{devices::SopasBase}!init@{init}}
+\index{init@{init}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_aa1f45b54ba9c29c64025482c221f98c6}{Sopas\+Protocol}}}]{protocol,  }\item[{std\+::string}]{ip\+Address,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{port\+Number,  }\item[{bool}]{we\+Want\+Scan\+Data,  }\item[{bool}]{we\+Want\+Field\+Data,  }\item[{bool}]{read\+Only\+Mode,  }\item[{\mbox{\hyperlink{classTcp_a649c232b23d2186c1a723711d2a35d0f}{Tcp\+::\+Disconnect\+Function}}}]{disconnect\+Function,  }\item[{void $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em protocol} & \\
+\hline
+{\em ip\+Address} & I\+P-\/address of the Scanner \\
+\hline
+{\em port\+Number} & port for S\+O\+P\+AS comunication \\
+\hline
+{\em we\+Want\+Scan\+Data} & \\
+\hline
+{\em we\+Want\+Field\+Data} & \\
+\hline
+{\em read\+Only\+Mode} & \\
+\hline
+{\em disconnect\+Function} & Function to be called on disconnect events. \\
+\hline
+{\em obj} & = pointer to the object that holds the disconnect\+Function \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a01287e7dbfdd06882970874a6e093a91}\label{classdevices_1_1SopasBase_a01287e7dbfdd06882970874a6e093a91}} 
+\index{devices::SopasBase@{devices::SopasBase}!invokeMethod@{invokeMethod}}
+\index{invokeMethod@{invokeMethod}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{invokeMethod()}{invokeMethod()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::invoke\+Method (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{methode\+Name,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$}]{parameters,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{parameters\+Length,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})}
+
+
+
+Invoke a method on the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em methode\+Name} & name of the method to call \\
+\hline
+{\em parameters} & byte buffer with parameter (N\+O\+TE\+: you have to fill this buffer with the correct protocol -\/ cola-\/a or cola-\/b) \\
+\hline
+{\em parameters\+Length} & length of the byte buffer \\
+\hline
+{\em answer} & pointer to an answer message (N\+O\+TE\+: memory for this object will be allocated -\/ free this after usage !!!) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a5599d557347a3a4940951b8e1aa27c1a}\label{classdevices_1_1SopasBase_a5599d557347a3a4940951b8e1aa27c1a}} 
+\index{devices::SopasBase@{devices::SopasBase}!invokeMethod@{invokeMethod}}
+\index{invokeMethod@{invokeMethod}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{invokeMethod()}{invokeMethod()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::invoke\+Method (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{index,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$}]{parameters,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{parameters\+Length,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})}
+
+
+
+Invoke a method on the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & index of the method to call \\
+\hline
+{\em parameters} & byte buffer with parameter (N\+O\+TE\+: you have to fill this buffer with the correct protocol -\/ cola-\/a or cola-\/b) \\
+\hline
+{\em parameters\+Length} & length of the byte buffer \\
+\hline
+{\em answer} & pointer to an answer message (N\+O\+TE\+: memory for this object will be allocated -\/ free this after usage !!!) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ad48bb0fc2936cf5939bb9abc6ac5d236}\label{classdevices_1_1SopasBase_ad48bb0fc2936cf5939bb9abc6ac5d236}} 
+\index{devices::SopasBase@{devices::SopasBase}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if the tcp connection is established. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a2189829aa0fd337ee714cc0ba3553f01}\label{classdevices_1_1SopasBase_a2189829aa0fd337ee714cc0ba3553f01}} 
+\index{devices::SopasBase@{devices::SopasBase}!isReadOnly@{isReadOnly}}
+\index{isReadOnly@{isReadOnly}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{isReadOnly()}{isReadOnly()}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::is\+Read\+Only (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a628e0966223f7bedb9f9b115cb4b03db}\label{classdevices_1_1SopasBase_a628e0966223f7bedb9f9b115cb4b03db}} 
+\index{devices::SopasBase@{devices::SopasBase}!makeAngleValid@{makeAngleValid}}
+\index{makeAngleValid@{makeAngleValid}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{makeAngleValid()}{makeAngleValid()}}
+{\footnotesize\ttfamily double devices\+::\+Sopas\+Base\+::make\+Angle\+Valid (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})}
+
+Map angle to range \mbox{]}PI..-\/PI\mbox{]} \mbox{\Hypertarget{classdevices_1_1SopasBase_a0452038b9f198c861805da5110055031}\label{classdevices_1_1SopasBase_a0452038b9f198c861805da5110055031}} 
+\index{devices::SopasBase@{devices::SopasBase}!readVariable@{readVariable}}
+\index{readVariable@{readVariable}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{readVariable()}{readVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::read\+Variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{variable\+Name,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})}
+
+
+
+Reads a variable from the sensor by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em variable\+Name} & name of the variable \\
+\hline
+{\em answer} & pointer to an answer message (N\+O\+TE\+: memory for this object will be allocated -\/ free this after usage !!!) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a5644781ebd7ee8b9cfef363c4d0b7a82}\label{classdevices_1_1SopasBase_a5644781ebd7ee8b9cfef363c4d0b7a82}} 
+\index{devices::SopasBase@{devices::SopasBase}!readVariable@{readVariable}}
+\index{readVariable@{readVariable}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{readVariable()}{readVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::read\+Variable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{index,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})}
+
+
+
+Reads a variable from the sensor by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & of the variable \\
+\hline
+{\em answer} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_af478105ab8fda04af3a5c7a3b998bbff}\label{classdevices_1_1SopasBase_af478105ab8fda04af3a5c7a3b998bbff}} 
+\index{devices::SopasBase@{devices::SopasBase}!receiveAnswer@{receiveAnswer}}
+\index{receiveAnswer@{receiveAnswer}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{receiveAnswer()}{receiveAnswer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::receive\+Answer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}}}]{cmd,  }\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{timeout,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Take answer from read thread and decode it. Waits for a certain answer by name. Event data (scans) are filtered and processed by read thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & Waits for the answer to this command. \\
+\hline
+{\em name} & name of the method/variable. \\
+\hline
+{\em timeout} & in \mbox{[}ms\mbox{]} \\
+\hline
+{\em answer} & Pointer to answer. Will be filled if answer contains parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no error occurred.
+\end{DoxyReturn}
+Take answer from read thread and decode it. Waits for a certain answer by name. Event data (scans) are filtered and processed by read thread.
+
+By Name\+: name = \char`\"{}$<$\+Name$>$\char`\"{} timeout\+: Number of cycles to check for an answer (approx. 1ms per cycle) \mbox{\Hypertarget{classdevices_1_1SopasBase_a39206661b6e852355a402404ad6d1624}\label{classdevices_1_1SopasBase_a39206661b6e852355a402404ad6d1624}} 
+\index{devices::SopasBase@{devices::SopasBase}!receiveAnswer@{receiveAnswer}}
+\index{receiveAnswer@{receiveAnswer}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{receiveAnswer()}{receiveAnswer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::receive\+Answer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}}}]{cmd,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{index,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{timeout,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Take answer from read thread and decode it. Waits for a certain answer by index. Event data (scans) are filtered and processed by read thread.
+
+By Name\+: index = \char`\"{}$<$\+Index$>$\char`\"{} timeout\+: Number of cycles to check for an answer (approx. 1ms per cycle) \mbox{\Hypertarget{classdevices_1_1SopasBase_ab981c4beff86586c7dfc77ace5cac7db}\label{classdevices_1_1SopasBase_ab981c4beff86586c7dfc77ace5cac7db}} 
+\index{devices::SopasBase@{devices::SopasBase}!receiveAnswer\_CoLa\_A@{receiveAnswer\_CoLa\_A}}
+\index{receiveAnswer\_CoLa\_A@{receiveAnswer\_CoLa\_A}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{receiveAnswer\_CoLa\_A()}{receiveAnswer\_CoLa\_A()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::receive\+Answer\+\_\+\+Co\+La\+\_\+A (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}}}]{cmd,  }\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{timeout,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a14ee33495296562dc3e63faddef0d949}\label{classdevices_1_1SopasBase_a14ee33495296562dc3e63faddef0d949}} 
+\index{devices::SopasBase@{devices::SopasBase}!receiveAnswer\_CoLa\_A@{receiveAnswer\_CoLa\_A}}
+\index{receiveAnswer\_CoLa\_A@{receiveAnswer\_CoLa\_A}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{receiveAnswer\_CoLa\_A()}{receiveAnswer\_CoLa\_A()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::receive\+Answer\+\_\+\+Co\+La\+\_\+A (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}}}]{cmd,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{index,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{timeout,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ac83d4aeac255e1155c67ea1a37896e8d}\label{classdevices_1_1SopasBase_ac83d4aeac255e1155c67ea1a37896e8d}} 
+\index{devices::SopasBase@{devices::SopasBase}!receiveAnswer\_CoLa\_B@{receiveAnswer\_CoLa\_B}}
+\index{receiveAnswer\_CoLa\_B@{receiveAnswer\_CoLa\_B}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{receiveAnswer\_CoLa\_B()}{receiveAnswer\_CoLa\_B()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::receive\+Answer\+\_\+\+Co\+La\+\_\+B (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}}}]{cmd,  }\item[{std\+::string}]{name,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{timeout,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aa6b4933f3e57b4a6ec413be1819640f6}\label{classdevices_1_1SopasBase_aa6b4933f3e57b4a6ec413be1819640f6}} 
+\index{devices::SopasBase@{devices::SopasBase}!receiveAnswer\_CoLa\_B@{receiveAnswer\_CoLa\_B}}
+\index{receiveAnswer\_CoLa\_B@{receiveAnswer\_CoLa\_B}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{receiveAnswer\_CoLa\_B()}{receiveAnswer\_CoLa\_B()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::receive\+Answer\+\_\+\+Co\+La\+\_\+B (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}}}]{cmd,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{index,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{timeout,  }\item[{\mbox{\hyperlink{classdevices_1_1SopasAnswer}{Sopas\+Answer}} $\ast$\&}]{answer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a442df8605c248cf1c36988237c29b07b}\label{classdevices_1_1SopasBase_a442df8605c248cf1c36988237c29b07b}} 
+\index{devices::SopasBase@{devices::SopasBase}!registerEvent@{registerEvent}}
+\index{registerEvent@{registerEvent}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{registerEvent()}{registerEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::register\+Event (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name }\end{DoxyParamCaption})}
+
+
+
+Registers an event by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & name of the event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a3c0824fe3806f16f6738fe305368b0cf}\label{classdevices_1_1SopasBase_a3c0824fe3806f16f6738fe305368b0cf}} 
+\index{devices::SopasBase@{devices::SopasBase}!registerEvent@{registerEvent}}
+\index{registerEvent@{registerEvent}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{registerEvent()}{registerEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::register\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{index }\end{DoxyParamCaption})}
+
+
+
+Registers an event by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & of the event. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a6af66e8c87c5a8f293337eb0245e87e3}\label{classdevices_1_1SopasBase_a6af66e8c87c5a8f293337eb0245e87e3}} 
+\index{devices::SopasBase@{devices::SopasBase}!scanDataDecoder@{scanDataDecoder}}
+\index{scanDataDecoder@{scanDataDecoder}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{scanDataDecoder()}{scanDataDecoder()}}
+{\footnotesize\ttfamily virtual void devices\+::\+Sopas\+Base\+::scan\+Data\+Decoder (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasEventMessage}{Sopas\+Event\+Message}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a65d038cf431fba053f9ecdb38c058c98}\label{classdevices_1_1SopasBase_a65d038cf431fba053f9ecdb38c058c98}} 
+\index{devices::SopasBase@{devices::SopasBase}!sendCommandBuffer@{sendCommandBuffer}}
+\index{sendCommandBuffer@{sendCommandBuffer}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{sendCommandBuffer()}{sendCommandBuffer()}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::send\+Command\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Sends the content of the buffer via T\+CP to the sensor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to the buffer \\
+\hline
+{\em len} & length of buffer to be sent.\\
+\hline
+\end{DoxyParams}
+Send contents of buffer to scanner using according framing.
+
+Send buffer is limited to 1024 byte! \mbox{\Hypertarget{classdevices_1_1SopasBase_a22886ece5b3bebff5a771d7b0078a2df}\label{classdevices_1_1SopasBase_a22886ece5b3bebff5a771d7b0078a2df}} 
+\index{devices::SopasBase@{devices::SopasBase}!setEventCallbackFunction@{setEventCallbackFunction}}
+\index{setEventCallbackFunction@{setEventCallbackFunction}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{setEventCallbackFunction()}{setEventCallbackFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void devices\+::\+Sopas\+Base\+::set\+Event\+Callback\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a151ba5067547401bea60bdc6692a2631}{Decoder\+Function}}}]{decoder\+Function,  }\item[{const std\+::string \&}]{event\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em decoder\+Function} & \\
+\hline
+{\em event\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ac207d1e88a8b5eedaf10854c6753537d}\label{classdevices_1_1SopasBase_ac207d1e88a8b5eedaf10854c6753537d}} 
+\index{devices::SopasBase@{devices::SopasBase}!setEventCallbackFunction@{setEventCallbackFunction}}
+\index{setEventCallbackFunction@{setEventCallbackFunction}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{setEventCallbackFunction()}{setEventCallbackFunction()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void devices\+::\+Sopas\+Base\+::set\+Event\+Callback\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a151ba5067547401bea60bdc6692a2631}{Decoder\+Function}}}]{decoder\+Function,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{event\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em decoder\+Function} & \\
+\hline
+{\em event\+Index} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a856c2984c4efbfe931eb12d3fbefff5d}\label{classdevices_1_1SopasBase_a856c2984c4efbfe931eb12d3fbefff5d}} 
+\index{devices::SopasBase@{devices::SopasBase}!setReadOnlyMode@{setReadOnlyMode}}
+\index{setReadOnlyMode@{setReadOnlyMode}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{setReadOnlyMode()}{setReadOnlyMode()}}
+{\footnotesize\ttfamily void devices\+::\+Sopas\+Base\+::set\+Read\+Only\+Mode (\begin{DoxyParamCaption}\item[{bool}]{mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ad22e3479735ddb66393ce5219f000659}\label{classdevices_1_1SopasBase_ad22e3479735ddb66393ce5219f000659}} 
+\index{devices::SopasBase@{devices::SopasBase}!sopasCommandToString@{sopasCommandToString}}
+\index{sopasCommandToString@{sopasCommandToString}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{sopasCommandToString()}{sopasCommandToString()}}
+{\footnotesize\ttfamily std\+::string devices\+::\+Sopas\+Base\+::sopas\+Command\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Command}}}]{cmd }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a37b0a22cb61849dd2daa6f084dfbc66a}\label{classdevices_1_1SopasBase_a37b0a22cb61849dd2daa6f084dfbc66a}} 
+\index{devices::SopasBase@{devices::SopasBase}!stringToSopasCommand@{stringToSopasCommand}}
+\index{stringToSopasCommand@{stringToSopasCommand}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{stringToSopasCommand()}{stringToSopasCommand()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdevices_1_1SopasBase_a1876f8deab490322c12b67ae9e7b9747}{Sopas\+Base\+::\+Sopas\+Command}} devices\+::\+Sopas\+Base\+::string\+To\+Sopas\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{cmd\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Converts strings in sopas answer buffer to Sopas\+Command enum. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a68dc23483f257501a376cfa0cb4f56f2}\label{classdevices_1_1SopasBase_a68dc23483f257501a376cfa0cb4f56f2}} 
+\index{devices::SopasBase@{devices::SopasBase}!unregisterEvent@{unregisterEvent}}
+\index{unregisterEvent@{unregisterEvent}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{unregisterEvent()}{unregisterEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::unregister\+Event (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{event\+Name }\end{DoxyParamCaption})}
+
+
+
+Unregisters an event by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em event\+Name} & name of the event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aacb56654759d5d8d0764f46c1fce360a}\label{classdevices_1_1SopasBase_aacb56654759d5d8d0764f46c1fce360a}} 
+\index{devices::SopasBase@{devices::SopasBase}!unregisterEvent@{unregisterEvent}}
+\index{unregisterEvent@{unregisterEvent}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{unregisterEvent()}{unregisterEvent()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::unregister\+Event (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{index }\end{DoxyParamCaption})}
+
+
+
+Unregisters an event by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & of the event \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ad8e330552ce6661f13b40a60c3226518}\label{classdevices_1_1SopasBase_ad8e330552ce6661f13b40a60c3226518}} 
+\index{devices::SopasBase@{devices::SopasBase}!writeVariable@{writeVariable}}
+\index{writeVariable@{writeVariable}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{writeVariable()}{writeVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::write\+Variable (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{variable\+Name,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$}]{parameters,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{parameters\+Length }\end{DoxyParamCaption})}
+
+
+
+Write a variable to the sensor by name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em variable\+Name} & name of the variable. \\
+\hline
+{\em parameters} & byte buffer with parameter (N\+O\+TE\+: you have to fill this buffer with the correct protocol -\/ cola-\/a or cola-\/b) \\
+\hline
+{\em parameters\+Length} & length of the byte buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_af4c9a25dcea36f7d1faba6cd8b8cbece}\label{classdevices_1_1SopasBase_af4c9a25dcea36f7d1faba6cd8b8cbece}} 
+\index{devices::SopasBase@{devices::SopasBase}!writeVariable@{writeVariable}}
+\index{writeVariable@{writeVariable}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{writeVariable()}{writeVariable()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::write\+Variable (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{index,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$}]{parameters,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{parameters\+Length }\end{DoxyParamCaption})}
+
+
+
+Write a variable to the sensor by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & of the variable \\
+\hline
+{\em parameters} & byte buffer with parameter (N\+O\+TE\+: you have to fill this buffer with the correct protocol -\/ cola-\/a or cola-\/b) \\
+\hline
+{\em parameters\+Length} & length of the byte buffer \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if no errors occurred. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ac61d69a37ebb4ad89237c506b845d7ea}\label{classdevices_1_1SopasBase_ac61d69a37ebb4ad89237c506b845d7ea}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Event\_Acknowledge@{COMMAND\_Event\_Acknowledge}}
+\index{COMMAND\_Event\_Acknowledge@{COMMAND\_Event\_Acknowledge}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Event\_Acknowledge}{COMMAND\_Event\_Acknowledge}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Event\+\_\+\+Acknowledge\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a64ff49b0d2c0fb17538409e070db3998}\label{classdevices_1_1SopasBase_a64ff49b0d2c0fb17538409e070db3998}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Invoke\_Method\_Answer@{COMMAND\_Invoke\_Method\_Answer}}
+\index{COMMAND\_Invoke\_Method\_Answer@{COMMAND\_Invoke\_Method\_Answer}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Invoke\_Method\_Answer}{COMMAND\_Invoke\_Method\_Answer}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Invoke\+\_\+\+Method\+\_\+\+Answer\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a03c93606391783026496f867fd857dff}\label{classdevices_1_1SopasBase_a03c93606391783026496f867fd857dff}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Invoke\_Method\_ByIndex@{COMMAND\_Invoke\_Method\_ByIndex}}
+\index{COMMAND\_Invoke\_Method\_ByIndex@{COMMAND\_Invoke\_Method\_ByIndex}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Invoke\_Method\_ByIndex}{COMMAND\_Invoke\_Method\_ByIndex}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Invoke\+\_\+\+Method\+\_\+\+By\+Index\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ad363443cc00d934467121c781ae4639d}\label{classdevices_1_1SopasBase_ad363443cc00d934467121c781ae4639d}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Invoke\_Method\_ByName@{COMMAND\_Invoke\_Method\_ByName}}
+\index{COMMAND\_Invoke\_Method\_ByName@{COMMAND\_Invoke\_Method\_ByName}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Invoke\_Method\_ByName}{COMMAND\_Invoke\_Method\_ByName}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Invoke\+\_\+\+Method\+\_\+\+By\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a384e16190538b435e1001e7ddf72d0da}\label{classdevices_1_1SopasBase_a384e16190538b435e1001e7ddf72d0da}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Method\_Result\_Answer@{COMMAND\_Method\_Result\_Answer}}
+\index{COMMAND\_Method\_Result\_Answer@{COMMAND\_Method\_Result\_Answer}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Method\_Result\_Answer}{COMMAND\_Method\_Result\_Answer}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Method\+\_\+\+Result\+\_\+\+Answer\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aa97d12dc7f851600e5d6f8136aaf3f83}\label{classdevices_1_1SopasBase_aa97d12dc7f851600e5d6f8136aaf3f83}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Method\_Result\_ByIndex@{COMMAND\_Method\_Result\_ByIndex}}
+\index{COMMAND\_Method\_Result\_ByIndex@{COMMAND\_Method\_Result\_ByIndex}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Method\_Result\_ByIndex}{COMMAND\_Method\_Result\_ByIndex}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Method\+\_\+\+Result\+\_\+\+By\+Index\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aa6eb639aeadc72faa19368d53856b5f7}\label{classdevices_1_1SopasBase_aa6eb639aeadc72faa19368d53856b5f7}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Method\_Result\_ByName@{COMMAND\_Method\_Result\_ByName}}
+\index{COMMAND\_Method\_Result\_ByName@{COMMAND\_Method\_Result\_ByName}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Method\_Result\_ByName}{COMMAND\_Method\_Result\_ByName}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Method\+\_\+\+Result\+\_\+\+By\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a4bf6603934586587396d70fb1afe400b}\label{classdevices_1_1SopasBase_a4bf6603934586587396d70fb1afe400b}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Read\_Variable\_Answer@{COMMAND\_Read\_Variable\_Answer}}
+\index{COMMAND\_Read\_Variable\_Answer@{COMMAND\_Read\_Variable\_Answer}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Read\_Variable\_Answer}{COMMAND\_Read\_Variable\_Answer}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Read\+\_\+\+Variable\+\_\+\+Answer\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_acc88b5416a47c52460c191569c2b9db8}\label{classdevices_1_1SopasBase_acc88b5416a47c52460c191569c2b9db8}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Read\_Variable\_ByIndex@{COMMAND\_Read\_Variable\_ByIndex}}
+\index{COMMAND\_Read\_Variable\_ByIndex@{COMMAND\_Read\_Variable\_ByIndex}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Read\_Variable\_ByIndex}{COMMAND\_Read\_Variable\_ByIndex}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Read\+\_\+\+Variable\+\_\+\+By\+Index\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a96afa363995c2aa23347ecb6c7607485}\label{classdevices_1_1SopasBase_a96afa363995c2aa23347ecb6c7607485}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Read\_Variable\_ByName@{COMMAND\_Read\_Variable\_ByName}}
+\index{COMMAND\_Read\_Variable\_ByName@{COMMAND\_Read\_Variable\_ByName}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Read\_Variable\_ByName}{COMMAND\_Read\_Variable\_ByName}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Read\+\_\+\+Variable\+\_\+\+By\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a857bf8c6d6f2e2f34b20e61ad33a1536}\label{classdevices_1_1SopasBase_a857bf8c6d6f2e2f34b20e61ad33a1536}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Register\_Event\_Answer@{COMMAND\_Register\_Event\_Answer}}
+\index{COMMAND\_Register\_Event\_Answer@{COMMAND\_Register\_Event\_Answer}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Register\_Event\_Answer}{COMMAND\_Register\_Event\_Answer}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Register\+\_\+\+Event\+\_\+\+Answer\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ac7fedac2876354031c748e004ad45787}\label{classdevices_1_1SopasBase_ac7fedac2876354031c748e004ad45787}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Register\_Event\_ByIndex@{COMMAND\_Register\_Event\_ByIndex}}
+\index{COMMAND\_Register\_Event\_ByIndex@{COMMAND\_Register\_Event\_ByIndex}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Register\_Event\_ByIndex}{COMMAND\_Register\_Event\_ByIndex}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Register\+\_\+\+Event\+\_\+\+By\+Index\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a2ed1e8fdde57473dfea82439e63158be}\label{classdevices_1_1SopasBase_a2ed1e8fdde57473dfea82439e63158be}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Register\_Event\_ByName@{COMMAND\_Register\_Event\_ByName}}
+\index{COMMAND\_Register\_Event\_ByName@{COMMAND\_Register\_Event\_ByName}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Register\_Event\_ByName}{COMMAND\_Register\_Event\_ByName}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Register\+\_\+\+Event\+\_\+\+By\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ab6e58cf9f3f830219f91fb17cb92b848}\label{classdevices_1_1SopasBase_ab6e58cf9f3f830219f91fb17cb92b848}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Send\_Event\_ByIndex@{COMMAND\_Send\_Event\_ByIndex}}
+\index{COMMAND\_Send\_Event\_ByIndex@{COMMAND\_Send\_Event\_ByIndex}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Send\_Event\_ByIndex}{COMMAND\_Send\_Event\_ByIndex}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Send\+\_\+\+Event\+\_\+\+By\+Index\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_adaa11dd95e3ab588322b73da51642477}\label{classdevices_1_1SopasBase_adaa11dd95e3ab588322b73da51642477}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Send\_Event\_ByName@{COMMAND\_Send\_Event\_ByName}}
+\index{COMMAND\_Send\_Event\_ByName@{COMMAND\_Send\_Event\_ByName}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Send\_Event\_ByName}{COMMAND\_Send\_Event\_ByName}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Send\+\_\+\+Event\+\_\+\+By\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a6c9e221f8673076aa6e1702ea242657d}\label{classdevices_1_1SopasBase_a6c9e221f8673076aa6e1702ea242657d}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Write\_Variable\_Answer@{COMMAND\_Write\_Variable\_Answer}}
+\index{COMMAND\_Write\_Variable\_Answer@{COMMAND\_Write\_Variable\_Answer}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Write\_Variable\_Answer}{COMMAND\_Write\_Variable\_Answer}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Write\+\_\+\+Variable\+\_\+\+Answer\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a497553a3e6b22b515d2bac06288b8df9}\label{classdevices_1_1SopasBase_a497553a3e6b22b515d2bac06288b8df9}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Write\_Variable\_ByIndex@{COMMAND\_Write\_Variable\_ByIndex}}
+\index{COMMAND\_Write\_Variable\_ByIndex@{COMMAND\_Write\_Variable\_ByIndex}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Write\_Variable\_ByIndex}{COMMAND\_Write\_Variable\_ByIndex}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Write\+\_\+\+Variable\+\_\+\+By\+Index\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a793077fbd5f92238d1ab041a4d3eb0e3}\label{classdevices_1_1SopasBase_a793077fbd5f92238d1ab041a4d3eb0e3}} 
+\index{devices::SopasBase@{devices::SopasBase}!COMMAND\_Write\_Variable\_ByName@{COMMAND\_Write\_Variable\_ByName}}
+\index{COMMAND\_Write\_Variable\_ByName@{COMMAND\_Write\_Variable\_ByName}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{COMMAND\_Write\_Variable\_ByName}{COMMAND\_Write\_Variable\_ByName}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+C\+O\+M\+M\+A\+N\+D\+\_\+\+Write\+\_\+\+Variable\+\_\+\+By\+Name\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a2fc77c8e979e4e4ee8f29a4599fc4981}\label{classdevices_1_1SopasBase_a2fc77c8e979e4e4ee8f29a4599fc4981}} 
+\index{devices::SopasBase@{devices::SopasBase}!EVENTNAME\_SUBSCRIBE\_EVALCASES@{EVENTNAME\_SUBSCRIBE\_EVALCASES}}
+\index{EVENTNAME\_SUBSCRIBE\_EVALCASES@{EVENTNAME\_SUBSCRIBE\_EVALCASES}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{EVENTNAME\_SUBSCRIBE\_EVALCASES}{EVENTNAME\_SUBSCRIBE\_EVALCASES}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+E\+V\+E\+N\+T\+N\+A\+M\+E\+\_\+\+S\+U\+B\+S\+C\+R\+I\+B\+E\+\_\+\+E\+V\+A\+L\+C\+A\+S\+ES\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aa673d831ae343505f70e40404af1efd1}\label{classdevices_1_1SopasBase_aa673d831ae343505f70e40404af1efd1}} 
+\index{devices::SopasBase@{devices::SopasBase}!EVENTNAME\_SUBSCRIBE\_SCANS@{EVENTNAME\_SUBSCRIBE\_SCANS}}
+\index{EVENTNAME\_SUBSCRIBE\_SCANS@{EVENTNAME\_SUBSCRIBE\_SCANS}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{EVENTNAME\_SUBSCRIBE\_SCANS}{EVENTNAME\_SUBSCRIBE\_SCANS}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+E\+V\+E\+N\+T\+N\+A\+M\+E\+\_\+\+S\+U\+B\+S\+C\+R\+I\+B\+E\+\_\+\+S\+C\+A\+NS\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a0d401959005fd8ce4965a4ca7c7929aa}\label{classdevices_1_1SopasBase_a0d401959005fd8ce4965a4ca7c7929aa}} 
+\index{devices::SopasBase@{devices::SopasBase}!INDEX\_DEVICE\_IDENT@{INDEX\_DEVICE\_IDENT}}
+\index{INDEX\_DEVICE\_IDENT@{INDEX\_DEVICE\_IDENT}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{INDEX\_DEVICE\_IDENT}{INDEX\_DEVICE\_IDENT}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} devices\+::\+Sopas\+Base\+::\+I\+N\+D\+E\+X\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+D\+E\+NT = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a04c9a9ddf583d6799c27ecca3ed43de8}\label{classdevices_1_1SopasBase_a04c9a9ddf583d6799c27ecca3ed43de8}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_beVerbose@{m\_beVerbose}}
+\index{m\_beVerbose@{m\_beVerbose}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_beVerbose}{m\_beVerbose}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::m\+\_\+be\+Verbose\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_abe6e593ec6c28d921d5ad49b38df562a}\label{classdevices_1_1SopasBase_abe6e593ec6c28d921d5ad49b38df562a}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_fieldEventIsRegistered@{m\_fieldEventIsRegistered}}
+\index{m\_fieldEventIsRegistered@{m\_fieldEventIsRegistered}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_fieldEventIsRegistered}{m\_fieldEventIsRegistered}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::m\+\_\+field\+Event\+Is\+Registered\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ab928a59e08e7161e8d512e8e32bcec00}\label{classdevices_1_1SopasBase_ab928a59e08e7161e8d512e8e32bcec00}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_isLoggedIn@{m\_isLoggedIn}}
+\index{m\_isLoggedIn@{m\_isLoggedIn}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_isLoggedIn}{m\_isLoggedIn}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::m\+\_\+is\+Logged\+In\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a58e6453c7b99c03c091ff5132e6d7652}\label{classdevices_1_1SopasBase_a58e6453c7b99c03c091ff5132e6d7652}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_scanEventIsRegistered@{m\_scanEventIsRegistered}}
+\index{m\_scanEventIsRegistered@{m\_scanEventIsRegistered}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_scanEventIsRegistered}{m\_scanEventIsRegistered}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::m\+\_\+scan\+Event\+Is\+Registered\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aa37bb36d79c8f83c9b1ef53d1f0093d9}\label{classdevices_1_1SopasBase_aa37bb36d79c8f83c9b1ef53d1f0093d9}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_scannerName@{m\_scannerName}}
+\index{m\_scannerName@{m\_scannerName}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_scannerName}{m\_scannerName}}
+{\footnotesize\ttfamily std\+::string devices\+::\+Sopas\+Base\+::m\+\_\+scanner\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Read from scanner. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a5571cfad0976a9f9076f4c1a0c4227e8}\label{classdevices_1_1SopasBase_a5571cfad0976a9f9076f4c1a0c4227e8}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_scannerVersion@{m\_scannerVersion}}
+\index{m\_scannerVersion@{m\_scannerVersion}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_scannerVersion}{m\_scannerVersion}}
+{\footnotesize\ttfamily std\+::string devices\+::\+Sopas\+Base\+::m\+\_\+scanner\+Version\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Read from scanner. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a58230c62acfafaf56c83cf25d9f8ad40}\label{classdevices_1_1SopasBase_a58230c62acfafaf56c83cf25d9f8ad40}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_state@{m\_state}}
+\index{m\_state@{m\_state}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_state}{m\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classdevices_1_1SopasBase_a6e3881a09807ec6f9263a96f65ae3c3c}{State}} devices\+::\+Sopas\+Base\+::m\+\_\+state\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Device info. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a67ab271a0b6c46da1edc955f0d14a550}\label{classdevices_1_1SopasBase_a67ab271a0b6c46da1edc955f0d14a550}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_weWantFieldData@{m\_weWantFieldData}}
+\index{m\_weWantFieldData@{m\_weWantFieldData}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_weWantFieldData}{m\_weWantFieldData}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::m\+\_\+we\+Want\+Field\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag to enable/disable protection field data reception. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a53c7fe7496bb920dce97f5166c1dd142}\label{classdevices_1_1SopasBase_a53c7fe7496bb920dce97f5166c1dd142}} 
+\index{devices::SopasBase@{devices::SopasBase}!m\_weWantScanData@{m\_weWantScanData}}
+\index{m\_weWantScanData@{m\_weWantScanData}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{m\_weWantScanData}{m\_weWantScanData}}
+{\footnotesize\ttfamily bool devices\+::\+Sopas\+Base\+::m\+\_\+we\+Want\+Scan\+Data\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Flag to enable/disable scan data reception. 
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a54e7958e9b095148ad8df8fee2e3ac07}\label{classdevices_1_1SopasBase_a54e7958e9b095148ad8df8fee2e3ac07}} 
+\index{devices::SopasBase@{devices::SopasBase}!METHODNAME\_LOGIN@{METHODNAME\_LOGIN}}
+\index{METHODNAME\_LOGIN@{METHODNAME\_LOGIN}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{METHODNAME\_LOGIN}{METHODNAME\_LOGIN}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+L\+O\+G\+IN\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a85f4cb569bc3e45247ba0f01d145b264}\label{classdevices_1_1SopasBase_a85f4cb569bc3e45247ba0f01d145b264}} 
+\index{devices::SopasBase@{devices::SopasBase}!METHODNAME\_LOGOUT@{METHODNAME\_LOGOUT}}
+\index{METHODNAME\_LOGOUT@{METHODNAME\_LOGOUT}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{METHODNAME\_LOGOUT}{METHODNAME\_LOGOUT}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+L\+O\+G\+O\+UT\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_af93054600362fd690353f184ce8ec6a1}\label{classdevices_1_1SopasBase_af93054600362fd690353f184ce8ec6a1}} 
+\index{devices::SopasBase@{devices::SopasBase}!METHODNAME\_SET\_SCANCONFIG@{METHODNAME\_SET\_SCANCONFIG}}
+\index{METHODNAME\_SET\_SCANCONFIG@{METHODNAME\_SET\_SCANCONFIG}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{METHODNAME\_SET\_SCANCONFIG}{METHODNAME\_SET\_SCANCONFIG}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+S\+E\+T\+\_\+\+S\+C\+A\+N\+C\+O\+N\+F\+IG\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aeca8374be9ea3ec2592c99fe74ecd362}\label{classdevices_1_1SopasBase_aeca8374be9ea3ec2592c99fe74ecd362}} 
+\index{devices::SopasBase@{devices::SopasBase}!METHODNAME\_START\_MEASURE@{METHODNAME\_START\_MEASURE}}
+\index{METHODNAME\_START\_MEASURE@{METHODNAME\_START\_MEASURE}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{METHODNAME\_START\_MEASURE}{METHODNAME\_START\_MEASURE}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+S\+T\+A\+R\+T\+\_\+\+M\+E\+A\+S\+U\+RE\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aa221f3c367bf9d9e0cbfe044cbb900af}\label{classdevices_1_1SopasBase_aa221f3c367bf9d9e0cbfe044cbb900af}} 
+\index{devices::SopasBase@{devices::SopasBase}!METHODNAME\_STOP\_MEASURE@{METHODNAME\_STOP\_MEASURE}}
+\index{METHODNAME\_STOP\_MEASURE@{METHODNAME\_STOP\_MEASURE}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{METHODNAME\_STOP\_MEASURE}{METHODNAME\_STOP\_MEASURE}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+M\+E\+T\+H\+O\+D\+N\+A\+M\+E\+\_\+\+S\+T\+O\+P\+\_\+\+M\+E\+A\+S\+U\+RE\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_ad45481f008b3be902c0cc56373081187}\label{classdevices_1_1SopasBase_ad45481f008b3be902c0cc56373081187}} 
+\index{devices::SopasBase@{devices::SopasBase}!VARIABLENAME\_DATAOUTPUTRANGE@{VARIABLENAME\_DATAOUTPUTRANGE}}
+\index{VARIABLENAME\_DATAOUTPUTRANGE@{VARIABLENAME\_DATAOUTPUTRANGE}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{VARIABLENAME\_DATAOUTPUTRANGE}{VARIABLENAME\_DATAOUTPUTRANGE}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+V\+A\+R\+I\+A\+B\+L\+E\+N\+A\+M\+E\+\_\+\+D\+A\+T\+A\+O\+U\+T\+P\+U\+T\+R\+A\+N\+GE\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_aef3882903737a7b4e1c3b793db13aabf}\label{classdevices_1_1SopasBase_aef3882903737a7b4e1c3b793db13aabf}} 
+\index{devices::SopasBase@{devices::SopasBase}!VARIABLENAME\_DEVICEIDENT@{VARIABLENAME\_DEVICEIDENT}}
+\index{VARIABLENAME\_DEVICEIDENT@{VARIABLENAME\_DEVICEIDENT}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{VARIABLENAME\_DEVICEIDENT}{VARIABLENAME\_DEVICEIDENT}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+V\+A\+R\+I\+A\+B\+L\+E\+N\+A\+M\+E\+\_\+\+D\+E\+V\+I\+C\+E\+I\+D\+E\+NT\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_a92cfc43e085bf5716e88c12dec86b7ed}\label{classdevices_1_1SopasBase_a92cfc43e085bf5716e88c12dec86b7ed}} 
+\index{devices::SopasBase@{devices::SopasBase}!VARIABLENAME\_SCANCONFIG@{VARIABLENAME\_SCANCONFIG}}
+\index{VARIABLENAME\_SCANCONFIG@{VARIABLENAME\_SCANCONFIG}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{VARIABLENAME\_SCANCONFIG}{VARIABLENAME\_SCANCONFIG}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+V\+A\+R\+I\+A\+B\+L\+E\+N\+A\+M\+E\+\_\+\+S\+C\+A\+N\+C\+O\+N\+F\+IG\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classdevices_1_1SopasBase_abda2f749537e3768617c7d64ab96715b}\label{classdevices_1_1SopasBase_abda2f749537e3768617c7d64ab96715b}} 
+\index{devices::SopasBase@{devices::SopasBase}!VARIABLENAME\_SCANDATACONFIG@{VARIABLENAME\_SCANDATACONFIG}}
+\index{VARIABLENAME\_SCANDATACONFIG@{VARIABLENAME\_SCANDATACONFIG}!devices::SopasBase@{devices::SopasBase}}
+\doxysubsubsection{\texorpdfstring{VARIABLENAME\_SCANDATACONFIG}{VARIABLENAME\_SCANDATACONFIG}}
+{\footnotesize\ttfamily const std\+::string devices\+::\+Sopas\+Base\+::\+V\+A\+R\+I\+A\+B\+L\+E\+N\+A\+M\+E\+\_\+\+S\+C\+A\+N\+D\+A\+T\+A\+C\+O\+N\+F\+IG\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/tcp/\mbox{\hyperlink{SopasBase_8hpp}{Sopas\+Base.\+hpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tcp/\mbox{\hyperlink{SopasBase_8cpp}{Sopas\+Base.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,174 @@
+\hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Wait\+For\+Message\+Handler$<$ Handle\+Type, Msg\+Type $>$ Class Template Reference}
+\label{classsick__scan__xd_1_1SickWaitForMessageHandler}\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+callback.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$ $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a980d4e632d59263a53218a94c6ccef78}{Sick\+Wait\+For\+Message\+Handler\+Ptr}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a71f24a75ffee42c19acbb13f696fd95d}{wait\+For\+Next\+Message}} (Msg\+Type \&msg, double timeout\+\_\+sec)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a99dd70ffc54c2c0a5975ddae202d8bd5}{message\+Callback}} (Handle\+Type node, const Msg\+Type $\ast$msg)
+\item 
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_aa42e68669fe8dff45a2dc43154054ed4}{add\+Wait\+For\+Message\+Handler\+Handler}} (\mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a980d4e632d59263a53218a94c6ccef78}{Sick\+Wait\+For\+Message\+Handler\+Ptr}} handler)
+\item 
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a7e198100c8dc0274503eff50b175a65a}{remove\+Wait\+For\+Message\+Handler\+Handler}} (\mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a980d4e632d59263a53218a94c6ccef78}{Sick\+Wait\+For\+Message\+Handler\+Ptr}} handler)
+\item 
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a442c3a7fde8afb55f24910b8174a5a65}{shutdown}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_aca7a8a238de551d0e640b5ced114fbdf}{signal\+\_\+shutdown}} (void)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a763e738bf19492a849cce42d92e46169}{message\+\_\+callback}} (Handle\+Type node, const Msg\+Type $\ast$msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_ac4489cfdb7b8343dd9accad56916436a}{m\+\_\+running}} = true
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a556817f00d80d39f26e77e54ececc1db}{m\+\_\+message\+\_\+valid}} = false
+\item 
+Msg\+Type \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a60a6ec08bd6bf89cd7cc29338afe7b6a}{m\+\_\+message}}
+\item 
+std\+::mutex \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a780769ea8a00692b7fa46dee1f5c9e31}{m\+\_\+message\+\_\+mutex}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_aa60d2538d0de8f93dfb744404a7b1f1b}{m\+\_\+message\+\_\+cond}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::list$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$ $\ast$ $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_ab0af3f252232991a3eeff9629a7c42db}{s\+\_\+wait\+\_\+for\+\_\+message\+\_\+handler\+\_\+list}}
+\item 
+static std\+::mutex \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_aa54abd5f3bd3756b473231c913149912}{s\+\_\+wait\+\_\+for\+\_\+message\+\_\+handler\+\_\+mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a980d4e632d59263a53218a94c6ccef78}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a980d4e632d59263a53218a94c6ccef78}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!SickWaitForMessageHandlerPtr@{SickWaitForMessageHandlerPtr}}
+\index{SickWaitForMessageHandlerPtr@{SickWaitForMessageHandlerPtr}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{SickWaitForMessageHandlerPtr}{SickWaitForMessageHandlerPtr}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+typedef \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{Sick\+Wait\+For\+Message\+Handler}}$<$Handle\+Type, Msg\+Type$>$$\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::\mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a980d4e632d59263a53218a94c6ccef78}{Sick\+Wait\+For\+Message\+Handler\+Ptr}}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_aa42e68669fe8dff45a2dc43154054ed4}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_aa42e68669fe8dff45a2dc43154054ed4}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!addWaitForMessageHandlerHandler@{addWaitForMessageHandlerHandler}}
+\index{addWaitForMessageHandlerHandler@{addWaitForMessageHandlerHandler}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{addWaitForMessageHandlerHandler()}{addWaitForMessageHandlerHandler()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::add\+Wait\+For\+Message\+Handler\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a980d4e632d59263a53218a94c6ccef78}{Sick\+Wait\+For\+Message\+Handler\+Ptr}}}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a763e738bf19492a849cce42d92e46169}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a763e738bf19492a849cce42d92e46169}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!message\_callback@{message\_callback}}
+\index{message\_callback@{message\_callback}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{message\_callback()}{message\_callback()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::message\+\_\+callback (\begin{DoxyParamCaption}\item[{Handle\+Type}]{node,  }\item[{const Msg\+Type $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a99dd70ffc54c2c0a5975ddae202d8bd5}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a99dd70ffc54c2c0a5975ddae202d8bd5}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!messageCallback@{messageCallback}}
+\index{messageCallback@{messageCallback}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{messageCallback()}{messageCallback()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::message\+Callback (\begin{DoxyParamCaption}\item[{Handle\+Type}]{node,  }\item[{const Msg\+Type $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a7e198100c8dc0274503eff50b175a65a}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a7e198100c8dc0274503eff50b175a65a}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!removeWaitForMessageHandlerHandler@{removeWaitForMessageHandlerHandler}}
+\index{removeWaitForMessageHandlerHandler@{removeWaitForMessageHandlerHandler}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{removeWaitForMessageHandlerHandler()}{removeWaitForMessageHandlerHandler()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::remove\+Wait\+For\+Message\+Handler\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler_a980d4e632d59263a53218a94c6ccef78}{Sick\+Wait\+For\+Message\+Handler\+Ptr}}}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a442c3a7fde8afb55f24910b8174a5a65}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a442c3a7fde8afb55f24910b8174a5a65}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{shutdown()}{shutdown()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::shutdown (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_aca7a8a238de551d0e640b5ced114fbdf}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_aca7a8a238de551d0e640b5ced114fbdf}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!signal\_shutdown@{signal\_shutdown}}
+\index{signal\_shutdown@{signal\_shutdown}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{signal\_shutdown()}{signal\_shutdown()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::signal\+\_\+shutdown (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a71f24a75ffee42c19acbb13f696fd95d}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a71f24a75ffee42c19acbb13f696fd95d}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!waitForNextMessage@{waitForNextMessage}}
+\index{waitForNextMessage@{waitForNextMessage}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{waitForNextMessage()}{waitForNextMessage()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::wait\+For\+Next\+Message (\begin{DoxyParamCaption}\item[{Msg\+Type \&}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a60a6ec08bd6bf89cd7cc29338afe7b6a}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a60a6ec08bd6bf89cd7cc29338afe7b6a}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!m\_message@{m\_message}}
+\index{m\_message@{m\_message}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_message}{m\_message}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+Msg\+Type \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::m\+\_\+message\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_aa60d2538d0de8f93dfb744404a7b1f1b}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_aa60d2538d0de8f93dfb744404a7b1f1b}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!m\_message\_cond@{m\_message\_cond}}
+\index{m\_message\_cond@{m\_message\_cond}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_message\_cond}{m\_message\_cond}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+std\+::condition\+\_\+variable \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::m\+\_\+message\+\_\+cond\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a780769ea8a00692b7fa46dee1f5c9e31}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a780769ea8a00692b7fa46dee1f5c9e31}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!m\_message\_mutex@{m\_message\_mutex}}
+\index{m\_message\_mutex@{m\_message\_mutex}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_message\_mutex}{m\_message\_mutex}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+std\+::mutex \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::m\+\_\+message\+\_\+mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_a556817f00d80d39f26e77e54ececc1db}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_a556817f00d80d39f26e77e54ececc1db}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!m\_message\_valid@{m\_message\_valid}}
+\index{m\_message\_valid@{m\_message\_valid}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_message\_valid}{m\_message\_valid}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::m\+\_\+message\+\_\+valid = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_ac4489cfdb7b8343dd9accad56916436a}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_ac4489cfdb7b8343dd9accad56916436a}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!m\_running@{m\_running}}
+\index{m\_running@{m\_running}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_running}{m\_running}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::m\+\_\+running = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_ab0af3f252232991a3eeff9629a7c42db}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_ab0af3f252232991a3eeff9629a7c42db}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!s\_wait\_for\_message\_handler\_list@{s\_wait\_for\_message\_handler\_list}}
+\index{s\_wait\_for\_message\_handler\_list@{s\_wait\_for\_message\_handler\_list}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{s\_wait\_for\_message\_handler\_list}{s\_wait\_for\_message\_handler\_list}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+std\+::list$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$ $\ast$ $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::s\+\_\+wait\+\_\+for\+\_\+message\+\_\+handler\+\_\+list\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickWaitForMessageHandler_aa54abd5f3bd3756b473231c913149912}\label{classsick__scan__xd_1_1SickWaitForMessageHandler_aa54abd5f3bd3756b473231c913149912}} 
+\index{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}!s\_wait\_for\_message\_handler\_mutex@{s\_wait\_for\_message\_handler\_mutex}}
+\index{s\_wait\_for\_message\_handler\_mutex@{s\_wait\_for\_message\_handler\_mutex}!sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickWaitForMessageHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{s\_wait\_for\_message\_handler\_mutex}{s\_wait\_for\_message\_handler\_mutex}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+std\+::mutex \mbox{\hyperlink{classsick__scan__xd_1_1SickWaitForMessageHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Wait\+For\+Message\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::s\+\_\+wait\+\_\+for\+\_\+message\+\_\+handler\+\_\+mutex\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__callback_8h}{sick\+\_\+generic\+\_\+callback.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scan\+\_\+xd\+\_\+api/\mbox{\hyperlink{api__impl_8cpp}{api\+\_\+impl.\+cpp}}\end{DoxyCompactItemize}

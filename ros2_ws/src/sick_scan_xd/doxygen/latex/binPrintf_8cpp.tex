@@ -1,0 +1,72 @@
+\hypertarget{binPrintf_8cpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/bin\+Printf.cpp File Reference}
+\label{binPrintf_8cpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/binPrintf.cpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/binPrintf.cpp}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{binPrintf_8cpp_a80d24dee0881360af5cc76e013499ff5}{bin\+Printchar}} (char $\ast$$\ast$str, int c)
+\item 
+static int \mbox{\hyperlink{binPrintf_8cpp_a5cfc6dec7730a31f824b157bf58ecebd}{bin\+Prints}} (char $\ast$$\ast$out, const char $\ast$string, int width, int pad)
+\item 
+static int \mbox{\hyperlink{binPrintf_8cpp_ab96791d05273c587a38302f6ad5fb769}{bin\+Printi}} (char $\ast$$\ast$out, int i, int b, int sg, int width, int pad, int letbase)
+\item 
+static int \mbox{\hyperlink{binPrintf_8cpp_a6b20043cffb6cdc56b9baa50f7c3ed73}{bin\+Print}} (char $\ast$$\ast$out, long long $\ast$varg)
+\item 
+int \mbox{\hyperlink{binPrintf_8cpp_a474fd2f97b091dc5398194797b0c64d5}{bin\+Printf}} (const char $\ast$format,...)
+\item 
+int \mbox{\hyperlink{binPrintf_8cpp_a9e5a3e1b1688d69e28e193fa57f8d14a}{bin\+Sprintf}} (char $\ast$out, const char $\ast$format,...)
+\item 
+int \mbox{\hyperlink{binPrintf_8cpp_ab057fb9d50c02f985d6482fb369ea1cb}{bin\+Sprintf\+Vec}} (std\+::vector$<$ unsigned char $>$ $\ast$outvec, const char $\ast$fmt,...)
+\item 
+std\+::string \mbox{\hyperlink{binPrintf_8cpp_a2c86fa59fab77a98ffc443aae756bafe}{bin\+Dump\+Vec\+To\+String}} (const std\+::vector$<$ unsigned char $>$ $\ast$outvec, bool append\+Readable\+Text)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{binPrintf_8cpp_a2c86fa59fab77a98ffc443aae756bafe}\label{binPrintf_8cpp_a2c86fa59fab77a98ffc443aae756bafe}} 
+\index{binPrintf.cpp@{binPrintf.cpp}!binDumpVecToString@{binDumpVecToString}}
+\index{binDumpVecToString@{binDumpVecToString}!binPrintf.cpp@{binPrintf.cpp}}
+\doxysubsubsection{\texorpdfstring{binDumpVecToString()}{binDumpVecToString()}}
+{\footnotesize\ttfamily std\+::string bin\+Dump\+Vec\+To\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ unsigned char $>$ $\ast$}]{outvec,  }\item[{bool}]{append\+Readable\+Text }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{binPrintf_8cpp_a6b20043cffb6cdc56b9baa50f7c3ed73}\label{binPrintf_8cpp_a6b20043cffb6cdc56b9baa50f7c3ed73}} 
+\index{binPrintf.cpp@{binPrintf.cpp}!binPrint@{binPrint}}
+\index{binPrint@{binPrint}!binPrintf.cpp@{binPrintf.cpp}}
+\doxysubsubsection{\texorpdfstring{binPrint()}{binPrint()}}
+{\footnotesize\ttfamily static int bin\+Print (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{out,  }\item[{long long $\ast$}]{varg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{binPrintf_8cpp_a80d24dee0881360af5cc76e013499ff5}\label{binPrintf_8cpp_a80d24dee0881360af5cc76e013499ff5}} 
+\index{binPrintf.cpp@{binPrintf.cpp}!binPrintchar@{binPrintchar}}
+\index{binPrintchar@{binPrintchar}!binPrintf.cpp@{binPrintf.cpp}}
+\doxysubsubsection{\texorpdfstring{binPrintchar()}{binPrintchar()}}
+{\footnotesize\ttfamily static void bin\+Printchar (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{str,  }\item[{int}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{binPrintf_8cpp_a474fd2f97b091dc5398194797b0c64d5}\label{binPrintf_8cpp_a474fd2f97b091dc5398194797b0c64d5}} 
+\index{binPrintf.cpp@{binPrintf.cpp}!binPrintf@{binPrintf}}
+\index{binPrintf@{binPrintf}!binPrintf.cpp@{binPrintf.cpp}}
+\doxysubsubsection{\texorpdfstring{binPrintf()}{binPrintf()}}
+{\footnotesize\ttfamily int bin\+Printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{binPrintf_8cpp_ab96791d05273c587a38302f6ad5fb769}\label{binPrintf_8cpp_ab96791d05273c587a38302f6ad5fb769}} 
+\index{binPrintf.cpp@{binPrintf.cpp}!binPrinti@{binPrinti}}
+\index{binPrinti@{binPrinti}!binPrintf.cpp@{binPrintf.cpp}}
+\doxysubsubsection{\texorpdfstring{binPrinti()}{binPrinti()}}
+{\footnotesize\ttfamily static int bin\+Printi (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{out,  }\item[{int}]{i,  }\item[{int}]{b,  }\item[{int}]{sg,  }\item[{int}]{width,  }\item[{int}]{pad,  }\item[{int}]{letbase }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{binPrintf_8cpp_a5cfc6dec7730a31f824b157bf58ecebd}\label{binPrintf_8cpp_a5cfc6dec7730a31f824b157bf58ecebd}} 
+\index{binPrintf.cpp@{binPrintf.cpp}!binPrints@{binPrints}}
+\index{binPrints@{binPrints}!binPrintf.cpp@{binPrintf.cpp}}
+\doxysubsubsection{\texorpdfstring{binPrints()}{binPrints()}}
+{\footnotesize\ttfamily static int bin\+Prints (\begin{DoxyParamCaption}\item[{char $\ast$$\ast$}]{out,  }\item[{const char $\ast$}]{string,  }\item[{int}]{width,  }\item[{int}]{pad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{binPrintf_8cpp_a9e5a3e1b1688d69e28e193fa57f8d14a}\label{binPrintf_8cpp_a9e5a3e1b1688d69e28e193fa57f8d14a}} 
+\index{binPrintf.cpp@{binPrintf.cpp}!binSprintf@{binSprintf}}
+\index{binSprintf@{binSprintf}!binPrintf.cpp@{binPrintf.cpp}}
+\doxysubsubsection{\texorpdfstring{binSprintf()}{binSprintf()}}
+{\footnotesize\ttfamily int bin\+Sprintf (\begin{DoxyParamCaption}\item[{char $\ast$}]{out,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{binPrintf_8cpp_ab057fb9d50c02f985d6482fb369ea1cb}\label{binPrintf_8cpp_ab057fb9d50c02f985d6482fb369ea1cb}} 
+\index{binPrintf.cpp@{binPrintf.cpp}!binSprintfVec@{binSprintfVec}}
+\index{binSprintfVec@{binSprintfVec}!binPrintf.cpp@{binPrintf.cpp}}
+\doxysubsubsection{\texorpdfstring{binSprintfVec()}{binSprintfVec()}}
+{\footnotesize\ttfamily int bin\+Sprintf\+Vec (\begin{DoxyParamCaption}\item[{std\+::vector$<$ unsigned char $>$ $\ast$}]{outvec,  }\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
+

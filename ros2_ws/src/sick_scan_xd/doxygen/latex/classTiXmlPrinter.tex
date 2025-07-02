@@ -1,0 +1,281 @@
+\hypertarget{classTiXmlPrinter}{}\doxysection{Ti\+Xml\+Printer Class Reference}
+\label{classTiXmlPrinter}\index{TiXmlPrinter@{TiXmlPrinter}}
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+
+
+Inheritance diagram for Ti\+Xml\+Printer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classTiXmlPrinter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ti\+Xml\+Printer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classTiXmlPrinter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTiXmlPrinter_a6539b864026c8667cd0bd5fdf4b41f43}{Ti\+Xml\+Printer}} ()
+\item 
+virtual bool \mbox{\hyperlink{classTiXmlPrinter_a2ec73087db26ff4d2c4316c56f861db7}{Visit\+Enter}} (const \mbox{\hyperlink{classTiXmlDocument}{Ti\+Xml\+Document}} \&doc)
+\begin{DoxyCompactList}\small\item\em Visit a document. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTiXmlPrinter_a0a636046fa589b6d7f3e5bd025b3f33e}{Visit\+Exit}} (const \mbox{\hyperlink{classTiXmlDocument}{Ti\+Xml\+Document}} \&doc)
+\begin{DoxyCompactList}\small\item\em Visit a document. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTiXmlPrinter_a6dccaf5ee4979f13877690afe28721e8}{Visit\+Enter}} (const \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}} \&element, const \mbox{\hyperlink{classTiXmlAttribute}{Ti\+Xml\+Attribute}} $\ast$first\+Attribute)
+\begin{DoxyCompactList}\small\item\em Visit an element. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTiXmlPrinter_ae6a1df8271df4bf62d7873c38e34aa69}{Visit\+Exit}} (const \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}} \&element)
+\begin{DoxyCompactList}\small\item\em Visit an element. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTiXmlPrinter_adaf7eec4dc43ad071ff52b60361574f5}{Visit}} (const \mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} \&declaration)
+\begin{DoxyCompactList}\small\item\em Visit a declaration. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTiXmlPrinter_a0857c5d32c59b9a257f9a49cb9411df5}{Visit}} (const \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} \&text)
+\begin{DoxyCompactList}\small\item\em Visit a text node. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTiXmlPrinter_a9870423f5603630e6142f6bdb66dfb57}{Visit}} (const \mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} \&comment)
+\begin{DoxyCompactList}\small\item\em Visit a comment node. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classTiXmlPrinter_a08591a15c9a07afa83c24e08b03d6358}{Visit}} (const \mbox{\hyperlink{classTiXmlUnknown}{Ti\+Xml\+Unknown}} \&unknown)
+\begin{DoxyCompactList}\small\item\em Visit an unknown node. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTiXmlPrinter_a213377a4070c7e625bae59716b089e5e}{Set\+Indent}} (const char $\ast$\+\_\+indent)
+\item 
+const char $\ast$ \mbox{\hyperlink{classTiXmlPrinter_abb33ec7d4bad6aaeb57f4304394b133d}{Indent}} ()
+\begin{DoxyCompactList}\small\item\em Query the indention string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTiXmlPrinter_a4be1e37e69e3858c59635aa947174fe6}{Set\+Line\+Break}} (const char $\ast$\+\_\+line\+Break)
+\item 
+const char $\ast$ \mbox{\hyperlink{classTiXmlPrinter_a11f1b4804a460b175ec244eb5724d96d}{Line\+Break}} ()
+\begin{DoxyCompactList}\small\item\em Query the current line breaking string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTiXmlPrinter_ab23a90629e374cb1cadca090468bbd19}{Set\+Stream\+Printing}} ()
+\item 
+const char $\ast$ \mbox{\hyperlink{classTiXmlPrinter_a859eede9597d3e0355b77757be48735e}{C\+Str}} ()
+\begin{DoxyCompactList}\small\item\em Return the result. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classTiXmlPrinter_ad01375ae9199bd2f48252eaddce3039d}{Size}} ()
+\begin{DoxyCompactList}\small\item\em Return the length of the result string. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{classTiXmlPrinter_a3bd4daf44309b41f5813a833caa0d1c9}{Str}} ()
+\begin{DoxyCompactList}\small\item\em Return the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Print to memory functionality. The \mbox{\hyperlink{classTiXmlPrinter}{Ti\+Xml\+Printer}} is useful when you need to\+:
+
+
+\begin{DoxyEnumerate}
+\item Print to memory (especially in non-\/\+S\+TL mode)
+\item Control formatting (line endings, etc.)
+\end{DoxyEnumerate}
+
+When constructed, the \mbox{\hyperlink{classTiXmlPrinter}{Ti\+Xml\+Printer}} is in its default \char`\"{}pretty printing\char`\"{} mode. Before calling Accept() you can call methods to control the printing of the X\+ML document. After \mbox{\hyperlink{classTiXmlNode_acc0f88b7462c6cb73809d410a4f5bb86}{Ti\+Xml\+Node\+::\+Accept()}} is called, the printed document can be accessed via the \mbox{\hyperlink{classTiXmlPrinter_a859eede9597d3e0355b77757be48735e}{C\+Str()}}, \mbox{\hyperlink{classTiXmlPrinter_a3bd4daf44309b41f5813a833caa0d1c9}{Str()}}, and \mbox{\hyperlink{classTiXmlPrinter_ad01375ae9199bd2f48252eaddce3039d}{Size()}} methods.
+
+\mbox{\hyperlink{classTiXmlPrinter}{Ti\+Xml\+Printer}} uses the Visitor A\+PI. \begin{DoxyVerb}TiXmlPrinter printer;
+printer.SetIndent( "\t" );
+
+doc.Accept( &printer );
+fprintf( stdout, "%s", printer.CStr() );
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTiXmlPrinter_a6539b864026c8667cd0bd5fdf4b41f43}\label{classTiXmlPrinter_a6539b864026c8667cd0bd5fdf4b41f43}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!TiXmlPrinter@{TiXmlPrinter}}
+\index{TiXmlPrinter@{TiXmlPrinter}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{TiXmlPrinter()}{TiXmlPrinter()}}
+{\footnotesize\ttfamily Ti\+Xml\+Printer\+::\+Ti\+Xml\+Printer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTiXmlPrinter_a859eede9597d3e0355b77757be48735e}\label{classTiXmlPrinter_a859eede9597d3e0355b77757be48735e}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!CStr@{CStr}}
+\index{CStr@{CStr}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{CStr()}{CStr()}}
+{\footnotesize\ttfamily const char$\ast$ Ti\+Xml\+Printer\+::\+C\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the result. 
+
+\mbox{\Hypertarget{classTiXmlPrinter_abb33ec7d4bad6aaeb57f4304394b133d}\label{classTiXmlPrinter_abb33ec7d4bad6aaeb57f4304394b133d}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!Indent@{Indent}}
+\index{Indent@{Indent}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{Indent()}{Indent()}}
+{\footnotesize\ttfamily const char$\ast$ Ti\+Xml\+Printer\+::\+Indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Query the indention string. 
+
+\mbox{\Hypertarget{classTiXmlPrinter_a11f1b4804a460b175ec244eb5724d96d}\label{classTiXmlPrinter_a11f1b4804a460b175ec244eb5724d96d}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!LineBreak@{LineBreak}}
+\index{LineBreak@{LineBreak}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{LineBreak()}{LineBreak()}}
+{\footnotesize\ttfamily const char$\ast$ Ti\+Xml\+Printer\+::\+Line\+Break (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Query the current line breaking string. 
+
+\mbox{\Hypertarget{classTiXmlPrinter_a213377a4070c7e625bae59716b089e5e}\label{classTiXmlPrinter_a213377a4070c7e625bae59716b089e5e}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!SetIndent@{SetIndent}}
+\index{SetIndent@{SetIndent}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{SetIndent()}{SetIndent()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Printer\+::\+Set\+Indent (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+indent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the indent characters for printing. By default 4 spaces but tab (\textbackslash{}t) is also useful, or null/empty string for no indentation. \mbox{\Hypertarget{classTiXmlPrinter_a4be1e37e69e3858c59635aa947174fe6}\label{classTiXmlPrinter_a4be1e37e69e3858c59635aa947174fe6}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!SetLineBreak@{SetLineBreak}}
+\index{SetLineBreak@{SetLineBreak}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{SetLineBreak()}{SetLineBreak()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Printer\+::\+Set\+Line\+Break (\begin{DoxyParamCaption}\item[{const char $\ast$}]{\+\_\+line\+Break }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Set the line breaking string. By default set to newline (~\newline
+). Some operating systems prefer other characters, or can be set to the null/empty string for no indenation. \mbox{\Hypertarget{classTiXmlPrinter_ab23a90629e374cb1cadca090468bbd19}\label{classTiXmlPrinter_ab23a90629e374cb1cadca090468bbd19}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!SetStreamPrinting@{SetStreamPrinting}}
+\index{SetStreamPrinting@{SetStreamPrinting}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{SetStreamPrinting()}{SetStreamPrinting()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Printer\+::\+Set\+Stream\+Printing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Switch over to \char`\"{}stream printing\char`\"{} which is the most dense formatting without linebreaks. Common when the X\+ML is needed for network transmission. \mbox{\Hypertarget{classTiXmlPrinter_ad01375ae9199bd2f48252eaddce3039d}\label{classTiXmlPrinter_ad01375ae9199bd2f48252eaddce3039d}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!Size@{Size}}
+\index{Size@{Size}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{Size()}{Size()}}
+{\footnotesize\ttfamily size\+\_\+t Ti\+Xml\+Printer\+::\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the length of the result string. 
+
+\mbox{\Hypertarget{classTiXmlPrinter_a3bd4daf44309b41f5813a833caa0d1c9}\label{classTiXmlPrinter_a3bd4daf44309b41f5813a833caa0d1c9}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!Str@{Str}}
+\index{Str@{Str}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{Str()}{Str()}}
+{\footnotesize\ttfamily const std\+::string\& Ti\+Xml\+Printer\+::\+Str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the result. 
+
+\mbox{\Hypertarget{classTiXmlPrinter_a9870423f5603630e6142f6bdb66dfb57}\label{classTiXmlPrinter_a9870423f5603630e6142f6bdb66dfb57}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!Visit@{Visit}}
+\index{Visit@{Visit}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Printer\+::\+Visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlComment}{Ti\+Xml\+Comment}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visit a comment node. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classTiXmlVisitor_a53a60e7a528627b31af3161972cc7fa2}{Ti\+Xml\+Visitor}}.
+
+\mbox{\Hypertarget{classTiXmlPrinter_adaf7eec4dc43ad071ff52b60361574f5}\label{classTiXmlPrinter_adaf7eec4dc43ad071ff52b60361574f5}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!Visit@{Visit}}
+\index{Visit@{Visit}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Printer\+::\+Visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlDeclaration}{Ti\+Xml\+Declaration}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visit a declaration. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classTiXmlVisitor_afad71c71ce6473fb9b4b64cd92de4a19}{Ti\+Xml\+Visitor}}.
+
+\mbox{\Hypertarget{classTiXmlPrinter_a0857c5d32c59b9a257f9a49cb9411df5}\label{classTiXmlPrinter_a0857c5d32c59b9a257f9a49cb9411df5}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!Visit@{Visit}}
+\index{Visit@{Visit}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Printer\+::\+Visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visit a text node. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classTiXmlVisitor_a399b8ebca5cd14664974a32d2ce029e5}{Ti\+Xml\+Visitor}}.
+
+\mbox{\Hypertarget{classTiXmlPrinter_a08591a15c9a07afa83c24e08b03d6358}\label{classTiXmlPrinter_a08591a15c9a07afa83c24e08b03d6358}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!Visit@{Visit}}
+\index{Visit@{Visit}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{Visit()}{Visit()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Printer\+::\+Visit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlUnknown}{Ti\+Xml\+Unknown}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visit an unknown node. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classTiXmlVisitor_a7e284d607d275c51dac1adb58159ce28}{Ti\+Xml\+Visitor}}.
+
+\mbox{\Hypertarget{classTiXmlPrinter_a2ec73087db26ff4d2c4316c56f861db7}\label{classTiXmlPrinter_a2ec73087db26ff4d2c4316c56f861db7}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!VisitEnter@{VisitEnter}}
+\index{VisitEnter@{VisitEnter}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{VisitEnter()}{VisitEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Printer\+::\+Visit\+Enter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlDocument}{Ti\+Xml\+Document}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visit a document. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classTiXmlVisitor_a07baecb52dd7d8716ae2a48ad0956ee0}{Ti\+Xml\+Visitor}}.
+
+\mbox{\Hypertarget{classTiXmlPrinter_a6dccaf5ee4979f13877690afe28721e8}\label{classTiXmlPrinter_a6dccaf5ee4979f13877690afe28721e8}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!VisitEnter@{VisitEnter}}
+\index{VisitEnter@{VisitEnter}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{VisitEnter()}{VisitEnter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Printer\+::\+Visit\+Enter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}} \&}]{,  }\item[{const \mbox{\hyperlink{classTiXmlAttribute}{Ti\+Xml\+Attribute}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visit an element. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classTiXmlVisitor_af6c6178ffa517bbdba95d70490875fff}{Ti\+Xml\+Visitor}}.
+
+\mbox{\Hypertarget{classTiXmlPrinter_a0a636046fa589b6d7f3e5bd025b3f33e}\label{classTiXmlPrinter_a0a636046fa589b6d7f3e5bd025b3f33e}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!VisitExit@{VisitExit}}
+\index{VisitExit@{VisitExit}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{VisitExit()}{VisitExit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Printer\+::\+Visit\+Exit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlDocument}{Ti\+Xml\+Document}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visit a document. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classTiXmlVisitor_aa0ade4f27087447e93974e975c3246ad}{Ti\+Xml\+Visitor}}.
+
+\mbox{\Hypertarget{classTiXmlPrinter_ae6a1df8271df4bf62d7873c38e34aa69}\label{classTiXmlPrinter_ae6a1df8271df4bf62d7873c38e34aa69}} 
+\index{TiXmlPrinter@{TiXmlPrinter}!VisitExit@{VisitExit}}
+\index{VisitExit@{VisitExit}!TiXmlPrinter@{TiXmlPrinter}}
+\doxysubsubsection{\texorpdfstring{VisitExit()}{VisitExit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Printer\+::\+Visit\+Exit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Visit an element. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classTiXmlVisitor_aec2b1f8116226d52f3a1b95dafd3a32c}{Ti\+Xml\+Visitor}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/tinyxml/\mbox{\hyperlink{tinyxml_8h}{tinyxml.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/\mbox{\hyperlink{tinyxml_8cpp}{tinyxml.\+cpp}}\end{DoxyCompactItemize}

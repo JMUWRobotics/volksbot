@@ -1,0 +1,109 @@
+\hypertarget{classsick__scan__xd_1_1SickLdmrsNode}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Ldmrs\+Node Class Reference}
+\label{classsick__scan__xd_1_1SickLdmrsNode}\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+
+
+{\ttfamily \#include $<$sick\+\_\+ldmrs\+\_\+node.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Ldmrs\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=243pt]{classsick__scan__xd_1_1SickLdmrsNode__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_a457185ac9b5bbbd74d1cd9a779d1d109}{Sick\+Ldmrs\+Node}} ()
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_ad9e5c07cae68ddddd18a5d76397b0ae2}{$\sim$\+Sick\+Ldmrs\+Node}} ()
+\item 
+virtual int \mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_af85c2f2ae7429f6e4539933523730b2c}{init}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const std\+::string \&host\+Name=\char`\"{}192.\+168.\+0.\+1\char`\"{}, const std\+::string \&frame\+Id=\char`\"{}cloud\char`\"{})
+\item 
+virtual int \mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_a243beedf290544698ad5ca5d3e2f1619}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} \mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_abeccbee652bd5a74bcc057dcb7e4a56c}{m\+\_\+nh}}
+\item 
+std\+::shared\+\_\+ptr$<$ diagnostic\+\_\+updater\+::\+Updater $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_aa9dc965361084043096177ce1d1c2601}{m\+\_\+diagnostics}}
+\item 
+Manager $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_af48b38c4d37a3c7c23fbe3aac03e2429}{m\+\_\+manager}}
+\item 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS}{sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+RS}} $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_ac0055f55a6e20159e39a38225b4556ad}{m\+\_\+app}}
+\item 
+devices\+::\+L\+D\+M\+RS $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickLdmrsNode_a7307e17f6aa19bcf9f52a43512966350}{m\+\_\+ldmrs}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_a457185ac9b5bbbd74d1cd9a779d1d109}\label{classsick__scan__xd_1_1SickLdmrsNode_a457185ac9b5bbbd74d1cd9a779d1d109}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!SickLdmrsNode@{SickLdmrsNode}}
+\index{SickLdmrsNode@{SickLdmrsNode}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{SickLdmrsNode()}{SickLdmrsNode()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::\+Sick\+Ldmrs\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_ad9e5c07cae68ddddd18a5d76397b0ae2}\label{classsick__scan__xd_1_1SickLdmrsNode_ad9e5c07cae68ddddd18a5d76397b0ae2}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!````~SickLdmrsNode@{$\sim$SickLdmrsNode}}
+\index{````~SickLdmrsNode@{$\sim$SickLdmrsNode}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickLdmrsNode()}{~SickLdmrsNode()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::$\sim$\+Sick\+Ldmrs\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_af85c2f2ae7429f6e4539933523730b2c}\label{classsick__scan__xd_1_1SickLdmrsNode_af85c2f2ae7429f6e4539933523730b2c}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!init@{init}}
+\index{init@{init}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const std\+::string \&}]{host\+Name = {\ttfamily \char`\"{}192.168.0.1\char`\"{}},  }\item[{const std\+::string \&}]{frame\+Id = {\ttfamily \char`\"{}cloud\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_a243beedf290544698ad5ca5d3e2f1619}\label{classsick__scan__xd_1_1SickLdmrsNode_a243beedf290544698ad5ca5d3e2f1619}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!run@{run}}
+\index{run@{run}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_ac0055f55a6e20159e39a38225b4556ad}\label{classsick__scan__xd_1_1SickLdmrsNode_ac0055f55a6e20159e39a38225b4556ad}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!m\_app@{m\_app}}
+\index{m\_app@{m\_app}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{m\_app}{m\_app}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS}{sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+RS}}$\ast$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::m\+\_\+app\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_aa9dc965361084043096177ce1d1c2601}\label{classsick__scan__xd_1_1SickLdmrsNode_aa9dc965361084043096177ce1d1c2601}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!m\_diagnostics@{m\_diagnostics}}
+\index{m\_diagnostics@{m\_diagnostics}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{m\_diagnostics}{m\_diagnostics}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$diagnostic\+\_\+updater\+::\+Updater$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::m\+\_\+diagnostics\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_a7307e17f6aa19bcf9f52a43512966350}\label{classsick__scan__xd_1_1SickLdmrsNode_a7307e17f6aa19bcf9f52a43512966350}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!m\_ldmrs@{m\_ldmrs}}
+\index{m\_ldmrs@{m\_ldmrs}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{m\_ldmrs}{m\_ldmrs}}
+{\footnotesize\ttfamily devices\+::\+L\+D\+M\+RS$\ast$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::m\+\_\+ldmrs\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_af48b38c4d37a3c7c23fbe3aac03e2429}\label{classsick__scan__xd_1_1SickLdmrsNode_af48b38c4d37a3c7c23fbe3aac03e2429}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!m\_manager@{m\_manager}}
+\index{m\_manager@{m\_manager}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{m\_manager}{m\_manager}}
+{\footnotesize\ttfamily Manager$\ast$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::m\+\_\+manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickLdmrsNode_abeccbee652bd5a74bcc057dcb7e4a56c}\label{classsick__scan__xd_1_1SickLdmrsNode_abeccbee652bd5a74bcc057dcb7e4a56c}} 
+\index{sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}!m\_nh@{m\_nh}}
+\index{m\_nh@{m\_nh}!sick\_scan\_xd::SickLdmrsNode@{sick\_scan\_xd::SickLdmrsNode}}
+\doxysubsubsection{\texorpdfstring{m\_nh}{m\_nh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Ldmrs\+Node\+::m\+\_\+nh\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/ldmrs/\mbox{\hyperlink{sick__ldmrs__node_8h}{sick\+\_\+ldmrs\+\_\+node.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/ldmrs/\mbox{\hyperlink{sick__ldmrs__node_8cpp}{sick\+\_\+ldmrs\+\_\+node.\+cpp}}\end{DoxyCompactItemize}

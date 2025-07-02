@@ -1,0 +1,119 @@
+This project contains a tiny R\+O\+S-\/2 example. It shows how to use \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} messages and services in a R\+O\+S-\/2 application on Linux.\hypertarget{md__home_nls_SHK_Arbeit_volksbot_src_sick_scan_xd_src_sick_scan_xd_examples_ros2_example_application_README_autotoc_md1}{}\doxysection{Build}\label{md__home_nls_SHK_Arbeit_volksbot_src_sick_scan_xd_src_sick_scan_xd_examples_ros2_example_application_README_autotoc_md1}
+Run the following steps to build \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}}\+:
+
+
+\begin{DoxyEnumerate}
+\item Clone repositories \href{https://github.com/SICKAG/libsick_ldmrs}{\texttt{ https\+://github.\+com/\+S\+I\+C\+K\+A\+G/libsick\+\_\+ldmrs}} and \href{https://github.com/SICKAG/sick_scan_xd}{\texttt{ https\+://github.\+com/\+S\+I\+C\+K\+A\+G/sick\+\_\+scan\+\_\+xd}} parrallel to your application folder. For this example we assume that a folder {\ttfamily workspace/src} exist, incl. a R\+O\+S-\/2 application which will be using \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} services and messages.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{pushd ./workspace/src}
+\DoxyCodeLine{git clone https://github.com/SICKAG/libsick\_ldmrs.git}
+\DoxyCodeLine{git clone -\/b master https://github.com/SICKAG/sick\_scan\_xd.git}
+\DoxyCodeLine{popd}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item As an example, we copy folder {\ttfamily workspace/src/sick\+\_\+scan\+\_\+xd/examples/ros2\+\_\+example\+\_\+application} to {\ttfamily workspace/src/ros2\+\_\+example\+\_\+application}. Folder {\ttfamily workspace/src/ros2\+\_\+example\+\_\+application} contains our R\+O\+S-\/2 example application. It is just a tiny example, which integrates and uses some \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} messages and services. Please feel free to use this example as a starting point for a \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} integration into your own R\+O\+S2 project.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cp -\/rf workspace/src/sick\_scan\_xd/examples/ros2\_example\_application workspace/src/ros2\_example\_application}
+\end{DoxyCode}
+
+
+After this step, folder {\ttfamily workspace/src} should have the following 3 subfolders\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{workspace/src/libsick\_ldmrs}
+\DoxyCodeLine{workspace/src/sick\_scan\_xd}
+\DoxyCodeLine{workspace/src/ros2\_example\_application}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Build \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} as described in ../../\+I\+N\+S\+T\+A\+L\+L-\/\+R\+O\+S2.md \char`\"{}\+Build on Linux R\+O\+S2\char`\"{}\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd workspace}
+\DoxyCodeLine{source /opt/ros/\$ROS\_DISTRO/setup.bash \# replace \$ROS\_DISTRO by your ros distro}
+\DoxyCodeLine{colcon build -\/-\/packages-\/select libsick\_ldmrs -\/-\/event-\/handlers console\_direct+}
+\DoxyCodeLine{source ./install/setup.bash}
+\DoxyCodeLine{colcon build -\/-\/packages-\/select sick\_scan\_xd -\/-\/cmake-\/args " -\/DROS\_VERSION=2" -\/-\/event-\/handlers console\_direct+}
+\DoxyCodeLine{source ./install/setup.bash}
+\end{DoxyCode}
+
+
+Note\+: libsick\+\_\+ldmrs is only required to support L\+D\+M\+RS sensors. If you do not need or want to support L\+D\+M\+RS, you can skip building libsick\+\_\+ldmrs. To build sick\+\_\+generic\+\_\+caller without L\+D\+M\+RS support, run colcon with cmake option {\ttfamily -\/D\+L\+D\+M\+RS=0}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{colcon build -\/-\/packages-\/select sick\_scan\_xd -\/-\/cmake-\/args " -\/DROS\_VERSION=2" " -\/DLDMRS=0" -\/-\/event-\/handlers console\_direct+}
+\end{DoxyCode}
+
+
+Note\+: To build sick\+\_\+generic\+\_\+caller without multi\+Scan136/sick\+\_\+scansegment\+\_\+xd/pico\+Scan150 support, run colcon with cmake option {\ttfamily -\/D\+S\+C\+A\+N\+S\+E\+G\+M\+E\+N\+T\+\_\+\+XD=0}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{colcon build -\/-\/packages-\/select sick\_scan\_xd -\/-\/cmake-\/args " -\/DROS\_VERSION=2" " -\/DSCANSEGMENT\_XD=0" -\/-\/event-\/handlers console\_direct+}
+\end{DoxyCode}
+
+
+cmake flags can be combined. Use flags {\ttfamily -\/D\+L\+D\+M\+RS=0 -\/D\+S\+C\+A\+N\+S\+E\+G\+M\+E\+N\+T\+\_\+\+XD=0} to build without L\+D\+M\+RS and scansegment\+\_\+xd support\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{colcon build -\/-\/packages-\/select sick\_scan\_xd -\/-\/cmake-\/args " -\/DROS\_VERSION=2" " -\/DLDMRS=0" " -\/DSCANSEGMENT\_XD=0" -\/-\/event-\/handlers console\_direct+}
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Build the R\+O\+S-\/2 example application\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{colcon build -\/-\/packages-\/select sick\_scan\_ros2\_example -\/-\/event-\/handlers console\_direct+}
+\end{DoxyCode}
+
+
+Note\+: R\+O\+S-\/2 package {\ttfamily sick\+\_\+scan\+\_\+ros2\+\_\+example} uses \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} messages and services. File \href{package.xml}{\texttt{ package.\+xml}} contains the following dependency to package \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{<depend>sick\_scan\_xd</depend>}
+\end{DoxyCode}
+
+
+File \href{CMakeLists.txt}{\texttt{ C\+Make\+Lists.\+txt}} contains the following dependencies to package \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}}\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{find\_package(sick\_scan\_xd REQUIRED)}
+\DoxyCodeLine{ament\_target\_dependencies(}
+\DoxyCodeLine{     sick\_scan\_ros2\_example}
+\DoxyCodeLine{     "rclcpp"}
+\DoxyCodeLine{     "sensor\_msgs"}
+\DoxyCodeLine{     "std\_msgs"}
+\DoxyCodeLine{     "sick\_scan\_xd"}
+\DoxyCodeLine{)}
+\end{DoxyCode}
+
+
+Please include these dependencies in your own R\+O\+S-\/2 project.
+
+File \href{src/sick_scan_ros2_example.cpp}{\texttt{ sick\+\_\+scan\+\_\+ros2\+\_\+example.\+cpp}} shows how to include and use \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} messages and services. Please feel free to use this example as a starting point for a \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} integration into your own R\+O\+S2 project.\hypertarget{md__home_nls_SHK_Arbeit_volksbot_src_sick_scan_xd_src_sick_scan_xd_examples_ros2_example_application_README_autotoc_md2}{}\doxysection{Run the R\+O\+S-\/2 example}\label{md__home_nls_SHK_Arbeit_volksbot_src_sick_scan_xd_src_sick_scan_xd_examples_ros2_example_application_README_autotoc_md2}
+After successful build, the executable {\ttfamily sick\+\_\+scan\+\_\+ros2\+\_\+example} has been generated in the install folder {\ttfamily workspace/install/sick\+\_\+scan\+\_\+ros2\+\_\+example/lib/sick\+\_\+scan\+\_\+ros2\+\_\+example}. Run the following steps to test {\ttfamily sick\+\_\+scan\+\_\+ros2\+\_\+example}\+:
+
+
+\begin{DoxyEnumerate}
+\item Connect a lidar and run the \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} driver {\ttfamily sick\+\_\+generic\+\_\+caller}\+:
+
+\`{}\`{}\`{} cd workspace source ./install/setup.bash ros2 run \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} sick\+\_\+generic\+\_\+caller ./src/sick\+\_\+scan\+\_\+xd/launch/$<$launchfile$>$ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{   See [Run sick\_scan\_xd driver](../../USAGE.md) for details.}
+\DoxyCodeLine{}
+\DoxyCodeLine{2. Run `sick\_scan\_ros2\_example`:}
+\end{DoxyCode}
+
+
+ros2 run sick\+\_\+scan\+\_\+ros2\+\_\+example sick\+\_\+scan\+\_\+ros2\+\_\+example --ros-\/args -\/p topics\+:=sick\+\_\+tim\+\_\+7xx \`{}\`{}{\ttfamily  Note\+: Depending on your lidar, \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} messages are published on different topics. Use parameter topics, e.\+g.}topics\+:=sick\+\_\+tim\+\_\+7xx{\ttfamily for a Ti\+M-\/7xx lidar. If in doubt, list all \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}} topics and services by}ros2 topic list{\ttfamily and}ros2 service list\`{}. 
+\end{DoxyEnumerate}

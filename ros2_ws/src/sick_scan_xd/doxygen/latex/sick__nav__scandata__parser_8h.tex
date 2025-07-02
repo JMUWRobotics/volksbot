@@ -1,0 +1,38 @@
+\hypertarget{sick__nav__scandata__parser_8h}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/sick\+\_\+nav\+\_\+scandata\+\_\+parser.h File Reference}
+\label{sick__nav__scandata__parser_8h}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/sick\_nav\_scandata\_parser.h@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/sick\_nav\_scandata\_parser.h}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacesick__scan__xd}{sick\+\_\+scan\+\_\+xd}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{namespacesick__scan__xd_ad6f170aa5e232863023ceaa47648a2b7}{sick\+\_\+scan\+\_\+xd\+::parse\+N\+A\+V350\+Binary\+Position\+Data}} (const uint8\+\_\+t $\ast$receive\+Buffer, int receive\+Buffer\+Length, N\+A\+V350m\+N\+P\+O\+S\+Data \&navdata)
+\item 
+bool \mbox{\hyperlink{namespacesick__scan__xd_a528f7bad8dc8095dde9ded5593fc0c57}{sick\+\_\+scan\+\_\+xd\+::parse\+N\+A\+V350\+Binary\+Landmark\+Data}} (const uint8\+\_\+t $\ast$receive\+Buffer, int \&receive\+Pos, int receive\+Buffer\+Length, N\+A\+V350\+Landmark\+Data \&landmark\+Data)
+\item 
+bool \mbox{\hyperlink{namespacesick__scan__xd_a3cb3e38bbf4de8de19225b2d20797cdc}{sick\+\_\+scan\+\_\+xd\+::parse\+N\+A\+V350\+Binary\+Landmark\+Data\+Do\+Mapping\+Response}} (const uint8\+\_\+t $\ast$receive\+Buffer, int receive\+Buffer\+Length, N\+A\+V350\+Landmark\+Data\+Do\+Mapping\+Response \&landmark\+Data)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{namespacesick__scan__xd_a216fc074a822c8dcab91beb9886a5038}{sick\+\_\+scan\+\_\+xd\+::create\+N\+A\+V350\+Binary\+Add\+Landmark\+Request}} (const N\+A\+V350\+Landmark\+Data \&landmark\+Data, int nav\+\_\+curr\+\_\+layer)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{namespacesick__scan__xd_a4fb0d422bced43a64f56a49e4fb7085b}{sick\+\_\+scan\+\_\+xd\+::create\+N\+A\+V350\+Binary\+Add\+Landmark\+Request}} (const std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1NAV350ImkLandmark}{sick\+\_\+scan\+\_\+xd\+::\+N\+A\+V350\+Imk\+Landmark}} $>$ landmarks)
+\item 
+std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{namespacesick__scan__xd_a5ffce6c8918d6056095d0fcec93cb6e2}{sick\+\_\+scan\+\_\+xd\+::create\+N\+A\+V350\+Binary\+Set\+Speed\+Request}} (const sick\+\_\+scan\+\_\+msg\+::\+N\+A\+V\+Odom\+Velocity \&msg)
+\item 
+bool \mbox{\hyperlink{namespacesick__scan__xd_a4c196631d5fe01c0bc4d1b3a8051f900}{sick\+\_\+scan\+\_\+xd\+::parse\+N\+A\+V350\+Binary\+Position\+Data}} (const uint8\+\_\+t $\ast$receive\+Buffer, int receive\+Buffer\+Length, short \&elev\+Angle\+X200, double \&elevation\+Angle\+In\+Rad, \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&recv\+Time\+Stamp, bool config\+\_\+sw\+\_\+pll\+\_\+only\+\_\+publish, double config\+\_\+time\+\_\+offset, Sick\+Generic\+Parser $\ast$parser\+\_\+, int \&num\+Echos, ros\+\_\+sensor\+\_\+msgs\+::\+Laser\+Scan \&msg, sick\+\_\+scan\+\_\+msg\+::\+N\+A\+V\+Pose\+Data \&nav\+\_\+pose\+\_\+msg, sick\+\_\+scan\+\_\+msg\+::\+N\+A\+V\+Landmark\+Data \&nav\+\_\+landmark\+\_\+msg, N\+A\+V350m\+N\+P\+O\+S\+Data \&navdata)
+\item 
+ros\+\_\+geometry\+\_\+msgs\+::\+Transform\+Stamped \mbox{\hyperlink{namespacesick__scan__xd_a6e68d8dbc7b08b14eec03061b496059f}{sick\+\_\+scan\+\_\+xd\+::convert\+N\+A\+V\+Pose\+Data\+To\+Transform}} (N\+A\+V350\+Pose\+Data \&pose\+Data, \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} recv\+Time\+Stamp, double config\+\_\+time\+\_\+offset, const std\+::string \&tf\+\_\+parent\+\_\+frame\+\_\+id, const std\+::string \&tf\+\_\+child\+\_\+frame\+\_\+id, Sick\+Generic\+Parser $\ast$parser\+\_\+)
+\item 
+void \mbox{\hyperlink{namespacesick__scan__xd_ad6ea970a4598de20763e35e0f486c272}{sick\+\_\+scan\+\_\+xd\+::rotate\+X\+Yby\+Angle\+Offset}} (float \&x, float \&y, double angle\+\_\+offset)
+\item 
+void \mbox{\hyperlink{namespacesick__scan__xd_afb0c0d55d31d73f902c390f665972c4b}{sick\+\_\+scan\+\_\+xd\+::convert\+N\+A\+V\+Cart\+Pos2\+Dto\+R\+O\+S\+Pos2D}} (int32\+\_\+t nav\+\_\+posx\+\_\+mm, int32\+\_\+t nav\+\_\+posy\+\_\+mm, float \&ros\+\_\+posx\+\_\+m, float \&ros\+\_\+posy\+\_\+m, double nav\+\_\+angle\+\_\+offset)
+\item 
+void \mbox{\hyperlink{namespacesick__scan__xd_a4e9eaccc4511b4c911a9ccea6c60fe65}{sick\+\_\+scan\+\_\+xd\+::convert\+N\+A\+V\+Cart\+Pos3\+Dto\+R\+O\+S\+Pos3D}} (int32\+\_\+t nav\+\_\+posx\+\_\+mm, int32\+\_\+t nav\+\_\+posy\+\_\+mm, uint32\+\_\+t nav\+\_\+phi\+\_\+mdeg, float \&ros\+\_\+posx\+\_\+m, float \&ros\+\_\+posy\+\_\+m, float \&ros\+\_\+yaw\+\_\+rad, double nav\+\_\+angle\+\_\+offset)
+\item 
+ros\+\_\+visualization\+\_\+msgs\+::\+Marker\+Array \mbox{\hyperlink{namespacesick__scan__xd_a425512b53a04445cf4b267f00477c2c2}{sick\+\_\+scan\+\_\+xd\+::convert\+N\+A\+V\+Landmark\+Data\+To\+Marker}} (const std\+::vector$<$ N\+A\+V350\+Reflector\+Data $>$ \&reflectors, ros\+\_\+std\+\_\+msgs\+::\+Header \&header, Sick\+Generic\+Parser $\ast$parser\+\_\+)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1NAV350ImkLandmark}{sick\+\_\+scan\+\_\+xd\+::\+N\+A\+V350\+Imk\+Landmark}} $>$ \mbox{\hyperlink{namespacesick__scan__xd_a31a577ccd1e15b26867767f62c823816}{sick\+\_\+scan\+\_\+xd\+::read\+N\+A\+V\+I\+M\+Kfile}} (const std\+::string \&nav\+\_\+imk\+\_\+file)
+\item 
+bool \mbox{\hyperlink{namespacesick__scan__xd_ad8c6ee490fde2236c19aea7dc0f8a7a0}{sick\+\_\+scan\+\_\+xd\+::parse\+N\+A\+V350\+Binary\+Unittest}} ()
+\end{DoxyCompactItemize}

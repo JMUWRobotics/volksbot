@@ -1,0 +1,147 @@
+\hypertarget{namespacemultiscan__perftest__player}{}\doxysection{multiscan\+\_\+perftest\+\_\+player Namespace Reference}
+\label{namespacemultiscan__perftest__player}\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemultiscan__perftest__player_aed947e7cfbcfee0a74e49b4f86ee6aa2}{forced\+\_\+delay}} (seconds)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacemultiscan__perftest__player_a4d2523e70a17094570f165684fa4790d}{udp\+\_\+port}} = 2115
+\item 
+int \mbox{\hyperlink{namespacemultiscan__perftest__player_acf0d89e5238c1480392b31b04d67936d}{udp\+\_\+send\+\_\+rate}} = 10000
+\item 
+float \mbox{\hyperlink{namespacemultiscan__perftest__player_a6afa7bc57f4472fb35f9c6dcfd43267f}{udp\+\_\+force\+\_\+delay}} = 0.\+0
+\item 
+int \mbox{\hyperlink{namespacemultiscan__perftest__player_a6ca941ca5ff53c3450759ede828613bd}{udp\+\_\+prompt}} = 0
+\item 
+string \mbox{\hyperlink{namespacemultiscan__perftest__player_a768d6c1b8971c91cbaf5e68bb894e903}{udp\+\_\+dst\+\_\+ip}} = \char`\"{}$<$broadcast$>$\char`\"{}
+\item 
+int \mbox{\hyperlink{namespacemultiscan__perftest__player_a037f9be4c082bfdbaf40cc4e2ee53eca}{num\+\_\+echos}} = 1
+\item 
+int \mbox{\hyperlink{namespacemultiscan__perftest__player_ad469f2bd455bc953d8747ea433d4bbb8}{num\+\_\+repetitions}} = 1
+\item 
+int \mbox{\hyperlink{namespacemultiscan__perftest__player_a6f8a83b82b45051ee8aa04acde0d78fd}{verbose}} = 0
+\item 
+\mbox{\hyperlink{namespacemultiscan__perftest__player_aca5982eab151627d4cd6660095fadfe3}{arg\+\_\+parser}} = argparse.\+Argument\+Parser()
+\item 
+\mbox{\hyperlink{namespacemultiscan__perftest__player_abccdc865ac9f3e4e2daac263a63edbc6}{help}}
+\item 
+\mbox{\hyperlink{namespacemultiscan__perftest__player_a107f259e1391636aa59c7a7d5268d977}{default}}
+\item 
+\mbox{\hyperlink{namespacemultiscan__perftest__player_a02df98bf2bf52d1989ea6e448f77f254}{type}}
+\item 
+\mbox{\hyperlink{namespacemultiscan__perftest__player_a69983879835ead08b97260739d6a8121}{cli\+\_\+args}} = arg\+\_\+parser.\+parse\+\_\+args()
+\item 
+list \mbox{\hyperlink{namespacemultiscan__perftest__player_af0f9fa41e10a560721f4cf2719f9eb62}{blocks\+\_\+payload}}
+\item 
+\mbox{\hyperlink{namespacemultiscan__perftest__player_af19caeb5e4f1b571cc5515c2f4c4301b}{udp\+\_\+sender\+\_\+socket}} = socket.\+socket(socket.\+A\+F\+\_\+\+I\+N\+ET, socket.\+S\+O\+C\+K\+\_\+\+D\+G\+R\+AM, socket.\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+DP)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    multiScan test player sends packets via UDP over localhost to emulate a multiscan for performance tests.
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_aed947e7cfbcfee0a74e49b4f86ee6aa2}\label{namespacemultiscan__perftest__player_aed947e7cfbcfee0a74e49b4f86ee6aa2}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!forced\_delay@{forced\_delay}}
+\index{forced\_delay@{forced\_delay}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{forced\_delay()}{forced\_delay()}}
+{\footnotesize\ttfamily def multiscan\+\_\+perftest\+\_\+player.\+forced\+\_\+delay (\begin{DoxyParamCaption}\item[{}]{seconds }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_aca5982eab151627d4cd6660095fadfe3}\label{namespacemultiscan__perftest__player_aca5982eab151627d4cd6660095fadfe3}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!arg\_parser@{arg\_parser}}
+\index{arg\_parser@{arg\_parser}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{arg\_parser}{arg\_parser}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+arg\+\_\+parser = argparse.\+Argument\+Parser()}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_af0f9fa41e10a560721f4cf2719f9eb62}\label{namespacemultiscan__perftest__player_af0f9fa41e10a560721f4cf2719f9eb62}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!blocks\_payload@{blocks\_payload}}
+\index{blocks\_payload@{blocks\_payload}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{blocks\_payload}{blocks\_payload}}
+{\footnotesize\ttfamily list multiscan\+\_\+perftest\+\_\+player.\+blocks\+\_\+payload}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a69983879835ead08b97260739d6a8121}\label{namespacemultiscan__perftest__player_a69983879835ead08b97260739d6a8121}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!cli\_args@{cli\_args}}
+\index{cli\_args@{cli\_args}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{cli\_args}{cli\_args}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+cli\+\_\+args = arg\+\_\+parser.\+parse\+\_\+args()}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a107f259e1391636aa59c7a7d5268d977}\label{namespacemultiscan__perftest__player_a107f259e1391636aa59c7a7d5268d977}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!default@{default}}
+\index{default@{default}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{default}{default}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+default}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_abccdc865ac9f3e4e2daac263a63edbc6}\label{namespacemultiscan__perftest__player_abccdc865ac9f3e4e2daac263a63edbc6}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!help@{help}}
+\index{help@{help}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{help}{help}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+help}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a037f9be4c082bfdbaf40cc4e2ee53eca}\label{namespacemultiscan__perftest__player_a037f9be4c082bfdbaf40cc4e2ee53eca}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!num\_echos@{num\_echos}}
+\index{num\_echos@{num\_echos}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{num\_echos}{num\_echos}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+num\+\_\+echos = 1}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_ad469f2bd455bc953d8747ea433d4bbb8}\label{namespacemultiscan__perftest__player_ad469f2bd455bc953d8747ea433d4bbb8}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!num\_repetitions@{num\_repetitions}}
+\index{num\_repetitions@{num\_repetitions}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{num\_repetitions}{num\_repetitions}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+num\+\_\+repetitions = 1}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a02df98bf2bf52d1989ea6e448f77f254}\label{namespacemultiscan__perftest__player_a02df98bf2bf52d1989ea6e448f77f254}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!type@{type}}
+\index{type@{type}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+type}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a768d6c1b8971c91cbaf5e68bb894e903}\label{namespacemultiscan__perftest__player_a768d6c1b8971c91cbaf5e68bb894e903}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!udp\_dst\_ip@{udp\_dst\_ip}}
+\index{udp\_dst\_ip@{udp\_dst\_ip}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{udp\_dst\_ip}{udp\_dst\_ip}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+udp\+\_\+dst\+\_\+ip = \char`\"{}$<$broadcast$>$\char`\"{}}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a6afa7bc57f4472fb35f9c6dcfd43267f}\label{namespacemultiscan__perftest__player_a6afa7bc57f4472fb35f9c6dcfd43267f}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!udp\_force\_delay@{udp\_force\_delay}}
+\index{udp\_force\_delay@{udp\_force\_delay}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{udp\_force\_delay}{udp\_force\_delay}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+udp\+\_\+force\+\_\+delay = 0.\+0}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a4d2523e70a17094570f165684fa4790d}\label{namespacemultiscan__perftest__player_a4d2523e70a17094570f165684fa4790d}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!udp\_port@{udp\_port}}
+\index{udp\_port@{udp\_port}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{udp\_port}{udp\_port}}
+{\footnotesize\ttfamily int multiscan\+\_\+perftest\+\_\+player.\+udp\+\_\+port = 2115}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a6ca941ca5ff53c3450759ede828613bd}\label{namespacemultiscan__perftest__player_a6ca941ca5ff53c3450759ede828613bd}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!udp\_prompt@{udp\_prompt}}
+\index{udp\_prompt@{udp\_prompt}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{udp\_prompt}{udp\_prompt}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+udp\+\_\+prompt = 0}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_acf0d89e5238c1480392b31b04d67936d}\label{namespacemultiscan__perftest__player_acf0d89e5238c1480392b31b04d67936d}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!udp\_send\_rate@{udp\_send\_rate}}
+\index{udp\_send\_rate@{udp\_send\_rate}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{udp\_send\_rate}{udp\_send\_rate}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+udp\+\_\+send\+\_\+rate = 10000}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_af19caeb5e4f1b571cc5515c2f4c4301b}\label{namespacemultiscan__perftest__player_af19caeb5e4f1b571cc5515c2f4c4301b}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!udp\_sender\_socket@{udp\_sender\_socket}}
+\index{udp\_sender\_socket@{udp\_sender\_socket}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{udp\_sender\_socket}{udp\_sender\_socket}}
+{\footnotesize\ttfamily multiscan\+\_\+perftest\+\_\+player.\+udp\+\_\+sender\+\_\+socket = socket.\+socket(socket.\+A\+F\+\_\+\+I\+N\+ET, socket.\+S\+O\+C\+K\+\_\+\+D\+G\+R\+AM, socket.\+I\+P\+P\+R\+O\+T\+O\+\_\+\+U\+DP)}
+
+\mbox{\Hypertarget{namespacemultiscan__perftest__player_a6f8a83b82b45051ee8aa04acde0d78fd}\label{namespacemultiscan__perftest__player_a6f8a83b82b45051ee8aa04acde0d78fd}} 
+\index{multiscan\_perftest\_player@{multiscan\_perftest\_player}!verbose@{verbose}}
+\index{verbose@{verbose}!multiscan\_perftest\_player@{multiscan\_perftest\_player}}
+\doxysubsubsection{\texorpdfstring{verbose}{verbose}}
+{\footnotesize\ttfamily int multiscan\+\_\+perftest\+\_\+player.\+verbose = 0}
+

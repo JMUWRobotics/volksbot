@@ -1,0 +1,241 @@
+\hypertarget{sick__scan__test_8cpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/test/src/sick\+\_\+scan\+\_\+test.cpp File Reference}
+\label{sick__scan__test_8cpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/test/src/sick\_scan\_test.cpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/test/src/sick\_scan\_test.cpp}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classparamEntryAscii}{param\+Entry\+Ascii}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{sick__scan__test_8cpp_a0feee49481c8ef62d0941c0768f46fc3}{sudokill}} (pid\+\_\+t tokill)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classparamEntryAscii}{param\+Entry\+Ascii}} $>$ \mbox{\hyperlink{sick__scan__test_8cpp_acf2e64f25850ba1236bdbd65d1e4d174}{get\+Param\+List}} (\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$param\+List)
+\item 
+void \mbox{\hyperlink{sick__scan__test_8cpp_a64aa3a02857e7064be5056a6dae8abe6}{replace\+Param\+List}} (\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$node, std\+::vector$<$ \mbox{\hyperlink{classparamEntryAscii}{param\+Entry\+Ascii}} $>$ param\+Org\+List)
+\item 
+pid\+\_\+t \mbox{\hyperlink{sick__scan__test_8cpp_afd8f3f5e33f53a99c70e7a0417e9aa77}{launch\+Ros\+File}} (std\+::string cmd\+Line)
+\item 
+int \mbox{\hyperlink{sick__scan__test_8cpp_ad1b414f49bfc6ee22f3584898b8dccb6}{create\+Test\+Launch\+File}} (std\+::string launch\+File\+Full\+Name, std\+::vector$<$ \mbox{\hyperlink{classparamEntryAscii}{param\+Entry\+Ascii}} $>$ entry\+List, std\+::string \&test\+Launch\+File)
+\item 
+void \mbox{\hyperlink{sick__scan__test_8cpp_a61755c78b3504ca4e133f7e0d4621541}{cloud\+\_\+callback}} (const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr \&cloud\+\_\+msg)
+\item 
+void \mbox{\hyperlink{sick__scan__test_8cpp_a91e57d089c90878e44ea4a837f4ecb9a}{process\+Laser\+Scan}} (const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&scan)
+\item 
+int \mbox{\hyperlink{sick__scan__test_8cpp_ae7cc8679d51416bf7c107ca787c0e562}{start\+Callback\+Test}} (int argc, char $\ast$$\ast$argv)
+\item 
+void \mbox{\hyperlink{sick__scan__test_8cpp_a728669b62a812e29eef33fc7db4908da}{create\+Prefix\+From\+Exe\+Name}} (std\+::string exe\+Name, std\+::string \&prefix)
+\item 
+void \mbox{\hyperlink{sick__scan__test_8cpp_a70834aabb2b1f73b802f8012fcfe2fa2}{search\+For\+Xml\+File\+In\+Path\+List}} (std\+::string path\+List, std\+::string \&package\+Path, std\+::string xml\+File\+Name)
+\item 
+bool \mbox{\hyperlink{sick__scan__test_8cpp_a525578394895748b732eaa87051eed87}{get\+Package\+Root\+Folder}} (std\+::string exe\+Path, std\+::string \&package\+Root\+Folder)
+\item 
+int \mbox{\hyperlink{sick__scan__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Startup routine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+pid\+\_\+t \mbox{\hyperlink{sick__scan__test_8cpp_ae0d46a978d5cd6707411f276ad869b9c}{pid}}
+\item 
+int \mbox{\hyperlink{sick__scan__test_8cpp_a86c511d4aba0f98fa702cf3738d4dbb0}{cloud\+\_\+width}} = 0
+\item 
+int \mbox{\hyperlink{sick__scan__test_8cpp_a469387d6b4c962bef19ba9579f0a5300}{cloud\+\_\+height}} = 0
+\item 
+int \mbox{\hyperlink{sick__scan__test_8cpp_a4c6d24a2d1020f2267287d55312fa611}{callback\+Cnt}} = 0
+\item 
+double \mbox{\hyperlink{sick__scan__test_8cpp_a6aa2233e32c1f381d2b98abafd7170af}{intensity\+Std\+Dev}} = 0.\+0
+\item 
+double \mbox{\hyperlink{sick__scan__test_8cpp_ad78989a3ec985553e1cc2e51d06a9aa9}{range\+Std\+Dev}} = 0.\+0
+\item 
+int \mbox{\hyperlink{sick__scan__test_8cpp_ac0267bf236c5d409e1834ee7cf0532ff}{callback\+Scan\+Cnt}} = 0
+\item 
+float \mbox{\hyperlink{sick__scan__test_8cpp_a13daba9b739be28e2e940f9811804d14}{E\+R\+R\+\_\+\+C\+O\+N\+ST}} = -\/1E3
+\item 
+float \mbox{\hyperlink{sick__scan__test_8cpp_a02b0d6b1664819825fcbb9ec865a3c92}{scan\+\_\+angle\+\_\+min}} = -\/1E3
+\item 
+float \mbox{\hyperlink{sick__scan__test_8cpp_a241a424007ff00b76181851e2acc71a1}{scan\+\_\+angle\+\_\+max}} = -\/1E3
+\item 
+float \mbox{\hyperlink{sick__scan__test_8cpp_a60fc43c93a81191e6442d9fd78803cda}{scan\+\_\+time\+\_\+increment}} = -\/1E3
+\item 
+float \mbox{\hyperlink{sick__scan__test_8cpp_ac7a3d0555e531b88fe23f97987aca067}{scan\+\_\+angle\+\_\+increment}} = -\/1E3
+\item 
+float \mbox{\hyperlink{sick__scan__test_8cpp_a1b6803d411aa54d6ef3f0eeaf3231c25}{range\+\_\+min}} = -\/1E3
+\item 
+float \mbox{\hyperlink{sick__scan__test_8cpp_a3522208885f830fc4d5372dd638c58eb}{range\+\_\+max}} = -\/1E3
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sick__scan__test_8cpp_a61755c78b3504ca4e133f7e0d4621541}\label{sick__scan__test_8cpp_a61755c78b3504ca4e133f7e0d4621541}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!cloud\_callback@{cloud\_callback}}
+\index{cloud\_callback@{cloud\_callback}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{cloud\_callback()}{cloud\_callback()}}
+{\footnotesize\ttfamily void cloud\+\_\+callback (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Point\+Cloud2\+Const\+Ptr \&}]{cloud\+\_\+msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a728669b62a812e29eef33fc7db4908da}\label{sick__scan__test_8cpp_a728669b62a812e29eef33fc7db4908da}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!createPrefixFromExeName@{createPrefixFromExeName}}
+\index{createPrefixFromExeName@{createPrefixFromExeName}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{createPrefixFromExeName()}{createPrefixFromExeName()}}
+{\footnotesize\ttfamily void create\+Prefix\+From\+Exe\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{exe\+Name,  }\item[{std\+::string \&}]{prefix }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_ad1b414f49bfc6ee22f3584898b8dccb6}\label{sick__scan__test_8cpp_ad1b414f49bfc6ee22f3584898b8dccb6}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!createTestLaunchFile@{createTestLaunchFile}}
+\index{createTestLaunchFile@{createTestLaunchFile}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{createTestLaunchFile()}{createTestLaunchFile()}}
+{\footnotesize\ttfamily int create\+Test\+Launch\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{launch\+File\+Full\+Name,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classparamEntryAscii}{param\+Entry\+Ascii}} $>$}]{entry\+List,  }\item[{std\+::string \&}]{test\+Launch\+File }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a525578394895748b732eaa87051eed87}\label{sick__scan__test_8cpp_a525578394895748b732eaa87051eed87}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!getPackageRootFolder@{getPackageRootFolder}}
+\index{getPackageRootFolder@{getPackageRootFolder}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{getPackageRootFolder()}{getPackageRootFolder()}}
+{\footnotesize\ttfamily bool get\+Package\+Root\+Folder (\begin{DoxyParamCaption}\item[{std\+::string}]{exe\+Path,  }\item[{std\+::string \&}]{package\+Root\+Folder }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_acf2e64f25850ba1236bdbd65d1e4d174}\label{sick__scan__test_8cpp_acf2e64f25850ba1236bdbd65d1e4d174}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!getParamList@{getParamList}}
+\index{getParamList@{getParamList}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{getParamList()}{getParamList()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classparamEntryAscii}{param\+Entry\+Ascii}}$>$ get\+Param\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$}]{param\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_afd8f3f5e33f53a99c70e7a0417e9aa77}\label{sick__scan__test_8cpp_afd8f3f5e33f53a99c70e7a0417e9aa77}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!launchRosFile@{launchRosFile}}
+\index{launchRosFile@{launchRosFile}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{launchRosFile()}{launchRosFile()}}
+{\footnotesize\ttfamily pid\+\_\+t launch\+Ros\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{cmd\+Line }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{sick__scan__test_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!main@{main}}
+\index{main@{main}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Startup routine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of Arguments \\
+\hline
+{\em argv} & Argument variable \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+exit-\/code 
+\end{DoxyReturn}
+\mbox{\Hypertarget{sick__scan__test_8cpp_a91e57d089c90878e44ea4a837f4ecb9a}\label{sick__scan__test_8cpp_a91e57d089c90878e44ea4a837f4ecb9a}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!processLaserScan@{processLaserScan}}
+\index{processLaserScan@{processLaserScan}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{processLaserScan()}{processLaserScan()}}
+{\footnotesize\ttfamily void process\+Laser\+Scan (\begin{DoxyParamCaption}\item[{const sensor\+\_\+msgs\+::\+Laser\+Scan\+::\+Const\+Ptr \&}]{scan }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a64aa3a02857e7064be5056a6dae8abe6}\label{sick__scan__test_8cpp_a64aa3a02857e7064be5056a6dae8abe6}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!replaceParamList@{replaceParamList}}
+\index{replaceParamList@{replaceParamList}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{replaceParamList()}{replaceParamList()}}
+{\footnotesize\ttfamily void replace\+Param\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$}]{node,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classparamEntryAscii}{param\+Entry\+Ascii}} $>$}]{param\+Org\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a70834aabb2b1f73b802f8012fcfe2fa2}\label{sick__scan__test_8cpp_a70834aabb2b1f73b802f8012fcfe2fa2}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!searchForXmlFileInPathList@{searchForXmlFileInPathList}}
+\index{searchForXmlFileInPathList@{searchForXmlFileInPathList}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{searchForXmlFileInPathList()}{searchForXmlFileInPathList()}}
+{\footnotesize\ttfamily void search\+For\+Xml\+File\+In\+Path\+List (\begin{DoxyParamCaption}\item[{std\+::string}]{path\+List,  }\item[{std\+::string \&}]{package\+Path,  }\item[{std\+::string}]{xml\+File\+Name }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_ae7cc8679d51416bf7c107ca787c0e562}\label{sick__scan__test_8cpp_ae7cc8679d51416bf7c107ca787c0e562}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!startCallbackTest@{startCallbackTest}}
+\index{startCallbackTest@{startCallbackTest}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{startCallbackTest()}{startCallbackTest()}}
+{\footnotesize\ttfamily int start\+Callback\+Test (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a0feee49481c8ef62d0941c0768f46fc3}\label{sick__scan__test_8cpp_a0feee49481c8ef62d0941c0768f46fc3}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!sudokill@{sudokill}}
+\index{sudokill@{sudokill}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{sudokill()}{sudokill()}}
+{\footnotesize\ttfamily void sudokill (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{tokill }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{sick__scan__test_8cpp_a4c6d24a2d1020f2267287d55312fa611}\label{sick__scan__test_8cpp_a4c6d24a2d1020f2267287d55312fa611}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!callbackCnt@{callbackCnt}}
+\index{callbackCnt@{callbackCnt}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{callbackCnt}{callbackCnt}}
+{\footnotesize\ttfamily int callback\+Cnt = 0}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_ac0267bf236c5d409e1834ee7cf0532ff}\label{sick__scan__test_8cpp_ac0267bf236c5d409e1834ee7cf0532ff}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!callbackScanCnt@{callbackScanCnt}}
+\index{callbackScanCnt@{callbackScanCnt}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{callbackScanCnt}{callbackScanCnt}}
+{\footnotesize\ttfamily int callback\+Scan\+Cnt = 0}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a469387d6b4c962bef19ba9579f0a5300}\label{sick__scan__test_8cpp_a469387d6b4c962bef19ba9579f0a5300}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!cloud\_height@{cloud\_height}}
+\index{cloud\_height@{cloud\_height}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{cloud\_height}{cloud\_height}}
+{\footnotesize\ttfamily int cloud\+\_\+height = 0}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a86c511d4aba0f98fa702cf3738d4dbb0}\label{sick__scan__test_8cpp_a86c511d4aba0f98fa702cf3738d4dbb0}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!cloud\_width@{cloud\_width}}
+\index{cloud\_width@{cloud\_width}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{cloud\_width}{cloud\_width}}
+{\footnotesize\ttfamily int cloud\+\_\+width = 0}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a13daba9b739be28e2e940f9811804d14}\label{sick__scan__test_8cpp_a13daba9b739be28e2e940f9811804d14}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!ERR\_CONST@{ERR\_CONST}}
+\index{ERR\_CONST@{ERR\_CONST}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{ERR\_CONST}{ERR\_CONST}}
+{\footnotesize\ttfamily float E\+R\+R\+\_\+\+C\+O\+N\+ST = -\/1E3}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a6aa2233e32c1f381d2b98abafd7170af}\label{sick__scan__test_8cpp_a6aa2233e32c1f381d2b98abafd7170af}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!intensityStdDev@{intensityStdDev}}
+\index{intensityStdDev@{intensityStdDev}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{intensityStdDev}{intensityStdDev}}
+{\footnotesize\ttfamily double intensity\+Std\+Dev = 0.\+0}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_ae0d46a978d5cd6707411f276ad869b9c}\label{sick__scan__test_8cpp_ae0d46a978d5cd6707411f276ad869b9c}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!pid@{pid}}
+\index{pid@{pid}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{pid}{pid}}
+{\footnotesize\ttfamily pid\+\_\+t pid}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a3522208885f830fc4d5372dd638c58eb}\label{sick__scan__test_8cpp_a3522208885f830fc4d5372dd638c58eb}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!range\_max@{range\_max}}
+\index{range\_max@{range\_max}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{range\_max}{range\_max}}
+{\footnotesize\ttfamily float range\+\_\+max = -\/1E3}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a1b6803d411aa54d6ef3f0eeaf3231c25}\label{sick__scan__test_8cpp_a1b6803d411aa54d6ef3f0eeaf3231c25}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!range\_min@{range\_min}}
+\index{range\_min@{range\_min}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{range\_min}{range\_min}}
+{\footnotesize\ttfamily float range\+\_\+min = -\/1E3}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_ad78989a3ec985553e1cc2e51d06a9aa9}\label{sick__scan__test_8cpp_ad78989a3ec985553e1cc2e51d06a9aa9}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!rangeStdDev@{rangeStdDev}}
+\index{rangeStdDev@{rangeStdDev}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{rangeStdDev}{rangeStdDev}}
+{\footnotesize\ttfamily double range\+Std\+Dev = 0.\+0}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_ac7a3d0555e531b88fe23f97987aca067}\label{sick__scan__test_8cpp_ac7a3d0555e531b88fe23f97987aca067}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!scan\_angle\_increment@{scan\_angle\_increment}}
+\index{scan\_angle\_increment@{scan\_angle\_increment}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{scan\_angle\_increment}{scan\_angle\_increment}}
+{\footnotesize\ttfamily float scan\+\_\+angle\+\_\+increment = -\/1E3}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a241a424007ff00b76181851e2acc71a1}\label{sick__scan__test_8cpp_a241a424007ff00b76181851e2acc71a1}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!scan\_angle\_max@{scan\_angle\_max}}
+\index{scan\_angle\_max@{scan\_angle\_max}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{scan\_angle\_max}{scan\_angle\_max}}
+{\footnotesize\ttfamily float scan\+\_\+angle\+\_\+max = -\/1E3}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a02b0d6b1664819825fcbb9ec865a3c92}\label{sick__scan__test_8cpp_a02b0d6b1664819825fcbb9ec865a3c92}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!scan\_angle\_min@{scan\_angle\_min}}
+\index{scan\_angle\_min@{scan\_angle\_min}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{scan\_angle\_min}{scan\_angle\_min}}
+{\footnotesize\ttfamily float scan\+\_\+angle\+\_\+min = -\/1E3}
+
+\mbox{\Hypertarget{sick__scan__test_8cpp_a60fc43c93a81191e6442d9fd78803cda}\label{sick__scan__test_8cpp_a60fc43c93a81191e6442d9fd78803cda}} 
+\index{sick\_scan\_test.cpp@{sick\_scan\_test.cpp}!scan\_time\_increment@{scan\_time\_increment}}
+\index{scan\_time\_increment@{scan\_time\_increment}!sick\_scan\_test.cpp@{sick\_scan\_test.cpp}}
+\doxysubsubsection{\texorpdfstring{scan\_time\_increment}{scan\_time\_increment}}
+{\footnotesize\ttfamily float scan\+\_\+time\+\_\+increment = -\/1E3}
+

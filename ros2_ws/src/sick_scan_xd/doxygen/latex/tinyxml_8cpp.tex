@@ -1,0 +1,46 @@
+\hypertarget{tinyxml_8cpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/tinyxml.cpp File Reference}
+\label{tinyxml_8cpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/tinyxml/tinyxml.cpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/tinyxml/tinyxml.cpp}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+T\+I\+N\+Y\+X\+M\+L\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+A\+T\+TR F\+I\+LE $\ast$ \mbox{\hyperlink{tinyxml_8cpp_aae316d26cdf72c45de918553b2c61e20}{Ti\+Xml\+F\+Open}} (const char $\ast$filename, const char $\ast$mode)
+\item 
+std\+::istream \& \mbox{\hyperlink{tinyxml_8cpp_ab57bd426563c926844f65a78412e18b9}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} \&base)
+\item 
+std\+::ostream \& \mbox{\hyperlink{tinyxml_8cpp_a86cd49cfb17a844c0010b3136ac966c7}{operator$<$$<$}} (std\+::ostream \&out, const \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} \&base)
+\item 
+std\+::string \& \mbox{\hyperlink{tinyxml_8cpp_a52ef17e7080df2490cf87bde380685ab}{operator$<$$<$}} (std\+::string \&out, const \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} \&base)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tinyxml_8cpp_a86cd49cfb17a844c0010b3136ac966c7}\label{tinyxml_8cpp_a86cd49cfb17a844c0010b3136ac966c7}} 
+\index{tinyxml.cpp@{tinyxml.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tinyxml.cpp@{tinyxml.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{const \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} \&}]{base }\end{DoxyParamCaption})}
+
+An output stream operator, for every class. Note that this outputs without any newlines or formatting, as opposed to Print(), which includes tabs and new lines.
+
+The operator$<$$<$ and operator$>$$>$ are not completely symmetric. Writing a node to a stream is very well defined. You\textquotesingle{}ll get a nice stream of output, without any extra whitespace or newlines.
+
+But reading is not as well defined. (As it always is.) If you create a \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}} (for example) and read that from an input stream, the text needs to define an element or junk will result. This is true of all input streams, but it\textquotesingle{}s worth keeping in mind.
+
+A \mbox{\hyperlink{classTiXmlDocument}{Ti\+Xml\+Document}} will read nodes until it reads a root element, and all the children of that root element. \mbox{\Hypertarget{tinyxml_8cpp_a52ef17e7080df2490cf87bde380685ab}\label{tinyxml_8cpp_a52ef17e7080df2490cf87bde380685ab}} 
+\index{tinyxml.cpp@{tinyxml.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!tinyxml.cpp@{tinyxml.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::string \&}]{out,  }\item[{const \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} \&}]{base }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tinyxml_8cpp_ab57bd426563c926844f65a78412e18b9}\label{tinyxml_8cpp_ab57bd426563c926844f65a78412e18b9}} 
+\index{tinyxml.cpp@{tinyxml.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!tinyxml.cpp@{tinyxml.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} \&}]{base }\end{DoxyParamCaption})}
+
+An input stream operator, for every class. Tolerant of newlines and formatting, but doesn\textquotesingle{}t expect them. \mbox{\Hypertarget{tinyxml_8cpp_aae316d26cdf72c45de918553b2c61e20}\label{tinyxml_8cpp_aae316d26cdf72c45de918553b2c61e20}} 
+\index{tinyxml.cpp@{tinyxml.cpp}!TiXmlFOpen@{TiXmlFOpen}}
+\index{TiXmlFOpen@{TiXmlFOpen}!tinyxml.cpp@{tinyxml.cpp}}
+\doxysubsubsection{\texorpdfstring{TiXmlFOpen()}{TiXmlFOpen()}}
+{\footnotesize\ttfamily F\+I\+LE $\ast$ Ti\+Xml\+F\+Open (\begin{DoxyParamCaption}\item[{const char $\ast$}]{filename,  }\item[{const char $\ast$}]{mode }\end{DoxyParamCaption})}
+

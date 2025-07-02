@@ -1,0 +1,128 @@
+\hypertarget{namespacemultiscan__sopas__test__server}{}\doxysection{multiscan\+\_\+sopas\+\_\+test\+\_\+server Namespace Reference}
+\label{namespacemultiscan__sopas__test__server}\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classmultiscan__sopas__test__server_1_1ColaResponseMap}{Cola\+Response\+Map}}
+\item 
+class \mbox{\hyperlink{classmultiscan__sopas__test__server_1_1SopasTestServer}{Sopas\+Test\+Server}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespacemultiscan__sopas__test__server_a0f4a1099bdcafb4b4e02816da416d84c}{parse\+Binary\+Cola\+Payload\+Length}} (payload)
+\item 
+def \mbox{\hyperlink{namespacemultiscan__sopas__test__server_ae26ac413b23c5363c4ef2280fb9ecc21}{string\+To\+Byte\+Array}} (message)
+\item 
+def \mbox{\hyperlink{namespacemultiscan__sopas__test__server_a3cd558dfc1900d1688e12210ebe8d759}{hex\+String\+To\+Byte\+Array}} (message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{namespacemultiscan__sopas__test__server_a460438388a84f179baed626333cc1f8e}{tcp\+\_\+port}} = 2111
+\item 
+int \mbox{\hyperlink{namespacemultiscan__sopas__test__server_ab951162a54a5a24375f91fc1e512f793}{cola\+\_\+binary}} = 0
+\item 
+int \mbox{\hyperlink{namespacemultiscan__sopas__test__server_a3b30c236c0207aaf76677233eb25813f}{val\+\_\+\+F\+R\+Echo\+Filter}} = 0
+\item 
+\mbox{\hyperlink{namespacemultiscan__sopas__test__server_a3b2197889e63c80d178b9bcfa348bd28}{arg\+\_\+parser}} = argparse.\+Argument\+Parser()
+\item 
+\mbox{\hyperlink{namespacemultiscan__sopas__test__server_a3bcfd19a5d0681460302158d89b1ff01}{help}}
+\item 
+\mbox{\hyperlink{namespacemultiscan__sopas__test__server_ab7fa5677dd422c6b0e16b668510bef93}{default}}
+\item 
+\mbox{\hyperlink{namespacemultiscan__sopas__test__server_a4824f42b898a4b94c23960a2045bed28}{type}}
+\item 
+\mbox{\hyperlink{namespacemultiscan__sopas__test__server_aa18fe128ed82b875f196fda097171cfc}{cli\+\_\+args}} = arg\+\_\+parser.\+parse\+\_\+args()
+\item 
+\mbox{\hyperlink{namespacemultiscan__sopas__test__server_a729d1be65d664592c0b7078809692654}{server}} = \mbox{\hyperlink{classmultiscan__sopas__test__server_1_1SopasTestServer}{Sopas\+Test\+Server}}(\mbox{\hyperlink{namespacemultiscan__sopas__test__server_a460438388a84f179baed626333cc1f8e}{tcp\+\_\+port}}, \mbox{\hyperlink{namespacemultiscan__sopas__test__server_ab951162a54a5a24375f91fc1e512f793}{cola\+\_\+binary}}, \mbox{\hyperlink{namespacemultiscan__sopas__test__server_a3b30c236c0207aaf76677233eb25813f}{val\+\_\+\+F\+R\+Echo\+Filter}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}    A simple sopas test server. A listening tcp socket is opened, incoming connections are accepted and some basic cola telegrams are responded on client requests.
+    Note: This is just a simple test server for basic unittests of sick_scansegment_xd cola commands. It does not emulate any device.
+
+    Usage:
+    python sopas_test_server.py --tcp_port=<int> --cola_binary=<int>
+    
+    Example:
+    python ../test/python/sopas_test_server.py --tcp_port=2111 --cola_binary=0\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_a3cd558dfc1900d1688e12210ebe8d759}\label{namespacemultiscan__sopas__test__server_a3cd558dfc1900d1688e12210ebe8d759}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!hexStringToByteArray@{hexStringToByteArray}}
+\index{hexStringToByteArray@{hexStringToByteArray}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{hexStringToByteArray()}{hexStringToByteArray()}}
+{\footnotesize\ttfamily def multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+hex\+String\+To\+Byte\+Array (\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_a0f4a1099bdcafb4b4e02816da416d84c}\label{namespacemultiscan__sopas__test__server_a0f4a1099bdcafb4b4e02816da416d84c}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!parseBinaryColaPayloadLength@{parseBinaryColaPayloadLength}}
+\index{parseBinaryColaPayloadLength@{parseBinaryColaPayloadLength}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{parseBinaryColaPayloadLength()}{parseBinaryColaPayloadLength()}}
+{\footnotesize\ttfamily def multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+parse\+Binary\+Cola\+Payload\+Length (\begin{DoxyParamCaption}\item[{}]{payload }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_ae26ac413b23c5363c4ef2280fb9ecc21}\label{namespacemultiscan__sopas__test__server_ae26ac413b23c5363c4ef2280fb9ecc21}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!stringToByteArray@{stringToByteArray}}
+\index{stringToByteArray@{stringToByteArray}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{stringToByteArray()}{stringToByteArray()}}
+{\footnotesize\ttfamily def multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+string\+To\+Byte\+Array (\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_a3b2197889e63c80d178b9bcfa348bd28}\label{namespacemultiscan__sopas__test__server_a3b2197889e63c80d178b9bcfa348bd28}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!arg\_parser@{arg\_parser}}
+\index{arg\_parser@{arg\_parser}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{arg\_parser}{arg\_parser}}
+{\footnotesize\ttfamily multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+arg\+\_\+parser = argparse.\+Argument\+Parser()}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_aa18fe128ed82b875f196fda097171cfc}\label{namespacemultiscan__sopas__test__server_aa18fe128ed82b875f196fda097171cfc}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!cli\_args@{cli\_args}}
+\index{cli\_args@{cli\_args}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{cli\_args}{cli\_args}}
+{\footnotesize\ttfamily multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+cli\+\_\+args = arg\+\_\+parser.\+parse\+\_\+args()}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_ab951162a54a5a24375f91fc1e512f793}\label{namespacemultiscan__sopas__test__server_ab951162a54a5a24375f91fc1e512f793}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!cola\_binary@{cola\_binary}}
+\index{cola\_binary@{cola\_binary}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{cola\_binary}{cola\_binary}}
+{\footnotesize\ttfamily int multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+cola\+\_\+binary = 0}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_ab7fa5677dd422c6b0e16b668510bef93}\label{namespacemultiscan__sopas__test__server_ab7fa5677dd422c6b0e16b668510bef93}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!default@{default}}
+\index{default@{default}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{default}{default}}
+{\footnotesize\ttfamily multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+default}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_a3bcfd19a5d0681460302158d89b1ff01}\label{namespacemultiscan__sopas__test__server_a3bcfd19a5d0681460302158d89b1ff01}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!help@{help}}
+\index{help@{help}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{help}{help}}
+{\footnotesize\ttfamily multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+help}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_a729d1be65d664592c0b7078809692654}\label{namespacemultiscan__sopas__test__server_a729d1be65d664592c0b7078809692654}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!server@{server}}
+\index{server@{server}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{server}{server}}
+{\footnotesize\ttfamily multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+server = \mbox{\hyperlink{classmultiscan__sopas__test__server_1_1SopasTestServer}{Sopas\+Test\+Server}}(\mbox{\hyperlink{namespacemultiscan__sopas__test__server_a460438388a84f179baed626333cc1f8e}{tcp\+\_\+port}}, \mbox{\hyperlink{namespacemultiscan__sopas__test__server_ab951162a54a5a24375f91fc1e512f793}{cola\+\_\+binary}}, \mbox{\hyperlink{namespacemultiscan__sopas__test__server_a3b30c236c0207aaf76677233eb25813f}{val\+\_\+\+F\+R\+Echo\+Filter}})}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_a460438388a84f179baed626333cc1f8e}\label{namespacemultiscan__sopas__test__server_a460438388a84f179baed626333cc1f8e}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!tcp\_port@{tcp\_port}}
+\index{tcp\_port@{tcp\_port}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{tcp\_port}{tcp\_port}}
+{\footnotesize\ttfamily int multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+tcp\+\_\+port = 2111}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_a4824f42b898a4b94c23960a2045bed28}\label{namespacemultiscan__sopas__test__server_a4824f42b898a4b94c23960a2045bed28}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!type@{type}}
+\index{type@{type}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+type}
+
+\mbox{\Hypertarget{namespacemultiscan__sopas__test__server_a3b30c236c0207aaf76677233eb25813f}\label{namespacemultiscan__sopas__test__server_a3b30c236c0207aaf76677233eb25813f}} 
+\index{multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}!val\_FREchoFilter@{val\_FREchoFilter}}
+\index{val\_FREchoFilter@{val\_FREchoFilter}!multiscan\_sopas\_test\_server@{multiscan\_sopas\_test\_server}}
+\doxysubsubsection{\texorpdfstring{val\_FREchoFilter}{val\_FREchoFilter}}
+{\footnotesize\ttfamily multiscan\+\_\+sopas\+\_\+test\+\_\+server.\+val\+\_\+\+F\+R\+Echo\+Filter = 0}
+

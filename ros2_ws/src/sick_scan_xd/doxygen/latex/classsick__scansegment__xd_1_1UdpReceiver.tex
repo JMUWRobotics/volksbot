@@ -1,0 +1,96 @@
+\hypertarget{classsick__scansegment__xd_1_1UdpReceiver}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Udp\+Receiver Class Reference}
+\label{classsick__scansegment__xd_1_1UdpReceiver}\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+
+
+{\ttfamily \#include $<$udp\+\_\+receiver.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_a3414addb0ef246021e8b90b59a842ca8}{Udp\+Receiver}} ()
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_ab9e7ce555545d0352a32f6381075ff88}{$\sim$\+Udp\+Receiver}} ()
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_a7f3409badd3ca25a25bb63e4abda1f89}{Init}} (const std\+::string \&udp\+\_\+sender, int udp\+\_\+port, int udp\+\_\+input\+\_\+fifolength=20, bool verbose=false, bool export\+\_\+udp\+\_\+msg=false, int scandataformat=1, \mbox{\hyperlink{classsick__scansegment__xd_1_1PayloadFifo}{Payload\+Fifo}} $\ast$fifo=0)
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_acf2d6d6ade4d7ac476795881a1254233}{Start}} (void)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_a2389a142b3e1b24228b3880807bbc388}{Stop}} (bool do\+\_\+join=true)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_a0ae42717f6726ee9e7a6fc1cda718bba}{Close}} (void)
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1PayloadFifo}{Payload\+Fifo}} $\ast$ \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_a52c55d30f028cb45c4bcd7d99aa09e5e}{Fifo}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_a1e2387d78d61acfa829da3e6fa786c9a}{To\+Hex\+String}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&payload, size\+\_\+t bytes\+\_\+received)
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1UdpReceiver_a2878556620d6008def43da1524a188da}{To\+Printable\+String}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&payload, size\+\_\+t bytes\+\_\+received)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_a3414addb0ef246021e8b90b59a842ca8}\label{classsick__scansegment__xd_1_1UdpReceiver_a3414addb0ef246021e8b90b59a842ca8}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!UdpReceiver@{UdpReceiver}}
+\index{UdpReceiver@{UdpReceiver}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{UdpReceiver()}{UdpReceiver()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::\+Udp\+Receiver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_ab9e7ce555545d0352a32f6381075ff88}\label{classsick__scansegment__xd_1_1UdpReceiver_ab9e7ce555545d0352a32f6381075ff88}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!````~UdpReceiver@{$\sim$UdpReceiver}}
+\index{````~UdpReceiver@{$\sim$UdpReceiver}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{$\sim$UdpReceiver()}{~UdpReceiver()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::$\sim$\+Udp\+Receiver (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_a0ae42717f6726ee9e7a6fc1cda718bba}\label{classsick__scansegment__xd_1_1UdpReceiver_a0ae42717f6726ee9e7a6fc1cda718bba}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!Close@{Close}}
+\index{Close@{Close}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{Close()}{Close()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::\+Close (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_a52c55d30f028cb45c4bcd7d99aa09e5e}\label{classsick__scansegment__xd_1_1UdpReceiver_a52c55d30f028cb45c4bcd7d99aa09e5e}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!Fifo@{Fifo}}
+\index{Fifo@{Fifo}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{Fifo()}{Fifo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1PayloadFifo}{Payload\+Fifo}}$\ast$ sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::\+Fifo (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_a7f3409badd3ca25a25bb63e4abda1f89}\label{classsick__scansegment__xd_1_1UdpReceiver_a7f3409badd3ca25a25bb63e4abda1f89}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!Init@{Init}}
+\index{Init@{Init}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::\+Init (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{udp\+\_\+sender,  }\item[{int}]{udp\+\_\+port,  }\item[{int}]{udp\+\_\+input\+\_\+fifolength = {\ttfamily 20},  }\item[{bool}]{verbose = {\ttfamily false},  }\item[{bool}]{export\+\_\+udp\+\_\+msg = {\ttfamily false},  }\item[{int}]{scandataformat = {\ttfamily 1},  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1PayloadFifo}{Payload\+Fifo}} $\ast$}]{fifo = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_acf2d6d6ade4d7ac476795881a1254233}\label{classsick__scansegment__xd_1_1UdpReceiver_acf2d6d6ade4d7ac476795881a1254233}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!Start@{Start}}
+\index{Start@{Start}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::\+Start (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_a2389a142b3e1b24228b3880807bbc388}\label{classsick__scansegment__xd_1_1UdpReceiver_a2389a142b3e1b24228b3880807bbc388}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!Stop@{Stop}}
+\index{Stop@{Stop}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::\+Stop (\begin{DoxyParamCaption}\item[{bool}]{do\+\_\+join = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_a1e2387d78d61acfa829da3e6fa786c9a}\label{classsick__scansegment__xd_1_1UdpReceiver_a1e2387d78d61acfa829da3e6fa786c9a}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!ToHexString@{ToHexString}}
+\index{ToHexString@{ToHexString}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{ToHexString()}{ToHexString()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::\+To\+Hex\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{payload,  }\item[{size\+\_\+t}]{bytes\+\_\+received }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1UdpReceiver_a2878556620d6008def43da1524a188da}\label{classsick__scansegment__xd_1_1UdpReceiver_a2878556620d6008def43da1524a188da}} 
+\index{sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}!ToPrintableString@{ToPrintableString}}
+\index{ToPrintableString@{ToPrintableString}!sick\_scansegment\_xd::UdpReceiver@{sick\_scansegment\_xd::UdpReceiver}}
+\doxysubsubsection{\texorpdfstring{ToPrintableString()}{ToPrintableString()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Udp\+Receiver\+::\+To\+Printable\+String (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{payload,  }\item[{size\+\_\+t}]{bytes\+\_\+received }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{udp__receiver_8h}{udp\+\_\+receiver.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{udp__receiver_8cpp}{udp\+\_\+receiver.\+cpp}}\end{DoxyCompactItemize}

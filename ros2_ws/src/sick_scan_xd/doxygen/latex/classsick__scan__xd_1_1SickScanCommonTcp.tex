@@ -1,0 +1,326 @@
+\hypertarget{classsick__scan__xd_1_1SickScanCommonTcp}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Common\+Tcp Class Reference}
+\label{classsick__scan__xd_1_1SickScanCommonTcp}\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+
+
+{\ttfamily \#include $<$sick\+\_\+scan\+\_\+common\+\_\+tcp.\+h$>$}
+
+
+
+Inheritance diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Common\+Tcp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{classsick__scan__xd_1_1SickScanCommonTcp__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Common\+Tcp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsick__scan__xd_1_1SickScanCommonTcp__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a6e8601d00f1007a1731a6c414d131c02}{Sick\+Scan\+Common\+Tcp}} (const std\+::string \&hostname, const std\+::string \&port, int \&timelimit, \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser}{Sick\+Generic\+Parser}} $\ast$parser, char cola\+\_\+dialect\+\_\+id)
+\item 
+virtual \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a25f4a6db348d838632c8555b9335cfec}{$\sim$\+Sick\+Scan\+Common\+Tcp}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_abf5076e3bf522a9090cbacddbe4c8bf1}{read\+Callback\+Function}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&num\+Of\+Bytes)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_ae96fcb969f458c503e60cf246d492dd7}{set\+Reply\+Mode}} (int \+\_\+mode)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a32bb76eaf51c88cd99f25bb6b44a4bbf}{get\+Reply\+Mode}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a5f776577a5fdcc5775b1e8dca0802b4a}{set\+Emul\+Sensor}} (bool \+\_\+emul\+Flag)
+\begin{DoxyCompactList}\small\item\em Set emulation flag (using emulation instead of \char`\"{}real\char`\"{} scanner -\/ currently implemented for radar. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_ae82c339c5b2d2563e0578ae5d2725417}{get\+Emul\+Sensor}} ()
+\begin{DoxyCompactList}\small\item\em get emulation flag (using emulation instead of \char`\"{}real\char`\"{} scanner -\/ currently implemented for radar \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a17ee5e45e7ec8854e35d55671984fffc}{stop\+Scan\+Data}} (bool force\+\_\+immediate\+\_\+shutdown=false)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a664c7b55299ef36f6eda96bd97761295}{number\+Of\+Datagram\+In\+Input\+Fifo}} ()
+\item 
+\mbox{\hyperlink{classSopasEventMessage}{Sopas\+Event\+Message}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a257a7ce9248085b88be23a60ba51e6b7}{find\+Frame\+In\+Receive\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_aa6525dedd1518d326f0e52be95c8c5d0}{process\+Frame}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} time\+Stamp, \mbox{\hyperlink{classSopasEventMessage}{Sopas\+Event\+Message}} \&frame)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_ab3620e96c37347e5b9c5a28456585e2d}{reinit}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, int delay\+\_\+millisec)
+\item 
+virtual int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a95e17df20a330a7003199137dc27c441}{init\+\_\+device}} ()
+\item 
+virtual int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a1658a4e9b03b411878f4170dbf045588}{close\+\_\+device}} ()
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_ab3f311dfc0186eb49f73794cce798d38}{is\+Connected}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a2fdd2d12a624c0ee64f531dd8208f0c8}{disconnect\+FunctionS}} (void $\ast$obj)
+\item 
+static void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_aa512085890fe448aaa2d6c904b70ce50}{read\+Callback\+FunctionS}} (void $\ast$obj, \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&num\+Of\+Bytes)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classQueue}{Queue}}$<$ \mbox{\hyperlink{classsick__scan__xd_1_1DatagramWithTimeStamp}{Datagram\+With\+Time\+Stamp}} $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a675e3f0649c3654dfc42fa86539c3485}{recv\+Queue}}
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_ab73232c5ed43030427d65ac7304ad183}{m\+\_\+already\+Received\+Bytes}}
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a856fe046d6b8f0d4342eaddf7e333881}{m\+\_\+last\+Packet\+Size}}
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a71e81e0f15b887af4961294da08a3bc4}{m\+\_\+packet\+Buffer}} \mbox{[}480000\mbox{]}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_ad515f7e7a735798d4c024ce809c1ec0b}{disconnect\+Function}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a2b380bf988b1917b25dae914717f58bf}{read\+Callback\+Function\+Old}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&num\+Of\+Bytes)
+\item 
+virtual int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a42bbb755b3a64da9909cd21d72e3b7bc}{send\+S\+O\+P\+A\+S\+Command}} (const char $\ast$request, std\+::vector$<$ unsigned char $>$ $\ast$reply, int cmd\+Len, bool wait\+\_\+for\+\_\+reply=true)
+\begin{DoxyCompactList}\small\item\em Send a S\+O\+P\+AS command to the device and print out the response to the console. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_aa342653aff9b80470b633701a0dfdf3b}{get\+\_\+datagram}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&recv\+Time\+Stamp, unsigned char $\ast$receive\+Buffer, int buffer\+Size, int $\ast$actual\+\_\+length, bool is\+Binary\+Protocol, int $\ast$number\+Of\+Remaining\+Fifo\+Entries, const std\+::vector$<$ std\+::string $>$ \&datagram\+\_\+keywords)
+\begin{DoxyCompactList}\small\item\em Read a datagram from the device. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp_a704df97eb406d14fd031bcf6000c54ba}{read\+With\+Timeout}} (size\+\_\+t timeout\+\_\+ms, char $\ast$buffer, int buffer\+\_\+size, int $\ast$bytes\+\_\+read, const std\+::vector$<$ std\+::string $>$ \&datagram\+\_\+keywords)
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a6e8601d00f1007a1731a6c414d131c02}\label{classsick__scan__xd_1_1SickScanCommonTcp_a6e8601d00f1007a1731a6c414d131c02}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!SickScanCommonTcp@{SickScanCommonTcp}}
+\index{SickScanCommonTcp@{SickScanCommonTcp}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{SickScanCommonTcp()}{SickScanCommonTcp()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::\+Sick\+Scan\+Common\+Tcp (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{hostname,  }\item[{const std\+::string \&}]{port,  }\item[{int \&}]{timelimit,  }\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser}{Sick\+Generic\+Parser}} $\ast$}]{parser,  }\item[{char}]{cola\+\_\+dialect\+\_\+id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a25f4a6db348d838632c8555b9335cfec}\label{classsick__scan__xd_1_1SickScanCommonTcp_a25f4a6db348d838632c8555b9335cfec}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!````~SickScanCommonTcp@{$\sim$SickScanCommonTcp}}
+\index{````~SickScanCommonTcp@{$\sim$SickScanCommonTcp}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickScanCommonTcp()}{~SickScanCommonTcp()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::$\sim$\+Sick\+Scan\+Common\+Tcp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a1658a4e9b03b411878f4170dbf045588}\label{classsick__scan__xd_1_1SickScanCommonTcp_a1658a4e9b03b411878f4170dbf045588}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!close\_device@{close\_device}}
+\index{close\_device@{close\_device}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{close\_device()}{close\_device()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::close\+\_\+device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon_a7dd8c044cd1367ec466dbac9acb247cb}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common}}.
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_ad515f7e7a735798d4c024ce809c1ec0b}\label{classsick__scan__xd_1_1SickScanCommonTcp_ad515f7e7a735798d4c024ce809c1ec0b}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!disconnectFunction@{disconnectFunction}}
+\index{disconnectFunction@{disconnectFunction}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{disconnectFunction()}{disconnectFunction()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::disconnect\+Function (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Read callback. Diese Funktion wird aufgerufen, sobald Daten auf der Schnittstelle hereingekommen sind. \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a2fdd2d12a624c0ee64f531dd8208f0c8}\label{classsick__scan__xd_1_1SickScanCommonTcp_a2fdd2d12a624c0ee64f531dd8208f0c8}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!disconnectFunctionS@{disconnectFunctionS}}
+\index{disconnectFunctionS@{disconnectFunctionS}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{disconnectFunctionS()}{disconnectFunctionS()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::disconnect\+FunctionS (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a257a7ce9248085b88be23a60ba51e6b7}\label{classsick__scan__xd_1_1SickScanCommonTcp_a257a7ce9248085b88be23a60ba51e6b7}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!findFrameInReceiveBuffer@{findFrameInReceiveBuffer}}
+\index{findFrameInReceiveBuffer@{findFrameInReceiveBuffer}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{findFrameInReceiveBuffer()}{findFrameInReceiveBuffer()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSopasEventMessage}{Sopas\+Event\+Message}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::find\+Frame\+In\+Receive\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_aa342653aff9b80470b633701a0dfdf3b}\label{classsick__scan__xd_1_1SickScanCommonTcp_aa342653aff9b80470b633701a0dfdf3b}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!get\_datagram@{get\_datagram}}
+\index{get\_datagram@{get\_datagram}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{get\_datagram()}{get\_datagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::get\+\_\+datagram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \&}]{recv\+Time\+Stamp,  }\item[{unsigned char $\ast$}]{receive\+Buffer,  }\item[{int}]{buffer\+Size,  }\item[{int $\ast$}]{actual\+\_\+length,  }\item[{bool}]{is\+Binary\+Protocol,  }\item[{int $\ast$}]{number\+Of\+Remaining\+Fifo\+Entries,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{datagram\+\_\+keywords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Read a datagram from the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em recv\+Time\+Stamp} & timestamp of received datagram \\
+\hline
+\mbox{\texttt{ in}}  & {\em receive\+Buffer} & data buffer to fill \\
+\hline
+\mbox{\texttt{ in}}  & {\em buffer\+Size} & max data size to write to buffer (result should be 0 terminated) \\
+\hline
+\mbox{\texttt{ out}}  & {\em actual\+\_\+length} & the actual amount of data written \\
+\hline
+\mbox{\texttt{ in}}  & {\em is\+Binary\+Protocol} & true=binary False=A\+S\+C\+II \\
+\hline
+\mbox{\texttt{ in}}  & {\em datagram\+\_\+keywords} & keyword in returned datagram, e.\+g. \{ \char`\"{}\+L\+M\+Dscandata\char`\"{} \} to get scandata telegrams, or \{\} (empty vector) for next received datagram \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon_abba1ebd6f95234a9776c78a9b789fd2a}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common}}.
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_ae82c339c5b2d2563e0578ae5d2725417}\label{classsick__scan__xd_1_1SickScanCommonTcp_ae82c339c5b2d2563e0578ae5d2725417}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!getEmulSensor@{getEmulSensor}}
+\index{getEmulSensor@{getEmulSensor}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{getEmulSensor()}{getEmulSensor()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::get\+Emul\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get emulation flag (using emulation instead of \char`\"{}real\char`\"{} scanner -\/ currently implemented for radar 
+
+
+\begin{DoxyParams}{Parameters}
+{\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a32bb76eaf51c88cd99f25bb6b44a4bbf}\label{classsick__scan__xd_1_1SickScanCommonTcp_a32bb76eaf51c88cd99f25bb6b44a4bbf}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!getReplyMode@{getReplyMode}}
+\index{getReplyMode@{getReplyMode}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{getReplyMode()}{getReplyMode()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::get\+Reply\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a95e17df20a330a7003199137dc27c441}\label{classsick__scan__xd_1_1SickScanCommonTcp_a95e17df20a330a7003199137dc27c441}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!init\_device@{init\_device}}
+\index{init\_device@{init\_device}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{init\_device()}{init\_device()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::init\+\_\+device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon_a34155167308721dca6966d91d2420279}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common}}.
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_ab3f311dfc0186eb49f73794cce798d38}\label{classsick__scan__xd_1_1SickScanCommonTcp_ab3f311dfc0186eb49f73794cce798d38}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a664c7b55299ef36f6eda96bd97761295}\label{classsick__scan__xd_1_1SickScanCommonTcp_a664c7b55299ef36f6eda96bd97761295}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!numberOfDatagramInInputFifo@{numberOfDatagramInInputFifo}}
+\index{numberOfDatagramInInputFifo@{numberOfDatagramInInputFifo}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{numberOfDatagramInInputFifo()}{numberOfDatagramInInputFifo()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::number\+Of\+Datagram\+In\+Input\+Fifo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_aa6525dedd1518d326f0e52be95c8c5d0}\label{classsick__scan__xd_1_1SickScanCommonTcp_aa6525dedd1518d326f0e52be95c8c5d0}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!processFrame@{processFrame}}
+\index{processFrame@{processFrame}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{processFrame()}{processFrame()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::process\+Frame (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}}}]{time\+Stamp,  }\item[{\mbox{\hyperlink{classSopasEventMessage}{Sopas\+Event\+Message}} \&}]{frame }\end{DoxyParamCaption})}
+
+Read callback. Diese Funktion wird aufgerufen, sobald Daten auf der Schnittstelle hereingekommen sind. \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_abf5076e3bf522a9090cbacddbe4c8bf1}\label{classsick__scan__xd_1_1SickScanCommonTcp_abf5076e3bf522a9090cbacddbe4c8bf1}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!readCallbackFunction@{readCallbackFunction}}
+\index{readCallbackFunction@{readCallbackFunction}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{readCallbackFunction()}{readCallbackFunction()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::read\+Callback\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&}]{num\+Of\+Bytes }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a2b380bf988b1917b25dae914717f58bf}\label{classsick__scan__xd_1_1SickScanCommonTcp_a2b380bf988b1917b25dae914717f58bf}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!readCallbackFunctionOld@{readCallbackFunctionOld}}
+\index{readCallbackFunctionOld@{readCallbackFunctionOld}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{readCallbackFunctionOld()}{readCallbackFunctionOld()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::read\+Callback\+Function\+Old (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&}]{num\+Of\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_aa512085890fe448aaa2d6c904b70ce50}\label{classsick__scan__xd_1_1SickScanCommonTcp_aa512085890fe448aaa2d6c904b70ce50}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!readCallbackFunctionS@{readCallbackFunctionS}}
+\index{readCallbackFunctionS@{readCallbackFunctionS}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{readCallbackFunctionS()}{readCallbackFunctionS()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::read\+Callback\+FunctionS (\begin{DoxyParamCaption}\item[{void $\ast$}]{obj,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&}]{num\+Of\+Bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a704df97eb406d14fd031bcf6000c54ba}\label{classsick__scan__xd_1_1SickScanCommonTcp_a704df97eb406d14fd031bcf6000c54ba}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!readWithTimeout@{readWithTimeout}}
+\index{readWithTimeout@{readWithTimeout}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{readWithTimeout()}{readWithTimeout()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::read\+With\+Timeout (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{timeout\+\_\+ms,  }\item[{char $\ast$}]{buffer,  }\item[{int}]{buffer\+\_\+size,  }\item[{int $\ast$}]{bytes\+\_\+read,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{datagram\+\_\+keywords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon_af0be5eb06b8ff2d75b18cf6ad6331bbe}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common}}.
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_ab3620e96c37347e5b9c5a28456585e2d}\label{classsick__scan__xd_1_1SickScanCommonTcp_ab3620e96c37347e5b9c5a28456585e2d}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!reinit@{reinit}}
+\index{reinit@{reinit}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{reinit()}{reinit()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::reinit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{int}]{delay\+\_\+millisec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a42bbb755b3a64da9909cd21d72e3b7bc}\label{classsick__scan__xd_1_1SickScanCommonTcp_a42bbb755b3a64da9909cd21d72e3b7bc}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!sendSOPASCommand@{sendSOPASCommand}}
+\index{sendSOPASCommand@{sendSOPASCommand}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{sendSOPASCommand()}{sendSOPASCommand()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::send\+S\+O\+P\+A\+S\+Command (\begin{DoxyParamCaption}\item[{const char $\ast$}]{request,  }\item[{std\+::vector$<$ unsigned char $>$ $\ast$}]{reply,  }\item[{int}]{cmd\+Len,  }\item[{bool}]{wait\+\_\+for\+\_\+reply = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Send a S\+O\+P\+AS command to the device and print out the response to the console. 
+
+Send a S\+O\+P\+AS command to the device and print out the response to the console. 
+
+Implements \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommon_a1d9cebdf2284184a2827392d64e792d6}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common}}.
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a5f776577a5fdcc5775b1e8dca0802b4a}\label{classsick__scan__xd_1_1SickScanCommonTcp_a5f776577a5fdcc5775b1e8dca0802b4a}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!setEmulSensor@{setEmulSensor}}
+\index{setEmulSensor@{setEmulSensor}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{setEmulSensor()}{setEmulSensor()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::set\+Emul\+Sensor (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+emul\+Flag }\end{DoxyParamCaption})}
+
+
+
+Set emulation flag (using emulation instead of \char`\"{}real\char`\"{} scanner -\/ currently implemented for radar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+emul\+Flag} & Flag to switch emulation on or off \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_ae96fcb969f458c503e60cf246d492dd7}\label{classsick__scan__xd_1_1SickScanCommonTcp_ae96fcb969f458c503e60cf246d492dd7}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!setReplyMode@{setReplyMode}}
+\index{setReplyMode@{setReplyMode}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{setReplyMode()}{setReplyMode()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::set\+Reply\+Mode (\begin{DoxyParamCaption}\item[{int}]{\+\_\+mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a17ee5e45e7ec8854e35d55671984fffc}\label{classsick__scan__xd_1_1SickScanCommonTcp_a17ee5e45e7ec8854e35d55671984fffc}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!stopScanData@{stopScanData}}
+\index{stopScanData@{stopScanData}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{stopScanData()}{stopScanData()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::stop\+Scan\+Data (\begin{DoxyParamCaption}\item[{bool}]{force\+\_\+immediate\+\_\+shutdown = {\ttfamily false} }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_ab73232c5ed43030427d65ac7304ad183}\label{classsick__scan__xd_1_1SickScanCommonTcp_ab73232c5ed43030427d65ac7304ad183}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!m\_alreadyReceivedBytes@{m\_alreadyReceivedBytes}}
+\index{m\_alreadyReceivedBytes@{m\_alreadyReceivedBytes}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{m\_alreadyReceivedBytes}{m\_alreadyReceivedBytes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::m\+\_\+already\+Received\+Bytes}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a856fe046d6b8f0d4342eaddf7e333881}\label{classsick__scan__xd_1_1SickScanCommonTcp_a856fe046d6b8f0d4342eaddf7e333881}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!m\_lastPacketSize@{m\_lastPacketSize}}
+\index{m\_lastPacketSize@{m\_lastPacketSize}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{m\_lastPacketSize}{m\_lastPacketSize}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::m\+\_\+last\+Packet\+Size}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a71e81e0f15b887af4961294da08a3bc4}\label{classsick__scan__xd_1_1SickScanCommonTcp_a71e81e0f15b887af4961294da08a3bc4}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!m\_packetBuffer@{m\_packetBuffer}}
+\index{m\_packetBuffer@{m\_packetBuffer}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{m\_packetBuffer}{m\_packetBuffer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::m\+\_\+packet\+Buffer\mbox{[}480000\mbox{]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanCommonTcp_a675e3f0649c3654dfc42fa86539c3485}\label{classsick__scan__xd_1_1SickScanCommonTcp_a675e3f0649c3654dfc42fa86539c3485}} 
+\index{sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}!recvQueue@{recvQueue}}
+\index{recvQueue@{recvQueue}!sick\_scan\_xd::SickScanCommonTcp@{sick\_scan\_xd::SickScanCommonTcp}}
+\doxysubsubsection{\texorpdfstring{recvQueue}{recvQueue}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classQueue}{Queue}}$<$\mbox{\hyperlink{classsick__scan__xd_1_1DatagramWithTimeStamp}{Datagram\+With\+Time\+Stamp}}$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Common\+Tcp\+::recv\+Queue}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__scan__common__tcp_8h}{sick\+\_\+scan\+\_\+common\+\_\+tcp.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__scan__common__tcp_8cpp}{sick\+\_\+scan\+\_\+common\+\_\+tcp.\+cpp}}\end{DoxyCompactItemize}

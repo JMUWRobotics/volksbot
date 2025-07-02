@@ -1,0 +1,725 @@
+\hypertarget{classsick__scan__xd_1_1ScannerBasicParam}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Scanner\+Basic\+Param Class Reference}
+\label{classsick__scan__xd_1_1ScannerBasicParam}\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+parser.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a5d98918b2b82ebeaa915aac5857ee7d9}{set\+Scanner\+Name}} (std\+::string \+\_\+s)
+\begin{DoxyCompactList}\small\item\em Setting name (type) of scanner. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_aaa5f2ae4b0bd9c20b7c1aa3d866c950a}{get\+Scanner\+Name}} (void) const
+\begin{DoxyCompactList}\small\item\em Getting name (type) of scanner. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ac74f3f4e6da82302415aca135f74e606}{is\+One\+Of\+Scanner\+Names}} (const std\+::vector$<$ std\+::string $>$ \&scanner\+\_\+names) const
+\begin{DoxyCompactList}\small\item\em Returns true, if the scanner name (type) is found int a given list of scanner names. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_af242d4188640583f8b5f16aff90ec96e}{set\+Number\+Of\+Layers}} (int \+\_\+layer\+Num)
+\begin{DoxyCompactList}\small\item\em Setting number of scanner layers (depending of scanner type/family) \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a06a518eb3dc40c8bcdb633982745989c}{get\+Number\+Of\+Layers}} (void)
+\begin{DoxyCompactList}\small\item\em Getting number of scanner layers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a68e6136802bc13e9667b558361037eea}{set\+Number\+Of\+Shots}} (int \+\_\+shots)
+\begin{DoxyCompactList}\small\item\em Set number of shots per scan. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ae46331033902046fa2d3f5c28dc75ba7}{get\+Number\+Of\+Shots}} (void)
+\begin{DoxyCompactList}\small\item\em Get number of shots per scan. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ab7a367f2154288756f81098db9a1ab37}{set\+Number\+Of\+Maximum\+Echos}} (int \+\_\+max\+Echos)
+\begin{DoxyCompactList}\small\item\em Set number of maximum echoes for this laser scanner type. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ac13e0f14dc4c0a20ef45160ffbb37126}{get\+Number\+Of\+Maximum\+Echos}} (void)
+\begin{DoxyCompactList}\small\item\em Get number of maximum echoes for this laser scanner type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a3e341b927d699ac5d66be4348c8cea19}{set\+Angular\+Degree\+Resolution}} (double \+\_\+res)
+\begin{DoxyCompactList}\small\item\em Set angular resolution in degrees. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a9021dcb3dd299b128c10676db7b7196a}{set\+Elevation\+Degree\+Resolution}} (double \+\_\+elev\+Res)
+\begin{DoxyCompactList}\small\item\em set angular resolution in V\+E\+R\+T\+I\+C\+AL direction for multilayer scanner \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_adad0ea8b0fb1f5f9ee998f78dc35a4b7}{get\+Elevation\+Degree\+Resolution}} (void)
+\begin{DoxyCompactList}\small\item\em get angular resolution in V\+E\+R\+T\+I\+C\+AL direction for multilayer scanner \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a1b302fe5c279b1980cffc5d26ca6c00c}{get\+Angular\+Degree\+Resolution}} (void)
+\begin{DoxyCompactList}\small\item\em Get angular resolution in degress. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a69dbc1d5e1c94cca2a9e282337c439b4}{get\+Expected\+Frequency}} (void)
+\begin{DoxyCompactList}\small\item\em get expected scan frequency \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a4f647d77638edc966a36a1a522355038}{get\+Device\+Is\+Radar}} (void)
+\begin{DoxyCompactList}\small\item\em flag to mark the device as radar (instead of laser scanner) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesick__scan__xd_ada37f8fa0944ff88043bb609f4142276}{R\+A\+D\+A\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+N\+UM}} \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_afc0d0e5d436ee01a31aa7278d490bcc8}{get\+Device\+Radar\+Type}} (void)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_addefa46a10b8af2c39d72e3e14694d89}{get\+Tracking\+Mode\+Supported}} (void)
+\begin{DoxyCompactList}\small\item\em set/get flag to mark the radar device supports selection of tracking modes. By default, true for all radar devices except R\+M\+S-\/1xxx, otherwise false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a685e9964cbd76f77650e4ccefebbd846}{set\+Tracking\+Mode\+Supported}} (bool \+\_\+tracking\+Mode\+Supported)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ad99b9f4ad0d6f885d80d2ca048118f24}{get\+Use\+Binary\+Protocol}} (void)
+\begin{DoxyCompactList}\small\item\em flag to decide between usage of A\+S\+C\+I\+I-\/sopas or B\+I\+N\+A\+R\+Y-\/sopas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ac2abd87f2a73a230132a646a13051fcd}{set\+Scan\+Mirrored\+And\+Shifted}} (bool \+\_\+scan\+Mirrored\+And\+Shifted)
+\begin{DoxyCompactList}\small\item\em flag to mark mirroring of rotation direction \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a8a0f583efdc9db45bb568f36727b4b4d}{get\+Scan\+Mirrored\+And\+Shifted}} ()
+\begin{DoxyCompactList}\small\item\em flag to mark mirroring of rotation direction \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_aa495accdefba3bb63e7b267994983e61}{set\+Scan\+Angle\+Shift}} (double \+\_\+scan\+Angle\+Shift)
+\item 
+double \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a2c4560eaa879bcb3f90cb04048d4c2d0}{get\+Scan\+Angle\+Shift}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_acbcfb1a5ff276396de29ceae1040d5a4}{set\+Imu\+Enabled}} (bool \+\_\+imu\+Enabled)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a32f472ba618b0e09eeb03d02fe2944f0}{get\+Imu\+Enabled}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a7547133d21697711fc97bd548a6cfff8}{set\+Use\+Binary\+Protocol}} (bool \+\_\+use\+Binary)
+\begin{DoxyCompactList}\small\item\em flag to decide between usage of A\+S\+C\+I\+I-\/sopas or B\+I\+N\+A\+R\+Y-\/sopas \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ad98094fef21df122326f23ae45c9ba75}{set\+Device\+Is\+Radar}} (\mbox{\hyperlink{namespacesick__scan__xd_ada37f8fa0944ff88043bb609f4142276}{R\+A\+D\+A\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+N\+UM}} \+\_\+radar\+\_\+type)
+\begin{DoxyCompactList}\small\item\em flag to mark the device as radar (instead of laser scanner) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a1d0ce5d024259ca2d4ac7a78b834d4ca}{set\+Intensity\+Resolution\+Is16\+Bit}} (bool \+\_\+\+Intensity\+Resolution\+Is16\+Bit)
+\begin{DoxyCompactList}\small\item\em Set the R\+S\+SI Value length. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a4005d1cdc059b9be1fed21986b121f7f}{get\+Intensity\+Resolution\+Is16\+Bit}} (void)
+\begin{DoxyCompactList}\small\item\em Get the R\+S\+SI Value length. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a2a4b26e853b7cf31b85e45310673e7b2}{set\+Expected\+Frequency}} (double \+\_\+freq)
+\begin{DoxyCompactList}\small\item\em set expected scan frequency \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a74e433c74c09ad7d6823ef85e6b9d6fb}{Scanner\+Basic\+Param}} ()
+\begin{DoxyCompactList}\small\item\em Construction of parameter object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a92751bd069cc689566c6c367549882c8}{set\+Use\+Safety\+Pas\+WD}} (bool \+\_\+use\+Safety\+Pas\+WD)
+\begin{DoxyCompactList}\small\item\em flag to mark the device uses the safety scanner password \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a5bc28e7c914abebc2283a96e2a8805de}{get\+Use\+Safety\+Pas\+WD}} ()
+\begin{DoxyCompactList}\small\item\em flag to mark the device uses the safety scanner password \textbackslash{}reutrn Bool true for safety password false for normal password \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a95d749615df26c7999cb559449563055}{set\+Encoder\+Mode}} (int8\+\_\+t \+\_\+\+Encoder\+Mode)
+\begin{DoxyCompactList}\small\item\em Prama for encoder mode. \end{DoxyCompactList}\item 
+int8\+\_\+t \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_aed6ad30ca9ffe21fb1336af168372faa}{get\+Encoder\+Mode}} ()
+\begin{DoxyCompactList}\small\item\em Getter-\/\+Method for encoder mode. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespacesick__scan__xd_a4364726940f25eb2b62d68d874d35bdd}{E\+V\+A\+L\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+U\+P\+P\+O\+RT}} \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a21bf4f80c66834541a7ba889e165928c}{get\+Use\+Eval\+Fields}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a4dcbf50cdfd80eb3f2202d4715bc4437}{set\+Use\+Eval\+Fields}} (\mbox{\hyperlink{namespacesick__scan__xd_a4364726940f25eb2b62d68d874d35bdd}{E\+V\+A\+L\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+U\+P\+P\+O\+RT}} \+\_\+use\+Eval\+Fields)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a2cb81b5a457469a4522ba52b4702578b}{get\+Max\+Eval\+Fields}} (void)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a377a1db1f08454ae49ddd7238bc89eeb}{set\+Max\+Eval\+Fields}} (int \+\_\+max\+Eval\+Fields)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a5f6bcc8b2e619e01e6687d37ed34dbe6}{set\+Rect\+Eval\+Field\+Angle\+Ref\+Point\+Offset\+Rad}} (float \+\_\+rect\+Field\+Angle\+Ref\+Point\+Offset\+Rad)
+\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_abc674f9f96f88f68251d2ae63fedb4eb}{get\+Rect\+Eval\+Field\+Angle\+Ref\+Point\+Offset\+Rad}} (void)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a140cecf0d0293cb309f6b52286290afc}{set\+Use\+Scancfg\+List}} (bool \+\_\+use\+Scancfg\+List)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_afbc0078c0fe94d183a0ad6e5b22d9aa6}{get\+Use\+Scancfg\+List}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a382ebff489045fa273126c3fdda51667}{set\+Use\+Write\+Output\+Ranges}} (bool \+\_\+use\+Write\+Output\+Ranges)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ac9a54e4f557ee84b9967e1682f7468f5}{get\+Use\+Write\+Output\+Ranges}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_adefa613537d00ab243ff950006e56051}{set\+Wait\+For\+Ready}} (bool \+\_\+wait\+For\+Ready)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ac5a3273d0c43741d81f8100cef139d1e}{get\+Wait\+For\+Ready}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ae34cb39d92404a25eb230594d459b541}{set\+F\+R\+Echo\+Filter\+Available}} (bool \+\_\+fr\+Echo\+Filter\+Available)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_afc0f88b35e598143457f6e2a8b4b7e4b}{get\+F\+R\+Echo\+Filter\+Available}} (void)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a434fd1bf796af07334274beded4ad28f}{set\+Scandatacfg\+Azimuth\+Table\+Supported}} (bool \+\_\+scandatacfg\+Azimuth\+Table\+Supported)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a839eb264db84545ae5cb2b0a2f61fcf4}{get\+Scandatacfg\+Azimuth\+Table\+Supported}} (void) const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a74e433c74c09ad7d6823ef85e6b9d6fb}\label{classsick__scan__xd_1_1ScannerBasicParam_a74e433c74c09ad7d6823ef85e6b9d6fb}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!ScannerBasicParam@{ScannerBasicParam}}
+\index{ScannerBasicParam@{ScannerBasicParam}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{ScannerBasicParam()}{ScannerBasicParam()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::\+Scanner\+Basic\+Param (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construction of parameter object. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a1b302fe5c279b1980cffc5d26ca6c00c}\label{classsick__scan__xd_1_1ScannerBasicParam_a1b302fe5c279b1980cffc5d26ca6c00c}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getAngularDegreeResolution@{getAngularDegreeResolution}}
+\index{getAngularDegreeResolution@{getAngularDegreeResolution}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getAngularDegreeResolution()}{getAngularDegreeResolution()}}
+{\footnotesize\ttfamily double sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Angular\+Degree\+Resolution (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get angular resolution in degress. 
+
+\begin{DoxyReturn}{Returns}
+angle resolution in degress (N\+OT rad) between each shot 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a4f647d77638edc966a36a1a522355038}\label{classsick__scan__xd_1_1ScannerBasicParam_a4f647d77638edc966a36a1a522355038}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getDeviceIsRadar@{getDeviceIsRadar}}
+\index{getDeviceIsRadar@{getDeviceIsRadar}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getDeviceIsRadar()}{getDeviceIsRadar()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Device\+Is\+Radar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+flag to mark the device as radar (instead of laser scanner) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+device\+Is\+Radar} & false for laserscanner, true for radar (like rms\+\_\+xxxx) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a4f647d77638edc966a36a1a522355038}{get\+Device\+Is\+Radar}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_afc0d0e5d436ee01a31aa7278d490bcc8}\label{classsick__scan__xd_1_1ScannerBasicParam_afc0d0e5d436ee01a31aa7278d490bcc8}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getDeviceRadarType@{getDeviceRadarType}}
+\index{getDeviceRadarType@{getDeviceRadarType}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getDeviceRadarType()}{getDeviceRadarType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesick__scan__xd_ada37f8fa0944ff88043bb609f4142276}{R\+A\+D\+A\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+N\+UM}} sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Device\+Radar\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_adad0ea8b0fb1f5f9ee998f78dc35a4b7}\label{classsick__scan__xd_1_1ScannerBasicParam_adad0ea8b0fb1f5f9ee998f78dc35a4b7}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getElevationDegreeResolution@{getElevationDegreeResolution}}
+\index{getElevationDegreeResolution@{getElevationDegreeResolution}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getElevationDegreeResolution()}{getElevationDegreeResolution()}}
+{\footnotesize\ttfamily double sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Elevation\+Degree\+Resolution (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+get angular resolution in V\+E\+R\+T\+I\+C\+AL direction for multilayer scanner 
+
+\begin{DoxyReturn}{Returns}
+elevation resolution in degree 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a9021dcb3dd299b128c10676db7b7196a}{set\+Elevation\+Degree\+Resolution}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_aed6ad30ca9ffe21fb1336af168372faa}\label{classsick__scan__xd_1_1ScannerBasicParam_aed6ad30ca9ffe21fb1336af168372faa}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getEncoderMode@{getEncoderMode}}
+\index{getEncoderMode@{getEncoderMode}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getEncoderMode()}{getEncoderMode()}}
+{\footnotesize\ttfamily int8\+\_\+t sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Encoder\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter-\/\+Method for encoder mode. 
+
+/$\ast$! \begin{DoxyReturn}{Returns}
+Encoder\+Mode\+:-\/1 Use for Scanners WO Encoder 00 disabled 01 single increment 02 direction recognition phase 03 direction recognition level 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a95d749615df26c7999cb559449563055}{set\+Encoder\+Mode}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a69dbc1d5e1c94cca2a9e282337c439b4}\label{classsick__scan__xd_1_1ScannerBasicParam_a69dbc1d5e1c94cca2a9e282337c439b4}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getExpectedFrequency@{getExpectedFrequency}}
+\index{getExpectedFrequency@{getExpectedFrequency}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getExpectedFrequency()}{getExpectedFrequency()}}
+{\footnotesize\ttfamily double sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Expected\+Frequency (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+get expected scan frequency 
+
+\begin{DoxyReturn}{Returns}
+expected scan frequency in \mbox{[}Hz\mbox{]} 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a2a4b26e853b7cf31b85e45310673e7b2}{set\+Expected\+Frequency}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_afc0f88b35e598143457f6e2a8b4b7e4b}\label{classsick__scan__xd_1_1ScannerBasicParam_afc0f88b35e598143457f6e2a8b4b7e4b}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getFREchoFilterAvailable@{getFREchoFilterAvailable}}
+\index{getFREchoFilterAvailable@{getFREchoFilterAvailable}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getFREchoFilterAvailable()}{getFREchoFilterAvailable()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+F\+R\+Echo\+Filter\+Available (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a32f472ba618b0e09eeb03d02fe2944f0}\label{classsick__scan__xd_1_1ScannerBasicParam_a32f472ba618b0e09eeb03d02fe2944f0}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getImuEnabled@{getImuEnabled}}
+\index{getImuEnabled@{getImuEnabled}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getImuEnabled()}{getImuEnabled()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Imu\+Enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a4005d1cdc059b9be1fed21986b121f7f}\label{classsick__scan__xd_1_1ScannerBasicParam_a4005d1cdc059b9be1fed21986b121f7f}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getIntensityResolutionIs16Bit@{getIntensityResolutionIs16Bit}}
+\index{getIntensityResolutionIs16Bit@{getIntensityResolutionIs16Bit}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getIntensityResolutionIs16Bit()}{getIntensityResolutionIs16Bit()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Intensity\+Resolution\+Is16\+Bit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the R\+S\+SI Value length. 
+
+\begin{DoxyReturn}{Returns}
+Boolean value\+: True=16 Bit False=8Bit 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a7547133d21697711fc97bd548a6cfff8}{set\+Use\+Binary\+Protocol}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a2cb81b5a457469a4522ba52b4702578b}\label{classsick__scan__xd_1_1ScannerBasicParam_a2cb81b5a457469a4522ba52b4702578b}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getMaxEvalFields@{getMaxEvalFields}}
+\index{getMaxEvalFields@{getMaxEvalFields}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getMaxEvalFields()}{getMaxEvalFields()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Max\+Eval\+Fields (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a06a518eb3dc40c8bcdb633982745989c}\label{classsick__scan__xd_1_1ScannerBasicParam_a06a518eb3dc40c8bcdb633982745989c}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getNumberOfLayers@{getNumberOfLayers}}
+\index{getNumberOfLayers@{getNumberOfLayers}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getNumberOfLayers()}{getNumberOfLayers()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Number\+Of\+Layers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Getting number of scanner layers. 
+
+\begin{DoxyReturn}{Returns}
+Number of scanners layer (e.\+g. 1 for Ti\+M5xx and 24 for M\+R\+S6124) 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_af242d4188640583f8b5f16aff90ec96e}{set\+Number\+Of\+Layers}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ac13e0f14dc4c0a20ef45160ffbb37126}\label{classsick__scan__xd_1_1ScannerBasicParam_ac13e0f14dc4c0a20ef45160ffbb37126}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getNumberOfMaximumEchos@{getNumberOfMaximumEchos}}
+\index{getNumberOfMaximumEchos@{getNumberOfMaximumEchos}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getNumberOfMaximumEchos()}{getNumberOfMaximumEchos()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Number\+Of\+Maximum\+Echos (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get number of maximum echoes for this laser scanner type. 
+
+\begin{DoxyReturn}{Returns}
+Number of max echoes 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ab7a367f2154288756f81098db9a1ab37}{set\+Number\+Of\+Maximum\+Echos}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ae46331033902046fa2d3f5c28dc75ba7}\label{classsick__scan__xd_1_1ScannerBasicParam_ae46331033902046fa2d3f5c28dc75ba7}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getNumberOfShots@{getNumberOfShots}}
+\index{getNumberOfShots@{getNumberOfShots}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getNumberOfShots()}{getNumberOfShots()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Number\+Of\+Shots (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get number of shots per scan. 
+
+\begin{DoxyReturn}{Returns}
+Number of shots per scan (for one layer) 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a06a518eb3dc40c8bcdb633982745989c}{get\+Number\+Of\+Layers}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_abc674f9f96f88f68251d2ae63fedb4eb}\label{classsick__scan__xd_1_1ScannerBasicParam_abc674f9f96f88f68251d2ae63fedb4eb}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getRectEvalFieldAngleRefPointOffsetRad@{getRectEvalFieldAngleRefPointOffsetRad}}
+\index{getRectEvalFieldAngleRefPointOffsetRad@{getRectEvalFieldAngleRefPointOffsetRad}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getRectEvalFieldAngleRefPointOffsetRad()}{getRectEvalFieldAngleRefPointOffsetRad()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Rect\+Eval\+Field\+Angle\+Ref\+Point\+Offset\+Rad (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a2c4560eaa879bcb3f90cb04048d4c2d0}\label{classsick__scan__xd_1_1ScannerBasicParam_a2c4560eaa879bcb3f90cb04048d4c2d0}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getScanAngleShift@{getScanAngleShift}}
+\index{getScanAngleShift@{getScanAngleShift}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getScanAngleShift()}{getScanAngleShift()}}
+{\footnotesize\ttfamily double sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Scan\+Angle\+Shift (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a839eb264db84545ae5cb2b0a2f61fcf4}\label{classsick__scan__xd_1_1ScannerBasicParam_a839eb264db84545ae5cb2b0a2f61fcf4}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getScandatacfgAzimuthTableSupported@{getScandatacfgAzimuthTableSupported}}
+\index{getScandatacfgAzimuthTableSupported@{getScandatacfgAzimuthTableSupported}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getScandatacfgAzimuthTableSupported()}{getScandatacfgAzimuthTableSupported()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Scandatacfg\+Azimuth\+Table\+Supported (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a8a0f583efdc9db45bb568f36727b4b4d}\label{classsick__scan__xd_1_1ScannerBasicParam_a8a0f583efdc9db45bb568f36727b4b4d}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getScanMirroredAndShifted@{getScanMirroredAndShifted}}
+\index{getScanMirroredAndShifted@{getScanMirroredAndShifted}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getScanMirroredAndShifted()}{getScanMirroredAndShifted()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Scan\+Mirrored\+And\+Shifted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+flag to mark mirroring of rotation direction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+scan\+Mirrored} & false for normal mounting true for up side down or N\+AV 310 \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+get\+Scan\+Mirrored 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_aaa5f2ae4b0bd9c20b7c1aa3d866c950a}\label{classsick__scan__xd_1_1ScannerBasicParam_aaa5f2ae4b0bd9c20b7c1aa3d866c950a}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getScannerName@{getScannerName}}
+\index{getScannerName@{getScannerName}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getScannerName()}{getScannerName()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Scanner\+Name (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Getting name (type) of scanner. 
+
+\begin{DoxyReturn}{Returns}
+Name of scanner 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a5d98918b2b82ebeaa915aac5857ee7d9}{set\+Scanner\+Name}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_addefa46a10b8af2c39d72e3e14694d89}\label{classsick__scan__xd_1_1ScannerBasicParam_addefa46a10b8af2c39d72e3e14694d89}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getTrackingModeSupported@{getTrackingModeSupported}}
+\index{getTrackingModeSupported@{getTrackingModeSupported}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getTrackingModeSupported()}{getTrackingModeSupported()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Tracking\+Mode\+Supported (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+set/get flag to mark the radar device supports selection of tracking modes. By default, true for all radar devices except R\+M\+S-\/1xxx, otherwise false. 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ad99b9f4ad0d6f885d80d2ca048118f24}\label{classsick__scan__xd_1_1ScannerBasicParam_ad99b9f4ad0d6f885d80d2ca048118f24}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getUseBinaryProtocol@{getUseBinaryProtocol}}
+\index{getUseBinaryProtocol@{getUseBinaryProtocol}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getUseBinaryProtocol()}{getUseBinaryProtocol()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Use\+Binary\+Protocol (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+flag to decide between usage of A\+S\+C\+I\+I-\/sopas or B\+I\+N\+A\+R\+Y-\/sopas 
+
+\begin{DoxyReturn}{Returns}
+\+\_\+use\+Binary\+: True for binary, False for A\+S\+C\+II 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ad99b9f4ad0d6f885d80d2ca048118f24}{get\+Use\+Binary\+Protocol}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a21bf4f80c66834541a7ba889e165928c}\label{classsick__scan__xd_1_1ScannerBasicParam_a21bf4f80c66834541a7ba889e165928c}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getUseEvalFields@{getUseEvalFields}}
+\index{getUseEvalFields@{getUseEvalFields}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getUseEvalFields()}{getUseEvalFields()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesick__scan__xd_a4364726940f25eb2b62d68d874d35bdd}{E\+V\+A\+L\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+U\+P\+P\+O\+RT}} sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Use\+Eval\+Fields (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a5bc28e7c914abebc2283a96e2a8805de}\label{classsick__scan__xd_1_1ScannerBasicParam_a5bc28e7c914abebc2283a96e2a8805de}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getUseSafetyPasWD@{getUseSafetyPasWD}}
+\index{getUseSafetyPasWD@{getUseSafetyPasWD}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getUseSafetyPasWD()}{getUseSafetyPasWD()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Use\+Safety\+Pas\+WD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+flag to mark the device uses the safety scanner password \textbackslash{}reutrn Bool true for safety password false for normal password 
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a5bc28e7c914abebc2283a96e2a8805de}{get\+Use\+Safety\+Pas\+WD}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_afbc0078c0fe94d183a0ad6e5b22d9aa6}\label{classsick__scan__xd_1_1ScannerBasicParam_afbc0078c0fe94d183a0ad6e5b22d9aa6}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getUseScancfgList@{getUseScancfgList}}
+\index{getUseScancfgList@{getUseScancfgList}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getUseScancfgList()}{getUseScancfgList()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Use\+Scancfg\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ac9a54e4f557ee84b9967e1682f7468f5}\label{classsick__scan__xd_1_1ScannerBasicParam_ac9a54e4f557ee84b9967e1682f7468f5}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getUseWriteOutputRanges@{getUseWriteOutputRanges}}
+\index{getUseWriteOutputRanges@{getUseWriteOutputRanges}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getUseWriteOutputRanges()}{getUseWriteOutputRanges()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Use\+Write\+Output\+Ranges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ac5a3273d0c43741d81f8100cef139d1e}\label{classsick__scan__xd_1_1ScannerBasicParam_ac5a3273d0c43741d81f8100cef139d1e}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!getWaitForReady@{getWaitForReady}}
+\index{getWaitForReady@{getWaitForReady}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{getWaitForReady()}{getWaitForReady()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::get\+Wait\+For\+Ready (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ac74f3f4e6da82302415aca135f74e606}\label{classsick__scan__xd_1_1ScannerBasicParam_ac74f3f4e6da82302415aca135f74e606}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!isOneOfScannerNames@{isOneOfScannerNames}}
+\index{isOneOfScannerNames@{isOneOfScannerNames}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{isOneOfScannerNames()}{isOneOfScannerNames()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::is\+One\+Of\+Scanner\+Names (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{scanner\+\_\+names }\end{DoxyParamCaption}) const}
+
+
+
+Returns true, if the scanner name (type) is found int a given list of scanner names. 
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a3e341b927d699ac5d66be4348c8cea19}\label{classsick__scan__xd_1_1ScannerBasicParam_a3e341b927d699ac5d66be4348c8cea19}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setAngularDegreeResolution@{setAngularDegreeResolution}}
+\index{setAngularDegreeResolution@{setAngularDegreeResolution}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setAngularDegreeResolution()}{setAngularDegreeResolution()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Angular\+Degree\+Resolution (\begin{DoxyParamCaption}\item[{double}]{\+\_\+res }\end{DoxyParamCaption})}
+
+
+
+Set angular resolution in degrees. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+res} & resolution in degress (N\+OT rad) between each shot \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a1b302fe5c279b1980cffc5d26ca6c00c}{get\+Angular\+Degree\+Resolution}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ad98094fef21df122326f23ae45c9ba75}\label{classsick__scan__xd_1_1ScannerBasicParam_ad98094fef21df122326f23ae45c9ba75}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setDeviceIsRadar@{setDeviceIsRadar}}
+\index{setDeviceIsRadar@{setDeviceIsRadar}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setDeviceIsRadar()}{setDeviceIsRadar()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Device\+Is\+Radar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesick__scan__xd_ada37f8fa0944ff88043bb609f4142276}{R\+A\+D\+A\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+N\+UM}}}]{\+\_\+radar\+\_\+type }\end{DoxyParamCaption})}
+
+
+
+flag to mark the device as radar (instead of laser scanner) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+device\+Is\+Radar} & false for laserscanner, true for radar (like rms\+\_\+xxxx) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a4f647d77638edc966a36a1a522355038}{get\+Device\+Is\+Radar}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a9021dcb3dd299b128c10676db7b7196a}\label{classsick__scan__xd_1_1ScannerBasicParam_a9021dcb3dd299b128c10676db7b7196a}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setElevationDegreeResolution@{setElevationDegreeResolution}}
+\index{setElevationDegreeResolution@{setElevationDegreeResolution}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setElevationDegreeResolution()}{setElevationDegreeResolution()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Elevation\+Degree\+Resolution (\begin{DoxyParamCaption}\item[{double}]{\+\_\+elev\+Res }\end{DoxyParamCaption})}
+
+
+
+set angular resolution in V\+E\+R\+T\+I\+C\+AL direction for multilayer scanner 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+elev\+Res} & resolution in degree \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_adad0ea8b0fb1f5f9ee998f78dc35a4b7}{get\+Elevation\+Degree\+Resolution}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a95d749615df26c7999cb559449563055}\label{classsick__scan__xd_1_1ScannerBasicParam_a95d749615df26c7999cb559449563055}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setEncoderMode@{setEncoderMode}}
+\index{setEncoderMode@{setEncoderMode}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setEncoderMode()}{setEncoderMode()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Encoder\+Mode (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{\+\_\+encoder\+Mode }\end{DoxyParamCaption})}
+
+
+
+Prama for encoder mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Encoder\+Mode} & -\/1 Use for Scanners WO Encoder 00 disabled 01 single increment 02 direction recognition phase 03 direction recognition level \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a95d749615df26c7999cb559449563055}{set\+Encoder\+Mode}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a2a4b26e853b7cf31b85e45310673e7b2}\label{classsick__scan__xd_1_1ScannerBasicParam_a2a4b26e853b7cf31b85e45310673e7b2}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setExpectedFrequency@{setExpectedFrequency}}
+\index{setExpectedFrequency@{setExpectedFrequency}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setExpectedFrequency()}{setExpectedFrequency()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Expected\+Frequency (\begin{DoxyParamCaption}\item[{double}]{\+\_\+freq }\end{DoxyParamCaption})}
+
+
+
+set expected scan frequency 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+freq} & scan frequency in \mbox{[}Hz\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a69dbc1d5e1c94cca2a9e282337c439b4}{get\+Expected\+Frequency}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ae34cb39d92404a25eb230594d459b541}\label{classsick__scan__xd_1_1ScannerBasicParam_ae34cb39d92404a25eb230594d459b541}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setFREchoFilterAvailable@{setFREchoFilterAvailable}}
+\index{setFREchoFilterAvailable@{setFREchoFilterAvailable}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setFREchoFilterAvailable()}{setFREchoFilterAvailable()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+F\+R\+Echo\+Filter\+Available (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+fr\+Echo\+Filter\+Available }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_acbcfb1a5ff276396de29ceae1040d5a4}\label{classsick__scan__xd_1_1ScannerBasicParam_acbcfb1a5ff276396de29ceae1040d5a4}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setImuEnabled@{setImuEnabled}}
+\index{setImuEnabled@{setImuEnabled}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setImuEnabled()}{setImuEnabled()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Imu\+Enabled (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+imu\+Enabled }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a1d0ce5d024259ca2d4ac7a78b834d4ca}\label{classsick__scan__xd_1_1ScannerBasicParam_a1d0ce5d024259ca2d4ac7a78b834d4ca}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setIntensityResolutionIs16Bit@{setIntensityResolutionIs16Bit}}
+\index{setIntensityResolutionIs16Bit@{setIntensityResolutionIs16Bit}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setIntensityResolutionIs16Bit()}{setIntensityResolutionIs16Bit()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Intensity\+Resolution\+Is16\+Bit (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+\+Intensity\+Resolution\+Is16\+Bit }\end{DoxyParamCaption})}
+
+
+
+Set the R\+S\+SI Value length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+use\+Binary} & Boolean value\+: True=16 Bit False=8Bit \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ad99b9f4ad0d6f885d80d2ca048118f24}{get\+Use\+Binary\+Protocol}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a377a1db1f08454ae49ddd7238bc89eeb}\label{classsick__scan__xd_1_1ScannerBasicParam_a377a1db1f08454ae49ddd7238bc89eeb}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setMaxEvalFields@{setMaxEvalFields}}
+\index{setMaxEvalFields@{setMaxEvalFields}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setMaxEvalFields()}{setMaxEvalFields()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Max\+Eval\+Fields (\begin{DoxyParamCaption}\item[{int}]{\+\_\+max\+Eval\+Fields }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_af242d4188640583f8b5f16aff90ec96e}\label{classsick__scan__xd_1_1ScannerBasicParam_af242d4188640583f8b5f16aff90ec96e}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setNumberOfLayers@{setNumberOfLayers}}
+\index{setNumberOfLayers@{setNumberOfLayers}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setNumberOfLayers()}{setNumberOfLayers()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Number\+Of\+Layers (\begin{DoxyParamCaption}\item[{int}]{\+\_\+layer\+Num }\end{DoxyParamCaption})}
+
+
+
+Setting number of scanner layers (depending of scanner type/family) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+layer\+Num} & of scanner layers (e.\+g. 1 for Ti\+M5xx and 24 for M\+R\+S6124 \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a06a518eb3dc40c8bcdb633982745989c}{get\+Number\+Of\+Layers}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ab7a367f2154288756f81098db9a1ab37}\label{classsick__scan__xd_1_1ScannerBasicParam_ab7a367f2154288756f81098db9a1ab37}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setNumberOfMaximumEchos@{setNumberOfMaximumEchos}}
+\index{setNumberOfMaximumEchos@{setNumberOfMaximumEchos}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setNumberOfMaximumEchos()}{setNumberOfMaximumEchos()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Number\+Of\+Maximum\+Echos (\begin{DoxyParamCaption}\item[{int}]{\+\_\+max\+Echos }\end{DoxyParamCaption})}
+
+
+
+Set number of maximum echoes for this laser scanner type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+max\+Echos} & of max echoes \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ac13e0f14dc4c0a20ef45160ffbb37126}{get\+Number\+Of\+Maximum\+Echos}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a68e6136802bc13e9667b558361037eea}\label{classsick__scan__xd_1_1ScannerBasicParam_a68e6136802bc13e9667b558361037eea}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setNumberOfShots@{setNumberOfShots}}
+\index{setNumberOfShots@{setNumberOfShots}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setNumberOfShots()}{setNumberOfShots()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Number\+Of\+Shots (\begin{DoxyParamCaption}\item[{int}]{\+\_\+shots }\end{DoxyParamCaption})}
+
+
+
+Set number of shots per scan. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+shots} & of shots per scan (for one layer) \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a06a518eb3dc40c8bcdb633982745989c}{get\+Number\+Of\+Layers}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a5f6bcc8b2e619e01e6687d37ed34dbe6}\label{classsick__scan__xd_1_1ScannerBasicParam_a5f6bcc8b2e619e01e6687d37ed34dbe6}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setRectEvalFieldAngleRefPointOffsetRad@{setRectEvalFieldAngleRefPointOffsetRad}}
+\index{setRectEvalFieldAngleRefPointOffsetRad@{setRectEvalFieldAngleRefPointOffsetRad}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setRectEvalFieldAngleRefPointOffsetRad()}{setRectEvalFieldAngleRefPointOffsetRad()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Rect\+Eval\+Field\+Angle\+Ref\+Point\+Offset\+Rad (\begin{DoxyParamCaption}\item[{float}]{\+\_\+rect\+Field\+Angle\+Ref\+Point\+Offset\+Rad }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_aa495accdefba3bb63e7b267994983e61}\label{classsick__scan__xd_1_1ScannerBasicParam_aa495accdefba3bb63e7b267994983e61}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setScanAngleShift@{setScanAngleShift}}
+\index{setScanAngleShift@{setScanAngleShift}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setScanAngleShift()}{setScanAngleShift()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Scan\+Angle\+Shift (\begin{DoxyParamCaption}\item[{double}]{\+\_\+scan\+Angle\+Shift }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a434fd1bf796af07334274beded4ad28f}\label{classsick__scan__xd_1_1ScannerBasicParam_a434fd1bf796af07334274beded4ad28f}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setScandatacfgAzimuthTableSupported@{setScandatacfgAzimuthTableSupported}}
+\index{setScandatacfgAzimuthTableSupported@{setScandatacfgAzimuthTableSupported}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setScandatacfgAzimuthTableSupported()}{setScandatacfgAzimuthTableSupported()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Scandatacfg\+Azimuth\+Table\+Supported (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+scandatacfg\+Azimuth\+Table\+Supported }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_ac2abd87f2a73a230132a646a13051fcd}\label{classsick__scan__xd_1_1ScannerBasicParam_ac2abd87f2a73a230132a646a13051fcd}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setScanMirroredAndShifted@{setScanMirroredAndShifted}}
+\index{setScanMirroredAndShifted@{setScanMirroredAndShifted}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setScanMirroredAndShifted()}{setScanMirroredAndShifted()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Scan\+Mirrored\+And\+Shifted (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+scann\+Mirrored\+And\+Shifted }\end{DoxyParamCaption})}
+
+
+
+flag to mark mirroring of rotation direction 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+scan\+Mirrored} & false for normal mounting true for up side down or N\+AV 310 \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+set\+Scan\+Mirrored 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a5d98918b2b82ebeaa915aac5857ee7d9}\label{classsick__scan__xd_1_1ScannerBasicParam_a5d98918b2b82ebeaa915aac5857ee7d9}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setScannerName@{setScannerName}}
+\index{setScannerName@{setScannerName}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setScannerName()}{setScannerName()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Scanner\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+s }\end{DoxyParamCaption})}
+
+
+
+Setting name (type) of scanner. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+s} & name of scanner \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_aaa5f2ae4b0bd9c20b7c1aa3d866c950a}{get\+Scanner\+Name}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a685e9964cbd76f77650e4ccefebbd846}\label{classsick__scan__xd_1_1ScannerBasicParam_a685e9964cbd76f77650e4ccefebbd846}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setTrackingModeSupported@{setTrackingModeSupported}}
+\index{setTrackingModeSupported@{setTrackingModeSupported}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setTrackingModeSupported()}{setTrackingModeSupported()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Tracking\+Mode\+Supported (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+tracking\+Mode\+Supported }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a7547133d21697711fc97bd548a6cfff8}\label{classsick__scan__xd_1_1ScannerBasicParam_a7547133d21697711fc97bd548a6cfff8}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setUseBinaryProtocol@{setUseBinaryProtocol}}
+\index{setUseBinaryProtocol@{setUseBinaryProtocol}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setUseBinaryProtocol()}{setUseBinaryProtocol()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Use\+Binary\+Protocol (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+use\+Binary }\end{DoxyParamCaption})}
+
+
+
+flag to decide between usage of A\+S\+C\+I\+I-\/sopas or B\+I\+N\+A\+R\+Y-\/sopas 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+use\+Binary} & True for binary, False for A\+S\+C\+II \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_ad99b9f4ad0d6f885d80d2ca048118f24}{get\+Use\+Binary\+Protocol}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a4dcbf50cdfd80eb3f2202d4715bc4437}\label{classsick__scan__xd_1_1ScannerBasicParam_a4dcbf50cdfd80eb3f2202d4715bc4437}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setUseEvalFields@{setUseEvalFields}}
+\index{setUseEvalFields@{setUseEvalFields}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setUseEvalFields()}{setUseEvalFields()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Use\+Eval\+Fields (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacesick__scan__xd_a4364726940f25eb2b62d68d874d35bdd}{E\+V\+A\+L\+\_\+\+F\+I\+E\+L\+D\+\_\+\+S\+U\+P\+P\+O\+RT}}}]{\+\_\+use\+Eval\+Fields }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a92751bd069cc689566c6c367549882c8}\label{classsick__scan__xd_1_1ScannerBasicParam_a92751bd069cc689566c6c367549882c8}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setUseSafetyPasWD@{setUseSafetyPasWD}}
+\index{setUseSafetyPasWD@{setUseSafetyPasWD}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setUseSafetyPasWD()}{setUseSafetyPasWD()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Use\+Safety\+Pas\+WD (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+use\+Safety\+Pas\+WD }\end{DoxyParamCaption})}
+
+
+
+flag to mark the device uses the safety scanner password 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+use\+Safety\+Pas\+WD} & false for normal scanners true for safety scanners \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classsick__scan__xd_1_1ScannerBasicParam_a92751bd069cc689566c6c367549882c8}{set\+Use\+Safety\+Pas\+WD}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a140cecf0d0293cb309f6b52286290afc}\label{classsick__scan__xd_1_1ScannerBasicParam_a140cecf0d0293cb309f6b52286290afc}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setUseScancfgList@{setUseScancfgList}}
+\index{setUseScancfgList@{setUseScancfgList}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setUseScancfgList()}{setUseScancfgList()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Use\+Scancfg\+List (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+use\+Scancfg\+List }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_a382ebff489045fa273126c3fdda51667}\label{classsick__scan__xd_1_1ScannerBasicParam_a382ebff489045fa273126c3fdda51667}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setUseWriteOutputRanges@{setUseWriteOutputRanges}}
+\index{setUseWriteOutputRanges@{setUseWriteOutputRanges}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setUseWriteOutputRanges()}{setUseWriteOutputRanges()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Use\+Write\+Output\+Ranges (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+use\+Write\+Output\+Ranges }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1ScannerBasicParam_adefa613537d00ab243ff950006e56051}\label{classsick__scan__xd_1_1ScannerBasicParam_adefa613537d00ab243ff950006e56051}} 
+\index{sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}!setWaitForReady@{setWaitForReady}}
+\index{setWaitForReady@{setWaitForReady}!sick\_scan\_xd::ScannerBasicParam@{sick\_scan\_xd::ScannerBasicParam}}
+\doxysubsubsection{\texorpdfstring{setWaitForReady()}{setWaitForReady()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Scanner\+Basic\+Param\+::set\+Wait\+For\+Ready (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+wait\+For\+Ready }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__parser_8h}{sick\+\_\+generic\+\_\+parser.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__generic__parser_8cpp}{sick\+\_\+generic\+\_\+parser.\+cpp}}\end{DoxyCompactItemize}

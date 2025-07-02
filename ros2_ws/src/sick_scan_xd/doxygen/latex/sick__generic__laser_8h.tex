@@ -1,0 +1,187 @@
+\hypertarget{sick__generic__laser_8h}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/sick\+\_\+generic\+\_\+laser.h File Reference}
+\label{sick__generic__laser_8h}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/sick\_generic\_laser.h@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/sick\_generic\_laser.h}}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}{Node\+Run\+State}} \{ \mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8a2c18088d1e773ae4bde32dfd95f04fd7}{scanner\+\_\+init}}, 
+\mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8a130c7276e3c7e835c1b7ac603edc41e1}{scanner\+\_\+run}}, 
+\mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8ac15d165de7149fc1e50b4c5cd272b389}{scanner\+\_\+finalize}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{sick__generic__laser_8h_a3523539775385956a3b2ff29b0c3c72e}{start\+Generic\+Laser}} (int argc, char $\ast$$\ast$argv, std\+::string node\+Name, \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh\+Priv, int $\ast$exit\+\_\+code)
+\begin{DoxyCompactList}\small\item\em Runs main\+Generic\+Laser non-\/blocking in a new thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sick__generic__laser_8h_af00bc9cc7fa477bcc43ec10b7575c860}{join\+Generic\+Laser}} (void)
+\begin{DoxyCompactList}\small\item\em Waits until all Generic\+Laser jobs finished. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{sick__generic__laser_8h_a48b3cdab3213baea728d3e493f320c5a}{main\+Generic\+Laser}} (int argc, char $\ast$$\ast$argv, std\+::string scanner\+Name, \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh)
+\begin{DoxyCompactList}\small\item\em Internal Startup routine. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sick__generic__laser_8h_ae737717670b024b9fb2e9ad8afd94659}{ros\+Signal\+Handler}} (int signal\+Recv)
+\item 
+void \mbox{\hyperlink{sick__generic__laser_8h_a938704bcbc9ab47d5e29dbfcb3c49228}{set\+Version\+Info}} (std\+::string \+\_\+version\+Info)
+\item 
+std\+::string \mbox{\hyperlink{sick__generic__laser_8h_af56e57c334f0a740935c11bd734778b4}{get\+Version\+Info}} ()
+\item 
+bool \mbox{\hyperlink{sick__generic__laser_8h_a14b0bf7cc63821767dccac1bb67acf21}{parse\+Launchfile\+Set\+Parameter}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh\+Priv, int argc, char $\ast$$\ast$argv)
+\begin{DoxyCompactList}\small\item\em Parses an optional launchfile and sets all parameters. This function is used at startup to enable system independant parameter handling for native Linux/\+Windows, R\+O\+S-\/1 and R\+O\+S-\/2. Parameter are overwritten by optional commandline arguments. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{sick__generic__laser_8h_ad57e5396f12cf9047678007af775c9ab}{stop\+Scanner\+And\+Exit}} (bool force\+\_\+immediate\+\_\+shutdown=false)
+\item 
+bool \mbox{\hyperlink{sick__generic__laser_8h_a769d3db2821121ff9dfefcf91bb14bcc}{convert\+Send\+S\+O\+P\+A\+S\+Command}} (const std\+::string \&sopas\+\_\+ascii\+\_\+request, std\+::string \&sopas\+\_\+response, bool wait\+\_\+for\+\_\+reply=true)
+\begin{DoxyCompactList}\small\item\em Converts a given S\+O\+P\+AS command from ascii to binary (in case of binary communication), sends sopas (ascii or binary) and returns the response (if wait\+\_\+for\+\_\+reply\+:=true) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}\label{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!NodeRunState@{NodeRunState}}
+\index{NodeRunState@{NodeRunState}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{NodeRunState}{NodeRunState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}{Node\+Run\+State}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{scanner\_init@{scanner\_init}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!scanner\_init@{scanner\_init}}}\mbox{\Hypertarget{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8a2c18088d1e773ae4bde32dfd95f04fd7}\label{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8a2c18088d1e773ae4bde32dfd95f04fd7}} 
+scanner\+\_\+init&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{scanner\_run@{scanner\_run}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!scanner\_run@{scanner\_run}}}\mbox{\Hypertarget{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8a130c7276e3c7e835c1b7ac603edc41e1}\label{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8a130c7276e3c7e835c1b7ac603edc41e1}} 
+scanner\+\_\+run&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{scanner\_finalize@{scanner\_finalize}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!scanner\_finalize@{scanner\_finalize}}}\mbox{\Hypertarget{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8ac15d165de7149fc1e50b4c5cd272b389}\label{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8ac15d165de7149fc1e50b4c5cd272b389}} 
+scanner\+\_\+finalize&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sick__generic__laser_8h_a769d3db2821121ff9dfefcf91bb14bcc}\label{sick__generic__laser_8h_a769d3db2821121ff9dfefcf91bb14bcc}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!convertSendSOPASCommand@{convertSendSOPASCommand}}
+\index{convertSendSOPASCommand@{convertSendSOPASCommand}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{convertSendSOPASCommand()}{convertSendSOPASCommand()}}
+{\footnotesize\ttfamily bool convert\+Send\+S\+O\+P\+A\+S\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{sopas\+\_\+ascii\+\_\+request,  }\item[{std\+::string \&}]{sopas\+\_\+response,  }\item[{bool}]{wait\+\_\+for\+\_\+reply }\end{DoxyParamCaption})}
+
+
+
+Converts a given S\+O\+P\+AS command from ascii to binary (in case of binary communication), sends sopas (ascii or binary) and returns the response (if wait\+\_\+for\+\_\+reply\+:=true) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sopas\+\_\+ascii\+\_\+request} & sopas command to send in ascii (converted automatically to binary if required) \\
+\hline
+\mbox{\texttt{ out}}  & {\em sopas\+\_\+response} & sopas response from lidar (with optional parameter in hex values) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{sick__generic__laser_8h_af56e57c334f0a740935c11bd734778b4}\label{sick__generic__laser_8h_af56e57c334f0a740935c11bd734778b4}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!getVersionInfo@{getVersionInfo}}
+\index{getVersionInfo@{getVersionInfo}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{getVersionInfo()}{getVersionInfo()}}
+{\footnotesize\ttfamily std\+::string get\+Version\+Info (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__generic__laser_8h_af00bc9cc7fa477bcc43ec10b7575c860}\label{sick__generic__laser_8h_af00bc9cc7fa477bcc43ec10b7575c860}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!joinGenericLaser@{joinGenericLaser}}
+\index{joinGenericLaser@{joinGenericLaser}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{joinGenericLaser()}{joinGenericLaser()}}
+{\footnotesize\ttfamily void join\+Generic\+Laser (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Waits until all Generic\+Laser jobs finished. 
+
+\mbox{\Hypertarget{sick__generic__laser_8h_a48b3cdab3213baea728d3e493f320c5a}\label{sick__generic__laser_8h_a48b3cdab3213baea728d3e493f320c5a}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!mainGenericLaser@{mainGenericLaser}}
+\index{mainGenericLaser@{mainGenericLaser}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{mainGenericLaser()}{mainGenericLaser()}}
+{\footnotesize\ttfamily int main\+Generic\+Laser (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{std\+::string}]{node\+Name,  }\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh\+Priv }\end{DoxyParamCaption})}
+
+
+
+Internal Startup routine. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of Arguments \\
+\hline
+{\em argv} & Argument variable \\
+\hline
+{\em node\+Name} & name of the R\+O\+S-\/node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+exit-\/code 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{lidar3d__multiscan__recv_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{sick__generic__laser_8h_a14b0bf7cc63821767dccac1bb67acf21}\label{sick__generic__laser_8h_a14b0bf7cc63821767dccac1bb67acf21}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!parseLaunchfileSetParameter@{parseLaunchfileSetParameter}}
+\index{parseLaunchfileSetParameter@{parseLaunchfileSetParameter}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{parseLaunchfileSetParameter()}{parseLaunchfileSetParameter()}}
+{\footnotesize\ttfamily bool parse\+Launchfile\+Set\+Parameter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh\+Priv,  }\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+
+
+Parses an optional launchfile and sets all parameters. This function is used at startup to enable system independant parameter handling for native Linux/\+Windows, R\+O\+S-\/1 and R\+O\+S-\/2. Parameter are overwritten by optional commandline arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of commandline arguments \\
+\hline
+{\em argv} & commandline arguments \\
+\hline
+{\em node\+Name} & name of the R\+O\+S-\/node \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+exit-\/code 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{lidar3d__multiscan__recv_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{sick__generic__laser_8h_ae737717670b024b9fb2e9ad8afd94659}\label{sick__generic__laser_8h_ae737717670b024b9fb2e9ad8afd94659}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!rosSignalHandler@{rosSignalHandler}}
+\index{rosSignalHandler@{rosSignalHandler}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{rosSignalHandler()}{rosSignalHandler()}}
+{\footnotesize\ttfamily void ros\+Signal\+Handler (\begin{DoxyParamCaption}\item[{int}]{signal\+Recv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__generic__laser_8h_a938704bcbc9ab47d5e29dbfcb3c49228}\label{sick__generic__laser_8h_a938704bcbc9ab47d5e29dbfcb3c49228}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!setVersionInfo@{setVersionInfo}}
+\index{setVersionInfo@{setVersionInfo}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{setVersionInfo()}{setVersionInfo()}}
+{\footnotesize\ttfamily void set\+Version\+Info (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+version\+Info }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__generic__laser_8h_a3523539775385956a3b2ff29b0c3c72e}\label{sick__generic__laser_8h_a3523539775385956a3b2ff29b0c3c72e}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!startGenericLaser@{startGenericLaser}}
+\index{startGenericLaser@{startGenericLaser}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{startGenericLaser()}{startGenericLaser()}}
+{\footnotesize\ttfamily bool start\+Generic\+Laser (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv,  }\item[{std\+::string}]{node\+Name,  }\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh\+Priv,  }\item[{int $\ast$}]{exit\+\_\+code }\end{DoxyParamCaption})}
+
+
+
+Runs main\+Generic\+Laser non-\/blocking in a new thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & Number of Arguments \\
+\hline
+{\em argv} & Argument variable \\
+\hline
+{\em node\+Name} & name of the R\+O\+S-\/node \\
+\hline
+{\em nh\+Priv} & ros node handle \\
+\hline
+{\em exit\+\_\+code} & exit-\/code \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if main\+Generic\+Laser is running, false otherwise 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{sick__generic__laser_8cpp_a3260f01f882d8ed99cec851268bd02ad}{main\+Generic\+Laser}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{sick__generic__laser_8h_ad57e5396f12cf9047678007af775c9ab}\label{sick__generic__laser_8h_ad57e5396f12cf9047678007af775c9ab}} 
+\index{sick\_generic\_laser.h@{sick\_generic\_laser.h}!stopScannerAndExit@{stopScannerAndExit}}
+\index{stopScannerAndExit@{stopScannerAndExit}!sick\_generic\_laser.h@{sick\_generic\_laser.h}}
+\doxysubsubsection{\texorpdfstring{stopScannerAndExit()}{stopScannerAndExit()}}
+{\footnotesize\ttfamily bool stop\+Scanner\+And\+Exit (\begin{DoxyParamCaption}\item[{bool}]{force\+\_\+immediate\+\_\+shutdown = {\ttfamily false} }\end{DoxyParamCaption})}
+

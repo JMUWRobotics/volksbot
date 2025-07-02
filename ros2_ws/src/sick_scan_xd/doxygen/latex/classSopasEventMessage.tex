@@ -1,0 +1,181 @@
+\hypertarget{classSopasEventMessage}{}\doxysection{Sopas\+Event\+Message Class Reference}
+\label{classSopasEventMessage}\index{SopasEventMessage@{SopasEventMessage}}
+
+
+Class that represents a message that was sent by a sensor. (Event message)  
+
+
+
+
+{\ttfamily \#include $<$sick\+\_\+scan\+\_\+common\+\_\+nw.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSopasEventMessage_a3aef5cac8309bdb5b57181391e1a24f9}{Sopas\+Event\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSopasEventMessage_ad5e6a60e85ff3ee8c9130771876a1620}{$\sim$\+Sopas\+Event\+Message}} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSopasEventMessage_a3c1280ea284f71bb79e5565a12f143f9}{Sopas\+Event\+Message}} (\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$buffer, \mbox{\hyperlink{sick__scan__common__nw_8h_a5a7b06899370f5caa9b5861261a1af14}{Sopas\+Protocol}} protocol, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} frame\+Length)
+\begin{DoxyCompactList}\small\item\em Constructor. This class will only store a pointer to the byte buffer. It will not deallocate the memory. Please make sure that the buffer is not deallocated while you are working with this class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{sick__scan__common__nw_8h_a5a7b06899370f5caa9b5861261a1af14}{Sopas\+Protocol}} \mbox{\hyperlink{classSopasEventMessage_a178c7f23f819f314745ad92c6db59842}{get\+Protocol\+Type}} () const
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \mbox{\hyperlink{classSopasEventMessage_acf56548189752b272dfbce01dddad36b}{size}} () const
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \mbox{\hyperlink{classSopasEventMessage_a4412250f4b6343176463c8259ec82e22}{get\+Pay\+Load\+Length}} () const
+\begin{DoxyCompactList}\small\item\em contains \textquotesingle{}s\textquotesingle{} + command string(2 byte) + content(payload length -\/ 3) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSopasEventMessage_a9dcbae5d1a5bacac6411865f5385fc56}{get\+Command\+String}} () const
+\begin{DoxyCompactList}\small\item\em Returns two character long command. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$ \mbox{\hyperlink{classSopasEventMessage_af2877151eefc317c06071c2be0a60b31}{get\+Pay\+Load}} ()
+\begin{DoxyCompactList}\small\item\em contains \textquotesingle{}s\textquotesingle{} + command string(2 byte) + content(payload length -\/ 3) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$ \mbox{\hyperlink{classSopasEventMessage_a8091eb12ab58d673e560c442cadb9d20}{get\+Raw\+Data}} ()
+\begin{DoxyCompactList}\small\item\em get S\+O\+P\+AS raw data include header and C\+RC \end{DoxyCompactList}\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_a2c951cf9402cd61f04b43789471dbe7c}{I\+N\+T32}} \mbox{\hyperlink{classSopasEventMessage_a9ef6ad702e9c34704c5356d9737f5c73}{get\+Variable\+Index}} ()
+\begin{DoxyCompactList}\small\item\em Returns the index of a variable (answer to read variable by index). In case of error a negative value will be returned. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSopasEventMessage_a729584e6c1bc699967e88f917e3b5ac3}{get\+Variable\+Name}} ()
+\begin{DoxyCompactList}\small\item\em Returns the name of a variable (answer to read variable by name). In case of error an empty value will be returned. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSopasEventMessage_ac298e6da0a4c68cec160e23d5f140e8c}{is\+Valid}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class that represents a message that was sent by a sensor. (Event message) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSopasEventMessage_a3aef5cac8309bdb5b57181391e1a24f9}\label{classSopasEventMessage_a3aef5cac8309bdb5b57181391e1a24f9}} 
+\index{SopasEventMessage@{SopasEventMessage}!SopasEventMessage@{SopasEventMessage}}
+\index{SopasEventMessage@{SopasEventMessage}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{SopasEventMessage()}{SopasEventMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sopas\+Event\+Message\+::\+Sopas\+Event\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classSopasEventMessage_ad5e6a60e85ff3ee8c9130771876a1620}\label{classSopasEventMessage_ad5e6a60e85ff3ee8c9130771876a1620}} 
+\index{SopasEventMessage@{SopasEventMessage}!````~SopasEventMessage@{$\sim$SopasEventMessage}}
+\index{````~SopasEventMessage@{$\sim$SopasEventMessage}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{$\sim$SopasEventMessage()}{~SopasEventMessage()}}
+{\footnotesize\ttfamily Sopas\+Event\+Message\+::$\sim$\+Sopas\+Event\+Message (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destructor. 
+
+\mbox{\Hypertarget{classSopasEventMessage_a3c1280ea284f71bb79e5565a12f143f9}\label{classSopasEventMessage_a3c1280ea284f71bb79e5565a12f143f9}} 
+\index{SopasEventMessage@{SopasEventMessage}!SopasEventMessage@{SopasEventMessage}}
+\index{SopasEventMessage@{SopasEventMessage}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{SopasEventMessage()}{SopasEventMessage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sopas\+Event\+Message\+::\+Sopas\+Event\+Message (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{sick__scan__common__nw_8h_a5a7b06899370f5caa9b5861261a1af14}{Sopas\+Protocol}}}]{protocol,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{frame\+Length }\end{DoxyParamCaption})}
+
+
+
+Constructor. This class will only store a pointer to the byte buffer. It will not deallocate the memory. Please make sure that the buffer is not deallocated while you are working with this class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & byte buffer with the message (Sopas frame) \\
+\hline
+{\em protocol} & type of protocol (Cola-\/A, Cola-\/B) \\
+\hline
+{\em frame\+Length} & length of the frame \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSopasEventMessage_a9dcbae5d1a5bacac6411865f5385fc56}\label{classSopasEventMessage_a9dcbae5d1a5bacac6411865f5385fc56}} 
+\index{SopasEventMessage@{SopasEventMessage}!getCommandString@{getCommandString}}
+\index{getCommandString@{getCommandString}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{getCommandString()}{getCommandString()}}
+{\footnotesize\ttfamily std\+::string Sopas\+Event\+Message\+::get\+Command\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns two character long command. 
+
+\begin{DoxyReturn}{Returns}
+string container command
+\end{DoxyReturn}
+Returns the core command of a sopas message (e.\+g. \char`\"{}\+W\+N\char`\"{}) for ..s\+WN $<$whatever$>$ \mbox{\Hypertarget{classSopasEventMessage_af2877151eefc317c06071c2be0a60b31}\label{classSopasEventMessage_af2877151eefc317c06071c2be0a60b31}} 
+\index{SopasEventMessage@{SopasEventMessage}!getPayLoad@{getPayLoad}}
+\index{getPayLoad@{getPayLoad}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{getPayLoad()}{getPayLoad()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$ Sopas\+Event\+Message\+::get\+Pay\+Load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+contains \textquotesingle{}s\textquotesingle{} + command string(2 byte) + content(payload length -\/ 3) 
+
+Returns a pointer to the first payload byte.
+
+\begin{DoxyReturn}{Returns}
+Pointer to payload part of message
+\end{DoxyReturn}
+Returns a pointer to the first payload byte. Co\+La-\/A\+: Points beyond the leading \char`\"{}0x02\char`\"{} to the \char`\"{}s...\char`\"{} data. Co\+La-\/B\+: Points beyond the magic word and length bytes, to the \char`\"{}s...\char`\"{} data. \mbox{\Hypertarget{classSopasEventMessage_a4412250f4b6343176463c8259ec82e22}\label{classSopasEventMessage_a4412250f4b6343176463c8259ec82e22}} 
+\index{SopasEventMessage@{SopasEventMessage}!getPayLoadLength@{getPayLoadLength}}
+\index{getPayLoadLength@{getPayLoadLength}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{getPayLoadLength()}{getPayLoadLength()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} Sopas\+Event\+Message\+::get\+Pay\+Load\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+contains \textquotesingle{}s\textquotesingle{} + command string(2 byte) + content(payload length -\/ 3) 
+
+\mbox{\Hypertarget{classSopasEventMessage_a178c7f23f819f314745ad92c6db59842}\label{classSopasEventMessage_a178c7f23f819f314745ad92c6db59842}} 
+\index{SopasEventMessage@{SopasEventMessage}!getProtocolType@{getProtocolType}}
+\index{getProtocolType@{getProtocolType}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{getProtocolType()}{getProtocolType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__scan__common__nw_8h_a5a7b06899370f5caa9b5861261a1af14}{Sopas\+Protocol}} Sopas\+Event\+Message\+::get\+Protocol\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSopasEventMessage_a8091eb12ab58d673e560c442cadb9d20}\label{classSopasEventMessage_a8091eb12ab58d673e560c442cadb9d20}} 
+\index{SopasEventMessage@{SopasEventMessage}!getRawData@{getRawData}}
+\index{getRawData@{getRawData}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{getRawData()}{getRawData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_a4ae1dab0fb4b072a66584546209e7d58}{B\+Y\+TE}} $\ast$ Sopas\+Event\+Message\+::get\+Raw\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+get S\+O\+P\+AS raw data include header and C\+RC 
+
+\begin{DoxyReturn}{Returns}
+Pointer to raw data message
+\end{DoxyReturn}
+The raw data is stored in m\+\_\+buffer. This function returns a pointer to this buffer. \mbox{\Hypertarget{classSopasEventMessage_a9ef6ad702e9c34704c5356d9737f5c73}\label{classSopasEventMessage_a9ef6ad702e9c34704c5356d9737f5c73}} 
+\index{SopasEventMessage@{SopasEventMessage}!getVariableIndex@{getVariableIndex}}
+\index{getVariableIndex@{getVariableIndex}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{getVariableIndex()}{getVariableIndex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_a2c951cf9402cd61f04b43789471dbe7c}{I\+N\+T32}} Sopas\+Event\+Message\+::get\+Variable\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the index of a variable (answer to read variable by index). In case of error a negative value will be returned. 
+
+\mbox{\Hypertarget{classSopasEventMessage_a729584e6c1bc699967e88f917e3b5ac3}\label{classSopasEventMessage_a729584e6c1bc699967e88f917e3b5ac3}} 
+\index{SopasEventMessage@{SopasEventMessage}!getVariableName@{getVariableName}}
+\index{getVariableName@{getVariableName}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{getVariableName()}{getVariableName()}}
+{\footnotesize\ttfamily std\+::string Sopas\+Event\+Message\+::get\+Variable\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns the name of a variable (answer to read variable by name). In case of error an empty value will be returned. 
+
+\mbox{\Hypertarget{classSopasEventMessage_ac298e6da0a4c68cec160e23d5f140e8c}\label{classSopasEventMessage_ac298e6da0a4c68cec160e23d5f140e8c}} 
+\index{SopasEventMessage@{SopasEventMessage}!isValid@{isValid}}
+\index{isValid@{isValid}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{isValid()}{isValid()}}
+{\footnotesize\ttfamily bool Sopas\+Event\+Message\+::is\+Valid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSopasEventMessage_acf56548189752b272dfbce01dddad36b}\label{classSopasEventMessage_acf56548189752b272dfbce01dddad36b}} 
+\index{SopasEventMessage@{SopasEventMessage}!size@{size}}
+\index{size@{size}!SopasEventMessage@{SopasEventMessage}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} Sopas\+Event\+Message\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__scan__common__nw_8h}{sick\+\_\+scan\+\_\+common\+\_\+nw.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__scan__common__nw_8cpp}{sick\+\_\+scan\+\_\+common\+\_\+nw.\+cpp}}\end{DoxyCompactItemize}

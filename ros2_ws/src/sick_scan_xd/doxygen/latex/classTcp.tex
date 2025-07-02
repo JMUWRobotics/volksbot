@@ -1,0 +1,153 @@
+\hypertarget{classTcp}{}\doxysection{Tcp Class Reference}
+\label{classTcp}\index{Tcp@{Tcp}}
+
+
+{\ttfamily \#include $<$tcp.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{classTcp_adae4ea9f6988ae82f72aef49ed620044}{Read\+Function}}) (void $\ast$obj, \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$input\+Buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&num\+Bytes)
+\item 
+typedef void($\ast$ \mbox{\hyperlink{classTcp_a649c232b23d2186c1a723711d2a35d0f}{Disconnect\+Function}}) (void $\ast$obj)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTcp_a0ab8ef6357482def6593a0856b5ec050}{Tcp}} ()
+\item 
+\mbox{\hyperlink{classTcp_a2a6d6ca2b96b9106c8664802371d0ded}{$\sim$\+Tcp}} ()
+\item 
+bool \mbox{\hyperlink{classTcp_a1742b1b8fb7b03baef56a19115a01a12}{open}} (std\+::string ip\+Address, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} port, bool enable\+Verbose\+Debug\+Output=false)
+\item 
+bool \mbox{\hyperlink{classTcp_a4658087bb412af06a81ff1c9d35fe4ac}{open}} (\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} ip\+Address, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} port, bool enable\+Verbose\+Debug\+Output=false)
+\item 
+void \mbox{\hyperlink{classTcp_ac43c5e2477b874a52296201208cff6f2}{close}} ()
+\item 
+bool \mbox{\hyperlink{classTcp_af617a64a55a5b48735282dc8c35701e0}{is\+Open}} ()
+\item 
+bool \mbox{\hyperlink{classTcp_ac8f2cea2ebe19329d096727d87103ba6}{write}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} number\+Of\+Bytes)
+\item 
+std\+::string \mbox{\hyperlink{classTcp_ac69432171e4b188c7879438eb7cd21f8}{read\+String}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} delimiter)
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \mbox{\hyperlink{classTcp_aba63eafb9e0891a5031c44b0fdfa86d6}{get\+Num\+Readable\+Bytes}} ()
+\item 
+\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \mbox{\hyperlink{classTcp_a321420de2eb4d071e30a2e76944fd470}{read}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} buffer\+Len)
+\item 
+void \mbox{\hyperlink{classTcp_a9de0abd210748c42a221dd967a8a8a0e}{set\+Read\+Callback\+Function}} (\mbox{\hyperlink{classTcp_adae4ea9f6988ae82f72aef49ed620044}{Read\+Function}} read\+Function, void $\ast$obj)
+\item 
+void \mbox{\hyperlink{classTcp_a7e5f0e8c64c879a22c5549a11985af73}{set\+Disconnect\+Callback\+Function}} (\mbox{\hyperlink{classTcp_a649c232b23d2186c1a723711d2a35d0f}{Disconnect\+Function}} disc\+Function, void $\ast$obj)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classTcp_a5111a9327f9e2bcff983f8142fb0d533}{get\+Nanosec\+Timestamp\+Last\+Tcp\+Message\+Received}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classTcp_a649c232b23d2186c1a723711d2a35d0f}\label{classTcp_a649c232b23d2186c1a723711d2a35d0f}} 
+\index{Tcp@{Tcp}!DisconnectFunction@{DisconnectFunction}}
+\index{DisconnectFunction@{DisconnectFunction}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{DisconnectFunction}{DisconnectFunction}}
+{\footnotesize\ttfamily typedef void($\ast$ Tcp\+::\+Disconnect\+Function) (void $\ast$obj)}
+
+\mbox{\Hypertarget{classTcp_adae4ea9f6988ae82f72aef49ed620044}\label{classTcp_adae4ea9f6988ae82f72aef49ed620044}} 
+\index{Tcp@{Tcp}!ReadFunction@{ReadFunction}}
+\index{ReadFunction@{ReadFunction}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{ReadFunction}{ReadFunction}}
+{\footnotesize\ttfamily typedef void($\ast$ Tcp\+::\+Read\+Function) (void $\ast$obj, \mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$input\+Buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} \&num\+Bytes)}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTcp_a0ab8ef6357482def6593a0856b5ec050}\label{classTcp_a0ab8ef6357482def6593a0856b5ec050}} 
+\index{Tcp@{Tcp}!Tcp@{Tcp}}
+\index{Tcp@{Tcp}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{Tcp()}{Tcp()}}
+{\footnotesize\ttfamily Tcp\+::\+Tcp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTcp_a2a6d6ca2b96b9106c8664802371d0ded}\label{classTcp_a2a6d6ca2b96b9106c8664802371d0ded}} 
+\index{Tcp@{Tcp}!````~Tcp@{$\sim$Tcp}}
+\index{````~Tcp@{$\sim$Tcp}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{$\sim$Tcp()}{~Tcp()}}
+{\footnotesize\ttfamily Tcp\+::$\sim$\+Tcp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTcp_ac43c5e2477b874a52296201208cff6f2}\label{classTcp_ac43c5e2477b874a52296201208cff6f2}} 
+\index{Tcp@{Tcp}!close@{close}}
+\index{close@{close}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Tcp\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTcp_a5111a9327f9e2bcff983f8142fb0d533}\label{classTcp_a5111a9327f9e2bcff983f8142fb0d533}} 
+\index{Tcp@{Tcp}!getNanosecTimestampLastTcpMessageReceived@{getNanosecTimestampLastTcpMessageReceived}}
+\index{getNanosecTimestampLastTcpMessageReceived@{getNanosecTimestampLastTcpMessageReceived}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{getNanosecTimestampLastTcpMessageReceived()}{getNanosecTimestampLastTcpMessageReceived()}}
+{\footnotesize\ttfamily uint64\+\_\+t Tcp\+::get\+Nanosec\+Timestamp\+Last\+Tcp\+Message\+Received (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTcp_aba63eafb9e0891a5031c44b0fdfa86d6}\label{classTcp_aba63eafb9e0891a5031c44b0fdfa86d6}} 
+\index{Tcp@{Tcp}!getNumReadableBytes@{getNumReadableBytes}}
+\index{getNumReadableBytes@{getNumReadableBytes}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{getNumReadableBytes()}{getNumReadableBytes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} Tcp\+::get\+Num\+Readable\+Bytes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Auslesen der Anzahl zum Lesen verfuegbarer Bytes.
+
+Rueckgabe\+: Anzahl der Bytes im Lese-\/\+Puffer. \mbox{\Hypertarget{classTcp_af617a64a55a5b48735282dc8c35701e0}\label{classTcp_af617a64a55a5b48735282dc8c35701e0}} 
+\index{Tcp@{Tcp}!isOpen@{isOpen}}
+\index{isOpen@{isOpen}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{isOpen()}{isOpen()}}
+{\footnotesize\ttfamily bool Tcp\+::is\+Open (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+True = offen
+
+-- Wir sind der Client und mit einem Server verbunden -- \mbox{\Hypertarget{classTcp_a1742b1b8fb7b03baef56a19115a01a12}\label{classTcp_a1742b1b8fb7b03baef56a19115a01a12}} 
+\index{Tcp@{Tcp}!open@{open}}
+\index{open@{open}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Tcp\+::open (\begin{DoxyParamCaption}\item[{std\+::string}]{ip\+Address,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{port,  }\item[{bool}]{enable\+Verbose\+Debug\+Output = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTcp_a4658087bb412af06a81ff1c9d35fe4ac}\label{classTcp_a4658087bb412af06a81ff1c9d35fe4ac}} 
+\index{Tcp@{Tcp}!open@{open}}
+\index{open@{open}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{open()}{open()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Tcp\+::open (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{ip\+Address,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{port,  }\item[{bool}]{enable\+Verbose\+Debug\+Output = {\ttfamily false} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTcp_a321420de2eb4d071e30a2e76944fd470}\label{classTcp_a321420de2eb4d071e30a2e76944fd470}} 
+\index{Tcp@{Tcp}!read@{read}}
+\index{read@{read}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} Tcp\+::read (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{buffer\+Len }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTcp_ac69432171e4b188c7879438eb7cd21f8}\label{classTcp_ac69432171e4b188c7879438eb7cd21f8}} 
+\index{Tcp@{Tcp}!readString@{readString}}
+\index{readString@{readString}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{readString()}{readString()}}
+{\footnotesize\ttfamily std\+::string Tcp\+::read\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}}}]{delimiter }\end{DoxyParamCaption})}
+
+Lese einen String, bis zum Trennzeichen.
+
+$\ast$$\ast$ DO N\+OT I\+N\+T\+E\+R\+M\+IX W\+I\+TH C\+A\+L\+LS TO R\+E\+A\+D() $\ast$$\ast$ \mbox{\Hypertarget{classTcp_a7e5f0e8c64c879a22c5549a11985af73}\label{classTcp_a7e5f0e8c64c879a22c5549a11985af73}} 
+\index{Tcp@{Tcp}!setDisconnectCallbackFunction@{setDisconnectCallbackFunction}}
+\index{setDisconnectCallbackFunction@{setDisconnectCallbackFunction}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{setDisconnectCallbackFunction()}{setDisconnectCallbackFunction()}}
+{\footnotesize\ttfamily void Tcp\+::set\+Disconnect\+Callback\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTcp_a649c232b23d2186c1a723711d2a35d0f}{Disconnect\+Function}}}]{disc\+Function,  }\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTcp_a9de0abd210748c42a221dd967a8a8a0e}\label{classTcp_a9de0abd210748c42a221dd967a8a8a0e}} 
+\index{Tcp@{Tcp}!setReadCallbackFunction@{setReadCallbackFunction}}
+\index{setReadCallbackFunction@{setReadCallbackFunction}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{setReadCallbackFunction()}{setReadCallbackFunction()}}
+{\footnotesize\ttfamily void Tcp\+::set\+Read\+Callback\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTcp_adae4ea9f6988ae82f72aef49ed620044}{Tcp\+::\+Read\+Function}}}]{read\+Function,  }\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classTcp_ac8f2cea2ebe19329d096727d87103ba6}\label{classTcp_ac8f2cea2ebe19329d096727d87103ba6}} 
+\index{Tcp@{Tcp}!write@{write}}
+\index{write@{write}!Tcp@{Tcp}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily bool Tcp\+::write (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{number\+Of\+Bytes }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/tcp/\mbox{\hyperlink{tcp_8hpp}{tcp.\+hpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tcp/\mbox{\hyperlink{tcp_8cpp}{tcp.\+cpp}}\end{DoxyCompactItemize}

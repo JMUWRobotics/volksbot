@@ -1,0 +1,24 @@
+\hypertarget{ros2__example__application_2CMakeLists_8txt}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/examples/ros2\+\_\+example\+\_\+application/\+C\+Make\+Lists.txt File Reference}
+\label{ros2__example__application_2CMakeLists_8txt}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/examples/ros2\_example\_application/CMakeLists.txt@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/examples/ros2\_example\_application/CMakeLists.txt}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{ros2__example__application_2CMakeLists_8txt_aee37392888a91b4352848ec381814406}{cmake\+\_\+minimum\+\_\+required}} (V\+E\+R\+S\+I\+ON 3.\+5) project(sick\+\_\+scan\+\_\+ros2\+\_\+example) if(N\+OT C\+M\+A\+K\+E\+\_\+\+C\+X\+X\+\_\+\+S\+T\+A\+N\+D\+A\+RD) \mbox{\hyperlink{ros2__example__application_2CMakeLists_8txt_af7172a4f58f1da3482106b85bb5938ab}{set}}(C\+M\+A\+K\+E\+\_\+\+C\+X\+X\+\_\+\+S\+T\+A\+N\+D\+A\+RD 14) endif() link\+\_\+libraries(pthread) \mbox{\hyperlink{ros2__example__application_2CMakeLists_8txt_af7172a4f58f1da3482106b85bb5938ab}{set}}(Fast\+R\+T\+P\+S\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+D\+IR/opt/ros/\$E\+NV
+\item 
+include \mbox{\hyperlink{ros2__example__application_2CMakeLists_8txt_af7172a4f58f1da3482106b85bb5938ab}{set}} (Fast\+R\+T\+P\+S\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+R\+E\+L\+E\+A\+SE/opt/ros/\$E\+NV\{R\+O\+S\+\_\+\+D\+I\+S\+T\+RO\}/lib/\mbox{\hyperlink{driver_2src_2sick__scansegment__xd_2msgpack11_2LICENSE_8txt_aa012087f27f6c70b31284d8d3fb32dc5}{libfastrtps.\+so}}) find\+\_\+package(ament\+\_\+cmake R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(rclcpp R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(sensor\+\_\+msgs R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(std\+\_\+msgs R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(geometry\+\_\+msgs R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(visualization\+\_\+msgs R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(rosidl\+\_\+default\+\_\+generators R\+E\+Q\+U\+I\+R\+ED) find\+\_\+package(sick\+\_\+scan\+\_\+xd R\+E\+Q\+U\+I\+R\+ED) add\+\_\+executable(sick\+\_\+scan\+\_\+ros2\+\_\+example src/sick\+\_\+scan\+\_\+ros2\+\_\+example.\+cpp) ament\+\_\+target\+\_\+dependencies(sick\+\_\+scan\+\_\+ros2\+\_\+example \char`\"{}rclcpp\char`\"{} \char`\"{}sensor\+\_\+msgs\char`\"{} \char`\"{}std\+\_\+msgs\char`\"{} \char`\"{}geometry\+\_\+msgs\char`\"{} \char`\"{}visualization\+\_\+msgs\char`\"{} \char`\"{}sick\+\_\+scan\+\_\+xd\char`\"{}) install(T\+A\+R\+G\+E\+TS sick\+\_\+scan\+\_\+ros2\+\_\+example D\+E\+S\+T\+I\+N\+A\+T\+I\+ON lib/\$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ros2__example__application_2CMakeLists_8txt_aee37392888a91b4352848ec381814406}\label{ros2__example__application_2CMakeLists_8txt_aee37392888a91b4352848ec381814406}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!cmake\_minimum\_required@{cmake\_minimum\_required}}
+\index{cmake\_minimum\_required@{cmake\_minimum\_required}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{cmake\_minimum\_required()}{cmake\_minimum\_required()}}
+{\footnotesize\ttfamily cmake\+\_\+minimum\+\_\+required (\begin{DoxyParamCaption}\item[{V\+E\+R\+S\+I\+ON 3.}]{5 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ros2__example__application_2CMakeLists_8txt_af7172a4f58f1da3482106b85bb5938ab}\label{ros2__example__application_2CMakeLists_8txt_af7172a4f58f1da3482106b85bb5938ab}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!set@{set}}
+\index{set@{set}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily include set (\begin{DoxyParamCaption}\item[{Fast\+R\+T\+P\+S\+\_\+\+L\+I\+B\+R\+A\+R\+Y\+\_\+\+R\+E\+L\+E\+A\+SE/opt/ros/\$E\+NV\{R\+O\+S\+\_\+\+D\+I\+S\+T\+RO\}/lib/libfastrtps.}]{so }\end{DoxyParamCaption})}
+

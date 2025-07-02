@@ -1,0 +1,290 @@
+\hypertarget{classmsgpack11_1_1MsgPackValue}{}\doxysection{msgpack11\+::Msg\+Pack\+Value Class Reference}
+\label{classmsgpack11_1_1MsgPackValue}\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+
+
+Inheritance diagram for msgpack11\+::Msg\+Pack\+Value\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classmsgpack11_1_1MsgPackValue__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a0674eea32ad5a4fdbc36e141669e83ac}{equals}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue}{Msg\+Pack\+Value}} $\ast$other) const =0
+\item 
+virtual bool \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a59a1c4a0b0709f3e17e227f5ea81bd71}{less}} (const \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue}{Msg\+Pack\+Value}} $\ast$other) const =0
+\item 
+virtual void \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a8a82fa122334a3b479c9131c85e45301}{dump}} (std\+::ostream \&os) const =0
+\item 
+virtual \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}{Msg\+Pack\+::\+Type}} \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_aca1f4621381af52387f50994cceb0db1}{type}} () const =0
+\item 
+virtual double \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_aa98588da97bd356c27221b1a79bb6b2b}{number\+\_\+value}} () const
+\item 
+virtual float \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a143d2040ec43371429c1232ee6f558ce}{float32\+\_\+value}} () const
+\item 
+virtual double \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a2ba352faea5d1a79b6b7cbb221b8fd24}{float64\+\_\+value}} () const
+\item 
+virtual int32\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a900533b5a3527b6ed0b1d84ba61411dd}{int\+\_\+value}} () const
+\item 
+virtual int8\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_af67c8b875ae5a7db5f74536129ec9f03}{int8\+\_\+value}} () const
+\item 
+virtual int16\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a8e75222bbfe7f82e81422f979e1bc91e}{int16\+\_\+value}} () const
+\item 
+virtual int32\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_af98d0655cb815d046475b718b0af877a}{int32\+\_\+value}} () const
+\item 
+virtual int64\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a780add3692b25808f03ca489d422ce03}{int64\+\_\+value}} () const
+\item 
+virtual uint8\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a2f6ed504f232421b5cc996cd67006bd8}{uint8\+\_\+value}} () const
+\item 
+virtual uint16\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a43621543c457d4f7520bc16f45c0f2f3}{uint16\+\_\+value}} () const
+\item 
+virtual uint32\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a09daedce63dd7e4b03634dd4d88cba7a}{uint32\+\_\+value}} () const
+\item 
+virtual uint64\+\_\+t \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a3060c467ab9bb040cf500be4f89dd40e}{uint64\+\_\+value}} () const
+\item 
+virtual bool \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_abe5ba7943ac8cc0e5bdb6b67f58289d2}{bool\+\_\+value}} () const
+\item 
+virtual const std\+::string \& \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a6dcea467d946eb76ce723f33509b035e}{string\+\_\+value}} () const
+\item 
+virtual const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a0e4060c09d52683c115b58ada3a65e2b}{Msg\+Pack\+::array}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a8bd1b49b443b8d8e9d70fb3ed6fe8ca2}{array\+\_\+items}} () const
+\item 
+virtual const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{Msg\+Pack\+::binary}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_ac50f45f17b6a7fd62e47aaea72aee643}{binary\+\_\+items}} () const
+\item 
+virtual const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_abf9775ee3817eade32a9a288d53b9a88}{operator\mbox{[}$\,$\mbox{]}}} (size\+\_\+t i) const
+\item 
+virtual const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a33db9ac1b199da6af386f18fe058c4db}{Msg\+Pack\+::object}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a49f8d7092aee0bf7299c8f0845af9d05}{object\+\_\+items}} () const
+\item 
+virtual const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_aca4115247fc0cfb774cdc59269830e5b}{operator\mbox{[}$\,$\mbox{]}}} (const std\+::string \&key) const
+\item 
+virtual const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{Msg\+Pack\+::extension}} \& \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a55d30f5afd0ae59f7a2a320ca69e8996}{extension\+\_\+items}} () const
+\item 
+virtual \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue_a866ecf55300f7455fe450ec22c947a16}{$\sim$\+Msg\+Pack\+Value}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a866ecf55300f7455fe450ec22c947a16}\label{classmsgpack11_1_1MsgPackValue_a866ecf55300f7455fe450ec22c947a16}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!````~MsgPackValue@{$\sim$MsgPackValue}}
+\index{````~MsgPackValue@{$\sim$MsgPackValue}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{$\sim$MsgPackValue()}{~MsgPackValue()}}
+{\footnotesize\ttfamily virtual msgpack11\+::\+Msg\+Pack\+Value\+::$\sim$\+Msg\+Pack\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a8bd1b49b443b8d8e9d70fb3ed6fe8ca2}\label{classmsgpack11_1_1MsgPackValue_a8bd1b49b443b8d8e9d70fb3ed6fe8ca2}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!array\_items@{array\_items}}
+\index{array\_items@{array\_items}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{array\_items()}{array\_items()}}
+{\footnotesize\ttfamily const vector$<$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} $>$ \& msgpack11\+::\+Msg\+Pack\+Value\+::array\+\_\+items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_ac50f45f17b6a7fd62e47aaea72aee643}\label{classmsgpack11_1_1MsgPackValue_ac50f45f17b6a7fd62e47aaea72aee643}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!binary\_items@{binary\_items}}
+\index{binary\_items@{binary\_items}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{binary\_items()}{binary\_items()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ab9463b7b014e1005f705347a7bad0417}{Msg\+Pack\+::binary}} \& msgpack11\+::\+Msg\+Pack\+Value\+::binary\+\_\+items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_abe5ba7943ac8cc0e5bdb6b67f58289d2}\label{classmsgpack11_1_1MsgPackValue_abe5ba7943ac8cc0e5bdb6b67f58289d2}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!bool\_value@{bool\_value}}
+\index{bool\_value@{bool\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{bool\_value()}{bool\_value()}}
+{\footnotesize\ttfamily bool msgpack11\+::\+Msg\+Pack\+Value\+::bool\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a8a82fa122334a3b479c9131c85e45301}\label{classmsgpack11_1_1MsgPackValue_a8a82fa122334a3b479c9131c85e45301}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!dump@{dump}}
+\index{dump@{dump}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{dump()}{dump()}}
+{\footnotesize\ttfamily virtual void msgpack11\+::\+Msg\+Pack\+Value\+::dump (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, T $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+B\+I\+N\+A\+R\+Y, Msg\+Pack\+::binary $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, float $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, double $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+O\+B\+J\+E\+C\+T, Msg\+Pack\+::object $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, uint32\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, int64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+E\+X\+T\+E\+N\+S\+I\+O\+N, Msg\+Pack\+::extension $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, uint8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, int8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+B\+O\+O\+L, bool $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+A\+R\+R\+A\+Y, Msg\+Pack\+::array $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, uint16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+S\+T\+R\+I\+N\+G, string $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, int16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, uint64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+N\+U\+L, Null\+Struct $>$}}, and \mbox{\hyperlink{classmsgpack11_1_1Value_a80a3455849412ac083c76f817452dd49}{msgpack11\+::\+Value$<$ tag, int32\+\_\+t $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a0674eea32ad5a4fdbc36e141669e83ac}\label{classmsgpack11_1_1MsgPackValue_a0674eea32ad5a4fdbc36e141669e83ac}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!equals@{equals}}
+\index{equals@{equals}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{equals()}{equals()}}
+{\footnotesize\ttfamily virtual bool msgpack11\+::\+Msg\+Pack\+Value\+::equals (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue}{Msg\+Pack\+Value}} $\ast$}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+I\+N\+T8, int8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+I\+N\+T16, int16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+F\+L\+O\+A\+T64, double $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+U\+I\+N\+T8, uint8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+I\+N\+T64, int64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+U\+I\+N\+T64, uint64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+I\+N\+T32, int32\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+F\+L\+O\+A\+T32, float $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+U\+I\+N\+T16, uint16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_af419ed02a50d2e732d00b7a443df1d48}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+U\+I\+N\+T32, uint32\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, T $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+B\+I\+N\+A\+R\+Y, Msg\+Pack\+::binary $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, float $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, double $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+O\+B\+J\+E\+C\+T, Msg\+Pack\+::object $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, uint32\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, int64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+E\+X\+T\+E\+N\+S\+I\+O\+N, Msg\+Pack\+::extension $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, uint8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, int8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+B\+O\+O\+L, bool $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+A\+R\+R\+A\+Y, Msg\+Pack\+::array $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, uint16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+S\+T\+R\+I\+N\+G, string $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, int16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, uint64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+N\+U\+L, Null\+Struct $>$}}, and \mbox{\hyperlink{classmsgpack11_1_1Value_aa045c704a3dc89251d816b79dbaa8b56}{msgpack11\+::\+Value$<$ tag, int32\+\_\+t $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a55d30f5afd0ae59f7a2a320ca69e8996}\label{classmsgpack11_1_1MsgPackValue_a55d30f5afd0ae59f7a2a320ca69e8996}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!extension\_items@{extension\_items}}
+\index{extension\_items@{extension\_items}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{extension\_items()}{extension\_items()}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classmsgpack11_1_1MsgPack_ac6bfe51a38dce215212ab91b51085f80}{Msg\+Pack\+::extension}} \& msgpack11\+::\+Msg\+Pack\+Value\+::extension\+\_\+items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a143d2040ec43371429c1232ee6f558ce}\label{classmsgpack11_1_1MsgPackValue_a143d2040ec43371429c1232ee6f558ce}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!float32\_value@{float32\_value}}
+\index{float32\_value@{float32\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{float32\_value()}{float32\_value()}}
+{\footnotesize\ttfamily float msgpack11\+::\+Msg\+Pack\+Value\+::float32\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a30681525faac460e99334ecaa43ae28c}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a2ba352faea5d1a79b6b7cbb221b8fd24}\label{classmsgpack11_1_1MsgPackValue_a2ba352faea5d1a79b6b7cbb221b8fd24}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!float64\_value@{float64\_value}}
+\index{float64\_value@{float64\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{float64\_value()}{float64\_value()}}
+{\footnotesize\ttfamily double msgpack11\+::\+Msg\+Pack\+Value\+::float64\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a574cc452840cc70dd14d634dd2100c49}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a8e75222bbfe7f82e81422f979e1bc91e}\label{classmsgpack11_1_1MsgPackValue_a8e75222bbfe7f82e81422f979e1bc91e}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!int16\_value@{int16\_value}}
+\index{int16\_value@{int16\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{int16\_value()}{int16\_value()}}
+{\footnotesize\ttfamily int16\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::int16\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a5cafe600e30aedc629d8bca95b2b5e3c}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_af98d0655cb815d046475b718b0af877a}\label{classmsgpack11_1_1MsgPackValue_af98d0655cb815d046475b718b0af877a}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!int32\_value@{int32\_value}}
+\index{int32\_value@{int32\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{int32\_value()}{int32\_value()}}
+{\footnotesize\ttfamily int32\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::int32\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aa1c209abbc420a3d9965d6951d990660}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a780add3692b25808f03ca489d422ce03}\label{classmsgpack11_1_1MsgPackValue_a780add3692b25808f03ca489d422ce03}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!int64\_value@{int64\_value}}
+\index{int64\_value@{int64\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{int64\_value()}{int64\_value()}}
+{\footnotesize\ttfamily int64\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::int64\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a8c4bd23989ea0b8b62972c6ef585b4e0}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_af67c8b875ae5a7db5f74536129ec9f03}\label{classmsgpack11_1_1MsgPackValue_af67c8b875ae5a7db5f74536129ec9f03}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!int8\_value@{int8\_value}}
+\index{int8\_value@{int8\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{int8\_value()}{int8\_value()}}
+{\footnotesize\ttfamily int8\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::int8\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a9fd106d7bc6b15a9da0fb6341de2c8fe}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a900533b5a3527b6ed0b1d84ba61411dd}\label{classmsgpack11_1_1MsgPackValue_a900533b5a3527b6ed0b1d84ba61411dd}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!int\_value@{int\_value}}
+\index{int\_value@{int\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{int\_value()}{int\_value()}}
+{\footnotesize\ttfamily int32\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::int\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a9b80793a9f98f71996ca95f950a0851f}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a59a1c4a0b0709f3e17e227f5ea81bd71}\label{classmsgpack11_1_1MsgPackValue_a59a1c4a0b0709f3e17e227f5ea81bd71}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!less@{less}}
+\index{less@{less}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{less()}{less()}}
+{\footnotesize\ttfamily virtual bool msgpack11\+::\+Msg\+Pack\+Value\+::less (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classmsgpack11_1_1MsgPackValue}{Msg\+Pack\+Value}} $\ast$}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+I\+N\+T8, int8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+I\+N\+T16, int16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+F\+L\+O\+A\+T64, double $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+U\+I\+N\+T8, uint8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+I\+N\+T64, int64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+U\+I\+N\+T64, uint64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+I\+N\+T32, int32\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+F\+L\+O\+A\+T32, float $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+U\+I\+N\+T16, uint16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aec9d0dffa3824ff64ae1f3edcccdae88}{msgpack11\+::\+Number\+Value$<$ Msg\+Pack\+::\+U\+I\+N\+T32, uint32\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, T $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+B\+I\+N\+A\+R\+Y, Msg\+Pack\+::binary $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, float $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, double $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+O\+B\+J\+E\+C\+T, Msg\+Pack\+::object $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, uint32\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, int64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+E\+X\+T\+E\+N\+S\+I\+O\+N, Msg\+Pack\+::extension $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, uint8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, int8\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+B\+O\+O\+L, bool $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+A\+R\+R\+A\+Y, Msg\+Pack\+::array $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, uint16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+S\+T\+R\+I\+N\+G, string $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, int16\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, uint64\+\_\+t $>$}}, \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ Msg\+Pack\+::\+N\+U\+L, Null\+Struct $>$}}, and \mbox{\hyperlink{classmsgpack11_1_1Value_a1246c86c363854a172a8ac1cc048b401}{msgpack11\+::\+Value$<$ tag, int32\+\_\+t $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_aa98588da97bd356c27221b1a79bb6b2b}\label{classmsgpack11_1_1MsgPackValue_aa98588da97bd356c27221b1a79bb6b2b}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!number\_value@{number\_value}}
+\index{number\_value@{number\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{number\_value()}{number\_value()}}
+{\footnotesize\ttfamily double msgpack11\+::\+Msg\+Pack\+Value\+::number\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a0fd352df474a432427fa47954e67826e}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a49f8d7092aee0bf7299c8f0845af9d05}\label{classmsgpack11_1_1MsgPackValue_a49f8d7092aee0bf7299c8f0845af9d05}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!object\_items@{object\_items}}
+\index{object\_items@{object\_items}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{object\_items()}{object\_items()}}
+{\footnotesize\ttfamily const map$<$ \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}, \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} $>$ \& msgpack11\+::\+Msg\+Pack\+Value\+::object\+\_\+items (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_aca4115247fc0cfb774cdc59269830e5b}\label{classmsgpack11_1_1MsgPackValue_aca4115247fc0cfb774cdc59269830e5b}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}}\& msgpack11\+::\+Msg\+Pack\+Value\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_abf9775ee3817eade32a9a288d53b9a88}\label{classmsgpack11_1_1MsgPackValue_abf9775ee3817eade32a9a288d53b9a88}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classmsgpack11_1_1MsgPack}{Msg\+Pack}} \& msgpack11\+::\+Msg\+Pack\+Value\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a6dcea467d946eb76ce723f33509b035e}\label{classmsgpack11_1_1MsgPackValue_a6dcea467d946eb76ce723f33509b035e}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!string\_value@{string\_value}}
+\index{string\_value@{string\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{string\_value()}{string\_value()}}
+{\footnotesize\ttfamily const string \& msgpack11\+::\+Msg\+Pack\+Value\+::string\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_aca1f4621381af52387f50994cceb0db1}\label{classmsgpack11_1_1MsgPackValue_aca1f4621381af52387f50994cceb0db1}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!type@{type}}
+\index{type@{type}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classmsgpack11_1_1MsgPack_a1de3c244a58e4e1292ee2d5441f95c05}{Msg\+Pack\+::\+Type}} msgpack11\+::\+Msg\+Pack\+Value\+::type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classmsgpack11_1_1Value_a0804338f0471e639972a946561046381}{msgpack11\+::\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a43621543c457d4f7520bc16f45c0f2f3}\label{classmsgpack11_1_1MsgPackValue_a43621543c457d4f7520bc16f45c0f2f3}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!uint16\_value@{uint16\_value}}
+\index{uint16\_value@{uint16\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{uint16\_value()}{uint16\_value()}}
+{\footnotesize\ttfamily uint16\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::uint16\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_abb7b0f01300f81003801ab076da937a1}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a09daedce63dd7e4b03634dd4d88cba7a}\label{classmsgpack11_1_1MsgPackValue_a09daedce63dd7e4b03634dd4d88cba7a}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!uint32\_value@{uint32\_value}}
+\index{uint32\_value@{uint32\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{uint32\_value()}{uint32\_value()}}
+{\footnotesize\ttfamily uint32\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::uint32\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a6f4fb3cee5ba2f1a9d66fd291a7ab95d}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a3060c467ab9bb040cf500be4f89dd40e}\label{classmsgpack11_1_1MsgPackValue_a3060c467ab9bb040cf500be4f89dd40e}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!uint64\_value@{uint64\_value}}
+\index{uint64\_value@{uint64\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{uint64\_value()}{uint64\_value()}}
+{\footnotesize\ttfamily uint64\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::uint64\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_aabf31d3ddaa91f736f6bd2075b5bcd4a}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+\mbox{\Hypertarget{classmsgpack11_1_1MsgPackValue_a2f6ed504f232421b5cc996cd67006bd8}\label{classmsgpack11_1_1MsgPackValue_a2f6ed504f232421b5cc996cd67006bd8}} 
+\index{msgpack11::MsgPackValue@{msgpack11::MsgPackValue}!uint8\_value@{uint8\_value}}
+\index{uint8\_value@{uint8\_value}!msgpack11::MsgPackValue@{msgpack11::MsgPackValue}}
+\doxysubsubsection{\texorpdfstring{uint8\_value()}{uint8\_value()}}
+{\footnotesize\ttfamily uint8\+\_\+t msgpack11\+::\+Msg\+Pack\+Value\+::uint8\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \mbox{\hyperlink{classmsgpack11_1_1NumberValue_a78f0d849ee7c20c574bb4554f74c3b43}{msgpack11\+::\+Number\+Value$<$ tag, T $>$}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/msgpack11/\mbox{\hyperlink{msgpack11_8cpp}{msgpack11.\+cpp}}\end{DoxyCompactItemize}

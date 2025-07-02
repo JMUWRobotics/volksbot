@@ -1,0 +1,319 @@
+\hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Ros\+Msgpack\+Publisher Class Reference}
+\label{classsick__scansegment__xd_1_1RosMsgpackPublisher}\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+
+
+{\ttfamily \#include $<$ros\+\_\+msgpack\+\_\+publisher.\+h$>$}
+
+
+
+Inheritance diagram for sick\+\_\+scansegment\+\_\+xd\+::Ros\+Msgpack\+Publisher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsick__scansegment__xd_1_1RosMsgpackPublisher__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sick\+\_\+scansegment\+\_\+xd\+::Ros\+Msgpack\+Publisher\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsick__scansegment__xd_1_1RosMsgpackPublisher__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_1_1SegmentPointsCollector}{Segment\+Points\+Collector}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac194f1d61690d695aa0609a65dee9dfb}{Ros\+Msgpack\+Publisher}} (const std\+::string \&node\+\_\+name=\char`\"{}sick\+\_\+scansegment\+\_\+xd\char`\"{}, const \mbox{\hyperlink{classsick__scansegment__xd_1_1Config}{sick\+\_\+scansegment\+\_\+xd\+::\+Config}} \&config=\mbox{\hyperlink{classsick__scansegment__xd_1_1Config}{sick\+\_\+scansegment\+\_\+xd\+::\+Config}}())
+\item 
+virtual \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_aaeb9a95fb31d53a829432f22f7309493}{$\sim$\+Ros\+Msgpack\+Publisher}} ()
+\item 
+virtual bool \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a4aa4c581888fd8f273e8da9c5c16acf4}{init\+L\+F\+Pangle\+Range\+Filter\+Settings}} (const std\+::string \&host\+\_\+\+L\+F\+Pangle\+Range\+Filter)
+\item 
+virtual bool \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_aa8dfb6e8e2d0466c29410883f92d2e42}{init\+L\+F\+Player\+Filter\+Settings}} (const std\+::string \&host\+\_\+\+L\+F\+Player\+Filter)
+\item 
+virtual void \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac7c420b540ce8a497e88b95da0c7cdd1}{Handle\+Msg\+Pack\+Data}} (const \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{sick\+\_\+scansegment\+\_\+xd\+::\+Scan\+Segment\+Parser\+Output}} \&msgpack\+\_\+data)
+\item 
+virtual \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackExportListenerIF}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Export\+Listener\+IF}} $\ast$ \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9957d13d85db16bd648ec81767b1c9eb}{Export\+Listener}} (void)
+\item 
+virtual void \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a840b1464337162bfce87406b0acd187c}{Set\+Active}} (bool active)
+\item 
+virtual void \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_ad4cbd20fca7cf3e7777d36e2fd84b6e9}{Get\+Fullframe\+Angle\+Ranges}} (float \&fullframe\+\_\+azimuth\+\_\+min\+\_\+deg, float \&fullframe\+\_\+azimuth\+\_\+max\+\_\+deg, float \&fullframe\+\_\+elevation\+\_\+min\+\_\+deg, float \&fullframe\+\_\+elevation\+\_\+max\+\_\+deg) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ int, std\+::map$<$ int, ros\+\_\+sensor\+\_\+msgs\+::\+Laser\+Scan $>$ $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a3d6dba68303bbf7f274fad98f95a1c08}{Laser\+Scan\+Msg\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_af499a5519ab65fac3b4160baabc54d3b}{convert\+Points\+To\+Customized\+Fields\+Cloud}} (uint32\+\_\+t timestamp\+\_\+sec, uint32\+\_\+t timestamp\+\_\+nsec, uint64\+\_\+t lidar\+\_\+timestamp\+\_\+start\+\_\+microsec, const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1PointXYZRAEI32f}{sick\+\_\+scansegment\+\_\+xd\+::\+Point\+X\+Y\+Z\+R\+A\+E\+I32f}} $>$$>$ \&lidar\+\_\+points, \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration}{Custom\+Point\+Cloud\+Configuration}} \&pointcloud\+\_\+cfg, \mbox{\hyperlink{common_8h_acb19a2cb737c19a30aec5a3deac9514b}{Point\+Cloud2\+Msg}} \&pointcloud\+\_\+msg)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a920887ff78ca9f78abf8564d25d41880}{convert\+Points\+To\+Laserscan\+Msg}} (uint32\+\_\+t timestamp\+\_\+sec, uint32\+\_\+t timestamp\+\_\+nsec, const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1PointXYZRAEI32f}{sick\+\_\+scansegment\+\_\+xd\+::\+Point\+X\+Y\+Z\+R\+A\+E\+I32f}} $>$$>$ \&lidar\+\_\+points, size\+\_\+t total\+\_\+point\+\_\+count, \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a3d6dba68303bbf7f274fad98f95a1c08}{Laser\+Scan\+Msg\+Map}} \&laser\+\_\+scan\+\_\+msg\+\_\+map, const std\+::string \&frame\+\_\+id, bool is\+\_\+fullframe)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_abf49889ca815aba6293d99f8a13d911c}{publish\+Point\+Cloud2\+Msg}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, \mbox{\hyperlink{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}{Point\+Cloud2\+Msg\+Publisher}} \&publisher, \mbox{\hyperlink{common_8h_acb19a2cb737c19a30aec5a3deac9514b}{Point\+Cloud2\+Msg}} \&pointcloud\+\_\+msg, int32\+\_\+t num\+\_\+echos, int32\+\_\+t segment\+\_\+idx, int coordinate\+\_\+notation, const std\+::string \&topic)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9c27ffcb4f9bafab2869758c3364ec78}{publish\+Laser\+Scan\+Msg}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, \mbox{\hyperlink{common_8h_a77e6465ed40b01096227a0b59076f314}{Laserscan\+Msg\+Publisher}} \&laserscan\+\_\+publisher, \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a3d6dba68303bbf7f274fad98f95a1c08}{Laser\+Scan\+Msg\+Map}} \&laser\+\_\+scan\+\_\+msg\+\_\+map, int32\+\_\+t num\+\_\+echos, int32\+\_\+t segment\+\_\+idx)
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_af27c91837a1cc628da1f0d828666cdcd}{print\+Elevation\+Azimuth\+Table}} (const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1PointXYZRAEI32f}{sick\+\_\+scansegment\+\_\+xd\+::\+Point\+X\+Y\+Z\+R\+A\+E\+I32f}} $>$$>$ \&lidar\+\_\+points)
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_abe0fd578b5c0c12c918fc1ce97c7704f}{print\+Coverage\+Table}} (const std\+::map$<$ int, std\+::map$<$ int, int $>$$>$ \&elevation\+\_\+azimuth\+\_\+histograms)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a955633042cbca24ba51d67798de3beba}{m\+\_\+active}}
+\item 
+\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac1810687f4bf3b91f0cc6e9a3a6cd281}{m\+\_\+node}}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a79faf756ef62fa16b87d243969464a06}{m\+\_\+frame\+\_\+id}}
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a36d5b3ca4d94f5d096dffd2e2a88dd59}{m\+\_\+all\+\_\+segments\+\_\+azimuth\+\_\+min\+\_\+deg}} = -\/180
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9d3026a6cfc0f90084675612228460af}{m\+\_\+all\+\_\+segments\+\_\+azimuth\+\_\+max\+\_\+deg}} = +180
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a12a5b6fdf305fba8403893a89a63a408}{m\+\_\+all\+\_\+segments\+\_\+elevation\+\_\+min\+\_\+deg}} = 0
+\item 
+float \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a76bd3c8ffc20322e8a7e63f9437987ea}{m\+\_\+all\+\_\+segments\+\_\+elevation\+\_\+max\+\_\+deg}} = 0
+\item 
+int \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a0195c6eecb72a54f0d97fb9ac7a7f925}{m\+\_\+host\+\_\+\+F\+R\+Echo\+Filter}}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_adf5f27997c9252ff4aa6bb90af3747e7}{m\+\_\+host\+\_\+set\+\_\+\+F\+R\+Echo\+Filter}}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_1_1SegmentPointsCollector}{Segment\+Points\+Collector}} \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_afc044f1c2f3729e816693035283db286}{m\+\_\+points\+\_\+collector}}
+\item 
+\mbox{\hyperlink{common_8h_a77e6465ed40b01096227a0b59076f314}{Laserscan\+Msg\+Publisher}} \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a325af135ae543b5e1664a141df4131b2}{m\+\_\+publisher\+\_\+laserscan\+\_\+360}}
+\item 
+\mbox{\hyperlink{common_8h_a77e6465ed40b01096227a0b59076f314}{Laserscan\+Msg\+Publisher}} \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac37519351c414f838cc73b2a8fd1af85}{m\+\_\+publisher\+\_\+laserscan\+\_\+segment}}
+\item 
+\mbox{\hyperlink{common_8h_a11d0d9f5f4b1171a800f29bf07f2e4a7}{Imu\+Msg\+Publisher}} \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_af8511a56be942c9e92485e7d2dd015a4}{m\+\_\+publisher\+\_\+imu}}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a2a779846d153c1456ac927f99457215c}{m\+\_\+publisher\+\_\+imu\+\_\+initialized}} = false
+\item 
+double \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac844b5ace7570b0be791c000af785d0f}{m\+\_\+scan\+\_\+time}} = 0
+\item 
+std\+::vector$<$ int $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a97d44ca02171883983aaa0821a8bbd11}{m\+\_\+laserscan\+\_\+layer\+\_\+filter}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration}{Custom\+Point\+Cloud\+Configuration}} $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_aa708145671c668f3f5e1f5d59bf0972b}{m\+\_\+custom\+\_\+pointclouds\+\_\+cfg}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a3d6dba68303bbf7f274fad98f95a1c08}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a3d6dba68303bbf7f274fad98f95a1c08}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!LaserScanMsgMap@{LaserScanMsgMap}}
+\index{LaserScanMsgMap@{LaserScanMsgMap}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{LaserScanMsgMap}{LaserScanMsgMap}}
+{\footnotesize\ttfamily typedef std\+::map$<$int,std\+::map$<$int,ros\+\_\+sensor\+\_\+msgs\+::\+Laser\+Scan$>$ $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a3d6dba68303bbf7f274fad98f95a1c08}{sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::\+Laser\+Scan\+Msg\+Map}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac194f1d61690d695aa0609a65dee9dfb}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac194f1d61690d695aa0609a65dee9dfb}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!RosMsgpackPublisher@{RosMsgpackPublisher}}
+\index{RosMsgpackPublisher@{RosMsgpackPublisher}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{RosMsgpackPublisher()}{RosMsgpackPublisher()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::\+Ros\+Msgpack\+Publisher (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{node\+\_\+name = {\ttfamily \char`\"{}sick\+\_\+scansegment\+\_\+xd\char`\"{}},  }\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1Config}{sick\+\_\+scansegment\+\_\+xd\+::\+Config}} \&}]{config = {\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1Config}{sick\+\_\+scansegment\+\_\+xd\+::\+Config}}()} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_aaeb9a95fb31d53a829432f22f7309493}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_aaeb9a95fb31d53a829432f22f7309493}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!````~RosMsgpackPublisher@{$\sim$RosMsgpackPublisher}}
+\index{````~RosMsgpackPublisher@{$\sim$RosMsgpackPublisher}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{$\sim$RosMsgpackPublisher()}{~RosMsgpackPublisher()}}
+{\footnotesize\ttfamily virtual sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::$\sim$\+Ros\+Msgpack\+Publisher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_af499a5519ab65fac3b4160baabc54d3b}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_af499a5519ab65fac3b4160baabc54d3b}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!convertPointsToCustomizedFieldsCloud@{convertPointsToCustomizedFieldsCloud}}
+\index{convertPointsToCustomizedFieldsCloud@{convertPointsToCustomizedFieldsCloud}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{convertPointsToCustomizedFieldsCloud()}{convertPointsToCustomizedFieldsCloud()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::convert\+Points\+To\+Customized\+Fields\+Cloud (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timestamp\+\_\+sec,  }\item[{uint32\+\_\+t}]{timestamp\+\_\+nsec,  }\item[{uint64\+\_\+t}]{lidar\+\_\+timestamp\+\_\+start\+\_\+microsec,  }\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1PointXYZRAEI32f}{sick\+\_\+scansegment\+\_\+xd\+::\+Point\+X\+Y\+Z\+R\+A\+E\+I32f}} $>$$>$ \&}]{lidar\+\_\+points,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration}{Custom\+Point\+Cloud\+Configuration}} \&}]{pointcloud\+\_\+cfg,  }\item[{\mbox{\hyperlink{common_8h_acb19a2cb737c19a30aec5a3deac9514b}{Point\+Cloud2\+Msg}} \&}]{pointcloud\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a920887ff78ca9f78abf8564d25d41880}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a920887ff78ca9f78abf8564d25d41880}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!convertPointsToLaserscanMsg@{convertPointsToLaserscanMsg}}
+\index{convertPointsToLaserscanMsg@{convertPointsToLaserscanMsg}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{convertPointsToLaserscanMsg()}{convertPointsToLaserscanMsg()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::convert\+Points\+To\+Laserscan\+Msg (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{timestamp\+\_\+sec,  }\item[{uint32\+\_\+t}]{timestamp\+\_\+nsec,  }\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1PointXYZRAEI32f}{sick\+\_\+scansegment\+\_\+xd\+::\+Point\+X\+Y\+Z\+R\+A\+E\+I32f}} $>$$>$ \&}]{lidar\+\_\+points,  }\item[{size\+\_\+t}]{total\+\_\+point\+\_\+count,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a3d6dba68303bbf7f274fad98f95a1c08}{Laser\+Scan\+Msg\+Map}} \&}]{laser\+\_\+scan\+\_\+msg\+\_\+map,  }\item[{const std\+::string \&}]{frame\+\_\+id,  }\item[{bool}]{is\+\_\+fullframe }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9957d13d85db16bd648ec81767b1c9eb}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9957d13d85db16bd648ec81767b1c9eb}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!ExportListener@{ExportListener}}
+\index{ExportListener@{ExportListener}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{ExportListener()}{ExportListener()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackExportListenerIF}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Export\+Listener\+IF}} $\ast$ sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::\+Export\+Listener (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_ad4cbd20fca7cf3e7777d36e2fd84b6e9}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_ad4cbd20fca7cf3e7777d36e2fd84b6e9}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!GetFullframeAngleRanges@{GetFullframeAngleRanges}}
+\index{GetFullframeAngleRanges@{GetFullframeAngleRanges}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{GetFullframeAngleRanges()}{GetFullframeAngleRanges()}}
+{\footnotesize\ttfamily virtual void sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::\+Get\+Fullframe\+Angle\+Ranges (\begin{DoxyParamCaption}\item[{float \&}]{fullframe\+\_\+azimuth\+\_\+min\+\_\+deg,  }\item[{float \&}]{fullframe\+\_\+azimuth\+\_\+max\+\_\+deg,  }\item[{float \&}]{fullframe\+\_\+elevation\+\_\+min\+\_\+deg,  }\item[{float \&}]{fullframe\+\_\+elevation\+\_\+max\+\_\+deg }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac7c420b540ce8a497e88b95da0c7cdd1}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac7c420b540ce8a497e88b95da0c7cdd1}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!HandleMsgPackData@{HandleMsgPackData}}
+\index{HandleMsgPackData@{HandleMsgPackData}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{HandleMsgPackData()}{HandleMsgPackData()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::\+Handle\+Msg\+Pack\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{sick\+\_\+scansegment\+\_\+xd\+::\+Scan\+Segment\+Parser\+Output}} \&}]{msgpack\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a4aa4c581888fd8f273e8da9c5c16acf4}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a4aa4c581888fd8f273e8da9c5c16acf4}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!initLFPangleRangeFilterSettings@{initLFPangleRangeFilterSettings}}
+\index{initLFPangleRangeFilterSettings@{initLFPangleRangeFilterSettings}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{initLFPangleRangeFilterSettings()}{initLFPangleRangeFilterSettings()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::init\+L\+F\+Pangle\+Range\+Filter\+Settings (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host\+\_\+\+L\+F\+Pangle\+Range\+Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_aa8dfb6e8e2d0466c29410883f92d2e42}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_aa8dfb6e8e2d0466c29410883f92d2e42}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!initLFPlayerFilterSettings@{initLFPlayerFilterSettings}}
+\index{initLFPlayerFilterSettings@{initLFPlayerFilterSettings}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{initLFPlayerFilterSettings()}{initLFPlayerFilterSettings()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::init\+L\+F\+Player\+Filter\+Settings (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{host\+\_\+\+L\+F\+Player\+Filter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_abe0fd578b5c0c12c918fc1ce97c7704f}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_abe0fd578b5c0c12c918fc1ce97c7704f}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!printCoverageTable@{printCoverageTable}}
+\index{printCoverageTable@{printCoverageTable}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{printCoverageTable()}{printCoverageTable()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::print\+Coverage\+Table (\begin{DoxyParamCaption}\item[{const std\+::map$<$ int, std\+::map$<$ int, int $>$$>$ \&}]{elevation\+\_\+azimuth\+\_\+histograms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Prints (elevation,azimuth) values of the coverage table of collected lidar points \mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_af27c91837a1cc628da1f0d828666cdcd}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_af27c91837a1cc628da1f0d828666cdcd}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!printElevationAzimuthTable@{printElevationAzimuthTable}}
+\index{printElevationAzimuthTable@{printElevationAzimuthTable}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{printElevationAzimuthTable()}{printElevationAzimuthTable()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::print\+Elevation\+Azimuth\+Table (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1PointXYZRAEI32f}{sick\+\_\+scansegment\+\_\+xd\+::\+Point\+X\+Y\+Z\+R\+A\+E\+I32f}} $>$$>$ \&}]{lidar\+\_\+points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Shortcut to publish a Point\+Cloud2\+Msg Prints (elevation,azimuth) values of all lidar points
+
+Prints (elevation,azimuth) values of all lidar points \mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9c27ffcb4f9bafab2869758c3364ec78}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9c27ffcb4f9bafab2869758c3364ec78}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!publishLaserScanMsg@{publishLaserScanMsg}}
+\index{publishLaserScanMsg@{publishLaserScanMsg}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{publishLaserScanMsg()}{publishLaserScanMsg()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::publish\+Laser\+Scan\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{\mbox{\hyperlink{common_8h_a77e6465ed40b01096227a0b59076f314}{Laserscan\+Msg\+Publisher}} \&}]{laserscan\+\_\+publisher,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_a3d6dba68303bbf7f274fad98f95a1c08}{Laser\+Scan\+Msg\+Map}} \&}]{laser\+\_\+scan\+\_\+msg\+\_\+map,  }\item[{int32\+\_\+t}]{num\+\_\+echos,  }\item[{int32\+\_\+t}]{segment\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Shortcut to publish Laserscan messages \mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_abf49889ca815aba6293d99f8a13d911c}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_abf49889ca815aba6293d99f8a13d911c}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!publishPointCloud2Msg@{publishPointCloud2Msg}}
+\index{publishPointCloud2Msg@{publishPointCloud2Msg}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{publishPointCloud2Msg()}{publishPointCloud2Msg()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::publish\+Point\+Cloud2\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{\mbox{\hyperlink{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}{Point\+Cloud2\+Msg\+Publisher}} \&}]{publisher,  }\item[{\mbox{\hyperlink{common_8h_acb19a2cb737c19a30aec5a3deac9514b}{Point\+Cloud2\+Msg}} \&}]{pointcloud\+\_\+msg,  }\item[{int32\+\_\+t}]{num\+\_\+echos,  }\item[{int32\+\_\+t}]{segment\+\_\+idx,  }\item[{int}]{coordinate\+\_\+notation,  }\item[{const std\+::string \&}]{topic }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Shortcut to publish a Point\+Cloud2\+Msg \mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a840b1464337162bfce87406b0acd187c}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a840b1464337162bfce87406b0acd187c}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!SetActive@{SetActive}}
+\index{SetActive@{SetActive}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{SetActive()}{SetActive()}}
+{\footnotesize\ttfamily virtual void sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::\+Set\+Active (\begin{DoxyParamCaption}\item[{bool}]{active }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a955633042cbca24ba51d67798de3beba}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a955633042cbca24ba51d67798de3beba}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_active@{m\_active}}
+\index{m\_active@{m\_active}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_active}{m\_active}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+active\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9d3026a6cfc0f90084675612228460af}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a9d3026a6cfc0f90084675612228460af}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_all\_segments\_azimuth\_max\_deg@{m\_all\_segments\_azimuth\_max\_deg}}
+\index{m\_all\_segments\_azimuth\_max\_deg@{m\_all\_segments\_azimuth\_max\_deg}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_all\_segments\_azimuth\_max\_deg}{m\_all\_segments\_azimuth\_max\_deg}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+all\+\_\+segments\+\_\+azimuth\+\_\+max\+\_\+deg = +180\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a36d5b3ca4d94f5d096dffd2e2a88dd59}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a36d5b3ca4d94f5d096dffd2e2a88dd59}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_all\_segments\_azimuth\_min\_deg@{m\_all\_segments\_azimuth\_min\_deg}}
+\index{m\_all\_segments\_azimuth\_min\_deg@{m\_all\_segments\_azimuth\_min\_deg}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_all\_segments\_azimuth\_min\_deg}{m\_all\_segments\_azimuth\_min\_deg}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+all\+\_\+segments\+\_\+azimuth\+\_\+min\+\_\+deg = -\/180\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a76bd3c8ffc20322e8a7e63f9437987ea}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a76bd3c8ffc20322e8a7e63f9437987ea}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_all\_segments\_elevation\_max\_deg@{m\_all\_segments\_elevation\_max\_deg}}
+\index{m\_all\_segments\_elevation\_max\_deg@{m\_all\_segments\_elevation\_max\_deg}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_all\_segments\_elevation\_max\_deg}{m\_all\_segments\_elevation\_max\_deg}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+all\+\_\+segments\+\_\+elevation\+\_\+max\+\_\+deg = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a12a5b6fdf305fba8403893a89a63a408}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a12a5b6fdf305fba8403893a89a63a408}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_all\_segments\_elevation\_min\_deg@{m\_all\_segments\_elevation\_min\_deg}}
+\index{m\_all\_segments\_elevation\_min\_deg@{m\_all\_segments\_elevation\_min\_deg}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_all\_segments\_elevation\_min\_deg}{m\_all\_segments\_elevation\_min\_deg}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+all\+\_\+segments\+\_\+elevation\+\_\+min\+\_\+deg = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_aa708145671c668f3f5e1f5d59bf0972b}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_aa708145671c668f3f5e1f5d59bf0972b}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_custom\_pointclouds\_cfg@{m\_custom\_pointclouds\_cfg}}
+\index{m\_custom\_pointclouds\_cfg@{m\_custom\_pointclouds\_cfg}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_custom\_pointclouds\_cfg}{m\_custom\_pointclouds\_cfg}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classsick__scansegment__xd_1_1CustomPointCloudConfiguration}{Custom\+Point\+Cloud\+Configuration}}$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+custom\+\_\+pointclouds\+\_\+cfg\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a79faf756ef62fa16b87d243969464a06}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a79faf756ef62fa16b87d243969464a06}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_frame\_id@{m\_frame\_id}}
+\index{m\_frame\_id@{m\_frame\_id}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_frame\_id}{m\_frame\_id}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+frame\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a0195c6eecb72a54f0d97fb9ac7a7f925}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a0195c6eecb72a54f0d97fb9ac7a7f925}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_host\_FREchoFilter@{m\_host\_FREchoFilter}}
+\index{m\_host\_FREchoFilter@{m\_host\_FREchoFilter}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_host\_FREchoFilter}{m\_host\_FREchoFilter}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+host\+\_\+\+F\+R\+Echo\+Filter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_adf5f27997c9252ff4aa6bb90af3747e7}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_adf5f27997c9252ff4aa6bb90af3747e7}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_host\_set\_FREchoFilter@{m\_host\_set\_FREchoFilter}}
+\index{m\_host\_set\_FREchoFilter@{m\_host\_set\_FREchoFilter}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_host\_set\_FREchoFilter}{m\_host\_set\_FREchoFilter}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+host\+\_\+set\+\_\+\+F\+R\+Echo\+Filter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a97d44ca02171883983aaa0821a8bbd11}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a97d44ca02171883983aaa0821a8bbd11}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_laserscan\_layer\_filter@{m\_laserscan\_layer\_filter}}
+\index{m\_laserscan\_layer\_filter@{m\_laserscan\_layer\_filter}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_laserscan\_layer\_filter}{m\_laserscan\_layer\_filter}}
+{\footnotesize\ttfamily std\+::vector$<$int$>$ sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+laserscan\+\_\+layer\+\_\+filter\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac1810687f4bf3b91f0cc6e9a3a6cd281}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac1810687f4bf3b91f0cc6e9a3a6cd281}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_node@{m\_node}}
+\index{m\_node@{m\_node}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_node}{m\_node}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+node\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_afc044f1c2f3729e816693035283db286}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_afc044f1c2f3729e816693035283db286}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_points\_collector@{m\_points\_collector}}
+\index{m\_points\_collector@{m\_points\_collector}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_points\_collector}{m\_points\_collector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1RosMsgpackPublisher_1_1SegmentPointsCollector}{Segment\+Points\+Collector}} sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+points\+\_\+collector\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_af8511a56be942c9e92485e7d2dd015a4}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_af8511a56be942c9e92485e7d2dd015a4}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_publisher\_imu@{m\_publisher\_imu}}
+\index{m\_publisher\_imu@{m\_publisher\_imu}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_publisher\_imu}{m\_publisher\_imu}}
+{\footnotesize\ttfamily \mbox{\hyperlink{common_8h_a11d0d9f5f4b1171a800f29bf07f2e4a7}{Imu\+Msg\+Publisher}} sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+publisher\+\_\+imu\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a2a779846d153c1456ac927f99457215c}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a2a779846d153c1456ac927f99457215c}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_publisher\_imu\_initialized@{m\_publisher\_imu\_initialized}}
+\index{m\_publisher\_imu\_initialized@{m\_publisher\_imu\_initialized}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_publisher\_imu\_initialized}{m\_publisher\_imu\_initialized}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+publisher\+\_\+imu\+\_\+initialized = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_a325af135ae543b5e1664a141df4131b2}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_a325af135ae543b5e1664a141df4131b2}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_publisher\_laserscan\_360@{m\_publisher\_laserscan\_360}}
+\index{m\_publisher\_laserscan\_360@{m\_publisher\_laserscan\_360}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_publisher\_laserscan\_360}{m\_publisher\_laserscan\_360}}
+{\footnotesize\ttfamily \mbox{\hyperlink{common_8h_a77e6465ed40b01096227a0b59076f314}{Laserscan\+Msg\+Publisher}} sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+publisher\+\_\+laserscan\+\_\+360\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac37519351c414f838cc73b2a8fd1af85}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac37519351c414f838cc73b2a8fd1af85}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_publisher\_laserscan\_segment@{m\_publisher\_laserscan\_segment}}
+\index{m\_publisher\_laserscan\_segment@{m\_publisher\_laserscan\_segment}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_publisher\_laserscan\_segment}{m\_publisher\_laserscan\_segment}}
+{\footnotesize\ttfamily \mbox{\hyperlink{common_8h_a77e6465ed40b01096227a0b59076f314}{Laserscan\+Msg\+Publisher}} sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+publisher\+\_\+laserscan\+\_\+segment\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac844b5ace7570b0be791c000af785d0f}\label{classsick__scansegment__xd_1_1RosMsgpackPublisher_ac844b5ace7570b0be791c000af785d0f}} 
+\index{sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}!m\_scan\_time@{m\_scan\_time}}
+\index{m\_scan\_time@{m\_scan\_time}!sick\_scansegment\_xd::RosMsgpackPublisher@{sick\_scansegment\_xd::RosMsgpackPublisher}}
+\doxysubsubsection{\texorpdfstring{m\_scan\_time}{m\_scan\_time}}
+{\footnotesize\ttfamily double sick\+\_\+scansegment\+\_\+xd\+::\+Ros\+Msgpack\+Publisher\+::m\+\_\+scan\+\_\+time = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{ros__msgpack__publisher_8h}{ros\+\_\+msgpack\+\_\+publisher.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{ros__msgpack__publisher_8cpp}{ros\+\_\+msgpack\+\_\+publisher.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,213 @@
+\hypertarget{classsick__scan__xd_1_1SickScanMarker}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Marker Class Reference}
+\label{classsick__scan__xd_1_1SickScanMarker}\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+
+
+{\ttfamily \#include $<$sick\+\_\+scan\+\_\+marker.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Marker\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsick__scan__xd_1_1SickScanMarker__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_1_1FieldInfo}{Field\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a4202f5d143c446a4b1f3673f399921fa}{Sick\+Scan\+Marker}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh=0, const std\+::string \&marker\+\_\+topic=\char`\"{}\char`\"{}, const std\+::string \&marker\+\_\+frame\+\_\+id=\char`\"{}\char`\"{})
+\item 
+virtual \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a79e7d1b88a6691b245ad282dc4aacb8a}{$\sim$\+Sick\+Scan\+Marker}} ()
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_ad5c78a8b079aab2ebea2992485b039c0}{update\+Marker}} (const std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonField}{Sick\+Scan\+Mon\+Field}} $>$ \&fields, int fieldset, int eval\+\_\+field\+\_\+logic)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_aed090f27fad84be8c048232af5aa7fbf}{update\+Marker}} (sick\+\_\+scan\+\_\+msg\+::\+L\+I\+Doutputstate\+Msg \&msg, int eval\+\_\+field\+\_\+logic)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_afef93a0036204f02ff00dc597546dce9}{update\+Marker}} (sick\+\_\+scan\+\_\+msg\+::\+L\+F\+Erec\+Msg \&msg, int eval\+\_\+field\+\_\+logic)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a5ff2ef6f49407a4caf3718a83010887a}{publish\+Marker}} (void)
+\item 
+std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a5cfff9459bc3d227b177065a11929e3b}{create\+Mon\+Field\+Marker}} (const std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_1_1FieldInfo}{Field\+Info}} $>$ \&field\+\_\+info)
+\item 
+std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_ae1fe1d2fa86a00df4bc4e10c706af847}{create\+Mon\+Field\+Legend}} (const std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_1_1FieldInfo}{Field\+Info}} $>$ \&field\+\_\+info)
+\item 
+std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a0580c1a3320cc67031549a2f3514ac48}{create\+Mon\+Fieldset\+Legend}} (int fieldset)
+\item 
+std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_ad7ea1beae27ff52ce70af07c9c196b0f}{create\+Output\+State\+Legend}} (const std\+::vector$<$ std\+::string $>$ \&output\+\_\+state, const std\+::vector$<$ std\+::string $>$ \&output\+\_\+count, const std\+::vector$<$ ros\+\_\+std\+\_\+msgs\+::\+Color\+R\+G\+BA $>$ \&output\+\_\+colors)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a39be1b1eab2f9029a6d24fbc7bd7ed10}{m\+\_\+nh}}
+\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a59c7c168dcb32f806415d4cd9b7c78ab}{m\+\_\+frame\+\_\+id}}
+\item 
+\mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker\+Array $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a3f4b3ee7d960d0cfaac3ab041ffbe587}{m\+\_\+marker\+\_\+publisher}}
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a08c00d393c375389d735fb277974b98e}{m\+\_\+scan\+\_\+mon\+\_\+fieldset}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonField}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Mon\+Field}} $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_af7f2d253f2da0d78f343cc3d85bfe730}{m\+\_\+scan\+\_\+mon\+\_\+fields}}
+\item 
+std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a9278af2d1fc625ef9fc60afe8b85edc2}{m\+\_\+scan\+\_\+mon\+\_\+field\+\_\+marker}}
+\item 
+std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_a0fcdf1209b681ba11009a1c662842055}{m\+\_\+scan\+\_\+mon\+\_\+field\+\_\+legend}}
+\item 
+std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_ad67303d3d94d8edf2a83edf7c044ca05}{m\+\_\+scan\+\_\+fieldset\+\_\+legend}}
+\item 
+std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_ad33d2fd12df6e6b039e2da773d33ed1f}{m\+\_\+scan\+\_\+outputstate\+\_\+legend}}
+\item 
+double \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_adaa0ad451d62c760aa8fd231bf8bd0ec}{m\+\_\+marker\+\_\+output\+\_\+legend\+\_\+offset\+\_\+x}}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_abc4e15d81fffd11dd4d73869aae09f8f}{m\+\_\+add\+\_\+transform\+\_\+xyz\+\_\+rpy}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a4202f5d143c446a4b1f3673f399921fa}\label{classsick__scan__xd_1_1SickScanMarker_a4202f5d143c446a4b1f3673f399921fa}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!SickScanMarker@{SickScanMarker}}
+\index{SickScanMarker@{SickScanMarker}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{SickScanMarker()}{SickScanMarker()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::\+Sick\+Scan\+Marker (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh = {\ttfamily 0},  }\item[{const std\+::string \&}]{marker\+\_\+topic = {\ttfamily \char`\"{}\char`\"{}},  }\item[{const std\+::string \&}]{marker\+\_\+frame\+\_\+id = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a79e7d1b88a6691b245ad282dc4aacb8a}\label{classsick__scan__xd_1_1SickScanMarker_a79e7d1b88a6691b245ad282dc4aacb8a}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!````~SickScanMarker@{$\sim$SickScanMarker}}
+\index{````~SickScanMarker@{$\sim$SickScanMarker}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickScanMarker()}{~SickScanMarker()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::$\sim$\+Sick\+Scan\+Marker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_ae1fe1d2fa86a00df4bc4e10c706af847}\label{classsick__scan__xd_1_1SickScanMarker_ae1fe1d2fa86a00df4bc4e10c706af847}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!createMonFieldLegend@{createMonFieldLegend}}
+\index{createMonFieldLegend@{createMonFieldLegend}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{createMonFieldLegend()}{createMonFieldLegend()}}
+{\footnotesize\ttfamily std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::create\+Mon\+Field\+Legend (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_1_1FieldInfo}{Field\+Info}} $>$ \&}]{field\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a5cfff9459bc3d227b177065a11929e3b}\label{classsick__scan__xd_1_1SickScanMarker_a5cfff9459bc3d227b177065a11929e3b}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!createMonFieldMarker@{createMonFieldMarker}}
+\index{createMonFieldMarker@{createMonFieldMarker}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{createMonFieldMarker()}{createMonFieldMarker()}}
+{\footnotesize\ttfamily std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::create\+Mon\+Field\+Marker (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMarker_1_1FieldInfo}{Field\+Info}} $>$ \&}]{field\+\_\+info }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a0580c1a3320cc67031549a2f3514ac48}\label{classsick__scan__xd_1_1SickScanMarker_a0580c1a3320cc67031549a2f3514ac48}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!createMonFieldsetLegend@{createMonFieldsetLegend}}
+\index{createMonFieldsetLegend@{createMonFieldsetLegend}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{createMonFieldsetLegend()}{createMonFieldsetLegend()}}
+{\footnotesize\ttfamily std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::create\+Mon\+Fieldset\+Legend (\begin{DoxyParamCaption}\item[{int}]{fieldset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_ad7ea1beae27ff52ce70af07c9c196b0f}\label{classsick__scan__xd_1_1SickScanMarker_ad7ea1beae27ff52ce70af07c9c196b0f}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!createOutputStateLegend@{createOutputStateLegend}}
+\index{createOutputStateLegend@{createOutputStateLegend}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{createOutputStateLegend()}{createOutputStateLegend()}}
+{\footnotesize\ttfamily std\+::vector$<$ ros\+\_\+visualization\+\_\+msgs\+::\+Marker $>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::create\+Output\+State\+Legend (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{output\+\_\+state,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{output\+\_\+count,  }\item[{const std\+::vector$<$ ros\+\_\+std\+\_\+msgs\+::\+Color\+R\+G\+BA $>$ \&}]{output\+\_\+colors }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a5ff2ef6f49407a4caf3718a83010887a}\label{classsick__scan__xd_1_1SickScanMarker_a5ff2ef6f49407a4caf3718a83010887a}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!publishMarker@{publishMarker}}
+\index{publishMarker@{publishMarker}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{publishMarker()}{publishMarker()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::publish\+Marker (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_ad5c78a8b079aab2ebea2992485b039c0}\label{classsick__scan__xd_1_1SickScanMarker_ad5c78a8b079aab2ebea2992485b039c0}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!updateMarker@{updateMarker}}
+\index{updateMarker@{updateMarker}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{updateMarker()}{updateMarker()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::update\+Marker (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonField}{Sick\+Scan\+Mon\+Field}} $>$ \&}]{fields,  }\item[{int}]{fieldset,  }\item[{int}]{eval\+\_\+field\+\_\+logic }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_afef93a0036204f02ff00dc597546dce9}\label{classsick__scan__xd_1_1SickScanMarker_afef93a0036204f02ff00dc597546dce9}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!updateMarker@{updateMarker}}
+\index{updateMarker@{updateMarker}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{updateMarker()}{updateMarker()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::update\+Marker (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+msg\+::\+L\+F\+Erec\+Msg \&}]{msg,  }\item[{int}]{eval\+\_\+field\+\_\+logic }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_aed090f27fad84be8c048232af5aa7fbf}\label{classsick__scan__xd_1_1SickScanMarker_aed090f27fad84be8c048232af5aa7fbf}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!updateMarker@{updateMarker}}
+\index{updateMarker@{updateMarker}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{updateMarker()}{updateMarker()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::update\+Marker (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+msg\+::\+L\+I\+Doutputstate\+Msg \&}]{msg,  }\item[{int}]{eval\+\_\+field\+\_\+logic }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_abc4e15d81fffd11dd4d73869aae09f8f}\label{classsick__scan__xd_1_1SickScanMarker_abc4e15d81fffd11dd4d73869aae09f8f}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_add\_transform\_xyz\_rpy@{m\_add\_transform\_xyz\_rpy}}
+\index{m\_add\_transform\_xyz\_rpy@{m\_add\_transform\_xyz\_rpy}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_add\_transform\_xyz\_rpy}{m\_add\_transform\_xyz\_rpy}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+add\+\_\+transform\+\_\+xyz\+\_\+rpy\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a59c7c168dcb32f806415d4cd9b7c78ab}\label{classsick__scan__xd_1_1SickScanMarker_a59c7c168dcb32f806415d4cd9b7c78ab}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_frame\_id@{m\_frame\_id}}
+\index{m\_frame\_id@{m\_frame\_id}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_frame\_id}{m\_frame\_id}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+frame\+\_\+id\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_adaa0ad451d62c760aa8fd231bf8bd0ec}\label{classsick__scan__xd_1_1SickScanMarker_adaa0ad451d62c760aa8fd231bf8bd0ec}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_marker\_output\_legend\_offset\_x@{m\_marker\_output\_legend\_offset\_x}}
+\index{m\_marker\_output\_legend\_offset\_x@{m\_marker\_output\_legend\_offset\_x}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_marker\_output\_legend\_offset\_x}{m\_marker\_output\_legend\_offset\_x}}
+{\footnotesize\ttfamily double sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+marker\+\_\+output\+\_\+legend\+\_\+offset\+\_\+x\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a3f4b3ee7d960d0cfaac3ab041ffbe587}\label{classsick__scan__xd_1_1SickScanMarker_a3f4b3ee7d960d0cfaac3ab041ffbe587}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_marker\_publisher@{m\_marker\_publisher}}
+\index{m\_marker\_publisher@{m\_marker\_publisher}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_marker\_publisher}{m\_marker\_publisher}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ros\+\_\+visualization\+\_\+msgs\+::\+Marker\+Array$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+marker\+\_\+publisher\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a39be1b1eab2f9029a6d24fbc7bd7ed10}\label{classsick__scan__xd_1_1SickScanMarker_a39be1b1eab2f9029a6d24fbc7bd7ed10}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_nh@{m\_nh}}
+\index{m\_nh@{m\_nh}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_nh}{m\_nh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+nh\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_ad67303d3d94d8edf2a83edf7c044ca05}\label{classsick__scan__xd_1_1SickScanMarker_ad67303d3d94d8edf2a83edf7c044ca05}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_scan\_fieldset\_legend@{m\_scan\_fieldset\_legend}}
+\index{m\_scan\_fieldset\_legend@{m\_scan\_fieldset\_legend}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_scan\_fieldset\_legend}{m\_scan\_fieldset\_legend}}
+{\footnotesize\ttfamily std\+::vector$<$ros\+\_\+visualization\+\_\+msgs\+::\+Marker$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+scan\+\_\+fieldset\+\_\+legend\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a0fcdf1209b681ba11009a1c662842055}\label{classsick__scan__xd_1_1SickScanMarker_a0fcdf1209b681ba11009a1c662842055}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_scan\_mon\_field\_legend@{m\_scan\_mon\_field\_legend}}
+\index{m\_scan\_mon\_field\_legend@{m\_scan\_mon\_field\_legend}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_scan\_mon\_field\_legend}{m\_scan\_mon\_field\_legend}}
+{\footnotesize\ttfamily std\+::vector$<$ros\+\_\+visualization\+\_\+msgs\+::\+Marker$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+scan\+\_\+mon\+\_\+field\+\_\+legend\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a9278af2d1fc625ef9fc60afe8b85edc2}\label{classsick__scan__xd_1_1SickScanMarker_a9278af2d1fc625ef9fc60afe8b85edc2}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_scan\_mon\_field\_marker@{m\_scan\_mon\_field\_marker}}
+\index{m\_scan\_mon\_field\_marker@{m\_scan\_mon\_field\_marker}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_scan\_mon\_field\_marker}{m\_scan\_mon\_field\_marker}}
+{\footnotesize\ttfamily std\+::vector$<$ros\+\_\+visualization\+\_\+msgs\+::\+Marker$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+scan\+\_\+mon\+\_\+field\+\_\+marker\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_af7f2d253f2da0d78f343cc3d85bfe730}\label{classsick__scan__xd_1_1SickScanMarker_af7f2d253f2da0d78f343cc3d85bfe730}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_scan\_mon\_fields@{m\_scan\_mon\_fields}}
+\index{m\_scan\_mon\_fields@{m\_scan\_mon\_fields}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_scan\_mon\_fields}{m\_scan\_mon\_fields}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonField}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Mon\+Field}}$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+scan\+\_\+mon\+\_\+fields\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_a08c00d393c375389d735fb277974b98e}\label{classsick__scan__xd_1_1SickScanMarker_a08c00d393c375389d735fb277974b98e}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_scan\_mon\_fieldset@{m\_scan\_mon\_fieldset}}
+\index{m\_scan\_mon\_fieldset@{m\_scan\_mon\_fieldset}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_scan\_mon\_fieldset}{m\_scan\_mon\_fieldset}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+scan\+\_\+mon\+\_\+fieldset\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMarker_ad33d2fd12df6e6b039e2da773d33ed1f}\label{classsick__scan__xd_1_1SickScanMarker_ad33d2fd12df6e6b039e2da773d33ed1f}} 
+\index{sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}!m\_scan\_outputstate\_legend@{m\_scan\_outputstate\_legend}}
+\index{m\_scan\_outputstate\_legend@{m\_scan\_outputstate\_legend}!sick\_scan\_xd::SickScanMarker@{sick\_scan\_xd::SickScanMarker}}
+\doxysubsubsection{\texorpdfstring{m\_scan\_outputstate\_legend}{m\_scan\_outputstate\_legend}}
+{\footnotesize\ttfamily std\+::vector$<$ros\+\_\+visualization\+\_\+msgs\+::\+Marker$>$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Marker\+::m\+\_\+scan\+\_\+outputstate\+\_\+legend\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__scan__marker_8h}{sick\+\_\+scan\+\_\+marker.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__scan__marker_8cpp}{sick\+\_\+scan\+\_\+marker.\+cpp}}\end{DoxyCompactItemize}

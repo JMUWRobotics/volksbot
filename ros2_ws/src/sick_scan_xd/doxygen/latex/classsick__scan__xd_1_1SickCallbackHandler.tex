@@ -1,0 +1,122 @@
+\hypertarget{classsick__scan__xd_1_1SickCallbackHandler}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Callback\+Handler$<$ Handle\+Type, Msg\+Type $>$ Class Template Reference}
+\label{classsick__scan__xd_1_1SickCallbackHandler}\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+callback.\+h$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}}) (Handle\+Type handle, const Msg\+Type $\ast$msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a364e2fe63b728feecef973c635bb645e}{add\+Listener}} (Handle\+Type handle, \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}} listener)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_af3f806599abb0ccfd630e522b4fd395b}{notify\+Listener}} (Handle\+Type handle, const Msg\+Type $\ast$msg)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_ae648263aa47bd359e27f5d5decd24e96}{notify\+Listener}} (const Msg\+Type $\ast$msg)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a2a2d9fefc533792dc58a0a0124a7d5a3}{remove\+Listener}} (Handle\+Type handle, \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}} listener)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a9f96c16f90025e1b634c6f6b8085c503}{is\+Listener\+Registered}} (Handle\+Type handle, \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}} listener)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a340c7faf9eb792a0d46705bb32f9b2d2}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}} $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_aa26994cfe96ac844342c2d8b9b979f8c}{get\+Listener}} (Handle\+Type handle)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::map$<$ Handle\+Type, std\+::list$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}} $>$ $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a37de817e52b605a748a32b2e6285bb8f}{m\+\_\+listeners}}
+\item 
+std\+::mutex \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a491649bfbc53a00042ce50e8ae03714c}{m\+\_\+listeners\+\_\+mutex}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}\label{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!callbackFunctionPtr@{callbackFunctionPtr}}
+\index{callbackFunctionPtr@{callbackFunctionPtr}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{callbackFunctionPtr}{callbackFunctionPtr}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+typedef void($\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::callback\+Function\+Ptr) (Handle\+Type handle, const Msg\+Type $\ast$msg)}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_a364e2fe63b728feecef973c635bb645e}\label{classsick__scan__xd_1_1SickCallbackHandler_a364e2fe63b728feecef973c635bb645e}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!addListener@{addListener}}
+\index{addListener@{addListener}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{addListener()}{addListener()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::add\+Listener (\begin{DoxyParamCaption}\item[{Handle\+Type}]{handle,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}}}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_a340c7faf9eb792a0d46705bb32f9b2d2}\label{classsick__scan__xd_1_1SickCallbackHandler_a340c7faf9eb792a0d46705bb32f9b2d2}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!clear@{clear}}
+\index{clear@{clear}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_aa26994cfe96ac844342c2d8b9b979f8c}\label{classsick__scan__xd_1_1SickCallbackHandler_aa26994cfe96ac844342c2d8b9b979f8c}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!getListener@{getListener}}
+\index{getListener@{getListener}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{getListener()}{getListener()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+std\+::list$<$\mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}}$>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::get\+Listener (\begin{DoxyParamCaption}\item[{Handle\+Type}]{handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_a9f96c16f90025e1b634c6f6b8085c503}\label{classsick__scan__xd_1_1SickCallbackHandler_a9f96c16f90025e1b634c6f6b8085c503}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!isListenerRegistered@{isListenerRegistered}}
+\index{isListenerRegistered@{isListenerRegistered}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{isListenerRegistered()}{isListenerRegistered()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::is\+Listener\+Registered (\begin{DoxyParamCaption}\item[{Handle\+Type}]{handle,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}}}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_ae648263aa47bd359e27f5d5decd24e96}\label{classsick__scan__xd_1_1SickCallbackHandler_ae648263aa47bd359e27f5d5decd24e96}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!notifyListener@{notifyListener}}
+\index{notifyListener@{notifyListener}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{notifyListener()}{notifyListener()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::notify\+Listener (\begin{DoxyParamCaption}\item[{const Msg\+Type $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_af3f806599abb0ccfd630e522b4fd395b}\label{classsick__scan__xd_1_1SickCallbackHandler_af3f806599abb0ccfd630e522b4fd395b}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!notifyListener@{notifyListener}}
+\index{notifyListener@{notifyListener}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{notifyListener()}{notifyListener()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::notify\+Listener (\begin{DoxyParamCaption}\item[{Handle\+Type}]{handle,  }\item[{const Msg\+Type $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_a2a2d9fefc533792dc58a0a0124a7d5a3}\label{classsick__scan__xd_1_1SickCallbackHandler_a2a2d9fefc533792dc58a0a0124a7d5a3}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!removeListener@{removeListener}}
+\index{removeListener@{removeListener}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{removeListener()}{removeListener()}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::remove\+Listener (\begin{DoxyParamCaption}\item[{Handle\+Type}]{handle,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}}}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_a37de817e52b605a748a32b2e6285bb8f}\label{classsick__scan__xd_1_1SickCallbackHandler_a37de817e52b605a748a32b2e6285bb8f}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!m\_listeners@{m\_listeners}}
+\index{m\_listeners@{m\_listeners}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_listeners}{m\_listeners}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+std\+::map$<$Handle\+Type, std\+::list$<$\mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler_a3f38e4d839303e4b43badb6a14156a91}{callback\+Function\+Ptr}}$>$ $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::m\+\_\+listeners\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCallbackHandler_a491649bfbc53a00042ce50e8ae03714c}\label{classsick__scan__xd_1_1SickCallbackHandler_a491649bfbc53a00042ce50e8ae03714c}} 
+\index{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}!m\_listeners\_mutex@{m\_listeners\_mutex}}
+\index{m\_listeners\_mutex@{m\_listeners\_mutex}!sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$@{sick\_scan\_xd::SickCallbackHandler$<$ HandleType, MsgType $>$}}
+\doxysubsubsection{\texorpdfstring{m\_listeners\_mutex}{m\_listeners\_mutex}}
+{\footnotesize\ttfamily template$<$typename Handle\+Type , class Msg\+Type $>$ \\
+std\+::mutex \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ Handle\+Type, Msg\+Type $>$\+::m\+\_\+listeners\+\_\+mutex\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__callback_8h}{sick\+\_\+generic\+\_\+callback.\+h}}\end{DoxyCompactItemize}

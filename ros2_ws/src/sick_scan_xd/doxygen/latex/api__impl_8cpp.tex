@@ -1,0 +1,790 @@
+\hypertarget{api__impl_8cpp}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scan\+\_\+xd\+\_\+api/api\+\_\+impl.cpp File Reference}
+\label{api__impl_8cpp}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/sick\_scan\_xd\_api/api\_impl.cpp@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/driver/src/sick\_scan\_xd\_api/api\_impl.cpp}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} \mbox{\hyperlink{api__impl_8cpp_a95874643733ea54043e218dd1d6e36e9}{cast\+Node\+To\+Api\+Handle}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node)
+\item 
+static \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} \mbox{\hyperlink{api__impl_8cpp_acb7aa5d68bcc551f7a339d3a0fd56ed0}{cast\+Api\+Handle\+To\+Node}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle)
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} \mbox{\hyperlink{api__impl_8cpp_aab1219f0167f12cb1136973eae46442a}{convert\+Point\+Cloud\+Msg}} (const \mbox{\hyperlink{structsick__scan__xd_1_1PointCloud2withEcho}{sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud2with\+Echo}} \&msg\+\_\+with\+\_\+echo)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a1fdd5a3ac581e5f322b9232a593a4b73}{free\+Point\+Cloud\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} \&export\+\_\+msg)
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} \mbox{\hyperlink{api__impl_8cpp_a2b959f5966dc96bed3cf36766011c6bd}{convert\+Imu\+Msg}} (const ros\+\_\+sensor\+\_\+msgs\+::\+Imu \&src\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_ac393eba173505357fe7f1a75b2b9a6d5}{free\+Imu\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} \&msg)
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} \mbox{\hyperlink{api__impl_8cpp_a7d4a8c078cacd197e4b0e181f044c33e}{convert\+L\+F\+Erec\+Msg}} (const sick\+\_\+scan\+\_\+msg\+::\+L\+F\+Erec\+Msg \&src\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a213106479b8d30090844c5767eebc815}{free\+L\+F\+Erec\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} \&msg)
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} \mbox{\hyperlink{api__impl_8cpp_addc9d718d8ac192593495091c6496919}{convert\+L\+I\+Doutputstate\+Msg}} (const sick\+\_\+scan\+\_\+msg\+::\+L\+I\+Doutputstate\+Msg \&src\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a0af87e0aba238c6ad46fa9af652a0116}{free\+L\+I\+Doutputstate\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} \&msg)
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} \mbox{\hyperlink{api__impl_8cpp_a93b00d0f3378685e49e84adbbebe41a7}{convert\+Radar\+Scan\+Msg}} (const sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan \&src\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a8399ce70e409246e60c0789d62e383ed}{free\+Radar\+Scan\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} \&msg)
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} \mbox{\hyperlink{api__impl_8cpp_ac339f95a830f7055be075263d189cb18}{convert\+Ldmrs\+Object\+Array\+Msg}} (const sick\+\_\+scan\+\_\+msg\+::\+Sick\+Ldmrs\+Object\+Array \&src\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a5067a2f245bc05f05efc8a8593e72698}{free\+Ldmrs\+Object\+Array\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} \&msg)
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} \mbox{\hyperlink{api__impl_8cpp_a14ab76ea038114cac17375b7bbbb5ed0}{convert\+Visualization\+Marker\+Msg}} (const ros\+\_\+visualization\+\_\+msgs\+::\+Marker\+Array \&src\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_af9795abb98e240de6b9b47d4cd01e055}{free\+Visualization\+Marker\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} \&msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_ad0b043b32d75b6c51d0ddf958e569bda}{cartesian\+\_\+pointcloud\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const \mbox{\hyperlink{structsick__scan__xd_1_1PointCloud2withEcho}{sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud2with\+Echo}} $\ast$msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a5f152db1b1c29c1cbd6f38a0dc888c14}{polar\+\_\+pointcloud\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const \mbox{\hyperlink{structsick__scan__xd_1_1PointCloud2withEcho}{sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud2with\+Echo}} $\ast$msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_afdb32ecb8ba24dfdb08b2c18f5173eae}{imu\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const ros\+\_\+sensor\+\_\+msgs\+::\+Imu $\ast$msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_afae5e747db6886768ab403649353df5f}{lferec\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const sick\+\_\+scan\+\_\+msg\+::\+L\+F\+Erec\+Msg $\ast$msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a18ce5ee91d5e605f1c6968014a9f78c9}{lidoutputstate\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const sick\+\_\+scan\+\_\+msg\+::\+L\+I\+Doutputstate\+Msg $\ast$msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_adfa2d27648eccd0069fc1566ca512a5e}{radarscan\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan $\ast$msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a16769abad90250ce39ffe9cec4921a47}{ldmrsobjectarray\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const sick\+\_\+scan\+\_\+msg\+::\+Sick\+Ldmrs\+Object\+Array $\ast$msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_aced57f75cea27937767d96db523cd824}{visualizationmarker\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const ros\+\_\+visualization\+\_\+msgs\+::\+Marker\+Array $\ast$msg)
+\item 
+\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} \mbox{\hyperlink{api__impl_8cpp_ac5057104158f79f1361943c3f02750c4}{Sick\+Scan\+Api\+Create}} (int argc, char $\ast$$\ast$argv)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a20551edcfddb22a1b45a5badf92f4821}{Sick\+Scan\+Api\+Release}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a89189e9bde714230bfb7f2d04371f1a2}{Sick\+Scan\+Api\+Init\+By\+Launchfile}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, const char $\ast$launchfile\+\_\+args)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a6d5c14ea41799b062bb0ba2bf93e2fa2}{Sick\+Scan\+Api\+Init\+By\+Cli}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, int argc, char $\ast$$\ast$argv)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a4c1188da08ac4e4d7d8f813d13792313}{Sick\+Scan\+Api\+Close}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_ac402ae7aa05423b43ba5c699e1f31903}{Sick\+Scan\+Api\+Register\+Cartesian\+Point\+Cloud\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a0c5e60d420660661069d7953c74ee8d7}{Sick\+Scan\+Api\+Deregister\+Cartesian\+Point\+Cloud\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a61b78eb0ccd4a0e47fca5845fe4d6c95}{Sick\+Scan\+Api\+Register\+Polar\+Point\+Cloud\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a31bd935bfcf55b3770cb972673e93882}{Sick\+Scan\+Api\+Deregister\+Polar\+Point\+Cloud\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_aac12a89e7f70b2081cdbb43165b46c4f}{Sick\+Scan\+Api\+Register\+Imu\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_aa0166a4a22051d7b5dc4e298cf95c68e}{Sick\+Scan\+Imu\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a4077c0df3382d5b6cc187f6150c2fde6}{Sick\+Scan\+Api\+Deregister\+Imu\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_aa0166a4a22051d7b5dc4e298cf95c68e}{Sick\+Scan\+Imu\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a3ec50d29255b31ff3ecc8e6b363d5aa0}{Sick\+Scan\+Api\+Register\+L\+F\+Erec\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a90714528057d16a12ebc12612addb971}{Sick\+Scan\+L\+F\+Erec\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a86439d1f8efff737aa7fc23543e72e02}{Sick\+Scan\+Api\+Deregister\+L\+F\+Erec\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a90714528057d16a12ebc12612addb971}{Sick\+Scan\+L\+F\+Erec\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_aed54c75dc2a74d54fb56f6f87108432c}{Sick\+Scan\+Api\+Register\+L\+I\+Doutputstate\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a158326e4b300f87cec70be93d30a24c0}{Sick\+Scan\+L\+I\+Doutputstate\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a70165070e3f2c79e7ad0d971b3dfe870}{Sick\+Scan\+Api\+Deregister\+L\+I\+Doutputstate\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a158326e4b300f87cec70be93d30a24c0}{Sick\+Scan\+L\+I\+Doutputstate\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a08b5621a04c18922f0ecc04fca3a5614}{Sick\+Scan\+Api\+Register\+Radar\+Scan\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ae70eed698655bddc42ce9ec8f8a6eb74}{Sick\+Scan\+Radar\+Scan\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a0bdb3058ae0be64aaf0c574b33be824a}{Sick\+Scan\+Api\+Deregister\+Radar\+Scan\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ae70eed698655bddc42ce9ec8f8a6eb74}{Sick\+Scan\+Radar\+Scan\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a15a03cde30103a26c613b0a0aeba4196}{Sick\+Scan\+Api\+Register\+Ldmrs\+Object\+Array\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a18a5827710feba4797f7f5ba79959b2c}{Sick\+Scan\+Ldmrs\+Object\+Array\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_af54eac4730b04428806dbd69a8c4a6be}{Sick\+Scan\+Api\+Deregister\+Ldmrs\+Object\+Array\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a18a5827710feba4797f7f5ba79959b2c}{Sick\+Scan\+Ldmrs\+Object\+Array\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a229bdd723b239aa484497477d5cb456d}{Sick\+Scan\+Api\+Register\+Visualization\+Marker\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ac51c8e075a18f41f3c9924fb41013f1f}{Sick\+Scan\+Visualization\+Marker\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a144e384bc655dae035b2d553a638eb3b}{Sick\+Scan\+Api\+Deregister\+Visualization\+Marker\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ac51c8e075a18f41f3c9924fb41013f1f}{Sick\+Scan\+Visualization\+Marker\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a0a4b51c3a3d5b0dc4faca5d12a1d2369}{Sick\+Scan\+Api\+Register\+Diagnostic\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a356b66f68a91b8509ee83e40101d8ee4}{Sick\+Scan\+Diagnostic\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a549eb90987f87f44e3eb424bf61ce7e6}{Sick\+Scan\+Api\+Deregister\+Diagnostic\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a356b66f68a91b8509ee83e40101d8ee4}{Sick\+Scan\+Diagnostic\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a647386e125f74e6e0b34e3f8d0636055}{Sick\+Scan\+Api\+Register\+Log\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a7f9e2f3b503b3c9cad580908a6cf5356}{Sick\+Scan\+Log\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_aa1114a191ff523a38c644979cf224e92}{Sick\+Scan\+Api\+Deregister\+Log\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a7f9e2f3b503b3c9cad580908a6cf5356}{Sick\+Scan\+Log\+Msg\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_ac572a82ed89e5711940c643deae763fc}{Sick\+Scan\+Api\+Get\+Status}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, int32\+\_\+t $\ast$status\+\_\+code, char $\ast$message\+\_\+buffer, int32\+\_\+t message\+\_\+buffer\+\_\+size)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_ac9292d260d83dd6da4d651ee9c5af805}{Sick\+Scan\+Api\+Send\+S\+O\+P\+AS}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, const char $\ast$sopas\+\_\+command, char $\ast$sopas\+\_\+response\+\_\+buffer, int32\+\_\+t response\+\_\+buffer\+\_\+size)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_af2d65a59559fab18aeb9c7a4c5f46cb5}{Sick\+Scan\+Api\+Set\+Verbose\+Level}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, int32\+\_\+t verbose\+\_\+level)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a681aee5233a034a10cc3761d2d646d0f}{Sick\+Scan\+Api\+Get\+Verbose\+Level}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle)
+\item 
+void \mbox{\hyperlink{api__impl_8cpp_ac4cdaa0007dd8be090dee18cc782f09d}{notify\+Log\+Message\+Listener}} (int msg\+\_\+level, const std\+::string \&message)
+\item 
+void \mbox{\hyperlink{api__impl_8cpp_a0d54fdc41d3a8fee536bd06d39918568}{notify\+Diagnostic\+Listener}} (\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}} status\+\_\+code, const std\+::string \&status\+\_\+message)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_aabf5ffacd8bd100543b9c1bc793853c4}{Sick\+Scan\+Api\+Wait\+Next\+Cartesian\+Point\+Cloud\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_ae06f8adff9e3f9d562863840a642a0d2}{Sick\+Scan\+Api\+Wait\+Next\+Polar\+Point\+Cloud\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_ad3a4dba1ddf5c58e8d2327a08ed04484}{Sick\+Scan\+Api\+Free\+Point\+Cloud\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_ae7e67d20c78157f0a802398195cab2ad}{Sick\+Scan\+Api\+Wait\+Next\+Imu\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_abb4a5d2564c7e6c6929f34d99fa448de}{Sick\+Scan\+Api\+Free\+Imu\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a20de6b1d9faa9759fff6eeb37ade5345}{Sick\+Scan\+Api\+Wait\+Next\+L\+F\+Erec\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_aa6ee9bb7a974e51b7e92caaae5639a73}{Sick\+Scan\+Api\+Free\+L\+F\+Erec\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a178378866e27d112f64751188f594761}{Sick\+Scan\+Api\+Wait\+Next\+L\+I\+Doutputstate\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_ae869dee49c5f83be1e5bcdd1155f3faa}{Sick\+Scan\+Api\+Free\+L\+I\+Doutputstate\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_ad1b4059db7a3518260f9a211266fccaf}{Sick\+Scan\+Api\+Wait\+Next\+Radar\+Scan\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a85eca92027a795ce82254affc5ae6598}{Sick\+Scan\+Api\+Free\+Radar\+Scan\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_aa66f42c3e216eddc547b4fac3356fb7e}{Sick\+Scan\+Api\+Wait\+Next\+Ldmrs\+Object\+Array\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a250a9e457f82c3b58b67c3cc048eb046}{Sick\+Scan\+Api\+Free\+Ldmrs\+Object\+Array\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_afb6c04cc8a7bfd7e4a05c476dfaea818}{Sick\+Scan\+Api\+Wait\+Next\+Visualization\+Marker\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a056ea09ed8ae54305f1fe8a86b5f1b9f}{Sick\+Scan\+Api\+Free\+Visualization\+Marker\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} $\ast$msg)
+\item 
+static \mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} \mbox{\hyperlink{api__impl_8cpp_ae180c4f0a74e05ec7223d982c8a26cca}{convert\+N\+A\+V350m\+N\+P\+O\+S\+Data}} (const \mbox{\hyperlink{classsick__scan__xd_1_1NAV350mNPOSData}{sick\+\_\+scan\+\_\+xd\+::\+N\+A\+V350m\+N\+P\+O\+S\+Data}} \&src\+\_\+msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a264d0d23dd4b229a333ff9b046223420}{free\+Nav\+Pose\+Landmark\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} \&msg)
+\item 
+static void \mbox{\hyperlink{api__impl_8cpp_a61db37b84370287acf97e4be973915ae}{nav\+\_\+pose\+\_\+landmark\+\_\+callback}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} node, const \mbox{\hyperlink{classsick__scan__xd_1_1NAV350mNPOSData}{sick\+\_\+scan\+\_\+xd\+::\+N\+A\+V350m\+N\+P\+O\+S\+Data}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a296298e635760b332f2ae6629e64bccc}{Sick\+Scan\+Api\+Register\+Nav\+Pose\+Landmark\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ac4422b79ed01e3c69046d7ac564b86d8}{Sick\+Scan\+Nav\+Pose\+Landmark\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_aa4baa2b33297f83456fa31fec330f94c}{Sick\+Scan\+Api\+Deregister\+Nav\+Pose\+Landmark\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ac4422b79ed01e3c69046d7ac564b86d8}{Sick\+Scan\+Nav\+Pose\+Landmark\+Callback}} callback)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a8bad64336b0efd8d3ef478e815980c17}{Sick\+Scan\+Api\+Wait\+Next\+Nav\+Pose\+Landmark\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} $\ast$msg, double timeout\+\_\+sec)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a6b767fc276e846b4d31ac6236b68add5}{Sick\+Scan\+Api\+Free\+Nav\+Pose\+Landmark\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a19213d92d25a836f9b9d2f26c20a5163}{Sick\+Scan\+Api\+Nav\+Odom\+Velocity\+Impl}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a85f727902ec3b2389906ae93216c0f7a}{Sick\+Scan\+Nav\+Odom\+Velocity\+Msg}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_aa43bc20ac72187f3401bc457574d9d6b}{Sick\+Scan\+Api\+Odom\+Velocity\+Impl}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_aff0ff59c4832f6bdcd3e38b64764fdf0}{Sick\+Scan\+Odom\+Velocity\+Msg}} $\ast$src\+\_\+msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_a72c91be3d67835827540d07e106b7eee}{Sick\+Scan\+Api\+Nav\+Odom\+Velocity\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_a85f727902ec3b2389906ae93216c0f7a}{Sick\+Scan\+Nav\+Odom\+Velocity\+Msg}} $\ast$msg)
+\item 
+int32\+\_\+t \mbox{\hyperlink{api__impl_8cpp_af1d3f1c612cc7d6c780764088f8d465c}{Sick\+Scan\+Api\+Odom\+Velocity\+Msg}} (\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} api\+Handle, \mbox{\hyperlink{sick__scan__api_8h_aff0ff59c4832f6bdcd3e38b64764fdf0}{Sick\+Scan\+Odom\+Velocity\+Msg}} $\ast$msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{api__impl_8cpp_ae3ffba51ac8485a3048dde9aecb74b9a}{s\+\_\+scanner\+Name}} = \char`\"{}sick\+\_\+scan\char`\"{}
+\item 
+static std\+::map$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, std\+::string $>$ \mbox{\hyperlink{api__impl_8cpp_a31d9cdb7f3f51e3d0636f71086913f4d}{s\+\_\+api\+\_\+caller}}
+\item 
+static int \mbox{\hyperlink{api__impl_8cpp_acdf4a904c91918b051fd7a87a37748b9}{s\+\_\+argc}} = 0
+\item 
+static char $\ast$$\ast$ \mbox{\hyperlink{api__impl_8cpp_a75b3eea796de7539fdb6c1c3942330fd}{s\+\_\+argv}} = 0
+\item 
+static std\+::vector$<$ void $\ast$ $>$ \mbox{\hyperlink{api__impl_8cpp_ac83e467dc31aabf594d0ea4dd4fbe05e}{s\+\_\+malloced\+\_\+resources}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_ac55e470fe1bb74651118cc117f97664f}{s\+\_\+callback\+\_\+handler\+\_\+cartesian\+\_\+pointcloud\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_a26661f904a8f0c38f31dfcd676cb702e}{s\+\_\+callback\+\_\+handler\+\_\+polar\+\_\+pointcloud\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_aa7caaabe0001999c6498652d2ad62827}{s\+\_\+callback\+\_\+handler\+\_\+imu\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_a0b6c3cd108069ac9380a99034184972e}{s\+\_\+callback\+\_\+handler\+\_\+lferec\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_a05b41adc8a75b3c50d332e88f98ac39a}{s\+\_\+callback\+\_\+handler\+\_\+lidoutputstate\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} $>$ \mbox{\hyperlink{api__impl_8cpp_ae47c698f191bedd261e1e745152ad17c}{s\+\_\+callback\+\_\+handler\+\_\+radarscan\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} $>$ \mbox{\hyperlink{api__impl_8cpp_a27e5fcab7c960db1e279a1654cac8a0e}{s\+\_\+callback\+\_\+handler\+\_\+ldmrsobjectarray\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_ab8fe4ad5416465eb561684ad1d8baaa9}{s\+\_\+callback\+\_\+handler\+\_\+visualizationmarker\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_a1763826cf4355ce2431bd612d770ab0a}{s\+\_\+callback\+\_\+handler\+\_\+navposelandmark\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_a427104052a8cf50093d9c5e526e50675}{Sick\+Scan\+Diagnostic\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_aa9d8ed2fcbd1cb17c3336c380f6f0062}{s\+\_\+callback\+\_\+handler\+\_\+diagnostic\+\_\+messages}}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$ \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}, \mbox{\hyperlink{sick__scan__api_8h_ae4aa9282b9a36b1118d47862a4c2d372}{Sick\+Scan\+Log\+Msg}} $>$ \mbox{\hyperlink{api__impl_8cpp_a595df38f7dabe97075b1d91893bcfb12}{s\+\_\+callback\+\_\+handler\+\_\+log\+\_\+messages}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{api__impl_8cpp_ad0b043b32d75b6c51d0ddf958e569bda}\label{api__impl_8cpp_ad0b043b32d75b6c51d0ddf958e569bda}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!cartesian\_pointcloud\_callback@{cartesian\_pointcloud\_callback}}
+\index{cartesian\_pointcloud\_callback@{cartesian\_pointcloud\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{cartesian\_pointcloud\_callback()}{cartesian\_pointcloud\_callback()}}
+{\footnotesize\ttfamily static void cartesian\+\_\+pointcloud\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const \mbox{\hyperlink{structsick__scan__xd_1_1PointCloud2withEcho}{sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud2with\+Echo}} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_acb7aa5d68bcc551f7a339d3a0fd56ed0}\label{api__impl_8cpp_acb7aa5d68bcc551f7a339d3a0fd56ed0}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!castApiHandleToNode@{castApiHandleToNode}}
+\index{castApiHandleToNode@{castApiHandleToNode}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{castApiHandleToNode()}{castApiHandleToNode()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} cast\+Api\+Handle\+To\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a95874643733ea54043e218dd1d6e36e9}\label{api__impl_8cpp_a95874643733ea54043e218dd1d6e36e9}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!castNodeToApiHandle@{castNodeToApiHandle}}
+\index{castNodeToApiHandle@{castNodeToApiHandle}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{castNodeToApiHandle()}{castNodeToApiHandle()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} cast\+Node\+To\+Api\+Handle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a2b959f5966dc96bed3cf36766011c6bd}\label{api__impl_8cpp_a2b959f5966dc96bed3cf36766011c6bd}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!convertImuMsg@{convertImuMsg}}
+\index{convertImuMsg@{convertImuMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{convertImuMsg()}{convertImuMsg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} convert\+Imu\+Msg (\begin{DoxyParamCaption}\item[{const ros\+\_\+sensor\+\_\+msgs\+::\+Imu \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac339f95a830f7055be075263d189cb18}\label{api__impl_8cpp_ac339f95a830f7055be075263d189cb18}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!convertLdmrsObjectArrayMsg@{convertLdmrsObjectArrayMsg}}
+\index{convertLdmrsObjectArrayMsg@{convertLdmrsObjectArrayMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{convertLdmrsObjectArrayMsg()}{convertLdmrsObjectArrayMsg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} convert\+Ldmrs\+Object\+Array\+Msg (\begin{DoxyParamCaption}\item[{const sick\+\_\+scan\+\_\+msg\+::\+Sick\+Ldmrs\+Object\+Array \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a7d4a8c078cacd197e4b0e181f044c33e}\label{api__impl_8cpp_a7d4a8c078cacd197e4b0e181f044c33e}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!convertLFErecMsg@{convertLFErecMsg}}
+\index{convertLFErecMsg@{convertLFErecMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{convertLFErecMsg()}{convertLFErecMsg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} convert\+L\+F\+Erec\+Msg (\begin{DoxyParamCaption}\item[{const sick\+\_\+scan\+\_\+msg\+::\+L\+F\+Erec\+Msg \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_addc9d718d8ac192593495091c6496919}\label{api__impl_8cpp_addc9d718d8ac192593495091c6496919}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!convertLIDoutputstateMsg@{convertLIDoutputstateMsg}}
+\index{convertLIDoutputstateMsg@{convertLIDoutputstateMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{convertLIDoutputstateMsg()}{convertLIDoutputstateMsg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} convert\+L\+I\+Doutputstate\+Msg (\begin{DoxyParamCaption}\item[{const sick\+\_\+scan\+\_\+msg\+::\+L\+I\+Doutputstate\+Msg \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_ae180c4f0a74e05ec7223d982c8a26cca}\label{api__impl_8cpp_ae180c4f0a74e05ec7223d982c8a26cca}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!convertNAV350mNPOSData@{convertNAV350mNPOSData}}
+\index{convertNAV350mNPOSData@{convertNAV350mNPOSData}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{convertNAV350mNPOSData()}{convertNAV350mNPOSData()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} convert\+N\+A\+V350m\+N\+P\+O\+S\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsick__scan__xd_1_1NAV350mNPOSData}{sick\+\_\+scan\+\_\+xd\+::\+N\+A\+V350m\+N\+P\+O\+S\+Data}} \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_aab1219f0167f12cb1136973eae46442a}\label{api__impl_8cpp_aab1219f0167f12cb1136973eae46442a}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!convertPointCloudMsg@{convertPointCloudMsg}}
+\index{convertPointCloudMsg@{convertPointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{convertPointCloudMsg()}{convertPointCloudMsg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} convert\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structsick__scan__xd_1_1PointCloud2withEcho}{sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud2with\+Echo}} \&}]{msg\+\_\+with\+\_\+echo }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a93b00d0f3378685e49e84adbbebe41a7}\label{api__impl_8cpp_a93b00d0f3378685e49e84adbbebe41a7}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!convertRadarScanMsg@{convertRadarScanMsg}}
+\index{convertRadarScanMsg@{convertRadarScanMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{convertRadarScanMsg()}{convertRadarScanMsg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} convert\+Radar\+Scan\+Msg (\begin{DoxyParamCaption}\item[{const sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a14ab76ea038114cac17375b7bbbb5ed0}\label{api__impl_8cpp_a14ab76ea038114cac17375b7bbbb5ed0}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!convertVisualizationMarkerMsg@{convertVisualizationMarkerMsg}}
+\index{convertVisualizationMarkerMsg@{convertVisualizationMarkerMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{convertVisualizationMarkerMsg()}{convertVisualizationMarkerMsg()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} convert\+Visualization\+Marker\+Msg (\begin{DoxyParamCaption}\item[{const ros\+\_\+visualization\+\_\+msgs\+::\+Marker\+Array \&}]{src\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac393eba173505357fe7f1a75b2b9a6d5}\label{api__impl_8cpp_ac393eba173505357fe7f1a75b2b9a6d5}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!freeImuMsg@{freeImuMsg}}
+\index{freeImuMsg@{freeImuMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{freeImuMsg()}{freeImuMsg()}}
+{\footnotesize\ttfamily static void free\+Imu\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a5067a2f245bc05f05efc8a8593e72698}\label{api__impl_8cpp_a5067a2f245bc05f05efc8a8593e72698}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!freeLdmrsObjectArrayMsg@{freeLdmrsObjectArrayMsg}}
+\index{freeLdmrsObjectArrayMsg@{freeLdmrsObjectArrayMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{freeLdmrsObjectArrayMsg()}{freeLdmrsObjectArrayMsg()}}
+{\footnotesize\ttfamily static void free\+Ldmrs\+Object\+Array\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a213106479b8d30090844c5767eebc815}\label{api__impl_8cpp_a213106479b8d30090844c5767eebc815}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!freeLFErecMsg@{freeLFErecMsg}}
+\index{freeLFErecMsg@{freeLFErecMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{freeLFErecMsg()}{freeLFErecMsg()}}
+{\footnotesize\ttfamily static void free\+L\+F\+Erec\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a0af87e0aba238c6ad46fa9af652a0116}\label{api__impl_8cpp_a0af87e0aba238c6ad46fa9af652a0116}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!freeLIDoutputstateMsg@{freeLIDoutputstateMsg}}
+\index{freeLIDoutputstateMsg@{freeLIDoutputstateMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{freeLIDoutputstateMsg()}{freeLIDoutputstateMsg()}}
+{\footnotesize\ttfamily static void free\+L\+I\+Doutputstate\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a264d0d23dd4b229a333ff9b046223420}\label{api__impl_8cpp_a264d0d23dd4b229a333ff9b046223420}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!freeNavPoseLandmarkMsg@{freeNavPoseLandmarkMsg}}
+\index{freeNavPoseLandmarkMsg@{freeNavPoseLandmarkMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{freeNavPoseLandmarkMsg()}{freeNavPoseLandmarkMsg()}}
+{\footnotesize\ttfamily static void free\+Nav\+Pose\+Landmark\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a1fdd5a3ac581e5f322b9232a593a4b73}\label{api__impl_8cpp_a1fdd5a3ac581e5f322b9232a593a4b73}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!freePointCloudMsg@{freePointCloudMsg}}
+\index{freePointCloudMsg@{freePointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{freePointCloudMsg()}{freePointCloudMsg()}}
+{\footnotesize\ttfamily static void free\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} \&}]{export\+\_\+msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a8399ce70e409246e60c0789d62e383ed}\label{api__impl_8cpp_a8399ce70e409246e60c0789d62e383ed}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!freeRadarScanMsg@{freeRadarScanMsg}}
+\index{freeRadarScanMsg@{freeRadarScanMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{freeRadarScanMsg()}{freeRadarScanMsg()}}
+{\footnotesize\ttfamily static void free\+Radar\+Scan\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_af9795abb98e240de6b9b47d4cd01e055}\label{api__impl_8cpp_af9795abb98e240de6b9b47d4cd01e055}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!freeVisualizationMarkerMsg@{freeVisualizationMarkerMsg}}
+\index{freeVisualizationMarkerMsg@{freeVisualizationMarkerMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{freeVisualizationMarkerMsg()}{freeVisualizationMarkerMsg()}}
+{\footnotesize\ttfamily static void free\+Visualization\+Marker\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} \&}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_afdb32ecb8ba24dfdb08b2c18f5173eae}\label{api__impl_8cpp_afdb32ecb8ba24dfdb08b2c18f5173eae}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!imu\_callback@{imu\_callback}}
+\index{imu\_callback@{imu\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{imu\_callback()}{imu\_callback()}}
+{\footnotesize\ttfamily static void imu\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const ros\+\_\+sensor\+\_\+msgs\+::\+Imu $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a16769abad90250ce39ffe9cec4921a47}\label{api__impl_8cpp_a16769abad90250ce39ffe9cec4921a47}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!ldmrsobjectarray\_callback@{ldmrsobjectarray\_callback}}
+\index{ldmrsobjectarray\_callback@{ldmrsobjectarray\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{ldmrsobjectarray\_callback()}{ldmrsobjectarray\_callback()}}
+{\footnotesize\ttfamily static void ldmrsobjectarray\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const sick\+\_\+scan\+\_\+msg\+::\+Sick\+Ldmrs\+Object\+Array $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_afae5e747db6886768ab403649353df5f}\label{api__impl_8cpp_afae5e747db6886768ab403649353df5f}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!lferec\_callback@{lferec\_callback}}
+\index{lferec\_callback@{lferec\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{lferec\_callback()}{lferec\_callback()}}
+{\footnotesize\ttfamily static void lferec\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const sick\+\_\+scan\+\_\+msg\+::\+L\+F\+Erec\+Msg $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a18ce5ee91d5e605f1c6968014a9f78c9}\label{api__impl_8cpp_a18ce5ee91d5e605f1c6968014a9f78c9}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!lidoutputstate\_callback@{lidoutputstate\_callback}}
+\index{lidoutputstate\_callback@{lidoutputstate\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{lidoutputstate\_callback()}{lidoutputstate\_callback()}}
+{\footnotesize\ttfamily static void lidoutputstate\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const sick\+\_\+scan\+\_\+msg\+::\+L\+I\+Doutputstate\+Msg $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a61db37b84370287acf97e4be973915ae}\label{api__impl_8cpp_a61db37b84370287acf97e4be973915ae}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!nav\_pose\_landmark\_callback@{nav\_pose\_landmark\_callback}}
+\index{nav\_pose\_landmark\_callback@{nav\_pose\_landmark\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{nav\_pose\_landmark\_callback()}{nav\_pose\_landmark\_callback()}}
+{\footnotesize\ttfamily static void nav\+\_\+pose\+\_\+landmark\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const \mbox{\hyperlink{classsick__scan__xd_1_1NAV350mNPOSData}{sick\+\_\+scan\+\_\+xd\+::\+N\+A\+V350m\+N\+P\+O\+S\+Data}} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a0d54fdc41d3a8fee536bd06d39918568}\label{api__impl_8cpp_a0d54fdc41d3a8fee536bd06d39918568}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!notifyDiagnosticListener@{notifyDiagnosticListener}}
+\index{notifyDiagnosticListener@{notifyDiagnosticListener}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{notifyDiagnosticListener()}{notifyDiagnosticListener()}}
+{\footnotesize\ttfamily void notify\+Diagnostic\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}}}]{status\+\_\+code,  }\item[{const std\+::string \&}]{status\+\_\+message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac4cdaa0007dd8be090dee18cc782f09d}\label{api__impl_8cpp_ac4cdaa0007dd8be090dee18cc782f09d}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!notifyLogMessageListener@{notifyLogMessageListener}}
+\index{notifyLogMessageListener@{notifyLogMessageListener}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{notifyLogMessageListener()}{notifyLogMessageListener()}}
+{\footnotesize\ttfamily void notify\+Log\+Message\+Listener (\begin{DoxyParamCaption}\item[{int}]{msg\+\_\+level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a5f152db1b1c29c1cbd6f38a0dc888c14}\label{api__impl_8cpp_a5f152db1b1c29c1cbd6f38a0dc888c14}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!polar\_pointcloud\_callback@{polar\_pointcloud\_callback}}
+\index{polar\_pointcloud\_callback@{polar\_pointcloud\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{polar\_pointcloud\_callback()}{polar\_pointcloud\_callback()}}
+{\footnotesize\ttfamily static void polar\+\_\+pointcloud\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const \mbox{\hyperlink{structsick__scan__xd_1_1PointCloud2withEcho}{sick\+\_\+scan\+\_\+xd\+::\+Point\+Cloud2with\+Echo}} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_adfa2d27648eccd0069fc1566ca512a5e}\label{api__impl_8cpp_adfa2d27648eccd0069fc1566ca512a5e}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!radarscan\_callback@{radarscan\_callback}}
+\index{radarscan\_callback@{radarscan\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{radarscan\_callback()}{radarscan\_callback()}}
+{\footnotesize\ttfamily static void radarscan\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a4c1188da08ac4e4d7d8f813d13792313}\label{api__impl_8cpp_a4c1188da08ac4e4d7d8f813d13792313}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiClose@{SickScanApiClose}}
+\index{SickScanApiClose@{SickScanApiClose}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiClose()}{SickScanApiClose()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Close (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac5057104158f79f1361943c3f02750c4}\label{api__impl_8cpp_ac5057104158f79f1361943c3f02750c4}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiCreate@{SickScanApiCreate}}
+\index{SickScanApiCreate@{SickScanApiCreate}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiCreate()}{SickScanApiCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}} Sick\+Scan\+Api\+Create (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a0c5e60d420660661069d7953c74ee8d7}\label{api__impl_8cpp_a0c5e60d420660661069d7953c74ee8d7}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterCartesianPointCloudMsg@{SickScanApiDeregisterCartesianPointCloudMsg}}
+\index{SickScanApiDeregisterCartesianPointCloudMsg@{SickScanApiDeregisterCartesianPointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterCartesianPointCloudMsg()}{SickScanApiDeregisterCartesianPointCloudMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Cartesian\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a549eb90987f87f44e3eb424bf61ce7e6}\label{api__impl_8cpp_a549eb90987f87f44e3eb424bf61ce7e6}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterDiagnosticMsg@{SickScanApiDeregisterDiagnosticMsg}}
+\index{SickScanApiDeregisterDiagnosticMsg@{SickScanApiDeregisterDiagnosticMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterDiagnosticMsg()}{SickScanApiDeregisterDiagnosticMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Diagnostic\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a356b66f68a91b8509ee83e40101d8ee4}{Sick\+Scan\+Diagnostic\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a4077c0df3382d5b6cc187f6150c2fde6}\label{api__impl_8cpp_a4077c0df3382d5b6cc187f6150c2fde6}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterImuMsg@{SickScanApiDeregisterImuMsg}}
+\index{SickScanApiDeregisterImuMsg@{SickScanApiDeregisterImuMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterImuMsg()}{SickScanApiDeregisterImuMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Imu\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_aa0166a4a22051d7b5dc4e298cf95c68e}{Sick\+Scan\+Imu\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_af54eac4730b04428806dbd69a8c4a6be}\label{api__impl_8cpp_af54eac4730b04428806dbd69a8c4a6be}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterLdmrsObjectArrayMsg@{SickScanApiDeregisterLdmrsObjectArrayMsg}}
+\index{SickScanApiDeregisterLdmrsObjectArrayMsg@{SickScanApiDeregisterLdmrsObjectArrayMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterLdmrsObjectArrayMsg()}{SickScanApiDeregisterLdmrsObjectArrayMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Ldmrs\+Object\+Array\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a18a5827710feba4797f7f5ba79959b2c}{Sick\+Scan\+Ldmrs\+Object\+Array\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a86439d1f8efff737aa7fc23543e72e02}\label{api__impl_8cpp_a86439d1f8efff737aa7fc23543e72e02}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterLFErecMsg@{SickScanApiDeregisterLFErecMsg}}
+\index{SickScanApiDeregisterLFErecMsg@{SickScanApiDeregisterLFErecMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterLFErecMsg()}{SickScanApiDeregisterLFErecMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+L\+F\+Erec\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a90714528057d16a12ebc12612addb971}{Sick\+Scan\+L\+F\+Erec\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a70165070e3f2c79e7ad0d971b3dfe870}\label{api__impl_8cpp_a70165070e3f2c79e7ad0d971b3dfe870}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterLIDoutputstateMsg@{SickScanApiDeregisterLIDoutputstateMsg}}
+\index{SickScanApiDeregisterLIDoutputstateMsg@{SickScanApiDeregisterLIDoutputstateMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterLIDoutputstateMsg()}{SickScanApiDeregisterLIDoutputstateMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+L\+I\+Doutputstate\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a158326e4b300f87cec70be93d30a24c0}{Sick\+Scan\+L\+I\+Doutputstate\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aa1114a191ff523a38c644979cf224e92}\label{api__impl_8cpp_aa1114a191ff523a38c644979cf224e92}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterLogMsg@{SickScanApiDeregisterLogMsg}}
+\index{SickScanApiDeregisterLogMsg@{SickScanApiDeregisterLogMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterLogMsg()}{SickScanApiDeregisterLogMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Log\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a7f9e2f3b503b3c9cad580908a6cf5356}{Sick\+Scan\+Log\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aa4baa2b33297f83456fa31fec330f94c}\label{api__impl_8cpp_aa4baa2b33297f83456fa31fec330f94c}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterNavPoseLandmarkMsg@{SickScanApiDeregisterNavPoseLandmarkMsg}}
+\index{SickScanApiDeregisterNavPoseLandmarkMsg@{SickScanApiDeregisterNavPoseLandmarkMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterNavPoseLandmarkMsg()}{SickScanApiDeregisterNavPoseLandmarkMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Nav\+Pose\+Landmark\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ac4422b79ed01e3c69046d7ac564b86d8}{Sick\+Scan\+Nav\+Pose\+Landmark\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a31bd935bfcf55b3770cb972673e93882}\label{api__impl_8cpp_a31bd935bfcf55b3770cb972673e93882}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterPolarPointCloudMsg@{SickScanApiDeregisterPolarPointCloudMsg}}
+\index{SickScanApiDeregisterPolarPointCloudMsg@{SickScanApiDeregisterPolarPointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterPolarPointCloudMsg()}{SickScanApiDeregisterPolarPointCloudMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Polar\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a0bdb3058ae0be64aaf0c574b33be824a}\label{api__impl_8cpp_a0bdb3058ae0be64aaf0c574b33be824a}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterRadarScanMsg@{SickScanApiDeregisterRadarScanMsg}}
+\index{SickScanApiDeregisterRadarScanMsg@{SickScanApiDeregisterRadarScanMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterRadarScanMsg()}{SickScanApiDeregisterRadarScanMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Radar\+Scan\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ae70eed698655bddc42ce9ec8f8a6eb74}{Sick\+Scan\+Radar\+Scan\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a144e384bc655dae035b2d553a638eb3b}\label{api__impl_8cpp_a144e384bc655dae035b2d553a638eb3b}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiDeregisterVisualizationMarkerMsg@{SickScanApiDeregisterVisualizationMarkerMsg}}
+\index{SickScanApiDeregisterVisualizationMarkerMsg@{SickScanApiDeregisterVisualizationMarkerMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiDeregisterVisualizationMarkerMsg()}{SickScanApiDeregisterVisualizationMarkerMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Deregister\+Visualization\+Marker\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ac51c8e075a18f41f3c9924fb41013f1f}{Sick\+Scan\+Visualization\+Marker\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_abb4a5d2564c7e6c6929f34d99fa448de}\label{api__impl_8cpp_abb4a5d2564c7e6c6929f34d99fa448de}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiFreeImuMsg@{SickScanApiFreeImuMsg}}
+\index{SickScanApiFreeImuMsg@{SickScanApiFreeImuMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiFreeImuMsg()}{SickScanApiFreeImuMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Free\+Imu\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a250a9e457f82c3b58b67c3cc048eb046}\label{api__impl_8cpp_a250a9e457f82c3b58b67c3cc048eb046}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiFreeLdmrsObjectArrayMsg@{SickScanApiFreeLdmrsObjectArrayMsg}}
+\index{SickScanApiFreeLdmrsObjectArrayMsg@{SickScanApiFreeLdmrsObjectArrayMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiFreeLdmrsObjectArrayMsg()}{SickScanApiFreeLdmrsObjectArrayMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Free\+Ldmrs\+Object\+Array\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aa6ee9bb7a974e51b7e92caaae5639a73}\label{api__impl_8cpp_aa6ee9bb7a974e51b7e92caaae5639a73}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiFreeLFErecMsg@{SickScanApiFreeLFErecMsg}}
+\index{SickScanApiFreeLFErecMsg@{SickScanApiFreeLFErecMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiFreeLFErecMsg()}{SickScanApiFreeLFErecMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Free\+L\+F\+Erec\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ae869dee49c5f83be1e5bcdd1155f3faa}\label{api__impl_8cpp_ae869dee49c5f83be1e5bcdd1155f3faa}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiFreeLIDoutputstateMsg@{SickScanApiFreeLIDoutputstateMsg}}
+\index{SickScanApiFreeLIDoutputstateMsg@{SickScanApiFreeLIDoutputstateMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiFreeLIDoutputstateMsg()}{SickScanApiFreeLIDoutputstateMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Free\+L\+I\+Doutputstate\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a6b767fc276e846b4d31ac6236b68add5}\label{api__impl_8cpp_a6b767fc276e846b4d31ac6236b68add5}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiFreeNavPoseLandmarkMsg@{SickScanApiFreeNavPoseLandmarkMsg}}
+\index{SickScanApiFreeNavPoseLandmarkMsg@{SickScanApiFreeNavPoseLandmarkMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiFreeNavPoseLandmarkMsg()}{SickScanApiFreeNavPoseLandmarkMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Free\+Nav\+Pose\+Landmark\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ad3a4dba1ddf5c58e8d2327a08ed04484}\label{api__impl_8cpp_ad3a4dba1ddf5c58e8d2327a08ed04484}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiFreePointCloudMsg@{SickScanApiFreePointCloudMsg}}
+\index{SickScanApiFreePointCloudMsg@{SickScanApiFreePointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiFreePointCloudMsg()}{SickScanApiFreePointCloudMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Free\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a85eca92027a795ce82254affc5ae6598}\label{api__impl_8cpp_a85eca92027a795ce82254affc5ae6598}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiFreeRadarScanMsg@{SickScanApiFreeRadarScanMsg}}
+\index{SickScanApiFreeRadarScanMsg@{SickScanApiFreeRadarScanMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiFreeRadarScanMsg()}{SickScanApiFreeRadarScanMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Free\+Radar\+Scan\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a056ea09ed8ae54305f1fe8a86b5f1b9f}\label{api__impl_8cpp_a056ea09ed8ae54305f1fe8a86b5f1b9f}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiFreeVisualizationMarkerMsg@{SickScanApiFreeVisualizationMarkerMsg}}
+\index{SickScanApiFreeVisualizationMarkerMsg@{SickScanApiFreeVisualizationMarkerMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiFreeVisualizationMarkerMsg()}{SickScanApiFreeVisualizationMarkerMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Free\+Visualization\+Marker\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac572a82ed89e5711940c643deae763fc}\label{api__impl_8cpp_ac572a82ed89e5711940c643deae763fc}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiGetStatus@{SickScanApiGetStatus}}
+\index{SickScanApiGetStatus@{SickScanApiGetStatus}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiGetStatus()}{SickScanApiGetStatus()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Get\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{int32\+\_\+t $\ast$}]{status\+\_\+code,  }\item[{char $\ast$}]{message\+\_\+buffer,  }\item[{int32\+\_\+t}]{message\+\_\+buffer\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a681aee5233a034a10cc3761d2d646d0f}\label{api__impl_8cpp_a681aee5233a034a10cc3761d2d646d0f}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiGetVerboseLevel@{SickScanApiGetVerboseLevel}}
+\index{SickScanApiGetVerboseLevel@{SickScanApiGetVerboseLevel}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiGetVerboseLevel()}{SickScanApiGetVerboseLevel()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Get\+Verbose\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a6d5c14ea41799b062bb0ba2bf93e2fa2}\label{api__impl_8cpp_a6d5c14ea41799b062bb0ba2bf93e2fa2}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiInitByCli@{SickScanApiInitByCli}}
+\index{SickScanApiInitByCli@{SickScanApiInitByCli}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiInitByCli()}{SickScanApiInitByCli()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Init\+By\+Cli (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{int}]{argc,  }\item[{char $\ast$$\ast$}]{argv }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a89189e9bde714230bfb7f2d04371f1a2}\label{api__impl_8cpp_a89189e9bde714230bfb7f2d04371f1a2}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiInitByLaunchfile@{SickScanApiInitByLaunchfile}}
+\index{SickScanApiInitByLaunchfile@{SickScanApiInitByLaunchfile}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiInitByLaunchfile()}{SickScanApiInitByLaunchfile()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Init\+By\+Launchfile (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{const char $\ast$}]{launchfile\+\_\+args }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a19213d92d25a836f9b9d2f26c20a5163}\label{api__impl_8cpp_a19213d92d25a836f9b9d2f26c20a5163}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiNavOdomVelocityImpl@{SickScanApiNavOdomVelocityImpl}}
+\index{SickScanApiNavOdomVelocityImpl@{SickScanApiNavOdomVelocityImpl}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiNavOdomVelocityImpl()}{SickScanApiNavOdomVelocityImpl()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Nav\+Odom\+Velocity\+Impl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a85f727902ec3b2389906ae93216c0f7a}{Sick\+Scan\+Nav\+Odom\+Velocity\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a72c91be3d67835827540d07e106b7eee}\label{api__impl_8cpp_a72c91be3d67835827540d07e106b7eee}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiNavOdomVelocityMsg@{SickScanApiNavOdomVelocityMsg}}
+\index{SickScanApiNavOdomVelocityMsg@{SickScanApiNavOdomVelocityMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiNavOdomVelocityMsg()}{SickScanApiNavOdomVelocityMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Nav\+Odom\+Velocity\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a85f727902ec3b2389906ae93216c0f7a}{Sick\+Scan\+Nav\+Odom\+Velocity\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aa43bc20ac72187f3401bc457574d9d6b}\label{api__impl_8cpp_aa43bc20ac72187f3401bc457574d9d6b}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiOdomVelocityImpl@{SickScanApiOdomVelocityImpl}}
+\index{SickScanApiOdomVelocityImpl@{SickScanApiOdomVelocityImpl}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiOdomVelocityImpl()}{SickScanApiOdomVelocityImpl()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Odom\+Velocity\+Impl (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_aff0ff59c4832f6bdcd3e38b64764fdf0}{Sick\+Scan\+Odom\+Velocity\+Msg}} $\ast$}]{src\+\_\+msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_af1d3f1c612cc7d6c780764088f8d465c}\label{api__impl_8cpp_af1d3f1c612cc7d6c780764088f8d465c}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiOdomVelocityMsg@{SickScanApiOdomVelocityMsg}}
+\index{SickScanApiOdomVelocityMsg@{SickScanApiOdomVelocityMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiOdomVelocityMsg()}{SickScanApiOdomVelocityMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Odom\+Velocity\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_aff0ff59c4832f6bdcd3e38b64764fdf0}{Sick\+Scan\+Odom\+Velocity\+Msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac402ae7aa05423b43ba5c699e1f31903}\label{api__impl_8cpp_ac402ae7aa05423b43ba5c699e1f31903}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterCartesianPointCloudMsg@{SickScanApiRegisterCartesianPointCloudMsg}}
+\index{SickScanApiRegisterCartesianPointCloudMsg@{SickScanApiRegisterCartesianPointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterCartesianPointCloudMsg()}{SickScanApiRegisterCartesianPointCloudMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Cartesian\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a0a4b51c3a3d5b0dc4faca5d12a1d2369}\label{api__impl_8cpp_a0a4b51c3a3d5b0dc4faca5d12a1d2369}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterDiagnosticMsg@{SickScanApiRegisterDiagnosticMsg}}
+\index{SickScanApiRegisterDiagnosticMsg@{SickScanApiRegisterDiagnosticMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterDiagnosticMsg()}{SickScanApiRegisterDiagnosticMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Diagnostic\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a356b66f68a91b8509ee83e40101d8ee4}{Sick\+Scan\+Diagnostic\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aac12a89e7f70b2081cdbb43165b46c4f}\label{api__impl_8cpp_aac12a89e7f70b2081cdbb43165b46c4f}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterImuMsg@{SickScanApiRegisterImuMsg}}
+\index{SickScanApiRegisterImuMsg@{SickScanApiRegisterImuMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterImuMsg()}{SickScanApiRegisterImuMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Imu\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_aa0166a4a22051d7b5dc4e298cf95c68e}{Sick\+Scan\+Imu\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a15a03cde30103a26c613b0a0aeba4196}\label{api__impl_8cpp_a15a03cde30103a26c613b0a0aeba4196}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterLdmrsObjectArrayMsg@{SickScanApiRegisterLdmrsObjectArrayMsg}}
+\index{SickScanApiRegisterLdmrsObjectArrayMsg@{SickScanApiRegisterLdmrsObjectArrayMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterLdmrsObjectArrayMsg()}{SickScanApiRegisterLdmrsObjectArrayMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Ldmrs\+Object\+Array\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a18a5827710feba4797f7f5ba79959b2c}{Sick\+Scan\+Ldmrs\+Object\+Array\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a3ec50d29255b31ff3ecc8e6b363d5aa0}\label{api__impl_8cpp_a3ec50d29255b31ff3ecc8e6b363d5aa0}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterLFErecMsg@{SickScanApiRegisterLFErecMsg}}
+\index{SickScanApiRegisterLFErecMsg@{SickScanApiRegisterLFErecMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterLFErecMsg()}{SickScanApiRegisterLFErecMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+L\+F\+Erec\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a90714528057d16a12ebc12612addb971}{Sick\+Scan\+L\+F\+Erec\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aed54c75dc2a74d54fb56f6f87108432c}\label{api__impl_8cpp_aed54c75dc2a74d54fb56f6f87108432c}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterLIDoutputstateMsg@{SickScanApiRegisterLIDoutputstateMsg}}
+\index{SickScanApiRegisterLIDoutputstateMsg@{SickScanApiRegisterLIDoutputstateMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterLIDoutputstateMsg()}{SickScanApiRegisterLIDoutputstateMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+L\+I\+Doutputstate\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a158326e4b300f87cec70be93d30a24c0}{Sick\+Scan\+L\+I\+Doutputstate\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a647386e125f74e6e0b34e3f8d0636055}\label{api__impl_8cpp_a647386e125f74e6e0b34e3f8d0636055}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterLogMsg@{SickScanApiRegisterLogMsg}}
+\index{SickScanApiRegisterLogMsg@{SickScanApiRegisterLogMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterLogMsg()}{SickScanApiRegisterLogMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Log\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a7f9e2f3b503b3c9cad580908a6cf5356}{Sick\+Scan\+Log\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a296298e635760b332f2ae6629e64bccc}\label{api__impl_8cpp_a296298e635760b332f2ae6629e64bccc}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterNavPoseLandmarkMsg@{SickScanApiRegisterNavPoseLandmarkMsg}}
+\index{SickScanApiRegisterNavPoseLandmarkMsg@{SickScanApiRegisterNavPoseLandmarkMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterNavPoseLandmarkMsg()}{SickScanApiRegisterNavPoseLandmarkMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Nav\+Pose\+Landmark\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ac4422b79ed01e3c69046d7ac564b86d8}{Sick\+Scan\+Nav\+Pose\+Landmark\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a61b78eb0ccd4a0e47fca5845fe4d6c95}\label{api__impl_8cpp_a61b78eb0ccd4a0e47fca5845fe4d6c95}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterPolarPointCloudMsg@{SickScanApiRegisterPolarPointCloudMsg}}
+\index{SickScanApiRegisterPolarPointCloudMsg@{SickScanApiRegisterPolarPointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterPolarPointCloudMsg()}{SickScanApiRegisterPolarPointCloudMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Polar\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a08b5621a04c18922f0ecc04fca3a5614}\label{api__impl_8cpp_a08b5621a04c18922f0ecc04fca3a5614}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterRadarScanMsg@{SickScanApiRegisterRadarScanMsg}}
+\index{SickScanApiRegisterRadarScanMsg@{SickScanApiRegisterRadarScanMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterRadarScanMsg()}{SickScanApiRegisterRadarScanMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Radar\+Scan\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ae70eed698655bddc42ce9ec8f8a6eb74}{Sick\+Scan\+Radar\+Scan\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a229bdd723b239aa484497477d5cb456d}\label{api__impl_8cpp_a229bdd723b239aa484497477d5cb456d}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRegisterVisualizationMarkerMsg@{SickScanApiRegisterVisualizationMarkerMsg}}
+\index{SickScanApiRegisterVisualizationMarkerMsg@{SickScanApiRegisterVisualizationMarkerMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRegisterVisualizationMarkerMsg()}{SickScanApiRegisterVisualizationMarkerMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Register\+Visualization\+Marker\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ac51c8e075a18f41f3c9924fb41013f1f}{Sick\+Scan\+Visualization\+Marker\+Callback}}}]{callback }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a20551edcfddb22a1b45a5badf92f4821}\label{api__impl_8cpp_a20551edcfddb22a1b45a5badf92f4821}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiRelease@{SickScanApiRelease}}
+\index{SickScanApiRelease@{SickScanApiRelease}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiRelease()}{SickScanApiRelease()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Release (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac9292d260d83dd6da4d651ee9c5af805}\label{api__impl_8cpp_ac9292d260d83dd6da4d651ee9c5af805}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiSendSOPAS@{SickScanApiSendSOPAS}}
+\index{SickScanApiSendSOPAS@{SickScanApiSendSOPAS}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiSendSOPAS()}{SickScanApiSendSOPAS()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Send\+S\+O\+P\+AS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{const char $\ast$}]{sopas\+\_\+command,  }\item[{char $\ast$}]{sopas\+\_\+response\+\_\+buffer,  }\item[{int32\+\_\+t}]{response\+\_\+buffer\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_af2d65a59559fab18aeb9c7a4c5f46cb5}\label{api__impl_8cpp_af2d65a59559fab18aeb9c7a4c5f46cb5}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiSetVerboseLevel@{SickScanApiSetVerboseLevel}}
+\index{SickScanApiSetVerboseLevel@{SickScanApiSetVerboseLevel}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiSetVerboseLevel()}{SickScanApiSetVerboseLevel()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Set\+Verbose\+Level (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{int32\+\_\+t}]{verbose\+\_\+level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aabf5ffacd8bd100543b9c1bc793853c4}\label{api__impl_8cpp_aabf5ffacd8bd100543b9c1bc793853c4}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextCartesianPointCloudMsg@{SickScanApiWaitNextCartesianPointCloudMsg}}
+\index{SickScanApiWaitNextCartesianPointCloudMsg@{SickScanApiWaitNextCartesianPointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextCartesianPointCloudMsg()}{SickScanApiWaitNextCartesianPointCloudMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+Cartesian\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ae7e67d20c78157f0a802398195cab2ad}\label{api__impl_8cpp_ae7e67d20c78157f0a802398195cab2ad}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextImuMsg@{SickScanApiWaitNextImuMsg}}
+\index{SickScanApiWaitNextImuMsg@{SickScanApiWaitNextImuMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextImuMsg()}{SickScanApiWaitNextImuMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+Imu\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aa66f42c3e216eddc547b4fac3356fb7e}\label{api__impl_8cpp_aa66f42c3e216eddc547b4fac3356fb7e}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextLdmrsObjectArrayMsg@{SickScanApiWaitNextLdmrsObjectArrayMsg}}
+\index{SickScanApiWaitNextLdmrsObjectArrayMsg@{SickScanApiWaitNextLdmrsObjectArrayMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextLdmrsObjectArrayMsg()}{SickScanApiWaitNextLdmrsObjectArrayMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+Ldmrs\+Object\+Array\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a20de6b1d9faa9759fff6eeb37ade5345}\label{api__impl_8cpp_a20de6b1d9faa9759fff6eeb37ade5345}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextLFErecMsg@{SickScanApiWaitNextLFErecMsg}}
+\index{SickScanApiWaitNextLFErecMsg@{SickScanApiWaitNextLFErecMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextLFErecMsg()}{SickScanApiWaitNextLFErecMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+L\+F\+Erec\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a178378866e27d112f64751188f594761}\label{api__impl_8cpp_a178378866e27d112f64751188f594761}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextLIDoutputstateMsg@{SickScanApiWaitNextLIDoutputstateMsg}}
+\index{SickScanApiWaitNextLIDoutputstateMsg@{SickScanApiWaitNextLIDoutputstateMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextLIDoutputstateMsg()}{SickScanApiWaitNextLIDoutputstateMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+L\+I\+Doutputstate\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_a8bad64336b0efd8d3ef478e815980c17}\label{api__impl_8cpp_a8bad64336b0efd8d3ef478e815980c17}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextNavPoseLandmarkMsg@{SickScanApiWaitNextNavPoseLandmarkMsg}}
+\index{SickScanApiWaitNextNavPoseLandmarkMsg@{SickScanApiWaitNextNavPoseLandmarkMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextNavPoseLandmarkMsg()}{SickScanApiWaitNextNavPoseLandmarkMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+Nav\+Pose\+Landmark\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ae06f8adff9e3f9d562863840a642a0d2}\label{api__impl_8cpp_ae06f8adff9e3f9d562863840a642a0d2}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextPolarPointCloudMsg@{SickScanApiWaitNextPolarPointCloudMsg}}
+\index{SickScanApiWaitNextPolarPointCloudMsg@{SickScanApiWaitNextPolarPointCloudMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextPolarPointCloudMsg()}{SickScanApiWaitNextPolarPointCloudMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+Polar\+Point\+Cloud\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_ad1b4059db7a3518260f9a211266fccaf}\label{api__impl_8cpp_ad1b4059db7a3518260f9a211266fccaf}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextRadarScanMsg@{SickScanApiWaitNextRadarScanMsg}}
+\index{SickScanApiWaitNextRadarScanMsg@{SickScanApiWaitNextRadarScanMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextRadarScanMsg()}{SickScanApiWaitNextRadarScanMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+Radar\+Scan\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_afb6c04cc8a7bfd7e4a05c476dfaea818}\label{api__impl_8cpp_afb6c04cc8a7bfd7e4a05c476dfaea818}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!SickScanApiWaitNextVisualizationMarkerMsg@{SickScanApiWaitNextVisualizationMarkerMsg}}
+\index{SickScanApiWaitNextVisualizationMarkerMsg@{SickScanApiWaitNextVisualizationMarkerMsg}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{SickScanApiWaitNextVisualizationMarkerMsg()}{SickScanApiWaitNextVisualizationMarkerMsg()}}
+{\footnotesize\ttfamily int32\+\_\+t Sick\+Scan\+Api\+Wait\+Next\+Visualization\+Marker\+Msg (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}}}]{api\+Handle,  }\item[{\mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}} $\ast$}]{msg,  }\item[{double}]{timeout\+\_\+sec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{api__impl_8cpp_aced57f75cea27937767d96db523cd824}\label{api__impl_8cpp_aced57f75cea27937767d96db523cd824}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!visualizationmarker\_callback@{visualizationmarker\_callback}}
+\index{visualizationmarker\_callback@{visualizationmarker\_callback}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{visualizationmarker\_callback()}{visualizationmarker\_callback()}}
+{\footnotesize\ttfamily static void visualizationmarker\+\_\+callback (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{node,  }\item[{const ros\+\_\+visualization\+\_\+msgs\+::\+Marker\+Array $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{api__impl_8cpp_a31d9cdb7f3f51e3d0636f71086913f4d}\label{api__impl_8cpp_a31d9cdb7f3f51e3d0636f71086913f4d}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_api\_caller@{s\_api\_caller}}
+\index{s\_api\_caller@{s\_api\_caller}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_api\_caller}{s\_api\_caller}}
+{\footnotesize\ttfamily std\+::map$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},std\+::string$>$ s\+\_\+api\+\_\+caller\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_acdf4a904c91918b051fd7a87a37748b9}\label{api__impl_8cpp_acdf4a904c91918b051fd7a87a37748b9}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_argc@{s\_argc}}
+\index{s\_argc@{s\_argc}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_argc}{s\_argc}}
+{\footnotesize\ttfamily int s\+\_\+argc = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a75b3eea796de7539fdb6c1c3942330fd}\label{api__impl_8cpp_a75b3eea796de7539fdb6c1c3942330fd}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_argv@{s\_argv}}
+\index{s\_argv@{s\_argv}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_argv}{s\_argv}}
+{\footnotesize\ttfamily char$\ast$$\ast$ s\+\_\+argv = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac55e470fe1bb74651118cc117f97664f}\label{api__impl_8cpp_ac55e470fe1bb74651118cc117f97664f}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_cartesian\_pointcloud\_messages@{s\_callback\_handler\_cartesian\_pointcloud\_messages}}
+\index{s\_callback\_handler\_cartesian\_pointcloud\_messages@{s\_callback\_handler\_cartesian\_pointcloud\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_cartesian\_pointcloud\_messages}{s\_callback\_handler\_cartesian\_pointcloud\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+cartesian\+\_\+pointcloud\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_aa9d8ed2fcbd1cb17c3336c380f6f0062}\label{api__impl_8cpp_aa9d8ed2fcbd1cb17c3336c380f6f0062}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_diagnostic\_messages@{s\_callback\_handler\_diagnostic\_messages}}
+\index{s\_callback\_handler\_diagnostic\_messages@{s\_callback\_handler\_diagnostic\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_diagnostic\_messages}{s\_callback\_handler\_diagnostic\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_a427104052a8cf50093d9c5e526e50675}{Sick\+Scan\+Diagnostic\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+diagnostic\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_aa7caaabe0001999c6498652d2ad62827}\label{api__impl_8cpp_aa7caaabe0001999c6498652d2ad62827}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_imu\_messages@{s\_callback\_handler\_imu\_messages}}
+\index{s\_callback\_handler\_imu\_messages@{s\_callback\_handler\_imu\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_imu\_messages}{s\_callback\_handler\_imu\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_ae0942aeac30cfee853872cd60c09c22a}{Sick\+Scan\+Imu\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+imu\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a27e5fcab7c960db1e279a1654cac8a0e}\label{api__impl_8cpp_a27e5fcab7c960db1e279a1654cac8a0e}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_ldmrsobjectarray\_messages@{s\_callback\_handler\_ldmrsobjectarray\_messages}}
+\index{s\_callback\_handler\_ldmrsobjectarray\_messages@{s\_callback\_handler\_ldmrsobjectarray\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_ldmrsobjectarray\_messages}{s\_callback\_handler\_ldmrsobjectarray\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_aebd71fa834f1d63facdae80056573a4d}{Sick\+Scan\+Ldmrs\+Object\+Array}}$>$ s\+\_\+callback\+\_\+handler\+\_\+ldmrsobjectarray\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a0b6c3cd108069ac9380a99034184972e}\label{api__impl_8cpp_a0b6c3cd108069ac9380a99034184972e}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_lferec\_messages@{s\_callback\_handler\_lferec\_messages}}
+\index{s\_callback\_handler\_lferec\_messages@{s\_callback\_handler\_lferec\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_lferec\_messages}{s\_callback\_handler\_lferec\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_a440309c587c36f0854568b010f133779}{Sick\+Scan\+L\+F\+Erec\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+lferec\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a05b41adc8a75b3c50d332e88f98ac39a}\label{api__impl_8cpp_a05b41adc8a75b3c50d332e88f98ac39a}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_lidoutputstate\_messages@{s\_callback\_handler\_lidoutputstate\_messages}}
+\index{s\_callback\_handler\_lidoutputstate\_messages@{s\_callback\_handler\_lidoutputstate\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_lidoutputstate\_messages}{s\_callback\_handler\_lidoutputstate\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_a93a2d9c9d92085c2c097523a737ff6ba}{Sick\+Scan\+L\+I\+Doutputstate\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+lidoutputstate\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a595df38f7dabe97075b1d91893bcfb12}\label{api__impl_8cpp_a595df38f7dabe97075b1d91893bcfb12}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_log\_messages@{s\_callback\_handler\_log\_messages}}
+\index{s\_callback\_handler\_log\_messages@{s\_callback\_handler\_log\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_log\_messages}{s\_callback\_handler\_log\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_ae4aa9282b9a36b1118d47862a4c2d372}{Sick\+Scan\+Log\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+log\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a1763826cf4355ce2431bd612d770ab0a}\label{api__impl_8cpp_a1763826cf4355ce2431bd612d770ab0a}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_navposelandmark\_messages@{s\_callback\_handler\_navposelandmark\_messages}}
+\index{s\_callback\_handler\_navposelandmark\_messages@{s\_callback\_handler\_navposelandmark\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_navposelandmark\_messages}{s\_callback\_handler\_navposelandmark\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_ad963644fb80dcbe7e82f4eeac75a1e31}{Sick\+Scan\+Nav\+Pose\+Landmark\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+navposelandmark\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_a26661f904a8f0c38f31dfcd676cb702e}\label{api__impl_8cpp_a26661f904a8f0c38f31dfcd676cb702e}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_polar\_pointcloud\_messages@{s\_callback\_handler\_polar\_pointcloud\_messages}}
+\index{s\_callback\_handler\_polar\_pointcloud\_messages@{s\_callback\_handler\_polar\_pointcloud\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_polar\_pointcloud\_messages}{s\_callback\_handler\_polar\_pointcloud\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_ac0e4211a1844678ba7327c9e9bf049e0}{Sick\+Scan\+Point\+Cloud\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+polar\+\_\+pointcloud\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_ae47c698f191bedd261e1e745152ad17c}\label{api__impl_8cpp_ae47c698f191bedd261e1e745152ad17c}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_radarscan\_messages@{s\_callback\_handler\_radarscan\_messages}}
+\index{s\_callback\_handler\_radarscan\_messages@{s\_callback\_handler\_radarscan\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_radarscan\_messages}{s\_callback\_handler\_radarscan\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_a2c0b88d7482901a478a9effc48ac807c}{Sick\+Scan\+Radar\+Scan}}$>$ s\+\_\+callback\+\_\+handler\+\_\+radarscan\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_ab8fe4ad5416465eb561684ad1d8baaa9}\label{api__impl_8cpp_ab8fe4ad5416465eb561684ad1d8baaa9}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_callback\_handler\_visualizationmarker\_messages@{s\_callback\_handler\_visualizationmarker\_messages}}
+\index{s\_callback\_handler\_visualizationmarker\_messages@{s\_callback\_handler\_visualizationmarker\_messages}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_callback\_handler\_visualizationmarker\_messages}{s\_callback\_handler\_visualizationmarker\_messages}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCallbackHandler}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Callback\+Handler}}$<$\mbox{\hyperlink{sick__scan__api_8h_a0c0e68c4bfbea74147da2a6814cd8b51}{Sick\+Scan\+Api\+Handle}},\mbox{\hyperlink{sick__scan__api_8h_a84988f9af811a1b56a00dc49f9580516}{Sick\+Scan\+Visualization\+Marker\+Msg}}$>$ s\+\_\+callback\+\_\+handler\+\_\+visualizationmarker\+\_\+messages\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_ac83e467dc31aabf594d0ea4dd4fbe05e}\label{api__impl_8cpp_ac83e467dc31aabf594d0ea4dd4fbe05e}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_malloced\_resources@{s\_malloced\_resources}}
+\index{s\_malloced\_resources@{s\_malloced\_resources}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_malloced\_resources}{s\_malloced\_resources}}
+{\footnotesize\ttfamily std\+::vector$<$void$\ast$$>$ s\+\_\+malloced\+\_\+resources\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{api__impl_8cpp_ae3ffba51ac8485a3048dde9aecb74b9a}\label{api__impl_8cpp_ae3ffba51ac8485a3048dde9aecb74b9a}} 
+\index{api\_impl.cpp@{api\_impl.cpp}!s\_scannerName@{s\_scannerName}}
+\index{s\_scannerName@{s\_scannerName}!api\_impl.cpp@{api\_impl.cpp}}
+\doxysubsubsection{\texorpdfstring{s\_scannerName}{s\_scannerName}}
+{\footnotesize\ttfamily std\+::string s\+\_\+scanner\+Name = \char`\"{}sick\+\_\+scan\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+

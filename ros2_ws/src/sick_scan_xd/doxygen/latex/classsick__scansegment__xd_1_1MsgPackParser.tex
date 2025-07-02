@@ -1,0 +1,104 @@
+\hypertarget{classsick__scansegment__xd_1_1MsgPackParser}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Msg\+Pack\+Parser Class Reference}
+\label{classsick__scansegment__xd_1_1MsgPackParser}\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+
+
+{\ttfamily \#include $<$msgpack\+\_\+parser.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ uint8\+\_\+t $>$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_a1aa1ea640d248c0eef69b1b7908c73cc}{Read\+File}} (const std\+::string \&filepath)
+\item 
+static bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_acd940279f1f10c735286f36365798cd7}{Parse}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&msgpack\+\_\+data, \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} msgpack\+\_\+timestamp, \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \&add\+\_\+transform\+\_\+xyz\+\_\+rpy, \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} \&result, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data}} \&msgpack\+\_\+validator\+\_\+data\+\_\+collector, const \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}} \&msgpack\+\_\+validator=\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}}(), bool msgpack\+\_\+validator\+\_\+enabled=false, bool discard\+\_\+msgpacks\+\_\+not\+\_\+validated=false, bool use\+\_\+software\+\_\+pll=true, bool verbose=false)
+\item 
+static bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_ac567be4a75ef1380f0aa942482031439}{Parse}} (std\+::istream \&msgpack\+\_\+istream, \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} msgpack\+\_\+timestamp, \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \&add\+\_\+transform\+\_\+xyz\+\_\+rpy, \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} \&result, \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data}} \&msgpack\+\_\+validator\+\_\+data\+\_\+collector, const \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}} \&msgpack\+\_\+validator=\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}}(), bool msgpack\+\_\+validator\+\_\+enabled=false, bool discard\+\_\+msgpacks\+\_\+not\+\_\+validated=false, bool use\+\_\+software\+\_\+pll=true, bool verbose=false)
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_ad014d22186c13e42b02fd4966ca4ee71}{Msgpack\+To\+Hex\+Dump}} (const std\+::vector$<$ uint8\+\_\+t $>$ \&msgpack\+\_\+data, bool pretty\+\_\+print=true)
+\item 
+static bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_ab445809f77f144ca1183ab05dbd20d1d}{Write\+C\+SV}} (const std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} $>$ \&results, const std\+::string \&csv\+File, bool overwrite\+\_\+existing\+\_\+file)
+\item 
+static bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_a5691635095df58f7a51ead3b5620336b}{Export\+X\+Y\+ZI}} (const std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} $>$ \&results, std\+::vector$<$ float $>$ \&x, std\+::vector$<$ float $>$ \&y, std\+::vector$<$ float $>$ \&z, std\+::vector$<$ float $>$ \&i, std\+::vector$<$ int $>$ \&group\+\_\+idx, std\+::vector$<$ int $>$ \&echo\+\_\+idx, std\+::vector$<$ int $>$ \&msg\+\_\+idx)
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_a9a6147ed6e028bf718b5a2c5408dbcc3}{Timestamp}} (const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&now=std\+::chrono\+::system\+\_\+clock\+::now())
+\item 
+static std\+::string \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_ac82e116f21b57c9fa0e8552e4f038998}{Timestamp}} (uint32\+\_\+t \mbox{\hyperlink{sick__ros__wrapper_8h_addd3f1e47b8cfc76fe2174fb83a0d100}{sec}}, uint32\+\_\+t \mbox{\hyperlink{sick__ros__wrapper_8h_a2625b6294bff7001f4279906d2630525}{nsec}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_a916b268716049b8074d0eef452ab79e2}{message\+Count}} = 0
+\item 
+static int \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackParser_a245d6ee1f4eeb544ff17034a01449628}{telegram\+Count}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_a5691635095df58f7a51ead3b5620336b}\label{classsick__scansegment__xd_1_1MsgPackParser_a5691635095df58f7a51ead3b5620336b}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!ExportXYZI@{ExportXYZI}}
+\index{ExportXYZI@{ExportXYZI}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{ExportXYZI()}{ExportXYZI()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::\+Export\+X\+Y\+ZI (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} $>$ \&}]{results,  }\item[{std\+::vector$<$ float $>$ \&}]{x,  }\item[{std\+::vector$<$ float $>$ \&}]{y,  }\item[{std\+::vector$<$ float $>$ \&}]{z,  }\item[{std\+::vector$<$ float $>$ \&}]{i,  }\item[{std\+::vector$<$ int $>$ \&}]{group\+\_\+idx,  }\item[{std\+::vector$<$ int $>$ \&}]{echo\+\_\+idx,  }\item[{std\+::vector$<$ int $>$ \&}]{msg\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_ad014d22186c13e42b02fd4966ca4ee71}\label{classsick__scansegment__xd_1_1MsgPackParser_ad014d22186c13e42b02fd4966ca4ee71}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!MsgpackToHexDump@{MsgpackToHexDump}}
+\index{MsgpackToHexDump@{MsgpackToHexDump}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{MsgpackToHexDump()}{MsgpackToHexDump()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::\+Msgpack\+To\+Hex\+Dump (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{msgpack\+\_\+data,  }\item[{bool}]{pretty\+\_\+print = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_acd940279f1f10c735286f36365798cd7}\label{classsick__scansegment__xd_1_1MsgPackParser_acd940279f1f10c735286f36365798cd7}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!Parse@{Parse}}
+\index{Parse@{Parse}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::\+Parse (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{msgpack\+\_\+data,  }\item[{\mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}}}]{msgpack\+\_\+timestamp,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \&}]{add\+\_\+transform\+\_\+xyz\+\_\+rpy,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} \&}]{result,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data}} \&}]{msgpack\+\_\+validator\+\_\+data\+\_\+collector,  }\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}} \&}]{msgpack\+\_\+validator = {\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}}()},  }\item[{bool}]{msgpack\+\_\+validator\+\_\+enabled = {\ttfamily false},  }\item[{bool}]{discard\+\_\+msgpacks\+\_\+not\+\_\+validated = {\ttfamily false},  }\item[{bool}]{use\+\_\+software\+\_\+pll = {\ttfamily true},  }\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_ac567be4a75ef1380f0aa942482031439}\label{classsick__scansegment__xd_1_1MsgPackParser_ac567be4a75ef1380f0aa942482031439}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!Parse@{Parse}}
+\index{Parse@{Parse}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::\+Parse (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{msgpack\+\_\+istream,  }\item[{\mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}}}]{msgpack\+\_\+timestamp,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \&}]{add\+\_\+transform\+\_\+xyz\+\_\+rpy,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} \&}]{result,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidatorData}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator\+Data}} \&}]{msgpack\+\_\+validator\+\_\+data\+\_\+collector,  }\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}} \&}]{msgpack\+\_\+validator = {\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackValidator}{sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Validator}}()},  }\item[{bool}]{msgpack\+\_\+validator\+\_\+enabled = {\ttfamily false},  }\item[{bool}]{discard\+\_\+msgpacks\+\_\+not\+\_\+validated = {\ttfamily false},  }\item[{bool}]{use\+\_\+software\+\_\+pll = {\ttfamily true},  }\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_a1aa1ea640d248c0eef69b1b7908c73cc}\label{classsick__scansegment__xd_1_1MsgPackParser_a1aa1ea640d248c0eef69b1b7908c73cc}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!ReadFile@{ReadFile}}
+\index{ReadFile@{ReadFile}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{ReadFile()}{ReadFile()}}
+{\footnotesize\ttfamily std\+::vector$<$ uint8\+\_\+t $>$ sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::\+Read\+File (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_a9a6147ed6e028bf718b5a2c5408dbcc3}\label{classsick__scansegment__xd_1_1MsgPackParser_a9a6147ed6e028bf718b5a2c5408dbcc3}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{Timestamp()}{Timestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::\+Timestamp (\begin{DoxyParamCaption}\item[{const std\+::chrono\+::system\+\_\+clock\+::time\+\_\+point \&}]{now = {\ttfamily std\+:\+:chrono\+:\+:system\+\_\+clock\+:\+:now()} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_ac82e116f21b57c9fa0e8552e4f038998}\label{classsick__scansegment__xd_1_1MsgPackParser_ac82e116f21b57c9fa0e8552e4f038998}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!Timestamp@{Timestamp}}
+\index{Timestamp@{Timestamp}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{Timestamp()}{Timestamp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static std\+::string sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::\+Timestamp (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sec,  }\item[{uint32\+\_\+t}]{nsec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_ab445809f77f144ca1183ab05dbd20d1d}\label{classsick__scansegment__xd_1_1MsgPackParser_ab445809f77f144ca1183ab05dbd20d1d}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!WriteCSV@{WriteCSV}}
+\index{WriteCSV@{WriteCSV}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{WriteCSV()}{WriteCSV()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::\+Write\+C\+SV (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} $>$ \&}]{results,  }\item[{const std\+::string \&}]{csv\+File,  }\item[{bool}]{overwrite\+\_\+existing\+\_\+file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_a916b268716049b8074d0eef452ab79e2}\label{classsick__scansegment__xd_1_1MsgPackParser_a916b268716049b8074d0eef452ab79e2}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!messageCount@{messageCount}}
+\index{messageCount@{messageCount}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{messageCount}{messageCount}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::message\+Count = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackParser_a245d6ee1f4eeb544ff17034a01449628}\label{classsick__scansegment__xd_1_1MsgPackParser_a245d6ee1f4eeb544ff17034a01449628}} 
+\index{sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}!telegramCount@{telegramCount}}
+\index{telegramCount@{telegramCount}!sick\_scansegment\_xd::MsgPackParser@{sick\_scansegment\_xd::MsgPackParser}}
+\doxysubsubsection{\texorpdfstring{telegramCount}{telegramCount}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Parser\+::telegram\+Count = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{msgpack__parser_8h}{msgpack\+\_\+parser.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{msgpack__parser_8cpp}{msgpack\+\_\+parser.\+cpp}}\end{DoxyCompactItemize}

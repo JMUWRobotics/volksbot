@@ -1,0 +1,42 @@
+\hypertarget{classapi_1_1sick__scan__api_1_1SickScanUint8Array}{}\doxysection{api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Uint8\+Array Class Reference}
+\label{classapi_1_1sick__scan__api_1_1SickScanUint8Array}\index{api.sick\_scan\_api.SickScanUint8Array@{api.sick\_scan\_api.SickScanUint8Array}}
+
+
+Inheritance diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Uint8\+Array\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanUint8Array__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Uint8\+Array\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanUint8Array__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}equivalent to sick_scan_api.h struct SickScanUint8Array
+
+Attributes
+----------
+capacity : ctypes.c_uint64
+    Number of allocated elements, i.e. max. number of elements in buffer, allocated buffer size is capacity * sizeof(SickScanPointFieldMsg)
+size : ctypes.c_uint64
+    Number of currently used elements in the buffer
+buffer : ctypes.POINTER(ctypes.c_uint8)
+    Memory, data in plain order and system endianess (buffer == 0, if size == 0 && capacity == 0, otherwise allocated memory), allocation/deallocation always managed by the caller.
+\end{DoxyVerb}
+ ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/python/api/\mbox{\hyperlink{sick__scan__api_8py}{sick\+\_\+scan\+\_\+api.\+py}}\end{DoxyCompactItemize}

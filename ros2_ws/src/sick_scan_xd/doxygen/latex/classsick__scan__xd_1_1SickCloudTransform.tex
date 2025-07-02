@@ -1,0 +1,194 @@
+\hypertarget{classsick__scan__xd_1_1SickCloudTransform}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Cloud\+Transform Class Reference}
+\label{classsick__scan__xd_1_1SickCloudTransform}\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+
+
+{\ttfamily \#include $<$sick\+\_\+cloud\+\_\+transform.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scan\+\_\+xd\+::Sick\+Cloud\+Transform\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=306pt]{classsick__scan__xd_1_1SickCloudTransform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a9fa1a50e0b7afca99b19a9cf395bef2b}{Sick\+Cloud\+Transform}} ()
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a5d89958d4dda71b967bfa2244213f5cc}{Sick\+Cloud\+Transform}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, bool cartesian\+\_\+input\+\_\+only)
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a37cc2eeae06ee8582938d8da427e2456}{Sick\+Cloud\+Transform}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, const std\+::string \&add\+\_\+transform\+\_\+xyz\+\_\+rpy, bool cartesian\+\_\+input\+\_\+only, bool add\+\_\+transform\+\_\+check\+\_\+dynamic\+\_\+updates)
+\item 
+{\footnotesize template$<$typename float\+\_\+type $>$ }\\void \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a83949bb300479e99749b9d215d028093}{apply\+Transform}} (float\+\_\+type \&x, float\+\_\+type \&y, float\+\_\+type \&z)
+\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_ab1cf34cefea312879a726bdb8e182c47}{azimuth\+Offset}} (void) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::array$<$ float, 3 $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a20eb4e294e73bf938c16da0fb1ec89a2}{Vector3D}}
+\item 
+typedef std\+::array$<$ std\+::array$<$ float, 3 $>$, 3 $>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a982f2b37c74c71d6444f1d6b7f1ed0e8}{init}} (const std\+::string \&add\+\_\+transform\+\_\+xyz\+\_\+rpy, bool cartesian\+\_\+input\+\_\+only, bool add\+\_\+transform\+\_\+check\+\_\+dynamic\+\_\+updates)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}} \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a3d7c3240f2516d68001e680bb8893a6c}{euler\+To\+Rot3x3}} (float roll, float pitch, float yaw)
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}} \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a6ae022895820be5a69cedd5f57f4884d}{multiply3x3}} (const \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}} \&a, const \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}} \&b)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a1dec8165d0e0686e60a5911f538d08a5}{m\+\_\+nh}} = 0
+\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aea7886e56d20881f7052d4f6c94bcb94}{m\+\_\+add\+\_\+transform\+\_\+xyz\+\_\+rpy}} = \char`\"{}\char`\"{}
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a005536011593c7cc2a8622c74bb88b4d}{m\+\_\+add\+\_\+transform\+\_\+check\+\_\+dynamic\+\_\+updates}} = false
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a4e2681712fe503e934ff0b8330d4c2c6}{m\+\_\+cartesian\+\_\+input\+\_\+only}} = false
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_adfe9a7569cd344e5d2a15f53178184e8}{m\+\_\+apply\+\_\+3x3\+\_\+rotation}} = false
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a20eb4e294e73bf938c16da0fb1ec89a2}{Vector3D}} \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a4866d3e42931eb4479681dd964cc3fd9}{m\+\_\+translation\+\_\+vector}} = \{ 0, 0, 0 \}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}} \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a71ca524d8a44a137ae0c385fdf7b751f}{m\+\_\+rotation\+\_\+matrix}} = \{ 1, 0, 0, 0, 1, 0, 0, 0, 1 \}
+\item 
+float \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_ac596e44fd535f7e34871baca6efb9699}{m\+\_\+azimuth\+\_\+offset}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}\label{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!Matrix3x3@{Matrix3x3}}
+\index{Matrix3x3@{Matrix3x3}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{Matrix3x3}{Matrix3x3}}
+{\footnotesize\ttfamily typedef std\+::array$<$std\+::array$<$float, 3$>$, 3$>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::\+Matrix3x3}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a20eb4e294e73bf938c16da0fb1ec89a2}\label{classsick__scan__xd_1_1SickCloudTransform_a20eb4e294e73bf938c16da0fb1ec89a2}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!Vector3D@{Vector3D}}
+\index{Vector3D@{Vector3D}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{Vector3D}{Vector3D}}
+{\footnotesize\ttfamily typedef std\+::array$<$float, 3$>$ \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a20eb4e294e73bf938c16da0fb1ec89a2}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::\+Vector3D}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a9fa1a50e0b7afca99b19a9cf395bef2b}\label{classsick__scan__xd_1_1SickCloudTransform_a9fa1a50e0b7afca99b19a9cf395bef2b}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!SickCloudTransform@{SickCloudTransform}}
+\index{SickCloudTransform@{SickCloudTransform}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{SickCloudTransform()}{SickCloudTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::\+Sick\+Cloud\+Transform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a5d89958d4dda71b967bfa2244213f5cc}\label{classsick__scan__xd_1_1SickCloudTransform_a5d89958d4dda71b967bfa2244213f5cc}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!SickCloudTransform@{SickCloudTransform}}
+\index{SickCloudTransform@{SickCloudTransform}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{SickCloudTransform()}{SickCloudTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::\+Sick\+Cloud\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{bool}]{cartesian\+\_\+input\+\_\+only }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a37cc2eeae06ee8582938d8da427e2456}\label{classsick__scan__xd_1_1SickCloudTransform_a37cc2eeae06ee8582938d8da427e2456}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!SickCloudTransform@{SickCloudTransform}}
+\index{SickCloudTransform@{SickCloudTransform}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{SickCloudTransform()}{SickCloudTransform()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::\+Sick\+Cloud\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{const std\+::string \&}]{add\+\_\+transform\+\_\+xyz\+\_\+rpy,  }\item[{bool}]{cartesian\+\_\+input\+\_\+only,  }\item[{bool}]{add\+\_\+transform\+\_\+check\+\_\+dynamic\+\_\+updates }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a83949bb300479e99749b9d215d028093}\label{classsick__scan__xd_1_1SickCloudTransform_a83949bb300479e99749b9d215d028093}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!applyTransform@{applyTransform}}
+\index{applyTransform@{applyTransform}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{applyTransform()}{applyTransform()}}
+{\footnotesize\ttfamily template$<$typename float\+\_\+type $>$ \\
+void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::apply\+Transform (\begin{DoxyParamCaption}\item[{float\+\_\+type \&}]{x,  }\item[{float\+\_\+type \&}]{y,  }\item[{float\+\_\+type \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_ab1cf34cefea312879a726bdb8e182c47}\label{classsick__scan__xd_1_1SickCloudTransform_ab1cf34cefea312879a726bdb8e182c47}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!azimuthOffset@{azimuthOffset}}
+\index{azimuthOffset@{azimuthOffset}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{azimuthOffset()}{azimuthOffset()}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::azimuth\+Offset (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a3d7c3240f2516d68001e680bb8893a6c}\label{classsick__scan__xd_1_1SickCloudTransform_a3d7c3240f2516d68001e680bb8893a6c}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!eulerToRot3x3@{eulerToRot3x3}}
+\index{eulerToRot3x3@{eulerToRot3x3}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{eulerToRot3x3()}{eulerToRot3x3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::\+Matrix3x3}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::euler\+To\+Rot3x3 (\begin{DoxyParamCaption}\item[{float}]{roll,  }\item[{float}]{pitch,  }\item[{float}]{yaw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a982f2b37c74c71d6444f1d6b7f1ed0e8}\label{classsick__scan__xd_1_1SickCloudTransform_a982f2b37c74c71d6444f1d6b7f1ed0e8}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!init@{init}}
+\index{init@{init}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::init (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{add\+\_\+transform\+\_\+xyz\+\_\+rpy,  }\item[{bool}]{cartesian\+\_\+input\+\_\+only,  }\item[{bool}]{add\+\_\+transform\+\_\+check\+\_\+dynamic\+\_\+updates }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a6ae022895820be5a69cedd5f57f4884d}\label{classsick__scan__xd_1_1SickCloudTransform_a6ae022895820be5a69cedd5f57f4884d}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!multiply3x3@{multiply3x3}}
+\index{multiply3x3@{multiply3x3}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{multiply3x3()}{multiply3x3()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::\+Matrix3x3}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::multiply3x3 (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}} \&}]{a,  }\item[{const \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}} \&}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a005536011593c7cc2a8622c74bb88b4d}\label{classsick__scan__xd_1_1SickCloudTransform_a005536011593c7cc2a8622c74bb88b4d}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!m\_add\_transform\_check\_dynamic\_updates@{m\_add\_transform\_check\_dynamic\_updates}}
+\index{m\_add\_transform\_check\_dynamic\_updates@{m\_add\_transform\_check\_dynamic\_updates}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{m\_add\_transform\_check\_dynamic\_updates}{m\_add\_transform\_check\_dynamic\_updates}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::m\+\_\+add\+\_\+transform\+\_\+check\+\_\+dynamic\+\_\+updates = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_aea7886e56d20881f7052d4f6c94bcb94}\label{classsick__scan__xd_1_1SickCloudTransform_aea7886e56d20881f7052d4f6c94bcb94}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!m\_add\_transform\_xyz\_rpy@{m\_add\_transform\_xyz\_rpy}}
+\index{m\_add\_transform\_xyz\_rpy@{m\_add\_transform\_xyz\_rpy}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{m\_add\_transform\_xyz\_rpy}{m\_add\_transform\_xyz\_rpy}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::m\+\_\+add\+\_\+transform\+\_\+xyz\+\_\+rpy = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_adfe9a7569cd344e5d2a15f53178184e8}\label{classsick__scan__xd_1_1SickCloudTransform_adfe9a7569cd344e5d2a15f53178184e8}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!m\_apply\_3x3\_rotation@{m\_apply\_3x3\_rotation}}
+\index{m\_apply\_3x3\_rotation@{m\_apply\_3x3\_rotation}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{m\_apply\_3x3\_rotation}{m\_apply\_3x3\_rotation}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::m\+\_\+apply\+\_\+3x3\+\_\+rotation = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_ac596e44fd535f7e34871baca6efb9699}\label{classsick__scan__xd_1_1SickCloudTransform_ac596e44fd535f7e34871baca6efb9699}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!m\_azimuth\_offset@{m\_azimuth\_offset}}
+\index{m\_azimuth\_offset@{m\_azimuth\_offset}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{m\_azimuth\_offset}{m\_azimuth\_offset}}
+{\footnotesize\ttfamily float sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::m\+\_\+azimuth\+\_\+offset = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a4e2681712fe503e934ff0b8330d4c2c6}\label{classsick__scan__xd_1_1SickCloudTransform_a4e2681712fe503e934ff0b8330d4c2c6}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!m\_cartesian\_input\_only@{m\_cartesian\_input\_only}}
+\index{m\_cartesian\_input\_only@{m\_cartesian\_input\_only}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{m\_cartesian\_input\_only}{m\_cartesian\_input\_only}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::m\+\_\+cartesian\+\_\+input\+\_\+only = false\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a1dec8165d0e0686e60a5911f538d08a5}\label{classsick__scan__xd_1_1SickCloudTransform_a1dec8165d0e0686e60a5911f538d08a5}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!m\_nh@{m\_nh}}
+\index{m\_nh@{m\_nh}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{m\_nh}{m\_nh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::m\+\_\+nh = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a71ca524d8a44a137ae0c385fdf7b751f}\label{classsick__scan__xd_1_1SickCloudTransform_a71ca524d8a44a137ae0c385fdf7b751f}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!m\_rotation\_matrix@{m\_rotation\_matrix}}
+\index{m\_rotation\_matrix@{m\_rotation\_matrix}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{m\_rotation\_matrix}{m\_rotation\_matrix}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_aa91b956839374a1246d696b25d62839e}{Matrix3x3}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::m\+\_\+rotation\+\_\+matrix = \{ 1, 0, 0, 0, 1, 0, 0, 0, 1 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickCloudTransform_a4866d3e42931eb4479681dd964cc3fd9}\label{classsick__scan__xd_1_1SickCloudTransform_a4866d3e42931eb4479681dd964cc3fd9}} 
+\index{sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}!m\_translation\_vector@{m\_translation\_vector}}
+\index{m\_translation\_vector@{m\_translation\_vector}!sick\_scan\_xd::SickCloudTransform@{sick\_scan\_xd::SickCloudTransform}}
+\doxysubsubsection{\texorpdfstring{m\_translation\_vector}{m\_translation\_vector}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform_a20eb4e294e73bf938c16da0fb1ec89a2}{Vector3D}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform\+::m\+\_\+translation\+\_\+vector = \{ 0, 0, 0 \}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__cloud__transform_8h}{sick\+\_\+cloud\+\_\+transform.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__cloud__transform_8cpp}{sick\+\_\+cloud\+\_\+transform.\+cpp}}\end{DoxyCompactItemize}

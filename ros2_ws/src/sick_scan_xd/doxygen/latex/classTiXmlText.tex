@@ -1,0 +1,215 @@
+\hypertarget{classTiXmlText}{}\doxysection{Ti\+Xml\+Text Class Reference}
+\label{classTiXmlText}\index{TiXmlText@{TiXmlText}}
+
+
+{\ttfamily \#include $<$tinyxml.\+h$>$}
+
+
+
+Inheritance diagram for Ti\+Xml\+Text\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classTiXmlText__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ti\+Xml\+Text\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{classTiXmlText__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTiXmlText_af659e77c6b87d684827f35a8f4895960}{Ti\+Xml\+Text}} (const char $\ast$init\+Value)
+\item 
+virtual \mbox{\hyperlink{classTiXmlText_a829a4bd2d8d2461c333eb4f3f5b1b3d2}{$\sim$\+Ti\+Xml\+Text}} ()
+\item 
+\mbox{\hyperlink{classTiXmlText_a439792f6183a3d3fb6f2bc2b16fa5691}{Ti\+Xml\+Text}} (const std\+::string \&init\+Value)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classTiXmlText_a8d2cc1b4af2208cbb0171cf20f6815d1}{Ti\+Xml\+Text}} (const \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} \&\mbox{\hyperlink{driver_2src_2sick__scansegment__xd_2msgpack11_2LICENSE_8txt_af77238a13603775a1f60ae9206d86600}{copy}})
+\item 
+\mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} \& \mbox{\hyperlink{classTiXmlText_aed5b13f9c1b804c616fd533882c29f57}{operator=}} (const \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} \&base)
+\item 
+virtual void \mbox{\hyperlink{classTiXmlText_a75f6895906333894e2574cc8cf77ea79}{Print}} (F\+I\+LE $\ast$cfile, int depth) const
+\item 
+bool \mbox{\hyperlink{classTiXmlText_aac1f4764d220ed6bf809b16dfcb6b45a}{C\+D\+A\+TA}} () const
+\begin{DoxyCompactList}\small\item\em Queries whether this represents text using a C\+D\+A\+TA section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTiXmlText_acb17ff7c5d09b2c839393445a3de5ea9}{Set\+C\+D\+A\+TA}} (bool \+\_\+cdata)
+\begin{DoxyCompactList}\small\item\em Turns on or off a C\+D\+A\+TA representation of text. \end{DoxyCompactList}\item 
+virtual const char $\ast$ \mbox{\hyperlink{classTiXmlText_a8d2dcfa41fc73d3e62dacc2fcf633819}{Parse}} (const char $\ast$p, \mbox{\hyperlink{classTiXmlParsingData}{Ti\+Xml\+Parsing\+Data}} $\ast$data, \mbox{\hyperlink{tinyxml_8h_a88d51847a13ee0f4b4d320d03d2c4d96}{Ti\+Xml\+Encoding}} encoding)
+\item 
+virtual bool \mbox{\hyperlink{classTiXmlText_af65964326eac4640bfb97d4622fa0de2}{Accept}} (\mbox{\hyperlink{classTiXmlVisitor}{Ti\+Xml\+Visitor}} $\ast$content) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$ \mbox{\hyperlink{classTiXmlText_a98a20d7a4f1c1478e25e34921be24bfe}{Clone}} () const
+\begin{DoxyCompactList}\small\item\em \mbox{[}internal use\mbox{]} Creates a new Element and returns it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classTiXmlText_a480b8e0ad6b7833a73ecf2191195c9b5}{Copy\+To}} (\mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} $\ast$target) const
+\item 
+bool \mbox{\hyperlink{classTiXmlText_a0fd9005b279def46859b72f336b158da}{Blank}} () const
+\item 
+virtual void \mbox{\hyperlink{classTiXmlText_a261e07cdbd5363f994371320414c17d9}{Stream\+In}} (std\+::istream $\ast$in, T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+NG $\ast$tag)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classTiXmlText_ab6592e32cb9132be517cc12a70564c4b}{Ti\+Xml\+Element}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+X\+ML text. A text node can have 2 ways to output the next. \char`\"{}normal\char`\"{} output and C\+D\+A\+TA. It will default to the mode it was parsed from the X\+ML file and you generally want to leave it alone, but you can change the output mode with \mbox{\hyperlink{classTiXmlText_acb17ff7c5d09b2c839393445a3de5ea9}{Set\+C\+D\+A\+T\+A()}} and query it with \mbox{\hyperlink{classTiXmlText_aac1f4764d220ed6bf809b16dfcb6b45a}{C\+D\+A\+T\+A()}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classTiXmlText_af659e77c6b87d684827f35a8f4895960}\label{classTiXmlText_af659e77c6b87d684827f35a8f4895960}} 
+\index{TiXmlText@{TiXmlText}!TiXmlText@{TiXmlText}}
+\index{TiXmlText@{TiXmlText}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{TiXmlText()}{TiXmlText()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Ti\+Xml\+Text\+::\+Ti\+Xml\+Text (\begin{DoxyParamCaption}\item[{const char $\ast$}]{init\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor for text element. By default, it is treated as normal, encoded text. If you want it be output as a C\+D\+A\+TA text element, set the parameter \+\_\+cdata to \textquotesingle{}true\textquotesingle{} \mbox{\Hypertarget{classTiXmlText_a829a4bd2d8d2461c333eb4f3f5b1b3d2}\label{classTiXmlText_a829a4bd2d8d2461c333eb4f3f5b1b3d2}} 
+\index{TiXmlText@{TiXmlText}!````~TiXmlText@{$\sim$TiXmlText}}
+\index{````~TiXmlText@{$\sim$TiXmlText}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{$\sim$TiXmlText()}{~TiXmlText()}}
+{\footnotesize\ttfamily virtual Ti\+Xml\+Text\+::$\sim$\+Ti\+Xml\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classTiXmlText_a439792f6183a3d3fb6f2bc2b16fa5691}\label{classTiXmlText_a439792f6183a3d3fb6f2bc2b16fa5691}} 
+\index{TiXmlText@{TiXmlText}!TiXmlText@{TiXmlText}}
+\index{TiXmlText@{TiXmlText}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{TiXmlText()}{TiXmlText()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Ti\+Xml\+Text\+::\+Ti\+Xml\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{init\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+\mbox{\Hypertarget{classTiXmlText_a8d2cc1b4af2208cbb0171cf20f6815d1}\label{classTiXmlText_a8d2cc1b4af2208cbb0171cf20f6815d1}} 
+\index{TiXmlText@{TiXmlText}!TiXmlText@{TiXmlText}}
+\index{TiXmlText@{TiXmlText}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{TiXmlText()}{TiXmlText()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Ti\+Xml\+Text\+::\+Ti\+Xml\+Text (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} \&}]{copy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classTiXmlText_af65964326eac4640bfb97d4622fa0de2}\label{classTiXmlText_af65964326eac4640bfb97d4622fa0de2}} 
+\index{TiXmlText@{TiXmlText}!Accept@{Accept}}
+\index{Accept@{Accept}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{Accept()}{Accept()}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Text\+::\+Accept (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlVisitor}{Ti\+Xml\+Visitor}} $\ast$}]{content }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Walk the X\+ML tree visiting this node and all of its children. 
+
+Implements \mbox{\hyperlink{classTiXmlNode_acc0f88b7462c6cb73809d410a4f5bb86}{Ti\+Xml\+Node}}.
+
+\mbox{\Hypertarget{classTiXmlText_a0fd9005b279def46859b72f336b158da}\label{classTiXmlText_a0fd9005b279def46859b72f336b158da}} 
+\index{TiXmlText@{TiXmlText}!Blank@{Blank}}
+\index{Blank@{Blank}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{Blank()}{Blank()}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Text\+::\+Blank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTiXmlText_aac1f4764d220ed6bf809b16dfcb6b45a}\label{classTiXmlText_aac1f4764d220ed6bf809b16dfcb6b45a}} 
+\index{TiXmlText@{TiXmlText}!CDATA@{CDATA}}
+\index{CDATA@{CDATA}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{CDATA()}{CDATA()}}
+{\footnotesize\ttfamily bool Ti\+Xml\+Text\+::\+C\+D\+A\+TA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Queries whether this represents text using a C\+D\+A\+TA section. 
+
+\mbox{\Hypertarget{classTiXmlText_a98a20d7a4f1c1478e25e34921be24bfe}\label{classTiXmlText_a98a20d7a4f1c1478e25e34921be24bfe}} 
+\index{TiXmlText@{TiXmlText}!Clone@{Clone}}
+\index{Clone@{Clone}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{Clone()}{Clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlNode}{Ti\+Xml\+Node}} $\ast$ Ti\+Xml\+Text\+::\+Clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{[}internal use\mbox{]} Creates a new Element and returns it. 
+
+
+
+Implements \mbox{\hyperlink{classTiXmlNode_a4508cc3a2d7a98e96a54cc09c37a78a4}{Ti\+Xml\+Node}}.
+
+\mbox{\Hypertarget{classTiXmlText_a480b8e0ad6b7833a73ecf2191195c9b5}\label{classTiXmlText_a480b8e0ad6b7833a73ecf2191195c9b5}} 
+\index{TiXmlText@{TiXmlText}!CopyTo@{CopyTo}}
+\index{CopyTo@{CopyTo}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{CopyTo()}{CopyTo()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Text\+::\+Copy\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} $\ast$}]{target }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classTiXmlText_aed5b13f9c1b804c616fd533882c29f57}\label{classTiXmlText_aed5b13f9c1b804c616fd533882c29f57}} 
+\index{TiXmlText@{TiXmlText}!operator=@{operator=}}
+\index{operator=@{operator=}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}}\& Ti\+Xml\+Text\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classTiXmlText}{Ti\+Xml\+Text}} \&}]{base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classTiXmlText_a8d2dcfa41fc73d3e62dacc2fcf633819}\label{classTiXmlText_a8d2dcfa41fc73d3e62dacc2fcf633819}} 
+\index{TiXmlText@{TiXmlText}!Parse@{Parse}}
+\index{Parse@{Parse}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily const char $\ast$ Ti\+Xml\+Text\+::\+Parse (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p,  }\item[{\mbox{\hyperlink{classTiXmlParsingData}{Ti\+Xml\+Parsing\+Data}} $\ast$}]{data,  }\item[{\mbox{\hyperlink{tinyxml_8h_a88d51847a13ee0f4b4d320d03d2c4d96}{Ti\+Xml\+Encoding}}}]{encoding }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classTiXmlBase_a00e4edb0219d00a1379c856e5a1d2025}{Ti\+Xml\+Base}}.
+
+\mbox{\Hypertarget{classTiXmlText_a75f6895906333894e2574cc8cf77ea79}\label{classTiXmlText_a75f6895906333894e2574cc8cf77ea79}} 
+\index{TiXmlText@{TiXmlText}!Print@{Print}}
+\index{Print@{Print}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{Print()}{Print()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Text\+::\+Print (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{cfile,  }\item[{int}]{depth }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+All Tiny\+Xml classes can print themselves to a filestream or the string class (\mbox{\hyperlink{classTiXmlString}{Ti\+Xml\+String}} in non-\/\+S\+TL mode, std\+::string in S\+TL mode.) Either or both cfile and str can be null.
+
+This is a formatted print, and will insert tabs and newlines.
+
+(For an unformatted stream, use the $<$$<$ operator.) 
+
+Implements \mbox{\hyperlink{classTiXmlBase_a0de56b3f2ef14c65091a3b916437b512}{Ti\+Xml\+Base}}.
+
+\mbox{\Hypertarget{classTiXmlText_acb17ff7c5d09b2c839393445a3de5ea9}\label{classTiXmlText_acb17ff7c5d09b2c839393445a3de5ea9}} 
+\index{TiXmlText@{TiXmlText}!SetCDATA@{SetCDATA}}
+\index{SetCDATA@{SetCDATA}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{SetCDATA()}{SetCDATA()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Text\+::\+Set\+C\+D\+A\+TA (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+cdata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Turns on or off a C\+D\+A\+TA representation of text. 
+
+\mbox{\Hypertarget{classTiXmlText_a261e07cdbd5363f994371320414c17d9}\label{classTiXmlText_a261e07cdbd5363f994371320414c17d9}} 
+\index{TiXmlText@{TiXmlText}!StreamIn@{StreamIn}}
+\index{StreamIn@{StreamIn}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{StreamIn()}{StreamIn()}}
+{\footnotesize\ttfamily void Ti\+Xml\+Text\+::\+Stream\+In (\begin{DoxyParamCaption}\item[{std\+::istream $\ast$}]{in,  }\item[{T\+I\+X\+M\+L\+\_\+\+S\+T\+R\+I\+NG $\ast$}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classTiXmlNode_ab4b4af1a6b486dcbc0e327cf291270af}{Ti\+Xml\+Node}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classTiXmlText_ab6592e32cb9132be517cc12a70564c4b}\label{classTiXmlText_ab6592e32cb9132be517cc12a70564c4b}} 
+\index{TiXmlText@{TiXmlText}!TiXmlElement@{TiXmlElement}}
+\index{TiXmlElement@{TiXmlElement}!TiXmlText@{TiXmlText}}
+\doxysubsubsection{\texorpdfstring{TiXmlElement}{TiXmlElement}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classTiXmlElement}{Ti\+Xml\+Element}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/tinyxml/\mbox{\hyperlink{tinyxml_8h}{tinyxml.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/\mbox{\hyperlink{tinyxml_8cpp}{tinyxml.\+cpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/tinyxml/\mbox{\hyperlink{tinyxmlparser_8cpp}{tinyxmlparser.\+cpp}}\end{DoxyCompactItemize}

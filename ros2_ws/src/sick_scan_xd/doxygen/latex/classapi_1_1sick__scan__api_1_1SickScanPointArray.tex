@@ -1,0 +1,42 @@
+\hypertarget{classapi_1_1sick__scan__api_1_1SickScanPointArray}{}\doxysection{api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Array Class Reference}
+\label{classapi_1_1sick__scan__api_1_1SickScanPointArray}\index{api.sick\_scan\_api.SickScanPointArray@{api.sick\_scan\_api.SickScanPointArray}}
+
+
+Inheritance diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Array\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanPointArray__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Array\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanPointArray__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}sick_scan_api: struct SickScanPointArray, Array of SickScanVector3Msg, which can be serialized and imported in C, C++ or python
+
+Attributes
+----------
+capacity : ctypes.c_uint64
+    Number of allocated elements, i.e. max. number of elements in buffer, allocated buffer size is capacity * sizeof(SickScanVector3Msg)
+size : ctypes.c_uint64
+    Number of currently used elements in the buffer
+buffer : ctypes.POINTER(SickScanVector3Msg)
+    Memory, data in plain order and system endianess (buffer == 0, if size == 0 && capacity == 0, otherwise allocated memory), allocation/deallocation always managed by the caller.
+\end{DoxyVerb}
+ ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/python/api/\mbox{\hyperlink{sick__scan__api_8py}{sick\+\_\+scan\+\_\+api.\+py}}\end{DoxyCompactItemize}
