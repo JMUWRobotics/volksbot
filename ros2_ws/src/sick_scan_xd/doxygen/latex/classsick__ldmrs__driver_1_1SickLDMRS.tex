@@ -1,0 +1,178 @@
+\hypertarget{classsick__ldmrs__driver_1_1SickLDMRS}{}\doxysection{sick\+\_\+ldmrs\+\_\+driver\+::Sick\+L\+D\+M\+RS Class Reference}
+\label{classsick__ldmrs__driver_1_1SickLDMRS}\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+
+
+{\ttfamily \#include $<$sick\+\_\+ldmrs\+\_\+driver.\+hpp$>$}
+
+
+
+Inheritance diagram for sick\+\_\+ldmrs\+\_\+driver\+::Sick\+L\+D\+M\+RS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classsick__ldmrs__driver_1_1SickLDMRS__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sick\+\_\+ldmrs\+\_\+driver\+::Sick\+L\+D\+M\+RS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{classsick__ldmrs__driver_1_1SickLDMRS__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a6b6e79e1deedd2b9e84199563d1cb487}{Sick\+L\+D\+M\+RS}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, Manager $\ast$manager, std\+::shared\+\_\+ptr$<$ diagnostic\+\_\+updater\+::\+Updater $>$ diagnostics)
+\item 
+virtual \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a23d4d1ea2ad9e7a9e957a4a81ce88661}{$\sim$\+Sick\+L\+D\+M\+RS}} ()
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a89b049849cbe806f025800a432685af4}{init}} ()
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a5938bfe42aabc11c9a4c288246846051}{produce\+\_\+diagnostics}} (diagnostic\+\_\+updater\+::\+Diagnostic\+Status\+Wrapper \&stat)
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a0f23d17ec973e4c7fd7e639f8709c8e3}{validate\+\_\+config}} (\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig}{Sick\+L\+D\+M\+R\+S\+Driver\+Config}} \&conf)
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_ae6025f259eb4f407b8b25f4e38a3a02e}{update\+\_\+config}} (\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig}{Sick\+L\+D\+M\+R\+S\+Driver\+Config}} \&new\+\_\+config, uint32\+\_\+t level=0)
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a6f446d72fb02257ebf42e95b41a6bed2}{update\+\_\+config\+\_\+cb}} (sick\+\_\+scan\+\_\+xd\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config \&new\+\_\+config, uint32\+\_\+t level=0)
+\item 
+rcl\+\_\+interfaces\+::msg\+::\+Set\+Parameters\+Result \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a4609664ea5bcbde2961c30d27b0e8703}{update\+\_\+config\+\_\+cb}} (const std\+::vector$<$ rclcpp\+::\+Parameter $>$ \&parameters)
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a79df8467f1692a6dfe97fea8f5819c19}{pub\+Objects}} (datatypes\+::\+Object\+List \&objects)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_adadaca680ea15ae3b965f2f6a17deb1e}{set\+Data}} (Basic\+Data \&data)
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_ab6b33202799c79af11cc449528889470}{validate\+\_\+flexres\+\_\+resolution}} (int \&res)
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_affbaf123ad3ef748036897baef972dfb}{validate\+\_\+flexres\+\_\+start\+\_\+angle}} (double \&angle1, double \&angle2)
+\item 
+bool \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a808b71f9f2d20ed1616f27bd30b1fa07}{is\+Upside\+Down}} ()
+\item 
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a5f37254c1ef61d083d012e270e54adb5}{print\+Flex\+Res\+Error}} ()
+\item 
+std\+::string \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_aff2238047add713c3fb691364a1641f2}{flexres\+\_\+err\+\_\+to\+\_\+string}} (const \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}} code) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ diagnostic\+\_\+updater\+::\+Updater $>$ \mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRS_a4ba119b70a2a33c4dedb9f7cf0fe1bdb}{diagnostics\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a6b6e79e1deedd2b9e84199563d1cb487}\label{classsick__ldmrs__driver_1_1SickLDMRS_a6b6e79e1deedd2b9e84199563d1cb487}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!SickLDMRS@{SickLDMRS}}
+\index{SickLDMRS@{SickLDMRS}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{SickLDMRS()}{SickLDMRS()}}
+{\footnotesize\ttfamily sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::\+Sick\+L\+D\+M\+RS (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{Manager $\ast$}]{manager,  }\item[{std\+::shared\+\_\+ptr$<$ diagnostic\+\_\+updater\+::\+Updater $>$}]{diagnostics }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a23d4d1ea2ad9e7a9e957a4a81ce88661}\label{classsick__ldmrs__driver_1_1SickLDMRS_a23d4d1ea2ad9e7a9e957a4a81ce88661}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!````~SickLDMRS@{$\sim$SickLDMRS}}
+\index{````~SickLDMRS@{$\sim$SickLDMRS}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickLDMRS()}{~SickLDMRS()}}
+{\footnotesize\ttfamily sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::$\sim$\+Sick\+L\+D\+M\+RS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_aff2238047add713c3fb691364a1641f2}\label{classsick__ldmrs__driver_1_1SickLDMRS_aff2238047add713c3fb691364a1641f2}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!flexres\_err\_to\_string@{flexres\_err\_to\_string}}
+\index{flexres\_err\_to\_string@{flexres\_err\_to\_string}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{flexres\_err\_to\_string()}{flexres\_err\_to\_string()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::flexres\+\_\+err\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{BasicDatatypes_8hpp_adfe04a44baaebba6143c3a23507ff85b}{U\+I\+N\+T32}}}]{code }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a89b049849cbe806f025800a432685af4}\label{classsick__ldmrs__driver_1_1SickLDMRS_a89b049849cbe806f025800a432685af4}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!init@{init}}
+\index{init@{init}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a808b71f9f2d20ed1616f27bd30b1fa07}\label{classsick__ldmrs__driver_1_1SickLDMRS_a808b71f9f2d20ed1616f27bd30b1fa07}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!isUpsideDown@{isUpsideDown}}
+\index{isUpsideDown@{isUpsideDown}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{isUpsideDown()}{isUpsideDown()}}
+{\footnotesize\ttfamily bool sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::is\+Upside\+Down (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a5f37254c1ef61d083d012e270e54adb5}\label{classsick__ldmrs__driver_1_1SickLDMRS_a5f37254c1ef61d083d012e270e54adb5}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!printFlexResError@{printFlexResError}}
+\index{printFlexResError@{printFlexResError}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{printFlexResError()}{printFlexResError()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::print\+Flex\+Res\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a5938bfe42aabc11c9a4c288246846051}\label{classsick__ldmrs__driver_1_1SickLDMRS_a5938bfe42aabc11c9a4c288246846051}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!produce\_diagnostics@{produce\_diagnostics}}
+\index{produce\_diagnostics@{produce\_diagnostics}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{produce\_diagnostics()}{produce\_diagnostics()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::produce\+\_\+diagnostics (\begin{DoxyParamCaption}\item[{diagnostic\+\_\+updater\+::\+Diagnostic\+Status\+Wrapper \&}]{stat }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a79df8467f1692a6dfe97fea8f5819c19}\label{classsick__ldmrs__driver_1_1SickLDMRS_a79df8467f1692a6dfe97fea8f5819c19}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!pubObjects@{pubObjects}}
+\index{pubObjects@{pubObjects}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{pubObjects()}{pubObjects()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::pub\+Objects (\begin{DoxyParamCaption}\item[{datatypes\+::\+Object\+List \&}]{objects }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_adadaca680ea15ae3b965f2f6a17deb1e}\label{classsick__ldmrs__driver_1_1SickLDMRS_adadaca680ea15ae3b965f2f6a17deb1e}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!setData@{setData}}
+\index{setData@{setData}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{setData()}{setData()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::set\+Data (\begin{DoxyParamCaption}\item[{Basic\+Data \&}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_ae6025f259eb4f407b8b25f4e38a3a02e}\label{classsick__ldmrs__driver_1_1SickLDMRS_ae6025f259eb4f407b8b25f4e38a3a02e}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!update\_config@{update\_config}}
+\index{update\_config@{update\_config}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{update\_config()}{update\_config()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::update\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig}{Sick\+L\+D\+M\+R\+S\+Driver\+Config}} \&}]{new\+\_\+config,  }\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a4609664ea5bcbde2961c30d27b0e8703}\label{classsick__ldmrs__driver_1_1SickLDMRS_a4609664ea5bcbde2961c30d27b0e8703}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!update\_config\_cb@{update\_config\_cb}}
+\index{update\_config\_cb@{update\_config\_cb}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{update\_config\_cb()}{update\_config\_cb()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily rcl\+\_\+interfaces\+::msg\+::\+Set\+Parameters\+Result sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::update\+\_\+config\+\_\+cb (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ rclcpp\+::\+Parameter $>$ \&}]{parameters }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a6f446d72fb02257ebf42e95b41a6bed2}\label{classsick__ldmrs__driver_1_1SickLDMRS_a6f446d72fb02257ebf42e95b41a6bed2}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!update\_config\_cb@{update\_config\_cb}}
+\index{update\_config\_cb@{update\_config\_cb}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{update\_config\_cb()}{update\_config\_cb()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::update\+\_\+config\+\_\+cb (\begin{DoxyParamCaption}\item[{sick\+\_\+scan\+\_\+xd\+::\+Sick\+L\+D\+M\+R\+S\+Driver\+Config \&}]{new\+\_\+config,  }\item[{uint32\+\_\+t}]{level = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a0f23d17ec973e4c7fd7e639f8709c8e3}\label{classsick__ldmrs__driver_1_1SickLDMRS_a0f23d17ec973e4c7fd7e639f8709c8e3}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!validate\_config@{validate\_config}}
+\index{validate\_config@{validate\_config}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{validate\_config()}{validate\_config()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::validate\+\_\+config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classsick__ldmrs__driver_1_1SickLDMRSDriverConfig}{Sick\+L\+D\+M\+R\+S\+Driver\+Config}} \&}]{conf }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_ab6b33202799c79af11cc449528889470}\label{classsick__ldmrs__driver_1_1SickLDMRS_ab6b33202799c79af11cc449528889470}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!validate\_flexres\_resolution@{validate\_flexres\_resolution}}
+\index{validate\_flexres\_resolution@{validate\_flexres\_resolution}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{validate\_flexres\_resolution()}{validate\_flexres\_resolution()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::validate\+\_\+flexres\+\_\+resolution (\begin{DoxyParamCaption}\item[{int \&}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_affbaf123ad3ef748036897baef972dfb}\label{classsick__ldmrs__driver_1_1SickLDMRS_affbaf123ad3ef748036897baef972dfb}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!validate\_flexres\_start\_angle@{validate\_flexres\_start\_angle}}
+\index{validate\_flexres\_start\_angle@{validate\_flexres\_start\_angle}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{validate\_flexres\_start\_angle()}{validate\_flexres\_start\_angle()}}
+{\footnotesize\ttfamily void sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::validate\+\_\+flexres\+\_\+start\+\_\+angle (\begin{DoxyParamCaption}\item[{double \&}]{angle1,  }\item[{double \&}]{angle2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1SickLDMRS_a4ba119b70a2a33c4dedb9f7cf0fe1bdb}\label{classsick__ldmrs__driver_1_1SickLDMRS_a4ba119b70a2a33c4dedb9f7cf0fe1bdb}} 
+\index{sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}!diagnostics\_@{diagnostics\_}}
+\index{diagnostics\_@{diagnostics\_}!sick\_ldmrs\_driver::SickLDMRS@{sick\_ldmrs\_driver::SickLDMRS}}
+\doxysubsubsection{\texorpdfstring{diagnostics\_}{diagnostics\_}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$diagnostic\+\_\+updater\+::\+Updater$>$ sick\+\_\+ldmrs\+\_\+driver\+::\+Sick\+L\+D\+M\+R\+S\+::diagnostics\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/ldmrs/\mbox{\hyperlink{sick__ldmrs__driver_8hpp}{sick\+\_\+ldmrs\+\_\+driver.\+hpp}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/ldmrs/\mbox{\hyperlink{sick__ldmrs__driver_8cpp}{sick\+\_\+ldmrs\+\_\+driver.\+cpp}}\end{DoxyCompactItemize}

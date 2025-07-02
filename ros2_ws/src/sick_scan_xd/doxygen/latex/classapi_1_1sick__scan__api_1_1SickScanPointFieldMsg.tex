@@ -1,0 +1,55 @@
+\hypertarget{classapi_1_1sick__scan__api_1_1SickScanPointFieldMsg}{}\doxysection{api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Field\+Msg Class Reference}
+\label{classapi_1_1sick__scan__api_1_1SickScanPointFieldMsg}\index{api.sick\_scan\_api.SickScanPointFieldMsg@{api.sick\_scan\_api.SickScanPointFieldMsg}}
+
+
+Inheritance diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Field\+Msg\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanPointFieldMsg__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Field\+Msg\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanPointFieldMsg__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}sick_scan_api: struct SickScanPointFieldMsg, equivalent to ros::sensor_msgs::PointField
+SickScanPointFieldArray is an array of SickScanPointFieldMsg, which defines the structure of the binary data of a SickScanPointCloudMsg.
+SickScanPointFieldMsg for pointclouds in cartesian coordinates with fields (x, y, z, intensity):
+    [ SickScanPointFieldMsg(name="x", offset=0, datatype=FLOAT32, count=1), 
+      SickScanPointFieldMsg(name="y", offset=4, datatype=FLOAT32, count=1),
+      SickScanPointFieldMsg(name="z", offset=8, datatype=FLOAT32, count=1),
+      SickScanPointFieldMsg(name="intensity", offset=12, datatype=FLOAT32, count=1) ]
+SickScanPointFieldMsg for pointclouds in polar coordinates with fields (range, azimuth, elevation, intensity):
+    [ SickScanPointFieldMsg(name="range", offset=0, datatype=FLOAT32, count=1), 
+      SickScanPointFieldMsg(name="azimuth", offset=4, datatype=FLOAT32, count=1),
+      SickScanPointFieldMsg(name="elevation", offset=8, datatype=FLOAT32, count=1),
+      SickScanPointFieldMsg(name="intensity", offset=12, datatype=FLOAT32, count=1) ]
+
+Attributes
+----------
+name : ctypes.c_char * 256
+    Name of field (max. length 256 characters)
+offset : ctypes.c_uint32
+    Offset from start of point struct
+datatype : ctypes.c_uint8
+    Datatype enumeration, see SickScanNativeDataType, equivalent to type enum im ros::sensor_msgs::PointField
+count : ctypes.c_uint32
+    How many elements in the field
+\end{DoxyVerb}
+ ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/python/api/\mbox{\hyperlink{sick__scan__api_8py}{sick\+\_\+scan\+\_\+api.\+py}}\end{DoxyCompactItemize}

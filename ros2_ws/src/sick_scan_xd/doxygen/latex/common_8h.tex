@@ -1,0 +1,114 @@
+\hypertarget{common_8h}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/common.h File Reference}
+\label{common_8h}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scansegment\_xd/common.h@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scansegment\_xd/common.h}}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \mbox{\hyperlink{namespacesick__scansegment__xd}{sick\+\_\+scansegment\+\_\+xd}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef sensor\+\_\+msgs\+::msg\+::\+Point\+Cloud2 \mbox{\hyperlink{common_8h_acb19a2cb737c19a30aec5a3deac9514b}{Point\+Cloud2\+Msg}}
+\item 
+typedef rclcpp\+::\+Publisher$<$ sensor\+\_\+msgs\+::msg\+::\+Point\+Cloud2 $>$\+::Shared\+Ptr \mbox{\hyperlink{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}{Point\+Cloud2\+Msg\+Publisher}}
+\item 
+typedef sensor\+\_\+msgs\+::msg\+::\+Laser\+Scan \mbox{\hyperlink{common_8h_a173d3d3eea8f246625ad071692d110e6}{Laser\+Scan\+Msg}}
+\item 
+typedef rclcpp\+::\+Publisher$<$ \mbox{\hyperlink{common_8h_a173d3d3eea8f246625ad071692d110e6}{Laser\+Scan\+Msg}} $>$\+::Shared\+Ptr \mbox{\hyperlink{common_8h_a77e6465ed40b01096227a0b59076f314}{Laserscan\+Msg\+Publisher}}
+\item 
+typedef sensor\+\_\+msgs\+::msg\+::\+Imu \mbox{\hyperlink{common_8h_ac93acdac2716e6eacd8ff0dd50884187}{Imu\+Msg}}
+\item 
+typedef rclcpp\+::\+Publisher$<$ \mbox{\hyperlink{common_8h_ac93acdac2716e6eacd8ff0dd50884187}{Imu\+Msg}} $>$\+::Shared\+Ptr \mbox{\hyperlink{common_8h_a11d0d9f5f4b1171a800f29bf07f2e4a7}{Imu\+Msg\+Publisher}}
+\item 
+typedef sensor\+\_\+msgs\+::msg\+::\+Point\+Field \mbox{\hyperlink{common_8h_a1b11e178fe89197da60a4fd045cc5596}{Point\+Field}}
+\item 
+typedef rclcpp\+::\+Clock \mbox{\hyperlink{common_8h_a9dfb92893572c721c41281adf0a9aeb3}{ros\+Clock}}
+\item 
+typedef int \mbox{\hyperlink{common_8h_a16f0e55e0a718ff2386fc19f1877d17d}{ros\+QoS}}
+\item 
+typedef std\+::chrono\+::system\+\_\+clock \mbox{\hyperlink{common_8h_a5f1707489b699594c2942cc35070dd13}{chrono\+\_\+system\+\_\+clock}}
+\item 
+typedef std\+::chrono\+::time\+\_\+point$<$ std\+::chrono\+::system\+\_\+clock $>$ \mbox{\hyperlink{common_8h_ad2ae136e2b2fbe491da5c95f0a1483ea}{chrono\+\_\+system\+\_\+time}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{namespacesick__scansegment__xd_a6ea9320645daebf951ed8993b135b155}{sick\+\_\+scansegment\+\_\+xd\+::\+Seconds}} (const \mbox{\hyperlink{common_8h_ad2ae136e2b2fbe491da5c95f0a1483ea}{chrono\+\_\+system\+\_\+time}} \&timestamp\+\_\+start, const \mbox{\hyperlink{common_8h_ad2ae136e2b2fbe491da5c95f0a1483ea}{chrono\+\_\+system\+\_\+time}} \&timestamp\+\_\+end=chrono\+\_\+system\+\_\+clock\+::now())
+\item 
+{\footnotesize template$<$typename T $>$ }\\static std\+::string \mbox{\hyperlink{namespacesick__scansegment__xd_a62b030d9f38558e153ae9da75f046f8a}{sick\+\_\+scansegment\+\_\+xd\+::\+Format\+Number}} (const T \&number, int width=-\/1, bool setfill=false, bool setfixed=false, int precision=-\/1)
+\item 
+static bool \mbox{\hyperlink{namespacesick__scansegment__xd_a59edcd3086102620007eda268f119f5c}{sick\+\_\+scansegment\+\_\+xd\+::\+File\+Readable}} (const std\+::string \&filename)
+\item 
+static bool \mbox{\hyperlink{namespacesick__scansegment__xd_a055942143fc55657386d4a2b102d9ecf}{sick\+\_\+scansegment\+\_\+xd\+::\+Mk\+Dir}} (const std\+::string \&folder)
+\item 
+static std\+::string \mbox{\hyperlink{namespacesick__scansegment__xd_af393763514a4d1b27920647fcdbf25e3}{sick\+\_\+scansegment\+\_\+xd\+::\+Filename\+No\+Path\+No\+Extension}} (const std\+::string \&filepath)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{common_8h_a5f1707489b699594c2942cc35070dd13}\label{common_8h_a5f1707489b699594c2942cc35070dd13}} 
+\index{common.h@{common.h}!chrono\_system\_clock@{chrono\_system\_clock}}
+\index{chrono\_system\_clock@{chrono\_system\_clock}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{chrono\_system\_clock}{chrono\_system\_clock}}
+{\footnotesize\ttfamily typedef std\+::chrono\+::system\+\_\+clock \mbox{\hyperlink{common_8h_a5f1707489b699594c2942cc35070dd13}{chrono\+\_\+system\+\_\+clock}}}
+
+\mbox{\Hypertarget{common_8h_ad2ae136e2b2fbe491da5c95f0a1483ea}\label{common_8h_ad2ae136e2b2fbe491da5c95f0a1483ea}} 
+\index{common.h@{common.h}!chrono\_system\_time@{chrono\_system\_time}}
+\index{chrono\_system\_time@{chrono\_system\_time}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{chrono\_system\_time}{chrono\_system\_time}}
+{\footnotesize\ttfamily typedef std\+::chrono\+::time\+\_\+point$<$std\+::chrono\+::system\+\_\+clock$>$ \mbox{\hyperlink{common_8h_ad2ae136e2b2fbe491da5c95f0a1483ea}{chrono\+\_\+system\+\_\+time}}}
+
+\mbox{\Hypertarget{common_8h_ac93acdac2716e6eacd8ff0dd50884187}\label{common_8h_ac93acdac2716e6eacd8ff0dd50884187}} 
+\index{common.h@{common.h}!ImuMsg@{ImuMsg}}
+\index{ImuMsg@{ImuMsg}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{ImuMsg}{ImuMsg}}
+{\footnotesize\ttfamily typedef ros\+\_\+sensor\+\_\+msgs\+::\+Imu \mbox{\hyperlink{common_8h_ac93acdac2716e6eacd8ff0dd50884187}{Imu\+Msg}}}
+
+\mbox{\Hypertarget{common_8h_a11d0d9f5f4b1171a800f29bf07f2e4a7}\label{common_8h_a11d0d9f5f4b1171a800f29bf07f2e4a7}} 
+\index{common.h@{common.h}!ImuMsgPublisher@{ImuMsgPublisher}}
+\index{ImuMsgPublisher@{ImuMsgPublisher}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{ImuMsgPublisher}{ImuMsgPublisher}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ \mbox{\hyperlink{common_8h_ac93acdac2716e6eacd8ff0dd50884187}{Imu\+Msg}} $>$ \mbox{\hyperlink{common_8h_a11d0d9f5f4b1171a800f29bf07f2e4a7}{Imu\+Msg\+Publisher}}}
+
+\mbox{\Hypertarget{common_8h_a173d3d3eea8f246625ad071692d110e6}\label{common_8h_a173d3d3eea8f246625ad071692d110e6}} 
+\index{common.h@{common.h}!LaserScanMsg@{LaserScanMsg}}
+\index{LaserScanMsg@{LaserScanMsg}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{LaserScanMsg}{LaserScanMsg}}
+{\footnotesize\ttfamily typedef ros\+\_\+sensor\+\_\+msgs\+::\+Laser\+Scan \mbox{\hyperlink{common_8h_a173d3d3eea8f246625ad071692d110e6}{Laser\+Scan\+Msg}}}
+
+\mbox{\Hypertarget{common_8h_a77e6465ed40b01096227a0b59076f314}\label{common_8h_a77e6465ed40b01096227a0b59076f314}} 
+\index{common.h@{common.h}!LaserscanMsgPublisher@{LaserscanMsgPublisher}}
+\index{LaserscanMsgPublisher@{LaserscanMsgPublisher}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{LaserscanMsgPublisher}{LaserscanMsgPublisher}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ \mbox{\hyperlink{common_8h_a173d3d3eea8f246625ad071692d110e6}{Laser\+Scan\+Msg}} $>$ \mbox{\hyperlink{common_8h_a77e6465ed40b01096227a0b59076f314}{Laserscan\+Msg\+Publisher}}}
+
+\mbox{\Hypertarget{common_8h_acb19a2cb737c19a30aec5a3deac9514b}\label{common_8h_acb19a2cb737c19a30aec5a3deac9514b}} 
+\index{common.h@{common.h}!PointCloud2Msg@{PointCloud2Msg}}
+\index{PointCloud2Msg@{PointCloud2Msg}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{PointCloud2Msg}{PointCloud2Msg}}
+{\footnotesize\ttfamily typedef ros\+\_\+sensor\+\_\+msgs\+::\+Point\+Cloud2 \mbox{\hyperlink{common_8h_acb19a2cb737c19a30aec5a3deac9514b}{Point\+Cloud2\+Msg}}}
+
+\mbox{\Hypertarget{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}\label{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}} 
+\index{common.h@{common.h}!PointCloud2MsgPublisher@{PointCloud2MsgPublisher}}
+\index{PointCloud2MsgPublisher@{PointCloud2MsgPublisher}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{PointCloud2MsgPublisher}{PointCloud2MsgPublisher}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classrosPublisher}{ros\+Publisher}}$<$ \mbox{\hyperlink{common_8h_acb19a2cb737c19a30aec5a3deac9514b}{Point\+Cloud2\+Msg}} $>$ \mbox{\hyperlink{common_8h_a8f04dd84376bea2e49bd6eb5644c4b31}{Point\+Cloud2\+Msg\+Publisher}}}
+
+\mbox{\Hypertarget{common_8h_a1b11e178fe89197da60a4fd045cc5596}\label{common_8h_a1b11e178fe89197da60a4fd045cc5596}} 
+\index{common.h@{common.h}!PointField@{PointField}}
+\index{PointField@{PointField}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{PointField}{PointField}}
+{\footnotesize\ttfamily typedef ros\+\_\+sensor\+\_\+msgs\+::\+Point\+Field \mbox{\hyperlink{common_8h_a1b11e178fe89197da60a4fd045cc5596}{Point\+Field}}}
+
+\mbox{\Hypertarget{common_8h_a9dfb92893572c721c41281adf0a9aeb3}\label{common_8h_a9dfb92893572c721c41281adf0a9aeb3}} 
+\index{common.h@{common.h}!rosClock@{rosClock}}
+\index{rosClock@{rosClock}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{rosClock}{rosClock}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} \mbox{\hyperlink{common_8h_a9dfb92893572c721c41281adf0a9aeb3}{ros\+Clock}}}
+
+\mbox{\Hypertarget{common_8h_a16f0e55e0a718ff2386fc19f1877d17d}\label{common_8h_a16f0e55e0a718ff2386fc19f1877d17d}} 
+\index{common.h@{common.h}!rosQoS@{rosQoS}}
+\index{rosQoS@{rosQoS}!common.h@{common.h}}
+\doxysubsubsection{\texorpdfstring{rosQoS}{rosQoS}}
+{\footnotesize\ttfamily typedef int \mbox{\hyperlink{sick__ros__wrapper_8h_a680102783c0127a65063d40210f228a5}{ros\+QoS}}}
+

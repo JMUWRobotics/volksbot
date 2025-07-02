@@ -1,0 +1,64 @@
+\hypertarget{classapi_1_1sick__scan__api_1_1SickScanRadarObject}{}\doxysection{api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Radar\+Object Class Reference}
+\label{classapi_1_1sick__scan__api_1_1SickScanRadarObject}\index{api.sick\_scan\_api.SickScanRadarObject@{api.sick\_scan\_api.SickScanRadarObject}}
+
+
+Inheritance diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Radar\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanRadarObject__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Radar\+Object\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanRadarObject__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}sick_scan_api: struct SickScanRadarObject, equivalent to RadarObject.msg
+
+Attributes
+----------
+id : ctypes.c_int32
+tracking_time_sec : ctypes.c_uint32
+    seconds part of tracking_time (since when the object is tracked): seconds (stamp_secs) since epoch
+tracking_time_nsec : ctypes.c_uint32
+    nanoseconds part of tracking_time (since when the object is tracked): nanoseconds since stamp_secs
+last_seen_sec : ctypes.c_uint32
+    seconds part of last_seen timestamp: seconds (stamp_secs) since epoch
+last_seen_nsec : ctypes.c_uint32
+    nanoseconds part of last_seen timestamp: nanoseconds since stamp_secs
+# geometry_msgs/TwistWithCovariance velocity
+velocity_linear : SickScanVector3Msg
+velocity_angular : SickScanVector3Msg
+velocity_covariance : ctypes.c_double * 36
+    Row-major representation of the 6x6 covariance matrix (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)
+# geometry_msgs/Pose bounding_box_center
+bounding_box_center_position : SickScanVector3Msg
+bounding_box_center_orientation : SickScanQuaternionMsg
+geometry_msgs/Vector3 bounding_box_size
+bounding_box_size : SickScanVector3Msg
+# geometry_msgs/PoseWithCovariance object_box_center
+object_box_center_position : SickScanVector3Msg
+object_box_center_orientation : SickScanQuaternionMsg
+object_box_center_covariance : ctypes.c_double * 36
+    Row-major representation of the 6x6 covariance matrix (x, y, z, rotation about X axis, rotation about Y axis, rotation about Z axis)
+# geometry_msgs/Vector3 object_box_size
+object_box_size : SickScanVector3Msg
+geometry_msgs/Point[] contour_points
+contour_points : SickScanPointArray)
+\end{DoxyVerb}
+ ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/python/api/\mbox{\hyperlink{sick__scan__api_8py}{sick\+\_\+scan\+\_\+api.\+py}}\end{DoxyCompactItemize}

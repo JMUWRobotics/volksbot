@@ -1,0 +1,86 @@
+\hypertarget{namespaceminimum__sick__scan__api__client}{}\doxysection{minimum\+\_\+sick\+\_\+scan\+\_\+api\+\_\+client Namespace Reference}
+\label{namespaceminimum__sick__scan__api__client}\index{minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceminimum__sick__scan__api__client_aad1d096a835a3008c8a63a37d34ee69d}{append\+Python\+Path}} ()
+\item 
+def \mbox{\hyperlink{namespaceminimum__sick__scan__api__client_aff1b72c785fa213a212d236452748211}{py\+Customized\+Point\+Cloud\+Msg\+Cb}} (\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_a6e34a02f8b9065cef2309b54c6341f7d}{api\+\_\+handle}}, msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_ae4cb0043396e9bcc6c9ec4600ed37c2c}{sick\+\_\+scan\+\_\+api}} = importlib.\+import\+\_\+module(\char`\"{}sick\+\_\+scan\+\_\+api\char`\"{})
+\item 
+string \mbox{\hyperlink{namespaceminimum__sick__scan__api__client_a64303e1cd3dfa6decd181bc44c29452b}{cli\+\_\+args}} = \char`\"{} \char`\"{}.join(sys.\+argv\mbox{[}1\+:\mbox{]})
+\item 
+\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_a6dac9c65020f2ab4d8659ff005ae769e}{sick\+\_\+scan\+\_\+library}} = \mbox{\hyperlink{sick__scan__xd__api__wrapper_8c_a19cb9187062e444fb4943f70677bcc87}{Sick\+Scan\+Api\+Load\+Library}}(\mbox{[}\char`\"{}build/Debug/\char`\"{}, \char`\"{}build\+\_\+win64/Debug/\char`\"{}, \char`\"{}../../build/Debug/\char`\"{}, \char`\"{}../../build\+\_\+win64/Debug/\char`\"{}, \char`\"{}./\char`\"{}, \char`\"{}../\char`\"{}\mbox{]}, \char`\"{}sick\+\_\+scan\+\_\+xd\+\_\+shared\+\_\+lib.\+dll\char`\"{})
+\item 
+\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_a6e34a02f8b9065cef2309b54c6341f7d}{api\+\_\+handle}} = \mbox{\hyperlink{sick__scan__xd__api__wrapper_8c_a96526594ec4377a4a69fa129da3febb7}{Sick\+Scan\+Api\+Create}}(\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_a6dac9c65020f2ab4d8659ff005ae769e}{sick\+\_\+scan\+\_\+library}})
+\item 
+\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_ac774a04822b0bccb99e49a1da881a1d8}{cartesian\+\_\+pointcloud\+\_\+callback}} = \mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}}(\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_aff1b72c785fa213a212d236452748211}{py\+Customized\+Point\+Cloud\+Msg\+Cb}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}Minimalistic usage example for sick_scan_api
+
+Usage: minimum_sick_scan_api_client.py launchfile
+
+Example:
+export LD_LIBRARY_PATH=.:./build:$LD_LIBRARY_PATH
+export PYTHONPATH=.:./python/api:$PYTHONPATH
+python3 ./examples/python/minimum_sick_scan_api_client.py ./launch/sick_tim_7xx.launch
+
+See doc/sick_scan_api/sick_scan_api.md for further information.\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceminimum__sick__scan__api__client_aad1d096a835a3008c8a63a37d34ee69d}\label{namespaceminimum__sick__scan__api__client_aad1d096a835a3008c8a63a37d34ee69d}} 
+\index{minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}!appendPythonPath@{appendPythonPath}}
+\index{appendPythonPath@{appendPythonPath}!minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}}
+\doxysubsubsection{\texorpdfstring{appendPythonPath()}{appendPythonPath()}}
+{\footnotesize\ttfamily def minimum\+\_\+sick\+\_\+scan\+\_\+api\+\_\+client.\+append\+Python\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespaceminimum__sick__scan__api__client_aff1b72c785fa213a212d236452748211}\label{namespaceminimum__sick__scan__api__client_aff1b72c785fa213a212d236452748211}} 
+\index{minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}!pyCustomizedPointCloudMsgCb@{pyCustomizedPointCloudMsgCb}}
+\index{pyCustomizedPointCloudMsgCb@{pyCustomizedPointCloudMsgCb}!minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}}
+\doxysubsubsection{\texorpdfstring{pyCustomizedPointCloudMsgCb()}{pyCustomizedPointCloudMsgCb()}}
+{\footnotesize\ttfamily def minimum\+\_\+sick\+\_\+scan\+\_\+api\+\_\+client.\+py\+Customized\+Point\+Cloud\+Msg\+Cb (\begin{DoxyParamCaption}\item[{}]{api\+\_\+handle,  }\item[{}]{msg }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Implement a callback to process pointcloud messages
+Data processing to be done
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceminimum__sick__scan__api__client_a6e34a02f8b9065cef2309b54c6341f7d}\label{namespaceminimum__sick__scan__api__client_a6e34a02f8b9065cef2309b54c6341f7d}} 
+\index{minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}!api\_handle@{api\_handle}}
+\index{api\_handle@{api\_handle}!minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}}
+\doxysubsubsection{\texorpdfstring{api\_handle}{api\_handle}}
+{\footnotesize\ttfamily minimum\+\_\+sick\+\_\+scan\+\_\+api\+\_\+client.\+api\+\_\+handle = \mbox{\hyperlink{sick__scan__xd__api__wrapper_8c_a96526594ec4377a4a69fa129da3febb7}{Sick\+Scan\+Api\+Create}}(\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_a6dac9c65020f2ab4d8659ff005ae769e}{sick\+\_\+scan\+\_\+library}})}
+
+\mbox{\Hypertarget{namespaceminimum__sick__scan__api__client_ac774a04822b0bccb99e49a1da881a1d8}\label{namespaceminimum__sick__scan__api__client_ac774a04822b0bccb99e49a1da881a1d8}} 
+\index{minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}!cartesian\_pointcloud\_callback@{cartesian\_pointcloud\_callback}}
+\index{cartesian\_pointcloud\_callback@{cartesian\_pointcloud\_callback}!minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}}
+\doxysubsubsection{\texorpdfstring{cartesian\_pointcloud\_callback}{cartesian\_pointcloud\_callback}}
+{\footnotesize\ttfamily minimum\+\_\+sick\+\_\+scan\+\_\+api\+\_\+client.\+cartesian\+\_\+pointcloud\+\_\+callback = \mbox{\hyperlink{sick__scan__api_8h_ae8c0fdc386828ba4fa26c0e1de1d4d27}{Sick\+Scan\+Point\+Cloud\+Msg\+Callback}}(\mbox{\hyperlink{namespaceminimum__sick__scan__api__client_aff1b72c785fa213a212d236452748211}{py\+Customized\+Point\+Cloud\+Msg\+Cb}})}
+
+\mbox{\Hypertarget{namespaceminimum__sick__scan__api__client_a64303e1cd3dfa6decd181bc44c29452b}\label{namespaceminimum__sick__scan__api__client_a64303e1cd3dfa6decd181bc44c29452b}} 
+\index{minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}!cli\_args@{cli\_args}}
+\index{cli\_args@{cli\_args}!minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}}
+\doxysubsubsection{\texorpdfstring{cli\_args}{cli\_args}}
+{\footnotesize\ttfamily string minimum\+\_\+sick\+\_\+scan\+\_\+api\+\_\+client.\+cli\+\_\+args = \char`\"{} \char`\"{}.join(sys.\+argv\mbox{[}1\+:\mbox{]})}
+
+\mbox{\Hypertarget{namespaceminimum__sick__scan__api__client_ae4cb0043396e9bcc6c9ec4600ed37c2c}\label{namespaceminimum__sick__scan__api__client_ae4cb0043396e9bcc6c9ec4600ed37c2c}} 
+\index{minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}!sick\_scan\_api@{sick\_scan\_api}}
+\index{sick\_scan\_api@{sick\_scan\_api}!minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}}
+\doxysubsubsection{\texorpdfstring{sick\_scan\_api}{sick\_scan\_api}}
+{\footnotesize\ttfamily minimum\+\_\+sick\+\_\+scan\+\_\+api\+\_\+client.\+sick\+\_\+scan\+\_\+api = importlib.\+import\+\_\+module(\char`\"{}sick\+\_\+scan\+\_\+api\char`\"{})}
+
+\mbox{\Hypertarget{namespaceminimum__sick__scan__api__client_a6dac9c65020f2ab4d8659ff005ae769e}\label{namespaceminimum__sick__scan__api__client_a6dac9c65020f2ab4d8659ff005ae769e}} 
+\index{minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}!sick\_scan\_library@{sick\_scan\_library}}
+\index{sick\_scan\_library@{sick\_scan\_library}!minimum\_sick\_scan\_api\_client@{minimum\_sick\_scan\_api\_client}}
+\doxysubsubsection{\texorpdfstring{sick\_scan\_library}{sick\_scan\_library}}
+{\footnotesize\ttfamily minimum\+\_\+sick\+\_\+scan\+\_\+api\+\_\+client.\+sick\+\_\+scan\+\_\+library = \mbox{\hyperlink{sick__scan__xd__api__wrapper_8c_a19cb9187062e444fb4943f70677bcc87}{Sick\+Scan\+Api\+Load\+Library}}(\mbox{[}\char`\"{}build/Debug/\char`\"{}, \char`\"{}build\+\_\+win64/Debug/\char`\"{}, \char`\"{}../../build/Debug/\char`\"{}, \char`\"{}../../build\+\_\+win64/Debug/\char`\"{}, \char`\"{}./\char`\"{}, \char`\"{}../\char`\"{}\mbox{]}, \char`\"{}sick\+\_\+scan\+\_\+xd\+\_\+shared\+\_\+lib.\+dll\char`\"{})}
+

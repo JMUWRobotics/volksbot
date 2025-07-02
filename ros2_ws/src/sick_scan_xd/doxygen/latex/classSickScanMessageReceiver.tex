@@ -1,0 +1,84 @@
+\hypertarget{classSickScanMessageReceiver}{}\doxysection{Sick\+Scan\+Message\+Receiver Class Reference}
+\label{classSickScanMessageReceiver}\index{SickScanMessageReceiver@{SickScanMessageReceiver}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSickScanMessageReceiver_aad58cb786aee833b96ec6ef4f2566ba7}{Sick\+Scan\+Message\+Receiver}} (rclcpp\+::\+Node\+::\+Shared\+Ptr node=0, const std\+::string \&cloud\+\_\+topic=\char`\"{}cloud\char`\"{}, const std\+::string \&lferec\+\_\+topic=\char`\"{}lferec\char`\"{}, const std\+::string \&lidoutputstate\+\_\+topic=\char`\"{}lidoutputstate\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSickScanMessageReceiver_a9f6a73bd5a2dc094d969e2fb57f7524e}{message\+Cb\+Point\+Cloud\+R\+O\+S2}} (const std\+::shared\+\_\+ptr$<$ sensor\+\_\+msgs\+::msg\+::\+Point\+Cloud2 $>$ msg)
+\item 
+void \mbox{\hyperlink{classSickScanMessageReceiver_a537d5de689075bac2d3ecad2e49f3573}{message\+Cb\+L\+F\+Erec\+R\+O\+S2}} (const std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+xd\+::msg\+::\+L\+F\+Erec\+Msg $>$ msg)
+\item 
+void \mbox{\hyperlink{classSickScanMessageReceiver_a0916c363868c492c262ad49bc718a6cf}{message\+Cb\+L\+I\+Doutputstate\+R\+O\+S2}} (const std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+xd\+::msg\+::\+L\+I\+Doutputstate\+Msg $>$ msg)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+rclcpp\+::\+Subscription$<$ sensor\+\_\+msgs\+::msg\+::\+Point\+Cloud2 $>$\+::Shared\+Ptr \mbox{\hyperlink{classSickScanMessageReceiver_a6986d7b033e871316e7ef2ac05737393}{m\+\_\+pointcloud\+\_\+subscriber}}
+\item 
+rclcpp\+::\+Subscription$<$ sick\+\_\+scan\+\_\+xd\+::msg\+::\+L\+F\+Erec\+Msg $>$\+::Shared\+Ptr \mbox{\hyperlink{classSickScanMessageReceiver_aba9c52a007224b5c5964c1aad4b815f0}{m\+\_\+lferec\+\_\+subscriber}}
+\item 
+rclcpp\+::\+Subscription$<$ sick\+\_\+scan\+\_\+xd\+::msg\+::\+L\+I\+Doutputstate\+Msg $>$\+::Shared\+Ptr \mbox{\hyperlink{classSickScanMessageReceiver_a93f504da9b18a74e95a186869807b77c}{m\+\_\+lidoutputstate\+\_\+subscriber}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSickScanMessageReceiver_aad58cb786aee833b96ec6ef4f2566ba7}\label{classSickScanMessageReceiver_aad58cb786aee833b96ec6ef4f2566ba7}} 
+\index{SickScanMessageReceiver@{SickScanMessageReceiver}!SickScanMessageReceiver@{SickScanMessageReceiver}}
+\index{SickScanMessageReceiver@{SickScanMessageReceiver}!SickScanMessageReceiver@{SickScanMessageReceiver}}
+\doxysubsubsection{\texorpdfstring{SickScanMessageReceiver()}{SickScanMessageReceiver()}}
+{\footnotesize\ttfamily Sick\+Scan\+Message\+Receiver\+::\+Sick\+Scan\+Message\+Receiver (\begin{DoxyParamCaption}\item[{rclcpp\+::\+Node\+::\+Shared\+Ptr}]{node = {\ttfamily 0},  }\item[{const std\+::string \&}]{cloud\+\_\+topic = {\ttfamily \char`\"{}cloud\char`\"{}},  }\item[{const std\+::string \&}]{lferec\+\_\+topic = {\ttfamily \char`\"{}lferec\char`\"{}},  }\item[{const std\+::string \&}]{lidoutputstate\+\_\+topic = {\ttfamily \char`\"{}lidoutputstate\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Constructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSickScanMessageReceiver_a537d5de689075bac2d3ecad2e49f3573}\label{classSickScanMessageReceiver_a537d5de689075bac2d3ecad2e49f3573}} 
+\index{SickScanMessageReceiver@{SickScanMessageReceiver}!messageCbLFErecROS2@{messageCbLFErecROS2}}
+\index{messageCbLFErecROS2@{messageCbLFErecROS2}!SickScanMessageReceiver@{SickScanMessageReceiver}}
+\doxysubsubsection{\texorpdfstring{messageCbLFErecROS2()}{messageCbLFErecROS2()}}
+{\footnotesize\ttfamily void Sick\+Scan\+Message\+Receiver\+::message\+Cb\+L\+F\+Erec\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+xd\+::msg\+::\+L\+F\+Erec\+Msg $>$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+R\+O\+S2-\/callback for sick\+\_\+scan lferec messages ~\newline
+ \mbox{\Hypertarget{classSickScanMessageReceiver_a0916c363868c492c262ad49bc718a6cf}\label{classSickScanMessageReceiver_a0916c363868c492c262ad49bc718a6cf}} 
+\index{SickScanMessageReceiver@{SickScanMessageReceiver}!messageCbLIDoutputstateROS2@{messageCbLIDoutputstateROS2}}
+\index{messageCbLIDoutputstateROS2@{messageCbLIDoutputstateROS2}!SickScanMessageReceiver@{SickScanMessageReceiver}}
+\doxysubsubsection{\texorpdfstring{messageCbLIDoutputstateROS2()}{messageCbLIDoutputstateROS2()}}
+{\footnotesize\ttfamily void Sick\+Scan\+Message\+Receiver\+::message\+Cb\+L\+I\+Doutputstate\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ sick\+\_\+scan\+\_\+xd\+::msg\+::\+L\+I\+Doutputstate\+Msg $>$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+R\+O\+S2-\/callback for sick\+\_\+scan lidoutputstate messages ~\newline
+ \mbox{\Hypertarget{classSickScanMessageReceiver_a9f6a73bd5a2dc094d969e2fb57f7524e}\label{classSickScanMessageReceiver_a9f6a73bd5a2dc094d969e2fb57f7524e}} 
+\index{SickScanMessageReceiver@{SickScanMessageReceiver}!messageCbPointCloudROS2@{messageCbPointCloudROS2}}
+\index{messageCbPointCloudROS2@{messageCbPointCloudROS2}!SickScanMessageReceiver@{SickScanMessageReceiver}}
+\doxysubsubsection{\texorpdfstring{messageCbPointCloudROS2()}{messageCbPointCloudROS2()}}
+{\footnotesize\ttfamily void Sick\+Scan\+Message\+Receiver\+::message\+Cb\+Point\+Cloud\+R\+O\+S2 (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ sensor\+\_\+msgs\+::msg\+::\+Point\+Cloud2 $>$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+R\+O\+S2-\/callback for point cloud messages ~\newline
+ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSickScanMessageReceiver_aba9c52a007224b5c5964c1aad4b815f0}\label{classSickScanMessageReceiver_aba9c52a007224b5c5964c1aad4b815f0}} 
+\index{SickScanMessageReceiver@{SickScanMessageReceiver}!m\_lferec\_subscriber@{m\_lferec\_subscriber}}
+\index{m\_lferec\_subscriber@{m\_lferec\_subscriber}!SickScanMessageReceiver@{SickScanMessageReceiver}}
+\doxysubsubsection{\texorpdfstring{m\_lferec\_subscriber}{m\_lferec\_subscriber}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sick\+\_\+scan\+\_\+xd\+::msg\+::\+L\+F\+Erec\+Msg$>$\+::Shared\+Ptr Sick\+Scan\+Message\+Receiver\+::m\+\_\+lferec\+\_\+subscriber\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classSickScanMessageReceiver_a93f504da9b18a74e95a186869807b77c}\label{classSickScanMessageReceiver_a93f504da9b18a74e95a186869807b77c}} 
+\index{SickScanMessageReceiver@{SickScanMessageReceiver}!m\_lidoutputstate\_subscriber@{m\_lidoutputstate\_subscriber}}
+\index{m\_lidoutputstate\_subscriber@{m\_lidoutputstate\_subscriber}!SickScanMessageReceiver@{SickScanMessageReceiver}}
+\doxysubsubsection{\texorpdfstring{m\_lidoutputstate\_subscriber}{m\_lidoutputstate\_subscriber}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sick\+\_\+scan\+\_\+xd\+::msg\+::\+L\+I\+Doutputstate\+Msg$>$\+::Shared\+Ptr Sick\+Scan\+Message\+Receiver\+::m\+\_\+lidoutputstate\+\_\+subscriber\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classSickScanMessageReceiver_a6986d7b033e871316e7ef2ac05737393}\label{classSickScanMessageReceiver_a6986d7b033e871316e7ef2ac05737393}} 
+\index{SickScanMessageReceiver@{SickScanMessageReceiver}!m\_pointcloud\_subscriber@{m\_pointcloud\_subscriber}}
+\index{m\_pointcloud\_subscriber@{m\_pointcloud\_subscriber}!SickScanMessageReceiver@{SickScanMessageReceiver}}
+\doxysubsubsection{\texorpdfstring{m\_pointcloud\_subscriber}{m\_pointcloud\_subscriber}}
+{\footnotesize\ttfamily rclcpp\+::\+Subscription$<$sensor\+\_\+msgs\+::msg\+::\+Point\+Cloud2$>$\+::Shared\+Ptr Sick\+Scan\+Message\+Receiver\+::m\+\_\+pointcloud\+\_\+subscriber\hspace{0.3cm}{\ttfamily [protected]}}
+
+Subscriber of pointcloud and sick\+\_\+scan messages 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/examples/ros2\+\_\+example\+\_\+application/src/\mbox{\hyperlink{sick__scan__ros2__example_8cpp}{sick\+\_\+scan\+\_\+ros2\+\_\+example.\+cpp}}\end{DoxyCompactItemize}

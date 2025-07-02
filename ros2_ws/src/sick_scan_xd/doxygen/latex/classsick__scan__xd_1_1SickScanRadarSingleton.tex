@@ -1,0 +1,107 @@
+\hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Radar\+Singleton Class Reference}
+\label{classsick__scan__xd_1_1SickScanRadarSingleton}\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+radar.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton_a7d82899893993f13ce4353ba73be81d4}{set\+Emulation}} (bool \+\_\+emul)
+\item 
+bool \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton_ae13ac8fdc5b172dd615f694ab70160a3}{get\+Emulation}} (void)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton_a4ad528c1c6554a3c3ef55643b52af87e}{parse\+Datagram}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}} time\+Stamp, unsigned char $\ast$receive\+Buffer, int actual\+\_\+length, bool use\+Binary\+Protocol)
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton_afca5590368a75a48f69b9e1cbea8d877}{parse\+Radar\+Datagram}} (char $\ast$datagram, size\+\_\+t datagram\+\_\+length, bool use\+Binary\+Protocol, sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan $\ast$msg\+Ptr, std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarObject}{Sick\+Scan\+Radar\+Object}} $>$ \&object\+List, std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarRawTarget}{Sick\+Scan\+Radar\+Raw\+Target}} $>$ \&raw\+Target\+List, int verbose\+Level=0)
+\begin{DoxyCompactList}\small\item\em Parsing Ascii datagram. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton_ae60f39dc0bf68e7fb8601da8370b1a77}{simulate\+Ascii\+Datagram}} (unsigned char $\ast$receive\+Buffer, int $\ast$actual\+\_\+length)
+\item 
+void \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton_aecb2e1caef97afce243f34649bc050f0}{set\+Name\+Of\+Radar}} (const std\+::string \&\+\_\+radar\+Name, \mbox{\hyperlink{namespacesick__scan__xd_ada37f8fa0944ff88043bb609f4142276}{R\+A\+D\+A\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+N\+UM}} \+\_\+radar\+Type)
+\item 
+std\+::string \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton_aa813d0b619b73d5ceee2050d2fcf8a23}{get\+Name\+Of\+Radar}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton}{Sick\+Scan\+Radar\+Singleton}} $\ast$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton_ae036d1b1af1ee70c2e2002b6aa086854}{get\+Instance}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton_ae13ac8fdc5b172dd615f694ab70160a3}\label{classsick__scan__xd_1_1SickScanRadarSingleton_ae13ac8fdc5b172dd615f694ab70160a3}} 
+\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}!getEmulation@{getEmulation}}
+\index{getEmulation@{getEmulation}!sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+\doxysubsubsection{\texorpdfstring{getEmulation()}{getEmulation()}}
+{\footnotesize\ttfamily bool sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+Singleton\+::get\+Emulation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton_ae036d1b1af1ee70c2e2002b6aa086854}\label{classsick__scan__xd_1_1SickScanRadarSingleton_ae036d1b1af1ee70c2e2002b6aa086854}} 
+\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarSingleton}{Sick\+Scan\+Radar\+Singleton}} $\ast$ sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+Singleton\+::get\+Instance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton_aa813d0b619b73d5ceee2050d2fcf8a23}\label{classsick__scan__xd_1_1SickScanRadarSingleton_aa813d0b619b73d5ceee2050d2fcf8a23}} 
+\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}!getNameOfRadar@{getNameOfRadar}}
+\index{getNameOfRadar@{getNameOfRadar}!sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+\doxysubsubsection{\texorpdfstring{getNameOfRadar()}{getNameOfRadar()}}
+{\footnotesize\ttfamily std\+::string sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+Singleton\+::get\+Name\+Of\+Radar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton_a4ad528c1c6554a3c3ef55643b52af87e}\label{classsick__scan__xd_1_1SickScanRadarSingleton_a4ad528c1c6554a3c3ef55643b52af87e}} 
+\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}!parseDatagram@{parseDatagram}}
+\index{parseDatagram@{parseDatagram}!sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+\doxysubsubsection{\texorpdfstring{parseDatagram()}{parseDatagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+Singleton\+::parse\+Datagram (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a7216d8fb622ffccf1213fbe92e91cc4e}{ros\+Time}}}]{time\+Stamp,  }\item[{unsigned char $\ast$}]{receive\+Buffer,  }\item[{int}]{actual\+\_\+length,  }\item[{bool}]{use\+Binary\+Protocol }\end{DoxyParamCaption})}
+
+\href{https://answers.ros.org/question/9772/quaternions-orientation-representation/}{\texttt{ https\+://answers.\+ros.\+org/question/9772/quaternions-\/orientation-\/representation/}}\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton_afca5590368a75a48f69b9e1cbea8d877}\label{classsick__scan__xd_1_1SickScanRadarSingleton_afca5590368a75a48f69b9e1cbea8d877}} 
+\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}!parseRadarDatagram@{parseRadarDatagram}}
+\index{parseRadarDatagram@{parseRadarDatagram}!sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+\doxysubsubsection{\texorpdfstring{parseRadarDatagram()}{parseRadarDatagram()}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+Singleton\+::parse\+Radar\+Datagram (\begin{DoxyParamCaption}\item[{char $\ast$}]{datagram,  }\item[{size\+\_\+t}]{datagram\+\_\+length,  }\item[{bool}]{use\+Binary\+Protocol,  }\item[{sick\+\_\+scan\+\_\+msg\+::\+Radar\+Scan $\ast$}]{msg\+Ptr,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarObject}{Sick\+Scan\+Radar\+Object}} $>$ \&}]{object\+List,  }\item[{std\+::vector$<$ \mbox{\hyperlink{classsick__scan__xd_1_1SickScanRadarRawTarget}{Sick\+Scan\+Radar\+Raw\+Target}} $>$ \&}]{raw\+Target\+List,  }\item[{int}]{verbose\+Level = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Parsing Ascii datagram. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em datagram} & Pointer to datagram data \\
+\hline
+{\em datagram\+\_\+length} & Number of bytes in datagram \\
+\hline
+{\em config} & Pointer to Configdata \\
+\hline
+{\em msg} & Holds result of Parsing \\
+\hline
+{\em num\+Echos} & Number of D\+I\+S\+T-\/blocks found in message \\
+\hline
+{\em echo\+Mask} & Mask corresponding to D\+I\+S\+T-\/block-\/identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+set\+\_\+range\+\_\+max 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton_a7d82899893993f13ce4353ba73be81d4}\label{classsick__scan__xd_1_1SickScanRadarSingleton_a7d82899893993f13ce4353ba73be81d4}} 
+\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}!setEmulation@{setEmulation}}
+\index{setEmulation@{setEmulation}!sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+\doxysubsubsection{\texorpdfstring{setEmulation()}{setEmulation()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+Singleton\+::set\+Emulation (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+emul }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton_aecb2e1caef97afce243f34649bc050f0}\label{classsick__scan__xd_1_1SickScanRadarSingleton_aecb2e1caef97afce243f34649bc050f0}} 
+\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}!setNameOfRadar@{setNameOfRadar}}
+\index{setNameOfRadar@{setNameOfRadar}!sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+\doxysubsubsection{\texorpdfstring{setNameOfRadar()}{setNameOfRadar()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+Singleton\+::set\+Name\+Of\+Radar (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{\+\_\+radar\+Name,  }\item[{\mbox{\hyperlink{namespacesick__scan__xd_ada37f8fa0944ff88043bb609f4142276}{R\+A\+D\+A\+R\+\_\+\+T\+Y\+P\+E\+\_\+\+E\+N\+UM}}}]{\+\_\+radar\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanRadarSingleton_ae60f39dc0bf68e7fb8601da8370b1a77}\label{classsick__scan__xd_1_1SickScanRadarSingleton_ae60f39dc0bf68e7fb8601da8370b1a77}} 
+\index{sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}!simulateAsciiDatagram@{simulateAsciiDatagram}}
+\index{simulateAsciiDatagram@{simulateAsciiDatagram}!sick\_scan\_xd::SickScanRadarSingleton@{sick\_scan\_xd::SickScanRadarSingleton}}
+\doxysubsubsection{\texorpdfstring{simulateAsciiDatagram()}{simulateAsciiDatagram()}}
+{\footnotesize\ttfamily void sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Radar\+Singleton\+::simulate\+Ascii\+Datagram (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{receive\+Buffer,  }\item[{int $\ast$}]{actual\+\_\+length }\end{DoxyParamCaption})}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__radar_8h}{sick\+\_\+generic\+\_\+radar.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__generic__radar_8cpp}{sick\+\_\+generic\+\_\+radar.\+cpp}}\end{DoxyCompactItemize}

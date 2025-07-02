@@ -1,0 +1,62 @@
+\hypertarget{classapi_1_1sick__scan__api_1_1SickScanLIDoutputstateMsg}{}\doxysection{api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+L\+I\+Doutputstate\+Msg Class Reference}
+\label{classapi_1_1sick__scan__api_1_1SickScanLIDoutputstateMsg}\index{api.sick\_scan\_api.SickScanLIDoutputstateMsg@{api.sick\_scan\_api.SickScanLIDoutputstateMsg}}
+
+
+Inheritance diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+L\+I\+Doutputstate\+Msg\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanLIDoutputstateMsg__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+L\+I\+Doutputstate\+Msg\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanLIDoutputstateMsg__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}sick_scan_api: struct SickScanLIDoutputstateMsg, equivalent to LIDoutputstateMsg.msg
+
+Attributes
+----------
+header : SickScanHeader
+    message timestamp
+version_number : ctypes.c_uint16
+    Status code version number
+system_counter : ctypes.c_uint32
+    Status code system counter (time in microsec since power up, max. 71 min then starting from 0 again)
+output_state : ctypes.c_uint8 * 8
+    array of max. 8 output states, each state with value 0 (not active), 1 (active) or 2 (not used)
+output_count : ctypes.c_uint32 * 8
+    array of max. 8 output counter
+time_state : ctypes.c_uint16
+    No time data: 0, Time data: 1 (sensortime from the last change of min. one of the outputs)
+year : ctypes.c_uint16
+    f.e. 2021
+month : ctypes.c_uint8
+    1 ... 12
+day : ctypes.c_uint8
+    1 ... 31
+hour : ctypes.c_uint8
+    0 ... 23
+minute : ctypes.c_uint8
+    0 ... 59
+second : ctypes.c_uint8
+    0 ... 59
+microsecond : ctypes.c_uint32
+    0 ... 999999
+\end{DoxyVerb}
+ ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/python/api/\mbox{\hyperlink{sick__scan__api_8py}{sick\+\_\+scan\+\_\+api.\+py}}\end{DoxyCompactItemize}

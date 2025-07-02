@@ -1,0 +1,82 @@
+\hypertarget{classsick__scansegment__xd_1_1CompactDataParser}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Compact\+Data\+Parser Class Reference}
+\label{classsick__scansegment__xd_1_1CompactDataParser}\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+
+
+{\ttfamily \#include $<$compact\+\_\+parser.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataHeader}{Compact\+Data\+Header}} \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataParser_a7d3213db8b6ed22269068c44ced8468b}{Parse\+Header}} (const uint8\+\_\+t $\ast$scandata)
+\item 
+static \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData}{Compact\+Module\+Meta\+Data}} \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataParser_a68cb2670e3c81a9f9e7e0c141de3c5ba}{Parse\+Module\+Meta\+Data}} (const uint8\+\_\+t $\ast$scandata, uint32\+\_\+t module\+\_\+size, uint32\+\_\+t telegram\+Version, uint32\+\_\+t \&module\+\_\+metadata\+\_\+size)
+\item 
+static bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataParser_a1d893c754a4e89dcbd6960cafe679f90}{Parse\+Module\+Measurement\+Data}} (const uint8\+\_\+t $\ast$payload, uint32\+\_\+t num\+\_\+bytes, const \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataHeader}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Header}} \&compact\+\_\+header, const \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data}} \&meta\+\_\+data, float azimuth\+\_\+offset, \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMeasurementData}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Measurement\+Data}} \&measurement\+\_\+data)
+\item 
+static bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataParser_a7d1622e4af6e4d063f935f5c67ae2a21}{Parse\+Segment}} (const uint8\+\_\+t $\ast$payload, size\+\_\+t bytes\+\_\+received, \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactSegmentData}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Segment\+Data}} $\ast$segment\+\_\+data, uint32\+\_\+t \&payload\+\_\+length\+\_\+bytes, uint32\+\_\+t \&num\+\_\+bytes\+\_\+required, float azimuth\+\_\+offset=0, int verbose=0)
+\item 
+static bool \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataParser_a3c41ad19d618a2c506673f63ac8a11e5}{Parse}} (const \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserConfig}{Scan\+Segment\+Parser\+Config}} \&parser\+\_\+config, const std\+::vector$<$ uint8\+\_\+t $>$ \&payload, \mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}} system\+\_\+timestamp, \mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \&add\+\_\+transform\+\_\+xyz\+\_\+rpy, \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} \&result, bool use\+\_\+software\+\_\+pll=true, bool verbose=false)
+\item 
+static void \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataParser_aae361979c9130adf9eb5d1aafa3458d9}{Set\+Layer\+Elevation\+Table}} (const std\+::vector$<$ int $>$ \&layer\+\_\+elevation\+\_\+table\+\_\+mdeg)
+\item 
+static int \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataParser_a1c09324cbd0579b2564d694497c0b92f}{Get\+Layer\+I\+Dfrom\+Elevation}} (float layer\+\_\+elevation\+\_\+rad)
+\item 
+static float \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataParser_acda54a70e8ce90c888245346c98b8978}{Get\+Elevation\+Deg\+From\+Layer\+Idx}} (int layer\+\_\+idx)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactDataParser_acda54a70e8ce90c888245346c98b8978}\label{classsick__scansegment__xd_1_1CompactDataParser_acda54a70e8ce90c888245346c98b8978}} 
+\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}!GetElevationDegFromLayerIdx@{GetElevationDegFromLayerIdx}}
+\index{GetElevationDegFromLayerIdx@{GetElevationDegFromLayerIdx}!sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+\doxysubsubsection{\texorpdfstring{GetElevationDegFromLayerIdx()}{GetElevationDegFromLayerIdx()}}
+{\footnotesize\ttfamily float sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Parser\+::\+Get\+Elevation\+Deg\+From\+Layer\+Idx (\begin{DoxyParamCaption}\item[{int}]{layer\+\_\+idx }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactDataParser_a1c09324cbd0579b2564d694497c0b92f}\label{classsick__scansegment__xd_1_1CompactDataParser_a1c09324cbd0579b2564d694497c0b92f}} 
+\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}!GetLayerIDfromElevation@{GetLayerIDfromElevation}}
+\index{GetLayerIDfromElevation@{GetLayerIDfromElevation}!sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+\doxysubsubsection{\texorpdfstring{GetLayerIDfromElevation()}{GetLayerIDfromElevation()}}
+{\footnotesize\ttfamily int sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Parser\+::\+Get\+Layer\+I\+Dfrom\+Elevation (\begin{DoxyParamCaption}\item[{float}]{layer\+\_\+elevation\+\_\+rad }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactDataParser_a3c41ad19d618a2c506673f63ac8a11e5}\label{classsick__scansegment__xd_1_1CompactDataParser_a3c41ad19d618a2c506673f63ac8a11e5}} 
+\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}!Parse@{Parse}}
+\index{Parse@{Parse}!sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Parser\+::\+Parse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserConfig}{Scan\+Segment\+Parser\+Config}} \&}]{parser\+\_\+config,  }\item[{const std\+::vector$<$ uint8\+\_\+t $>$ \&}]{payload,  }\item[{\mbox{\hyperlink{fifo_8h_a10659ac7f1861df67006a525fea0b338}{fifo\+\_\+timestamp}}}]{system\+\_\+timestamp,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickCloudTransform}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Cloud\+Transform}} \&}]{add\+\_\+transform\+\_\+xyz\+\_\+rpy,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1ScanSegmentParserOutput}{Scan\+Segment\+Parser\+Output}} \&}]{result,  }\item[{bool}]{use\+\_\+software\+\_\+pll = {\ttfamily true},  }\item[{bool}]{verbose = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactDataParser_a7d3213db8b6ed22269068c44ced8468b}\label{classsick__scansegment__xd_1_1CompactDataParser_a7d3213db8b6ed22269068c44ced8468b}} 
+\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}!ParseHeader@{ParseHeader}}
+\index{ParseHeader@{ParseHeader}!sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+\doxysubsubsection{\texorpdfstring{ParseHeader()}{ParseHeader()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataHeader}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Header}} sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Parser\+::\+Parse\+Header (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{scandata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactDataParser_a1d893c754a4e89dcbd6960cafe679f90}\label{classsick__scansegment__xd_1_1CompactDataParser_a1d893c754a4e89dcbd6960cafe679f90}} 
+\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}!ParseModuleMeasurementData@{ParseModuleMeasurementData}}
+\index{ParseModuleMeasurementData@{ParseModuleMeasurementData}!sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+\doxysubsubsection{\texorpdfstring{ParseModuleMeasurementData()}{ParseModuleMeasurementData()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Parser\+::\+Parse\+Module\+Measurement\+Data (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{payload,  }\item[{uint32\+\_\+t}]{num\+\_\+bytes,  }\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactDataHeader}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Header}} \&}]{compact\+\_\+header,  }\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data}} \&}]{meta\+\_\+data,  }\item[{float}]{azimuth\+\_\+offset,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMeasurementData}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Measurement\+Data}} \&}]{measurement\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactDataParser_a68cb2670e3c81a9f9e7e0c141de3c5ba}\label{classsick__scansegment__xd_1_1CompactDataParser_a68cb2670e3c81a9f9e7e0c141de3c5ba}} 
+\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}!ParseModuleMetaData@{ParseModuleMetaData}}
+\index{ParseModuleMetaData@{ParseModuleMetaData}!sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+\doxysubsubsection{\texorpdfstring{ParseModuleMetaData()}{ParseModuleMetaData()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1CompactModuleMetaData}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Module\+Meta\+Data}} sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Parser\+::\+Parse\+Module\+Meta\+Data (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{scandata,  }\item[{uint32\+\_\+t}]{module\+\_\+size,  }\item[{uint32\+\_\+t}]{telegram\+Version,  }\item[{uint32\+\_\+t \&}]{module\+\_\+metadata\+\_\+size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactDataParser_a7d1622e4af6e4d063f935f5c67ae2a21}\label{classsick__scansegment__xd_1_1CompactDataParser_a7d1622e4af6e4d063f935f5c67ae2a21}} 
+\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}!ParseSegment@{ParseSegment}}
+\index{ParseSegment@{ParseSegment}!sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+\doxysubsubsection{\texorpdfstring{ParseSegment()}{ParseSegment()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Parser\+::\+Parse\+Segment (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{payload,  }\item[{size\+\_\+t}]{bytes\+\_\+received,  }\item[{\mbox{\hyperlink{classsick__scansegment__xd_1_1CompactSegmentData}{sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Segment\+Data}} $\ast$}]{segment\+\_\+data,  }\item[{uint32\+\_\+t \&}]{payload\+\_\+length\+\_\+bytes,  }\item[{uint32\+\_\+t \&}]{num\+\_\+bytes\+\_\+required,  }\item[{float}]{azimuth\+\_\+offset = {\ttfamily 0},  }\item[{int}]{verbose = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1CompactDataParser_aae361979c9130adf9eb5d1aafa3458d9}\label{classsick__scansegment__xd_1_1CompactDataParser_aae361979c9130adf9eb5d1aafa3458d9}} 
+\index{sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}!SetLayerElevationTable@{SetLayerElevationTable}}
+\index{SetLayerElevationTable@{SetLayerElevationTable}!sick\_scansegment\_xd::CompactDataParser@{sick\_scansegment\_xd::CompactDataParser}}
+\doxysubsubsection{\texorpdfstring{SetLayerElevationTable()}{SetLayerElevationTable()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Compact\+Data\+Parser\+::\+Set\+Layer\+Elevation\+Table (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ int $>$ \&}]{layer\+\_\+elevation\+\_\+table\+\_\+mdeg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{compact__parser_8h}{compact\+\_\+parser.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{compact__parser_8cpp}{compact\+\_\+parser.\+cpp}}\end{DoxyCompactItemize}

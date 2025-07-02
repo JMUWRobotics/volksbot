@@ -1,0 +1,6 @@
+<map id="sick_scan_xd::NAV350ReflectorData" name="sick_scan_xd::NAV350ReflectorData">
+<area shape="rect" id="node1" title=" " alt="" coords="451,56,709,83"/>
+<area shape="rect" id="node2" href="$classsick__scan__xd_1_1NAV350OptReflectorData.html" title=" " alt="" coords="5,5,287,32"/>
+<area shape="rect" id="node3" href="$classsick__scan__xd_1_1NAV350PolarData.html" title=" " alt="" coords="30,56,262,83"/>
+<area shape="rect" id="node4" href="$classsick__scan__xd_1_1NAV350CartesianData.html" title=" " alt="" coords="15,107,277,133"/>
+</map>

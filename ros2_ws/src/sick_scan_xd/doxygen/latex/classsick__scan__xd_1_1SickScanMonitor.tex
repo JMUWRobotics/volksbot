@@ -1,0 +1,75 @@
+\hypertarget{classsick__scan__xd_1_1SickScanMonitor}{}\doxysection{sick\+\_\+scan\+\_\+xd\+::Sick\+Scan\+Monitor Class Reference}
+\label{classsick__scan__xd_1_1SickScanMonitor}\index{sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}}
+
+
+{\ttfamily \#include $<$sick\+\_\+generic\+\_\+monitoring.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonitor_a5d5c6950c9e009389c1fe0643e9e236b}{Sick\+Scan\+Monitor}} (int read\+\_\+timeout\+\_\+millisec=R\+E\+A\+D\+\_\+\+T\+I\+M\+E\+O\+U\+T\+\_\+\+M\+I\+L\+L\+I\+S\+E\+C\+\_\+\+D\+E\+F\+A\+U\+LT)
+\item 
+\mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonitor_a1d5cb806f380b8ce32d2ae45d4984490}{$\sim$\+Sick\+Scan\+Monitor}} ()
+\item 
+\mbox{\hyperlink{namespacesick__scan__xd_ab88a0b8633697658d2fed33d7b3c6471}{sick\+\_\+scan\+\_\+xd\+::\+Exit\+Code}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonitor_ac4d67bc61d9b511a05c2bde9f370881e}{check\+State}} (\mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}{Node\+Run\+State}} run\+State, \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp}{Sick\+Scan\+Common\+Tcp}} $\ast$scanner, \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser}} $\ast$parser, \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services}} $\ast$services)
+\item 
+\mbox{\hyperlink{namespacesick__scan__xd_ab88a0b8633697658d2fed33d7b3c6471}{sick\+\_\+scan\+\_\+xd\+::\+Exit\+Code}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonitor_a070600112ba42f8c29154f0ecac76ac2}{check\+State\+Reinit\+On\+Error}} (\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}} nh, \mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}{Node\+Run\+State}} run\+State, \mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp}{Sick\+Scan\+Common\+Tcp}} $\ast$scanner, \mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser}} $\ast$parser, \mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services}} $\ast$services)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonitor_a3faa3299ab438789293381be48753295}{m\+\_\+read\+\_\+timeout\+\_\+millisec}}
+\item 
+\mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}{Node\+Run\+State}} \mbox{\hyperlink{classsick__scan__xd_1_1SickScanMonitor_a0b950a2183c00923b3003c83f2bd9c6b}{m\+\_\+last\+Run\+State}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMonitor_a5d5c6950c9e009389c1fe0643e9e236b}\label{classsick__scan__xd_1_1SickScanMonitor_a5d5c6950c9e009389c1fe0643e9e236b}} 
+\index{sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}!SickScanMonitor@{SickScanMonitor}}
+\index{SickScanMonitor@{SickScanMonitor}!sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}}
+\doxysubsubsection{\texorpdfstring{SickScanMonitor()}{SickScanMonitor()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Monitor\+::\+Sick\+Scan\+Monitor (\begin{DoxyParamCaption}\item[{int}]{read\+\_\+timeout\+\_\+millisec = {\ttfamily READ\+\_\+TIMEOUT\+\_\+MILLISEC\+\_\+DEFAULT} }\end{DoxyParamCaption})}
+
+Constructor \mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMonitor_a1d5cb806f380b8ce32d2ae45d4984490}\label{classsick__scan__xd_1_1SickScanMonitor_a1d5cb806f380b8ce32d2ae45d4984490}} 
+\index{sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}!````~SickScanMonitor@{$\sim$SickScanMonitor}}
+\index{````~SickScanMonitor@{$\sim$SickScanMonitor}!sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickScanMonitor()}{~SickScanMonitor()}}
+{\footnotesize\ttfamily sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Monitor\+::$\sim$\+Sick\+Scan\+Monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Destructor 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMonitor_ac4d67bc61d9b511a05c2bde9f370881e}\label{classsick__scan__xd_1_1SickScanMonitor_ac4d67bc61d9b511a05c2bde9f370881e}} 
+\index{sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}!checkState@{checkState}}
+\index{checkState@{checkState}!sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}}
+\doxysubsubsection{\texorpdfstring{checkState()}{checkState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesick__scan__xd_ab88a0b8633697658d2fed33d7b3c6471}{sick\+\_\+scan\+\_\+xd\+::\+Exit\+Code}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Monitor\+::check\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}{Node\+Run\+State}}}]{run\+State,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp}{Sick\+Scan\+Common\+Tcp}} $\ast$}]{scanner,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser}} $\ast$}]{parser,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services}} $\ast$}]{services }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMonitor_a070600112ba42f8c29154f0ecac76ac2}\label{classsick__scan__xd_1_1SickScanMonitor_a070600112ba42f8c29154f0ecac76ac2}} 
+\index{sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}!checkStateReinitOnError@{checkStateReinitOnError}}
+\index{checkStateReinitOnError@{checkStateReinitOnError}!sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}}
+\doxysubsubsection{\texorpdfstring{checkStateReinitOnError()}{checkStateReinitOnError()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacesick__scan__xd_ab88a0b8633697658d2fed33d7b3c6471}{sick\+\_\+scan\+\_\+xd\+::\+Exit\+Code}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Monitor\+::check\+State\+Reinit\+On\+Error (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__ros__wrapper_8h_a6003b955061d95c1ec9ff8461ebaaa0e}{ros\+Node\+Ptr}}}]{nh,  }\item[{\mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}{Node\+Run\+State}}}]{run\+State,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanCommonTcp}{Sick\+Scan\+Common\+Tcp}} $\ast$}]{scanner,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickGenericParser}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Generic\+Parser}} $\ast$}]{parser,  }\item[{\mbox{\hyperlink{classsick__scan__xd_1_1SickScanServices}{sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Services}} $\ast$}]{services }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMonitor_a0b950a2183c00923b3003c83f2bd9c6b}\label{classsick__scan__xd_1_1SickScanMonitor_a0b950a2183c00923b3003c83f2bd9c6b}} 
+\index{sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}!m\_lastRunState@{m\_lastRunState}}
+\index{m\_lastRunState@{m\_lastRunState}!sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}}
+\doxysubsubsection{\texorpdfstring{m\_lastRunState}{m\_lastRunState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{sick__generic__laser_8h_a37f6ebb0ecf153370b0e1f8436be1bf8}{Node\+Run\+State}} sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Monitor\+::m\+\_\+last\+Run\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scan__xd_1_1SickScanMonitor_a3faa3299ab438789293381be48753295}\label{classsick__scan__xd_1_1SickScanMonitor_a3faa3299ab438789293381be48753295}} 
+\index{sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}!m\_read\_timeout\_millisec@{m\_read\_timeout\_millisec}}
+\index{m\_read\_timeout\_millisec@{m\_read\_timeout\_millisec}!sick\_scan\_xd::SickScanMonitor@{sick\_scan\_xd::SickScanMonitor}}
+\doxysubsubsection{\texorpdfstring{m\_read\_timeout\_millisec}{m\_read\_timeout\_millisec}}
+{\footnotesize\ttfamily int sick\+\_\+scan\+\_\+xd\+::\+Sick\+Scan\+Monitor\+::m\+\_\+read\+\_\+timeout\+\_\+millisec\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__generic__monitoring_8h}{sick\+\_\+generic\+\_\+monitoring.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__generic__monitoring_8cpp}{sick\+\_\+generic\+\_\+monitoring.\+cpp}}\end{DoxyCompactItemize}

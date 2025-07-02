@@ -1,0 +1,164 @@
+\hypertarget{classSickScanCommonNw}{}\doxysection{Sick\+Scan\+Common\+Nw Class Reference}
+\label{classSickScanCommonNw}\index{SickScanCommonNw@{SickScanCommonNw}}
+
+
+Interface for T\+C\+P/\+IP.  
+
+
+
+
+{\ttfamily \#include $<$sick\+\_\+scan\+\_\+common\+\_\+nw.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSickScanCommonNw_ac489e48b3ee70f2d67d6c0647c022775}{Sick\+Scan\+Common\+Nw}} ()
+\item 
+\mbox{\hyperlink{classSickScanCommonNw_a48a00e62f3d19ddf80dcb358393e4018}{$\sim$\+Sick\+Scan\+Common\+Nw}} ()
+\item 
+bool \mbox{\hyperlink{classSickScanCommonNw_aad606ba082ff81a638ffb6c2d2922754}{init}} (std\+::string ip\+Address, unsigned short port\+Number, \mbox{\hyperlink{classTcp_a649c232b23d2186c1a723711d2a35d0f}{Tcp\+::\+Disconnect\+Function}} disconnect\+Function, void $\ast$obj)
+\item 
+bool \mbox{\hyperlink{classSickScanCommonNw_a7fc978cf32b8dc3b68056bbb0f9d2d79}{set\+Read\+Callback\+Function}} (\mbox{\hyperlink{classTcp_adae4ea9f6988ae82f72aef49ed620044}{Tcp\+::\+Read\+Function}} read\+Function, void $\ast$obj)
+\item 
+bool \mbox{\hyperlink{classSickScanCommonNw_abfa39927ccb5c83796e337f66836b9ca}{connect}} ()
+\begin{DoxyCompactList}\small\item\em Connects to a sensor via tcp and reads the device name. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSickScanCommonNw_a9e6b79e63d6466acb11ca5a2ed101c0b}{is\+Connected}} ()
+\begin{DoxyCompactList}\small\item\em Returns true if the tcp connection is established. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSickScanCommonNw_aa84226c82951f13ebf8d2e8c9267ec80}{disconnect}} ()
+\begin{DoxyCompactList}\small\item\em Closes the connection to the L\+MS. This is the opposite of \mbox{\hyperlink{classSickScanCommonNw_aad606ba082ff81a638ffb6c2d2922754}{init()}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSickScanCommonNw_a75a01b007918dd71fc9adcffc8506653}{send\+Command\+Buffer}} (\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$buffer, \mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}} len)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classSickScanCommonNw_a0b3f86497bab9bd17881fbdfe3598b4b}{get\+Nanosec\+Timestamp\+Last\+Tcp\+Message\+Received}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0a}{State}} \{ \mbox{\hyperlink{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0aa6135e6c6680c6b69e385140ffcbb635c}{C\+O\+N\+S\+T\+R\+U\+C\+T\+ED}}, 
+\mbox{\hyperlink{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0aa3d0468f76394ba56172c8cbfc49df414}{C\+O\+N\+N\+E\+C\+T\+ED}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0a}{State}} \mbox{\hyperlink{classSickScanCommonNw_a217e6d555ee7aac6e059ff708a110aa8}{m\+\_\+state}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for T\+C\+P/\+IP. 
+
+This class provides an interface for T\+C\+P/\+IP communication. It also contains simple methods for accessing the essential contents of the S\+O\+P\+AS message (for example, determining the payload and the S\+O\+P\+AS command used). It based on an example of S\+I\+CK AG.
+
+Doxygen example\+: \href{http://www-numi.fnal.gov/offline_software/srt_public_context/WebDocs/doxygen-howto.html}{\texttt{ http\+://www-\/numi.\+fnal.\+gov/offline\+\_\+software/srt\+\_\+public\+\_\+context/\+Web\+Docs/doxygen-\/howto.\+html}} 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0a}\label{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0a}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!State@{State}}
+\index{State@{State}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0a}{Sick\+Scan\+Common\+Nw\+::\+State}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONSTRUCTED@{CONSTRUCTED}!SickScanCommonNw@{SickScanCommonNw}}\index{SickScanCommonNw@{SickScanCommonNw}!CONSTRUCTED@{CONSTRUCTED}}}\mbox{\Hypertarget{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0aa6135e6c6680c6b69e385140ffcbb635c}\label{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0aa6135e6c6680c6b69e385140ffcbb635c}} 
+C\+O\+N\+S\+T\+R\+U\+C\+T\+ED&Object has been constructed. Use \mbox{\hyperlink{classSickScanCommonNw_aad606ba082ff81a638ffb6c2d2922754}{init()}} to go into C\+O\+N\+N\+E\+C\+T\+ED state. Object is now connected. Use \mbox{\hyperlink{namespacesick__scansegment__xd_a314f6452756cafda2f6fe76b57f9fe61}{run()}} to go into R\+U\+N\+N\+I\+NG state, or \mbox{\hyperlink{classSickScanCommonNw_aa84226c82951f13ebf8d2e8c9267ec80}{disconnect()}} to go back into C\+O\+N\+S\+T\+R\+U\+C\+T\+ED state. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CONNECTED@{CONNECTED}!SickScanCommonNw@{SickScanCommonNw}}\index{SickScanCommonNw@{SickScanCommonNw}!CONNECTED@{CONNECTED}}}\mbox{\Hypertarget{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0aa3d0468f76394ba56172c8cbfc49df414}\label{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0aa3d0468f76394ba56172c8cbfc49df414}} 
+C\+O\+N\+N\+E\+C\+T\+ED&Object is connected and emitting data. Use stop() to go back into C\+O\+N\+N\+E\+C\+T\+ED, or \mbox{\hyperlink{classSickScanCommonNw_aa84226c82951f13ebf8d2e8c9267ec80}{disconnect()}} to go back into C\+O\+N\+S\+T\+R\+U\+C\+T\+ED state. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSickScanCommonNw_ac489e48b3ee70f2d67d6c0647c022775}\label{classSickScanCommonNw_ac489e48b3ee70f2d67d6c0647c022775}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!SickScanCommonNw@{SickScanCommonNw}}
+\index{SickScanCommonNw@{SickScanCommonNw}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{SickScanCommonNw()}{SickScanCommonNw()}}
+{\footnotesize\ttfamily Sick\+Scan\+Common\+Nw\+::\+Sick\+Scan\+Common\+Nw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSickScanCommonNw_a48a00e62f3d19ddf80dcb358393e4018}\label{classSickScanCommonNw_a48a00e62f3d19ddf80dcb358393e4018}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!````~SickScanCommonNw@{$\sim$SickScanCommonNw}}
+\index{````~SickScanCommonNw@{$\sim$SickScanCommonNw}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{$\sim$SickScanCommonNw()}{~SickScanCommonNw()}}
+{\footnotesize\ttfamily Sick\+Scan\+Common\+Nw\+::$\sim$\+Sick\+Scan\+Common\+Nw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSickScanCommonNw_abfa39927ccb5c83796e337f66836b9ca}\label{classSickScanCommonNw_abfa39927ccb5c83796e337f66836b9ca}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!connect@{connect}}
+\index{connect@{connect}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{connect()}{connect()}}
+{\footnotesize\ttfamily bool Sick\+Scan\+Common\+Nw\+::connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Connects to a sensor via tcp and reads the device name. 
+
+\mbox{\Hypertarget{classSickScanCommonNw_aa84226c82951f13ebf8d2e8c9267ec80}\label{classSickScanCommonNw_aa84226c82951f13ebf8d2e8c9267ec80}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!disconnect@{disconnect}}
+\index{disconnect@{disconnect}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{disconnect()}{disconnect()}}
+{\footnotesize\ttfamily bool Sick\+Scan\+Common\+Nw\+::disconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the connection to the L\+MS. This is the opposite of \mbox{\hyperlink{classSickScanCommonNw_aad606ba082ff81a638ffb6c2d2922754}{init()}}. 
+
+Switches this device from the C\+O\+N\+N\+E\+C\+T\+ED state back in the C\+O\+N\+S\+T\+R\+U\+C\+T\+ED state.
+
+\begin{DoxyReturn}{Returns}
+True if the device is now in the C\+O\+N\+S\+T\+R\+U\+C\+T\+ED state 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSickScanCommonNw_a0b3f86497bab9bd17881fbdfe3598b4b}\label{classSickScanCommonNw_a0b3f86497bab9bd17881fbdfe3598b4b}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!getNanosecTimestampLastTcpMessageReceived@{getNanosecTimestampLastTcpMessageReceived}}
+\index{getNanosecTimestampLastTcpMessageReceived@{getNanosecTimestampLastTcpMessageReceived}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{getNanosecTimestampLastTcpMessageReceived()}{getNanosecTimestampLastTcpMessageReceived()}}
+{\footnotesize\ttfamily uint64\+\_\+t Sick\+Scan\+Common\+Nw\+::get\+Nanosec\+Timestamp\+Last\+Tcp\+Message\+Received (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Returns a timestamp in nanoseconds of the last received tcp message (or 0 if no message received) \mbox{\Hypertarget{classSickScanCommonNw_aad606ba082ff81a638ffb6c2d2922754}\label{classSickScanCommonNw_aad606ba082ff81a638ffb6c2d2922754}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!init@{init}}
+\index{init@{init}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool Sick\+Scan\+Common\+Nw\+::init (\begin{DoxyParamCaption}\item[{std\+::string}]{ip\+Address,  }\item[{unsigned short}]{port\+Number,  }\item[{\mbox{\hyperlink{classTcp_a649c232b23d2186c1a723711d2a35d0f}{Tcp\+::\+Disconnect\+Function}}}]{disconnect\+Function,  }\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSickScanCommonNw_a9e6b79e63d6466acb11ca5a2ed101c0b}\label{classSickScanCommonNw_a9e6b79e63d6466acb11ca5a2ed101c0b}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!isConnected@{isConnected}}
+\index{isConnected@{isConnected}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{isConnected()}{isConnected()}}
+{\footnotesize\ttfamily bool Sick\+Scan\+Common\+Nw\+::is\+Connected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Returns true if the tcp connection is established. 
+
+\mbox{\Hypertarget{classSickScanCommonNw_a75a01b007918dd71fc9adcffc8506653}\label{classSickScanCommonNw_a75a01b007918dd71fc9adcffc8506653}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!sendCommandBuffer@{sendCommandBuffer}}
+\index{sendCommandBuffer@{sendCommandBuffer}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{sendCommandBuffer()}{sendCommandBuffer()}}
+{\footnotesize\ttfamily bool Sick\+Scan\+Common\+Nw\+::send\+Command\+Buffer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_af3037cbae2cdbc45fb75983c08b87935}{U\+I\+N\+T8}} $\ast$}]{buffer,  }\item[{\mbox{\hyperlink{BasicDatatypes_8hpp_acbc04026a2008f7c2fccf01718291c20}{U\+I\+N\+T16}}}]{len }\end{DoxyParamCaption})}
+
+Send contents of buffer to scanner using according framing.
+
+Send buffer is limited to 1024 byte! \mbox{\Hypertarget{classSickScanCommonNw_a7fc978cf32b8dc3b68056bbb0f9d2d79}\label{classSickScanCommonNw_a7fc978cf32b8dc3b68056bbb0f9d2d79}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!setReadCallbackFunction@{setReadCallbackFunction}}
+\index{setReadCallbackFunction@{setReadCallbackFunction}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{setReadCallbackFunction()}{setReadCallbackFunction()}}
+{\footnotesize\ttfamily bool Sick\+Scan\+Common\+Nw\+::set\+Read\+Callback\+Function (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTcp_adae4ea9f6988ae82f72aef49ed620044}{Tcp\+::\+Read\+Function}}}]{read\+Function,  }\item[{void $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSickScanCommonNw_a217e6d555ee7aac6e059ff708a110aa8}\label{classSickScanCommonNw_a217e6d555ee7aac6e059ff708a110aa8}} 
+\index{SickScanCommonNw@{SickScanCommonNw}!m\_state@{m\_state}}
+\index{m\_state@{m\_state}!SickScanCommonNw@{SickScanCommonNw}}
+\doxysubsubsection{\texorpdfstring{m\_state}{m\_state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSickScanCommonNw_a8cf87b4fbb06e1ab7c3c539f810ebc0a}{State}} Sick\+Scan\+Common\+Nw\+::m\+\_\+state\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{sick__scan__common__nw_8h}{sick\+\_\+scan\+\_\+common\+\_\+nw.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{sick__scan__common__nw_8cpp}{sick\+\_\+scan\+\_\+common\+\_\+nw.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,94 @@
+\hypertarget{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}{}\doxysection{sick\+\_\+ldmrs\+\_\+driver\+::Diagnosed\+Publish\+Adapter$<$ Diagnosed\+PublisherT $>$ Class Template Reference}
+\label{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}\index{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}}
+
+
+{\ttfamily \#include $<$sick\+\_\+ldmrs\+\_\+driver.\+hpp$>$}
+
+
+
+Inheritance diagram for sick\+\_\+ldmrs\+\_\+driver\+::Diagnosed\+Publish\+Adapter$<$ Diagnosed\+PublisherT $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for sick\+\_\+ldmrs\+\_\+driver\+::Diagnosed\+Publish\+Adapter$<$ Diagnosed\+PublisherT $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Publisher\+Type $>$ }\\\mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a600f965c3a876a3735db9340c9c46121}{Diagnosed\+Publish\+Adapter}} (Publisher\+Type publisher, diagnostic\+\_\+updater\+::\+Updater \&diag, const diagnostic\+\_\+updater\+::\+Frequency\+Status\+Param \&freq, const diagnostic\+\_\+updater\+::\+Time\+Stamp\+Status\+Param \&stamp)
+\item 
+virtual \mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a1cd22c63acb53f12762578f0381c62ae}{$\sim$\+Diagnosed\+Publish\+Adapter}} ()
+\item 
+{\footnotesize template$<$typename Message\+Type $>$ }\\void \mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a0c27025b28caee3413583d524563b911}{publish}} (const std\+::shared\+\_\+ptr$<$ Message\+Type $>$ \&message)
+\item 
+{\footnotesize template$<$typename Message\+Type $>$ }\\void \mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a1d3406b7d98ddb7fbb39d69285fbddc3}{publish}} (const Message\+Type \&message)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Diagnosed\+PublisherT \mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_aa500f3620cdc91e2fe7f7c9f37708dbb}{publisher\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a600f965c3a876a3735db9340c9c46121}\label{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a600f965c3a876a3735db9340c9c46121}} 
+\index{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}!DiagnosedPublishAdapter@{DiagnosedPublishAdapter}}
+\index{DiagnosedPublishAdapter@{DiagnosedPublishAdapter}!sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}}
+\doxysubsubsection{\texorpdfstring{DiagnosedPublishAdapter()}{DiagnosedPublishAdapter()}}
+{\footnotesize\ttfamily template$<$class Diagnosed\+PublisherT $>$ \\
+template$<$typename Publisher\+Type $>$ \\
+\mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}{sick\+\_\+ldmrs\+\_\+driver\+::\+Diagnosed\+Publish\+Adapter}}$<$ Diagnosed\+PublisherT $>$\+::\mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}{Diagnosed\+Publish\+Adapter}} (\begin{DoxyParamCaption}\item[{Publisher\+Type}]{publisher,  }\item[{diagnostic\+\_\+updater\+::\+Updater \&}]{diag,  }\item[{const diagnostic\+\_\+updater\+::\+Frequency\+Status\+Param \&}]{freq,  }\item[{const diagnostic\+\_\+updater\+::\+Time\+Stamp\+Status\+Param \&}]{stamp }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a1cd22c63acb53f12762578f0381c62ae}\label{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a1cd22c63acb53f12762578f0381c62ae}} 
+\index{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}!````~DiagnosedPublishAdapter@{$\sim$DiagnosedPublishAdapter}}
+\index{````~DiagnosedPublishAdapter@{$\sim$DiagnosedPublishAdapter}!sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}}
+\doxysubsubsection{\texorpdfstring{$\sim$DiagnosedPublishAdapter()}{~DiagnosedPublishAdapter()}}
+{\footnotesize\ttfamily template$<$class Diagnosed\+PublisherT $>$ \\
+virtual \mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}{sick\+\_\+ldmrs\+\_\+driver\+::\+Diagnosed\+Publish\+Adapter}}$<$ Diagnosed\+PublisherT $>$\+::$\sim$\mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}{Diagnosed\+Publish\+Adapter}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a1d3406b7d98ddb7fbb39d69285fbddc3}\label{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a1d3406b7d98ddb7fbb39d69285fbddc3}} 
+\index{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}!publish@{publish}}
+\index{publish@{publish}!sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}}
+\doxysubsubsection{\texorpdfstring{publish()}{publish()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class Diagnosed\+PublisherT $>$ \\
+template$<$typename Message\+Type $>$ \\
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}{sick\+\_\+ldmrs\+\_\+driver\+::\+Diagnosed\+Publish\+Adapter}}$<$ Diagnosed\+PublisherT $>$\+::publish (\begin{DoxyParamCaption}\item[{const Message\+Type \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a0c27025b28caee3413583d524563b911}\label{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_a0c27025b28caee3413583d524563b911}} 
+\index{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}!publish@{publish}}
+\index{publish@{publish}!sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}}
+\doxysubsubsection{\texorpdfstring{publish()}{publish()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class Diagnosed\+PublisherT $>$ \\
+template$<$typename Message\+Type $>$ \\
+void \mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}{sick\+\_\+ldmrs\+\_\+driver\+::\+Diagnosed\+Publish\+Adapter}}$<$ Diagnosed\+PublisherT $>$\+::publish (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ Message\+Type $>$ \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_aa500f3620cdc91e2fe7f7c9f37708dbb}\label{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter_aa500f3620cdc91e2fe7f7c9f37708dbb}} 
+\index{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}!publisher\_@{publisher\_}}
+\index{publisher\_@{publisher\_}!sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$@{sick\_ldmrs\_driver::DiagnosedPublishAdapter$<$ DiagnosedPublisherT $>$}}
+\doxysubsubsection{\texorpdfstring{publisher\_}{publisher\_}}
+{\footnotesize\ttfamily template$<$class Diagnosed\+PublisherT $>$ \\
+Diagnosed\+PublisherT \mbox{\hyperlink{classsick__ldmrs__driver_1_1DiagnosedPublishAdapter}{sick\+\_\+ldmrs\+\_\+driver\+::\+Diagnosed\+Publish\+Adapter}}$<$ Diagnosed\+PublisherT $>$\+::publisher\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/ldmrs/\mbox{\hyperlink{sick__ldmrs__driver_8hpp}{sick\+\_\+ldmrs\+\_\+driver.\+hpp}}\end{DoxyCompactItemize}

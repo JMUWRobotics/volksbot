@@ -1,0 +1,117 @@
+\hypertarget{classQueue}{}\doxysection{Queue$<$ T $>$ Class Template Reference}
+\label{classQueue}\index{Queue$<$ T $>$@{Queue$<$ T $>$}}
+
+
+{\ttfamily \#include $<$template\+\_\+queue.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{classQueue_a9d38bcf60f8a3a4d9055b3fd33e24bb2}{get\+Number\+Of\+Entries\+In\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em get number of entries in queue \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classQueue_a427a59d03480f00516d3897acdc8188b}{is\+Queue\+Empty}} ()
+\item 
+bool \mbox{\hyperlink{classQueue_ae3ea1c348c86ce392d1afdaebe8e8dae}{wait\+For\+Incoming\+Object}} (int time\+Out\+In\+Ms, const std\+::vector$<$ std\+::string $>$ \&datagram\+\_\+keywords)
+\item 
+T \mbox{\hyperlink{classQueue_a4fb424b68b0882db6b0f8db646ae5a27}{pop}} (const std\+::vector$<$ std\+::string $>$ \&datagram\+\_\+keywords)
+\item 
+void \mbox{\hyperlink{classQueue_a77ab2e7fdc5666c86bec326671b2157b}{push}} (const T \&item)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classQueue_a85a07ac334e09f94f98b4605ceb6889f}{find\+First\+By\+Keyword}} (const std\+::vector$<$ std\+::string $>$ \&keywords, typename std\+::list$<$ T $>$\+::iterator \&iter)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::list$<$ T $>$ \mbox{\hyperlink{classQueue_a3561840c368ef7833664a590d854589d}{queue\+\_\+}}
+\item 
+std\+::mutex \mbox{\hyperlink{classQueue_ad341bfdf4d075ed6ab4807da10e703cd}{mutex\+\_\+}}
+\item 
+std\+::condition\+\_\+variable \mbox{\hyperlink{classQueue_aeb109ed25687457524a70b03a2584b6d}{cond\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classQueue_a85a07ac334e09f94f98b4605ceb6889f}\label{classQueue_a85a07ac334e09f94f98b4605ceb6889f}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!findFirstByKeyword@{findFirstByKeyword}}
+\index{findFirstByKeyword@{findFirstByKeyword}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{findFirstByKeyword()}{findFirstByKeyword()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::find\+First\+By\+Keyword (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{keywords,  }\item[{typename std\+::list$<$ T $>$\+::iterator \&}]{iter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classQueue_a9d38bcf60f8a3a4d9055b3fd33e24bb2}\label{classQueue_a9d38bcf60f8a3a4d9055b3fd33e24bb2}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!getNumberOfEntriesInQueue@{getNumberOfEntriesInQueue}}
+\index{getNumberOfEntriesInQueue@{getNumberOfEntriesInQueue}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getNumberOfEntriesInQueue()}{getNumberOfEntriesInQueue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+int \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::get\+Number\+Of\+Entries\+In\+Queue (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+get number of entries in queue 
+
+\begin{DoxyReturn}{Returns}
+Number of entries in queue 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{classQueue_a427a59d03480f00516d3897acdc8188b}{is\+Queue\+Empty()}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{classQueue_a427a59d03480f00516d3897acdc8188b}\label{classQueue_a427a59d03480f00516d3897acdc8188b}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!isQueueEmpty@{isQueueEmpty}}
+\index{isQueueEmpty@{isQueueEmpty}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{isQueueEmpty()}{isQueueEmpty()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::is\+Queue\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classQueue_a4fb424b68b0882db6b0f8db646ae5a27}\label{classQueue_a4fb424b68b0882db6b0f8db646ae5a27}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!pop@{pop}}
+\index{pop@{pop}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+T \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::pop (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{datagram\+\_\+keywords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classQueue_a77ab2e7fdc5666c86bec326671b2157b}\label{classQueue_a77ab2e7fdc5666c86bec326671b2157b}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!push@{push}}
+\index{push@{push}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::push (\begin{DoxyParamCaption}\item[{const T \&}]{item }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classQueue_ae3ea1c348c86ce392d1afdaebe8e8dae}\label{classQueue_ae3ea1c348c86ce392d1afdaebe8e8dae}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!waitForIncomingObject@{waitForIncomingObject}}
+\index{waitForIncomingObject@{waitForIncomingObject}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{waitForIncomingObject()}{waitForIncomingObject()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+bool \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::wait\+For\+Incoming\+Object (\begin{DoxyParamCaption}\item[{int}]{time\+Out\+In\+Ms,  }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{datagram\+\_\+keywords }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classQueue_aeb109ed25687457524a70b03a2584b6d}\label{classQueue_aeb109ed25687457524a70b03a2584b6d}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!cond\_@{cond\_}}
+\index{cond\_@{cond\_}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{cond\_}{cond\_}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::condition\+\_\+variable \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::cond\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classQueue_ad341bfdf4d075ed6ab4807da10e703cd}\label{classQueue_ad341bfdf4d075ed6ab4807da10e703cd}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!mutex\_@{mutex\_}}
+\index{mutex\_@{mutex\_}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{mutex\_}{mutex\_}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::mutex \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::mutex\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classQueue_a3561840c368ef7833664a590d854589d}\label{classQueue_a3561840c368ef7833664a590d854589d}} 
+\index{Queue$<$ T $>$@{Queue$<$ T $>$}!queue\_@{queue\_}}
+\index{queue\_@{queue\_}!Queue$<$ T $>$@{Queue$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{queue\_}{queue\_}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::list$<$T$>$ \mbox{\hyperlink{classQueue}{Queue}}$<$ T $>$\+::queue\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{template__queue_8h}{template\+\_\+queue.\+h}}\end{DoxyCompactItemize}

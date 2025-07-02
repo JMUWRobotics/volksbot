@@ -1,0 +1,107 @@
+\hypertarget{sick__scan__logging_8h}{}\doxysection{/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/sick\+\_\+scan\+\_\+logging.h File Reference}
+\label{sick__scan__logging_8h}\index{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/sick\_scan\_logging.h@{/home/nls/SHK\_Arbeit/volksbot/src/sick\_scan\_xd/src/sick\_scan\_xd/include/sick\_scan/sick\_scan\_logging.h}}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}} \{ \newline
+\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}} = 0, 
+\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa74dac7ac23d5b810db6d4067f14e8676}{W\+A\+RN}} = 1, 
+\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa978ddbeadaff5b6acc3fd83666568948}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+\_\+\+E\+R\+R\+OR}} = 2, 
+\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa0cb1b2c6a7db1f1084886c98909a3f36}{I\+N\+IT}} = 3, 
+\newline
+\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa7a10b5d68d31711288e1fe0fa17dbf4f}{E\+X\+IT}} = 4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{sick__scan__logging_8h_a5770d8f3337a6c13c4ba6383cbf88ff4}{vargs\+\_\+to\+\_\+string}} (const char $\ast$const format,...)
+\item 
+void \mbox{\hyperlink{sick__scan__logging_8h_a7e949c74ee05fcc8adfe2c2fa59e781c}{set\+Diagnostic\+Status}} (\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}} status\+\_\+code, const std\+::string \&status\+\_\+message)
+\item 
+void \mbox{\hyperlink{sick__scan__logging_8h_a3aac2f42b33a77c0a8ba40737761c307}{get\+Diagnostic\+Status}} (\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}} \&status\+\_\+code, std\+::string \&status\+\_\+message)
+\item 
+void \mbox{\hyperlink{sick__scan__logging_8h_ac4cdaa0007dd8be090dee18cc782f09d}{notify\+Log\+Message\+Listener}} (int msg\+\_\+level, const std\+::string \&message)
+\item 
+void \mbox{\hyperlink{sick__scan__logging_8h_a0d54fdc41d3a8fee536bd06d39918568}{notify\+Diagnostic\+Listener}} (\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}} status\+\_\+code, const std\+::string \&status\+\_\+message)
+\item 
+void \mbox{\hyperlink{sick__scan__logging_8h_a60bbc29ff6223b3fc91ce88497781073}{set\+Verbose\+Level}} (int32\+\_\+t verbose\+\_\+level)
+\item 
+int32\+\_\+t \mbox{\hyperlink{sick__scan__logging_8h_a20de86a6a01f71dc787c53db7ae30b00}{get\+Verbose\+Level}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}\label{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}} 
+\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!SICK\_DIAGNOSTIC\_STATUS@{SICK\_DIAGNOSTIC\_STATUS}}
+\index{SICK\_DIAGNOSTIC\_STATUS@{SICK\_DIAGNOSTIC\_STATUS}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}
+\doxysubsubsection{\texorpdfstring{SICK\_DIAGNOSTIC\_STATUS}{SICK\_DIAGNOSTIC\_STATUS}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OK@{OK}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!OK@{OK}}}\mbox{\Hypertarget{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa2bc49ec37d6a5715dd23e85f1ff5bb59}\label{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa2bc49ec37d6a5715dd23e85f1ff5bb59}} 
+OK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{WARN@{WARN}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!WARN@{WARN}}}\mbox{\Hypertarget{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa74dac7ac23d5b810db6d4067f14e8676}\label{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa74dac7ac23d5b810db6d4067f14e8676}} 
+W\+A\+RN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SICK\_DIAG\_ERROR@{SICK\_DIAG\_ERROR}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!SICK\_DIAG\_ERROR@{SICK\_DIAG\_ERROR}}}\mbox{\Hypertarget{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa978ddbeadaff5b6acc3fd83666568948}\label{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa978ddbeadaff5b6acc3fd83666568948}} 
+S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+\_\+\+E\+R\+R\+OR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{INIT@{INIT}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!INIT@{INIT}}}\mbox{\Hypertarget{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa0cb1b2c6a7db1f1084886c98909a3f36}\label{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa0cb1b2c6a7db1f1084886c98909a3f36}} 
+I\+N\+IT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXIT@{EXIT}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!EXIT@{EXIT}}}\mbox{\Hypertarget{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa7a10b5d68d31711288e1fe0fa17dbf4f}\label{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bfa7a10b5d68d31711288e1fe0fa17dbf4f}} 
+E\+X\+IT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{sick__scan__logging_8h_a3aac2f42b33a77c0a8ba40737761c307}\label{sick__scan__logging_8h_a3aac2f42b33a77c0a8ba40737761c307}} 
+\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!getDiagnosticStatus@{getDiagnosticStatus}}
+\index{getDiagnosticStatus@{getDiagnosticStatus}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}
+\doxysubsubsection{\texorpdfstring{getDiagnosticStatus()}{getDiagnosticStatus()}}
+{\footnotesize\ttfamily void get\+Diagnostic\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}} \&}]{status\+\_\+code,  }\item[{std\+::string \&}]{status\+\_\+message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__logging_8h_a20de86a6a01f71dc787c53db7ae30b00}\label{sick__scan__logging_8h_a20de86a6a01f71dc787c53db7ae30b00}} 
+\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!getVerboseLevel@{getVerboseLevel}}
+\index{getVerboseLevel@{getVerboseLevel}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}
+\doxysubsubsection{\texorpdfstring{getVerboseLevel()}{getVerboseLevel()}}
+{\footnotesize\ttfamily int32\+\_\+t get\+Verbose\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__logging_8h_a0d54fdc41d3a8fee536bd06d39918568}\label{sick__scan__logging_8h_a0d54fdc41d3a8fee536bd06d39918568}} 
+\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!notifyDiagnosticListener@{notifyDiagnosticListener}}
+\index{notifyDiagnosticListener@{notifyDiagnosticListener}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}
+\doxysubsubsection{\texorpdfstring{notifyDiagnosticListener()}{notifyDiagnosticListener()}}
+{\footnotesize\ttfamily void notify\+Diagnostic\+Listener (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}}}]{status\+\_\+code,  }\item[{const std\+::string \&}]{status\+\_\+message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__logging_8h_ac4cdaa0007dd8be090dee18cc782f09d}\label{sick__scan__logging_8h_ac4cdaa0007dd8be090dee18cc782f09d}} 
+\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!notifyLogMessageListener@{notifyLogMessageListener}}
+\index{notifyLogMessageListener@{notifyLogMessageListener}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}
+\doxysubsubsection{\texorpdfstring{notifyLogMessageListener()}{notifyLogMessageListener()}}
+{\footnotesize\ttfamily void notify\+Log\+Message\+Listener (\begin{DoxyParamCaption}\item[{int}]{msg\+\_\+level,  }\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__logging_8h_a7e949c74ee05fcc8adfe2c2fa59e781c}\label{sick__scan__logging_8h_a7e949c74ee05fcc8adfe2c2fa59e781c}} 
+\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!setDiagnosticStatus@{setDiagnosticStatus}}
+\index{setDiagnosticStatus@{setDiagnosticStatus}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}
+\doxysubsubsection{\texorpdfstring{setDiagnosticStatus()}{setDiagnosticStatus()}}
+{\footnotesize\ttfamily void set\+Diagnostic\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{sick__scan__logging_8h_a3229b7bbf3dabce5a4aa3c42454ff6bf}{S\+I\+C\+K\+\_\+\+D\+I\+A\+G\+N\+O\+S\+T\+I\+C\+\_\+\+S\+T\+A\+T\+US}}}]{status\+\_\+code,  }\item[{const std\+::string \&}]{status\+\_\+message }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__logging_8h_a60bbc29ff6223b3fc91ce88497781073}\label{sick__scan__logging_8h_a60bbc29ff6223b3fc91ce88497781073}} 
+\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!setVerboseLevel@{setVerboseLevel}}
+\index{setVerboseLevel@{setVerboseLevel}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}
+\doxysubsubsection{\texorpdfstring{setVerboseLevel()}{setVerboseLevel()}}
+{\footnotesize\ttfamily void set\+Verbose\+Level (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{verbose\+\_\+level }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{sick__scan__logging_8h_a5770d8f3337a6c13c4ba6383cbf88ff4}\label{sick__scan__logging_8h_a5770d8f3337a6c13c4ba6383cbf88ff4}} 
+\index{sick\_scan\_logging.h@{sick\_scan\_logging.h}!vargs\_to\_string@{vargs\_to\_string}}
+\index{vargs\_to\_string@{vargs\_to\_string}!sick\_scan\_logging.h@{sick\_scan\_logging.h}}
+\doxysubsubsection{\texorpdfstring{vargs\_to\_string()}{vargs\_to\_string()}}
+{\footnotesize\ttfamily std\+::string vargs\+\_\+to\+\_\+string (\begin{DoxyParamCaption}\item[{const char $\ast$const}]{format,  }\item[{}]{... }\end{DoxyParamCaption})}
+

@@ -1,0 +1,62 @@
+\hypertarget{classapi_1_1sick__scan__api_1_1SickScanPointCloudMsg}{}\doxysection{api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Cloud\+Msg Class Reference}
+\label{classapi_1_1sick__scan__api_1_1SickScanPointCloudMsg}\index{api.sick\_scan\_api.SickScanPointCloudMsg@{api.sick\_scan\_api.SickScanPointCloudMsg}}
+
+
+Inheritance diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Cloud\+Msg\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanPointCloudMsg__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for api.\+sick\+\_\+scan\+\_\+api.\+Sick\+Scan\+Point\+Cloud\+Msg\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{classapi_1_1sick__scan__api_1_1SickScanPointCloudMsg__coll__graph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb}sick_scan_api: struct SickScanPointCloudMsg, equivalent to ros::std_msgs::PointCloud2
+SickScanPointCloudMsg contains the polar or cartesian pointcloud data.
+A SickScanPointCloudMsg in cartesian coordinates has fields (x, y, z, intensity).
+A SickScanPointCloudMsg in polar coordinates has fields (range, azimuth, elevation, intensity).
+Note: The pointcloud contains always <num_echos> echos. Invalid echos are filled with 0 values in the data array.
+
+Attributes
+----------
+header : SickScanHeader
+    message timestamp
+height : ctypes.c_uint32
+    2D structure of the point cloud. If the cloud is unordered, height is 1
+width : ctypes.c_uint32
+    and width is the length of the point cloud.
+fields : SickScanPointFieldArray
+    Describes the channels and their layout in the binary data blob.
+is_bigendian : ctypes.c_uint8
+    Is this data bigendian?
+point_step : ctypes.c_uint32
+    Length of a point in bytes
+row_step : ctypes.c_uint32
+    Length of a row in bytes
+data : SickScanUint8Array
+    Actual point data, size is (row_step*height)
+is_dense : ctypes.c_uint8
+    True if there are no invalid points
+num_echos : ctypes.c_int32
+    number of echos
+segment_idx : ctypes.c_int32
+    segment index (or -1 if pointcloud contains data from multiple segments)
+\end{DoxyVerb}
+ ~\newline
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/python/api/\mbox{\hyperlink{sick__scan__api_8py}{sick\+\_\+scan\+\_\+api.\+py}}\end{DoxyCompactItemize}

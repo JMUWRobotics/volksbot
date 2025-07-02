@@ -1,0 +1,112 @@
+\hypertarget{classsick__scansegment__xd_1_1MsgPackThreads}{}\doxysection{sick\+\_\+scansegment\+\_\+xd\+::Msg\+Pack\+Threads Class Reference}
+\label{classsick__scansegment__xd_1_1MsgPackThreads}\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+
+
+{\ttfamily \#include $<$scansegment\+\_\+threads.\+h$>$}
+
+
+
+Collaboration diagram for sick\+\_\+scansegment\+\_\+xd\+::Msg\+Pack\+Threads\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classsick__scansegment__xd_1_1MsgPackThreads__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_a07d7241c00ee657ace87186d5793dff6}{Msg\+Pack\+Threads}} ()
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_a775ff41f527f2c0002e18be5cfdf73fd}{$\sim$\+Msg\+Pack\+Threads}} ()
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_ac58246b4e4da73867be18851216845e7}{start}} (const \mbox{\hyperlink{classsick__scansegment__xd_1_1Config}{sick\+\_\+scansegment\+\_\+xd\+::\+Config}} \&config)
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_ad4d6cda3075760dd6e2d63fa15a21f99}{stop}} (bool do\+\_\+join)
+\item 
+void \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_a864eb06d9af2904b8e3d50b830444aa7}{join}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_a9969e81a17ba488f730ad72ab298776d}{run\+Thread\+Cb}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classsick__scansegment__xd_1_1Config}{sick\+\_\+scansegment\+\_\+xd\+::\+Config}} \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_afcd15a75b568b277d314cfb66c26af55}{m\+\_\+config}}
+\item 
+std\+::thread $\ast$ \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_ad0698ad8a674de8397d91ffaa10dcf79}{m\+\_\+scansegment\+\_\+thread}}
+\item 
+bool \mbox{\hyperlink{classsick__scansegment__xd_1_1MsgPackThreads_a17d3fd03f35ab11c70d9c768395dc0f9}{m\+\_\+run\+\_\+scansegment\+\_\+thread}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_a07d7241c00ee657ace87186d5793dff6}\label{classsick__scansegment__xd_1_1MsgPackThreads_a07d7241c00ee657ace87186d5793dff6}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!MsgPackThreads@{MsgPackThreads}}
+\index{MsgPackThreads@{MsgPackThreads}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{MsgPackThreads()}{MsgPackThreads()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::\+Msg\+Pack\+Threads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_a775ff41f527f2c0002e18be5cfdf73fd}\label{classsick__scansegment__xd_1_1MsgPackThreads_a775ff41f527f2c0002e18be5cfdf73fd}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!````~MsgPackThreads@{$\sim$MsgPackThreads}}
+\index{````~MsgPackThreads@{$\sim$MsgPackThreads}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{$\sim$MsgPackThreads()}{~MsgPackThreads()}}
+{\footnotesize\ttfamily sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::$\sim$\+Msg\+Pack\+Threads (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_a864eb06d9af2904b8e3d50b830444aa7}\label{classsick__scansegment__xd_1_1MsgPackThreads_a864eb06d9af2904b8e3d50b830444aa7}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!join@{join}}
+\index{join@{join}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{join()}{join()}}
+{\footnotesize\ttfamily void sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::join (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_a9969e81a17ba488f730ad72ab298776d}\label{classsick__scansegment__xd_1_1MsgPackThreads_a9969e81a17ba488f730ad72ab298776d}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!runThreadCb@{runThreadCb}}
+\index{runThreadCb@{runThreadCb}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{runThreadCb()}{runThreadCb()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::run\+Thread\+Cb (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_ac58246b4e4da73867be18851216845e7}\label{classsick__scansegment__xd_1_1MsgPackThreads_ac58246b4e4da73867be18851216845e7}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!start@{start}}
+\index{start@{start}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::start (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classsick__scansegment__xd_1_1Config}{sick\+\_\+scansegment\+\_\+xd\+::\+Config}} \&}]{config }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_ad4d6cda3075760dd6e2d63fa15a21f99}\label{classsick__scansegment__xd_1_1MsgPackThreads_ad4d6cda3075760dd6e2d63fa15a21f99}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!stop@{stop}}
+\index{stop@{stop}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::stop (\begin{DoxyParamCaption}\item[{bool}]{do\+\_\+join }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_afcd15a75b568b277d314cfb66c26af55}\label{classsick__scansegment__xd_1_1MsgPackThreads_afcd15a75b568b277d314cfb66c26af55}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!m\_config@{m\_config}}
+\index{m\_config@{m\_config}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{m\_config}{m\_config}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classsick__scansegment__xd_1_1Config}{sick\+\_\+scansegment\+\_\+xd\+::\+Config}} sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::m\+\_\+config\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_a17d3fd03f35ab11c70d9c768395dc0f9}\label{classsick__scansegment__xd_1_1MsgPackThreads_a17d3fd03f35ab11c70d9c768395dc0f9}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!m\_run\_scansegment\_thread@{m\_run\_scansegment\_thread}}
+\index{m\_run\_scansegment\_thread@{m\_run\_scansegment\_thread}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{m\_run\_scansegment\_thread}{m\_run\_scansegment\_thread}}
+{\footnotesize\ttfamily bool sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::m\+\_\+run\+\_\+scansegment\+\_\+thread\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classsick__scansegment__xd_1_1MsgPackThreads_ad0698ad8a674de8397d91ffaa10dcf79}\label{classsick__scansegment__xd_1_1MsgPackThreads_ad0698ad8a674de8397d91ffaa10dcf79}} 
+\index{sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}!m\_scansegment\_thread@{m\_scansegment\_thread}}
+\index{m\_scansegment\_thread@{m\_scansegment\_thread}!sick\_scansegment\_xd::MsgPackThreads@{sick\_scansegment\_xd::MsgPackThreads}}
+\doxysubsubsection{\texorpdfstring{m\_scansegment\_thread}{m\_scansegment\_thread}}
+{\footnotesize\ttfamily std\+::thread$\ast$ sick\+\_\+scansegment\+\_\+xd\+::\+Msg\+Pack\+Threads\+::m\+\_\+scansegment\+\_\+thread\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{scansegment__threads_8h}{scansegment\+\_\+threads.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/sick\+\_\+scansegment\+\_\+xd/\mbox{\hyperlink{scansegment__threads_8cpp}{scansegment\+\_\+threads.\+cpp}}\end{DoxyCompactItemize}

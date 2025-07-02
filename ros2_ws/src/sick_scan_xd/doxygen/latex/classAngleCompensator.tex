@@ -1,0 +1,144 @@
+\hypertarget{classAngleCompensator}{}\doxysection{Angle\+Compensator Class Reference}
+\label{classAngleCompensator}\index{AngleCompensator@{AngleCompensator}}
+
+
+{\ttfamily \#include $<$angle\+\_\+compensator.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classAngleCompensator_a250b445c132f71b8f053209e4369fb20}{compensate\+Angle\+In\+Rad\+From\+Ros}} (double angle\+In\+Rad\+From\+Ros)
+\begin{DoxyCompactList}\small\item\em Compensate raw angle given in \mbox{[}R\+AD\mbox{]} in the R\+OS axis orientation system. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAngleCompensator_ab8b0b357b928d4cf7119144341467a3e}{compensate\+Angle\+In\+Rad}} (double angle\+In\+Rad)
+\begin{DoxyCompactList}\small\item\em Compensate raw angle given in \mbox{[}R\+AD\mbox{]}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classAngleCompensator_a006fc9e6e8b0d889e097c3a547292aa4}{compensate\+Angle\+In\+Deg}} (double angle\+In\+Deg)
+\begin{DoxyCompactList}\small\item\em Compensate raw angle given in \mbox{[}D\+EG\mbox{]}. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAngleCompensator_a061d46fc9285191c7aaa779f4d498b80}{parse\+Ascii\+Reply}} (const char $\ast$ascii\+Reply)
+\begin{DoxyCompactList}\small\item\em Parse A\+S\+C\+II reply. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classAngleCompensator_a4fc31ab09245dcd70b635c65eb619059}{parse\+Reply}} (bool is\+Binary, std\+::vector$<$ unsigned char $>$ \&reply\+Vec)
+\begin{DoxyCompactList}\small\item\em Parse reply of angle compensation values given the command M\+C\+Angle\+Comp\+Sin (see testbed) \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAngleCompensator_a33dce2f2bf8c73cbc7571220577b74f5}{get\+Human\+Readable\+Formula}} (void)
+\item 
+void \mbox{\hyperlink{classAngleCompensator_ab8b35cdfd07dae7bb6fd05dd76380e7d}{testbed}} ()
+\begin{DoxyCompactList}\small\item\em Testbed for angle compensation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAngleCompensator_aef09e0a37e355238c12edcbaa24b24c3}{Angle\+Compensator}} ()
+\item 
+\mbox{\hyperlink{classAngleCompensator_a8e4d4e5143cb181f4bdad02d4a227b4b}{Angle\+Compensator}} (bool \+\_\+use\+Neg\+Sign)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAngleCompensator_aef09e0a37e355238c12edcbaa24b24c3}\label{classAngleCompensator_aef09e0a37e355238c12edcbaa24b24c3}} 
+\index{AngleCompensator@{AngleCompensator}!AngleCompensator@{AngleCompensator}}
+\index{AngleCompensator@{AngleCompensator}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{AngleCompensator()}{AngleCompensator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Angle\+Compensator\+::\+Angle\+Compensator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classAngleCompensator_a8e4d4e5143cb181f4bdad02d4a227b4b}\label{classAngleCompensator_a8e4d4e5143cb181f4bdad02d4a227b4b}} 
+\index{AngleCompensator@{AngleCompensator}!AngleCompensator@{AngleCompensator}}
+\index{AngleCompensator@{AngleCompensator}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{AngleCompensator()}{AngleCompensator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Angle\+Compensator\+::\+Angle\+Compensator (\begin{DoxyParamCaption}\item[{bool}]{\+\_\+use\+Neg\+Sign }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAngleCompensator_a006fc9e6e8b0d889e097c3a547292aa4}\label{classAngleCompensator_a006fc9e6e8b0d889e097c3a547292aa4}} 
+\index{AngleCompensator@{AngleCompensator}!compensateAngleInDeg@{compensateAngleInDeg}}
+\index{compensateAngleInDeg@{compensateAngleInDeg}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{compensateAngleInDeg()}{compensateAngleInDeg()}}
+{\footnotesize\ttfamily double Angle\+Compensator\+::compensate\+Angle\+In\+Deg (\begin{DoxyParamCaption}\item[{double}]{angle\+In\+Deg }\end{DoxyParamCaption})}
+
+
+
+Compensate raw angle given in \mbox{[}D\+EG\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+In\+Deg} & raw angle in \mbox{[}D\+EG\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAngleCompensator_ab8b0b357b928d4cf7119144341467a3e}\label{classAngleCompensator_ab8b0b357b928d4cf7119144341467a3e}} 
+\index{AngleCompensator@{AngleCompensator}!compensateAngleInRad@{compensateAngleInRad}}
+\index{compensateAngleInRad@{compensateAngleInRad}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{compensateAngleInRad()}{compensateAngleInRad()}}
+{\footnotesize\ttfamily double Angle\+Compensator\+::compensate\+Angle\+In\+Rad (\begin{DoxyParamCaption}\item[{double}]{angle\+In\+Rad }\end{DoxyParamCaption})}
+
+
+
+Compensate raw angle given in \mbox{[}R\+AD\mbox{]}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+In\+Rad} & raw angle in \mbox{[}R\+AD\mbox{]} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAngleCompensator_a250b445c132f71b8f053209e4369fb20}\label{classAngleCompensator_a250b445c132f71b8f053209e4369fb20}} 
+\index{AngleCompensator@{AngleCompensator}!compensateAngleInRadFromRos@{compensateAngleInRadFromRos}}
+\index{compensateAngleInRadFromRos@{compensateAngleInRadFromRos}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{compensateAngleInRadFromRos()}{compensateAngleInRadFromRos()}}
+{\footnotesize\ttfamily double Angle\+Compensator\+::compensate\+Angle\+In\+Rad\+From\+Ros (\begin{DoxyParamCaption}\item[{double}]{angle\+In\+Rad\+From\+Ros }\end{DoxyParamCaption})}
+
+
+
+Compensate raw angle given in \mbox{[}R\+AD\mbox{]} in the R\+OS axis orientation system. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle\+In\+Rad} & raw angle in \mbox{[}R\+AD\mbox{]} ( \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAngleCompensator_a33dce2f2bf8c73cbc7571220577b74f5}\label{classAngleCompensator_a33dce2f2bf8c73cbc7571220577b74f5}} 
+\index{AngleCompensator@{AngleCompensator}!getHumanReadableFormula@{getHumanReadableFormula}}
+\index{getHumanReadableFormula@{getHumanReadableFormula}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{getHumanReadableFormula()}{getHumanReadableFormula()}}
+{\footnotesize\ttfamily std\+::string Angle\+Compensator\+::get\+Human\+Readable\+Formula (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classAngleCompensator_a061d46fc9285191c7aaa779f4d498b80}\label{classAngleCompensator_a061d46fc9285191c7aaa779f4d498b80}} 
+\index{AngleCompensator@{AngleCompensator}!parseAsciiReply@{parseAsciiReply}}
+\index{parseAsciiReply@{parseAsciiReply}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{parseAsciiReply()}{parseAsciiReply()}}
+{\footnotesize\ttfamily int Angle\+Compensator\+::parse\+Ascii\+Reply (\begin{DoxyParamCaption}\item[{const char $\ast$}]{reply\+Str }\end{DoxyParamCaption})}
+
+
+
+Parse A\+S\+C\+II reply. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em reply\+Str} & holds reply with the angular compensation information \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAngleCompensator_a4fc31ab09245dcd70b635c65eb619059}\label{classAngleCompensator_a4fc31ab09245dcd70b635c65eb619059}} 
+\index{AngleCompensator@{AngleCompensator}!parseReply@{parseReply}}
+\index{parseReply@{parseReply}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{parseReply()}{parseReply()}}
+{\footnotesize\ttfamily int Angle\+Compensator\+::parse\+Reply (\begin{DoxyParamCaption}\item[{bool}]{is\+Binary,  }\item[{std\+::vector$<$ unsigned char $>$ \&}]{reply\+Vec }\end{DoxyParamCaption})}
+
+
+
+Parse reply of angle compensation values given the command M\+C\+Angle\+Comp\+Sin (see testbed) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is\+Binary} & reply is in binary format (true) or in A\+S\+C\+II format (false) \\
+\hline
+{\em reply\+Vec} & holds received byte array \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classAngleCompensator_ab8b35cdfd07dae7bb6fd05dd76380e7d}\label{classAngleCompensator_ab8b35cdfd07dae7bb6fd05dd76380e7d}} 
+\index{AngleCompensator@{AngleCompensator}!testbed@{testbed}}
+\index{testbed@{testbed}!AngleCompensator@{AngleCompensator}}
+\doxysubsubsection{\texorpdfstring{testbed()}{testbed()}}
+{\footnotesize\ttfamily void Angle\+Compensator\+::testbed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Testbed for angle compensation. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/helper/\mbox{\hyperlink{angle__compensator_8h}{angle\+\_\+compensator.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/helper/\mbox{\hyperlink{angle__compensator_8cpp}{angle\+\_\+compensator.\+cpp}}\end{DoxyCompactItemize}

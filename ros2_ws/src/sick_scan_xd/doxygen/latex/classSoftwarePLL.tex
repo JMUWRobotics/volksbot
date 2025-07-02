@@ -1,0 +1,265 @@
+\hypertarget{classSoftwarePLL}{}\doxysection{Software\+P\+LL Class Reference}
+\label{classSoftwarePLL}\index{SoftwarePLL@{SoftwarePLL}}
+
+
+{\ttfamily \#include $<$software\+P\+L\+L.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSoftwarePLL_a42725659854cad2691dc6f9df917e9c4}{$\sim$\+Software\+P\+LL}} ()
+\item 
+bool \mbox{\hyperlink{classSoftwarePLL_aa56d1656ae046a81e2499f2a2ee98bf2}{push\+Into\+Fifo}} (double cur\+Time\+Stamp, uint32\+\_\+t curtick)
+\item 
+double \mbox{\hyperlink{classSoftwarePLL_af1743af286d6f780cf0757f8b733a63e}{extra\+Polate\+Relative\+Time\+Stamp}} (uint32\+\_\+t tick)
+\item 
+bool \mbox{\hyperlink{classSoftwarePLL_af6ccd75a464a33e8fdb4afd21c97317f}{get\+Corrected\+Time\+Stamp}} (uint32\+\_\+t \&\mbox{\hyperlink{sick__ros__wrapper_8h_addd3f1e47b8cfc76fe2174fb83a0d100}{sec}}, uint32\+\_\+t \&nano\+Sec, uint32\+\_\+t tick)
+\item 
+bool \mbox{\hyperlink{classSoftwarePLL_afdb49aaf5e4e67e0c9a6d8d925c8cf69}{conv\+Systemtime\+To\+Lidar\+Timestamp}} (uint32\+\_\+t systemtime\+\_\+sec, uint32\+\_\+t systemtime\+\_\+nanosec, uint32\+\_\+t \&tick)
+\item 
+bool \mbox{\hyperlink{classSoftwarePLL_afc1eb9fbb4711dda59f159aed8611471}{get\+Demo\+File\+Data}} (std\+::string file\+Name, std\+::vector$<$ uint32\+\_\+t $>$ \&tick\+Vec, std\+::vector$<$ uint32\+\_\+t $>$ \&sec\+Vec, std\+::vector$<$ uint32\+\_\+t $>$ \&nano\+Sec\+Vec)
+\item 
+bool \mbox{\hyperlink{classSoftwarePLL_ab043103fde2ca5d4ecdb4bf82a0569e6}{Is\+Initialized}} () const
+\item 
+void \mbox{\hyperlink{classSoftwarePLL_a3efa5f9b13523520684105e42a856a98}{Is\+Initialized}} (bool val)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{classSoftwarePLL_a74b1d72ec20a7a871321f99840226ddc}{First\+Tick}} () const
+\item 
+void \mbox{\hyperlink{classSoftwarePLL_aa84f0265f597e26bf7142770082c117b}{First\+Tick}} (uint64\+\_\+t val)
+\item 
+double \mbox{\hyperlink{classSoftwarePLL_aa74ec0eb9c47e3113c07f29a1e9f70bd}{First\+Time\+Stamp}} () const
+\item 
+void \mbox{\hyperlink{classSoftwarePLL_aae97478a2f2c7e9298a69a5d65f5d0c5}{First\+Time\+Stamp}} (double val)
+\item 
+double \mbox{\hyperlink{classSoftwarePLL_aaadc795241ace43908bbfbcc6e973b54}{Interpolation\+Slope}} () const
+\item 
+void \mbox{\hyperlink{classSoftwarePLL_a3fa26b63f6af9f2486a0ff68b36bafcf}{Interpolation\+Slope}} (double val)
+\item 
+double \mbox{\hyperlink{classSoftwarePLL_a35523396b5c97946b81f4c98e11ec82d}{Allowed\+Time\+Deviation}} () const
+\item 
+void \mbox{\hyperlink{classSoftwarePLL_a167479be8bf27aa17fb1b5b9703f23b4}{Allowed\+Time\+Deviation}} (double val)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{classSoftwarePLL_a605289c24d969a8064374ac7d94df55b}{Extrapolation\+Divergence\+Counter}} () const
+\item 
+void \mbox{\hyperlink{classSoftwarePLL_a2240a9477bf5f5a5c6c7ee6d3afb0785}{Extrapolation\+Divergence\+Counter}} (uint32\+\_\+t val)
+\item 
+bool \mbox{\hyperlink{classSoftwarePLL_a14950319fbd02fe0387f3bafe99bd86b}{update\+P\+LL}} (uint32\+\_\+t \mbox{\hyperlink{sick__ros__wrapper_8h_addd3f1e47b8cfc76fe2174fb83a0d100}{sec}}, uint32\+\_\+t nano\+Sec, uint32\+\_\+t curtick)
+\begin{DoxyCompactList}\small\item\em Updates P\+LL internale State should be called only with network send timestamps. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classSoftwarePLL_a14359aea8a85b201ca04038ecfb9b65c}{find\+Diff\+In\+Fifo}} (double diff, double tol)
+\item 
+void \mbox{\hyperlink{classSoftwarePLL_a9eea666bb92066af48d5bcf4b18824f8}{set\+Ticks\+To\+Timestamp\+Mode}} (int val)
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classSoftwarePLL}{Software\+P\+LL}} \& \mbox{\hyperlink{classSoftwarePLL_a1df567305c04f1a540008042b0dfa502}{instance}} ()
+\item 
+static void \mbox{\hyperlink{classSoftwarePLL_acb3874b0bea4f102c2046d71af63f7ae}{testbed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classSoftwarePLL_a3ea6fc2e237f7e23c3b3c4e20239f889}{packets\+\_\+dropped}} = 0
+\item 
+size\+\_\+t \mbox{\hyperlink{classSoftwarePLL_a0f3c57a5d18609886eac5c8a488f1233}{packets\+\_\+received}} = 0
+\item 
+double \mbox{\hyperlink{classSoftwarePLL_a70a602811982403bff232bd291f98650}{max\+\_\+abs\+\_\+delta\+\_\+time}} = 0
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \mbox{\hyperlink{classSoftwarePLL_afd2d9e53ae4ce5580c0aaafc1a65a2c2}{fifo\+Size}} = 7
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSoftwarePLL_a42725659854cad2691dc6f9df917e9c4}\label{classSoftwarePLL_a42725659854cad2691dc6f9df917e9c4}} 
+\index{SoftwarePLL@{SoftwarePLL}!````~SoftwarePLL@{$\sim$SoftwarePLL}}
+\index{````~SoftwarePLL@{$\sim$SoftwarePLL}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{$\sim$SoftwarePLL()}{~SoftwarePLL()}}
+{\footnotesize\ttfamily Software\+P\+L\+L\+::$\sim$\+Software\+P\+LL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSoftwarePLL_a35523396b5c97946b81f4c98e11ec82d}\label{classSoftwarePLL_a35523396b5c97946b81f4c98e11ec82d}} 
+\index{SoftwarePLL@{SoftwarePLL}!AllowedTimeDeviation@{AllowedTimeDeviation}}
+\index{AllowedTimeDeviation@{AllowedTimeDeviation}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{AllowedTimeDeviation()}{AllowedTimeDeviation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Software\+P\+L\+L\+::\+Allowed\+Time\+Deviation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_a167479be8bf27aa17fb1b5b9703f23b4}\label{classSoftwarePLL_a167479be8bf27aa17fb1b5b9703f23b4}} 
+\index{SoftwarePLL@{SoftwarePLL}!AllowedTimeDeviation@{AllowedTimeDeviation}}
+\index{AllowedTimeDeviation@{AllowedTimeDeviation}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{AllowedTimeDeviation()}{AllowedTimeDeviation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Software\+P\+L\+L\+::\+Allowed\+Time\+Deviation (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_afdb49aaf5e4e67e0c9a6d8d925c8cf69}\label{classSoftwarePLL_afdb49aaf5e4e67e0c9a6d8d925c8cf69}} 
+\index{SoftwarePLL@{SoftwarePLL}!convSystemtimeToLidarTimestamp@{convSystemtimeToLidarTimestamp}}
+\index{convSystemtimeToLidarTimestamp@{convSystemtimeToLidarTimestamp}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{convSystemtimeToLidarTimestamp()}{convSystemtimeToLidarTimestamp()}}
+{\footnotesize\ttfamily bool Software\+P\+L\+L\+::conv\+Systemtime\+To\+Lidar\+Timestamp (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{systemtime\+\_\+sec,  }\item[{uint32\+\_\+t}]{systemtime\+\_\+nanosec,  }\item[{uint32\+\_\+t \&}]{tick }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSoftwarePLL_af1743af286d6f780cf0757f8b733a63e}\label{classSoftwarePLL_af1743af286d6f780cf0757f8b733a63e}} 
+\index{SoftwarePLL@{SoftwarePLL}!extraPolateRelativeTimeStamp@{extraPolateRelativeTimeStamp}}
+\index{extraPolateRelativeTimeStamp@{extraPolateRelativeTimeStamp}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{extraPolateRelativeTimeStamp()}{extraPolateRelativeTimeStamp()}}
+{\footnotesize\ttfamily double Software\+P\+L\+L\+::extra\+Polate\+Relative\+Time\+Stamp (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{tick }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSoftwarePLL_a605289c24d969a8064374ac7d94df55b}\label{classSoftwarePLL_a605289c24d969a8064374ac7d94df55b}} 
+\index{SoftwarePLL@{SoftwarePLL}!ExtrapolationDivergenceCounter@{ExtrapolationDivergenceCounter}}
+\index{ExtrapolationDivergenceCounter@{ExtrapolationDivergenceCounter}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{ExtrapolationDivergenceCounter()}{ExtrapolationDivergenceCounter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint32\+\_\+t Software\+P\+L\+L\+::\+Extrapolation\+Divergence\+Counter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_a2240a9477bf5f5a5c6c7ee6d3afb0785}\label{classSoftwarePLL_a2240a9477bf5f5a5c6c7ee6d3afb0785}} 
+\index{SoftwarePLL@{SoftwarePLL}!ExtrapolationDivergenceCounter@{ExtrapolationDivergenceCounter}}
+\index{ExtrapolationDivergenceCounter@{ExtrapolationDivergenceCounter}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{ExtrapolationDivergenceCounter()}{ExtrapolationDivergenceCounter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Software\+P\+L\+L\+::\+Extrapolation\+Divergence\+Counter (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_a14359aea8a85b201ca04038ecfb9b65c}\label{classSoftwarePLL_a14359aea8a85b201ca04038ecfb9b65c}} 
+\index{SoftwarePLL@{SoftwarePLL}!findDiffInFifo@{findDiffInFifo}}
+\index{findDiffInFifo@{findDiffInFifo}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{findDiffInFifo()}{findDiffInFifo()}}
+{\footnotesize\ttfamily int Software\+P\+L\+L\+::find\+Diff\+In\+Fifo (\begin{DoxyParamCaption}\item[{double}]{diff,  }\item[{double}]{tol }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSoftwarePLL_a74b1d72ec20a7a871321f99840226ddc}\label{classSoftwarePLL_a74b1d72ec20a7a871321f99840226ddc}} 
+\index{SoftwarePLL@{SoftwarePLL}!FirstTick@{FirstTick}}
+\index{FirstTick@{FirstTick}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{FirstTick()}{FirstTick()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily uint64\+\_\+t Software\+P\+L\+L\+::\+First\+Tick (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_aa84f0265f597e26bf7142770082c117b}\label{classSoftwarePLL_aa84f0265f597e26bf7142770082c117b}} 
+\index{SoftwarePLL@{SoftwarePLL}!FirstTick@{FirstTick}}
+\index{FirstTick@{FirstTick}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{FirstTick()}{FirstTick()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Software\+P\+L\+L\+::\+First\+Tick (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_aa74ec0eb9c47e3113c07f29a1e9f70bd}\label{classSoftwarePLL_aa74ec0eb9c47e3113c07f29a1e9f70bd}} 
+\index{SoftwarePLL@{SoftwarePLL}!FirstTimeStamp@{FirstTimeStamp}}
+\index{FirstTimeStamp@{FirstTimeStamp}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{FirstTimeStamp()}{FirstTimeStamp()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Software\+P\+L\+L\+::\+First\+Time\+Stamp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_aae97478a2f2c7e9298a69a5d65f5d0c5}\label{classSoftwarePLL_aae97478a2f2c7e9298a69a5d65f5d0c5}} 
+\index{SoftwarePLL@{SoftwarePLL}!FirstTimeStamp@{FirstTimeStamp}}
+\index{FirstTimeStamp@{FirstTimeStamp}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{FirstTimeStamp()}{FirstTimeStamp()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Software\+P\+L\+L\+::\+First\+Time\+Stamp (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_af6ccd75a464a33e8fdb4afd21c97317f}\label{classSoftwarePLL_af6ccd75a464a33e8fdb4afd21c97317f}} 
+\index{SoftwarePLL@{SoftwarePLL}!getCorrectedTimeStamp@{getCorrectedTimeStamp}}
+\index{getCorrectedTimeStamp@{getCorrectedTimeStamp}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{getCorrectedTimeStamp()}{getCorrectedTimeStamp()}}
+{\footnotesize\ttfamily bool Software\+P\+L\+L\+::get\+Corrected\+Time\+Stamp (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \&}]{sec,  }\item[{uint32\+\_\+t \&}]{nano\+Sec,  }\item[{uint32\+\_\+t}]{tick }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSoftwarePLL_afc1eb9fbb4711dda59f159aed8611471}\label{classSoftwarePLL_afc1eb9fbb4711dda59f159aed8611471}} 
+\index{SoftwarePLL@{SoftwarePLL}!getDemoFileData@{getDemoFileData}}
+\index{getDemoFileData@{getDemoFileData}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{getDemoFileData()}{getDemoFileData()}}
+{\footnotesize\ttfamily bool Software\+P\+L\+L\+::get\+Demo\+File\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name,  }\item[{std\+::vector$<$ uint32\+\_\+t $>$ \&}]{tick\+Vec,  }\item[{std\+::vector$<$ uint32\+\_\+t $>$ \&}]{sec\+Vec,  }\item[{std\+::vector$<$ uint32\+\_\+t $>$ \&}]{nano\+Sec\+Vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSoftwarePLL_a1df567305c04f1a540008042b0dfa502}\label{classSoftwarePLL_a1df567305c04f1a540008042b0dfa502}} 
+\index{SoftwarePLL@{SoftwarePLL}!instance@{instance}}
+\index{instance@{instance}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classSoftwarePLL}{Software\+P\+LL}}\& Software\+P\+L\+L\+::instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_aaadc795241ace43908bbfbcc6e973b54}\label{classSoftwarePLL_aaadc795241ace43908bbfbcc6e973b54}} 
+\index{SoftwarePLL@{SoftwarePLL}!InterpolationSlope@{InterpolationSlope}}
+\index{InterpolationSlope@{InterpolationSlope}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{InterpolationSlope()}{InterpolationSlope()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double Software\+P\+L\+L\+::\+Interpolation\+Slope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_a3fa26b63f6af9f2486a0ff68b36bafcf}\label{classSoftwarePLL_a3fa26b63f6af9f2486a0ff68b36bafcf}} 
+\index{SoftwarePLL@{SoftwarePLL}!InterpolationSlope@{InterpolationSlope}}
+\index{InterpolationSlope@{InterpolationSlope}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{InterpolationSlope()}{InterpolationSlope()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Software\+P\+L\+L\+::\+Interpolation\+Slope (\begin{DoxyParamCaption}\item[{double}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_ab043103fde2ca5d4ecdb4bf82a0569e6}\label{classSoftwarePLL_ab043103fde2ca5d4ecdb4bf82a0569e6}} 
+\index{SoftwarePLL@{SoftwarePLL}!IsInitialized@{IsInitialized}}
+\index{IsInitialized@{IsInitialized}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{IsInitialized()}{IsInitialized()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Software\+P\+L\+L\+::\+Is\+Initialized (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_a3efa5f9b13523520684105e42a856a98}\label{classSoftwarePLL_a3efa5f9b13523520684105e42a856a98}} 
+\index{SoftwarePLL@{SoftwarePLL}!IsInitialized@{IsInitialized}}
+\index{IsInitialized@{IsInitialized}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{IsInitialized()}{IsInitialized()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Software\+P\+L\+L\+::\+Is\+Initialized (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_aa56d1656ae046a81e2499f2a2ee98bf2}\label{classSoftwarePLL_aa56d1656ae046a81e2499f2a2ee98bf2}} 
+\index{SoftwarePLL@{SoftwarePLL}!pushIntoFifo@{pushIntoFifo}}
+\index{pushIntoFifo@{pushIntoFifo}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{pushIntoFifo()}{pushIntoFifo()}}
+{\footnotesize\ttfamily bool Software\+P\+L\+L\+::push\+Into\+Fifo (\begin{DoxyParamCaption}\item[{double}]{cur\+Time\+Stamp,  }\item[{uint32\+\_\+t}]{curtick }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classSoftwarePLL_a9eea666bb92066af48d5bcf4b18824f8}\label{classSoftwarePLL_a9eea666bb92066af48d5bcf4b18824f8}} 
+\index{SoftwarePLL@{SoftwarePLL}!setTicksToTimestampMode@{setTicksToTimestampMode}}
+\index{setTicksToTimestampMode@{setTicksToTimestampMode}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{setTicksToTimestampMode()}{setTicksToTimestampMode()}}
+{\footnotesize\ttfamily void Software\+P\+L\+L\+::set\+Ticks\+To\+Timestamp\+Mode (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_acb3874b0bea4f102c2046d71af63f7ae}\label{classSoftwarePLL_acb3874b0bea4f102c2046d71af63f7ae}} 
+\index{SoftwarePLL@{SoftwarePLL}!testbed@{testbed}}
+\index{testbed@{testbed}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{testbed()}{testbed()}}
+{\footnotesize\ttfamily void Software\+P\+L\+L\+::testbed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_a14950319fbd02fe0387f3bafe99bd86b}\label{classSoftwarePLL_a14950319fbd02fe0387f3bafe99bd86b}} 
+\index{SoftwarePLL@{SoftwarePLL}!updatePLL@{updatePLL}}
+\index{updatePLL@{updatePLL}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{updatePLL()}{updatePLL()}}
+{\footnotesize\ttfamily bool Software\+P\+L\+L\+::update\+P\+LL (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{sec,  }\item[{uint32\+\_\+t}]{nano\+Sec,  }\item[{uint32\+\_\+t}]{curtick }\end{DoxyParamCaption})}
+
+
+
+Updates P\+LL internale State should be called only with network send timestamps. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sec} & System Timetamp from received network packed \\
+\hline
+{\em nsec} & System Timestamp from received network packed \\
+\hline
+{\em curtick} & micro Seconds since scanner start from S\+O\+P\+AS Datagram \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+P\+LL is in valid state (true) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSoftwarePLL_afd2d9e53ae4ce5580c0aaafc1a65a2c2}\label{classSoftwarePLL_afd2d9e53ae4ce5580c0aaafc1a65a2c2}} 
+\index{SoftwarePLL@{SoftwarePLL}!fifoSize@{fifoSize}}
+\index{fifoSize@{fifoSize}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{fifoSize}{fifoSize}}
+{\footnotesize\ttfamily const int Software\+P\+L\+L\+::fifo\+Size = 7\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classSoftwarePLL_a70a602811982403bff232bd291f98650}\label{classSoftwarePLL_a70a602811982403bff232bd291f98650}} 
+\index{SoftwarePLL@{SoftwarePLL}!max\_abs\_delta\_time@{max\_abs\_delta\_time}}
+\index{max\_abs\_delta\_time@{max\_abs\_delta\_time}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{max\_abs\_delta\_time}{max\_abs\_delta\_time}}
+{\footnotesize\ttfamily double Software\+P\+L\+L\+::max\+\_\+abs\+\_\+delta\+\_\+time = 0}
+
+\mbox{\Hypertarget{classSoftwarePLL_a3ea6fc2e237f7e23c3b3c4e20239f889}\label{classSoftwarePLL_a3ea6fc2e237f7e23c3b3c4e20239f889}} 
+\index{SoftwarePLL@{SoftwarePLL}!packets\_dropped@{packets\_dropped}}
+\index{packets\_dropped@{packets\_dropped}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{packets\_dropped}{packets\_dropped}}
+{\footnotesize\ttfamily size\+\_\+t Software\+P\+L\+L\+::packets\+\_\+dropped = 0}
+
+\mbox{\Hypertarget{classSoftwarePLL_a0f3c57a5d18609886eac5c8a488f1233}\label{classSoftwarePLL_a0f3c57a5d18609886eac5c8a488f1233}} 
+\index{SoftwarePLL@{SoftwarePLL}!packets\_received@{packets\_received}}
+\index{packets\_received@{packets\_received}!SoftwarePLL@{SoftwarePLL}}
+\doxysubsubsection{\texorpdfstring{packets\_received}{packets\_received}}
+{\footnotesize\ttfamily size\+\_\+t Software\+P\+L\+L\+::packets\+\_\+received = 0}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/include/sick\+\_\+scan/\mbox{\hyperlink{softwarePLL_8h}{software\+P\+L\+L.\+h}}\item 
+/home/nls/\+S\+H\+K\+\_\+\+Arbeit/volksbot/src/sick\+\_\+scan\+\_\+xd/src/sick\+\_\+scan\+\_\+xd/driver/src/\mbox{\hyperlink{softwarePLL_8cpp}{software\+P\+L\+L.\+cpp}}\end{DoxyCompactItemize}

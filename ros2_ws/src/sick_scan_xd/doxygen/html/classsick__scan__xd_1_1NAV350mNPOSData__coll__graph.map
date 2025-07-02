@@ -1,0 +1,8 @@
+<map id="sick_scan_xd::NAV350mNPOSData" name="sick_scan_xd::NAV350mNPOSData">
+<area shape="rect" id="node1" title=" " alt="" coords="809,57,1057,84"/>
+<area shape="rect" id="node2" href="$classsick__scan__xd_1_1NAV350RemissionData.html" title=" " alt="" coords="395,7,661,33"/>
+<area shape="rect" id="node3" title=" " alt="" coords="103,7,161,33"/>
+<area shape="rect" id="node4" href="$classsick__scan__xd_1_1NAV350PoseData.html" title=" " alt="" coords="413,57,643,84"/>
+<area shape="rect" id="node5" href="$classsick__scan__xd_1_1NAV350OptPoseData.html" title=" " alt="" coords="5,57,259,84"/>
+<area shape="rect" id="node6" href="$classsick__scan__xd_1_1NAV350LandmarkData.html" title=" " alt="" coords="396,108,660,135"/>
+</map>

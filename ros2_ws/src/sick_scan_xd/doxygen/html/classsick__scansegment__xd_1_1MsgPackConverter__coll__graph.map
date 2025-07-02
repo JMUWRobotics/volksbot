@@ -1,0 +1,10 @@
+<map id="sick_scansegment_xd::MsgPackConverter" name="sick_scansegment_xd::MsgPackConverter">
+<area shape="rect" id="node1" title=" " alt="" coords="868,137,1033,178"/>
+<area shape="rect" id="node2" href="$classsick__scansegment__xd_1_1PayloadFifo.html" title=" " alt="" coords="437,13,602,54"/>
+<area shape="rect" id="node3" href="$classsick__scansegment__xd_1_1Fifo.html" title=" " alt="" coords="5,5,171,61"/>
+<area shape="rect" id="node4" href="$classsick__scansegment__xd_1_1MsgPackValidator.html" title=" " alt="" coords="437,78,602,119"/>
+<area shape="rect" id="node5" href="$classsick__scan__xd_1_1SickCloudTransform.html" title=" " alt="" coords="396,144,643,171"/>
+<area shape="rect" id="node6" title=" " alt="" coords="59,144,117,171"/>
+<area shape="rect" id="node7" href="$classsick__scansegment__xd_1_1ScanSegmentParserConfig.html" title=" " alt="" coords="418,195,621,237"/>
+<area shape="rect" id="node8" href="$classsick__scansegment__xd_1_1Fifo.html" title=" " alt="" coords="398,261,641,317"/>
+</map>
