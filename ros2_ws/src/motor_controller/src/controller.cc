@@ -108,7 +108,7 @@ namespace controller {
 		}
 		
 		std::string mc_name = "";
-		switch( (MCD)rover.motor_controller ) {
+		switch( (MCD::MCD)rover.motor_controller ) {
 			case MCD::VMC:	 active_motor_controller = &mcd_vmc ; mc_name = "VMC"; break;
 			case MCD::EPOS2: active_motor_controller = &mcd_epos; mc_name = "EPOS2"; break;
 

@@ -19,6 +19,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <vector>
 
 // internet libraries
 #include <fcntl.h>
@@ -28,6 +29,8 @@
 #include <netdb.h>
 #include <netinet/in.h>
 #include <netinet/ip_icmp.h>
+
+#include "yaml-cpp/yaml.h"
 
 // ros libraries
 #include <chrono>
@@ -57,10 +60,25 @@ using namespace std::chrono_literals;
 using namespace VB;
 
 //-----------------------------------------------------------------------------
-// GLOBAL ROVER CONFIGURATIONS
+// STATIC STATE VARIABLES FOR BACKEND
 //-----------------------------------------------------------------------------
 
-static constexpr Rover ROVER_DUMMY {
+static std::string PATH_YAML_ROVERS = "src/volksbot/cfg/rovers.yaml";
+
+static constexpr int COUNT_PING_TRIES = 5;
+static constexpr auto TIME_PUB_PERIOD_TICKS = 1min;
+
+static rclcpp::Node::SharedPtr node;
+static rclcpp::Publisher<msg::Rover>::SharedPtr pub_rover;
+static rclcpp::TimerBase::SharedPtr timer;
+
+
+//-----------------------------------------------------------------------------
+// ROVER PARSING AND IMPLEMENTATION
+//-----------------------------------------------------------------------------
+
+// fallback dummy when no rover could be detected
+static const Rover ROVER_DUMMY {
     "Dummy",
     1.00,   // non zero to avoid divide-by-zero exceptions
     1.00,   // non zero to avoid divide-by-zero exceptions
@@ -70,73 +88,79 @@ static constexpr Rover ROVER_DUMMY {
     ip_t( 0xff, 0xff, 0xff, 0xff )
 };
 
-static constexpr Rover ROVER_UTE {
-    "Ute",
-    26.0,
-    50.0,
-    MCD::EPOS2,
-    "USB0",
-    "/dev/EPOS2L",
-    ip_t( 192, 168, 0, 14 )
-};
-
-static constexpr Rover ROVER_LARS {
-    "Lars",
-    25.0,
-    44.0,
-    MCD::VMC,
-    "/dev/VMC",
-    "/dev/VMC",
-    ip_t( 192, 168, 0, 51 )
-};
-
-static constexpr Rover ROVER_IRMA {
-    "Irma",
-    25.0,
-    44.0,
-    MCD::VMC,
-    "/dev/VMC",
-    "/dev/VMC",
-    ip_t( 192, 168, 0, 0 )
-};
-
-static constexpr Rover ROVER_DUMMY2 {
-    "Dummy 2",
-    99.0,
-    99.0,
-    MCD::ERROR,
-    "/dev/tty0",
-    "/dev/tty0",
-    ip_t( 192, 168, 0, 0 )
-};
-
-static constexpr Rover ROVER_DUMMY3 {
-    "Dummy 2",
-    99.0,
-    99.0,
-    MCD::VMC,
-    "/dev/tty1",
-    "/dev/ttyUSB0",
-    ip_t( 8, 8, 8, 8 )
-};
-
-static constexpr Rover ROVERS[] = { ROVER_UTE, ROVER_LARS, ROVER_IRMA, /*REMOVE AFTER TESTING*/ /*ROVER_DUMMY2, ROVER_DUMMY3*/ };
-static constexpr unsigned int rover_count = sizeof(ROVERS) / sizeof(Rover);
-
-
-//-----------------------------------------------------------------------------
-// STATIC STATE VARIABLES FOR BACKEND
-//-----------------------------------------------------------------------------
-
-static constexpr auto TIME_PUB_PERIOD_TICKS = 1min;
-
-static rclcpp::Node::SharedPtr node;
-static rclcpp::Publisher<msg::Rover>::SharedPtr pub_rover;
-static rclcpp::TimerBase::SharedPtr timer;
-
+static std::vector<Rover> rovers;
 static const Rover* active_rover = &ROVER_DUMMY;
 
 
+bool parse_rover( const YAML::Node rover_map, Rover& out_rover ) {
+    if( !rover_map.IsMap() ) {
+        printf( COL(31, "could not parse rover: invalide yaml input\n") );
+        return false;
+    }
+
+    if( !rover_map["name"]                   ||
+        !rover_map["wheel_diameter"]         ||
+        !rover_map["wheel_base"]             ||
+        !rover_map["motor_controller"]       ||
+        !rover_map["motor_controller_port"]  ||
+        !rover_map["udev_symlink"]           ||
+        !rover_map["ip_lms"]                 
+    ) {
+        printf( COL(31, "could not parse rover: not all parameters supplied\n") );
+        return false;
+    }
+
+    std::string name, motor_controller, motor_controller_port, udev_symlink, ip_lms;
+    float wheel_diameter, wheel_base;
+
+    name                  = rover_map["name"]                 .as<std::string>();
+    wheel_diameter        = rover_map["wheel_diameter"]       .as<float>();
+    wheel_base            = rover_map["wheel_base"]           .as<float>();
+    motor_controller      = rover_map["motor_controller"]     .as<std::string>();
+    motor_controller_port = rover_map["motor_controller_port"].as<std::string>();
+    udev_symlink          = rover_map["udev_symlink"]         .as<std::string>();
+    ip_lms                = rover_map["ip_lms"]               .as<std::string>();
+
+    MCD::MCD mcd = MCD::from_string( motor_controller );
+    
+    ip_t ip;
+    if( !ip_t::from_string( ip_lms, ip ) ) { // invalide ipv4
+        return false;
+    }
+
+    out_rover.name                  = name;
+    out_rover.wheel_diameter        = wheel_diameter;
+    out_rover.wheel_base            = wheel_base;
+    out_rover.motor_controller      = mcd;
+    out_rover.motor_controller_port = motor_controller_port;
+    out_rover.udev_symlink          = udev_symlink;
+    out_rover.ip_lms                = ip;
+
+    return true;
+}
+
+void parse_yaml( const std::string& file_path ) {
+    std::vector<YAML::Node> rovs = YAML::LoadAllFromFile( file_path );
+
+    size_t max_name_len = 0;
+    for( const YAML::Node& rov : rovs ) {
+        Rover out;
+        if( parse_rover( rov, out ) ) {
+            max_name_len = out.name.length() > max_name_len ? out.name.length() : max_name_len;
+            rovers.push_back( std::move(out) );
+        }
+    }
+    
+    for( const Rover& rov : rovers ) {
+        printf( "> parsed Rover: " COL(32, "%*s") " (" COL(32, "%s") ", " COL(32, "%s") ")\n",
+            (int)max_name_len, rov.name.c_str(),
+            rov.ip_lms.to_string(3).c_str(),
+            MCD::to_string( rov.motor_controller ).c_str()
+        );
+    }
+
+    printf("\n");
+}
 
 //-----------------------------------------------------------------------------
 // PINGING IMPLEMENTATION
@@ -212,11 +236,10 @@ int ping( const ip_t ip ) {
 
     packet pckt;
     sockaddr_in r_addr;
-    constexpr int max_loop = 10;
-    for( int loop=0; loop < max_loop; loop++ ) {
+    for( int loop=0; loop < COUNT_PING_TRIES; loop++ ) {
         socklen_t len = sizeof(r_addr);
 
-        printf( "ping: %2d / %2d\x1b[13D", loop+1, max_loop );
+        printf( "ping: %2d / %2d\x1b[13D", loop+1, COUNT_PING_TRIES );
         fflush( stdout );
 
         if ( recvfrom(sd, &pckt, sizeof(pckt), 0, (sockaddr*)&r_addr, &len) > 0 ) {
@@ -235,8 +258,10 @@ int ping( const ip_t ip ) {
         pckt.hdr.un.echo.sequence = cnt++;
         pckt.hdr.checksum = checksum(&pckt, sizeof(pckt));
         
-        if ( sendto(sd, &pckt, sizeof(pckt), 0, (sockaddr*)addr, sizeof(*addr)) <= 0 )
-            perror("sendto");
+        if ( sendto(sd, &pckt, sizeof(pckt), 0, (sockaddr*)addr, sizeof(*addr)) <= 0 ) {
+            // use logging instead
+            // perror("sendto");
+        }
 
         usleep(300000);
     }
@@ -250,49 +275,9 @@ int ping( const char *adress ) {
 #define PING_SUCCESSFUL 0
 
 
-
 //-----------------------------------------------------------------------------
 // ROS SPECIFIC IMPLEMENTATIONS
 //-----------------------------------------------------------------------------
-
-/**
- * @brief simple hash function for rovers
- */
-static uint64_t hash( const Rover* rov ) {
-    return (uint64_t)rov->name
-        ^  (uint64_t)rov->wheel_diameter
-        ^  (uint64_t)rov->wheel_base
-        ^  (uint64_t)rov->motor_controller
-        ^  (uint64_t)rov->motor_controller_port
-        ^  (uint64_t)rov->ip_lms.raw;
-}
-
-
-/**
- * @brief publishes the active rover over the rover topic
- * 
- * @param rover rover to be published
- * @param pub publisher to publish on
- */
-static void publish_rover( const Rover* rover, rclcpp::Publisher<msg::Rover>::SharedPtr pub ) {
-    msg::Rover rov;
-
-    rov.is_valid = hash( rover ) != hash( &ROVER_DUMMY );
-
-    rov.name = rover->name;
-    
-    rov.wheel_diameter = rover->wheel_diameter;
-    rov.wheel_base = rover->wheel_base;
-    
-    rov.motor_controller = rover->motor_controller;
-    rov.motor_controller_port = rover->motor_controller_port;
-
-    rov.udev_symlink = rover->udev_symlink;
-    
-    rov.ip_lms = rover->ip_lms.raw;
-
-    pub->publish( rov );
-}
 
 /**
  * @brief finds best matching rover configuration by regarding the mapped udev ports and static lms ips
@@ -301,75 +286,89 @@ static void publish_rover( const Rover* rover, rclcpp::Publisher<msg::Rover>::Sh
  * @return false if the rover configuration is unchanged
  */
 bool find_rover() {
+    #define CVAR 35
+
     uint64_t current_hash = hash(active_rover);
 
-    uint matches[rover_count];
-    bzero( matches, sizeof(matches) );
+    std::vector<uint> matches;
+    matches.reserve( rovers.size() );
     
-    // setup formatting specifiers
+
+    // setup formatting specifiers --------------------------------------------
     constexpr int str_len_ip = sizeof( "xxx.xxx.xxx.xxx" )-1;
     int max_name_len = 0, max_port_len = str_len_ip;
-    for( uint i=0; i < rover_count; i++ ) {
-        int name_len = strnlen( ROVERS[i].name, 64 );
+    for( uint i=0; i < rovers.size(); i++ ) {
+        int name_len = rovers[i].name.length();
         if( name_len > max_name_len )
             max_name_len = name_len;
 
-        int port_len = strnlen( ROVERS[i].udev_symlink, 64 );
+        int port_len = rovers[i].udev_symlink.length();
         if( port_len > max_port_len )
             max_port_len = port_len;
     }
     
+    static bool first_execution = true;
+    if( !first_execution ) {
+        // jump back up, so that we overwrite the table on the next look up round
+        printf( "\x1b[%ldF", 1+2*rovers.size() + 1+rovers.size()+3 );
+        printf( "\x1b[0J" ); // clear from cursor to end of screen
+    }
+    first_execution = false;
 
-    #define CVAR 35
     printf( "============================================================\n" );
     
-    // preprint table
-    for( uint i=0; i < rover_count; i++ ) {
+
+    // preprint table ---------------------------------------------------------
+    for( uint i=0; i < rovers.size(); i++ ) {
         printf( "[" COL(CVAR, "%*s") "] udev port (" COL(CVAR, "%-*s") "): %*s\n",
-            max_name_len, ROVERS[i].name,
-            max_port_len, ROVERS[i].udev_symlink,
+            max_name_len, rovers[i].name.c_str(),
+            max_port_len, rovers[i].udev_symlink.c_str(),
             SIZE_FORMAT,
             COL(90, "...unknown...")
         );
 
         printf( "[" COL(CVAR, "%*s") "]        ip (" COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "%*s): %*s\n",
-            max_name_len, ROVERS[i].name,
-            ROVERS[i].ip_lms.ip.hh, 
-            ROVERS[i].ip_lms.ip.hl, 
-            ROVERS[i].ip_lms.ip.lh, 
-            ROVERS[i].ip_lms.ip.ll,
+            max_name_len, rovers[i].name.c_str(),
+            rovers[i].ip_lms.ip.hh, 
+            rovers[i].ip_lms.ip.hl, 
+            rovers[i].ip_lms.ip.lh, 
+            rovers[i].ip_lms.ip.ll,
             MAX(0, max_port_len - str_len_ip),
             "",
             SIZE_FORMAT,
             COL(90, "...unknown...")
         );
     }
-    printf( "\x1b[%dF", 2*rover_count ); // jump back up
+    printf( "\x1b[%ldF", 2*rovers.size() ); // jump back up
     
-    for( uint i=0; i < rover_count; i++ ) {
+
+    // main search ------------------------------------------------------------
+    for( uint i=0; i < rovers.size(); i++ ) {
+        matches[i] = 0;
+
         // search ports
-        bool port = access( ROVERS[i].udev_symlink, F_OK ) == ACCESS_PERMITTED;
+        bool port = access( rovers[i].udev_symlink.c_str(), F_OK ) == ACCESS_PERMITTED;
         if( port ) {
             matches[i]++;
         }
         printf( "[" COL(CVAR, "%*s") "] udev port (" COL(CVAR, "%-*s") "): %*s\n",
-            max_name_len, ROVERS[i].name,
-            max_port_len, ROVERS[i].udev_symlink,
+            max_name_len, rovers[i].name.c_str(),
+            max_port_len, rovers[i].udev_symlink.c_str(),
             SIZE_FORMAT,
             port ? S_AVAIL : S_NOT_AVAIL
         );
 
         // search ips
         printf( "[" COL(CVAR, "%*s") "]        ip (" COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "%*s): ",
-            max_name_len, ROVERS[i].name,
-            ROVERS[i].ip_lms.ip.hh, 
-            ROVERS[i].ip_lms.ip.hl, 
-            ROVERS[i].ip_lms.ip.lh, 
-            ROVERS[i].ip_lms.ip.ll,
+            max_name_len, rovers[i].name.c_str(),
+            rovers[i].ip_lms.ip.hh, 
+            rovers[i].ip_lms.ip.hl, 
+            rovers[i].ip_lms.ip.lh, 
+            rovers[i].ip_lms.ip.ll,
             MAX(0, max_port_len - str_len_ip),
             ""
         );
-        if( ping( ROVERS[i].ip_lms ) == PING_SUCCESSFUL ) {
+        if( ping( rovers[i].ip_lms ) == PING_SUCCESSFUL ) {
             matches[i]++;
         }
     }
@@ -379,8 +378,8 @@ bool find_rover() {
     printf( "\n----------------------------------------\n" );
     int best_index = -1;
     uint best_match = 0;
-    for( uint i=0; i < rover_count; i++) {
-        printf( "[" COL(CVAR, "%*s") "] matches: " COL(CVAR, "%d") "\n", max_name_len, ROVERS[i].name, matches[i] );
+    for( uint i=0; i < rovers.size(); i++) {
+        printf( "[" COL(CVAR, "%*s") "] matches: " COL(CVAR, "%d") "\n", max_name_len, rovers[i].name.c_str(), matches[i] );
         if( matches[i] > best_match ) {
             best_index = i;
             best_match = matches[i];
@@ -388,22 +387,22 @@ bool find_rover() {
     }
 
     // manage selected
-    printf( "\nRover:   \x1b[3%cm%s\x1b[0m\n",
-        best_index == -1 ? '1' : '2',
-        best_index == -1 ? "NOT FOUND" : ROVERS[best_index].name
-    );
-
-    active_rover = best_index == -1 ? &ROVER_DUMMY : &ROVERS[best_index];
-    
+    active_rover = best_index == -1 ? &ROVER_DUMMY : &rovers[best_index];
     bool changed = hash(active_rover) != current_hash;
-    printf( "Updated: %s\n\n", changed ? COL(103;30, "NEW ROVER") : "not changed" );
+
+    printf( "\nRover:   \x1b[3%cm%*s\x1b[0m    %s\n",
+        best_index == -1 ? '1' : '2',
+        max_name_len, best_index == -1 ? "NOT FOUND" : rovers[best_index].name.c_str(),
+        changed ? COL(103;30, " NEW ROVER ") : COL(90, "not changed")
+    );
 
     return changed;
 }
 
 void find_and_publish() {
     if( find_rover() ) {
-        publish_rover( active_rover, pub_rover );
+        VB::msg::Rover rov = to_message( *active_rover, hash( active_rover ) != hash( &ROVER_DUMMY ) );
+        pub_rover->publish( rov );
     }
 }
 
@@ -416,6 +415,9 @@ int main(int argc, char* argv[]) {
         exit(0);
     });
     
+    printf( "\x1b[2J\x1b[1;1H" ); // clear screen
+    parse_yaml( PATH_YAML_ROVERS );
+
     rclcpp::init(argc, argv);
     
     node = std::make_shared<rclcpp::Node>("volksbot_rover");
@@ -436,7 +438,6 @@ int main(int argc, char* argv[]) {
         
     //     return 0;
     // }
-
 
     return 0;
 }

@@ -1,0 +1,50 @@
+# This file is searched by volksbot program to find the connected rover configuration
+
+---
+name:                   Ute
+wheel_diameter:         26.0
+wheel_base:             50.0
+motor_controller:       EPOS2
+motor_controller_port:  USB0
+udev_symlink:           /dev/EPOS2L
+ip_lms:                 192.168.0.14
+
+---
+name:                   Lars
+wheel_diameter:         25.0
+wheel_base:             44.0
+motor_controller:       VMC
+motor_controller_port:  /dev/VMC
+udev_symlink:           /dev/VMC
+ip_lms:                 192.168.0.51
+
+---
+name:                   Irma
+wheel_diameter:         25.0
+wheel_base:             44.0
+motor_controller:       VMC
+motor_controller_port:  /dev/VMC
+udev_symlink:           /dev/VMC
+ip_lms:                 192.168.0.0
+
+
+# ---
+# #! dummy for internal testing 
+# name:                   Dummy 1
+# wheel_diameter:         99.0
+# wheel_base:             99.0
+# motor_controller:       ERROR
+# motor_controller_port:  /dev/tty0
+# udev_symlink:           /dev/tty0
+# ip_lms:                 192.168.0.0
+
+# ---
+# #! dummy for internal testing 
+# name:                   Dummy 2
+# wheel_diameter:         99.0
+# wheel_base:             99.0
+# motor_controller:       VMC
+# motor_controller_port:  /dev/tty1
+# udev_symlink:           /dev/ttyUSB0
+# ip_lms:                 8.8.8.8
+
