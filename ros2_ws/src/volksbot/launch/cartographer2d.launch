@@ -23,7 +23,7 @@
 
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
-          -configuration_directory $(find volksbot)/launch
+          -configuration_directory $(find volksbot)/config
           -configuration_basename cartographer2d.lua"
       output="screen">
     <!--remap from="/echoes" to="/scan" /-->
