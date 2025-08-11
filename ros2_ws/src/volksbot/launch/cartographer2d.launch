@@ -26,7 +26,7 @@
           -configuration_directory $(find volksbot)/config
           -configuration_basename cartographer2d.lua"
       output="screen">
-    <!--remap from="/echoes" to="/scan" /-->
+    <remap from="/echoes" to="/LMS">
   </node>
 
   <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
