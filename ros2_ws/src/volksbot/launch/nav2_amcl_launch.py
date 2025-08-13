@@ -47,7 +47,10 @@ def generate_launch_description():
         executable='map_server',
         name='map_server',
         output='screen',
-        parameters=[{'yaml_filename': map_file}],
+        parameters=[
+            {'yaml_filename': map_file},
+            {'use_sim_time': False}
+        ],
         arguments=['--ros-args', '--log-level', log_level]
     )
     # AMCL Node
@@ -56,7 +59,10 @@ def generate_launch_description():
         executable='amcl',
         name='amcl',
         output='screen',
-        parameters=[params_rovers, amcl_config],
+        parameters=[
+            params_rovers, amcl_config,
+            {'use_sim_time': False}
+        ],
         remappings=[('scan', '/LMS')],
         arguments=['--ros-args', '--log-level', log_level]
     )
@@ -68,7 +74,8 @@ def generate_launch_description():
         output='screen',
         parameters=[{
             'autostart': True,
-            'node_names': lifecycle_nodes
+            'node_names': lifecycle_nodes,
+            'use_sim_time': False
         }],
         arguments=['--ros-args', '--log-level', log_level]
     )
