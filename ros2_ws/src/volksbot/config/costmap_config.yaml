@@ -1,0 +1,125 @@
+# -----------
+# Used parameters from ROS volksbot params files
+# -----------
+
+# hosts global costmap
+planner_server:
+  ros__parameters:
+    use_sim_time: false
+    planner_plugins: ["GridBased"]
+    GridBased:
+      plugin: "nav2_navfn_planner/NavfnPlanner"
+
+# hosts local costmap
+controller_server:
+  ros__parameters:
+    use_sim_time: false
+    controller_frequency: 15.0
+    goal_checker_plugins: ["goal_checker"]
+    controller_plugins: ["FollowPath"]
+    
+    goal_checker:
+      plugin: "nav2_controller::SimpleGoalChecker"
+      xy_goal_tolerance: 0.15
+      yaw_goal_tolerance: 0.175
+      stateful: True
+    
+    FollowPath:
+      plugin: "dwb_core::DWBLocalPlanner"
+      debug_trajectory_details: true
+      min_vel_x: 0.2
+      max_vel_x: 0.8
+      max_vel_theta: 0.8
+      min_speed_theta: 0.3
+      acc_lim_x: 0.8
+      acc_lim_y: 0.0
+      acc_lim_theta: 0.5
+      xy_goal_tolerance: 0.15
+      GoalAlign.scale: 0.0
+      stateful: True
+
+# local costmap: weighted map with obstacles around robot
+local_costmap:
+  ros__parameters:
+    update_frequency: 2.0
+    publish_frequency: 2.0
+    global_frame: odom_combined
+    robot_base_frame: base_link
+    use_sim_time: false
+    rolling_window: true
+    width: 8.0
+    height: 8.0
+    resolution: 0.05
+    footprint: [[0.17, 0.27], [-0.15, 0.27], [-0.48, 0.17], [-0.48, -0.17], [-0.15, -0.27], [0.17, -0.27]]
+
+    plugins: ["obstacle_layer", "inflation_layer"]
+
+    obstacle_layer:
+      plugin: "nav2_costmap_2d::ObstacleLayer"
+      enabled: true
+      observation_sources: laser_scan_sensor
+      laser_scan_sensor:
+        topic: LMS
+        sensor_frame: front_laser
+        data_type: "LaserScan"
+        clearing: true
+        marking: true
+        obstacle_max_range: 4.0
+        obstacle_min_range: 0.0
+        raytrace_max_range: 4.0
+        raytrace_min_range: 0.0
+
+    inflation_layer:
+      plugin: "nav2_costmap_2d::InflationLayer"
+      enabled: true
+      inflation_radius: 0.5
+
+    always_send_full_costmap: true
+
+# global costmap: whole weighted map (costs) with obstacles
+global_costmap:
+  ros__parameters:
+    update_frequency: 0.5
+    publish_frequency: 0.5
+    global_frame: map
+    robot_base_frame: base_link
+    use_sim_time: false
+    rolling_window: false
+    width: 60.0
+    height: 60.0
+    resolution: 0.10
+    footprint: [[0.17, 0.27], [-0.15, 0.27], [-0.48, 0.17], [-0.48, -0.17], [-0.15, -0.27], [0.17, -0.27]]
+
+    plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+
+    static_layer:
+      plugin: "nav2_costmap_2d::StaticLayer"
+      enabled: true
+
+    obstacle_layer:
+      plugin: "nav2_costmap_2d::ObstacleLayer"
+      enabled: true
+      observation_sources: laser_scan_sensor
+      laser_scan_sensor:
+        topic: LMS
+        sensor_frame: front_laser
+        data_type: "LaserScan"
+        clearing: true
+        marking: true
+        obstacle_max_range: 4.0
+        obstacle_min_range: 0.0
+        raytrace_max_range: 4.0
+        raytrace_min_range: 0.0
+
+    inflation_layer:
+      plugin: "nav2_costmap_2d::InflationLayer"
+      enabled: true
+      inflation_radius: 0.5
+
+    always_send_full_costmap: true
+
+# uses planner_server and controller_server to navigate based on behaviour tree
+bt_navigator:
+  ros__parameters:
+    use_sim_time: false
+    default_nav_to_pose_bt_xml: "$(find-pkg-share my_package)/behavior_tree/navigate_to_pose_w_replanning_and_recovery.xml"
