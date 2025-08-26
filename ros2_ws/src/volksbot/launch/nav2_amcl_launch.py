@@ -11,7 +11,8 @@ def generate_launch_description():
     volksbot_dir = get_package_share_directory('volksbot')
 
     # first bringup map_server then amcl
-    lifecycle_nodes = ['controller_server', 'planner_server', 'bt_navigator', 'map_server', 'amcl']
+    # lifecycle_nodes = ['controller_server', 'planner_server', 'bt_navigator', 'map_server', 'amcl']
+    lifecycle_nodes = ['controller_server', 'planner_server', 'map_server', 'amcl']
 
     # define launch arguments as variables
     params_rovers = LaunchConfiguration('params_rovers')
@@ -88,14 +89,15 @@ def generate_launch_description():
         arguments=['--ros-args', '--log-level', log_level]
     )
     # Behaviour Tree Navigation Node
-    bt_navigation_node = Node(
-        package='nav2_bt_navigator',
-        executable='bt_navigator',
-        name='bt_navigator',
-        output='screen',
-        parameters=[params_rovers, costmap_config],
-        arguments=['--ros-args', '--log-level', log_level]
-    )
+    # bt_navigation_node = Node(
+    #     package='nav2_bt_navigator',
+    #     executable='bt_navigator',
+    #     name='bt_navigator',
+    #     output='screen',
+    #     parameters=[params_rovers, costmap_config],
+    #     arguments=['--ros-args', '--log-level', log_level]
+    # )
+
     # Lifecycle Manager Node: controls states of other nav2 nodes
     lifecycle_manager_node = Node(
         package='nav2_lifecycle_manager',
@@ -124,7 +126,7 @@ def generate_launch_description():
         # launch the nodes
         planner_server_node,
         controller_server_node,
-        bt_navigation_node,
+        # bt_navigation_node,
         map_server_node,
         amcl_node,
         lifecycle_manager_node
