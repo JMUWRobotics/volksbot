@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 #include <stdint.h>
+#include <cstddef>
 
 #include <string>
 #include <linux/input.h>
