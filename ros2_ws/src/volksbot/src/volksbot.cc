@@ -63,7 +63,7 @@ using namespace VB;
 // STATIC STATE VARIABLES FOR BACKEND
 //-----------------------------------------------------------------------------
 
-static std::string PATH_YAML_ROVERS = "src/volksbot/cfg/rovers.yaml";
+static std::string PATH_YAML_ROVERS = "src/volksbot/config/rovers.yaml";
 
 static constexpr int COUNT_PING_TRIES = 5;
 static constexpr auto TIME_PUB_PERIOD_TICKS = 1min;

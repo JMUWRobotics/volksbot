@@ -15,20 +15,31 @@
 -->
 
 <launch>
-  <!-- param name="robot_description"
-    textfile="$(find cartographer_ros)/urdf/backpack_2d.urdf" /-->
 
-  <node name="robot_state_publisher" pkg="robot_state_publisher"
-    type="robot_state_publisher" />
+  <!-- node 
+    pkg="robot_state_publisher"
+    exec="robot_state_publisher" 
+    name="robot_state_publisher">
+      <param
+        name="robot_description"
+        command="$(find-pkg-share cartographer_ros)/urdf/backpack_2d.urdf" />
+  </node -->
 
-  <node name="cartographer_node" pkg="cartographer_ros"
-      type="cartographer_node" args="
-          -configuration_directory $(find volksbot)/config
-          -configuration_basename cartographer2d.lua"
-      output="screen">
-    <remap from="/echoes" to="/LMS">
+  <node 
+    pkg="cartographer_ros"
+    exec="cartographer_node"
+    name="cartographer_node" 
+    output="screen"
+    args="
+      -configuration_directory $(find-pkg-share volksbot)/config
+      -configuration_basename cartographer2d.lua">
+    <!-- remap from="/echoes" to="/LMS" -->
   </node>
 
-  <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
-      type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+  <node 
+    pkg="cartographer_ros"
+    exec="cartographer_occupancy_grid_node"
+    name="cartographer_occupancy_grid_node" 
+    args="-resolution 0.05" />
+
 </launch>
