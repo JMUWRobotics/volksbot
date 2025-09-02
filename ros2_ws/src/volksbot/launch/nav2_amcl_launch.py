@@ -10,47 +10,42 @@ def generate_launch_description():
 
     volksbot_dir = get_package_share_directory('volksbot')
 
-    # paths to config files
-    rovers_config_path = os.path.join(volksbot_dir, 'config', 'rovers.yaml')
-    amcl_config_path = os.path.join(volksbot_dir, 'config', 'amcl_config.yaml')
-    costmap_config_path = os.path.join(volksbot_dir, 'config', 'amcl_config.yaml')
-
     # lifecycle_nodes = ['controller_server', 'planner_server', 'bt_navigator', 'map_server', 'amcl']
     lifecycle_nodes = ['controller_server', 'planner_server', 'map_server', 'amcl']
 
     # define launch arguments as variables
     map_config = LaunchConfiguration('map')
-    log_level = LaunchConfiguration('log_level')
     # params_rovers = LaunchConfiguration('params_rovers')
-    # amcl_config = LaunchConfiguration('amcl_config')
-    # costmap_config = LaunchConfiguration('costmap_config')
-
+    amcl_config = LaunchConfiguration('amcl_config')
+    costmap_config = LaunchConfiguration('costmap_config')
+    log_level = LaunchConfiguration('log_level')
+    
     # declare launch arguments
     declare_map_config_cmd = DeclareLaunchArgument(
         'map',
-        default_value=os.path.join(volksbot_dir, 'config', 'map_hallyway.yaml'),
+        default_value=os.path.join(volksbot_dir, 'config', 'map.yaml'),
         description='Path to map.yaml file, change to select desired map.'
-    )
-    declare_log_level_cmd = DeclareLaunchArgument(
-        'log_level',
-        default_value='info',
-        description='Sets logging level meaning which messages are printed on console'
     )
     # declare_params_rovers_cmd = DeclareLaunchArgument(
     #     'params_rovers',
     #     default_value=os.path.join(volksbot_dir, 'config', 'rovers.yaml'),
     #     description='Path to the parameters file for the different rovers.'
     # )
-    # declare_amcl_config_cmd = DeclareLaunchArgument(
-    #     'amcl_config',
-    #     default_value=os.path.join(volksbot_dir, 'config', 'amcl_config.yaml'),
-    #     description='Path to the AMCL config file.'
-    # )
-    # declare_costmap_config_cmd = DeclareLaunchArgument(
-    #     'costmap_config',
-    #     default_value=os.path.join(volksbot_dir, 'config', 'costmap_config.yaml'),
-    #     description='Path to the costmap config file with the local/global costmap and the bt_navigator.'
-    # )
+    declare_amcl_config_cmd = DeclareLaunchArgument(
+        'amcl_config',
+        default_value=os.path.join(volksbot_dir, 'config', 'amcl_config.yaml'),
+        description='Path to the AMCL config file.'
+    )
+    declare_costmap_config_cmd = DeclareLaunchArgument(
+        'costmap_config',
+        default_value=os.path.join(volksbot_dir, 'config', 'costmap_config.yaml'),
+        description='Path to the costmap config file with the local/global costmap and the bt_navigator.'
+    )
+    declare_log_level_cmd = DeclareLaunchArgument(
+        'log_level',
+        default_value='info',
+        description='Sets logging level meaning which messages are printed on console'
+    )
 
 
     # Map Server Node
@@ -71,7 +66,7 @@ def generate_launch_description():
         executable='amcl',
         name='amcl',
         output='screen',
-        parameters=[rovers_config_path, amcl_config_path],
+        parameters=[amcl_config],
         remappings=[('scan', '/LMS')],
         arguments=['--ros-args', '--log-level', log_level]
     )
@@ -81,7 +76,7 @@ def generate_launch_description():
         executable='planner_server',
         name='planner_server',
         output='screen',
-        parameters=[rovers_config_path, costmap_config_path],
+        parameters=[costmap_config],
         arguments=['--ros-args', '--log-level', log_level]
     )
     # Controller Server Node
@@ -90,7 +85,7 @@ def generate_launch_description():
         executable='controller_server',
         name='controller_server',
         output='screen',
-        parameters=[rovers_config_path, costmap_config_path],
+        parameters=[costmap_config],
         arguments=['--ros-args', '--log-level', log_level]
     )
     # Behaviour Tree Navigation Node
@@ -123,10 +118,11 @@ def generate_launch_description():
 
         # launch the cmds
         declare_map_config_cmd,
-        declare_log_level_cmd,
         # declare_params_rovers_cmd,
-        # declare_amcl_config_cmd,
-        # declare_costmap_config_cmd,
+        declare_amcl_config_cmd,
+        declare_costmap_config_cmd,
+        declare_log_level_cmd,
+
         
 
         # launch the nodes

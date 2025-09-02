@@ -22,7 +22,7 @@ controller_server:
       plugin: "nav2_controller::SimpleGoalChecker"
       xy_goal_tolerance: 0.15
       yaw_goal_tolerance: 0.175
-      stateful: True
+      stateful: true
     
     FollowPath:
       plugin: "dwb_core::DWBLocalPlanner"
@@ -36,7 +36,8 @@ controller_server:
       acc_lim_theta: 0.5
       xy_goal_tolerance: 0.15
       GoalAlign.scale: 0.0
-      stateful: True
+      stateful: true
+      critics: ["PathAlign"]
 
 # local costmap: weighted map with obstacles around robot
 local_costmap:
@@ -50,7 +51,7 @@ local_costmap:
     width: 8.0
     height: 8.0
     resolution: 0.05
-    footprint: [[0.17, 0.27], [-0.15, 0.27], [-0.48, 0.17], [-0.48, -0.17], [-0.15, -0.27], [0.17, -0.27]]
+    footprint: "[[0.17, 0.27], [-0.15, 0.27], [-0.48, 0.17], [-0.48, -0.17], [-0.15, -0.27], [0.17, -0.27]]" 
 
     plugins: ["obstacle_layer", "inflation_layer"]
 
@@ -88,7 +89,7 @@ global_costmap:
     width: 60.0
     height: 60.0
     resolution: 0.10
-    footprint: [[0.17, 0.27], [-0.15, 0.27], [-0.48, 0.17], [-0.48, -0.17], [-0.15, -0.27], [0.17, -0.27]]
+    footprint: "[[0.17, 0.27], [-0.15, 0.27], [-0.48, 0.17], [-0.48, -0.17], [-0.15, -0.27], [0.17, -0.27]]"
 
     plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
 
