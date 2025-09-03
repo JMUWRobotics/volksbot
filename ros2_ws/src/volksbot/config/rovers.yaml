@@ -1,5 +1,10 @@
 # This file is searched by volksbot program to find the connected rover configuration
 
+ping_tries: 5
+publish_period_sec: 20
+always_publish: true
+
+
 ---
 name:                   Ute
 wheel_diameter:         26.0
