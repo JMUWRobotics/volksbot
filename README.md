@@ -60,3 +60,6 @@ for regular building, make sure that you are sourced into the workspace
 ```bash
 colcon build --packages-ignore sick_scan_xd
 ```
+
+### Tip:
+- When pc freezes on building consider using less parallel workers with ```--parallel-workers n``` (2 or 3 should definitely work)
