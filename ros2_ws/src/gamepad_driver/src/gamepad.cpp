@@ -119,7 +119,7 @@ void Gamepad::disconnect() {
     stop.code = effect.id;
     stop.value = 0;
 
-    write( fd_rw, &stop, sizeof(stop) );
+    (void)write( fd_rw, &stop, sizeof(stop) );
 
     close( fd_rw );
     fd_rw = -1;
@@ -198,7 +198,7 @@ void Gamepad::handle_rumble() {
 
     /* Play the effect */
     ie.value = 1;
-    write( fd_rw, &ie, sizeof(ie) );
+    (void)write( fd_rw, &ie, sizeof(ie) );
 }
 
 

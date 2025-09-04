@@ -80,7 +80,7 @@ void kbcontrol::run() {
 
   while (rclcpp::ok() ) {
     c = KEYCODE_Q;
-    read(kfd_, &c, 1);
+    (void)read(kfd_, &c, 1);
     
     switch(c)
     {
