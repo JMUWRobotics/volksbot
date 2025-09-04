@@ -44,6 +44,30 @@ using namespace std::chrono_literals;
 // PRECOMPILER FOR FORMAT HIGHLIGHTING
 //-----------------------------------------------------------------------------
 
+// TODO: put into separate file and maybe i put it into an own repository
+#define RST            0
+#define BOLD           1
+#define FAINT          2
+#define ITALIC         3
+#define UNDERLINE      4
+#define BLINK          5
+#define BLINK_FAST     6
+#define REVERSE        7
+#define CONCEAL        8
+#define STRIKE         9
+#define DEFAULT_FONT   10
+#define DUNDER         21
+#define NORM_INTENSITY 22
+#define NO_ITALIC      23
+#define NO_UNDERLINE   24
+#define NO_BLINKING    25
+#define NO_REVERSE     27
+#define REVEAL         28
+#define NO_STRIKE      29
+
+#define FG_RGB(r,g,b) 38;2;r;g;b
+#define BG_RGB(r,g,b) 38;2;r;g;b
+
 #define FG_BLACK   30
 #define FG_RED     31
 #define FG_GREEN   32
@@ -81,15 +105,20 @@ using namespace std::chrono_literals;
 #define BG_BRIGHT_WHITE   107
 
 #define FG_GRAY FG_BRIGHT_BLACK
+#define BG_GRAY BG_BRIGHT_BLACK
 
 #define STR(s) #s
 #define XSTR(s) STR(s)
 #define COL(c, s) "\x1b[" STR(c) "m" s "\x1b[0m"
 
 
-#define SIZE_STATUS 13
-#define SIZE_FORMAT_OFFSET ((int)sizeof( COL(FG_RED, "") )-1)
-#define SIZE_FORMAT ( SIZE_STATUS + SIZE_FORMAT_OFFSET )
+#define _STR_AVAIL " AVAILABLE "
+#define _STR_NOT_AVAIL " NOT AVAILABLE "
+#define S_AVAIL COL(FG_GREEN, _STR_AVAIL)
+#define S_NOT_AVAIL COL(FG_RED, _STR_NOT_AVAIL)
+
+#define SIZE_STATUS (int)MAX( sizeof(_STR_AVAIL)-1, sizeof(_STR_NOT_AVAIL)-1 )
+#define SIZE_FORMAT (int)MAX( sizeof(S_AVAIL)-1, sizeof(S_NOT_AVAIL)-1 )
 
 
 
@@ -196,18 +225,20 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
 static void parse_config( const YAML::Node& cfg_map ) {
     if( auto n = cfg_map["ping_tries"] ) {
         config.count_ping_tries = n.as<int>( config.count_ping_tries );
-        printf( "ping_tries         = %d\n", config.count_ping_tries );
+        printf( "ping_tries         = " COL(FG_GREEN, "%d") "\n", config.count_ping_tries );
     }
 
     if( auto n = cfg_map["publish_period_sec"] ) {
         config.pub_period = std::chrono::seconds( n.as<int>( config.pub_period.count() ) );
-        printf( "publish_period_sec = %lds\n", config.pub_period.count() );
+        printf( "publish_period_sec = " COL(FG_GREEN, "%lds") "\n", config.pub_period.count() );
     }
 
     if( auto n = cfg_map["always_publish"] ) {
         config.always_publish = n.as<bool>( config.always_publish );
-        printf( "always_publish     = %s\n", config.always_publish ? "true" : "false" );
+        printf( "always_publish     = " COL(FG_GREEN, "%s") "\n", config.always_publish ? "true" : "false" );
     }
+
+    printf("\n");
 }
 static void parse_yaml( const std::string& file_path ) {
     std::vector<YAML::Node> rovs = YAML::LoadAllFromFile( file_path );
@@ -305,7 +336,7 @@ static int ping( const ip_t ip, const int pings ) {
     
 
     // move cursor right of the status output
-    printf( "\x1b[" XSTR(SIZE_STATUS) "C " );
+    printf( "\x1b[%dC ", SIZE_STATUS );
 
     packet pckt;
     sockaddr_in r_addr;
@@ -316,7 +347,7 @@ static int ping( const ip_t ip, const int pings ) {
         fflush( stdout );
 
         if ( recvfrom(sd, &pckt, sizeof(pckt), 0, (sockaddr*)&r_addr, &len) > 0 ) {
-            printf( "\x1b[%dD%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, COL(FG_GREEN, "AVAILABLE"), 14, "" );
+            printf( "\x1b[%dD%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_AVAIL, 14, "" );
             return 0;
         }
 
@@ -339,7 +370,7 @@ static int ping( const ip_t ip, const int pings ) {
         usleep(300000);
     }
     
-    printf( "\x1b[%dD%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, COL(FG_RED, "NOT AVAILABLE"), 14, "" );
+    printf( "\x1b[%dD%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_NOT_AVAIL, 14, "" );
     return 1;
 }
 [[maybe_unused]] static int ping( const char *adress, const int pings ) {
@@ -352,6 +383,7 @@ static int ping( const ip_t ip, const int pings ) {
 // ROS SPECIFIC IMPLEMENTATIONS
 //-----------------------------------------------------------------------------
 
+
 /**
  * @brief finds best matching rover configuration by regarding the mapped udev ports and static lms ips
  * 
@@ -360,14 +392,16 @@ static int ping( const ip_t ip, const int pings ) {
  */
 static bool find_rover() {
     #define CVAR FG_MAGENTA
+    #define CPREFILL ITALIC;FG_GRAY
     static constexpr int max_matches = 2;
 
     uint64_t current_hash = hash(active_rover);
     bool check_already_connected = active_rover_index != -1;
 
-    std::vector<uint> matches;
+    std::vector<int> matches;
     for( uint i=0; i < rovers.size(); i++ )
-        matches.emplace_back( 0 );
+        // -1 is used to signal uninitialized values, used in the print below to know validity of value
+        matches.emplace_back( -1 ); 
 
     // setup local helper functions -------------------------------------------
     constexpr int str_len_ip = sizeof( "xxx.xxx.xxx.xxx" )-1;
@@ -394,11 +428,13 @@ static bool find_rover() {
     };
 
     auto search_body = [&](int i) {
+        matches[i] = 0; // initialize match value
+
         bool port = access( rovers[i].udev_symlink.c_str(), F_OK ) == ACCESS_PERMITTED;
         if( port ) {
             matches[i]++;
         }
-        print_port( i, port ? COL(FG_GREEN, "AVAILABLE") : COL(FG_RED, "NOT AVAILABLE") );
+        print_port( i, port ? S_AVAIL : S_NOT_AVAIL );
 
         // search ips
         print_ip( i, 0, "" );
@@ -409,24 +445,33 @@ static bool find_rover() {
     
     
     // preprint table ---------------------------------------------------------
+    static bool first_execution = true;
+    if( !first_execution ) {
+        // jump back up, so that we overwrite the table on the next look up round
+        printf( "\x1b[%ldF", 1+2*rovers.size() + 1+rovers.size()+3 );
+        printf( "\x1b[0J" ); // clear from cursor to end of screen
+    }
+    first_execution = false;
+
     printf( "============================================================\n" );
 
     for( uint i=0; i < rovers.size(); i++ ) {
-        print_port( i, check_already_connected ? COL(FG_GRAY, "      ...     ") : COL(FG_GRAY, "...unknown...") );
-        print_ip( i, SIZE_FORMAT, check_already_connected ? COL(FG_GRAY, "      ...     \n") : COL(FG_GRAY, "...unknown...\n") );
+        print_port( i, check_already_connected ? COL(CPREFILL, "      ...     ") : COL(CPREFILL, " ...waiting... ") );
+        print_ip( i, SIZE_FORMAT, check_already_connected ? COL(CPREFILL, "      ...     \n") : COL(CPREFILL, " ...waiting... \n") );
     }
 
     printf( "\n------------------------------------------------------------\n" );
     for( uint i=0; i < rovers.size(); i++) {
-        printf( "[" COL(CVAR, "%*s") "] matches: " COL(FG_GRAY, "-") "\n", max_name_len, rovers[i].name.c_str() );
+        printf( "[" COL(CVAR, "%*s") "] matches: " COL(CPREFILL, " - ") "\n", max_name_len, rovers[i].name.c_str() );
     }
 
-    printf( "\nRover:   %s   " COL(%d, "%*s") "\n",
-        check_already_connected ? COL(CVAR, " validating") : COL(FG_GRAY, " searching "),
-        check_already_connected ? CVAR : FG_GRAY,
+    printf( "\nRover:   %s   " COL(%s, "%*s") "\n",
+        check_already_connected ? COL(BLINK;CPREFILL;CVAR, "  validating ") : COL(BLINK;CPREFILL;FG_WHITE, "  searching  "),
+        check_already_connected ? XSTR(CPREFILL;CVAR) : XSTR(CPREFILL),
         max_name_len, check_already_connected ? rovers[active_rover_index].name.c_str() : "---"
     );
 
+    printf( "\x1b[s" ); // save cursor position SCO
     printf( "\x1b[%ldF", max_matches*rovers.size() + 1+rovers.size()+1 + 2 ); // jump back up
     
     // artificially delay execution so that the user has enough time to "comprehend" what is happening
@@ -458,7 +503,7 @@ static bool find_rover() {
         // if an rover is connected and we already checked for it above we can skip it now
         // else i will never be -1 and active_rover_index is -1 so the if case does not execute
         if ( static_cast<int>(i) == active_rover_index ) {
-            printf( "\x1b[" XSTR(max_matches) "E" ); // jump to next rover position in table
+            printf( "\x1b[%dE", max_matches ); // jump to next rover position in table
             continue;
         }
 
@@ -471,14 +516,25 @@ best_fit:
     printf( "\n----------------------------------------\n" );
     
     active_rover_index = -1;
-    uint best_match = 0;
+    int best_match = 0;
 
-    static constexpr int color_match_lut[max_matches+1] = { FG_GRAY, FG_YELLOW, FG_GREEN };
+    static constexpr int color_match_lut[max_matches+1] = { 
+        FG_GRAY,    // match == 0
+        FG_YELLOW,  // match == 1
+        FG_GREEN    // match == 2
+    };
     for( uint i=0; i < rovers.size(); i++) {
-        printf( "[" COL(CVAR, "%*s") "] matches: " COL(%d, "%d") "\n", 
+        if( matches[i] == -1 ) {
+            // skip print if value was not initialized since we already preprinted the table
+            printf( "\x1b[E" );
+            continue;
+        }
+
+        printf( "[" COL(CVAR, "%*s") "] matches:  " COL(%d, "%d") " \n", 
             max_name_len, rovers[i].name.c_str(),
             color_match_lut[matches[i]], matches[i]
         );
+
         if( matches[i] > best_match ) {
             active_rover_index = i;
             best_match = matches[i];
@@ -489,14 +545,14 @@ best_fit:
     active_rover = active_rover_index == -1 ? &ROVER_DUMMY : &rovers[active_rover_index];
     bool changed = hash(active_rover) != current_hash;
 
-    printf( "\nRover:   %s   " COL(%d, "%*s") "\n",
+    printf( "\nRover:   %s   " COL(%s, "%*s") "\n",
         changed
-        ? COL(BG_BRIGHT_YELLOW;FG_BLACK, " NEW ROVER ")
+        ? COL(BG_BRIGHT_YELLOW;FG_BLACK, "  NEW ROVER  ")
         : active_rover_index == -1
-            ? COL(FG_GRAY, "not changed")
-            : COL(FG_BRIGHT_GREEN, " validated "),
-        active_rover_index == -1 ? FG_RED : FG_GREEN,
-        max_name_len, active_rover_index == -1 ? "NOT FOUND" : rovers[active_rover_index].name.c_str()
+            ? COL(FG_GRAY, " not changed ")
+            : COL(FG_BRIGHT_GREEN, "  validated  "),
+        active_rover_index == -1 ? XSTR(BG_BRIGHT_RED;FG_BLACK) : XSTR(FG_BRIGHT_GREEN),
+        max_name_len, active_rover_index == -1 ? " NO ROVER CONNECTED " : rovers[active_rover_index].name.c_str()
     );
 
     return changed;
@@ -515,6 +571,7 @@ static void find_and_publish() {
 int main(int argc, char* argv[]) {
     signal(SIGINT, [](int sig){
         (void)sig;
+        printf( "\x1b[u\n" ); // restore cursor position (last SCO)
         rclcpp::shutdown();
         exit(0);
     });
