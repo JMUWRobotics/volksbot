@@ -157,7 +157,7 @@ namespace VB {
         float wheel_base;                   // cm // distance between wheel center points
 
         // motor controller
-        MCD::MCD motor_controller;               // id of motor controller
+        MCD::MCD motor_controller;          // id of motor controller
         std::string motor_controller_port;  // port to be passed to the specified motor controller 
         
         std::string udev_symlink;           // device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules

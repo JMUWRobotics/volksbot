@@ -1,9 +1,31 @@
 # This file is searched by volksbot program to find the connected rover configuration
 
+#------------------------------------------------------------------------------
+# CONFIG 
+#------------------------------------------------------------------------------
+
+# count of tries of pings
 ping_tries: 5
-publish_period_sec: 20
+
+# period in seconds of of rover search loop
+publish_period_sec: 60
+
+# if false will only publish active rover if the connected rover changed else always
 always_publish: true
 
+
+#------------------------------------------------------------------------------
+# ROVERS
+#------------------------------------------------------------------------------
+
+# see reference declaration in volksface/volksbot.h 
+# name                   # rover name 
+# wheel_diameter         # in cm
+# wheel_base             # in cm - distance between wheel center points
+# motor_controller       # id of motor controller
+# motor_controller_port  # port to be passed to the specified motor controller 
+# udev_symlink           # device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules
+# ip_lms                 # static ip of laserscanner
 
 ---
 name:                   Ute
@@ -33,23 +55,39 @@ udev_symlink:           /dev/VMC
 ip_lms:                 192.168.0.0
 
 
+
+#------------------------------------------------------------------------------
+# TESTING DUMMIES 
+# > comment out when not needed
+#------------------------------------------------------------------------------
 # ---
 # #! dummy for internal testing 
-# name:                   Dummy 1
+# name:                   Dummy 1 - 2 matches
 # wheel_diameter:         99.0
 # wheel_base:             99.0
-# motor_controller:       ERROR
+# motor_controller:       VMC
+# motor_controller_port:  /dev/tty1
+# udev_symlink:           /dev/tty0
+# ip_lms:                 8.8.8.8
+
+# ---
+# #! dummy for internal testing 
+# name:                   Dummy 2 - 1 matches
+# wheel_diameter:         99.0
+# wheel_base:             99.0
+# motor_controller:       EPOS2
 # motor_controller_port:  /dev/tty0
 # udev_symlink:           /dev/tty0
 # ip_lms:                 192.168.0.0
 
 # ---
 # #! dummy for internal testing 
-# name:                   Dummy 2
+# name:                   Dummy 3 - 0 matches
 # wheel_diameter:         99.0
 # wheel_base:             99.0
-# motor_controller:       VMC
-# motor_controller_port:  /dev/tty1
+# motor_controller:       ERROR
+# motor_controller_port:  /dev/ttyUSB0
 # udev_symlink:           /dev/ttyUSB0
-# ip_lms:                 8.8.8.8
+# ip_lms:                 192.168.0.0
+
 
