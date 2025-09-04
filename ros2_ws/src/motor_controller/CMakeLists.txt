@@ -102,4 +102,9 @@ install(
   DESTINATION lib/${PROJECT_NAME}
 )
 
+# Export dependencies and libraries
+# if other packages includes the 'motor_controller' package, it automatically gets access 
+# to the exported dependencies
+ament_export_dependencies(rclcpp tf2_geometry_msgs volksface)
+
 ament_package()

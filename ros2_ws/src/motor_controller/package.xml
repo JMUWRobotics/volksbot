@@ -20,4 +20,10 @@
   
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <cpp cflags="-I${prefix}/include" lflags="-L${prefix}/lib -lodo"/>
+    <build_type>ament_cmake</build_type>
+  </export>
+
 </package>
