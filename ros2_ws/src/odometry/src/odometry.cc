@@ -121,6 +121,8 @@ Odometry::Odometry(bool _publish_tf) : Node("odometry_node"), publish_tf(_publis
 	odom.twist.twist.angular.y = 0.0;
 	odom.twist.twist.angular.z = 0.0;
 	odom.twist.covariance = global_covariance;
+
+	rclcpp::spin( this->get_node_base_interface() );	
 }
 
 Odometry::~Odometry() {
@@ -139,6 +141,7 @@ void Odometry::convertTicks2Odom( VB::msg::MCTicks::ConstSharedPtr cticks ) {
 
 	if( firstticks ) {
 		firstticks = false;
+		last_time = cticks->header.stamp;
 		last_ticks_left  = cticks->left;
 		last_ticks_right = cticks->right;
 		return;
@@ -186,7 +189,7 @@ void Odometry::convertTicks2Odom( VB::msg::MCTicks::ConstSharedPtr cticks ) {
 	}
 
 	// spin for ros message management
-	rclcpp::spin_some( this->get_node_base_interface() );
+	// rclcpp::spin_some( this->get_node_base_interface() );
 }
 
 
