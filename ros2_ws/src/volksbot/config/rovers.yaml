@@ -19,7 +19,7 @@ always_publish: true
 #------------------------------------------------------------------------------
 
 # see reference declaration in volksface/volksbot.h 
-# name                   # rover name 
+# name                   # rover name (case insensitive)
 # wheel_diameter         # in cm
 # wheel_base             # in cm - distance between wheel center points
 # motor_controller       # id of motor controller

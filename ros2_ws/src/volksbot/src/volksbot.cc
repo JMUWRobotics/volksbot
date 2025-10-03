@@ -316,6 +316,32 @@ static int ping( const ip_t ip, const int pings ) {
 // ROS SPECIFIC IMPLEMENTATIONS
 //-----------------------------------------------------------------------------
 
+static inline std::string to_lower( const std::string str ) {
+    std::string data = str;
+    std::transform(data.begin(), data.end(), data.begin(), [](unsigned char c){ return std::tolower(c); });
+    return data;
+}
+
+static bool force_select_rover( std::string rover_name ) {
+    printf( "Trying to find and select the rover named \"" COL(FG_GREEN, "%s") "\"\n", rover_name.c_str() );
+
+    for( size_t i=0; i < rovers.size(); i++ ) {
+        if( to_lower(rovers[i].name) == to_lower(rover_name) ) {
+            active_rover = &rovers[i];
+            active_rover_index = i;
+
+            printf( "Search was " COL(FG_BRIGHT_GREEN, "SUCCESSFUL") " and " COL(FG_BRIGHT_GREEN, "%s") " is now the selected Rover\n",
+                active_rover->name.c_str()
+            );
+
+            return true;
+        }
+    }
+
+    printf( "Search was " COL(FG_BRIGHT_RED, "NOT successful") " and automatic Rover search will now commence\n\n" );
+
+    return false;
+}
 
 /**
  * @brief finds best matching rover configuration by regarding the mapped udev ports and static lms ips
@@ -502,6 +528,13 @@ static void find_and_publish() {
 }
 
 
+/**
+ * If a specific rover should be manually selected, call:
+ *      ros2 run volksbot volksbot ${rover_name}
+ * with the specified rover name to force select that rover.
+ * 
+ * Otherwise leave blank and automatic search will be used for rover detection
+ */
 
 int main(int argc, char* argv[]) {
     signal(SIGINT, [](int sig){
@@ -520,9 +553,17 @@ int main(int argc, char* argv[]) {
     
     pub_rover = node->create_publisher<msg::Rover>( TOPIC_NAME_ROVER, 1 );
     
-    timer = node->create_wall_timer( config.pub_period, find_and_publish );
-
-    find_and_publish();
+    bool rover_force_set = false;
+    if( argc == 2 ) {
+        printf( "Volksbot called with argument: " COL(FG_GREEN, "%s\n\n"), argv[1] );
+        
+        rover_force_set = force_select_rover( argv[1] );
+    }
+    
+    if( !rover_force_set ) {
+        find_and_publish();
+        timer = node->create_wall_timer( config.pub_period, find_and_publish );
+    }
 
     rclcpp::spin( node );
     rclcpp::shutdown();

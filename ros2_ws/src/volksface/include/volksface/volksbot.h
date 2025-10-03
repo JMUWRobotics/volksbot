@@ -150,7 +150,7 @@ namespace VB {
 
     struct Rover {
         // rover name
-        std::string name;
+        std::string name;                   // case insensitive
         
         // wheels
         float wheel_diameter;               // cm
