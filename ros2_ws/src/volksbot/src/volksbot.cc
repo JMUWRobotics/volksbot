@@ -448,7 +448,7 @@ static bool find_rover() {
     static bool first_execution = true;
     if( !first_execution ) {
         // jump back up, so that we overwrite the table on the next look up round
-        printf( "\x1b[%ldF", 1+2*rovers.size() + 1+rovers.size()+3 );
+        printf( "\x1b[%ldF", 1 + max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 );
         printf( "\x1b[0J" ); // clear from cursor to end of screen
     }
     first_execution = false;
@@ -472,7 +472,7 @@ static bool find_rover() {
     );
 
     printf( "\x1b[s" ); // save cursor position SCO
-    printf( "\x1b[%ldF", max_matches*rovers.size() + 1+rovers.size()+1 + 2 ); // jump back up
+    printf( "\x1b[%ldF", max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 ); // jump back up
     
     // artificially delay execution so that the user has enough time to "comprehend" what is happening
     sleep( 1 );
@@ -481,7 +481,9 @@ static bool find_rover() {
     // main search ------------------------------------------------------------
     // test for valid connection if already connected
     if( check_already_connected ) {
-        printf( "\x1b[%dE", max_matches*active_rover_index ); // jump to rover position in table
+        if( active_rover_index > 0 ) {
+            printf( "\x1b[%dE", max_matches*active_rover_index ); // jump to rover position in table
+        }
 
         search_body( active_rover_index );
 
@@ -513,7 +515,7 @@ static bool find_rover() {
 
     // select best fit
 best_fit:
-    printf( "\n----------------------------------------\n" );
+    printf( "\n------------------------------------------------------------\n" );
     
     active_rover_index = -1;
     int best_match = 0;

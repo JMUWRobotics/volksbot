@@ -8,7 +8,7 @@
 ping_tries: 5
 
 # period in seconds of of rover search loop
-publish_period_sec: 60
+publish_period_sec: 20
 
 # if false will only publish active rover if the connected rover changed else always
 always_publish: true
