@@ -6,7 +6,7 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "volksface/volksbot.h"
-
+#include "volksface/ansi.h"
 
 //-----------------------------------------------------------------------------
 // LIBRARIES
@@ -43,73 +43,6 @@ using namespace std::chrono_literals;
 //-----------------------------------------------------------------------------
 // PRECOMPILER FOR FORMAT HIGHLIGHTING
 //-----------------------------------------------------------------------------
-
-// TODO: put into separate file and maybe i put it into an own repository
-#define RST            0
-#define BOLD           1
-#define FAINT          2
-#define ITALIC         3
-#define UNDERLINE      4
-#define BLINK          5
-#define BLINK_FAST     6
-#define REVERSE        7
-#define CONCEAL        8
-#define STRIKE         9
-#define DEFAULT_FONT   10
-#define DUNDER         21
-#define NORM_INTENSITY 22
-#define NO_ITALIC      23
-#define NO_UNDERLINE   24
-#define NO_BLINKING    25
-#define NO_REVERSE     27
-#define REVEAL         28
-#define NO_STRIKE      29
-
-#define FG_RGB(r,g,b) 38;2;r;g;b
-#define BG_RGB(r,g,b) 38;2;r;g;b
-
-#define FG_BLACK   30
-#define FG_RED     31
-#define FG_GREEN   32
-#define FG_YELLOW  33
-#define FG_BLUE    34
-#define FG_MAGENTA 35
-#define FG_CYAN    36
-#define FG_WHITE   37
-
-#define BG_BLACK   40
-#define BG_RED     41
-#define BG_GREEN   42
-#define BG_YELLOW  43
-#define BG_BLUE    44
-#define BG_MAGENTA 45
-#define BG_CYAN    46
-#define BG_WHITE   47
-
-#define FG_BRIGHT_BLACK   90
-#define FG_BRIGHT_RED     91
-#define FG_BRIGHT_GREEN   92
-#define FG_BRIGHT_YELLOW  93
-#define FG_BRIGHT_BLUE    94
-#define FG_BRIGHT_MAGENTA 95
-#define FG_BRIGHT_CYAN    96
-#define FG_BRIGHT_WHITE   97
-
-#define BG_BRIGHT_BLACK   100
-#define BG_BRIGHT_RED     101
-#define BG_BRIGHT_GREEN   102
-#define BG_BRIGHT_YELLOW  103
-#define BG_BRIGHT_BLUE    104
-#define BG_BRIGHT_MAGENTA 105
-#define BG_BRIGHT_CYAN    106
-#define BG_BRIGHT_WHITE   107
-
-#define FG_GRAY FG_BRIGHT_BLACK
-#define BG_GRAY BG_BRIGHT_BLACK
-
-#define STR(s) #s
-#define XSTR(s) STR(s)
-#define COL(c, s) "\x1b[" STR(c) "m" s "\x1b[0m"
 
 
 #define _STR_AVAIL " AVAILABLE "
@@ -336,18 +269,18 @@ static int ping( const ip_t ip, const int pings ) {
     
 
     // move cursor right of the status output
-    printf( "\x1b[%dC ", SIZE_STATUS );
+    printf( CUF(%d) " ", SIZE_STATUS );
 
     packet pckt;
     sockaddr_in r_addr;
     for( int loop=0; loop < pings; loop++ ) {
         socklen_t len = sizeof(r_addr);
 
-        printf( "ping: %2d / %2d\x1b[13D", loop+1, pings );
+        printf( "ping: %2d / %2d" CUB(13), loop+1, pings );
         fflush( stdout );
 
         if ( recvfrom(sd, &pckt, sizeof(pckt), 0, (sockaddr*)&r_addr, &len) > 0 ) {
-            printf( "\x1b[%dD%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_AVAIL, 14, "" );
+            printf( CUB(%d) "%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_AVAIL, 14, "" );
             return 0;
         }
 
@@ -370,7 +303,7 @@ static int ping( const ip_t ip, const int pings ) {
         usleep(300000);
     }
     
-    printf( "\x1b[%dD%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_NOT_AVAIL, 14, "" );
+    printf( CUB(%d) "%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_NOT_AVAIL, 14, "" );
     return 1;
 }
 [[maybe_unused]] static int ping( const char *adress, const int pings ) {
@@ -448,8 +381,8 @@ static bool find_rover() {
     static bool first_execution = true;
     if( !first_execution ) {
         // jump back up, so that we overwrite the table on the next look up round
-        printf( "\x1b[%ldF", 1 + max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 );
-        printf( "\x1b[0J" ); // clear from cursor to end of screen
+        printf( CPL(%ld), 1 + max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 );
+        printf( ED(0) ); // clear from cursor to end of screen
     }
     first_execution = false;
 
@@ -471,8 +404,8 @@ static bool find_rover() {
         max_name_len, check_already_connected ? rovers[active_rover_index].name.c_str() : "---"
     );
 
-    printf( "\x1b[s" ); // save cursor position SCO
-    printf( "\x1b[%ldF", max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 ); // jump back up
+    printf( SCO ); // save cursor position SCO
+    printf( CPL(%ld), max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 ); // jump back up
     
     // artificially delay execution so that the user has enough time to "comprehend" what is happening
     sleep( 1 );
@@ -482,16 +415,16 @@ static bool find_rover() {
     // test for valid connection if already connected
     if( check_already_connected ) {
         if( active_rover_index > 0 ) {
-            printf( "\x1b[%dE", max_matches*active_rover_index ); // jump to rover position in table
+            printf( CNL(%d), max_matches*active_rover_index ); // jump to rover position in table
         }
 
         search_body( active_rover_index );
 
-        printf( "\x1b[%dF", max_matches*(active_rover_index+1) ); // jump back up to top rover position in table
+        printf( CPL(%d), max_matches*(active_rover_index+1) ); // jump back up to top rover position in table
 
         if( matches[active_rover_index] == max_matches ) {
             // we are still connected and therefor skip testing for other rovers
-            printf( "\x1b[%ldE", max_matches*rovers.size() ); // jump to bottom of table
+            printf( CNL(%ld), max_matches*rovers.size() ); // jump to bottom of table
             
             // YESS, this is very dirty, but i think it is better for the readability
             // and also logic of the controlflow than having to indent for another if clause
@@ -505,7 +438,7 @@ static bool find_rover() {
         // if an rover is connected and we already checked for it above we can skip it now
         // else i will never be -1 and active_rover_index is -1 so the if case does not execute
         if ( static_cast<int>(i) == active_rover_index ) {
-            printf( "\x1b[%dE", max_matches ); // jump to next rover position in table
+            printf( CNL(%d), max_matches ); // jump to next rover position in table
             continue;
         }
 
@@ -528,7 +461,7 @@ best_fit:
     for( uint i=0; i < rovers.size(); i++) {
         if( matches[i] == -1 ) {
             // skip print if value was not initialized since we already preprinted the table
-            printf( "\x1b[E" );
+            printf( CNL(1) );
             continue;
         }
 
@@ -573,12 +506,12 @@ static void find_and_publish() {
 int main(int argc, char* argv[]) {
     signal(SIGINT, [](int sig){
         (void)sig;
-        printf( "\x1b[u\n" ); // restore cursor position (last SCO)
+        printf( RCP "\n" ); // restore cursor position (last SCO)
         rclcpp::shutdown();
         exit(0);
     });
     
-    printf( "\x1b[2J\x1b[1;1H" ); // clear screen // and move cursor home
+    printf( ED(2) CUP(1,1) ); // clear screen // and move cursor home
     parse_yaml( PATH_YAML_ROVERS );
 
     rclcpp::init(argc, argv);

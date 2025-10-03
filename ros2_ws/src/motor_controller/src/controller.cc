@@ -16,6 +16,7 @@
 #include "rclcpp/rclcpp.hpp"
 
 #include "volksface/volksbot.h"
+#include "volksface/ansi.h"
 
 #include <chrono>
 using namespace std::chrono_literals;
@@ -59,14 +60,14 @@ namespace controller {
 		#define PORT_NAME_EPOS2R	"/dev/EPOS2R"
 
 		if( active_motor_controller != nullptr ) {
-			printf( "\x1b[33mAlready connected to a motor controller\x1b[0m\n" );
+			printf( COL(33, "Already connected to a motor controller\n") );
 			return true;
 		}
 
 		// trying VMC
 		printf( "Trying to connect to VMC\n" );
 		if( mcd_vmc.connect( PORT_NAME_VMC ) ) {
-			printf( "\x1b[32mConnected to VMC\x1b[0m\n" );
+			printf( COL(32, "Connected to VMC\n") );
 			active_motor_controller = &mcd_vmc;
 			return true;
 		}
@@ -74,7 +75,7 @@ namespace controller {
 		// trying EPOS2
 		printf( "\nTrying to connect to EPOS2\n" );
 		if( mcd_epos.connect( PORT_NAME_EPOS ) ) {
-			printf( "\x1b[32mConnected to EPOS2\x1b[0m\n" );
+			printf( COL(32, "Connected to EPOS2\n") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
@@ -83,7 +84,7 @@ namespace controller {
 		// trying EPOS2L
 		printf( "\nTrying to connect to EPOS2L\n" );
 		if( mcd_epos.connect( PORT_NAME_EPOS2L ) ) {
-			printf( "\x1b[32mConnected to EPOS2L\x1b[0m\n" );
+			printf( COL(32, "Connected to EPOS2L\n") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
@@ -91,19 +92,19 @@ namespace controller {
 		// trying EPOS2R
 		printf( "\nTrying to connect to EPOS2R\n" );
 		if( mcd_epos.connect( PORT_NAME_EPOS2R ) ) {
-			printf( "\x1b[32mConnected to EPOS2R\x1b[0m\n" );
+			printf( COL(32, "Connected to EPOS2R\n") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
 		
 		// FAILED to connect to any motor controller
-		printf( "\n\x1b[31mFAILED! Could not connect to any motor controller\x1b[0m\n" );
+		printf( COL(31, "\nFAILED! Could not connect to any motor controller\n") );
 		return false; 
 	}
 
 	bool connect_via_rover( const msg::Rover& rover ) {
 		if( active_motor_controller != nullptr ) {
-			printf( "\x1b[33mAlready connected to a motor controller\x1b[0m\n" );
+			printf( COL(33, "Already connected to a motor controller\n") );
 			return false;
 		}
 		
@@ -114,7 +115,7 @@ namespace controller {
 
 			case MCD::ERROR:
 			default:
-				printf( "\x1b[33mUnrecognized motor controller id: %d\x1b[0m\n", rover.motor_controller );
+				printf( COL(33, "Unrecognized motor controller id: %d\n"), rover.motor_controller );
 				return false;
 		}
 
@@ -127,11 +128,11 @@ namespace controller {
 				rover.wheel_diameter
 			);
 
-			printf( "\x1b[32mConnected to motor controller %s\x1b[0m\n", mc_name.c_str() );
+			printf( COL(32, "Connected to motor controller %s\n"), mc_name.c_str() );
 			
 			return true;
 		} else {
-			printf( "\x1b[31mFailed to connect to %s\x1b[0m\n", mc_name.c_str() );
+			printf( COL(31, "Failed to connect to %s\n"), mc_name.c_str() );
 
 			return false;
 		}
