@@ -60,14 +60,14 @@ namespace controller {
 		#define PORT_NAME_EPOS2R	"/dev/EPOS2R"
 
 		if( active_motor_controller != nullptr ) {
-			printf( COL(33, "Already connected to a motor controller\n") );
+			printf( COL(FG_YELLOW, "Already connected to a motor controller\n") );
 			return true;
 		}
 
 		// trying VMC
 		printf( "Trying to connect to VMC\n" );
 		if( mcd_vmc.connect( PORT_NAME_VMC ) ) {
-			printf( COL(32, "Connected to VMC\n") );
+			printf( COL(FG_GREEN, "Connected to VMC\n") );
 			active_motor_controller = &mcd_vmc;
 			return true;
 		}
@@ -75,7 +75,7 @@ namespace controller {
 		// trying EPOS2
 		printf( "\nTrying to connect to EPOS2\n" );
 		if( mcd_epos.connect( PORT_NAME_EPOS ) ) {
-			printf( COL(32, "Connected to EPOS2\n") );
+			printf( COL(FG_GREEN, "Connected to EPOS2\n") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
@@ -84,7 +84,7 @@ namespace controller {
 		// trying EPOS2L
 		printf( "\nTrying to connect to EPOS2L\n" );
 		if( mcd_epos.connect( PORT_NAME_EPOS2L ) ) {
-			printf( COL(32, "Connected to EPOS2L\n") );
+			printf( COL(FG_GREEN, "Connected to EPOS2L\n") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
@@ -92,19 +92,19 @@ namespace controller {
 		// trying EPOS2R
 		printf( "\nTrying to connect to EPOS2R\n" );
 		if( mcd_epos.connect( PORT_NAME_EPOS2R ) ) {
-			printf( COL(32, "Connected to EPOS2R\n") );
+			printf( COL(FG_GREEN, "Connected to EPOS2R\n") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
 		
 		// FAILED to connect to any motor controller
-		printf( COL(31, "\nFAILED! Could not connect to any motor controller\n") );
+		printf( COL(FG_RED, "\nFAILED! Could not connect to any motor controller\n") );
 		return false; 
 	}
 
 	bool connect_via_rover( const msg::Rover& rover ) {
 		if( active_motor_controller != nullptr ) {
-			printf( COL(33, "Already connected to a motor controller\n") );
+			printf( COL(FG_YELLOW, "Already connected to a motor controller\n") );
 			return false;
 		}
 		
@@ -115,7 +115,7 @@ namespace controller {
 
 			case MCD::ERROR:
 			default:
-				printf( COL(33, "Unrecognized motor controller id: %d\n"), rover.motor_controller );
+				printf( COL(FG_YELLOW, "Unrecognized motor controller id: %d\n"), rover.motor_controller );
 				return false;
 		}
 
@@ -128,11 +128,11 @@ namespace controller {
 				rover.wheel_diameter
 			);
 
-			printf( COL(32, "Connected to motor controller %s\n"), mc_name.c_str() );
+			printf( COL(FG_GREEN, "Connected to motor controller %s\n"), mc_name.c_str() );
 			
 			return true;
 		} else {
-			printf( COL(31, "Failed to connect to %s\n"), mc_name.c_str() );
+			printf( COL(FG_RED, "Failed to connect to %s\n"), mc_name.c_str() );
 
 			return false;
 		}
@@ -204,6 +204,7 @@ namespace controller {
 	//----------------//
 	void run() {
 		RCLCPP_INFO(LOGGER, "Motor controller starting main loop!");
+		RCLCPP_INFO(LOGGER, "waiting for Rover to be published\n" );
 		rclcpp::spin(node);
 	}
 
@@ -217,7 +218,7 @@ namespace controller {
 	}
 
 	void setup(int argc, char* argv[]) {
-		printf("Ros init...\n");
+		RCLCPP_INFO(LOGGER, "Ros init...\n");
 
 		rclcpp::init(argc, argv);
 		node = std::make_shared<rclcpp::Node>("mc_controller");

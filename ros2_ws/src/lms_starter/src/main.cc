@@ -38,7 +38,7 @@ static void call_launch_from_rover( VB::msg::Rover::ConstSharedPtr rov ) {
     printf( "ROVER %s [%s] was recognized and is %s\n",
         active_rover.name.c_str(),
         VB::ip_t( active_rover.ip_lms ).to_string().c_str(),
-        active_rover.is_valid ? COL(32, "valid") : COL(31, "invalid")
+        active_rover.is_valid ? COL(FG_GREEN, "valid") : COL(FG_RED, "invalid")
     );
 
     if( !active_rover.is_valid ) {
@@ -55,11 +55,11 @@ static void call_launch_from_rover( VB::msg::Rover::ConstSharedPtr rov ) {
     sick_process = popen( cmd.c_str(), "r" );
 
     if( sick_process == NULL ) {
-        printf( COL(31, "Failed to call launch file for lms100\n") );
+        printf( COL(FG_RED, "Failed to call launch file for lms100\n") );
         return;
     }
     
-    printf( COL(32, "successful launched lms100\n") );
+    printf( COL(FG_GREEN, "successful launched lms100\n") );
 }
 
 int main( int argc, char* argv[] ) {
@@ -67,7 +67,7 @@ int main( int argc, char* argv[] ) {
 
     node = rclcpp::Node::make_shared( "lms_starter" );
 
-    printf( ">>> lms_starter: started\n" COL(BLINK, ">>> waiting for rover to be published\n") );
+    printf( ">>> lms_starter: started\n" COL(BLINK;FG_BLUE, ">>> waiting for rover to be published\n") );
     
     sub = node->create_subscription<VB::msg::Rover>( VB::TOPIC_NAME_ROVER, 1, call_launch_from_rover );
 
