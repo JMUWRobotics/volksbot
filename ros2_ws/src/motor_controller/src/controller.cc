@@ -218,7 +218,7 @@ namespace controller {
 	}
 
 	void setup(int argc, char* argv[]) {
-		RCLCPP_INFO(LOGGER, "Ros init...\n");
+		RCLCPP_INFO(LOGGER, "Ros init...");
 
 		rclcpp::init(argc, argv);
 		node = std::make_shared<rclcpp::Node>("mc_controller");

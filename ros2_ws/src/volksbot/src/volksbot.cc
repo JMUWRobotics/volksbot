@@ -322,7 +322,7 @@ static inline std::string to_lower( const std::string str ) {
     return data;
 }
 
-static bool force_select_rover( std::string rover_name ) {
+static bool manual_select_rover( std::string rover_name ) {
     printf( "Trying to find and select the rover named \"" COL(FG_GREEN, "%s") "\"\n", rover_name.c_str() );
 
     for( size_t i=0; i < rovers.size(); i++ ) {
@@ -338,9 +338,15 @@ static bool force_select_rover( std::string rover_name ) {
         }
     }
 
+    printf( "\"" COL(FG_GREEN, "%s" ) "\" was " COL(FG_BRIGHT_RED, "not found") " in the config/rovers.yaml\n", rover_name.c_str() );
     printf( "Search was " COL(FG_BRIGHT_RED, "NOT successful") " and automatic Rover search will now commence\n\n" );
 
     return false;
+}
+
+static void publish_rover() {
+    VB::msg::Rover rov = to_message( *active_rover, hash( active_rover ) != hash( &ROVER_DUMMY ) );
+    pub_rover->publish( rov );
 }
 
 /**
@@ -522,8 +528,7 @@ best_fit:
 static void find_and_publish() {
     bool found = find_rover();
     if( found || config.always_publish ) {
-        VB::msg::Rover rov = to_message( *active_rover, hash( active_rover ) != hash( &ROVER_DUMMY ) );
-        pub_rover->publish( rov );
+        publish_rover();
     }
 }
 
@@ -553,14 +558,17 @@ int main(int argc, char* argv[]) {
     
     pub_rover = node->create_publisher<msg::Rover>( TOPIC_NAME_ROVER, 1 );
     
-    bool rover_force_set = false;
+    bool is_manually_set = false;
     if( argc == 2 ) {
         printf( "Volksbot called with argument: " COL(FG_GREEN, "%s\n\n"), argv[1] );
         
-        rover_force_set = force_select_rover( argv[1] );
+        is_manually_set = manual_select_rover( argv[1] );
     }
     
-    if( !rover_force_set ) {
+    if( is_manually_set ) {
+        publish_rover();
+        timer = node->create_wall_timer( config.pub_period, publish_rover );
+    } else {
         find_and_publish();
         timer = node->create_wall_timer( config.pub_period, find_and_publish );
     }
