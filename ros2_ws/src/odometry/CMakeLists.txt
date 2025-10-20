@@ -65,6 +65,12 @@ install(DIRECTORY include/
  DESTINATION include/${PROJECT_NAME}
 )
 
+# Install launch files.
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 # export include directory
 # if other packages includes the 'odometry' package, it automatically gets access to include
 ament_export_include_directories(include)

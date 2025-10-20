@@ -102,6 +102,12 @@ install(
   DESTINATION lib/${PROJECT_NAME}
 )
 
+# Install launch files.
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}/
+)
+
 # Export dependencies and libraries
 # if other packages includes the 'motor_controller' package, it automatically gets access 
 # to the exported dependencies
