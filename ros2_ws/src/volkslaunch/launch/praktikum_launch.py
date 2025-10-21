@@ -16,6 +16,13 @@ def generate_launch_description():
     #     )
     # ),
 
+    calibration_nodes = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('volksbot'), 'launch'),
+            '/localcalibration_launch.py']
+        )
+    )
+
     gamepad_nodes = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('gamepad_driver'), 'launch'),
@@ -37,11 +44,20 @@ def generate_launch_description():
         )
     )
 
+    odometry_nodes = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('odometry'), 'launch'),
+            '/odometry_launch.py']
+        )
+    )
+
     return LaunchDescription([
 
         # launch files
+        calibration_nodes,
         gamepad_nodes,
         lms_nodes,
-        motor_controller_nodes
+        motor_controller_nodes,
+        odometry_nodes
 
     ])

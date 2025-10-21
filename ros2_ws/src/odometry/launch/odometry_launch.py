@@ -8,6 +8,7 @@ def generate_launch_description():
             package='odometry',
             executable='odometry',
             output='log',
-            name='odometry'
+            name='odometry',
+            arguments=['1']
         )
     ])
