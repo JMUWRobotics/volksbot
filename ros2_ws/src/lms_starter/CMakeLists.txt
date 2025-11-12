@@ -1,10 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(lms_starter)
 
-# Add standard ROS 2 compile options
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic -O3)
-endif()
+# include project wide configuration
+include(${PROJECT_SOURCE_DIR}/../../cmake/project_config.cmake OPTIONAL)
 
 # Set C++ standard to C++14
 set(CMAKE_CXX_STANDARD 14)
