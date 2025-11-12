@@ -20,8 +20,7 @@ void* EPOS2::thread_function(void* param) {
 	while ( ref->is_connected() ) {
 		if ( VCS_MoveWithVelocity( ref->g_pKeyHandle, 1, ref->g_speed_right / 100.0 * ref->g_maxRPM, &ref->g_pErrorCode ) == 0 ||
 			 VCS_MoveWithVelocity( ref->g_pKeyHandle, 0, ref->g_speed_left  / 100.0 * ref->g_maxRPM, &ref->g_pErrorCode ) == 0 ) {
-			// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Send Move Instruction to EPOS2 Device! (0x%x)", ref->g_pErrorCode);
-			printf( "Cannot Send Move Instruction to EPOS2 Device! (0x%x)", ref->g_pErrorCode );
+			LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Cannot Send Move Instruction to EPOS2 Device! (0x%x)"), ref->g_pErrorCode );
 		}
 		
 		usleep(50000);
@@ -36,14 +35,12 @@ bool EPOS2::connect( const char* port ) {
 	strncpy( g_PortName, port, sizeof(g_PortName)-1 );
 
 	if ( !openEPOSDevice() ) {
-		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Open EPOS2 Device! (0x%x)", g_pErrorCode);
-		printf( "Cannot Open EPOS2 Device! (0x%x)", g_pErrorCode );
+		LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Cannot Open EPOS2 Device! (0x%x)"), g_pErrorCode );
 		return false;
 	}
 
-	if ( !prepareEPOSDevice(0) || !prepareEPOSDevice(1) ) { //R = 0, L = 1
-		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Error Preparing EPOS2 Device! (0x%x)", g_pErrorCode);
-		printf( "Error Preparing EPOS2 Device! (0x%x)", g_pErrorCode );
+	if ( !prepareEPOSDevice(0) || !prepareEPOSDevice(1) ) { // R = 0, L = 1
+		LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Error Preparing EPOS2 Device! (0x%x)"), g_pErrorCode );
 		return false;
 	}
 
@@ -51,8 +48,7 @@ bool EPOS2::connect( const char* port ) {
 
 	if ( VCS_ActivateProfileVelocityMode( g_pKeyHandle, 0, &g_pErrorCode ) == 0 ||
 		 VCS_ActivateProfileVelocityMode( g_pKeyHandle, 1, &g_pErrorCode ) == 0 ) {
-		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Activate Velocity Mode in EPOS2 Device! (0x%x)", ref->g_pErrorCode);
-		printf( "Cannot Activate Velocity Mode in EPOS2 Device! (0x%x)", g_pErrorCode );
+		LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Cannot Activate Velocity Mode in EPOS2 Device! (0x%x)"), g_pErrorCode );
 		return false;
 	}
 	
@@ -65,8 +61,8 @@ bool EPOS2::connect( const char* port ) {
 void EPOS2::disconnect() {
 	if ( VCS_HaltVelocityMovement( g_pKeyHandle, 1, &g_pErrorCode ) == 0 ||
 		 VCS_HaltVelocityMovement( g_pKeyHandle, 0, &g_pErrorCode ) == 0) {
-		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Stop Velocity Mode in EPOS2 Device! (0x%x)", ref->g_pErrorCode);
-		printf( "Cannot Stop Velocity Mode in EPOS2 Device! (0x%x)", g_pErrorCode );
+		LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Cannot Stop Velocity Mode in EPOS2 Device! (0x%x)"), g_pErrorCode );
+		return;
 	}
 
 	VCS_WaitForTargetReached( g_pKeyHandle, 1, 2000, &g_pErrorCode );
@@ -79,8 +75,7 @@ bool EPOS2::is_connected() { return g_isConnected; }
 void EPOS2::reset_ticks() {
 	if ( VCS_GetPositionIs( g_pKeyHandle, 1, &g_ticks_offset_right, &g_pErrorCode) == 0 ||
 		 VCS_GetPositionIs( g_pKeyHandle, 0, &g_ticks_offset_left,  &g_pErrorCode) == 0 ) {
-		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Get Position of EPOS2 Device! (0x%x)", ref->g_pErrorCode);
-		printf( "Cannot Get Position of EPOS2 Device! (0x%x)", g_pErrorCode );
+		LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Cannot Get Position of EPOS2 Device! (0x%x)"), g_pErrorCode );
 	}
 }
 void EPOS2::set_max_RPM( int maxRPM ) {
@@ -97,8 +92,8 @@ void EPOS2::set_speeds( float left, float right ) {
 void EPOS2::get_ticks( int& left, int& right ) {
 	if ( VCS_GetPositionIs( g_pKeyHandle, 1, &right, &g_pErrorCode) == 0 ||
 		 VCS_GetPositionIs( g_pKeyHandle, 0, &left,  &g_pErrorCode) == 0 ) {
-		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Cannot Get Position of EPOS2 Device! (0x%x)", ref->g_pErrorCode);
-		printf( "Cannot Get Position of EPOS2 Device! (0x%x)", g_pErrorCode );
+		LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Cannot Get Position of EPOS2 Device! (0x%x)"), g_pErrorCode );
+		return;
 	}
 
 	right -= g_ticks_offset_right;
@@ -133,30 +128,26 @@ bool EPOS2::openEPOSDevice() {
 bool EPOS2::prepareEPOSDevice(int g_usNodeId) {
 	int oIsFault = 0;
 	if ( VCS_GetFaultState(g_pKeyHandle, g_usNodeId, &oIsFault, &g_pErrorCode ) == 0 ) {
-		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "GetFaultState");
-		printf( "GetFaultState" );
+		LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "GetFaultState with (0x%x)"), g_pErrorCode );
 		return false;
 	}
 
 	if( oIsFault ) {
 		if ( VCS_ClearFault(g_pKeyHandle, g_usNodeId, &g_pErrorCode) == 0) {
-			// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "ClearFault");
-			printf( "ClearFault" );
+			LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "ClearFault with (0x%x)"), g_pErrorCode );
 			return false;
 		}
 	}
 
 	int oIsEnabled = 0;
 	if ( VCS_GetEnableState(g_pKeyHandle, g_usNodeId, &oIsEnabled, &g_pErrorCode) == 0 ) {
-		// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "GetEnableState");
-		printf( "GetEnableState" );
+		LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "GetEnableState with (0x%x)"), g_pErrorCode );
 		return false;
 	}
 
 	if( !oIsEnabled ) {
 		if( VCS_SetEnableState(g_pKeyHandle, g_usNodeId, &g_pErrorCode) == 0 ) {
-			// RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "SetEnableState");
-			printf( "SetEnableState" );
+			LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "SetEnableState with (0x%x)"), g_pErrorCode );
 			return false;
 		}
 	}

@@ -6,7 +6,15 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #include "volksface/volksbot.h"
-#include "volksface/ansi.h"
+
+
+#ifdef USE_LOGGING_VOLKSBOT
+    #undef USE_LOGGING
+    #define USE_LOGGING USE_LOGGING_VOLKSBOT
+#endif
+
+#define LOGGING_NAME "Volksbot"
+#include "volksface/logging.h"
 
 //-----------------------------------------------------------------------------
 // LIBRARIES
@@ -44,7 +52,6 @@ using namespace std::chrono_literals;
 // PRECOMPILER FOR FORMAT HIGHLIGHTING
 //-----------------------------------------------------------------------------
 
-
 #define _STR_AVAIL " AVAILABLE "
 #define _STR_NOT_AVAIL " NOT AVAILABLE "
 #define S_AVAIL COL(FG_GREEN, _STR_AVAIL)
@@ -52,7 +59,6 @@ using namespace std::chrono_literals;
 
 #define SIZE_STATUS (int)MAX( sizeof(_STR_AVAIL)-1, sizeof(_STR_NOT_AVAIL)-1 )
 #define SIZE_FORMAT (int)MAX( sizeof(S_AVAIL)-1, sizeof(S_NOT_AVAIL)-1 )
-
 
 
 using namespace VB;
@@ -111,7 +117,7 @@ static std::pair<int, int> get_max_len_name_port( std::vector<Rover>& rovers, in
 
 static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
     if( !rover_map.IsMap() ) {
-        printf( COL(FG_RED, "could not parse rover: invalide yaml input\n") );
+        LOG_LN_WARN( COL(FG_RED, "could not parse rover: invalide yaml input") );
         return false;
     }
 
@@ -123,7 +129,7 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
         !rover_map["udev_symlink"]           ||
         !rover_map["ip_lms"]                 
     ) {
-        printf( COL(FG_RED, "could not parse rover: not all parameters supplied\n") );
+        LOG_LN_WARN( COL(FG_RED, "could not parse rover: not all parameters supplied") );
         return false;
     }
 
@@ -158,20 +164,20 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
 static void parse_config( const YAML::Node& cfg_map ) {
     if( auto n = cfg_map["ping_tries"] ) {
         config.count_ping_tries = n.as<int>( config.count_ping_tries );
-        printf( "ping_tries         = " COL(FG_GREEN, "%d") "\n", config.count_ping_tries );
+        LOG_LN_INFO( "ping_tries         = " COL(FG_GREEN, "%d"), config.count_ping_tries );
     }
 
     if( auto n = cfg_map["publish_period_sec"] ) {
         config.pub_period = std::chrono::seconds( n.as<int>( config.pub_period.count() ) );
-        printf( "publish_period_sec = " COL(FG_GREEN, "%lds") "\n", config.pub_period.count() );
+        LOG_LN_INFO( "publish_period_sec = " COL(FG_GREEN, "%lds"), config.pub_period.count() );
     }
 
     if( auto n = cfg_map["always_publish"] ) {
         config.always_publish = n.as<bool>( config.always_publish );
-        printf( "always_publish     = " COL(FG_GREEN, "%s") "\n", config.always_publish ? "true" : "false" );
+        LOG_LN_INFO( "always_publish     = " COL(FG_GREEN, "%s"), config.always_publish ? "true" : "false" );
     }
 
-    printf("\n");
+    LOG_LN_INFO(" ");
 }
 static void parse_yaml( const std::string& file_path ) {
     std::vector<YAML::Node> rovs = YAML::LoadAllFromFile( file_path );
@@ -189,14 +195,14 @@ static void parse_yaml( const std::string& file_path ) {
     int max_name_len = get_max_len_name_port( rovers ).first;
 
     for( const Rover& rov : rovers ) {
-        printf( "> parsed Rover: " COL(FG_GREEN, "%*s") " (" COL(FG_GREEN, "%s") ", " COL(FG_GREEN, "%s") ")\n",
+        LOG_LN_INFO( "> parsed Rover: " COL(FG_GREEN, "%*s") " (" COL(FG_GREEN, "%s") ", " COL(FG_GREEN, "%s") ")",
             max_name_len, rov.name.c_str(),
             rov.ip_lms.to_string(3).c_str(),
             MCD::to_string( rov.motor_controller ).c_str()
         );
     }
 
-    printf("\n");
+    LOG_LN_INFO(" ");
 }
 
 //-----------------------------------------------------------------------------
@@ -255,32 +261,32 @@ static int ping( const ip_t ip, const int pings ) {
     
     int sd = socket(PF_INET, SOCK_DGRAM, proto->p_proto);
     if ( sd < 0 ) {
-        perror("socket");
+        LOG_ERROR("Failed creating a socket");
         return 1;
     }
     if ( setsockopt(sd, SOL_IP, IP_TTL, &val, sizeof(val)) != 0) {
-        perror("Set TTL option");
+        LOG_ERROR("Failed setting TTL socket option");
         return 1;
     }
     if ( fcntl(sd, F_SETFL, O_NONBLOCK) != 0 ) {
-        perror("Request nonblocking I/O");
+        LOG_ERROR("Failed requesting nonblocking I/O");
         return 1;
     }
     
 
     // move cursor right of the status output
-    printf( CUF(%d) " ", SIZE_STATUS );
+    LOG_ANSI( CUF(%d) " ", SIZE_STATUS );
 
     packet pckt;
     sockaddr_in r_addr;
     for( int loop=0; loop < pings; loop++ ) {
         socklen_t len = sizeof(r_addr);
 
-        printf( "ping: %2d / %2d" CUB(13), loop+1, pings );
+        LOG_INFO( "ping: %2d / %2d" CUB(13), loop+1, pings );
         fflush( stdout );
 
         if ( recvfrom(sd, &pckt, sizeof(pckt), 0, (sockaddr*)&r_addr, &len) > 0 ) {
-            printf( CUB(%d) "%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_AVAIL, 14, "" );
+            LOG_ANSI( CUB(%d) "%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_AVAIL, 14, "" );
             return 0;
         }
 
@@ -296,14 +302,13 @@ static int ping( const ip_t ip, const int pings ) {
         pckt.hdr.checksum = checksum(&pckt, sizeof(pckt));
         
         if ( sendto(sd, &pckt, sizeof(pckt), 0, (sockaddr*)addr, sizeof(*addr)) <= 0 ) {
-            // use logging instead
-            // perror("sendto");
+            LOG_ERROR("Failed to call sendto");
         }
 
         usleep(300000);
     }
     
-    printf( CUB(%d) "%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_NOT_AVAIL, 14, "" );
+    LOG_LN_ANSI( CUB(%d) "%*s%*s", SIZE_STATUS+1, SIZE_FORMAT, S_NOT_AVAIL, 14, "" );
     return 1;
 }
 [[maybe_unused]] static int ping( const char *adress, const int pings ) {
@@ -323,14 +328,14 @@ static inline std::string to_lower( const std::string str ) {
 }
 
 static bool manual_select_rover( std::string rover_name ) {
-    printf( "Trying to find and select the rover named \"" COL(FG_GREEN, "%s") "\"\n", rover_name.c_str() );
+    LOG_LN_INFO( "Trying to find and select the rover named \"" COL(FG_GREEN, "%s") "\"", rover_name.c_str() );
 
     for( size_t i=0; i < rovers.size(); i++ ) {
         if( to_lower(rovers[i].name) == to_lower(rover_name) ) {
             active_rover = &rovers[i];
             active_rover_index = i;
 
-            printf( "Search was " COL(FG_BRIGHT_GREEN, "SUCCESSFUL") " and " COL(FG_BRIGHT_GREEN, "%s") " is now the selected Rover\n",
+            LOG_LN_INFO( "Search was " COL(FG_BRIGHT_GREEN, "SUCCESSFUL") " and " COL(FG_BRIGHT_GREEN, "%s") " is now the selected Rover",
                 active_rover->name.c_str()
             );
 
@@ -338,8 +343,8 @@ static bool manual_select_rover( std::string rover_name ) {
         }
     }
 
-    printf( "\"" COL(FG_GREEN, "%s" ) "\" was " COL(FG_BRIGHT_RED, "not found") " in the config/rovers.yaml\n", rover_name.c_str() );
-    printf( "Search was " COL(FG_BRIGHT_RED, "NOT successful") " and automatic Rover search will now commence\n\n" );
+    LOG_LN_WARN( "\"" COL(FG_GREEN, "%s" ) "\" was " COL(FG_BRIGHT_RED, "not found") " in the volksbot/config/rovers.yaml", rover_name.c_str() );
+    LOG_LN_WARN( "Search was " COL(FG_BRIGHT_RED, "NOT successful") " and automatic Rover search will now commence\n" );
 
     return false;
 }
@@ -373,14 +378,14 @@ static bool find_rover() {
     auto [max_name_len, max_port_len] = get_max_len_name_port( rovers, 0, str_len_ip );
 
     auto print_port = [&](const int i, const char* text) {
-        printf( "[" COL(CVAR, "%*s") "] udev port (" COL(CVAR, "%-*s") "): %*s\n",
+        LOG_LN_INFO( "[" COL(CVAR, "%*s") "] udev port (" COL(CVAR, "%-*s") "): %*s",
             max_name_len, rovers[i].name.c_str(),
             max_port_len, rovers[i].udev_symlink.c_str(),
             SIZE_FORMAT, text
         );
     };
     auto print_ip = [&](const int i, const int text_width, const char* text) {
-        printf( "[" COL(CVAR, "%*s") "]        ip (" COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "%*s): %*s",
+        LOG_INFO( "[" COL(CVAR, "%*s") "]        ip (" COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "%*s): %*s",
             max_name_len, rovers[i].name.c_str(),
             rovers[i].ip_lms.ip.hh, 
             rovers[i].ip_lms.ip.hl, 
@@ -413,50 +418,50 @@ static bool find_rover() {
     static bool first_execution = true;
     if( !first_execution ) {
         // jump back up, so that we overwrite the table on the next look up round
-        printf( CPL(%ld), 1 + max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 );
-        printf( ED(0) ); // clear from cursor to end of screen
+        LOG_ANSI( CPL(%ld), 1 + max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 );
+        LOG_ANSI( ED(0) ); // clear from cursor to end of screen
     }
     first_execution = false;
 
-    printf( "============================================================\n" );
+    LOG_LN_INFO( "============================================================" );
 
     for( uint i=0; i < rovers.size(); i++ ) {
         print_port( i, check_already_connected ? COL(CPREFILL, "      ...     ") : COL(CPREFILL, " ...waiting... ") );
         print_ip( i, SIZE_FORMAT, check_already_connected ? COL(CPREFILL, "      ...     \n") : COL(CPREFILL, " ...waiting... \n") );
     }
 
-    printf( "\n------------------------------------------------------------\n" );
+    LOG_LN_INFO( "\n------------------------------------------------------------" );
     for( uint i=0; i < rovers.size(); i++) {
-        printf( "[" COL(CVAR, "%*s") "] matches: " COL(CPREFILL, " - ") "\n", max_name_len, rovers[i].name.c_str() );
+        LOG_LN_INFO( "[" COL(CVAR, "%*s") "] matches: " COL(CPREFILL, " - "), max_name_len, rovers[i].name.c_str() );
     }
-
-    printf( "\nRover:   %s   " COL(%s, "%*s") "\n",
+    
+    LOG_LN_INFO( "\nRover:   %s   " COL(%s, "%*s"),
         check_already_connected ? COL(BLINK;CPREFILL;CVAR, "  validating ") : COL(BLINK;CPREFILL;FG_WHITE, "  searching  "),
-        check_already_connected ? XSTR(CPREFILL;CVAR) : XSTR(CPREFILL),
+        IF_PRINT( check_already_connected ? XSTR(CPREFILL;CVAR) : XSTR(CPREFILL), )
         max_name_len, check_already_connected ? rovers[active_rover_index].name.c_str() : "---"
     );
 
-    printf( SCO ); // save cursor position SCO
-    printf( CPL(%ld), max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 ); // jump back up
+    LOG_ANSI( SCO ); // save cursor position SCO
+    LOG_ANSI( CPL(%ld), max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 ); // jump back up
     
     // artificially delay execution so that the user has enough time to "comprehend" what is happening
-    sleep( 1 );
+    IF_PRINT( sleep( 1 ) );
 
 
     // main search ------------------------------------------------------------
     // test for valid connection if already connected
     if( check_already_connected ) {
         if( active_rover_index > 0 ) {
-            printf( CNL(%d), max_matches*active_rover_index ); // jump to rover position in table
+            LOG_ANSI( CNL(%d), max_matches*active_rover_index ); // jump to rover position in table
         }
 
         search_body( active_rover_index );
 
-        printf( CPL(%d), max_matches*(active_rover_index+1) ); // jump back up to top rover position in table
+        LOG_ANSI( CPL(%d), max_matches*(active_rover_index+1) ); // jump back up to top rover position in table
 
         if( matches[active_rover_index] == max_matches ) {
             // we are still connected and therefor skip testing for other rovers
-            printf( CNL(%ld), max_matches*rovers.size() ); // jump to bottom of table
+            LOG_ANSI( CNL(%ld), max_matches*rovers.size() ); // jump to bottom of table
             
             // YESS, this is very dirty, but i think it is better for the readability
             // and also logic of the controlflow than having to indent for another if clause
@@ -470,7 +475,7 @@ static bool find_rover() {
         // if an rover is connected and we already checked for it above we can skip it now
         // else i will never be -1 and active_rover_index is -1 so the if case does not execute
         if ( static_cast<int>(i) == active_rover_index ) {
-            printf( CNL(%d), max_matches ); // jump to next rover position in table
+            LOG_ANSI( CNL(%d), max_matches ); // jump to next rover position in table
             continue;
         }
 
@@ -480,7 +485,7 @@ static bool find_rover() {
 
     // select best fit
 best_fit:
-    printf( "\n------------------------------------------------------------\n" );
+    LOG_LN_INFO( "\n------------------------------------------------------------" );
     
     active_rover_index = -1;
     int best_match = 0;
@@ -493,13 +498,13 @@ best_fit:
     for( uint i=0; i < rovers.size(); i++) {
         if( matches[i] == -1 ) {
             // skip print if value was not initialized since we already preprinted the table
-            printf( CNL(1) );
+            LOG_ANSI( CNL(1) );
             continue;
         }
 
-        printf( "[" COL(CVAR, "%*s") "] matches:  " COL(%d, "%d") " \n", 
+        LOG_LN_INFO( "[" COL(CVAR, "%*s") "] matches:  " COL(%d, "%d"), 
             max_name_len, rovers[i].name.c_str(),
-            color_match_lut[matches[i]], matches[i]
+            IF_PRINT( color_match_lut[matches[i]], ) matches[i]
         );
 
         if( matches[i] > best_match ) {
@@ -512,13 +517,13 @@ best_fit:
     active_rover = active_rover_index == -1 ? &ROVER_DUMMY : &rovers[active_rover_index];
     bool changed = hash(active_rover) != current_hash;
 
-    printf( "\nRover:   %s   " COL(%s, "%*s") "\n",
+    LOG_LN_INFO( "\nRover:   %s   " COL(%s, "%*s"),
         changed
         ? COL(BG_BRIGHT_YELLOW;FG_BLACK, "  NEW ROVER  ")
         : active_rover_index == -1
             ? COL(FG_GRAY, " not changed ")
             : COL(FG_BRIGHT_GREEN, "  validated  "),
-        active_rover_index == -1 ? XSTR(BG_BRIGHT_RED;FG_BLACK) : XSTR(FG_BRIGHT_GREEN),
+        IF_PRINT( active_rover_index == -1 ? XSTR(BG_BRIGHT_RED;FG_BLACK) : XSTR(FG_BRIGHT_GREEN), )
         max_name_len, active_rover_index == -1 ? " NO ROVER CONNECTED " : rovers[active_rover_index].name.c_str()
     );
 
@@ -544,12 +549,12 @@ static void find_and_publish() {
 int main(int argc, char* argv[]) {
     signal(SIGINT, [](int sig){
         (void)sig;
-        printf( RCP "\n" ); // restore cursor position (last SCO)
+        LOG_LN_ANSI( RCP ); // restore cursor position (last SCO) // new line to flush the buffer
         rclcpp::shutdown();
         exit(0);
     });
     
-    printf( ED(2) CUP(1,1) ); // clear screen // and move cursor home
+    LOG_ANSI( ED(2) CUP(1,1) ); // clear screen // and move cursor home
     parse_yaml( PATH_YAML_ROVERS );
 
     rclcpp::init(argc, argv);
@@ -560,7 +565,7 @@ int main(int argc, char* argv[]) {
     
     bool is_manually_set = false;
     if( argc == 2 ) {
-        printf( "Volksbot called with argument: " COL(FG_GREEN, "%s\n\n"), argv[1] );
+        LOG_LN_INFO( "Volksbot called with argument: " COL(FG_GREEN, "%s\n"), argv[1] );
         
         is_manually_set = manual_select_rover( argv[1] );
     }

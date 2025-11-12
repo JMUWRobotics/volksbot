@@ -2,7 +2,7 @@
 // @file    device_utils.cpp
 // @brief   helper function for managing device look ups etc.
 // @author  Nico Schubert
-// @date    31.03.2025
+// @date    10.11.2025
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -55,13 +55,6 @@ static constexpr char sysclass_path[] = "/sys/class/input/";
 
 // number of gamepads in the list 
 static constexpr uint gamepad_count = sizeof(gamepads) / sizeof(*gamepads);
-
-
-#ifdef USE_DEBUG
-    #define DBG_PRINTF(fmt, ...) printf(fmt, __VA_ARGS__)
-#else
-    #define DBG_PRINTF(fmt, ...)
-#endif
 
 
 
@@ -132,19 +125,22 @@ namespace device_util {
         return js_event_names;
     }
 
-    Gamepad* select_and_connect_gamepad() {
+    Gamepad* select_and_connect_gamepad( const bool is_in_search_loop ) {
         const std::vector<std::string> js_names = get_input_js_names();
 
         if( js_names.empty() ) {
-            printf( COL(91, "! No Gamepad or Joystick could be detected !\n") );
-            printf( COL(93, "Make sure the device is correctly connected!\nYou need to restart the Application!\n" ) );
+            LOG_LN_WARN( COL(FG_BRIGHT_RED, "! No Gamepad or Joystick could be detected !") );
+            LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Make sure the device is correctly connected!" ) );
+            if( !is_in_search_loop ) {
+                LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "You need to restart the Application!" ) );
+            }
             return nullptr;
         }
 
         const std::vector<std::string> js_event_names = get_event_file_names( js_names );
 
         const int devices = js_names.size();
-        printf("Number of joystick devices detected: " COL(95, "%d\n"), devices);
+        LOG_LN_INFO("Number of joystick devices detected: " COL(FG_BRIGHT_MAGENTA, "%d"), devices);
         
         // find first known gamepad
         Gamepad* gamepad;
@@ -159,7 +155,8 @@ namespace device_util {
             char device_name[256];
             read_evio_name( event_path.c_str(), device_name );
 
-            printf( " - [" COL(95, "%d") "] " COL(95, "%4s") " - " COL(95, "%7s") " - " COL(95, "%s") "\n", i, js_name.c_str(), event_name.c_str(), device_name );
+            LOG_LN_INFO( " - [" COL(FG_BRIGHT_MAGENTA, "%d") "] " COL(FG_BRIGHT_MAGENTA, "%4s") " - " COL(FG_BRIGHT_MAGENTA, "%7s") " - " COL(FG_BRIGHT_MAGENTA, "%s"),
+                    i, js_name.c_str(), event_name.c_str(), device_name );
 
             if( selected_index != -1 )
                 continue;
@@ -175,23 +172,26 @@ namespace device_util {
                 }
             }
         }
-        printf("\n");
+        LOG_ANSI("\n");
 
         if( selected_index != -1 ) {
-            printf( "Found a supported gamepad\n" );
-            printf( "Selected Gamepad is: " COL(92,"%s") " as joystick device " COL(92,"%s") "\n", selected_device_name.c_str(), js_names.at(selected_index).c_str() );
+            LOG_LN_INFO( "Found a supported gamepad" );
+            LOG_LN_INFO( "Selected Gamepad is: " COL(FG_BRIGHT_GREEN,"%s") " as joystick device " COL(FG_BRIGHT_GREEN,"%s"), 
+                         selected_device_name.c_str(), js_names.at(selected_index).c_str() );
 
             return gamepad;
         }
 
-        printf( COL(91, "! None of the detected Gamepads or Joysticks are known !\n" ) );
-        printf( "Please connect one of the following known joystick devices:\n" );
+        LOG_LN_WARN( COL(FG_BRIGHT_RED, "! None of the detected Gamepads or Joysticks are known !" ) );
+        LOG_LN_WARN( "Please connect one of the following known joystick devices:" );
 
         for( Gamepad* gp : gamepads ) {
-            printf( "  - " COL(94,"%s") "\n", gp->evio_id_name() );
+            LOG_LN_WARN( "  - " COL(FG_BRIGHT_BLUE,"%s"), gp->evio_id_name() );
         }
 
-        printf( COL(93, "\nYou need to restart the Application!\n" ) );
+        if( !is_in_search_loop ) {
+            LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "You need to restart the Application!" ) );
+        }
 
         return nullptr;
     }
@@ -255,16 +255,16 @@ namespace device_util {
         if( !resolve_link( resolved_path + "/../../../../", usb_path ) )
             return false;
     
-        DBG_PRINTF( "event_name:    " COL(94, "%s") "\n", event_name.c_str()    );
-        DBG_PRINTF( "sys_path:      " COL(94, "%s") "\n", sys_path.c_str()      );
-        DBG_PRINTF( "resolved_path: " COL(94, "%s") "\n", resolved_path.c_str() );
-        DBG_PRINTF( "usb_path:      " COL(94, "%s") "\n", usb_path.c_str()      );
+        LOG_LN_DEBUG( "event_name:    " COL(FG_BRIGHT_BLUE, "%s"), event_name.c_str()    );
+        LOG_LN_DEBUG( "sys_path:      " COL(FG_BRIGHT_BLUE, "%s"), sys_path.c_str()      );
+        LOG_LN_DEBUG( "resolved_path: " COL(FG_BRIGHT_BLUE, "%s"), resolved_path.c_str() );
+        LOG_LN_DEBUG( "usb_path:      " COL(FG_BRIGHT_BLUE, "%s"), usb_path.c_str()      );
     
         return true;
     }
     
     bool get_usb_device_serial_number( const std::string usb_device_path, std::string& serial_number ) {
-        DBG_PRINTF( "usb_dev_path:  " COL(94, "%s") "\n", usb_device_path.c_str() );
+        LOG_LN_DEBUG( "usb_dev_path:  " COL(FG_BRIGHT_BLUE, "%s"), usb_device_path.c_str() );
 
         FILE* fp = fopen( (usb_device_path + "/serial").c_str(), "r" );
     
@@ -300,7 +300,7 @@ namespace device_util {
                 
         return true;
     }
-}    
+}
 
 
 

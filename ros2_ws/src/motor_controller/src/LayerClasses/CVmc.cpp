@@ -508,13 +508,21 @@ char port[20];
 #ifndef REAL_TIME
 		if(isComPortOpened > 0) {
 			bool ret = _apiObject->useVMC().BatteryVoltage.Update();
-			ret ? printf("CVmc:: battery voltage updated\n") : printf("CVmc:: battery voltage update failed\n");
+			if( ret ) {
+				LOG_LN_INFO("CVmc:: battery voltage updated");
+			} else {
+				LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "CVmc:: battery voltage update failed") );
+			}
 			wait(150);
-			float voltage=  _apiObject->useVMC().BatteryVoltage.getValue();
-			printf("voltage is %f\n", voltage);
-			if(voltage == 0) return;
+			float voltage = _apiObject->useVMC().BatteryVoltage.getValue();
+			
+			LOG_LN_INFO("voltage is %f", voltage);
+			
+			if(voltage == 0) 
+				return;
+		} else {
+			return;
 		}
-		else return;
 
 		_isConnected= 1;
 		strncpy(_comPort, comPort, 40);
@@ -538,7 +546,7 @@ char port[20];
 
 #else // REAL_TIME
 		if(isComPortOpened > 0) {
-			printf("port opened, entering real time mode...\n");
+			LOG_LN_INFO("port opened, entering real time mode...");
 		}
 		else return;
 
@@ -547,17 +555,17 @@ char port[20];
 		_comPort[40]= 0x00;
 
 
-		printf("create task...\n");
+		LOG_LN_INFO("create task...");
 		int err = rt_task_create(&vmc_thread, "vmc_thread", 0, 51, 0);
 		if (err) {
-			printf("task creation failed!  %s\n", strerror(-err));
+			LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "task creation failed!  %s"), strerror(-err));
 			exit(0);
 		}
 
-		printf("start task...\n");
+		LOG_LN_INFO("start task...");
 		rt_task_start(&vmc_thread, &vmcThreadFunction, (void *)this);
 		if (err) {
-			printf("task didnt start!\n");
+			LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "task didnt start!") );
 			exit(0);
 		}
 

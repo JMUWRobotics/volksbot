@@ -98,25 +98,25 @@ void kbcontrol::run() {
         break;
     }
     setVelocity(c);
-    printf("Call service: %f %f\n", velocity_->left, velocity_->right);
+    LOG_LN_INFO("Call service: %f %f", velocity_->left, velocity_->right);
 
     // Check if service is active
     while (!client_->wait_for_service(std::chrono::seconds(1))) {
       // If ROS is shutdown before the service is activated, show this error
       if (!rclcpp::ok()) {
-        RCLCPP_ERROR(rclcpp::get_logger("kbcontrol"), "Interrupted while waiting for the service.");
+        LOG_LN_ERROR(COL(FG_BRIGHT_RED, "Interrupted while waiting for the service."));
         return;
       }
-      RCLCPP_INFO(rclcpp::get_logger("kbcontrol"), "Service not available");
+      LOG_LN_WARN(COL(FG_BRIGHT_YELLOW, "Service not available"));
     }
     // Send request to service
     auto feedback = client_->async_send_request(velocity_);
 
     // blocks the thread until feedback is received -> synchronous service call
     if (rclcpp::spin_until_future_complete(this->std::enable_shared_from_this<kbcontrol>::shared_from_this(), feedback) == rclcpp::FutureReturnCode::SUCCESS){
-      RCLCPP_INFO(this->get_logger(), "Service call succeeded.");
+      LOG_LN_INFO("Service call succeeded.");
     } else {
-      RCLCPP_ERROR(this->get_logger(), "Service call failed.");
+      LOG_LN_ERROR(COL(FG_BRIGHT_RED, "Service call failed."));
     }
 
     // We have to use 'this' since run() is a member function

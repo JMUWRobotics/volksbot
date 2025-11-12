@@ -47,19 +47,45 @@ Launching the sick driver for the lms100 ! Attention: must set the correct host-
 > TODO: configure and add laser specific settings like in the ROS1 volksbot parameter.yaml
 
 # Building
-Currently building for the first time requires multiple steps:
+> Hint: When your OS freezes on building consider using less parallel workers by adding ```--parallel-workers n``` to the colcon build command. (2 or 3 should usually work for everyone)
 
+### When building for the first follow the following steps:
+
+1) source ros2
 ```bash
 source ${ros2_distro}
-colcon build --packages-select sick_scan_xd --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" " -DSCANSEGMENT_XD=0" --event-handlers console_direct+
-source ./install/setup.bash
-colcon build --packages-ignore sick_scan_xd
 ```
 
-for regular building, make sure that you are sourced into the workspace 
+2) only build the SICK LMS package
+```bash
+colcon build --packages-select sick_scan_xd --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" " -DSCANSEGMENT_XD=0" --event-handlers console_direct+
+```
+
+3) source the project
+```bash
+source ./install/setup.bash
+```
+
+4) build all other packages
 ```bash
 colcon build --packages-ignore sick_scan_xd
 ```
 
-### Tip:
-- When pc freezes on building consider using less parallel workers with ```--parallel-workers n``` (2 or 3 should definitely work)
+### For normal building use the following command
+> Make sure you are source into the workspace with
+> `source ./install/setup.bash`
+
+```bash
+colcon build --packages-ignore sick_scan_xd
+```
+
+
+# Logging
+
+Enter the following line in your terminal to set the logging directory for all logs:
+
+```bash
+export ROS_LOG_DIR=./log/latest
+```
+
+the logs can then be found under the linked folder `./logs/latest/` where `latest/` is a symlink to the folder of the latest build
