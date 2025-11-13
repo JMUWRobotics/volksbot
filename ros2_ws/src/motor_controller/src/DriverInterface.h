@@ -3,6 +3,8 @@
 
 #include <cmath>
 
+#include "ros2_logger.h"
+
 // Motor Controller Driver
 namespace mcd {
 

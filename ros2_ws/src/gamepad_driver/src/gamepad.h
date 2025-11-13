@@ -2,7 +2,7 @@
 // @file    gamepad.h
 // @brief   Gamepad interface to implement gamepad and joystick event in- and outputs
 // @author  Nico Schubert
-// @date    31.03.2025
+// @date    10.11.2025
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -19,6 +19,9 @@
 #include <string>
 #include <linux/input.h>
 #include <pthread.h>
+
+#include "ros2_logger.h"
+
 
 #define EV_TYPE_BUTTON EV_KEY
 #define EV_TYPE_AXIS   EV_ABS

@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 project(volksbot)
 
-# Add standard ROS 2 compile options
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic -O3)
-endif()
+# include project wide configuration
+include(${PROJECT_SOURCE_DIR}/../../cmake/project_config.cmake OPTIONAL)
 
-# Set C++ standard to C++14
-set(CMAKE_CXX_STANDARD 14)
+
+# Set C++ standard to C++20
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find necessary ROS 2 packages
@@ -82,18 +81,6 @@ install(
 # to the exported dependencies
 ament_export_dependencies(rclcpp std_msgs sensor_msgs nav_msgs tf2 tf2_ros tf2_geometry_msgs)
 
-
-if(BUILD_TESTING)
-  find_package(ament_lint_auto REQUIRED)
-  # the following line skips the linter which checks for copyrights
-  # comment the line when a copyright and license is added to all source files
-  set(ament_cmake_copyright_FOUND TRUE)
-  # the following line skips cpplint (only works in a git repo)
-  # comment the line when this package is in a git repo and when
-  # a copyright and license is added to all source files
-  set(ament_cmake_cpplint_FOUND TRUE)
-  ament_lint_auto_find_test_dependencies()
-endif()
 
 # Install launch files.
 install(DIRECTORY

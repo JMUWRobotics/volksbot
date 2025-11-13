@@ -5,6 +5,14 @@
 #define VB_NO_GEOMETRY
 #include "volksface/volksbot.h"
 
+#ifdef USE_LOGGING_KEYBOARD
+    #undef USE_LOGGING
+    #define USE_LOGGING USE_LOGGING_KEYBOARD
+#endif
+
+#define LOGGING_NAME "kbcontrol"
+#include "volksface/logging.h"
+
 namespace volksbot {
   using namespace VB;
 

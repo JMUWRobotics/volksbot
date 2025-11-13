@@ -76,9 +76,9 @@ void Odometry::publish_transform( rclcpp::Time current_time ) {
 
 Odometry::Odometry(bool _publish_tf) : Node("odometry_node"), publish_tf(_publish_tf) {
 	if(publish_tf) {
-		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "With odometry tf");
+		LOG_LN_INFO( "With odometry tf" );
 	} else {
-		RCLCPP_INFO(rclcpp::get_logger("Volksbot"), "Without odometry tf");
+		LOG_LN_INFO( "Without odometry tf" );
 	}
 
 	// create ROS2 subscriber and publisher

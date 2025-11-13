@@ -6,7 +6,14 @@
 #include <geometry_msgs/msg/transform_stamped.hpp>
 #include "nav_msgs/msg/odometry.hpp"
 
-// custom msgs
+#ifdef USE_LOGGING_ODOMETRY
+    #undef USE_LOGGING
+    #define USE_LOGGING USE_LOGGING_ODOMETRY
+#endif
+
+#define LOGGING_NAME "odometry"
+#include "volksface/logging.h"
+
 #include "volksface/volksbot.h"
 
 #include <tf2_geometry_msgs/tf2_geometry_msgs.hpp>

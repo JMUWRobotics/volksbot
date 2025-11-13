@@ -10,6 +10,7 @@
 #define __VOLKSBOT_ADAPTER__
 
 #include <sysexits.h>
+#include <signal.h>
 #include <chrono>
 #include <math.h>
 using namespace std::chrono_literals;
@@ -20,16 +21,27 @@ using namespace std::chrono_literals;
 #define VB_NO_GEOMETRY
 #include "volksface/volksbot.h"
 
+#include "ros2_logger.h"
+
 #include "device_utils.h"
 
 
 #define SPIN_PERIOD    100ms
 #define PUBLISH_PERIOD  10ms
 
+//-----------------//
+//  debug symbols  //
+//-----------------//
+// print a visualization of the gamepad inputs 
+// #define PRINT_STATE
 
-#define PRINT_STATE
+// debug print every recorded input event
 // #define PRINT_EVENT
+
+// debug print for debuging ACCEL_FORCE_FEEDBACK
 // #define PRINT_VEL_CTRL
+
+// enable emulated force feedback // works currently unstable
 // #define ACCEL_FORCE_FEEDBACK
 
 
@@ -117,7 +129,7 @@ struct vel_ctrl_t {
             if( EVENT_PRESSED(gpe, gp_index::START) ) {
                 is_stick_drive = !is_stick_drive;
                 throttle_sign = 0;
-                set_rumble( 0x7FFF, 0x7FFF, 100ms );
+                set_rumble( 0xFFFF, 0xFFFF, 100ms );
             }
 
             if( EVENT_PRESSED(gpe, gp_index::LB) ) {
@@ -156,7 +168,7 @@ struct vel_ctrl_t {
                     throttle_sign = sgn(gps.thumb_stick_left.up_down);
                 }
 
-                throttle = abs_throttle * throttle_sign;            
+                throttle = abs_throttle * throttle_sign;
             } else {
                 /**
                  * main movement is controlled with the left thumbstick and the throttle paddles
@@ -237,7 +249,7 @@ class Volks_gamepad : public rclcpp::Node {
 
 
             while( rclcpp::ok() ) {
-                active_gamepad = device_util::select_and_connect_gamepad();
+                active_gamepad = device_util::select_and_connect_gamepad(true);
 
                 if( active_gamepad != nullptr )
                     break;
@@ -265,7 +277,7 @@ class Volks_gamepad : public rclcpp::Node {
                         active_gamepad->print_event();
                     #endif
                     
-                    // custom
+                    // custom debug rumble
                     // if( active_gamepad->get_state().buttons.B ) {
                     //     active_gamepad->set_rumble( 2*active_gamepad->get_state().throttle.left, 2*active_gamepad->get_state().throttle.right );
                     // }
@@ -273,6 +285,7 @@ class Volks_gamepad : public rclcpp::Node {
                     // continue;
                     publish();
 
+                    // artificially throttle down spinning so that we have enough time to process all input events
                     t1 = get_clock()->now();
                     if( t1 - t0 >= SPIN_PERIOD ) {
                         t0 = t1;
@@ -281,10 +294,10 @@ class Volks_gamepad : public rclcpp::Node {
                 }
 
                 // try to reconnect
-                printf( COL(91, "Gamepad got disconnected!") " Trying to reconnect to " COL(1;94, "%s") "\n", active_gamepad->get_name().c_str() );
+                LOG_LN_WARN( COL(FG_BRIGHT_RED, "Gamepad got disconnected!") " Trying to reconnect to " COL(BOLD;FG_BRIGHT_BLUE, "%s"), active_gamepad->get_name().c_str() );
 
                 if( device_util::try_reconnect( active_gamepad ) ) {
-                    printf( COL(92, "Successfully reconnected to %s\n"), active_gamepad->get_name().c_str() );
+                    LOG_LN_INFO( COL(FG_BRIGHT_GREEN, "Successfully reconnected to %s"), active_gamepad->get_name().c_str() );
                 } else {
                     rclcpp::sleep_for( nanoseconds( 1000ms ) );
                 }
@@ -348,6 +361,12 @@ class Volks_gamepad : public rclcpp::Node {
 int main(int argc, char* argv[]) {
     (void) argc;
     (void) argv;
+
+    signal( SIGINT, [](int){ 
+        rclcpp::shutdown();
+        LOG_LN_ANSI( RCP ); // restore cursor position (last SCO) // new line to flush the buffer
+        exit(EX_OK);
+    } );
 
     rclcpp::init(argc, argv);
 

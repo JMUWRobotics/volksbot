@@ -2,7 +2,7 @@
 // @file    gamepad.cpp
 // @brief   implementation of gamepad and joystick event in- and outputs
 // @author  Nico Schubert
-// @date    31.03.2025
+// @date    10.11.2025
 /////////////////////////////////////////////////////////////////////////////
 
 
@@ -31,9 +31,6 @@
     #define   LOCK(mux)
     #define UNLOCK(mux)
 #endif
-
-// Macro for ansi console coloring
-#define COL(code, str)  "\x1b[" #code "m" str "\x1b[0m"
 
 
 //-----------------------------------------------------------------------------
@@ -65,7 +62,7 @@ void* rumble_function(void* arg) {
 
 void Gamepad::connect( const char* filename ) {
     if( fd_rw != -1 ) {
-        printf( COL(93, "Gamepad is already connected!\n") );
+        LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Gamepad is already connected!") );
         return;
     }
 
@@ -73,7 +70,7 @@ void Gamepad::connect( const char* filename ) {
     
     if( fd_rw < 0 ) {
         fd_rw = -1;
-        printf( COL(91, "Gamepad %s not found!\n"), filename);
+        LOG_LN_ERROR( COL(FG_BRIGHT_RED, "Gamepad %s not found!"), filename);
         return;
     }
 
@@ -98,8 +95,8 @@ void Gamepad::connect( const char* filename ) {
         int ret = pthread_create( &thread_rumble, NULL, &rumble_function, this );
     
         if( ret ) {
-            printf( COL(93, "Failed to initiate backend rumble thread! Rumbling of the gamepad will now not work!\n" ) );
-            printf( COL(93, "Try to restart the Application if rumbling of the gamepad is required." ) );
+            LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Failed to initiate backend rumble thread! Rumbling of the gamepad will now not work!" ) );
+            LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Try to restart the Application if rumbling of the gamepad is required." ) );
         } else {
             pthread_detach( thread_rumble );
         }
@@ -108,7 +105,7 @@ void Gamepad::connect( const char* filename ) {
 
 void Gamepad::disconnect() {
     if( fd_rw == -1 ) {
-        printf( COL(93, "Gamepad is already disconnected!\n") );
+        LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Gamepad is already disconnected!") );
         return;
     }
 
@@ -119,7 +116,9 @@ void Gamepad::disconnect() {
     stop.code = effect.id;
     stop.value = 0;
 
-    (void)write( fd_rw, &stop, sizeof(stop) );
+    if( write( fd_rw, &stop, sizeof(stop) ) != sizeof(stop) ) {
+        LOG_LN_DEBUG( COL(FG_YELLOW, "could not write stop rumble effect to gamepad") );
+    }
 
     close( fd_rw );
     fd_rw = -1;
@@ -198,7 +197,9 @@ void Gamepad::handle_rumble() {
 
     /* Play the effect */
     ie.value = 1;
-    (void)write( fd_rw, &ie, sizeof(ie) );
+    if( write( fd_rw, &ie, sizeof(ie) ) != sizeof(ie) ) {
+        LOG_LN_DEBUG( COL(FG_YELLOW, "could not write rumble successfully to gamepad") );
+    }
 }
 
 
@@ -220,30 +221,47 @@ static constexpr char gp_index_LUT[][20] = {
     "THUMB_R_LEFT_RIGHT", "", "THUMB_R_UP_DOWN", "", "THUMB_R_PRESSED", ""
 };
 void Gamepad::print_event() const {
-    printf( "INPUT EVENT --------------------------\n" );
-    printf( "ID: " COL(94, "%d") "\n", id );
-    printf( "time : \n");
-    printf( "  sec: " COL(94, "%8ld") "\n", gp_ie.time.tv_sec   );
-    printf( " µsec: " COL(94, "%8ld") "\n", gp_ie.time.tv_usec  );
-    printf( "type : " COL(94, "%6x" ) "\n", gp_ie.type   );
-    printf( "code : " COL(94, "%6x" ) "\n", gp_ie.code   );
-    printf( "value: " COL(94, "%6d" ) "\n", gp_ie.value  );
+    static uint32_t last_id = id+1;
 
-    printf( "\nGAMEPAD EVENT ------------------------\n" );
-    printf( "       is_axis: " COL(94, "%5s") "\n", gp_e.is_axis ? "true" : "false" );
-    printf( "       code-id: " COL(94, "%2d") "\n", gp_e.code );
-    printf( "          code: " COL(94, "%-20s") "\n", gp_e.code==gp_index::INVALID ? "INVALID" : gp_index_LUT[ gp_e.code ] );
-    printf( "value (axis)  : " COL(94, "%6d") "\n", gp_e.value.axis );
-    printf( "value (button): " COL(94, "%5s") "\n", gp_e.value.btn ? "true" : "false" );
+    if( last_id == id ) {
+        return;
+    }
 
-    printf( "\x1b[15F" );
+    last_id = id;
+
+    LOG_LN_DEBUG( "INPUT EVENT --------------------------" );
+    LOG_LN_DEBUG( "ID: " COL(FG_BRIGHT_BLUE, "%d"), id );
+    LOG_LN_DEBUG( "time : ");
+    LOG_LN_DEBUG( "  sec: " COL(FG_BRIGHT_BLUE, "%8ld"), gp_ie.time.tv_sec   );
+    LOG_LN_DEBUG( " µsec: " COL(FG_BRIGHT_BLUE, "%8ld"), gp_ie.time.tv_usec  );
+    LOG_LN_DEBUG( "type : " COL(FG_BRIGHT_BLUE, "%6x" ), gp_ie.type   );
+    LOG_LN_DEBUG( "code : " COL(FG_BRIGHT_BLUE, "%6x" ), gp_ie.code   );
+    LOG_LN_DEBUG( "value: " COL(FG_BRIGHT_BLUE, "%6d" ), gp_ie.value  );
+    LOG_ANSI( "\n" );
+    LOG_LN_DEBUG( "GAMEPAD EVENT ------------------------" );
+    LOG_LN_DEBUG( "       is_axis: " COL(FG_BRIGHT_BLUE, "%5s"), gp_e.is_axis ? "true" : "false" );
+    LOG_LN_DEBUG( "       code-id: " COL(FG_BRIGHT_BLUE, "%2d"), gp_e.code );
+    LOG_LN_DEBUG( "          code: " COL(FG_BRIGHT_BLUE, "%-20s"), gp_e.code==gp_index::INVALID ? "INVALID" : gp_index_LUT[ gp_e.code ] );
+    LOG_LN_DEBUG( "value (axis)  : " COL(FG_BRIGHT_BLUE, "%6d"), gp_e.value.axis );
+    LOG_LN_DEBUG( "value (button): " COL(FG_BRIGHT_BLUE, "%5s"), gp_e.value.btn ? "true" : "false" );
+
+    LOG_ANSI( SCO );
+    LOG_ANSI( CPL(15) );
 }
 
-#define STR_BOOL(s, v) ( (v) ? COL(42, " " s " ") : COL(41,  " " s " ") )
+#define STR_BOOL(s, v) ( (v) ? COL(BG_GREEN, " " s " ") : COL(BG_RED,  " " s " ") )
 #define PERCENT(x) ( (int16_t)( 100.0 * (x) / (float)(AXIS_VALUE_MAX) ) )
 void Gamepad::print_state() const {
-    printf( "ID: " COL(94, "%d") "\n", id );
-    printf( "Buttons: %s %s %s %s  %s %s %s  %s %s\n", 
+    static uint32_t last_id = id+1;
+
+    if( last_id == id ) {
+        return;
+    }
+    
+    last_id = id;
+    
+    LOG_LN_DEBUG( "ID: " COL(FG_BRIGHT_BLUE, "%d"), id );
+    LOG_LN_DEBUG( "Buttons: %s %s %s %s  %s %s %s  %s %s", 
         STR_BOOL( "A", gp_s.buttons.A ),
         STR_BOOL( "B", gp_s.buttons.B ),
         STR_BOOL( "X", gp_s.buttons.X ),
@@ -256,23 +274,23 @@ void Gamepad::print_state() const {
         STR_BOOL( "LB", gp_s.shoulder.left ),
         STR_BOOL( "RB", gp_s.shoulder.right )
     );
-    printf( "HUD:\n" );
-    printf( "LEFT_RIGHT: %s\n",  gp_s.hud.left_right == 0 ? "       " : ( gp_s.hud.left_right > 0 ? COL(42, " LEFT ") : COL(42, " RIGHT ") ) );
-    printf( "UP_DOWN:     %s\n", gp_s.hud.up_down    == 0 ? "       " : ( gp_s.hud.up_down    > 0 ? COL(42, "  UP  ") : COL(42, " DOWN ")  ) );
+    LOG_LN_DEBUG( "HUD:" );
+    LOG_LN_DEBUG( "LEFT_RIGHT: %s", gp_s.hud.left_right == 0 ? COL(BG_GRAY, "      ") : ( gp_s.hud.left_right > 0 ? COL(BG_GREEN, " LEFT ") : COL(BG_GREEN, " RIGHT ") ) );
+    LOG_LN_DEBUG( "UP_DOWN:    %s", gp_s.hud.up_down    == 0 ? COL(BG_GRAY, "      ") : ( gp_s.hud.up_down    > 0 ? COL(BG_GREEN, "  UP  ") : COL(BG_GREEN, " DOWN ")  ) );
     
-    printf( "\n" );
-    printf( "LT: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n", gp_s.throttle.left , PERCENT(gp_s.throttle.left) );
-    printf( "RT: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n", gp_s.throttle.right, PERCENT(gp_s.throttle.right) );
-    printf("\n");
+    LOG_ANSI( "\n" );
+    LOG_LN_DEBUG( "LT: " COL(FG_BRIGHT_BLUE, "%6d") " (" COL(FG_BRIGHT_BLUE, "%3d") "%%)", gp_s.throttle.left , PERCENT(gp_s.throttle.left) );
+    LOG_LN_DEBUG( "RT: " COL(FG_BRIGHT_BLUE, "%6d") " (" COL(FG_BRIGHT_BLUE, "%3d") "%%)", gp_s.throttle.right, PERCENT(gp_s.throttle.right) );
+    LOG_ANSI( "\n" );
     
-    printf( "L Stick (left, up): %s " COL(94, "%6d") ", " COL(94, "%6d") " ( " COL(94, "%4d") "%%, " COL(94, "%4d") "%%)\n",
+    LOG_LN_DEBUG( "L Stick (left, up): %s " COL(FG_BRIGHT_BLUE, "%6d") ", " COL(FG_BRIGHT_BLUE, "%6d") " ( " COL(FG_BRIGHT_BLUE, "%4d") "%%, " COL(FG_BRIGHT_BLUE, "%4d") "%%)",
         STR_BOOL("btn", gp_s.thumb_stick_left.pressed ),
         gp_s.thumb_stick_left.left_right ,
         gp_s.thumb_stick_left.up_down ,
         PERCENT(gp_s.thumb_stick_left.left_right) ,
         PERCENT(gp_s.thumb_stick_left.up_down) 
     );
-    printf( "R Stick (left, up): %s " COL(94, "%6d") ", " COL(94, "%6d") " ( " COL(94, "%4d") "%%, " COL(94, "%4d") "%%)\n",
+    LOG_LN_DEBUG( "R Stick (left, up): %s " COL(FG_BRIGHT_BLUE, "%6d") ", " COL(FG_BRIGHT_BLUE, "%6d") " ( " COL(FG_BRIGHT_BLUE, "%4d") "%%, " COL(FG_BRIGHT_BLUE, "%4d") "%%)",
         STR_BOOL("btn", gp_s.thumb_stick_right.pressed),
         gp_s.thumb_stick_right.left_right,
         gp_s.thumb_stick_right.up_down,
@@ -280,62 +298,68 @@ void Gamepad::print_state() const {
         PERCENT(gp_s.thumb_stick_right.up_down)
     );
 
-    printf( "\nRumble: strong: " COL(94, "%6d") " (" COL(94, "%3d") "%%), weak: " COL(94, "%6d") " (" COL(94, "%3d") "%%)\n",
+    LOG_ANSI( "\n" );
+    LOG_LN_DEBUG( "Rumble: strong: " COL(FG_BRIGHT_BLUE, "%6d") " (" COL(FG_BRIGHT_BLUE, "%3d") "%%), weak: " COL(FG_BRIGHT_BLUE, "%6d") " (" COL(FG_BRIGHT_BLUE, "%3d") "%%)",
         effect.u.rumble.strong_magnitude, PERCENT(0.5*effect.u.rumble.strong_magnitude), 
         effect.u.rumble.weak_magnitude, PERCENT(0.5*effect.u.rumble.weak_magnitude)
     );
 
-    printf( "\x1b[13F" );
+    LOG_ANSI( SCO );
+    LOG_ANSI( CPL(13) );
 }
 void Gamepad::print_evio() const {
     if( !has_connection() ) {
+        LOG_LN_WARN( COL(FG_BRIGHT_RED, "can not print evio data without a connected gamepad") );
         return;
     }
 
-    printf( COL(1, "\nSerial Number: ") COL(1;94, "%s") "\n", device_serial_number.c_str() );
+    LOG_ANSI( "\n" );
+    LOG_LN_DEBUG( COL(BOLD, "Serial Number: ") COL(BOLD;FG_BRIGHT_BLUE, "%s"), device_serial_number.c_str() );
 
     char buff[512];
     ioctl( fd_rw, EVIOCGNAME(sizeof(buff)), buff );
-    printf( "Device Name: " COL(1;94, "%s") "\n", buff );
+    LOG_LN_DEBUG( "Device Name: " COL(BOLD;FG_BRIGHT_BLUE, "%s"), buff );
 
     ioctl( fd_rw, EVIOCGPHYS(sizeof(buff)), buff );
-    printf( "Physical Path: " COL(94, "%s") "\n", buff );
+    LOG_LN_DEBUG( "Physical Path: " COL(FG_BRIGHT_BLUE, "%s"), buff );
 
     ioctl( fd_rw, EVIOCGUNIQ(sizeof(buff)), buff );
-    printf( "Unique ID: " COL(94, "%s") "\n", buff );
+    LOG_LN_DEBUG( "Unique ID: " COL(FG_BRIGHT_BLUE, "%s"), buff );
 
     ioctl( fd_rw, EVIOCGPROP(sizeof(buff)), buff );
-    printf( "Device Properties: " COL(94, "%s") "\n", buff );
+    LOG_LN_DEBUG( "Device Properties: " COL(FG_BRIGHT_BLUE, "%s"), buff );
 
     input_id id;
     ioctl( fd_rw, EVIOCGID, &id );
-    printf("\nID:\n");
-    printf("bustype: " COL(94, "0x%4x") "\n", id.bustype);
-    printf("vendor : " COL(94, "0x%4x") "\n", id.vendor );
-    printf("product: " COL(94, "0x%4x") "\n", id.product);
-    printf("version: " COL(94, "0x%4x") "\n", id.version);
+    LOG_ANSI( "\n" );
+    LOG_LN_DEBUG("ID:");
+    LOG_LN_DEBUG("bustype: " COL(FG_BRIGHT_BLUE, "0x%4x"), id.bustype);
+    LOG_LN_DEBUG("vendor : " COL(FG_BRIGHT_BLUE, "0x%4x"), id.vendor );
+    LOG_LN_DEBUG("product: " COL(FG_BRIGHT_BLUE, "0x%4x"), id.product);
+    LOG_LN_DEBUG("version: " COL(FG_BRIGHT_BLUE, "0x%4x"), id.version);
 
 
     uint64_t evtype_b = 0;
     ioctl(fd_rw, EVIOCGBIT(0, EV_MAX), &evtype_b);  
-    printf("\nSupported event types:\n");
+    LOG_ANSI( "\n" );
+    LOG_LN_DEBUG("Supported event types:");
     for ( int yalv = 0; yalv < EV_MAX; yalv++ ) {
         if ((evtype_b >> yalv) & 1) {
-            printf("  Event type 0x%02x  ", yalv);
+            LOG_DEBUG("  Event type 0x%02x  ", yalv);
             switch ( yalv ) {
-                case EV_SYN : printf( COL(94, "(Synch Events)\n") );        break;
-                case EV_KEY : printf( COL(94, "(Keys or Buttons)\n") );     break;
-                case EV_REL : printf( COL(94, "(Relative Axes)\n") );       break;
-                case EV_ABS : printf( COL(94, "(Absolute Axes)\n") );       break;
-                case EV_MSC : printf( COL(94, "(Miscellaneous)\n") );       break;
-                case EV_LED : printf( COL(94, "(LEDs)\n") );                break;
-                case EV_SND : printf( COL(94, "(Sounds)\n") );              break;
-                case EV_REP : printf( COL(94, "(Repeat)\n") );              break;
+                case EV_SYN : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Synch Events)") );        break;
+                case EV_KEY : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Keys or Buttons)") );     break;
+                case EV_REL : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Relative Axes)") );       break;
+                case EV_ABS : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Absolute Axes)") );       break;
+                case EV_MSC : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Miscellaneous)") );       break;
+                case EV_LED : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(LEDs)") );                break;
+                case EV_SND : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Sounds)") );              break;
+                case EV_REP : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Repeat)") );              break;
                 case EV_FF  :
-                case EV_FF_STATUS: printf( COL(94, "(Force Feedback)\n") ); break;
-                case EV_PWR: printf( COL(94, "(Power Management)\n") );     break;
+                case EV_FF_STATUS: LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Force Feedback)") ); break;
+                case EV_PWR: LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Power Management)") );     break;
                 default:
-                printf( COL(94, "(Unknown: 0x%04hx)\n"), yalv);
+                LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Unknown: 0x%04hx)"), yalv);
             }
         }
     }
@@ -343,36 +367,38 @@ void Gamepad::print_evio() const {
 
     __uint128_t features = 0;
     ioctl( fd_rw, EVIOCGBIT(EV_FF, sizeof(features)), &features );
-    printf("\nSupported force feedback features:\n");
+    LOG_ANSI( "\n" );
+    LOG_LN_DEBUG("Supported force feedback features:");
     for ( int yalv = 0; yalv < FF_MAX; yalv++ ) {
         if ((features >> yalv) & 1) {
-            printf("  Force Feedback Feature 0x%02x  ", yalv);
+            LOG_DEBUG("  Force Feedback Feature 0x%02x  ", yalv);
             switch ( yalv ) {
-                case FF_CONSTANT   : printf( COL(94, "(FF_CONSTANT  )\n") ); break; 
-                case FF_PERIODIC   : printf( COL(94, "(FF_PERIODIC  )\n") ); break;
-                case FF_SQUARE     : printf( COL(94, "(FF_SQUARE    )\n") ); break;
-                case FF_TRIANGLE   : printf( COL(94, "(FF_TRIANGLE  )\n") ); break;
-                case FF_SINE       : printf( COL(94, "(FF_SINE      )\n") ); break;
-                case FF_SAW_UP     : printf( COL(94, "(FF_SAW_UP    )\n") ); break;
-                case FF_SAW_DOWN   : printf( COL(94, "(FF_SAW_DOWN  )\n") ); break;
-                case FF_CUSTOM     : printf( COL(94, "(FF_CUSTOM    )\n") ); break;
-                case FF_RAMP       : printf( COL(94, "(FF_RAMP      )\n") ); break;
-                case FF_SPRING     : printf( COL(94, "(FF_SPRING    )\n") ); break;
-                case FF_FRICTION   : printf( COL(94, "(FF_FRICTION  )\n") ); break;
-                case FF_DAMPER     : printf( COL(94, "(FF_DAMPER    )\n") ); break;
-                case FF_RUMBLE     : printf( COL(94, "(FF_RUMBLE    )\n") ); break;
-                case FF_INERTIA    : printf( COL(94, "(FF_INERTIA   )\n") ); break;
-                case FF_GAIN       : printf( COL(94, "(FF_GAIN      )\n") ); break;
-                case FF_AUTOCENTER : printf( COL(94, "(FF_AUTOCENTER)\n") ); break;
+                case FF_CONSTANT   : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_CONSTANT  )") ); break; 
+                case FF_PERIODIC   : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_PERIODIC  )") ); break;
+                case FF_SQUARE     : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_SQUARE    )") ); break;
+                case FF_TRIANGLE   : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_TRIANGLE  )") ); break;
+                case FF_SINE       : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_SINE      )") ); break;
+                case FF_SAW_UP     : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_SAW_UP    )") ); break;
+                case FF_SAW_DOWN   : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_SAW_DOWN  )") ); break;
+                case FF_CUSTOM     : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_CUSTOM    )") ); break;
+                case FF_RAMP       : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_RAMP      )") ); break;
+                case FF_SPRING     : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_SPRING    )") ); break;
+                case FF_FRICTION   : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_FRICTION  )") ); break;
+                case FF_DAMPER     : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_DAMPER    )") ); break;
+                case FF_RUMBLE     : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_RUMBLE    )") ); break;
+                case FF_INERTIA    : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_INERTIA   )") ); break;
+                case FF_GAIN       : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_GAIN      )") ); break;
+                case FF_AUTOCENTER : LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(FF_AUTOCENTER)") ); break;
 
-                default: printf( COL(94, "(Unknown: 0x%04hx)\n"), yalv ); 
+                default: LOG_LN_DEBUG( COL(FG_BRIGHT_BLUE, "(Unknown: 0x%04hx)"), yalv ); 
             }
         }
     }
 
     int eff_cnt = 0;
     ioctl( fd_rw, EVIOCGEFFECTS, &eff_cnt );
-    printf( "\nEffect count: " COL(94, "%d") "\n", eff_cnt );
+    LOG_ANSI( "\n" );
+    LOG_LN_DEBUG( "Effect count: " COL(FG_BRIGHT_BLUE, "%d"), eff_cnt );
 }
 
 

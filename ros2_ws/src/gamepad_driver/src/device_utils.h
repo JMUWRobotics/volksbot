@@ -2,7 +2,7 @@
 // @file    device_util.h
 // @brief   Simple utility function to automatically find and connect to a gamepad device
 // @author  Nico Schubert
-// @date    31.03.2025
+// @date    10.11.2025
 /////////////////////////////////////////////////////////////////////////////
 
 #ifndef __GAMEPAD_UTIL_H__
@@ -14,8 +14,7 @@
 #include "gamepad.h"
 
 
-// Macro for ansi console coloring
-#define COL(code, str)  "\x1b[" #code "m" str "\x1b[0m"
+#include "ros2_logger.h"
 
 
 namespace device_util {
@@ -31,7 +30,7 @@ namespace device_util {
      * 
      * @return Gamepad* automatically selected gamepad or nullptr if none could be selected
      */
-    Gamepad* select_and_connect_gamepad();
+    Gamepad* select_and_connect_gamepad(const bool is_in_search_loop=false);
 
     /**
      * @brief tries to reconnect to the previous gamepad device. Can be used when a gamepad was connected but now has_connection() is false

@@ -16,7 +16,8 @@
 #include "rclcpp/rclcpp.hpp"
 
 #include "volksface/volksbot.h"
-#include "volksface/ansi.h"
+
+#include "ros2_logger.h"
 
 #include <chrono>
 using namespace std::chrono_literals;
@@ -26,8 +27,6 @@ using namespace VB;
 
 namespace controller {
 	static constexpr auto TIME_PUB_PERIOD_TICKS = 50ms;
-
-	#define LOGGER (rclcpp::get_logger("Motor_Controller"))
 
 	// ROS publishers, subscribers, services and co.
 	static rclcpp::Node::SharedPtr node;
@@ -60,51 +59,55 @@ namespace controller {
 		#define PORT_NAME_EPOS2R	"/dev/EPOS2R"
 
 		if( active_motor_controller != nullptr ) {
-			printf( COL(FG_YELLOW, "Already connected to a motor controller\n") );
+			LOG_LN_WARN( COL(FG_YELLOW, "Already connected to a motor controller") );
 			return true;
 		}
 
 		// trying VMC
-		printf( "Trying to connect to VMC\n" );
+		LOG_LN_INFO( "Trying to connect to VMC" );
 		if( mcd_vmc.connect( PORT_NAME_VMC ) ) {
-			printf( COL(FG_GREEN, "Connected to VMC\n") );
+			LOG_LN_INFO( COL(FG_GREEN, "Connected to VMC") );
 			active_motor_controller = &mcd_vmc;
 			return true;
 		}
 
 		// trying EPOS2
-		printf( "\nTrying to connect to EPOS2\n" );
+		LOG_ANSI( "\n" );
+		LOG_LN_INFO( "Trying to connect to EPOS2" );
 		if( mcd_epos.connect( PORT_NAME_EPOS ) ) {
-			printf( COL(FG_GREEN, "Connected to EPOS2\n") );
+			LOG_LN_INFO( COL(FG_GREEN, "Connected to EPOS2") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
 		
 
 		// trying EPOS2L
-		printf( "\nTrying to connect to EPOS2L\n" );
+		LOG_ANSI( "\n" );
+		LOG_LN_INFO( "Trying to connect to EPOS2L" );
 		if( mcd_epos.connect( PORT_NAME_EPOS2L ) ) {
-			printf( COL(FG_GREEN, "Connected to EPOS2L\n") );
+			LOG_LN_INFO( COL(FG_GREEN, "Connected to EPOS2L") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
 		
 		// trying EPOS2R
-		printf( "\nTrying to connect to EPOS2R\n" );
+		LOG_ANSI( "\n" );
+		LOG_LN_INFO( "Trying to connect to EPOS2R" );
 		if( mcd_epos.connect( PORT_NAME_EPOS2R ) ) {
-			printf( COL(FG_GREEN, "Connected to EPOS2R\n") );
+			LOG_LN_INFO( COL(FG_GREEN, "Connected to EPOS2R") );
 			active_motor_controller = &mcd_epos;
 			return true;
 		}
 		
 		// FAILED to connect to any motor controller
-		printf( COL(FG_RED, "\nFAILED! Could not connect to any motor controller\n") );
+		LOG_ANSI( "\n" );
+		LOG_LN_WARN( COL(FG_RED, "FAILED! Could not connect to any motor controller") );
 		return false; 
 	}
 
 	bool connect_via_rover( const msg::Rover& rover ) {
 		if( active_motor_controller != nullptr ) {
-			printf( COL(FG_YELLOW, "Already connected to a motor controller\n") );
+			LOG_LN_WARN( COL(FG_YELLOW, "Already connected to a motor controller") );
 			return false;
 		}
 		
@@ -115,11 +118,11 @@ namespace controller {
 
 			case MCD::ERROR:
 			default:
-				printf( COL(FG_YELLOW, "Unrecognized motor controller id: %d\n"), rover.motor_controller );
+				LOG_LN_WARN( COL(FG_YELLOW, "Unrecognized motor controller id: %d"), rover.motor_controller );
 				return false;
 		}
 
-		printf( "Trying to connect to %s\n", mc_name.c_str() );
+		LOG_LN_INFO( "Trying to connect to %s", mc_name.c_str() );
 		if( active_motor_controller->connect( rover.motor_controller_port.c_str() ) ) {
 			active_motor_controller->reset_ticks();
 			
@@ -128,11 +131,11 @@ namespace controller {
 				rover.wheel_diameter
 			);
 
-			printf( COL(FG_GREEN, "Connected to motor controller %s\n"), mc_name.c_str() );
+			LOG_LN_INFO( COL(FG_GREEN, "Connected to motor controller %s"), mc_name.c_str() );
 			
 			return true;
 		} else {
-			printf( COL(FG_RED, "Failed to connect to %s\n"), mc_name.c_str() );
+			LOG_LN_WARN( COL(FG_RED, "Failed to connect to %s"), mc_name.c_str() );
 
 			return false;
 		}
@@ -203,8 +206,8 @@ namespace controller {
 	// Main Functions //	
 	//----------------//
 	void run() {
-		RCLCPP_INFO(LOGGER, "Motor controller starting main loop!");
-		RCLCPP_INFO(LOGGER, "waiting for Rover to be published\n" );
+		LOG_LN_INFO("Motor controller starting main loop!");
+		LOG_LN_INFO("waiting for Rover to be published" );
 		rclcpp::spin(node);
 	}
 
@@ -218,7 +221,7 @@ namespace controller {
 	}
 
 	void setup(int argc, char* argv[]) {
-		RCLCPP_INFO(LOGGER, "Ros init...");
+		LOG_LN_DEBUG("Ros init...");
 
 		rclcpp::init(argc, argv);
 		node = std::make_shared<rclcpp::Node>("mc_controller");

@@ -1,10 +1,8 @@
 cmake_minimum_required(VERSION 3.5)
 project(motor_controller)
 
-# Add standard ROS 2 compile options
-if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
-  add_compile_options(-Wall -Wextra -Wpedantic -O3)
-endif()
+# include project wide configuration
+include(${PROJECT_SOURCE_DIR}/../../cmake/project_config.cmake OPTIONAL)
 
 # Set C++ standard to C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -44,6 +42,7 @@ install(FILES ${EPOS2_CMD_LIBRARY} DESTINATION lib)
 # Define EPOS2 library
 add_library(EPOS2 src/epos2/epos2.cpp)
 target_link_libraries(EPOS2 ${EPOS2_CMD_LIBRARY} "${cpp_typesupport_target}")
+ament_target_dependencies(EPOS2 rclcpp volksface)
 
 #------------------------------------------------------------------------------
 # VMC - library
@@ -67,7 +66,8 @@ add_library(VMCLIB
   src/SupportClasses/CMultisend.cpp
   src/SupportClasses/CTimestamp.cpp
 )
-target_link_libraries(VMCLIB "${cpp_typesupport_target}") 
+target_link_libraries(VMCLIB "${cpp_typesupport_target}")
+ament_target_dependencies(VMCLIB rclcpp volksface)
 
 #------------------------------------------------------------------------------
 # Volksbot - Executable
