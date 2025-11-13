@@ -7,6 +7,7 @@ def generate_launch_description():
         Node(
             package='volksbot',
             executable='volksbot',
+            output='screen',
             name='volksbot'
         )
     ])

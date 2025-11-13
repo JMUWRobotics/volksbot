@@ -3,12 +3,21 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     return LaunchDescription([
-        
+
+        # broadcasts transform with 50Hz (not necessary)
+        # Node(
+        #     package='volksbot',
+        #     executable='calibration',
+        #     output='log',
+        #     name='calibration'
+        # )
+
+        # publishes transform only once (static)
         Node(
             package='tf2_ros',
             executable='static_transform_publisher',
             name='sickcali',
-            arguments=['0.12', '0', '0.24', '0', '0', '0', 'base_link', 'front_laser', '100']
+            arguments=['0.12', '0', '0.24', '0.0', '0.0', '0.0', '1.0', 'base_link', 'front_laser']
         )
 
         # Node(
