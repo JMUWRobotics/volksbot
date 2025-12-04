@@ -60,12 +60,14 @@ namespace VB {
         enum MCD : uint8_t {
             ERROR   = 0xff,
             VMC     = 0,
-            EPOS2   = 1
+            EPOS2   = 1,
+            EPOS4   = 2
         };
         static inline MCD from_int( const int mcd_code ) {
             switch( mcd_code ) {
                 case VMC: return VMC;
                 case EPOS2: return EPOS2;
+                case EPOS4: return EPOS4;
                 case ERROR:
                 default:
                     return ERROR;
@@ -74,6 +76,7 @@ namespace VB {
         static inline MCD from_string( const std::string& mcd_name ) {
             return  mcd_name.compare( "VMC" ) == 0 ? VMC :
                     mcd_name.compare( "EPOS2" ) == 0 ? EPOS2 :
+                    mcd_name.compare( "EPOS4" ) == 0 ? EPOS4 :
                     ERROR;
         }
         static inline std::string to_string( const MCD mcd ) {

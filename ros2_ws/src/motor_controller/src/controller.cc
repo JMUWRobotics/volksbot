@@ -10,7 +10,7 @@
 
 // motor controller APIs
 #include "LayerClasses/CVmc.h"
-#include "epos2/epos2.h"
+#include "epos/epos.h"
 
 // ROS specifics
 #include "rclcpp/rclcpp.hpp"
@@ -43,9 +43,7 @@ namespace controller {
 	static rclcpp::Time lastcommand;
 
 	// motor controller drivers
-	static VMC::CVmc 	mcd_vmc;
-	static EPOS::EPOS2	mcd_epos;
-	static mcd::I_MCD* 	active_motor_controller = nullptr;
+	static std::unique_ptr<mcd::I_MCD> 	active_motor_controller = nullptr;
 
 	//----------------------------//
 	// Motor Controller Functions //
@@ -57,6 +55,7 @@ namespace controller {
 		#define PORT_NAME_EPOS		"USB0"
 		#define PORT_NAME_EPOS2L	"/dev/EPOS2L"
 		#define PORT_NAME_EPOS2R	"/dev/EPOS2R"
+		#define PORT_NAME_EPOS4 	"/dev/EPOS4"
 
 		if( active_motor_controller != nullptr ) {
 			LOG_LN_WARN( COL(FG_YELLOW, "Already connected to a motor controller") );
@@ -65,18 +64,18 @@ namespace controller {
 
 		// trying VMC
 		LOG_LN_INFO( "Trying to connect to VMC" );
-		if( mcd_vmc.connect( PORT_NAME_VMC ) ) {
+		active_motor_controller = std::make_unique<VMC::CVmc>();
+		if( active_motor_controller->connect( PORT_NAME_VMC ) ) {
 			LOG_LN_INFO( COL(FG_GREEN, "Connected to VMC") );
-			active_motor_controller = &mcd_vmc;
 			return true;
 		}
 
 		// trying EPOS2
 		LOG_ANSI( "\n" );
 		LOG_LN_INFO( "Trying to connect to EPOS2" );
-		if( mcd_epos.connect( PORT_NAME_EPOS ) ) {
+		active_motor_controller = std::make_unique<EPOS::EPOS>(EPOS::EPOS_VERSION::EPOS2);
+		if( active_motor_controller->connect( PORT_NAME_EPOS ) ) {
 			LOG_LN_INFO( COL(FG_GREEN, "Connected to EPOS2") );
-			active_motor_controller = &mcd_epos;
 			return true;
 		}
 		
@@ -84,24 +83,35 @@ namespace controller {
 		// trying EPOS2L
 		LOG_ANSI( "\n" );
 		LOG_LN_INFO( "Trying to connect to EPOS2L" );
-		if( mcd_epos.connect( PORT_NAME_EPOS2L ) ) {
+		active_motor_controller = std::make_unique<EPOS::EPOS>(EPOS::EPOS_VERSION::EPOS2);
+		if( active_motor_controller->connect( PORT_NAME_EPOS2L ) ) {
 			LOG_LN_INFO( COL(FG_GREEN, "Connected to EPOS2L") );
-			active_motor_controller = &mcd_epos;
 			return true;
 		}
 		
 		// trying EPOS2R
 		LOG_ANSI( "\n" );
 		LOG_LN_INFO( "Trying to connect to EPOS2R" );
-		if( mcd_epos.connect( PORT_NAME_EPOS2R ) ) {
+		active_motor_controller = std::make_unique<EPOS::EPOS>(EPOS::EPOS_VERSION::EPOS2);
+		if( active_motor_controller->connect( PORT_NAME_EPOS2R ) ) {
 			LOG_LN_INFO( COL(FG_GREEN, "Connected to EPOS2R") );
-			active_motor_controller = &mcd_epos;
+			return true;
+		}
+		
+		// trying EPOS4
+		LOG_ANSI( "\n" );
+		LOG_LN_INFO( "Trying to connect to EPOS4" );
+		active_motor_controller = std::make_unique<EPOS::EPOS>(EPOS::EPOS_VERSION::EPOS4);
+		if( active_motor_controller->connect( PORT_NAME_EPOS4 ) ) {
+			LOG_LN_INFO( COL(FG_GREEN, "Connected to EPOS2R") );
 			return true;
 		}
 		
 		// FAILED to connect to any motor controller
 		LOG_ANSI( "\n" );
 		LOG_LN_WARN( COL(FG_RED, "FAILED! Could not connect to any motor controller") );
+		active_motor_controller = nullptr;
+
 		return false; 
 	}
 
@@ -113,8 +123,18 @@ namespace controller {
 		
 		std::string mc_name = "";
 		switch( (MCD::MCD)rover.motor_controller ) {
-			case MCD::VMC:	 active_motor_controller = &mcd_vmc ; mc_name = "VMC"; break;
-			case MCD::EPOS2: active_motor_controller = &mcd_epos; mc_name = "EPOS2"; break;
+			case MCD::VMC:
+				active_motor_controller = std::make_unique<VMC::CVmc>();
+				mc_name = "VMC";
+				break;
+			case MCD::EPOS2:
+				active_motor_controller = std::make_unique<EPOS::EPOS>(EPOS::EPOS_VERSION::EPOS2);
+				mc_name = "EPOS2";
+				break;
+			case MCD::EPOS4:
+				active_motor_controller = std::make_unique<EPOS::EPOS>(EPOS::EPOS_VERSION::EPOS4);
+				mc_name = "EPOS4";
+				break;
 
 			case MCD::ERROR:
 			default:
@@ -136,6 +156,7 @@ namespace controller {
 			return true;
 		} else {
 			LOG_LN_WARN( COL(FG_RED, "Failed to connect to %s"), mc_name.c_str() );
+			active_motor_controller = nullptr;
 
 			return false;
 		}

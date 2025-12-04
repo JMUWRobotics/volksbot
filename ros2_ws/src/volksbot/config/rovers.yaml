@@ -8,7 +8,7 @@
 ping_tries: 5
 
 # period in seconds of of rover search loop
-publish_period_sec: 20
+publish_period_sec: 5
 
 # if false will only publish active rover if the connected rover changed else always
 always_publish: true
@@ -26,6 +26,16 @@ always_publish: true
 # motor_controller_port  # port to be passed to the specified motor controller 
 # udev_symlink           # device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules
 # ip_lms                 # static ip of laserscanner
+
+---
+name:                   VOX1
+wheel_diameter:         26.0
+wheel_base:             50.0
+motor_controller:       EPOS4
+motor_controller_port:  USB0
+udev_symlink:           /dev/EPOS4
+ip_lms:                 192.168.0.14
+
 
 ---
 name:                   Ute

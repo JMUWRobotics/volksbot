@@ -23,26 +23,39 @@ find_package(volksface REQUIRED)
 # EPOS - library
 #------------------------------------------------------------------------------
 # Automatically detect architecture and link correct libEposCmd version
+set(LIB_EPSON_FILE "libEposCmd.so.6.8.1.0")
+set(LIB_FTDI_FILE "libftd2xx.so.1.4.8")
+
 include(cmake/TargetArch.cmake)
 target_architecture(TARGET_ARCH)
 message("Detected architecture: ${TARGET_ARCH}")
+
 if(${TARGET_ARCH} STREQUAL "x86_64")
-  set(EPOS2_CMD_LIBRARY "${PROJECT_SOURCE_DIR}/libEposCmd/x86_64/libEposCmd.so")
+  set(LIB_BASE_PATH "${PROJECT_SOURCE_DIR}/libEposCmd/intel/x86_64")
 elseif(${TARGET_ARCH} STREQUAL "i386")
-  set(EPOS2_CMD_LIBRARY "${PROJECT_SOURCE_DIR}/libEposCmd/x86/libEposCmd.so")
+  set(LIB_BASE_PATH "${PROJECT_SOURCE_DIR}/libEposCmd/intel/x86")
+elseif(${TARGET_ARCH} STREQUAL "armv6")
+  set(LIB_BASE_PATH "${PROJECT_SOURCE_DIR}/libEposCmd/arm/v6")
 elseif(${TARGET_ARCH} STREQUAL "armv7")
-  set(EPOS2_CMD_LIBRARY "${PROJECT_SOURCE_DIR}/libEposCmd/armv7hf/libEposCmd.so")
+  set(LIB_BASE_PATH "${PROJECT_SOURCE_DIR}/libEposCmd/arm/v7")
+elseif(${TARGET_ARCH} STREQUAL "armv8")
+  set(LIB_BASE_PATH "${PROJECT_SOURCE_DIR}/libEposCmd/arm/v8")
 else()
   message("Unsupported architecture for libEposCmd!")
-  set(EPOS2_CMD_LIBRARY "EposCmd" PARENT_SCOPE)
+  set(LIB_BASE_PATH "libEposCmd" PARENT_SCOPE)
 endif()
-message("Using EposCmd library: ${EPOS2_CMD_LIBRARY}")
-install(FILES ${EPOS2_CMD_LIBRARY} DESTINATION lib)
+
+set(EPOS_CMD_LIBRARY "${LIB_BASE_PATH}/${LIB_EPSON_FILE}")
+set(FTDI_LIBRARY "${LIB_BASE_PATH}/${LIB_FTDI_FILE}")
+
+message("Using EposCmd library: ${EPOS_CMD_LIBRARY}")
+message("Using ftdi library:    ${FTDI_LIBRARY}")
+install(FILES ${EPOS_CMD_LIBRARY} ${FTDI_LIBRARY} DESTINATION lib)
 
 # Define EPOS2 library
-add_library(EPOS2 src/epos2/epos2.cpp)
-target_link_libraries(EPOS2 ${EPOS2_CMD_LIBRARY} "${cpp_typesupport_target}")
-ament_target_dependencies(EPOS2 rclcpp volksface)
+add_library(EPOS src/epos/epos.cpp)
+target_link_libraries(EPOS ${EPOS_CMD_LIBRARY} ${FTDI_LIBRARY} "${cpp_typesupport_target}")
+ament_target_dependencies(EPOS rclcpp volksface)
 
 #------------------------------------------------------------------------------
 # VMC - library
@@ -82,11 +95,11 @@ ament_target_dependencies(motor_controller
   geometry_msgs
   volksface
 )
-target_link_libraries(motor_controller VMCLIB EPOS2)
+target_link_libraries(motor_controller VMCLIB EPOS)
 
 # Install libraries
 install(
-  TARGETS EPOS2 VMCLIB
+  TARGETS EPOS VMCLIB
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
