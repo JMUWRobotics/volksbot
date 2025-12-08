@@ -5,7 +5,7 @@
     <arg name="hostname" default="192.168.0.1"/>
     <arg name="cloud_topic" default="cloud"/>
     <arg name="laserscan_topic" default="scan"/>
-    <arg name="frame_id" default="cloud"/>
+    <arg name="frame_id" default="front_laser"/>
     <arg name="sw_pll_only_publish" default="true"/>
     <arg name="nodename" default="sick_lms_1xx"/>
     <arg name="add_transform_xyz_rpy" default="0,0,0,0,0,0"/>
@@ -94,7 +94,7 @@
         The lidar frame id given by parameter "frame_id" resp. "publish_frame_id".
         Note that the transform is specified using (x,y,z,roll,pitch,yaw). In contrast, the ROS static_transform_publisher uses commandline arguments in order (x,y,z,yaw,pitch,roll).
         -->
-        <param name="tf_base_frame_id" type="string" value="map" />              <!-- Frame id of base coordinates system, e.g. "map" (default frame in rviz) -->
+        <param name="tf_base_frame_id" type="string" value="base_link" />              <!-- Frame id of base coordinates system, e.g. "map" (default frame in rviz) -->
         <param name="tf_base_lidar_xyz_rpy" type="string" value="0,0,0,0,0,0" /> <!-- T[base,lidar], 6D pose (x,y,z,roll,pitch,yaw) in meter resp. radians with parent "map" and child "cloud" -->
         <param name="tf_publish_rate" type="double" value="$(arg tf_publish_rate)" />                <!-- Rate to publish TF messages in hz, use 0 to deactivate TF messages -->
 
