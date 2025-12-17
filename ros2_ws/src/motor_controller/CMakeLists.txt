@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
 project(motor_controller)
 
+# Ensure executables can find packaged shared libraries at runtime
+set(CMAKE_BUILD_RPATH "$ORIGIN/../lib")
+set(CMAKE_INSTALL_RPATH "$ORIGIN/../lib")
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
+
 # include project wide configuration
 include(${PROJECT_SOURCE_DIR}/../../cmake/project_config.cmake OPTIONAL)
 
@@ -23,7 +29,7 @@ find_package(volksface REQUIRED)
 # EPOS - library
 #------------------------------------------------------------------------------
 # Automatically detect architecture and link correct libEposCmd version
-set(LIB_EPSON_FILE "libEposCmd.so.6.8.1.0")
+set(LIB_EPOS_FILE "libEposCmd.so.6.8.1.0")
 set(LIB_FTDI_FILE "libftd2xx.so.1.4.8")
 
 include(cmake/TargetArch.cmake)
@@ -45,16 +51,45 @@ else()
   set(LIB_BASE_PATH "libEposCmd" PARENT_SCOPE)
 endif()
 
-set(EPOS_CMD_LIBRARY "${LIB_BASE_PATH}/${LIB_EPSON_FILE}")
+set(EPOS_CMD_LIBRARY "${LIB_BASE_PATH}/${LIB_EPOS_FILE}")
 set(FTDI_LIBRARY "${LIB_BASE_PATH}/${LIB_FTDI_FILE}")
 
 message("Using EposCmd library: ${EPOS_CMD_LIBRARY}")
 message("Using ftdi library:    ${FTDI_LIBRARY}")
-install(FILES ${EPOS_CMD_LIBRARY} ${FTDI_LIBRARY} DESTINATION lib)
+
+# Install EPOS and FTDI shared libraries
+install(FILES
+  ${EPOS_CMD_LIBRARY}
+  ${FTDI_LIBRARY}
+  DESTINATION lib
+)
+
+# Create SONAME-compatible symlinks for EPOS
+install(CODE "
+  execute_process(COMMAND ln -sf ${LIB_EPOS_FILE} libEposCmd.so
+                  WORKING_DIRECTORY \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/lib\")
+")
+
+# Create SONAME-compatible symlinks for FTDI
+install(CODE "
+  execute_process(COMMAND ln -sf ${LIB_FTDI_FILE} libftd2xx.so
+                  WORKING_DIRECTORY \"\$ENV{DESTDIR}\${CMAKE_INSTALL_PREFIX}/lib\")
+")
+
+
+add_library(EposCmd SHARED IMPORTED)
+set_target_properties(EposCmd PROPERTIES
+  IMPORTED_LOCATION ${EPOS_CMD_LIBRARY}
+)
+
+add_library(Ftdi SHARED IMPORTED)
+set_target_properties(Ftdi PROPERTIES
+  IMPORTED_LOCATION ${FTDI_LIBRARY}
+)
 
 # Define EPOS2 library
 add_library(EPOS src/epos/epos.cpp)
-target_link_libraries(EPOS ${EPOS_CMD_LIBRARY} ${FTDI_LIBRARY} "${cpp_typesupport_target}")
+target_link_libraries(EPOS EposCmd Ftdi "${cpp_typesupport_target}")
 ament_target_dependencies(EPOS rclcpp volksface)
 
 #------------------------------------------------------------------------------
