@@ -188,7 +188,7 @@ namespace controller {
 	//-----------//
 	// in contrast to ROS, service callbacks return void and not bool
 	void cb_vel_cmd( srv::VelCmd::Request::ConstSharedPtr vel, srv::VelCmd::Response::SharedPtr response ) {
-		response->success = set_speeds( vel->left, vel->right );;
+		response->success = set_speeds( vel->left, vel->right );
 	}
 
 	void cb_vel_gp( msg::VelGP::ConstSharedPtr vel ) {

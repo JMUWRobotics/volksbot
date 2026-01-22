@@ -48,6 +48,8 @@ namespace mcd {
      */
     class I_MCD {
     public:
+        virtual ~I_MCD() = default;
+
         virtual float ticks_per_revolution() = 0;
 
         /**

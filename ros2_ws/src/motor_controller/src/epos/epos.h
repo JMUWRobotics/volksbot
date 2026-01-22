@@ -33,7 +33,7 @@ namespace EPOS {
 	
 		EPOS(EPOS_VERSION epv);
 	
-		~EPOS();
+		~EPOS() override;
 	
 	private:
 		//EPOS2 Functions
