@@ -151,6 +151,44 @@ namespace VB {
         }
     };
 
+    struct WheelMapping {
+        /**
+         * @brief Mapping matrix from input wheel speeds (left, right) to physical wheel speed directions
+         * wheel_out = M * speed_in
+         * 
+         * => M = [ M[0][0]  M[0][1] ]
+         *        [ M[1][0]  M[1][1] ]
+         */
+        float M[2][2];
+
+        void apply( float in_left, float in_right, float& out_left, float& out_right ) const {
+            out_left  = M[0][0] * in_left  + M[0][1] * in_right;
+            out_right = M[1][0] * in_left  + M[1][1] * in_right;
+        }
+        float determinant() const {
+            return M[0][0] * M[1][1] - M[0][1] * M[1][0];
+        }
+        void reverse( float in_left, float in_right, float& out_left, float& out_right ) const {
+            // calculate determinant
+            const float det = determinant();
+
+            if( det == 0.0f ) {
+                out_left = std::numeric_limits<float>::infinity();
+                out_right = std::numeric_limits<float>::infinity();
+                return;
+            }
+
+            // calculate inverse matrix
+            float invM[2][2] = {
+                {  M[1][1] / det, -M[0][1] / det },
+                { -M[1][0] / det,  M[0][0] / det }
+            };
+
+            out_left  = invM[0][0] * in_left  + invM[0][1] * in_right;
+            out_right = invM[1][0] * in_left  + invM[1][1] * in_right;
+        }
+    };
+
     struct Rover {
         // rover name
         std::string name;                   // case insensitive
@@ -158,6 +196,8 @@ namespace VB {
         // wheels
         float wheel_diameter;               // cm
         float wheel_base;                   // cm // distance between wheel center points
+        WheelMapping wheel_mapping = { { { 1.0f,  0.0f },
+                                         { 0.0f,  1.0f } } }; // default: direct mapping
 
         // motor controller
         MCD::MCD motor_controller;          // id of motor controller
@@ -167,73 +207,79 @@ namespace VB {
         
         // lms
         ip_t ip_lms;                        // static ip of laserscanner
+
+        bool is_valid = true;               // indicates if the rover configuration is valid
+
+        // converts Rover to volksface::msg::Rover
+        msg::Rover to_message() const {
+            msg::Rover mrov;
+
+            mrov.is_valid = is_valid;
+
+            mrov.name = name;
+            
+            mrov.wheel_diameter = wheel_diameter;
+            mrov.wheel_base = wheel_base;
+            mrov.wheel_mapping.matrix[0] = wheel_mapping.M[0][0];
+            mrov.wheel_mapping.matrix[1] = wheel_mapping.M[0][1];
+            mrov.wheel_mapping.matrix[2] = wheel_mapping.M[1][0];
+            mrov.wheel_mapping.matrix[3] = wheel_mapping.M[1][1];
+            
+            mrov.motor_controller = motor_controller;
+            mrov.motor_controller_port = motor_controller_port;
+
+            mrov.udev_symlink = udev_symlink;
+            
+            mrov.ip_lms = ip_lms.raw;
+
+            return mrov;
+        }
+        // converts volksface::msg::Rover to Rover
+        void from_message( msg::Rover::ConstSharedPtr mrov ) {
+            name = mrov->name;
+            
+            wheel_diameter = mrov->wheel_diameter;
+            wheel_base = mrov->wheel_base;
+            wheel_mapping = { { { mrov->wheel_mapping.matrix[0], mrov->wheel_mapping.matrix[1] },
+                                { mrov->wheel_mapping.matrix[2], mrov->wheel_mapping.matrix[3] } } };
+            
+            motor_controller = MCD::from_int( mrov->motor_controller );
+            motor_controller_port = mrov->motor_controller_port;
+
+            udev_symlink = mrov->udev_symlink;
+            
+            ip_lms.raw = mrov->ip_lms;
+            is_valid = mrov->is_valid;
+        }
+        // creates Rover from volksface::msg::Rover
+        static Rover from_message( const msg::Rover& mrov ) {
+            Rover rov;
+            rov.from_message( mrov );
+            return rov;
+        }
+
+        bool operator==( const Rover& other ) const {
+            return  name                  == other.name                  &&
+                    wheel_diameter        == other.wheel_diameter        &&
+                    wheel_base            == other.wheel_base            &&
+                    motor_controller      == other.motor_controller      &&
+                    motor_controller_port == other.motor_controller_port &&
+                    udev_symlink          == other.udev_symlink          &&
+                    ip_lms.raw            == other.ip_lms.raw;
+        }
+        bool operator==( msg::Rover::ConstSharedPtr other ) const {
+            return  name                  == other->name                  &&
+                    wheel_diameter        == other->wheel_diameter        &&
+                    wheel_base            == other->wheel_base            &&
+                    motor_controller      == MCD::from_int( other->motor_controller ) &&
+                    motor_controller_port == other->motor_controller_port &&
+                    udev_symlink          == other->udev_symlink          &&
+                    ip_lms.raw            == other->ip_lms;
+        }
+
+        bool operator!=(auto x) const { return !(this->operator==(x)); }
     };
-
-    /**
-     * @brief simple hash function for strings, which creates an hash value for the first 64 characters
-     */
-    inline uint64_t hash( const std::string& str ) {
-        const size_t length = str.length() < 64 ? str.length() : 64;
-
-        uint64_t running_hash = 0;
-
-        for( size_t i=0; i < length; i++ ) {
-            running_hash += str[i] << i % 64;
-        };
-
-        return running_hash;
-    }
-
-    /**
-     * @brief simple hash functionality for VB::Rover and VB::msg::Rover
-     */
-    inline uint64_t hash( const Rover* rov ) {
-        return hash( rov->name )
-            ^  (uint64_t)rov->wheel_diameter
-            ^  (uint64_t)rov->wheel_base
-            ^  (uint64_t)rov->motor_controller
-            ^  hash( rov->motor_controller_port )
-            ^  hash( rov->udev_symlink )
-            ^  (uint64_t)rov->ip_lms.raw;
-    }
-    /**
-     * @brief simple hash functionality for VB::Rover and VB::msg::Rover
-     */
-    inline uint64_t hash( const msg::Rover& rov ) {
-        return hash( rov.name.c_str() )
-            ^  (uint64_t)rov.wheel_diameter
-            ^  (uint64_t)rov.wheel_base
-            ^  (uint64_t)rov.motor_controller
-            ^  hash( rov.motor_controller_port.c_str() )
-            ^  hash( rov.udev_symlink.c_str() )
-            ^  (uint64_t)rov.ip_lms;
-    }
-    /**
-     * @brief simple hash functionality for VB::Rover and VB::msg::Rover
-     */
-    inline uint64_t hash( msg::Rover::ConstSharedPtr rov ) { return hash( *rov ); }
-
-    inline msg::Rover to_message( const Rover& rov, bool is_valid = true ) {
-        msg::Rover mrov;
-
-        mrov.is_valid = is_valid;
-
-        mrov.name = rov.name;
-        
-        mrov.wheel_diameter = rov.wheel_diameter;
-        mrov.wheel_base = rov.wheel_base;
-        
-        mrov.motor_controller = rov.motor_controller;
-        mrov.motor_controller_port = rov.motor_controller_port;
-
-        mrov.udev_symlink = rov.udev_symlink;
-        
-        mrov.ip_lms = rov.ip_lms.raw;
-
-        return mrov;
-    }
-
-}
+} // namespace VB
 
 
 #endif

@@ -39,11 +39,11 @@ namespace controller {
 	static msg::MCTicks current_motor_ticks;
 
 	// State variables
-	static msg::Rover active_rover;
+	static VB::Rover active_rover;
 	static rclcpp::Time lastcommand;
 
 	// motor controller drivers
-	static std::unique_ptr<mcd::I_MCD> 	active_motor_controller = nullptr;
+	static std::unique_ptr<mcd::I_MCD> active_motor_controller = nullptr;
 
 	//----------------------------//
 	// Motor Controller Functions //
@@ -115,14 +115,14 @@ namespace controller {
 		return false; 
 	}
 
-	bool connect_via_rover( const msg::Rover& rover ) {
+	bool connect_via_rover( const VB::Rover& rover ) {
 		if( active_motor_controller != nullptr ) {
 			LOG_LN_WARN( COL(FG_YELLOW, "Already connected to a motor controller") );
 			return false;
 		}
 		
 		std::string mc_name = "";
-		switch( (MCD::MCD)rover.motor_controller ) {
+		switch( rover.motor_controller ) {
 			case MCD::VMC:
 				active_motor_controller = std::make_unique<VMC::CVmc>();
 				mc_name = "VMC";
@@ -165,6 +165,17 @@ namespace controller {
 	void get_ticks() {
 		if( active_motor_controller != nullptr ) {
 			active_motor_controller->get_ticks( current_motor_ticks.left, current_motor_ticks.right );
+			
+			float out_left, out_right;
+			active_rover.wheel_mapping.reverse(
+				current_motor_ticks.left,
+				current_motor_ticks.right,
+				out_left,
+				out_right
+			);
+
+			current_motor_ticks.left = (int32_t) out_left;
+			current_motor_ticks.right = (int32_t) out_right;
 		}
 	}
 
@@ -178,7 +189,10 @@ namespace controller {
 
 		mcd::util::linear_twist( active_rover.wheel_base, left, right, current_motor_ticks.vx, current_motor_ticks.vth );
 
-		active_motor_controller->set_speeds( left, right );
+		float mapped_left, mapped_right;
+		active_rover.wheel_mapping.apply( left, right, mapped_left, mapped_right );
+	
+		active_motor_controller->set_speeds( mapped_left, mapped_right );
 
 		return true;
 	}
@@ -209,8 +223,9 @@ namespace controller {
 	}
 
 	void cb_rover( msg::Rover::ConstSharedPtr rover ) {
-		if( *rover != active_rover ) {
-			active_rover = *rover;
+		if( active_rover != rover ) {
+			active_rover.from_message( rover );
+			active_rover.is_valid = rover->is_valid;
 
 			if( active_motor_controller != nullptr ) {
 				active_motor_controller->disconnect();

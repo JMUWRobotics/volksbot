@@ -26,14 +26,6 @@ bool EPOS::reportFault(int g_usNodeId) {
 	return false;
 }
 
-template< typename T >
-static void left_right_mapping( T ileft, T iright, T& oleft, T& oright ) {
-	oright =  ileft;
-	oleft  = -iright;
-}
-template< typename T >
-static void left_right_mapping( T& left, T& right ) { left_right_mapping(left, right, left, right); }
-
 void* EPOS::thread_function(void* param) {
 	EPOS* ref = (EPOS*) param;
 
@@ -122,7 +114,8 @@ void EPOS::set_max_RPM( int maxRPM ) {
 int  EPOS::get_max_RPM() { return g_maxRPM; }
 
 void EPOS::set_speeds( float left, float right ) {
-	left_right_mapping( left, right, g_speed_left, g_speed_right );
+	g_speed_left = left; 
+	g_speed_right = right;
 }
 void EPOS::get_ticks( int& left, int& right ) {
 	if ( VCS_GetPositionIs( g_pKeyHandle, 1, &right, &g_pErrorCode) == 0 ||
@@ -133,7 +126,6 @@ void EPOS::get_ticks( int& left, int& right ) {
 
 	right -= g_ticks_offset_right;
 	left  -= g_ticks_offset_left;
-	left_right_mapping( left, right );
 }
 
 

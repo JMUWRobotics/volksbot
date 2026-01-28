@@ -14,6 +14,7 @@ set(msg_files
   "msg/GpThumbStick.msg"
   "msg/MCTicks.msg"
   "msg/Pose2d.msg"
+  "msg/WheelMapping.msg"
   "msg/Rover.msg"
   "msg/VelGP.msg"
 )

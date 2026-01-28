@@ -89,10 +89,13 @@ static const Rover ROVER_DUMMY {
     "Dummy",
     1.00,   // non zero to avoid divide-by-zero exceptions
     1.00,   // non zero to avoid divide-by-zero exceptions
+    { { { 1.0f, 0.0f },
+        { 0.0f, 1.0f } } },
     MCD::ERROR,
     "",
     "",
-    ip_t( 0xff, 0xff, 0xff, 0xff )
+    ip_t( 0xff, 0xff, 0xff, 0xff ),
+    false
 };
 
 static std::vector<Rover> rovers;
@@ -144,6 +147,18 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
     udev_symlink          = rover_map["udev_symlink"]         .as<std::string>();
     ip_lms                = rover_map["ip_lms"]               .as<std::string>();
 
+    float wheel_map[4] = { 1.0f, 0.0f, 0.0f, 1.0f }; // default: direct mapping
+    if( rover_map["wheel_mapping"] ) {
+        YAML::Node wm_node = rover_map["wheel_mapping"];
+        if( wm_node.IsSequence() && wm_node.size() == 4 ) {
+            for( uint i=0; i < 4; i++ ) {
+                wheel_map[i] = wm_node[i].as<float>();
+            }
+        } else {
+            LOG_LN_WARN( COL(FG_YELLOW, "could not parse wheel_mapping for rover %s: invalide format, using default"), name.c_str() );
+        }
+    }
+
     MCD::MCD mcd = MCD::from_string( motor_controller );
     
     ip_t ip;
@@ -158,6 +173,8 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
     out_rover.motor_controller_port = motor_controller_port;
     out_rover.udev_symlink          = udev_symlink;
     out_rover.ip_lms                = ip;
+    out_rover.wheel_mapping         = { { { wheel_map[0], wheel_map[1] },
+                                          { wheel_map[2], wheel_map[3] } } };
 
     return true;
 }
@@ -321,7 +338,7 @@ static int ping( const ip_t ip, const int pings ) {
 // ROS SPECIFIC IMPLEMENTATIONS
 //-----------------------------------------------------------------------------
 
-static inline std::string to_lower( const std::string str ) {
+static inline std::string to_lower( const std::string& str ) {
     std::string data = str;
     std::transform(data.begin(), data.end(), data.begin(), [](unsigned char c){ return std::tolower(c); });
     return data;
@@ -350,7 +367,7 @@ static bool manual_select_rover( std::string rover_name ) {
 }
 
 static void publish_rover() {
-    VB::msg::Rover rov = to_message( *active_rover, hash( active_rover ) != hash( &ROVER_DUMMY ) );
+    VB::msg::Rover rov = active_rover->to_message();
     pub_rover->publish( rov );
 }
 
@@ -365,7 +382,7 @@ static bool find_rover() {
     #define CPREFILL ITALIC;FG_GRAY
     static constexpr int max_matches = 2;
 
-    uint64_t current_hash = hash(active_rover);
+    int next_rover_index = active_rover_index;
     bool check_already_connected = active_rover_index != -1;
 
     std::vector<int> matches;
@@ -463,18 +480,18 @@ static bool find_rover() {
             // we are still connected and therefor skip testing for other rovers
             LOG_ANSI( CNL(%ld), max_matches*rovers.size() ); // jump to bottom of table
             
-            // YESS, this is very dirty, but i think it is better for the readability
-            // and also logic of the controlflow than having to indent for another if clause
+            // YESS, this is normally considered dirty, but this improves readability of the logic
+            // and control flow over having to indent for another if clause
             // since we actively want to skip over the for loop if we validated the active connection
             goto best_fit;
         }
     }
 
     // search for any available connection
-    for( uint i=0; i < rovers.size(); i++ ) {
+    for( std::size_t i=0; i < rovers.size(); i++ ) {
         // if an rover is connected and we already checked for it above we can skip it now
         // else i will never be -1 and active_rover_index is -1 so the if case does not execute
-        if ( static_cast<int>(i) == active_rover_index ) {
+        if ( i == static_cast<std::size_t>(active_rover_index) ) {
             LOG_ANSI( CNL(%d), max_matches ); // jump to next rover position in table
             continue;
         }
@@ -487,7 +504,7 @@ static bool find_rover() {
 best_fit:
     LOG_LN_INFO( "\n------------------------------------------------------------" );
     
-    active_rover_index = -1;
+    next_rover_index = -1;
     int best_match = 0;
 
     static constexpr int color_match_lut[max_matches+1] = { 
@@ -508,14 +525,16 @@ best_fit:
         );
 
         if( matches[i] > best_match ) {
-            active_rover_index = i;
+            next_rover_index = i;
             best_match = matches[i];
         }
     }
 
     // manage selected
-    active_rover = active_rover_index == -1 ? &ROVER_DUMMY : &rovers[active_rover_index];
-    bool changed = hash(active_rover) != current_hash;
+    active_rover = next_rover_index == -1 ? &ROVER_DUMMY : &rovers[next_rover_index];
+    
+    bool changed = next_rover_index != active_rover_index;
+    active_rover_index = next_rover_index;
 
     LOG_LN_INFO( "\nRover:   %s   " COL(%s, "%*s"),
         changed

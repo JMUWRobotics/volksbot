@@ -23,11 +23,11 @@ static constexpr const char* PATH_LAUNCH_LMS1XX = "./src/sick_scan_xd/launch/sic
 
 static rclcpp::Node::SharedPtr node;
 static rclcpp::Subscription<VB::msg::Rover>::SharedPtr sub;
-static VB::msg::Rover active_rover;
+static VB::Rover active_rover;
 static FILE* sick_process = NULL;
 
 static void call_launch_from_rover( VB::msg::Rover::ConstSharedPtr rov ) {
-    if( VB::hash( rov ) == VB::hash( active_rover ) ) {
+    if( active_rover == rov ) {
         // same rover as before => skip
         return;
     }
@@ -42,7 +42,7 @@ static void call_launch_from_rover( VB::msg::Rover::ConstSharedPtr rov ) {
         );
     }
 
-    active_rover = *rov;
+    active_rover.from_message( rov );
     LOG_LN_INFO( "ROVER %s [%s] was recognized and is %s",
         active_rover.name.c_str(),
         VB::ip_t( active_rover.ip_lms ).to_string().c_str(),

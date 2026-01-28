@@ -19,6 +19,9 @@ namespace VMC {
 	const int CVmc::BATTERY_VOLTAGE= 7;
 	const int CVmc::VMC_ERROR= 0x80000000;
 
+	static constexpr int MOTOR_INDEX_RIGHT = 1;
+	static constexpr int MOTOR_INDEX_LEFT  = 2;
+
 
 	bool CVmc::connect( const char* port ) { init( port ); return isConnected(); }
 	void CVmc::disconnect() {
@@ -60,10 +63,13 @@ namespace VMC {
 	void CVmc::set_max_RPM( int maxRPM ) { setMaximumRPM( maxRPM ); }
 	int  CVmc::get_max_RPM() { return _maxRpm; }
 
-	void CVmc::set_speeds( float left, float right ) { setMotors( -right, -left ); }
+	void CVmc::set_speeds( float left, float right ) { 
+		setMotorVelocity( MOTOR_INDEX_LEFT,  left );
+		setMotorVelocity( MOTOR_INDEX_RIGHT, right );
+	}
 	void CVmc::get_ticks( int& left, int& right ) {
-		left  = -getMotorValueLeft(  VMC::CVmc::MOTOR_TICKS_ABSOLUTE );
-		right =  getMotorValueRight( VMC::CVmc::MOTOR_TICKS_ABSOLUTE );
+		left  = getMotorValue( MOTOR_INDEX_LEFT,  VMC::CVmc::MOTOR_TICKS_ABSOLUTE );
+		right = getMotorValue( MOTOR_INDEX_RIGHT, VMC::CVmc::MOTOR_TICKS_ABSOLUTE );
 	}
 
 
@@ -387,13 +393,13 @@ char port[20];
 	void CVmc::setMotorLeft(int velocity) {
 		if((velocity < -100) || (velocity > 100)) return;
 
-		setMotorRPM(2, -velocity*_maxRpm/100);
+		setMotorRPM(2, -(velocity*_maxRpm)/100);
 	}
 
 	void CVmc::setMotorRight(int velocity) {
 		if((velocity < -100) || (velocity > 100)) return;
 
-		setMotorRPM(1, velocity*_maxRpm/100);
+		setMotorRPM(1, (velocity*_maxRpm)/100);
 	}
 
 	void CVmc::setMotorRPM(int motor, int rpm) {
@@ -415,7 +421,7 @@ char port[20];
 	void CVmc::setMotorVelocity(int motor, int velocity) {
 		if((velocity < -100) || (velocity > 100)) return;
 
-		setMotorRPM(motor, velocity*_maxRpm/100);
+		setMotorRPM(motor, (velocity*_maxRpm)/100);
 	}
 
 	void CVmc::setMotors(int velocity1, int velocity2, int velocity3) {
@@ -423,9 +429,9 @@ char port[20];
 		if((velocity2 < -100) || (velocity2 > 100)) return;
 		if((velocity3 < -100) || (velocity3 > 100)) return;
 
-		setMotorRPM(1, velocity1*_maxRpm/100);
-		setMotorRPM(2, velocity2*_maxRpm/100);
-		setMotorRPM(3, velocity3*_maxRpm/100);
+		setMotorRPM(1, (velocity1*_maxRpm)/100);
+		setMotorRPM(2, (velocity2*_maxRpm)/100);
+		setMotorRPM(3, (velocity3*_maxRpm)/100);
 	}
 
 	void CVmc::setMotors(int velocityLeft, int velocityRight) {

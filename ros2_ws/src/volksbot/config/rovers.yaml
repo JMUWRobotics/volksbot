@@ -8,7 +8,7 @@
 ping_tries: 5
 
 # period in seconds of of rover search loop
-publish_period_sec: 5
+publish_period_sec: 10
 
 # if false will only publish active rover if the connected rover changed else always
 always_publish: true
@@ -26,6 +26,9 @@ always_publish: true
 # motor_controller_port  # port to be passed to the specified motor controller 
 # udev_symlink           # device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules
 # ip_lms                 # static ip of laserscanner
+# wheel_mapping          # 2x2 matrix mapping wheels to motors [ m0_w0, m0_w1, 
+#                                                                m1_w0, m1_w1 ]
+# if wheel_mapping is missing will default to identity matrix 
 
 ---
 name:                   VOX1
@@ -35,6 +38,8 @@ motor_controller:       EPOS4
 motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS4
 ip_lms:                 192.168.0.14
+wheel_mapping:          [  0,  1, 
+                          -1,  0 ]
 
 
 ---
@@ -45,6 +50,8 @@ motor_controller:       EPOS2
 motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS2L
 ip_lms:                 192.168.0.14
+wheel_mapping:          [  0, -1, 
+                           1,  0 ]
 
 ---
 name:                   Lars
@@ -53,7 +60,9 @@ wheel_base:             44.0
 motor_controller:       VMC
 motor_controller_port:  /dev/VMC
 udev_symlink:           /dev/VMC
-ip_lms:                 192.168.0.51
+ip_lms:                 192.168.0.9
+wheel_mapping:          [  0,  1, 
+                          -1,  0 ]
 
 ---
 name:                   Irma
@@ -62,8 +71,9 @@ wheel_base:             44.0
 motor_controller:       VMC
 motor_controller_port:  /dev/VMC
 udev_symlink:           /dev/VMC
-ip_lms:                 192.168.0.0
-
+ip_lms:                 192.168.0.51
+wheel_mapping:          [  0,  1, 
+                          -1,  0 ]
 
 
 #------------------------------------------------------------------------------

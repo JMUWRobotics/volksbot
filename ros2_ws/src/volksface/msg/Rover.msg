@@ -8,6 +8,7 @@ string name
 # wheels
 float32 wheel_diameter  # cm
 float32 wheel_base      # cm # distance between wheel center points
+WheelMapping wheel_mapping  # wheel mapping matrix
 
 # motor controller
 uint8 motor_controller          # id of motor controller as noted by enum VB::MCD
