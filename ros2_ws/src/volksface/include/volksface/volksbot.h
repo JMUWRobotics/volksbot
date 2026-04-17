@@ -27,6 +27,7 @@
 
 #include "volksface/srv/rumble.hpp"
 #include "volksface/srv/vel_cmd.hpp"
+#include <limits>
 
 #ifndef VB_NO_GEOMETRY
 #include <geometry_msgs/msg/twist.hpp>

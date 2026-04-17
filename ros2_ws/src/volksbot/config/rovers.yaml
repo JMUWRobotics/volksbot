@@ -38,8 +38,20 @@ motor_controller:       EPOS4
 motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS4
 ip_lms:                 192.168.0.14
-wheel_mapping:          [  0,  1, 
-                          -1,  0 ]
+wheel_mapping:          [  0, -1, 
+                          1,  0 ]
+
+
+---
+name:                   VOX2
+wheel_diameter:         26.0
+wheel_base:             50.0
+motor_controller:       EPOS4
+motor_controller_port:  USB0
+udev_symlink:           /dev/EPOS4
+ip_lms:                 192.168.0.12
+wheel_mapping:          [  0, -1, 
+                          1,  0 ]
 
 
 ---
