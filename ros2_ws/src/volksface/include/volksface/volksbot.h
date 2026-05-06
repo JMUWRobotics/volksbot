@@ -85,6 +85,7 @@ namespace VB {
             switch( mcd ) {
                 case VMC: return "VMC";
                 case EPOS2: return "EPOS2";
+                case EPOS4: return "EPOS4";
                 case ERROR:
                 default:
                     return "ERROR";
