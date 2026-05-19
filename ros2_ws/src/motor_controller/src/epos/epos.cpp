@@ -54,10 +54,25 @@ void* EPOS::thread_function(void* param) {
 	return nullptr;
 }
 
-bool EPOS::connect( const char* port ) {
+bool EPOS::connect( const std::string& port ) {
 	g_pKeyHandle  = 0;
 	g_isConnected = false;
-	strncpy( g_PortName, port, sizeof(g_PortName)-1 );
+
+	if( port.empty() ) { // find connected usb bus
+		LOG_LN_INFO( "Auto-Find correct EPOS port" );
+
+		int endOfSelection = 0;
+		if(VCS_GetPortNameSelection(g_DeviceName, g_ProtocolStackName, g_InterfaceName, true, g_PortName, maxStrSize, &endOfSelection, &g_pErrorCode) == 0) {
+			LOG_LN_WARN( COL(FG_BRIGHT_YELLOW, "Cannot Get Port Name Selection for EPOS Device! (0x%x)"), g_pErrorCode );
+			return false;
+		}
+
+		LOG_LN_INFO( "Available EPOS port: " COL(FG_BRIGHT_BLUE, "%s"), g_PortName );
+	} else {
+		LOG_LN_INFO( "Connect via given port: " COL(FG_BRIGHT_BLUE, "%s"), port.c_str() );
+		strncpy( g_PortName, port.c_str(), sizeof(g_PortName)-1 );
+	}
+
 
 	LOG_LN_DEBUG( "[" COL(FG_BRIGHT_BLUE, "%s") "] trying to connect via port " COL(FG_BRIGHT_BLUE, "%s"), g_DeviceName, g_PortName );
 
