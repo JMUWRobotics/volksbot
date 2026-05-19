@@ -143,7 +143,7 @@ namespace controller {
 		}
 
 		LOG_LN_INFO( "Trying to connect to %s", mc_name.c_str() );
-		if( active_motor_controller->connect( rover.motor_controller_port.c_str() ) ) {
+		if( active_motor_controller->connect( rover.motor_controller_port ) ) {
 			active_motor_controller->reset_ticks();
 			
 			current_motor_ticks.cm_per_tick = 1.0 / mcd::util::tick_per_cm(

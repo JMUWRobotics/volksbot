@@ -128,7 +128,6 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
         !rover_map["wheel_diameter"]         ||
         !rover_map["wheel_base"]             ||
         !rover_map["motor_controller"]       ||
-        !rover_map["motor_controller_port"]  ||
         !rover_map["udev_symlink"]           ||
         !rover_map["ip_lms"]                 
     ) {
@@ -143,9 +142,12 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
     wheel_diameter        = rover_map["wheel_diameter"]       .as<float>();
     wheel_base            = rover_map["wheel_base"]           .as<float>();
     motor_controller      = rover_map["motor_controller"]     .as<std::string>();
-    motor_controller_port = rover_map["motor_controller_port"].as<std::string>();
     udev_symlink          = rover_map["udev_symlink"]         .as<std::string>();
     ip_lms                = rover_map["ip_lms"]               .as<std::string>();
+
+    motor_controller_port = "";
+    if ( rover_map["motor_controller_port"] )
+        motor_controller_port = rover_map["motor_controller_port"].as<std::string>();
 
     float wheel_map[4] = { 1.0f, 0.0f, 0.0f, 1.0f }; // default: direct mapping
     if( rover_map["wheel_mapping"] ) {

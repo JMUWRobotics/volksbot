@@ -71,7 +71,7 @@ public:
 	// Interface implementation
 	float ticks_per_revolution() override { return -461.817; };
 
-	bool connect( const char* port ) override;
+	bool connect( const std::string& port ) override;
 	void disconnect() override;
 	bool is_connected() override;
 
@@ -346,7 +346,7 @@ private:
 
 	void enterCriticalSection();
 	void leaveCriticalSection();
-	void init(const char* comPort);
+	void init(const std::string& comPort);
 	VMC::CvmcAPI *_apiObject;
 };
 

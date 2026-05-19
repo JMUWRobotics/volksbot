@@ -2,6 +2,7 @@
 #define __DRIVER_INTERFACE_H__
 
 #include <cmath>
+#include <string>
 
 #include "ros2_logger.h"
 
@@ -58,7 +59,7 @@ namespace mcd {
          * @param port port descriptor
          * @return true if successful connected, false otherwise
          */
-        virtual bool connect( const char* port ) = 0;
+        virtual bool connect( const std::string& port ) = 0;
         virtual void disconnect() = 0;
         virtual bool is_connected() = 0;
 

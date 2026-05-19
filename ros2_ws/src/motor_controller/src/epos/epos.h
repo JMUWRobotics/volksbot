@@ -19,7 +19,7 @@ namespace EPOS {
 		public:
 		float ticks_per_revolution() override { return 148000; } // 148000 tics per rev, 26 cm diameter, 81.68 cm per rev, 1811.9178 tics/cm
 	
-		bool connect( const char* port ) override;
+		bool connect( const std::string& port ) override;
 		void disconnect() override;
 		bool is_connected() override;
 	
@@ -36,6 +36,7 @@ namespace EPOS {
 		~EPOS() override;
 	
 	private:
+		static constexpr unsigned maxStrSize = 100;
 		//EPOS2 Functions
 		bool openEPOSDevice();
 		bool closeEPOSDevice();
@@ -44,14 +45,14 @@ namespace EPOS {
 	
 		//EPOS2 Variables
 		EPOS_VERSION controller_version;
-		char g_DeviceName[100] = "EPOS";
-		char g_ProtocolStackName[100] = "MAXON SERIAL V2";
-		char g_InterfaceName[100] = "USB";
+		char g_DeviceName[maxStrSize] = "EPOS";
+		char g_ProtocolStackName[maxStrSize] = "MAXON SERIAL V2";
+		char g_InterfaceName[maxStrSize] = "USB";
 		int  g_baudrate = 1000000;
 		
 		unsigned int g_pErrorCode;
 		void* g_pKeyHandle;
-		char  g_PortName[100] = "";
+		char  g_PortName[maxStrSize] = "";
 		bool  g_isConnected = false;
 		
 		int g_maxRPM = 4000;

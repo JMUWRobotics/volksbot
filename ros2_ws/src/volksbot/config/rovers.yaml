@@ -23,7 +23,7 @@ always_publish: true
 # wheel_diameter         # in cm
 # wheel_base             # in cm - distance between wheel center points
 # motor_controller       # id of motor controller
-# motor_controller_port  # port to be passed to the specified motor controller 
+# motor_controller_port  # [optional] port to be passed to the specified motor controller 
 # udev_symlink           # device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules
 # ip_lms                 # static ip of laserscanner
 # wheel_mapping          # 2x2 matrix mapping wheels to motors [ m0_w0, m0_w1, 
@@ -35,7 +35,7 @@ name:                   VOX1
 wheel_diameter:         26.0
 wheel_base:             50.0
 motor_controller:       EPOS4
-motor_controller_port:  USB0
+# motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS4
 ip_lms:                 192.168.0.14
 wheel_mapping:          [  0, -1, 
@@ -47,7 +47,7 @@ name:                   VOX2
 wheel_diameter:         26.0
 wheel_base:             50.0
 motor_controller:       EPOS4
-motor_controller_port:  USB0
+# motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS4
 ip_lms:                 192.168.0.12
 wheel_mapping:          [  0, -1, 

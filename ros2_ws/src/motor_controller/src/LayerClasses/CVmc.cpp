@@ -23,7 +23,7 @@ namespace VMC {
 	static constexpr int MOTOR_INDEX_LEFT  = 2;
 
 
-	bool CVmc::connect( const char* port ) { init( port ); return isConnected(); }
+	bool CVmc::connect( const std::string& port ) { init( port ); return isConnected(); }
 	void CVmc::disconnect() {
 		///////////////////////////////////// @@@
 		//  fclose(file );
@@ -478,7 +478,7 @@ char port[20];
 #endif
 	}
 
-	void CVmc::init(const char* comPort) {
+	void CVmc::init(const std::string& comPort) {
 #ifdef WIN32
 		DWORD threadId;
 #elif REAL_TIME
@@ -501,12 +501,11 @@ char port[20];
 
 		_digitalInputUpdate= false;
 
-		strcpy(_comPort, "No connection!");
-
 		_apiObject= new VMC::CvmcAPI();
-
+		
+		strcpy(_comPort, comPort.c_str());
 		_apiObject->selectHardwareAdapter(VMC::RS232);
-		_apiObject->selectDevice(comPort);
+		_apiObject->selectDevice(_comPort);
 
 		int isComPortOpened= _apiObject->openDevice();
 
@@ -525,13 +524,13 @@ char port[20];
 			LOG_LN_INFO("voltage is %f", voltage);
 			
 			if(voltage == 0) 
-				return;
+			return;
 		} else {
+			strcpy(_comPort, "No connection!");
 			return;
 		}
 
 		_isConnected= 1;
-		strncpy(_comPort, comPort, 40);
 		_comPort[40]= 0x00;
 
 		clearResponseList();
@@ -557,7 +556,7 @@ char port[20];
 		else return;
 
 		_isConnected= 1;
-		strncpy(_comPort, comPort, 40);
+		strncpy(_comPort, comPort.c_str(), 40);
 		_comPort[40]= 0x00;
 
 
