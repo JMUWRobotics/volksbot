@@ -59,7 +59,7 @@ name:                   Ute
 wheel_diameter:         26.0
 wheel_base:             50.0
 motor_controller:       EPOS2
-motor_controller_port:  USB0
+# motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS2L
 ip_lms:                 192.168.0.14
 wheel_mapping:          [  0, -1, 
