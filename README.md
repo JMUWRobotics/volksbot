@@ -13,14 +13,21 @@ This project is an adaptation of the original code to the modern ROS2 alternativ
 
 > [!Important]
 > If you use Ubuntu 24.04, you will probably encounter a `Permission Denied` error when trying to run the `volksbot` node.
-> To fix this error regard the section [Touble Shooting - Permission Denied](#permission-denied).
+> To fix this error regard the section [Trouble Shooting - Permission Denied](#permission-denied).
 
 # Quickstart
 > [!Note]
 > For advanced build options regard the section [How To Build - Advanced](#how-to-build---advanced).
 
 ## How To Build
-1. clone the repository locally and `cd` into the ros2_ws folder
+1. clone the repository locally
+    ```bash
+    git clone git@github.com:JMUWRobotics/volksbot.git
+    ```
+2. change to the `ros2_ws` directory
+    ```bash
+    cd volksbot/ros2_ws
+    ```
 2. set the udev rules (once) so that the motor controllers are recognized by the code.
     Copy the `42-usb-serial-volksbot.rules` from the `motor_controller` package into your udev rules:
     ```bash
@@ -30,9 +37,18 @@ This project is an adaptation of the original code to the modern ROS2 alternativ
    ```bash
    udevadm control --reload-rules && udevadm trigger
    ```
-4. *on your initial build* source the global ros2 environment *else* source the ROS2 workspace
-5. build the project with the build script `volksbuild.sh`:
+4.  
+    a) *on your **initial** build*: source the global ros2 environment:
     ```bash
+    source ${ros2_distro}
+    ```
+    
+    b) ***else*** source the ROS2 workspace:
+    ```bash
+    source ./install/setup.bash
+    ```
+5. build the project with the build script `volksbuild.sh`:
+    ```bash 
     ./volksbuild.sh
     ```
 
@@ -59,6 +75,16 @@ In an other terminal you can run any node or the default launch script `praktiku
 ```bash
 ros2 launch volkslaunch praktikum_launch.py
 ```
+
+> [!Caution]
+> When playing back rosbags while connected to the rover you may want to comment out the `gamepad_driver` node from the launch script to avoid unwanted velocity commands to the motors with the recorded data.
+
+---
+
+# Documentation & more Information
+Regard the following documentation markdowns for further information on usage and configuration of the project: 
+- [Gamepad Driver](gamepad_driver/README.md): Information on how to use the gamepad and the different drive modes.
+- [Logging](logging.md): Information on how to set up logging for the packages and how to use the logging macros for debugging and development and console prints.
 
 ---
 # Trouble Shooting
@@ -124,11 +150,3 @@ or just a subset of the packages:
 ```bash
 colcon build --packages-select [package1] [package2] [package3] [...]
 ```
-
----
-# Logging
-Enter the following line in your terminal to set the logging directory for all logs:
-```bash
-export ROS_LOG_DIR=./log/latest
-```
-the logs can then be found under the linked folder `./logs/latest/` where `latest/` is a symlink to the folder of the latest build
