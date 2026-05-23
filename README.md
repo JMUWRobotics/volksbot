@@ -83,8 +83,8 @@ ros2 launch volkslaunch praktikum_launch.py
 
 # Documentation & more Information
 Regard the following documentation markdowns for further information on usage and configuration of the project: 
-- [Gamepad Driver](gamepad_driver/README.md): Information on how to use the gamepad and the different drive modes.
-- [Logging](logging.md): Information on how to set up logging for the packages and how to use the logging macros for debugging and development and console prints.
+- [Gamepad Driver](ros2_ws/src/gamepad_driver/README.md): Information on how to use the gamepad and the different drive modes.
+- [Logging](ros2_ws/src/volksface/logging.md): Information on how to set up logging for the packages and how to use the logging macros for debugging and development and console prints.
 
 ---
 # Trouble Shooting
@@ -99,15 +99,6 @@ sudo sysctl -w net.ipv4.ping_group_range="0 2147483647"
 ```
 To make this setting permanent, you have to edit your `/etc/sysctl.conf` and add the line `net.ipv4.ping_group_range=0 2147483647`.
 
-## maxon EPSO4 connection failure
-> [!Note]
-> This problem may only be temporary as it will be corrected by this [issue](https://github.com/JMUWRobotics/volksbot/issues/7).
-
-If the maxon epos4 motor controller gets recognized under the correct `/dev/` device directive but you get any of the errors:
-> `0x10000003`, `0x10000005`, `0x10000007`, `0x10000008`
-
-you may need to set the correct USB port in the [rovers.yaml]().
-Usually it is: `USB0`, `USB1`, `USB2`, `USB3` or `USB4`
 
 ---
 # Bugs or Issues?
