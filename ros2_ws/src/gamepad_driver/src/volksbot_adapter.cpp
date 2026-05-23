@@ -32,18 +32,41 @@ using namespace std::chrono_literals;
 //-----------------//
 //  debug symbols  //
 //-----------------//
-// print a visualization of the gamepad inputs 
+// print the evio data of the gamepad (e.g. for debugging and setup of new gamepads)
+// #define PRINT_EVIO
+
+// print a visualization of the gamepad inputs (gets called every update loop)
 // #define PRINT_STATE
 
-// debug print every recorded input event
+// debug print every recorded input event (gets called every update loop)
 // #define PRINT_EVENT
 
-// debug print for debuging ACCEL_FORCE_FEEDBACK
+// debug print for debuging ACCEL_FORCE_FEEDBACK (gets called every update loop)
 // #define PRINT_VEL_CTRL
 
 // enable emulated force feedback // works currently unstable
 // #define ACCEL_FORCE_FEEDBACK
 
+
+//=============================================================================
+// CODE 
+//=============================================================================
+
+// assert that at most one of the debug print options is enabled to avoid cluttered output
+static_assert(
+    0
+    #ifdef PRINT_STATE
+        + 1
+    #endif
+    #ifdef PRINT_EVENT
+        + 1
+    #endif
+    #ifdef PRINT_VEL_CTRL
+        + 1
+    #endif
+    <= 1,
+    "At most one of the debug print options PRINT_STATE, PRINT_EVENT and PRINT_VEL_CTRL can be enabled at the same time to avoid cluttered output!"
+)
 
 using std::placeholders::_1;
 using std::placeholders::_2;
@@ -247,7 +270,6 @@ class Volks_gamepad : public rclcpp::Node {
             _pub_gp  = create_publisher<msg::Gamepad>( VB::TOPIC_NAME_GAMEPAD, 10 );
             _service_rumble = create_service<srv::Rumble>( VB::SERVICE_NAME_RUMBLE, std::bind( &Volks_gamepad::set_rumble, this, _1, _2) );
 
-
             while( rclcpp::ok() ) {
                 active_gamepad = device_util::select_and_connect_gamepad(true);
 
@@ -256,7 +278,10 @@ class Volks_gamepad : public rclcpp::Node {
                 
                 rclcpp::sleep_for( nanoseconds( 1000ms ) );
             }
-            active_gamepad->print_evio();
+            
+            #ifdef PRINT_EVIO
+                active_gamepad->print_evio();
+            #endif
         }
         
         void run( rclcpp::Executor& executor ) {
