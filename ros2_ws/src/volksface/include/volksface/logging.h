@@ -26,12 +26,18 @@
     #define USE_COLORED_LOGGING 0
 #endif
 
+#define ROS_LOG_DEBUG( args... ) RCLCPP_DEBUG( LOGGER_ENTITY, args )
+#define ROS_LOG_INFO( args... ) RCLCPP_INFO( LOGGER_ENTITY, args )
+#define ROS_LOG_WARN( args... ) RCLCPP_WARN( LOGGER_ENTITY, args )
+#define ROS_LOG_ERROR( args... ) RCLCPP_ERROR( LOGGER_ENTITY, args )
+#define ROS_LOG_FATAL( args... ) RCLCPP_FATAL( LOGGER_ENTITY, args )
+
 #if USE_LOGGING
-    #define LOG_DEBUG( args... ) RCLCPP_DEBUG( LOGGER_ENTITY, args )
-    #define LOG_INFO( args... ) RCLCPP_INFO( LOGGER_ENTITY, args )
-    #define LOG_WARN( args... ) RCLCPP_WARN( LOGGER_ENTITY, args )
-    #define LOG_ERROR( args... ) RCLCPP_ERROR( LOGGER_ENTITY, args )
-    #define LOG_FATAL( args... ) RCLCPP_FATAL( LOGGER_ENTITY, args )
+    #define LOG_DEBUG( args... ) ROS_LOG_DEBUG( args )
+    #define LOG_INFO( args... ) ROS_LOG_INFO( args )
+    #define LOG_WARN( args... ) ROS_LOG_WARN( args )
+    #define LOG_ERROR( args... ) ROS_LOG_ERROR( args )
+    #define LOG_FATAL( args... ) ROS_LOG_FATAL( args )
 
     #define LOG_LN_DEBUG( args... ) LOG_DEBUG( args )
     #define LOG_LN_INFO( args... ) LOG_INFO( args )
@@ -39,6 +45,7 @@
     #define LOG_LN_ERROR( args... ) LOG_ERROR( args )
     #define LOG_LN_FATAL( args... ) LOG_FATAL( args )
 
+    // flags for "ansi.h"
     #define DISABLE_CONTROL_CODES 1
     #define DISABLE_COLOR !USE_COLORED_LOGGING
 
@@ -66,6 +73,7 @@
     #define LOG_LN_ERROR( args... ) LOG_ERROR( args )
     #define LOG_LN_FATAL( args... ) LOG_FATAL( args )
 
+    // flags for "ansi.h"
     #define DISABLE_CONTROL_CODES 0
     #define DISABLE_COLOR 0
 
