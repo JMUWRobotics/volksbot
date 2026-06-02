@@ -32,7 +32,7 @@ const static std::array<double, 36> global_covariance = { 0.01, 0, 		0, 		0, 			
 void Odometry::publish_odom( rclcpp::Time current_time, double dt, double dx, double dth ) {
 	// since all odometry is 6DOF we'll need a quaternion created from yaw
 	tf2::Quaternion odom_quat;
-	odom_quat.setRPY(0, 0, -theta);
+	odom_quat.setRPY(0, 0, theta);
 	
 	odom.header.stamp = current_time;
 	odom.pose.pose.position.x = x;
@@ -49,8 +49,8 @@ void Odometry::publish_odom( rclcpp::Time current_time, double dt, double dx, do
 		vx  = dx  / dt;
 		vth = dth / dt;
 		
-		odom.twist.twist.linear.x  =  vx;
-		odom.twist.twist.angular.z = -vth;
+		odom.twist.twist.linear.x  = vx;
+		odom.twist.twist.angular.z = vth;
 		
 		odom.twist.covariance = global_covariance;
 	} else {	// velocities cant be computed, use old values
@@ -169,9 +169,9 @@ void Odometry::convertTicks2Odom( VB::msg::MCTicks::ConstSharedPtr cticks ) {
 	double dx  = M * ( dright + dleft ) / 2.0 / M_TO_CM;  // delta linear in m
 	
 	// position propagation
+	x += cos(theta + dth/2) * dx;
+	z += sin(theta + dth/2) * dx;
 	theta += dth;
-	x += cos(theta) * dx;
-	z -= sin(theta) * dx;
 
 	// store state
 	last_time  = current;

@@ -17,7 +17,7 @@
 
 // #include "sick_scan/sick_generic_laser.h"
 
-static constexpr const char* PATH_LAUNCH_LMS1XX = "./src/sick_scan_xd/launch/sick_lms_1xx.launch";
+static constexpr const char* PATH_LAUNCH_LMS1XX = "./src/lms_starter/src/sick_lms_1xx.launch";
 
 
 

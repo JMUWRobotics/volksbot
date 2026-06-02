@@ -55,8 +55,8 @@ namespace volksbot {
 		bool publish_tf = false;
 
 		// current state
-		double x, z, theta;
-		double vx, vth;
+		double x, z, theta; // m, m, rad [CCW]
+		double vx, vth;		// m/s, rad/s [CCW]
 
 		// last state
 		rclcpp::Time last_time;

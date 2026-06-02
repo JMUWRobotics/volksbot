@@ -69,7 +69,7 @@ class CVmc : public mcd::I_MCD {
 public:
 
 	// Interface implementation
-	float ticks_per_revolution() override { return -461.817; };
+	float ticks_per_revolution() override { return 36271.022; }; // 461.817 ticks per cm, 25 cm diameter, 78.53982 cm per rev, 36271.022 tics per rev
 
 	bool connect( const std::string& port ) override;
 	void disconnect() override;
