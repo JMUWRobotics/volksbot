@@ -1,91 +1,143 @@
-# Volksbot ROS2 branch
+# Volksbot ROS2
+This project is an adaptation of the original code to the modern ROS2 alternative for the Volksbot rovers (the original ROS version can be found under the branch [ROS](https://github.com/JMUWRobotics/volksbot/tree/ROS1)).
 
-This branch contains the in progess migration of the volksbot package to ROS2 after applying the ros-migration-tool. After successful use of the migration tool not all ROS code snippets are converted into ROS2, like the subscriber, publisher and services. This further migration is now done manually.  
+---
+# Prerequisits
+- Ubuntu 22.04 or Ubuntu 24.04
+- GCC 11.0 or greater
+- [ROS2 humble](https://docs.ros.org/en/humble/index.html)
+
+> [!Warning]
+> Other Linux distributions may or may not work correctly. Therefore, it is recommented to use one of the distributions mentioned above.
+> Please let us know your experience and success with other systems.
+
+> [!Important]
+> If you use Ubuntu 24.04, you will probably encounter a `Permission Denied` error when trying to run the `volksbot` node.
+> To fix this error regard the section [Trouble Shooting - Permission Denied](#permission-denied).
+
+# Quickstart
+> [!Note]
+> For advanced build options regard the section [How To Build - Advanced](#how-to-build---advanced).
+
+## How To Build
+1. clone the repository locally
+    ```bash
+    git clone git@github.com:JMUWRobotics/volksbot.git
+    ```
+2. change to the `ros2_ws` directory
+    ```bash
+    cd volksbot/ros2_ws
+    ```
+2. set the udev rules (once) so that the motor controllers are recognized by the code.
+    Copy the `42-usb-serial-volksbot.rules` from the `motor_controller` package into your udev rules:
+    ```bash
+    sudo cp src/motor_controller/42-usb-serial-volksbot.rules /etc/udev/rules.d/
+    ```
+    Afterwards, either restart or reset the udev server to load the new rules:
+   ```bash
+   udevadm control --reload-rules && udevadm trigger
+   ```
+4.  
+    a) *on your **initial** build*: source the global ros2 environment:
+    ```bash
+    source ${ros2_distro}
+    ```
+    
+    b) ***else*** source the ROS2 workspace:
+    ```bash
+    source ./install/setup.bash
+    ```
+5. build the project with the build script `volksbuild.sh`:
+    ```bash 
+    ./volksbuild.sh
+    ```
+
+> [!Tip]
+> You can run the build with a set number of concurrent worker threads by supplying an argument to the build script.
+> This is usefull when your system is limited in RAM or your OS freezes while building. (building with 2-4 threads should work on any system):
+> ```bash
+> ./volksbuild.sh n
+> ```
+
+## How to Run
+The `volksbot` node from the `volksbot` package must always be started as this node determines the connected rover and comunicates the configureation over the `rover` topic to all other nodes:
+```bash
+ros2 run volksbot volksbot
+```
+
+> [!Tip]
+> If you want to select a specific rover supply the name of the rover as an argument:
+> ```bash
+> ros2 run volksbot volksbot [RoverName]
+> ```
+
+In an other terminal you can run any node or the default launch script `praktikum_launch.py` of the package `volkslaunch`, which launches the remaining (not your customs) nodes.
+```bash
+ros2 launch volkslaunch praktikum_launch.py
+```
+
+> [!Caution]
+> When playing back rosbags while connected to the rover you may want to comment out the `gamepad_driver` node from the launch script to avoid unwanted velocity commands to the motors with the recorded data.
+
+---
+
+# Documentation & more Information
+Regard the following documentation markdowns for further information on usage and configuration of the project: 
+- [Gamepad Driver](ros2_ws/src/gamepad_driver/README.md): Information on how to use the gamepad and the different drive modes.
+- [Logging](ros2_ws/src/volksface/logging.md): Information on how to set up logging for the packages and how to use the logging macros for debugging and development and console prints.
+
+---
+# Trouble Shooting
+## Permission Denied
+If you are running the `volksbot` node on Ubuntu 24, you might encounter a `Permission Denied` error during the selection process. 
+This happens because the program attempts to use ICMP sockets for pinging, which requires specific kernel permissions.
+By default, some Ubuntu configurations set the allowed group range to `1 0`, meaning only the root user is permitted to open these sockets.
+
+To allow all users to use ICMP sockets, you have to type in the command:
+```bash
+sudo sysctl -w net.ipv4.ping_group_range="0 2147483647"
+```
+To make this setting permanent, you have to edit your `/etc/sysctl.conf` and add the line `net.ipv4.ping_group_range=0 2147483647`.
 
 
-# Expanded Joystick Driver for Volksbot ROS2
+---
+# Bugs or Issues?
+Any Bugs or Issues, please open an [issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/learning-about-issues/quickstart) on this [repository](https://github.com/JMUWRobotics/volksbot/issues) or conntact us directly.
 
-This branch is used to convert the old joystick backend into a new and expanded ROS2 implementation. It will expand the useability and agility of the original implementation to allow easier project integration and force feedback.
+---
+# How To Build - Advanced
+> [!Tip]
+> When your OS freezes on building consider using less parallel workers by adding ```--parallel-workers n``` to the colcon build command (2-4 should usually work for everyone).
 
-The new implementation will no longer use the `/dev/input/js*` joystick devices but the more general `/dev/input/event*` event devices.
-> It is usually advised to use the general event interface instead of the the more constraint joystick interface.
-
-
-### Information
-
-To use the general event interface the joysticks event file handle needs to be ruled to a non dynamic device handle. At the moment only the **Logitech F710** and the **Microsoft X-Box One** joysticks are _used_ and will be fully integrated. Therefor the backend will currently only implement these joysticks.
-
-However integrating further joysticks is easily possible by adapting the applied rules and adding the necessary interface implementations.
-
-
-### How to use
-
-Unlike the old implementation it is no longer necessary to preemptively define the joysticks `/dev/input/*` Path.
-It will now automatically select one of the connected (and implemented) Joysticks.
-
-If multiple implemented joysticks are recognized, the one with the lowest number of its `/dev/input/js*` handle will be selected. This is usually the first connected joystick device.
-
-
-# Sick LMS
-## Info
-The library used is the [official ROS2 library](https://github.com/SICKAG/sick_scan_xd/tree/master) version 3.5.0 for sick scanners. 
-
-## [Building](https://github.com/SICKAG/sick_scan_xd/blob/master/INSTALL-ROS2.md#summary-for-the-different-build-options)
-
-Building the library for the lms100
-
+## When building for the first time:
+1. source global ros2 environment
+    ```bash
+    source ${ros2_distro}
+    ```
+2. only build the SICK LMS package
+    ```bash
     colcon build --packages-select sick_scan_xd --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" " -DSCANSEGMENT_XD=0" --event-handlers console_direct+
+    ```
+3. source the ros2 workspace
+    ```bash
+    source ./install/setup.bash
+    ```
+4. build the remaining packages
+    ```bash
+    colcon build --packages-ignore sick_scan_xd
+    ```
 
-> TODO: (if possible?) add cmake args to the cmake file used for building
-
-## [Running / Launching](https://github.com/SICKAG/sick_scan_xd?tab=readme-ov-file#running-the-driver)
-
-Launching the sick driver for the lms100 ! Attention: must set the correct host-ip manually
-
-    ros2 run sick_scan_xd sick_generic_caller ./src/sick_scan_xd/launch/sick_lms_1xx.launch hostname:=192.168.0.XX
-
-> TODO: configure and add laser specific settings like in the ROS1 volksbot parameter.yaml
-
-# Building
-> Hint: When your OS freezes on building consider using less parallel workers by adding ```--parallel-workers n``` to the colcon build command. (2 or 3 should usually work for everyone)
-
-### When building for the first follow the following steps:
-
-1) source ros2
-```bash
-source ${ros2_distro}
-```
-
-2) only build the SICK LMS package
-```bash
-colcon build --packages-select sick_scan_xd --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" " -DSCANSEGMENT_XD=0" --event-handlers console_direct+
-```
-
-3) source the project
-```bash
-source ./install/setup.bash
-```
-
-4) build all other packages
-```bash
-colcon build --packages-ignore sick_scan_xd
-```
-
-### For normal building use the following command
-> Make sure you are source into the workspace with
-> `source ./install/setup.bash`
+## Regular building:
+> [!Caution]
+> Make sure you are sourced into the workspace with
+> ```bash
+> source ./install/setup.bash
+> ```
 
 ```bash
 colcon build --packages-ignore sick_scan_xd
 ```
-
-
-# Logging
-
-Enter the following line in your terminal to set the logging directory for all logs:
-
+or just a subset of the packages:
 ```bash
-export ROS_LOG_DIR=./log/latest
+colcon build --packages-select [package1] [package2] [package3] [...]
 ```
-
-the logs can then be found under the linked folder `./logs/latest/` where `latest/` is a symlink to the folder of the latest build
