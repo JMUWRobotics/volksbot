@@ -66,7 +66,7 @@ static_assert(
     #endif
     <= 1,
     "At most one of the debug print options PRINT_STATE, PRINT_EVENT and PRINT_VEL_CTRL can be enabled at the same time to avoid cluttered output!"
-)
+);
 
 using std::placeholders::_1;
 using std::placeholders::_2;
