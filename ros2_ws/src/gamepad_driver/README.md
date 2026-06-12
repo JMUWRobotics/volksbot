@@ -12,11 +12,10 @@ To use the gamepad driver, simply run the `gamepad_driver` node:
 ros2 run gamepad_driver gamepad_driver
 ```
 
-Currently **two** drive modes are implemented to control the rover via the gamepad:
+Currently **three** drive modes are implemented to control the rover via the gamepad:
 - **Arcade Drive**: The left thumb stick controls the forward and backward movement and left and right steering.
-- **Throttle Drive**: The left thumb stick controls the left and right steering, the right trigger controls the forward acceleration and the left trigger controls the backward acceleration. This allows for a more intuitive control of the rover, especially for users familiar with racing games.
-
-<!-- - **Tank Drive**: The left joystick controls the left wheels and the right joystick controls the right wheels. This allows for precise control of the rover and is especially useful for tight maneuvers. -->
+- **Paddle Drive** / **Throttle Drive**: The left thumb stick controls the left and right steering, the right trigger controls the forward acceleration and the left trigger controls the backward acceleration. This allows for a more intuitive control of the rover, especially for users familiar with racing games.
+- **Tank Drive**: The left joystick controls the left wheel and the right joystick controls the right wheel. This allows for antique controls similar to how tanks are controlled.
 
 The drive modes can be switched by pressing the `START` button on the controller.
 In all drive modes the right thumb stick can be used to turn on the spot, where left and right movement of the stick will cause the rover to rotate left and right respectively.
@@ -52,6 +51,20 @@ Decelerate-> / LT \     Switch Mode   / RT \ <--Accelerate
             \-__-/                     \-__-/
 ```
 
+- Tank Drive:
+```yaml
+             / LT \     Switch Mode   / RT \
+  Slower--> |  LB  |              |  |  RB  | <--Faster
+            |------+--------------V--+------|
+            )  ^    Back        Start    Y  (
+           / < + >       Logitech      X   A \
+          (    v    Mode      Vibrate    B    )
+    forward ------> ^               ^ <------ forward
+          |  Left < O >           < O > Right |
+   backward ------> V               V <------ backward
+           \      /^^^^^^^^^^^^^^^^^^^\      /
+            \-__-/                     \-__-/
+```
 
 
 > [!Caution]

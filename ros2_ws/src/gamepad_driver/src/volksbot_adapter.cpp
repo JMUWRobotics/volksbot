@@ -66,7 +66,7 @@ static_assert(
     #endif
     <= 1,
     "At most one of the debug print options PRINT_STATE, PRINT_EVENT and PRINT_VEL_CTRL can be enabled at the same time to avoid cluttered output!"
-)
+);
 
 using std::placeholders::_1;
 using std::placeholders::_2;
@@ -122,16 +122,19 @@ struct vel_ctrl_t {
     }
 
     private:
-        // Velocity calculation variables    
-        int  speed = 20;            /* cm / s */
-        bool is_stick_drive = true; /* stick or paddle */
-        int  throttle_sign = 0;     /* last sign of throttle */
-
         // Constants
+        enum drive_mode_t { STICK_DRIVE, PADDLE_DRIVE, TANK_DRIVE, COUNT };
+        static constexpr const char* drive_mode_str[drive_mode_t::COUNT+1] = { "STICK_DRIVE", "PADDLE_DRIVE", "TANK_DRIVE", "ERROR" };
+        
         const float throttle_sign_deadzone = tan( DEG2RAD(10) ); /* angle of deadzone for throttle sign */
         static constexpr float ff_feedback_max_accel = 2500.0f; /* cm/s /s */
         static constexpr float ff_feedback_min_accel = 500.0f; /* cm/s /s */
 
+        // Velocity calculation variables and parameters 
+        int  speed = 20;            /* cm / s */
+        int  throttle_sign = 0;     /* last sign of throttle */
+        drive_mode_t drive_mode = STICK_DRIVE; /* drive mode */
+        
         // gamepad management variables
         Gamepad* gp;
         system_clock::time_point stop_rumble, last_update;
@@ -150,7 +153,8 @@ struct vel_ctrl_t {
             }
 
             if( EVENT_PRESSED(gpe, gp_index::START) ) {
-                is_stick_drive = !is_stick_drive;
+                drive_mode = static_cast<drive_mode_t>( (drive_mode + 1) % drive_mode_t::COUNT );
+                LOG_LN_INFO( "Switched drive mode to " COL(FG_BRIGHT_GREEN, "%s"), drive_mode_str[drive_mode] );
                 throttle_sign = 0;
                 set_rumble( 0xFFFF, 0xFFFF, 100ms );
             }
@@ -175,50 +179,79 @@ struct vel_ctrl_t {
             float factor_left, factor_right, rot_factor;
             bool throttle_non_deadzone = false;
 
-            if( is_stick_drive ) {
-                /**
-                 * main movement is controlled with the left thumbstick
-                 * where:
-                 *      - up:   (throttle-)forward
-                 *      - down: (throttle-)backwards
-                 *      - left:  turning left
-                 *      - right: turning right
-                 */
-                abs_throttle = dist(gps.thumb_stick_left.up_down, gps.thumb_stick_left.left_right) / (float)AXIS_VALUE_MAX;
+            switch (drive_mode) {
+                case STICK_DRIVE:  { 
+                    /**
+                     * main movement is controlled with the left thumbstick
+                     * where:
+                     *      - up:   (throttle-)forward
+                     *      - down: (throttle-)backwards
+                     *      - left:  turning left
+                     *      - right: turning right
+                     */
+                    abs_throttle = dist(gps.thumb_stick_left.up_down, gps.thumb_stick_left.left_right) / (float)AXIS_VALUE_MAX;
 
-                throttle_non_deadzone = abs( gps.thumb_stick_left.up_down / (float)gps.thumb_stick_left.left_right ) > throttle_sign_deadzone;
-                if( throttle_non_deadzone ) {
-                    throttle_sign = sgn(gps.thumb_stick_left.up_down);
+                    throttle_non_deadzone = abs( gps.thumb_stick_left.up_down / (float)gps.thumb_stick_left.left_right ) > throttle_sign_deadzone;
+                    if( throttle_non_deadzone ) {
+                        throttle_sign = sgn(gps.thumb_stick_left.up_down);
+                    }
+
+                    throttle = abs_throttle * throttle_sign;
+
+                    factor_left  = throttle * min( 1.0 - gps.thumb_stick_left.left_right / (float)AXIS_VALUE_MAX, 1.0 );
+                    factor_right = throttle * min( 1.0 - gps.thumb_stick_left.left_right / (float)AXIS_VALUE_MIN, 1.0 );
+
+                    /**
+                     * right thumbstick can be used to turn on the spot, i.e. rotate without lateral movement
+                     *      - left:  rotate counterclockwise (ccw)
+                     *      - right: rotate clockwise (cw)
+                     */
+                    rot_factor = gps.thumb_stick_right.left_right / (float)AXIS_VALUE_MAX;
+
+                    factor_left  -= rot_factor;
+                    factor_right += rot_factor;
+
+                    break;
                 }
+                case PADDLE_DRIVE: { 
+                    /**
+                     * main movement is controlled with the left thumbstick and the throttle paddles
+                     * where:
+                     *      - paddle-right: (throttle-)forward
+                     *      - paddle-left:  (throttle-)backwards
+                     *      - left:  turning left
+                     *      - right: turning right
+                     */
+                    throttle = ( gps.throttle.right - gps.throttle.left ) / (float)AXIS_VALUE_MAX;
+                    
+                    // not required (i.e. just for debug printout)
+                    abs_throttle = abs(throttle);
 
-                throttle = abs_throttle * throttle_sign;
-            } else {
-                /**
-                 * main movement is controlled with the left thumbstick and the throttle paddles
-                 * where:
-                 *      - paddle-right: (throttle-)forward
-                 *      - paddle-left:  (throttle-)backwards
-                 *      - left:  turning left
-                 *      - right: turning right
-                 */
-                throttle = ( gps.throttle.right - gps.throttle.left ) / (float)AXIS_VALUE_MAX;
-                
-                // not required (i.e. just for debug printout)
-                abs_throttle = abs(throttle);
+                    factor_left  = throttle * min( 1.0 - gps.thumb_stick_left.left_right / (float)AXIS_VALUE_MAX, 1.0 );
+                    factor_right = throttle * min( 1.0 - gps.thumb_stick_left.left_right / (float)AXIS_VALUE_MIN, 1.0 );
+                    
+                    /**
+                     * right thumbstick can be used to turn on the spot, i.e. rotate without lateral movement
+                     *      - left:  rotate counterclockwise (ccw)
+                     *      - right: rotate clockwise (cw)
+                     */
+                    rot_factor = gps.thumb_stick_right.left_right / (float)AXIS_VALUE_MAX;
+
+                    factor_left  -= rot_factor;
+                    factor_right += rot_factor;
+
+                    break;
+                }
+                case TANK_DRIVE:   { 
+                    factor_left  =  gps.thumb_stick_left.up_down / (float)AXIS_VALUE_MAX;
+                    factor_right = -gps.thumb_stick_right.up_down / (float)AXIS_VALUE_MIN;
+
+                    break;
+                }
+                default: 
+                    LOG_LN_ERROR( "Invalid drive mode! This should never happen!" );
+                    factor_left = factor_right = 0;
             }
-
-            factor_left  = throttle * min( 1.0 - gps.thumb_stick_left.left_right / (float)AXIS_VALUE_MAX, 1.0 );
-            factor_right = throttle * min( 1.0 - gps.thumb_stick_left.left_right / (float)AXIS_VALUE_MIN, 1.0 );
-            
-            /**
-             * right thumbstick can be used to turn on the spot, i.e. rotate with out lateral movement
-             *      - left:  rotate counterclockwise (ccw)
-             *      - right: rotate clockwise (cw)
-             */
-            rot_factor = gps.thumb_stick_right.left_right / (float)AXIS_VALUE_MAX;
-
-            factor_left  -= rot_factor;
-            factor_right += rot_factor;
 
             factor_left  = max( -1.0f, min(factor_left , 1.0f) );
             factor_right = max( -1.0f, min(factor_right, 1.0f) );
