@@ -1,11 +1,19 @@
 import os
 from launch import LaunchDescription
 from launch_ros.actions import Node # located at /opt/ros/humble/share
-from launch.actions import IncludeLaunchDescription
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
+from launch.conditions import IfCondition
+from launch.substitutions import LaunchConfiguration
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
+
+    use_gamepad_param = DeclareLaunchArgument(
+        'use_gamepad',
+        default_value='true',
+        description='Whether to start the gamepad node'
+    )
     
     # volksbot node is started separately
 
@@ -27,7 +35,8 @@ def generate_launch_description():
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('gamepad_driver'), 'launch'),
             '/gamepad_driver_launch.py']
-        )
+        ),
+        condition=IfCondition(LaunchConfiguration('use_gamepad'))
     )
 
     lms_nodes = IncludeLaunchDescription(
@@ -54,6 +63,7 @@ def generate_launch_description():
     return LaunchDescription([
 
         # launch files
+        use_gamepad_param,
         calibration_nodes,
         gamepad_nodes,
         lms_nodes,

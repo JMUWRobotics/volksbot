@@ -77,7 +77,10 @@ ros2 launch volkslaunch praktikum_launch.py
 ```
 
 > [!Caution]
-> When playing back rosbags while connected to the rover you may want to comment out the `gamepad_driver` node from the launch script to avoid unwanted velocity commands to the motors with the recorded data.
+> When playing back rosbags while connected to the rover you may want to start the launch script without the `gamepad_driver` to avoid unwanted velocity commands to the motors with the recorded data.
+> ```bash
+> ros2 launch volkslaunch praktikum_launch.py use_gamepad:=false
+> ```
 
 ---
 
