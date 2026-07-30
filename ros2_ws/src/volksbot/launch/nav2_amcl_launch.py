@@ -11,7 +11,7 @@ def generate_launch_description():
     volksbot_dir = get_package_share_directory('volksbot')
 
     # lifecycle_nodes = ['controller_server', 'planner_server', 'bt_navigator', 'map_server', 'amcl']
-    lifecycle_nodes = ['map_server', 'amcl', 'planner_server', 'controller_server']
+    lifecycle_nodes = ['map_server', 'amcl']
     
     # define launch arguments as variables
     map_config = LaunchConfiguration('map')
@@ -62,9 +62,9 @@ def generate_launch_description():
         output='screen',
         parameters=[
             {'yaml_filename': map_config},
-            {'use_sim_time': False}
+            {'use_sim_time': use_sim_time}
         ],
-        arguments=['--ros-args', '--log-level', log_level, use_sim_time]
+        arguments=['--ros-args', '--log-level', log_level]
     )
     # AMCL Node
     amcl_node = Node(
@@ -72,27 +72,27 @@ def generate_launch_description():
         executable='amcl',
         name='amcl',
         output='screen',
-        parameters=[amcl_config],
-        arguments=['--ros-args', '--log-level', log_level, use_sim_time]
+        parameters=[amcl_config, {'use_sim_time': use_sim_time}],
+        arguments=['--ros-args', '--log-level', log_level]
     )
     # Planner Server Node
-    planner_server_node = Node(
-        package='nav2_planner',
-        executable='planner_server',
-        name='planner_server',
-        output='screen',
-        parameters=[costmap_config],
-        arguments=['--ros-args', '--log-level', log_level, use_sim_time]
-    )
-    # Controller Server Node
-    controller_server_node = Node(
-        package='nav2_controller',
-        executable='controller_server',
-        name='controller_server',
-        output='screen',
-        parameters=[costmap_config],
-        arguments=['--ros-args', '--log-level', log_level, use_sim_time]
-    )
+    # planner_server_node = Node(
+    #     package='nav2_planner',
+    #     executable='planner_server',
+    #     name='planner_server',
+    #     output='screen',
+    #     parameters=[costmap_config, {'use_sim_time': use_sim_time}],
+    #     arguments=['--ros-args', '--log-level', log_level]
+    # )
+    # # Controller Server Node
+    # controller_server_node = Node(
+    #     package='nav2_controller',
+    #     executable='controller_server',
+    #     name='controller_server',
+    #     output='screen',
+    #     parameters=[costmap_config, {'use_sim_time': use_sim_time}],
+    #     arguments=['--ros-args', '--log-level', log_level]
+    # )
     # Behaviour Tree Navigation Node
     # bt_navigation_node = Node(
     #     package='nav2_bt_navigator',
@@ -112,9 +112,9 @@ def generate_launch_description():
         parameters=[{
             'autostart': True,
             'node_names': lifecycle_nodes,
-            'use_sim_time': False
+            'use_sim_time': use_sim_time
         }],
-        arguments=['--ros-args', '--log-level', log_level, use_sim_time]
+        arguments=['--ros-args', '--log-level', log_level]
     )
 
     return LaunchDescription([
@@ -131,8 +131,8 @@ def generate_launch_description():
         
 
         # launch the nodes
-        planner_server_node,
-        controller_server_node,
+        # planner_server_node,
+        # controller_server_node,
         # bt_navigation_node,
         map_server_node,
         amcl_node,
