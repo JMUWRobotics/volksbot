@@ -146,8 +146,17 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
     ip_lms                = rover_map["ip_lms"]               .as<std::string>();
 
     motor_controller_port = "";
+    ip_t livox{}; // default: invalid ip
     if ( rover_map["motor_controller_port"] )
         motor_controller_port = rover_map["motor_controller_port"].as<std::string>();
+    
+    if ( rover_map["ip_livox"] ) {
+        std::string ip_livox = rover_map["ip_livox"].as<std::string>();
+        if( !ip_t::from_string( ip_livox, livox ) ) { // invalide ipv4
+            LOG_LN_ERROR( COL(FG_RED, "ip_livox was supplied but could not be parsed for rover %s: ip_livox = %s"), name.c_str(), ip_livox.c_str() );
+            return false;
+        }
+    }
 
     float wheel_map[4] = { 1.0f, 0.0f, 0.0f, 1.0f }; // default: direct mapping
     if( rover_map["wheel_mapping"] ) {
@@ -163,8 +172,9 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
 
     MCD::MCD mcd = MCD::from_string( motor_controller );
     
-    ip_t ip;
-    if( !ip_t::from_string( ip_lms, ip ) ) { // invalide ipv4
+    ip_t lms;
+    if( !ip_t::from_string( ip_lms, lms ) ) { // invalide ipv4
+        LOG_LN_ERROR( COL(FG_RED, "ip_lms could not be parsed for rover %s: ip_lms = %s"), name.c_str(), ip_lms.c_str() );
         return false;
     }
 
@@ -174,7 +184,8 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
     out_rover.motor_controller      = mcd;
     out_rover.motor_controller_port = motor_controller_port;
     out_rover.udev_symlink          = udev_symlink;
-    out_rover.ip_lms                = ip;
+    out_rover.ip_lms                = lms;
+    out_rover.ip_livox              = livox;
     out_rover.wheel_mapping         = { { { wheel_map[0], wheel_map[1] },
                                           { wheel_map[2], wheel_map[3] } } };
 

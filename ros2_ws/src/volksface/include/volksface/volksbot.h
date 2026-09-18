@@ -208,7 +208,8 @@ namespace VB {
         std::string udev_symlink;           // device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules
         
         // lms
-        ip_t ip_lms;                        // static ip of laserscanner
+        ip_t ip_lms;                        // static ip of SICK laserscanner
+        ip_t ip_livox;                      // static ip of Livox laserscanner
 
         bool is_valid = true;               // indicates if the rover configuration is valid
 
@@ -233,6 +234,7 @@ namespace VB {
             mrov.udev_symlink = udev_symlink;
             
             mrov.ip_lms = ip_lms.raw;
+            mrov.ip_livox = ip_livox.raw;
 
             return mrov;
         }
@@ -251,6 +253,7 @@ namespace VB {
             udev_symlink = mrov->udev_symlink;
             
             ip_lms.raw = mrov->ip_lms;
+            ip_livox.raw = mrov->ip_livox;
             is_valid = mrov->is_valid;
         }
         // creates Rover from volksface::msg::Rover
@@ -267,7 +270,8 @@ namespace VB {
                     motor_controller      == other.motor_controller      &&
                     motor_controller_port == other.motor_controller_port &&
                     udev_symlink          == other.udev_symlink          &&
-                    ip_lms.raw            == other.ip_lms.raw;
+                    ip_lms.raw            == other.ip_lms.raw            &&
+                    ip_livox.raw          == other.ip_livox.raw;
         }
         bool operator==( msg::Rover::ConstSharedPtr other ) const {
             return  name                  == other->name                  &&
@@ -276,7 +280,8 @@ namespace VB {
                     motor_controller      == MCD::from_int( other->motor_controller ) &&
                     motor_controller_port == other->motor_controller_port &&
                     udev_symlink          == other->udev_symlink          &&
-                    ip_lms.raw            == other->ip_lms;
+                    ip_lms.raw            == other->ip_lms                &&
+                    ip_livox.raw          == other->ip_livox;
         }
 
         bool operator!=(auto x) const { return !(this->operator==(x)); }

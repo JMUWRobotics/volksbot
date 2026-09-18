@@ -26,6 +26,7 @@ always_publish: true
 # motor_controller_port  # [optional] port to be passed to the specified motor controller 
 # udev_symlink           # device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules
 # ip_lms                 # static ip of laserscanner
+# ip_livox               # [TODO] static ip of livox lidar
 # wheel_mapping          # 2x2 matrix mapping wheels to motors [ m0_w0, m0_w1, 
 #                                                                m1_w0, m1_w1 ]
 # if wheel_mapping is missing will default to identity matrix 

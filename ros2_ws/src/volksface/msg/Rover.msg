@@ -17,5 +17,6 @@ string motor_controller_port    # port to be passed to the specified motor contr
 string udev_symlink     # device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules
 
 # lms
-uint32 ip_lms           # static ip of laserscanner
+uint32 ip_lms           # static ip of SICK laserscanner
+uint32 ip_livox         # static ip of Livox laserscanner
 # ip as hex: AA:BB:CC:DD <=> ip as uint32: 0xDDCCBBAA
