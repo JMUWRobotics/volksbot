@@ -993,7 +993,12 @@ static unsigned short checksum(const void *b, int len) {
  * @param ip static ipv4 ip address to ping
  * @return int 0 if ping OK else 1 if ping not OK
  */
-static int ping( const ip_t ip, const int pings ) {
+static int ping( 
+    const ip_t ip, 
+    const int pings, 
+    const int timeout_ms=100, 
+    std::function<void(int)> draw_callback = nullptr
+) {
     static int cnt=1;
     const int val=255;
 
@@ -1021,21 +1026,17 @@ static int ping( const ip_t ip, const int pings ) {
         LOG_ERROR("Failed requesting nonblocking I/O");
         return 1;
     }
-    
-
-    // move cursor right of the status output
-    LOG_ANSI( CUF(%d) " ", SIZE_STATUS );
 
     packet pckt;
     sockaddr_in r_addr;
     for( int loop=0; loop < pings; loop++ ) {
         socklen_t len = sizeof(r_addr);
 
-        LOG_INFO( "ping: %2d / %2d" CUB(13), loop+1, pings );
-        fflush( stdout );
+        if (draw_callback) {
+            draw_callback(loop);
+        }
 
         if ( recvfrom(sd, &pckt, sizeof(pckt), 0, (sockaddr*)&r_addr, &len) > 0 ) {
-            LOG_ANSI( CUB(%d) "%*s%*s\n", SIZE_STATUS+1, SIZE_FORMAT, S_AVAIL, 14, "" );
             return 0;
         }
 
@@ -1054,14 +1055,18 @@ static int ping( const ip_t ip, const int pings ) {
             LOG_ERROR("Failed to call sendto");
         }
 
-        usleep(300000);
+        usleep(timeout_ms * 1000);
     }
     
-    LOG_LN_ANSI( CUB(%d) "%*s%*s", SIZE_STATUS+1, SIZE_FORMAT, S_NOT_AVAIL, 14, "" );
     return 1;
 }
-[[maybe_unused]] static int ping( const char *adress, const int pings ) {
-    return ping( ip_t( *(long*)gethostbyname(adress)->h_addr ), pings );
+[[maybe_unused]] static int ping( 
+    const char *adress, 
+    const int pings, 
+    const int timeout_ms=100, 
+    std::function<void(int)> draw_callback = nullptr
+) {
+    return ping( ip_t( *(long*)gethostbyname(adress)->h_addr ), pings, timeout_ms, draw_callback );
 }
 #define PING_SUCCESSFUL 0
 
@@ -1070,17 +1075,64 @@ static int ping( const ip_t ip, const int pings ) {
 // ROVER SEARCHING / MATCHING ALGORIHM
 //------------------------------------------------------------------------------
 
+struct match_t {
+    bool ip_lms, ip_livox, port;
+    
+    int count() const { return ip_lms + ip_livox + port; }
+};
+static match_t perform_rover_match(int rover_index) {
+    match_t match{false, false, false};
+
+    bool has_valid_ip_livox = rovers[rover_index].ip_livox.raw != 0;
+
+    // search port
+    match.port = access( rovers[rover_index].udev_symlink.c_str(), F_OK ) == ACCESS_PERMITTED;
+    visualizer.print_line_with_status(
+        rover_index, 
+        TableVisualizer::Status::WAITING,
+        has_valid_ip_livox ? TableVisualizer::Status::WAITING : TableVisualizer::Status::NOT_AVAILABLE,
+        match.port ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE
+    );
+    
+    // search ip lms
+    match.ip_lms = ping( 
+        rovers[rover_index].ip_lms, 
+        config.count_ping_tries, 
+        config.ping_timeout_ms, 
+        [](int p){ 
+            visualizer.status_ping_print_callback(p, visualizer.sizes.pos_status_column_1); 
+        } 
+    ) == PING_SUCCESSFUL;
+    visualizer.print_line_with_status(
+        rover_index, 
+        match.ip_lms   ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE,
+        has_valid_ip_livox ? TableVisualizer::Status::WAITING : TableVisualizer::Status::NOT_AVAILABLE,
+        match.port     ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE,
+        has_valid_ip_livox
+    );
+    
+    // search ip livox
+    if ( has_valid_ip_livox) {
+        match.ip_livox = ping( 
+            rovers[rover_index].ip_livox, 
+            config.count_ping_tries, 
+            config.ping_timeout_ms, 
+            [](int p){ 
+                visualizer.status_ping_print_callback(p, visualizer.sizes.pos_status_column_2); 
+            } 
+        ) == PING_SUCCESSFUL;
+        visualizer.print_line_with_status(
+            rover_index, 
+            match.ip_lms   ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE,
+            match.ip_livox ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE,
+            match.port     ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE, 
+            false
+        );
     }
+    
+    LOG_ANSI( CNL(1) );
 
-    LOG_LN_WARN( "\"" COL(FG_GREEN, "%s" ) "\" was " COL(FG_BRIGHT_RED, "not found") " in the volksbot/config/rovers.yaml", rover_name.c_str() );
-    LOG_LN_WARN( "Search was " COL(FG_BRIGHT_RED, "NOT successful") " and automatic Rover search will now commence\n" );
-
-    return false;
-}
-
-static void publish_rover() {
-    VB::msg::Rover rov = active_rover->to_message();
-    pub_rover->publish( rov );
+    return match;
 }
 
 /**
@@ -1090,173 +1142,166 @@ static void publish_rover() {
  * @return false if the rover configuration is unchanged
  */
 static bool find_rover() {
-    #define CVAR FG_MAGENTA
-    #define CPREFILL ITALIC;FG_GRAY
-    static constexpr int max_matches = 2;
-
-    int next_rover_index = active_rover_index;
+    static int previous_match_count = 0;
     bool check_already_connected = active_rover_index != -1;
+    int best_rover_index = -1;
+    int best_match = 0;
+    bool changed = false;
 
-    std::vector<int> matches;
-    for( uint i=0; i < rovers.size(); i++ )
-        // -1 is used to signal uninitialized values, used in the print below to know validity of value
-        matches.emplace_back( -1 ); 
-
-    // setup local helper functions -------------------------------------------
-    constexpr int str_len_ip = sizeof( "xxx.xxx.xxx.xxx" )-1;
-    auto [max_name_len, max_port_len] = get_max_len_name_port( rovers, 0, str_len_ip );
-
-    auto print_port = [&](const int i, const char* text) {
-        LOG_LN_INFO( "[" COL(CVAR, "%*s") "] udev port (" COL(CVAR, "%-*s") "): %*s",
-            max_name_len, rovers[i].name.c_str(),
-            max_port_len, rovers[i].udev_symlink.c_str(),
-            SIZE_FORMAT, text
-        );
-    };
-    auto print_ip = [&](const int i, const int text_width, const char* text) {
-        LOG_INFO( "[" COL(CVAR, "%*s") "]        ip (" COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "." COL(CVAR, "%3d") "%*s): %*s",
-            max_name_len, rovers[i].name.c_str(),
-            rovers[i].ip_lms.ip.hh, 
-            rovers[i].ip_lms.ip.hl, 
-            rovers[i].ip_lms.ip.lh, 
-            rovers[i].ip_lms.ip.ll,
-            MAX(0, max_port_len - str_len_ip),
-            "",
-            text_width, text
-        );
-    };
-
-    auto search_body = [&](int i) {
-        matches[i] = 0; // initialize match value
-
-        bool port = access( rovers[i].udev_symlink.c_str(), F_OK ) == ACCESS_PERMITTED;
-        if( port ) {
-            matches[i]++;
-        }
-        print_port( i, port ? S_AVAIL : S_NOT_AVAIL );
-
-        // search ips
-        print_ip( i, 0, "" );
-        if( ping( rovers[i].ip_lms, config.count_ping_tries ) == PING_SUCCESSFUL ) {
-            matches[i]++;
-        }
-    };
-    
-    
-    // preprint table ---------------------------------------------------------
-    static bool first_execution = true;
-    if( !first_execution ) {
-        // jump back up, so that we overwrite the table on the next look up round
-        LOG_ANSI( CPL(%ld), 1 + max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 );
-        LOG_ANSI( ED(0) ); // clear from cursor to end of screen
-    }
-    first_execution = false;
-
-    LOG_LN_INFO( "============================================================" );
-
+    std::vector<match_t> matches;
     for( uint i=0; i < rovers.size(); i++ ) {
-        print_port( i, check_already_connected ? COL(CPREFILL, "      ...     ") : COL(CPREFILL, " ...waiting... ") );
-        print_ip( i, SIZE_FORMAT, check_already_connected ? COL(CPREFILL, "      ...     \n") : COL(CPREFILL, " ...waiting... \n") );
+        matches.emplace_back( match_t{false, false, false} );
     }
 
-    LOG_LN_INFO( "\n------------------------------------------------------------" );
-    for( uint i=0; i < rovers.size(); i++) {
-        LOG_LN_INFO( "[" COL(CVAR, "%*s") "] matches: " COL(CPREFILL, " - "), max_name_len, rovers[i].name.c_str() );
+    // Initialize rover table with default values
+    // so that the user can see the table while the search is running
+    for( const DetailedRoverInfo& rov : rovers ) {
+        LOG_ANSI( EL(2) ); // clear line
+
+        visualizer.print_rover_line_default( 
+            rov, 
+            TableVisualizer::Status::WAITING, 
+            TableVisualizer::Status::WAITING,
+            TableVisualizer::Status::WAITING
+        );
     }
     
-    LOG_LN_INFO( "\nRover:   %s   " COL(%s, "%*s"),
-        check_already_connected ? COL(BLINK;CPREFILL;CVAR, "  validating ") : COL(BLINK;CPREFILL;FG_WHITE, "  searching  "),
-        IF_PRINT( check_already_connected ? XSTR(CPREFILL;CVAR) : XSTR(CPREFILL), )
-        max_name_len, check_already_connected ? rovers[active_rover_index].name.c_str() : "---"
-    );
-
-    LOG_ANSI( SCO ); // save cursor position SCO
-    LOG_ANSI( CPL(%ld), max_matches*rovers.size() + 1 + 1+rovers.size()+1 + 1 ); // jump back up
+    // LOG_INFO("\n"); // +1
+    LOG_INFO("%s\n", std::string(visualizer.sizes.table_width, '=').c_str() ); // +1
+    LOG_INFO("\n"); // +1
     
+    // Print rover selection status
+    LOG_ANSI( EL(2) ); // clear line
+    if ( check_already_connected ) {
+        visualizer.print_rover_selection(
+            XSTR(BLINK;ITALIC;FG_BRIGHT_BLUE), TableVisualizer::Titles::selection_status_validating,
+            XSTR(ITALIC;FG_BRIGHT_BLUE), rovers[active_rover_index].name.c_str()
+        );
+    } else {
+        visualizer.print_rover_selection(
+            XSTR(BLINK;ITALIC;FG_WHITE), TableVisualizer::Titles::selection_status_searching,
+            XSTR(ITALIC;FG_GRAY), "---"
+        );
+    }
+
+    // save cursor position SCO and move back up to the first row of the table entries
+    LOG_ANSI( SCO );
+    LOG_ANSI( CPL(%ld), TableVisualizer::lines_per_rover * rovers.size() + 3);
+    
+
     // artificially delay execution so that the user has enough time to "comprehend" what is happening
     IF_PRINT( sleep( 1 ) );
 
 
-    // main search ------------------------------------------------------------
-    // test for valid connection if already connected
+    // validate any previous connection -----------------------------------------------------------
+    // greedily check if we are still connected to a previously connected rover
     if( check_already_connected ) {
         if( active_rover_index > 0 ) {
-            LOG_ANSI( CNL(%d), max_matches*active_rover_index ); // jump to rover position in table
+            // jump to rover position in table if not the first rover in the table
+            LOG_ANSI( CNL(%d), TableVisualizer::lines_per_rover * active_rover_index );
         }
 
-        search_body( active_rover_index );
+        matches[active_rover_index] = perform_rover_match( active_rover_index );
+        LOG_ANSI( CPL(1) );
 
-        LOG_ANSI( CPL(%d), max_matches*(active_rover_index+1) ); // jump back up to top rover position in table
-
-        if( matches[active_rover_index] == max_matches ) {
-            // we are still connected and therefor skip testing for other rovers
-            LOG_ANSI( CNL(%ld), max_matches*rovers.size() ); // jump to bottom of table
+        if( matches[active_rover_index].count() >= previous_match_count ) {
+            // we are still connected and therefore skip testing for other rovers
             
+            // jump to bottom of table
+            LOG_ANSI( CNL(%ld), TableVisualizer::lines_per_rover * (rovers.size() - active_rover_index) );
+            
+            // if active rover is still connected we skip testing for other rovers.
             // YESS, this is normally considered dirty, but this improves readability of the logic
             // and control flow over having to indent for another if clause
-            // since we actively want to skip over the for loop if we validated the active connection
-            goto best_fit;
+            // since we actively want to skip the whole best-matching search
+            goto validated_connection;
+        } else {
+            if( active_rover_index > 0 ) {
+                // jump back up to top rover position in table
+                LOG_ANSI( CPL(%d), TableVisualizer::lines_per_rover * active_rover_index );
+            }
         }
     }
 
-    // search for any available connection
+    // search for best matching connection --------------------------------------------------------
     for( std::size_t i=0; i < rovers.size(); i++ ) {
         // if an rover is connected and we already checked for it above we can skip it now
         // else i will never be -1 and active_rover_index is -1 so the if case does not execute
         if ( i == static_cast<std::size_t>(active_rover_index) ) {
-            LOG_ANSI( CNL(%d), max_matches ); // jump to next rover position in table
+            LOG_ANSI( CNL(%d), TableVisualizer::lines_per_rover ); // jump to next rover position in table
             continue;
         }
 
-        search_body( i );
+        matches[i] = perform_rover_match( i );
     }
     
-
-    // select best fit
-best_fit:
-    LOG_LN_INFO( "\n------------------------------------------------------------" );
-    
-    next_rover_index = -1;
-    int best_match = 0;
-
-    static constexpr int color_match_lut[max_matches+1] = { 
-        FG_GRAY,    // match == 0
-        FG_YELLOW,  // match == 1
-        FG_GREEN    // match == 2
-    };
+    best_rover_index = -1;
+    best_match = 0;
     for( uint i=0; i < rovers.size(); i++) {
-        if( matches[i] == -1 ) {
-            // skip print if value was not initialized since we already preprinted the table
-            LOG_ANSI( CNL(1) );
-            continue;
-        }
-
-        LOG_LN_INFO( "[" COL(CVAR, "%*s") "] matches:  " COL(%d, "%d"), 
-            max_name_len, rovers[i].name.c_str(),
-            IF_PRINT( color_match_lut[matches[i]], ) matches[i]
-        );
-
-        if( matches[i] > best_match ) {
-            next_rover_index = i;
-            best_match = matches[i];
+        if( matches[i].count() > best_match ) {
+            best_rover_index = i;
+            best_match = matches[i].count();
         }
     }
 
-    // manage selected
-    active_rover = next_rover_index == -1 ? &ROVER_DUMMY : &rovers[next_rover_index];
-    
-    bool changed = next_rover_index != active_rover_index;
-    active_rover_index = next_rover_index;
+    changed = best_rover_index != active_rover_index;
+    active_rover_index = best_rover_index;
+    active_rover = active_rover_index == -1 ? &ROVER_DUMMY : &rovers[active_rover_index];    
 
-    LOG_LN_INFO( "\nRover:   %s   " COL(%s, "%*s"),
-        changed
-        ? COL(BG_BRIGHT_YELLOW;FG_BLACK, "  NEW ROVER  ")
-        : active_rover_index == -1
-            ? COL(FG_GRAY, " not changed ")
-            : COL(FG_BRIGHT_GREEN, "  validated  "),
-        IF_PRINT( active_rover_index == -1 ? XSTR(BG_BRIGHT_RED;FG_BLACK) : XSTR(FG_BRIGHT_GREEN), )
-        max_name_len, active_rover_index == -1 ? " NO ROVER CONNECTED " : rovers[active_rover_index].name.c_str()
-    );
+    if ( changed ) {
+        previous_match_count = best_match;
+    }
+
+    // print rover selection status ---------------------------------------------------------------
+validated_connection:
+    LOG_ANSI( CNL(2) ); // skip the separator lines between the table and selection status
+    if ( active_rover_index == -1 ) {
+        visualizer.print_rover_selection(
+            changed
+            ? XSTR(BG_BRIGHT_YELLOW;FG_BLACK)
+            : XSTR(FG_GRAY),
+            changed
+            ? TableVisualizer::Titles::selection_status_new_rover
+            : TableVisualizer::Titles::selection_status_not_changed,
+            XSTR(BG_BRIGHT_RED;FG_BLACK),
+            " NO ROVER CONNECTED "
+        );
+    } else {
+        visualizer.print_rover_selection(
+            changed
+            ? XSTR(BG_BRIGHT_YELLOW;FG_BLACK)
+            : XSTR(FG_BRIGHT_GREEN),
+            changed
+            ? TableVisualizer::Titles::selection_status_new_rover
+            : TableVisualizer::Titles::selection_status_validated,
+            XSTR(FG_BRIGHT_GREEN),
+            rovers[active_rover_index].name.c_str()
+        );
+    }
+
+    // reset the cursor to the first row of the table
+    LOG_ANSI( CPL(%ld), TableVisualizer::lines_per_rover * rovers.size() + 3);
+
+    // highlight the active rover in the table ----------------------------------------------------
+    if( active_rover_index != -1 ) {
+        if ( active_rover_index > 0 ) {
+            LOG_ANSI( CNL(%d), TableVisualizer::lines_per_rover * active_rover_index ); // jump to rover position in table
+        }
+        
+        visualizer.print_rover_line_activated(
+            rovers[active_rover_index], 
+            matches[active_rover_index].ip_lms   ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE, 
+            matches[active_rover_index].ip_livox ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE, 
+            matches[active_rover_index].port     ? TableVisualizer::Status::AVAILABLE : TableVisualizer::Status::NOT_AVAILABLE
+        );
+        LOG_ANSI( CPL(1) );
+
+        if ( active_rover_index > 0 ) {
+            LOG_ANSI( CPL(%d), TableVisualizer::lines_per_rover * active_rover_index ); // jump back up to first row
+        }
+    }   
+
+    fflush( stdout ); // flush output buffer for any pending output to the console
 
     return changed;
 }
@@ -1318,6 +1363,10 @@ int main(int argc, char* argv[]) {
     LOG_ANSI( ED(2) CUP(1,1) ); // clear screen // and move cursor home
     parse_yaml( PATH_YAML_ROVERS );
 
+    visualizer.set_sizes();
+    visualizer.print_table();
+
+
     rclcpp::init(argc, argv);
     
     node = std::make_shared<rclcpp::Node>("volksbot_rover");
@@ -1335,6 +1384,9 @@ int main(int argc, char* argv[]) {
         publish_rover();
         timer = node->create_wall_timer( config.pub_period, publish_rover );
     } else {
+        // move cursor back up to first table row
+        LOG_ANSI( CPL(%ld), TableVisualizer::lines_per_rover * rovers.size() + 1);
+    
         find_and_publish();
         timer = node->create_wall_timer( config.pub_period, find_and_publish );
     }
