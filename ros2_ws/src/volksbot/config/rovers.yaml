@@ -64,10 +64,33 @@ ip_lms:                 192.168.0.12
 wheel_mapping:          [  0, -1, 
                            1,  0 ]
 
+---
+name:                   VOX3
+description:            emergency stop on side
+controller_color:       yellow
+wheel_diameter:         26.0
+wheel_base:             40.0    # 32 + 2*8/2
+motor_controller:       EPOS4
+udev_symlink:           /dev/EPOS4
+ip_lms:                 192.168.0.13
+ip_livox:               192.168.1.100
+wheel_mapping:          [  1,  0, 
+                           0, -1 ]
 
 ---
+name:                   VOX4
+description:            lms141 (gray)
+controller_color:       red
 wheel_diameter:         26.0
-wheel_base:             50.0
+wheel_base:             40.0    # 32 + 2*8/2
+motor_controller:       EPOS4
+udev_symlink:           /dev/EPOS4
+ip_lms:                 192.168.0.15
+ip_livox:               192.168.1.100
+wheel_mapping:          [  1,  0, 
+                           0, -1 ]
+
+---
 name:                   Ute
 description:            gray Wheels
 controller_color:       white
