@@ -4,14 +4,20 @@
 # CONFIG 
 #------------------------------------------------------------------------------
 
-# count of tries of pings
+# [int] count of tries of pings
 ping_tries: 5
 
-# period in seconds of of rover search loop
+# [int] timeout between pings in milliseconds
+ping_timeout_ms: 100
+
+# [int] period in seconds of of rover search loop
 publish_period_sec: 10
 
-# if false will only publish active rover if the connected rover changed else always
+# [bool] if false will only publish active rover if the connected rover changed else always
 always_publish: true
+
+# [optional:] [bool] if true, will display the full rover table output of the main volksbot node; if false, will display a minimal info table output; default is false
+use_full_rover_table_output: false
 
 
 #------------------------------------------------------------------------------
@@ -20,10 +26,13 @@ always_publish: true
 
 # see reference declaration in volksface/volksbot.h 
 # name                   # rover name (case insensitive)
+# description            # [optional] unique rover description
+# controller_color       # [optional] color of controller (for visual identification)
 # wheel_diameter         # in cm
 # wheel_base             # in cm - distance between wheel center points
+                         # wheel_base := chassis_width + 2*wheel_width/2 == chassis_width + (full_width - chassis_width)/2 == (chassis_width + full_width)/2
 # motor_controller       # id of motor controller
-# motor_controller_port  # [optional] port to be passed to the specified motor controller 
+# motor_controller_port  # [optional] port to be passed to the specified motor controller, else automatic detection
 # udev_symlink           # device port mapping (usually: /dev/xyz) as noted in 42-usb-serial-volksbot.rules
 # ip_lms                 # static ip of laserscanner
 # ip_livox               # [TODO] static ip of livox lidar
@@ -33,34 +42,38 @@ always_publish: true
 
 ---
 name:                   VOX1
+description:            lms no ip sticker
+controller_color:       blue
 wheel_diameter:         26.0
-wheel_base:             50.0
+wheel_base:             40.5    # 32 + 2*8.5/2
 motor_controller:       EPOS4
-# motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS4
 ip_lms:                 192.168.0.14
 wheel_mapping:          [  0, -1, 
-                          1,  0 ]
-
+                           1,  0 ]
 
 ---
 name:                   VOX2
+description:            motor position flipped
+controller_color:       red tape
 wheel_diameter:         26.0
-wheel_base:             50.0
+wheel_base:             40.75   # 32 + (9 + 8.5) / 2
 motor_controller:       EPOS4
-# motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS4
 ip_lms:                 192.168.0.12
 wheel_mapping:          [  0, -1, 
-                          1,  0 ]
+                           1,  0 ]
 
 
 ---
-name:                   Ute
 wheel_diameter:         26.0
 wheel_base:             50.0
+name:                   Ute
+description:            gray Wheels
+controller_color:       white
+wheel_diameter:         25.0
+wheel_base:             47.75  # 38 + (10 + 9.5)/2
 motor_controller:       EPOS2
-# motor_controller_port:  USB0
 udev_symlink:           /dev/EPOS2L
 ip_lms:                 192.168.0.14
 wheel_mapping:          [  0, -1, 
@@ -68,6 +81,7 @@ wheel_mapping:          [  0, -1,
 
 ---
 name:                   Lars
+description:            two back wheels
 wheel_diameter:         25.0
 wheel_base:             44.0
 motor_controller:       VMC
@@ -79,8 +93,10 @@ wheel_mapping:          [  0,  1,
 
 ---
 name:                   Irma
-wheel_diameter:         25.0
-wheel_base:             44.0
+description:            looks like Sid from Ice Age
+controller_color:       green
+wheel_diameter:         24.5
+wheel_base:             42.75   # 32 + (10.5 + 11)/2
 motor_controller:       VMC
 motor_controller_port:  /dev/VMC
 udev_symlink:           /dev/VMC
@@ -95,32 +111,93 @@ wheel_mapping:          [  0,  1,
 #------------------------------------------------------------------------------
 # ---
 # #! dummy for internal testing 
-# name:                   Dummy 1 - 2 matches
-# wheel_diameter:         99.0
-# wheel_base:             99.0
+# name:                   Dummy 1 - AAA
+# description:            test dummy 1
+# controller_color:       black
+# wheel_diameter:         99.9
+# wheel_base:             99.9
 # motor_controller:       VMC
-# motor_controller_port:  /dev/tty1
+# udev_symlink:           /dev/tty0
+# ip_lms:                 8.8.8.8
+# ip_livox:               8.8.8.8
+
+# ---
+# #! dummy for internal testing 
+# name:                   Dummy 2 - AAN
+# description:            test dummy 2
+# controller_color:       white
+# wheel_diameter:         12.3
+# wheel_base:             45.6
+# motor_controller:       EPOS2
+# udev_symlink:           /dev/ttyUSB0
+# ip_lms:                 8.8.8.8
+# ip_livox:               8.8.8.8
+
+# ---
+# #! dummy for internal testing 
+# name:                   Dummy 3 - ANA
+# description:            test dummy 3
+# controller_color:       red
+# wheel_diameter:         23.4
+# wheel_base:             56.7
+# motor_controller:       EPOS4
 # udev_symlink:           /dev/tty0
 # ip_lms:                 8.8.8.8
 
 # ---
 # #! dummy for internal testing 
-# name:                   Dummy 2 - 1 matches
-# wheel_diameter:         99.0
-# wheel_base:             99.0
+# name:                   Dummy 4 - ANN
+# description:            test dummy 4
+# controller_color:       green
+# wheel_diameter:         34.5
+# wheel_base:             67.8
+# motor_controller:       VMC
+# udev_symlink:           /dev/ttyUSB0
+# ip_lms:                 8.8.8.8
+
+# ---
+# #! dummy for internal testing 
+# name:                   Dummy 5 - NAA
+# description:            test dummy 5
+# controller_color:       blue
+# wheel_diameter:         90.1
+# wheel_base:             23.4
 # motor_controller:       EPOS2
-# motor_controller_port:  /dev/tty0
+# udev_symlink:           /dev/tty0
+# ip_lms:                 192.168.0.0
+# ip_livox:               8.8.8.8
+
+# ---
+# #! dummy for internal testing 
+# name:                   Dummy 6 - NAN
+# description:            test dummy 6
+# controller_color:       yellow
+# wheel_diameter:         56.7
+# wheel_base:             89.0
+# motor_controller:       EPOS4
+# udev_symlink:           /dev/ttyUSB0
+# ip_lms:                 192.168.0.0
+# ip_livox:               8.8.8.8
+
+# ---
+# #! dummy for internal testing 
+# name:                   Dummy 7 - NNA
+# description:            test dummy 7
+# controller_color:       magenta
+# wheel_diameter:         12.3
+# wheel_base:             45.6
+# motor_controller:       VMC
 # udev_symlink:           /dev/tty0
 # ip_lms:                 192.168.0.0
 
 # ---
 # #! dummy for internal testing 
-# name:                   Dummy 3 - 0 matches
-# wheel_diameter:         99.0
-# wheel_base:             99.0
-# motor_controller:       ERROR
-# motor_controller_port:  /dev/ttyUSB0
+# name:                   Dummy 8 - NNN
+# description:            test dummy 8
+# controller_color:       cyan
+# wheel_diameter:         78.9
+# wheel_base:             01.2
+# motor_controller:       EPOS2
 # udev_symlink:           /dev/ttyUSB0
 # ip_lms:                 192.168.0.0
-
 

@@ -74,15 +74,23 @@ static rclcpp::Publisher<msg::Rover>::SharedPtr pub_rover;
 static rclcpp::TimerBase::SharedPtr timer;
 
 static struct config_t {
+    static constexpr int max_possible_ping_tries = 9;
+
     int count_ping_tries = 1;
+    int ping_timeout_ms = 100;
     std::chrono::seconds pub_period = 60s;
     bool always_publish = true;
+    bool use_full_rover_table_output = false;
 } config;
 
 
 //-----------------------------------------------------------------------------
 // ROVER PARSING AND IMPLEMENTATION
 //-----------------------------------------------------------------------------
+struct DetailedRoverInfo : public Rover {
+    std::string description;
+    std::string controller_color;
+};
 
 // fallback dummy when no rover could be detected
 static const Rover ROVER_DUMMY {
@@ -98,7 +106,7 @@ static const Rover ROVER_DUMMY {
     false
 };
 
-static std::vector<Rover> rovers;
+static std::vector<DetailedRoverInfo> rovers;
 static const Rover* active_rover = &ROVER_DUMMY;
 static int active_rover_index = -1;
 
@@ -118,7 +126,7 @@ static std::pair<int, int> get_max_len_name_port( std::vector<Rover>& rovers, in
     return std::make_pair( max_name_len, max_port_len );
 }
 
-static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
+static bool parse_rover( const YAML::Node& rover_map, DetailedRoverInfo& out_rover ) {
     if( !rover_map.IsMap() ) {
         LOG_LN_WARN( COL(FG_RED, "could not parse rover: invalide yaml input") );
         return false;
@@ -135,18 +143,27 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
         return false;
     }
 
-    std::string name, motor_controller, motor_controller_port, udev_symlink, ip_lms;
+    // mandatory parameters
+    std::string name, motor_controller, udev_symlink, ip_lms;
     float wheel_diameter, wheel_base;
 
-    name                  = rover_map["name"]                 .as<std::string>();
-    wheel_diameter        = rover_map["wheel_diameter"]       .as<float>();
-    wheel_base            = rover_map["wheel_base"]           .as<float>();
-    motor_controller      = rover_map["motor_controller"]     .as<std::string>();
-    udev_symlink          = rover_map["udev_symlink"]         .as<std::string>();
-    ip_lms                = rover_map["ip_lms"]               .as<std::string>();
-
-    motor_controller_port = "";
+    name                  = rover_map["name"]            .as<std::string>();
+    wheel_diameter        = rover_map["wheel_diameter"]  .as<float>();
+    wheel_base            = rover_map["wheel_base"]      .as<float>();
+    motor_controller      = rover_map["motor_controller"].as<std::string>();
+    udev_symlink          = rover_map["udev_symlink"]    .as<std::string>();
+    ip_lms                = rover_map["ip_lms"]          .as<std::string>();
+    
+    // optional parameters
+    std::string motor_controller_port="", description="", controller_color="";
     ip_t livox{}; // default: invalid ip
+    
+    if ( rover_map["description"] )
+        description = rover_map["description"].as<std::string>();
+    
+    if ( rover_map["controller_color"] )
+        controller_color = rover_map["controller_color"].as<std::string>();
+    
     if ( rover_map["motor_controller_port"] )
         motor_controller_port = rover_map["motor_controller_port"].as<std::string>();
     
@@ -186,6 +203,8 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
     out_rover.udev_symlink          = udev_symlink;
     out_rover.ip_lms                = lms;
     out_rover.ip_livox              = livox;
+    out_rover.description           = description;
+    out_rover.controller_color      = controller_color;
     out_rover.wheel_mapping         = { { { wheel_map[0], wheel_map[1] },
                                           { wheel_map[2], wheel_map[3] } } };
 
@@ -193,18 +212,29 @@ static bool parse_rover( const YAML::Node& rover_map, Rover& out_rover ) {
 }
 static void parse_config( const YAML::Node& cfg_map ) {
     if( auto n = cfg_map["ping_tries"] ) {
-        config.count_ping_tries = n.as<int>( config.count_ping_tries );
-        LOG_LN_INFO( "ping_tries         = " COL(FG_GREEN, "%d"), config.count_ping_tries );
+        config.count_ping_tries = std::max( 0, std::min( n.as<int>( config.count_ping_tries ), config_t::max_possible_ping_tries ) );
+        LOG_LN_INFO( "ping_tries                  = " COL(FG_GREEN, "%d"), config.count_ping_tries );
+    }
+
+    if( auto n = cfg_map["ping_timeout_ms"] ) {
+        config.ping_timeout_ms = std::max( 0, n.as<int>( config.ping_timeout_ms ) );
+        LOG_LN_INFO( "ping_timeout_ms             = " COL(FG_GREEN, "%dms"), config.ping_timeout_ms );
     }
 
     if( auto n = cfg_map["publish_period_sec"] ) {
-        config.pub_period = std::chrono::seconds( n.as<int>( config.pub_period.count() ) );
-        LOG_LN_INFO( "publish_period_sec = " COL(FG_GREEN, "%lds"), config.pub_period.count() );
+        config.pub_period = std::chrono::seconds( std::max(0, n.as<int>( config.pub_period.count() )) );
+        LOG_LN_INFO( "publish_period_sec          = " COL(FG_GREEN, "%lds"), config.pub_period.count() );
     }
 
     if( auto n = cfg_map["always_publish"] ) {
         config.always_publish = n.as<bool>( config.always_publish );
-        LOG_LN_INFO( "always_publish     = " COL(FG_GREEN, "%s"), config.always_publish ? "true" : "false" );
+        LOG_LN_INFO( "always_publish              = " COL(FG_GREEN, "%s"), config.always_publish ? "true" : "false" );
+    }
+
+    if( auto n = cfg_map["use_full_rover_table_output"] ) {
+        config.use_full_rover_table_output = n.as<bool>( config.use_full_rover_table_output );
+        // TODO?: does this really need a dedicated console output?
+        LOG_LN_INFO( "use_full_rover_table_output = " COL(FG_GREEN, "%s"), config.use_full_rover_table_output ? "true" : "false" );
     }
 
     LOG_LN_INFO(" ");
@@ -216,13 +246,17 @@ static void parse_yaml( const std::string& file_path ) {
     parse_config( *it );
 
     while( ++it != rovs.end() ) {
-        Rover out;
+        DetailedRoverInfo out;
         if( parse_rover( *it, out ) ) {
             rovers.push_back( std::move(out) );
         }
     }
     
     int max_name_len = get_max_len_name_port( rovers ).first;
+    if (rovers.empty()) {
+        LOG_LN_WARN( COL(FG_YELLOW, "No rover configurations found in %s"), file_path.c_str() );
+    }
+}
 
     for( const Rover& rov : rovers ) {
         LOG_LN_INFO( "> parsed Rover: " COL(FG_GREEN, "%*s") " (" COL(FG_GREEN, "%s") ", " COL(FG_GREEN, "%s") ")",
