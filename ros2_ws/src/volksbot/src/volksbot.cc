@@ -5,6 +5,15 @@
 // @date    25.08.2025
 /////////////////////////////////////////////////////////////////////////////
 
+/**
+ * If a specific rover should be manually selected, call:
+ *      ros2 run volksbot volksbot ${rover_name}
+ * with the specified rover name to force select that rover.
+ * 
+ * Otherwise leave blank and automatic search will be used for rover detection
+ */
+
+
 #include "volksface/volksbot.h"
 
 
@@ -46,22 +55,8 @@ using namespace std::chrono_literals;
 
 #include <rclcpp/rclcpp.hpp>
 
-
-
-//-----------------------------------------------------------------------------
-// PRECOMPILER FOR FORMAT HIGHLIGHTING
-//-----------------------------------------------------------------------------
-
-#define _STR_AVAIL " AVAILABLE "
-#define _STR_NOT_AVAIL " NOT AVAILABLE "
-#define S_AVAIL COL(FG_GREEN, _STR_AVAIL)
-#define S_NOT_AVAIL COL(FG_RED, _STR_NOT_AVAIL)
-
-#define SIZE_STATUS (int)MAX( sizeof(_STR_AVAIL)-1, sizeof(_STR_NOT_AVAIL)-1 )
-#define SIZE_FORMAT (int)MAX( sizeof(S_AVAIL)-1, sizeof(S_NOT_AVAIL)-1 )
-
-
 using namespace VB;
+
 
 //-----------------------------------------------------------------------------
 // STATIC STATE VARIABLES FOR BACKEND
@@ -83,10 +78,6 @@ static struct config_t {
     bool use_full_rover_table_output = false;
 } config;
 
-
-//-----------------------------------------------------------------------------
-// ROVER PARSING AND IMPLEMENTATION
-//-----------------------------------------------------------------------------
 struct DetailedRoverInfo : public Rover {
     std::string description;
     std::string controller_color;
@@ -110,21 +101,10 @@ static std::vector<DetailedRoverInfo> rovers;
 static const Rover* active_rover = &ROVER_DUMMY;
 static int active_rover_index = -1;
 
-static std::pair<int, int> get_max_len_name_port( std::vector<Rover>& rovers, int init_name_len = 0, int init_port_len = 0 ) {
-    int max_name_len = init_name_len, max_port_len = init_port_len;
-    
-    for( uint i=0; i < rovers.size(); i++ ) {
-        int name_len = rovers[i].name.length();
-        if( name_len > max_name_len )
-            max_name_len = name_len;
 
-        int port_len = rovers[i].udev_symlink.length();
-        if( port_len > max_port_len )
-            max_port_len = port_len;
-    }
-
-    return std::make_pair( max_name_len, max_port_len );
-}
+//-----------------------------------------------------------------------------
+// ROVER PARSING AND IMPLEMENTATION
+//-----------------------------------------------------------------------------
 
 static bool parse_rover( const YAML::Node& rover_map, DetailedRoverInfo& out_rover ) {
     if( !rover_map.IsMap() ) {
@@ -252,22 +232,727 @@ static void parse_yaml( const std::string& file_path ) {
         }
     }
     
-    int max_name_len = get_max_len_name_port( rovers ).first;
     if (rovers.empty()) {
         LOG_LN_WARN( COL(FG_YELLOW, "No rover configurations found in %s"), file_path.c_str() );
     }
 }
 
-    for( const Rover& rov : rovers ) {
-        LOG_LN_INFO( "> parsed Rover: " COL(FG_GREEN, "%*s") " (" COL(FG_GREEN, "%s") ", " COL(FG_GREEN, "%s") ")",
-            max_name_len, rov.name.c_str(),
-            rov.ip_lms.to_string(3).c_str(),
-            MCD::to_string( rov.motor_controller ).c_str()
+
+//------------------------------------------------------------------------------
+// VISUALIZATION
+//------------------------------------------------------------------------------
+
+#define CENTER_FMT "%*s%s%*s"
+#define CENTER_PAD_LEFT(str_size, width) (int)((width - (str_size)) / 2)
+#define CENTER_PAD_RIGHT(str_size, width) (int)(width - (str_size) - CENTER_PAD_LEFT(str_size, width))
+// printf arguments to center a string as specified by CENTER_FMT; only for strlen(str) < width !!
+#define CENTER_ARGS(str, width) CENTER_PAD_LEFT(slen(str), width), "", (str), CENTER_PAD_RIGHT(slen(str), width), ""
+#define CENTER_XARGS(str, str_size, width) CENTER_PAD_LEFT(str_size, width), "", (str), CENTER_PAD_RIGHT(str_size, width), ""
+
+
+static constexpr int slen(const char* str) { return std::char_traits<char>::length(str); }
+
+template<typename T, typename... Ts>
+static constexpr T max(T a, Ts... args) {
+    T m = a;
+    ((m = args > m ? args : m), ...);
+    return m;
+}
+
+template<typename T>
+static std::vector<std::string> extract_string_entries( const std::vector<DetailedRoverInfo>& rovers, T DetailedRoverInfo::*member, std::string (*to_string_func)(const T&) ) {
+    std::vector<std::string> entries;
+    for( const auto& r : rovers ) {
+        entries.push_back( to_string_func( r.*member ) );
+    }
+    return entries;
+}
+static std::vector<std::string> extract_string_entries( const std::vector<DetailedRoverInfo>& rovers, std::string DetailedRoverInfo::*member ) {
+    return extract_string_entries<std::string>( rovers, member, [](const std::string& s) { return s; } );
+}
+
+static int get_max_string_length( const std::vector<std::string>& elements, const int min_len=0 ) {
+    int max_len = min_len;
+    for( const auto& e : elements ) {
+        int len = e.length();
+        if( len > max_len )
+            max_len = len;
+    }
+    return max_len;
+}
+template<typename T>
+static int get_max_string_length( const std::vector<DetailedRoverInfo>& rovers, T DetailedRoverInfo::*member, std::string (*to_string_func)(const T&), const int min_len=0 ) {
+    return get_max_string_length( extract_string_entries( rovers, member, to_string_func ), min_len );
+}
+static int get_max_string_member_length( const std::vector<DetailedRoverInfo>& rovers, std::string DetailedRoverInfo::*member, const int min_len=0 ) {
+    return get_max_string_length( extract_string_entries( rovers, member ), min_len );
+}
+
+
+// To personalize the table output to full or minimal output the user can set the optional "use_full_rover_table_output" in the rover.yaml
+struct TableVisualizer {
+    #define LPAD "   "
+    #define SEP  " | "
+
+    #define DASH "-"
+    #define DASH_CHR DASH[0]
+    #define DDASH "="
+    #define DDASH_CHR DDASH[0]
+    
+    #define CSEP DASH "+" DASH
+    #define HSEP DASH "|" DASH
+    static_assert( slen(CSEP) == slen(SEP) && slen(HSEP) == slen(SEP), "separator strings must be of equal length for proper table formatting" );
+
+    static const std::map<std::string, std::string> color_string_map;
+    static constexpr int lines_per_rover = 1;
+
+    struct Titles {
+        typedef const char* const cnst_str;
+
+        // main headers
+        static constexpr cnst_str main           = "Available Rovers";
+        static constexpr cnst_str info           = "Rover Info";
+        static constexpr cnst_str parameters     = "Rover Parameters";
+
+        static constexpr cnst_str name           = "Name";
+        static constexpr cnst_str desc           = "Description";
+        static constexpr cnst_str color1         = "Gamepad";
+        static constexpr cnst_str color2         = "Color";
+        static constexpr cnst_str wheel          = "Wheel Parameters";
+        static constexpr cnst_str wheel_diameter = "Diameter";
+        static constexpr cnst_str wheel_base     = "Base";
+
+        static constexpr cnst_str ip_title       = "IP Address";
+        static constexpr cnst_str ip_lms         = "SICK LMS-100";
+        static constexpr cnst_str ip_livox       = "DJI Livox 360";
+        static constexpr cnst_str port1          = "Motor Driver";
+        static constexpr cnst_str port2          = "Port";
+
+        // status strings
+        static constexpr cnst_str status_column_1 = "SICK LMS";
+        static constexpr cnst_str status_column_2 = "DJI Livox";
+        static constexpr cnst_str status_column_3 = "Motor Port";
+
+        static constexpr cnst_str status_title         = "Connection Status";
+        static constexpr cnst_str status_waiting       = "  awaiting";
+        static constexpr cnst_str status_available     = "     AVAIL";
+        static constexpr cnst_str status_not_available = " NOT AVAIL";
+
+        // when printed must be exactly 1 character long, otherwise the table will be misaligned
+        // static constexpr cnst_str status_icon_waiting       = COL(BG_GRAY, "⏳");
+        static constexpr cnst_str status_icon_waiting       = COL(FG_GRAY,  "○");
+        static constexpr cnst_str status_icon_available     = COL(FG_GREEN, "✔");
+        static constexpr cnst_str status_icon_not_available = COL(FG_RED,   "✖");
+
+        static constexpr cnst_str selection_status_validating  = "  validating ";
+        static constexpr cnst_str selection_status_validated   = "  validated  ";
+        static constexpr cnst_str selection_status_searching   = "  searching  ";
+        static constexpr cnst_str selection_status_new_rover   = "  NEW ROVER  ";
+        static constexpr cnst_str selection_status_not_changed = " not changed ";
+    };
+
+    enum class Status {
+        NOT_AVAILABLE = 0,
+        AVAILABLE = 1,
+        WAITING = 2
+    };
+
+    struct sizes_t {
+        static constexpr int str_len_status_ping = slen( "ping: X / X" );
+        static constexpr int str_len_wheel_values = slen( "XXX.XX cm" );
+        static constexpr int str_len_ip = slen( "xxx.xxx.xxx.xxx" );
+
+        int table_width;
+        int info_width;
+        int parameters_width;
+
+        int max_name_len;
+        int max_desc_len;
+        int max_color_len;
+        int wheel_title_width;
+        int max_wheel_diameter_len;
+        int max_wheel_base_len;
+        
+        static constexpr int max_ip_lms_len = max(sizes_t::str_len_ip, slen(Titles::ip_lms));
+        static constexpr int max_ip_livox_len = max(sizes_t::str_len_ip, slen(Titles::ip_livox));
+        static constexpr int ip_title_width_len = max_ip_lms_len +slen(SEP)+ max_ip_livox_len;
+        static_assert( slen(Titles::ip_title) <= ip_title_width_len, "Titles::ip_title is too long for the ip columns" );
+        
+        int max_port_len;
+        
+        static constexpr int minimum_status_width = max( 
+            str_len_status_ping, 
+            slen(Titles::status_waiting), 
+            slen(Titles::status_available), 
+            slen(Titles::status_not_available) 
+        ) + 2; // +2 for the leading Icon+space
+        static constexpr int status_column_1_width = max( minimum_status_width, slen(Titles::status_column_1) );
+        static constexpr int status_column_2_width = max( minimum_status_width, slen(Titles::status_column_2) );
+        static constexpr int status_column_3_width = max( minimum_status_width, slen(Titles::status_column_3) );
+        static constexpr int status_title_width = status_column_1_width +slen(SEP)+ status_column_2_width +slen(SEP)+ status_column_3_width;
+        static_assert( slen(Titles::status_title) <= status_title_width, "Titles::status_title is too long for the status columns" );
+        
+        int pos_status_column_1;
+        int pos_status_column_2;
+        int pos_status_column_3;
+
+        static constexpr int selection_status_width = max( 
+            slen(Titles::selection_status_validating), 
+            slen(Titles::selection_status_validated), 
+            slen(Titles::selection_status_searching), 
+            slen(Titles::selection_status_new_rover), 
+            slen(Titles::selection_status_not_changed)
+        );
+        int selection_width;
+    } sizes;
+
+    void set_sizes() {
+        // width and sizes ----------------------------------------------------------------------------
+        sizes.max_name_len  = get_max_string_member_length( rovers, &DetailedRoverInfo::name, slen(Titles::name) );
+        sizes.max_port_len  = get_max_string_member_length( rovers, &DetailedRoverInfo::udev_symlink, max( slen(Titles::port1), slen(Titles::port2) ) );
+        sizes.max_desc_len  = get_max_string_member_length( rovers, &DetailedRoverInfo::description, slen(Titles::desc) );
+        sizes.max_color_len = max( get_max_string_member_length( rovers, &DetailedRoverInfo::controller_color)+2, slen(Titles::color1), slen(Titles::color2) ); // 2 for the color box
+
+        constexpr int raw_max_wheel_diameter_len = max(slen(Titles::wheel_diameter), sizes_t::str_len_wheel_values);
+        constexpr int raw_max_wheel_base_len     = max(slen(Titles::wheel_base), sizes_t::str_len_wheel_values);
+        
+        constexpr bool use_centered_wheel_columns = slen(Titles::wheel) > raw_max_wheel_diameter_len + slen(SEP) + raw_max_wheel_base_len;
+        sizes.max_wheel_diameter_len = use_centered_wheel_columns
+            ? CENTER_PAD_LEFT(slen(SEP), slen(Titles::wheel))
+            : raw_max_wheel_diameter_len;
+        sizes.max_wheel_base_len = use_centered_wheel_columns
+            ? CENTER_PAD_RIGHT(slen(SEP), slen(Titles::wheel))
+            : raw_max_wheel_base_len;
+        sizes.wheel_title_width = sizes.max_wheel_diameter_len + slen(SEP) + sizes.max_wheel_base_len;
+
+        // Calculate the total width of the table
+        sizes.table_width =   slen(LPAD) + sizes.max_name_len
+                            + (config.use_full_rover_table_output ? slen(SEP) + sizes.max_desc_len : 0)
+                            + slen(SEP)  + sizes.max_color_len
+                            + (config.use_full_rover_table_output ? slen(SEP) + sizes.wheel_title_width : 0)
+                            + slen(SEP)  + sizes.ip_title_width_len
+                            + slen(SEP)  + sizes.max_port_len
+                            + slen(SEP)  + sizes.status_title_width;
+        
+        sizes.info_width =   slen(LPAD) + sizes.max_name_len
+                            + (config.use_full_rover_table_output ? slen(SEP) + sizes.max_desc_len : 0)
+                            + slen(SEP)  + sizes.max_color_len;
+        sizes.parameters_width = sizes.table_width - sizes.info_width - slen(SEP);
+
+        sizes.pos_status_column_1 = sizes.table_width - sizes.status_title_width;
+        sizes.pos_status_column_2 = sizes.pos_status_column_1 + slen(SEP) + sizes.status_column_1_width;
+
+        sizes.selection_width = slen("Rover:   ") + sizes.selection_status_width + slen("   ") + sizes.max_name_len;
+    }
+
+    //-------------------//
+    //  Print Functions  //
+    //-------------------//
+    // Headers ------------------------------------------------------------------------------------
+
+    void print_headers() const {
+        // Top-Line Header
+        LOG_LN_INFO( "%s " COL(FG_BRIGHT_GREEN;BOLD, "%s") " %s" DDASH,
+            std::string(CENTER_PAD_LEFT(slen(Titles::main), sizes.table_width)-1, DDASH_CHR).c_str(),
+            Titles::main,
+            std::string(CENTER_PAD_RIGHT(slen(Titles::main), sizes.table_width)-1, DDASH_CHR).c_str()
+        );
+
+        // Sub Header
+        LOG_LN_INFO( COL(FG_CYAN, CENTER_FMT) SEP COL(FG_CYAN, CENTER_FMT),
+            CENTER_ARGS(Titles::info, sizes.info_width),
+            CENTER_ARGS(Titles::parameters, sizes.parameters_width)
+        );
+        
+        // Sub Header: Separator
+        LOG_LN_INFO( "%s" HSEP "%s" DASH, 
+            std::string(sizes.info_width, DASH_CHR).c_str(), 
+            std::string(sizes.parameters_width, DASH_CHR).c_str()
+        );
+
+        // Sub Sub Header 1
+        if ( config.use_full_rover_table_output ) {
+            LOG_LN_INFO( 
+                LPAD "%*s"                      // name
+                SEP  "%*s"                      // desc
+                SEP  COL(FG_CYAN, CENTER_FMT)   // color
+                SEP  COL(FG_CYAN, CENTER_FMT)   // wheel
+                SEP  COL(FG_CYAN, CENTER_FMT)   // IPs
+                SEP  COL(FG_CYAN, CENTER_FMT)   // port
+                SEP  COL(FG_CYAN, CENTER_FMT),  // status
+    
+                sizes.max_name_len, "",
+                sizes.max_desc_len, "",
+                CENTER_ARGS( Titles::color1      , sizes.max_color_len      ),
+                CENTER_ARGS( Titles::wheel       , sizes.wheel_title_width  ),
+                CENTER_ARGS( Titles::ip_title    , sizes.ip_title_width_len ),
+                CENTER_ARGS( Titles::port1       , sizes.max_port_len       ),
+                CENTER_ARGS( Titles::status_title, sizes.status_title_width )
+            );
+        } else {
+            LOG_LN_INFO( 
+                LPAD "%*s"                      // name
+                SEP  COL(FG_CYAN, CENTER_FMT)   // color
+                SEP  COL(FG_CYAN, CENTER_FMT)   // IPs
+                SEP  COL(FG_CYAN, CENTER_FMT)   // port
+                SEP  COL(FG_CYAN, CENTER_FMT),  // status
+    
+                sizes.max_name_len, "",
+                CENTER_ARGS( Titles::color1      , sizes.max_color_len      ),
+                CENTER_ARGS( Titles::ip_title    , sizes.ip_title_width_len ),
+                CENTER_ARGS( Titles::port1       , sizes.max_port_len       ),
+                CENTER_ARGS( Titles::status_title, sizes.status_title_width )
+            );
+        }
+
+        // Sub Sub Header 2
+        if ( config.use_full_rover_table_output ) {
+            LOG_LN_INFO( 
+                LPAD COL(FG_CYAN, CENTER_FMT)   // name
+                SEP  COL(FG_CYAN, CENTER_FMT)   // desc
+                SEP  COL(FG_CYAN, CENTER_FMT)   // color
+                SEP  COL(FG_CYAN, CENTER_FMT)   // diameter
+                SEP  COL(FG_CYAN, CENTER_FMT)   // base
+                SEP  COL(FG_CYAN, CENTER_FMT)   // lms
+                SEP  COL(FG_CYAN, CENTER_FMT)   // livox
+                SEP  COL(FG_CYAN, CENTER_FMT)   // port
+                
+                // status columns
+                SEP  COL(FG_CYAN, CENTER_FMT)   // status lms
+                SEP  COL(FG_CYAN, CENTER_FMT)   // status livox
+                SEP  COL(FG_CYAN, CENTER_FMT),  // status port
+                
+                CENTER_ARGS( Titles::name           , sizes.max_name_len           ),
+                CENTER_ARGS( Titles::desc           , sizes.max_desc_len           ),
+                CENTER_ARGS( Titles::color2         , sizes.max_color_len          ),
+                CENTER_ARGS( Titles::wheel_diameter , sizes.max_wheel_diameter_len ),
+                CENTER_ARGS( Titles::wheel_base     , sizes.max_wheel_base_len     ),
+                CENTER_ARGS( Titles::ip_lms         , sizes.max_ip_lms_len         ),
+                CENTER_ARGS( Titles::ip_livox       , sizes.max_ip_livox_len       ),
+                CENTER_ARGS( Titles::port2          , sizes.max_port_len           ),
+                CENTER_ARGS( Titles::status_column_1, sizes.status_column_1_width  ),
+                CENTER_ARGS( Titles::status_column_2, sizes.status_column_2_width  ),
+                CENTER_ARGS( Titles::status_column_3, sizes.status_column_3_width  )
+            );
+        } else {
+            LOG_LN_INFO( 
+                LPAD COL(FG_CYAN, CENTER_FMT)   // name
+                SEP  COL(FG_CYAN, CENTER_FMT)   // color
+                SEP  COL(FG_CYAN, CENTER_FMT)   // lms
+                SEP  COL(FG_CYAN, CENTER_FMT)   // livox
+                SEP  COL(FG_CYAN, CENTER_FMT)   // port
+                
+                // status columns
+                SEP  COL(FG_CYAN, CENTER_FMT)   // status lms
+                SEP  COL(FG_CYAN, CENTER_FMT)   // status livox
+                SEP  COL(FG_CYAN, CENTER_FMT),  // status port
+                
+                CENTER_ARGS( Titles::name           , sizes.max_name_len           ),
+                CENTER_ARGS( Titles::color2         , sizes.max_color_len          ),
+                CENTER_ARGS( Titles::ip_lms         , sizes.max_ip_lms_len         ),
+                CENTER_ARGS( Titles::ip_livox       , sizes.max_ip_livox_len       ),
+                CENTER_ARGS( Titles::port2          , sizes.max_port_len           ),
+                CENTER_ARGS( Titles::status_column_1, sizes.status_column_1_width  ),
+                CENTER_ARGS( Titles::status_column_2, sizes.status_column_2_width  ),
+                CENTER_ARGS( Titles::status_column_3, sizes.status_column_3_width  )
+            );
+        }
+
+        // Sub Header 2: Separator
+        if ( config.use_full_rover_table_output ) {
+            LOG_LN_INFO( "%s%s" CSEP "%s" CSEP "%s" HSEP "%s" CSEP "%s" CSEP "%s" CSEP "%s" CSEP "%s" CSEP "%s" CSEP "%s" CSEP "%s" DASH
+                , std::string( slen(LPAD)                  , DASH_CHR ).c_str()
+                , std::string( sizes.max_name_len          , DASH_CHR ).c_str()
+                , std::string( sizes.max_desc_len          , DASH_CHR ).c_str()
+                , std::string( sizes.max_color_len         , DASH_CHR ).c_str()
+                , std::string( sizes.max_wheel_diameter_len, DASH_CHR ).c_str()
+                , std::string( sizes.max_wheel_base_len    , DASH_CHR ).c_str()
+                , std::string( sizes.max_ip_lms_len        , DASH_CHR ).c_str()
+                , std::string( sizes.max_ip_livox_len      , DASH_CHR ).c_str()
+                , std::string( sizes.max_port_len          , DASH_CHR ).c_str()
+                , std::string( sizes.status_column_1_width , DASH_CHR ).c_str()
+                , std::string( sizes.status_column_2_width , DASH_CHR ).c_str()
+                , std::string( sizes.status_column_3_width , DASH_CHR ).c_str()
+            );
+        } else {
+            LOG_LN_INFO( "%s%s" CSEP "%s" HSEP "%s" CSEP "%s" CSEP "%s" CSEP "%s" CSEP "%s" CSEP "%s" DASH
+                , std::string( slen(LPAD)                  , DASH_CHR ).c_str()
+                , std::string( sizes.max_name_len          , DASH_CHR ).c_str()
+                , std::string( sizes.max_color_len         , DASH_CHR ).c_str()
+                , std::string( sizes.max_ip_lms_len        , DASH_CHR ).c_str()
+                , std::string( sizes.max_ip_livox_len      , DASH_CHR ).c_str()
+                , std::string( sizes.max_port_len          , DASH_CHR ).c_str()
+                , std::string( sizes.status_column_1_width , DASH_CHR ).c_str()
+                , std::string( sizes.status_column_2_width , DASH_CHR ).c_str()
+                , std::string( sizes.status_column_3_width , DASH_CHR ).c_str()
+            );
+        }
+    }
+
+
+    // Status prints ------------------------------------------------------------------------------
+    // prints the status with leading separator, with the supplied width in place
+
+    enum class LineState { NORMAL, SELECTED, ACTIVATED };
+
+    #define CACTIVATED FG_BRIGHT_GREEN;BOLD
+    static const char* status_to_ansi(Status status, LineState lState = LineState::SELECTED) {
+        static constexpr LineState SEL = LineState::SELECTED;
+        static constexpr LineState ACT = LineState::ACTIVATED;
+        switch( status ) {
+            case Status::WAITING:       return lState == SEL ? XSTR(FG_BRIGHT_YELLOW;BOLD) : lState == ACT ? XSTR(CACTIVATED;FG_GRAY ) : XSTR(FG_GRAY)  ;
+            case Status::AVAILABLE:     return lState == SEL ? XSTR(FG_BRIGHT_GREEN;BOLD)  : lState == ACT ? XSTR(CACTIVATED;FG_GREEN) : XSTR(FG_GREEN) ;
+            case Status::NOT_AVAILABLE: return lState == SEL ? XSTR(FG_BRIGHT_RED;BOLD)    : lState == ACT ? XSTR(CACTIVATED;FG_RED  ) : XSTR(FG_RED)   ;
+        }
+        return XSTR(FG_MAGENTA);
+    };
+    static const char* status_to_str(Status status) {
+        switch( status ) {
+            case Status::WAITING:       return Titles::status_waiting;
+            case Status::AVAILABLE:     return Titles::status_available;
+            case Status::NOT_AVAILABLE: return Titles::status_not_available;
+        }
+        return Titles::status_waiting;
+    };
+    static const char* status_to_icon(Status status) {
+        switch( status ) {
+            case Status::WAITING:       return Titles::status_icon_waiting;
+            case Status::AVAILABLE:     return Titles::status_icon_available;
+            case Status::NOT_AVAILABLE: return Titles::status_icon_not_available;
+        }
+        return Titles::status_icon_waiting;
+    };
+    static void print_status( const Status status, int width, LineState lState = LineState::SELECTED ) {
+        if ( lState == LineState::ACTIVATED ) {
+            LOG_INFO( SGR(CACTIVATED) SEP "%s" COL(%s, " %-*s"), 
+                status_to_icon(status),
+                status_to_ansi(status, lState),
+                width - 2, status_to_str(status)
+            );
+        } else {
+            LOG_INFO( SEP "%s " COL(%s, "%-*s"), 
+                status_to_icon(status),
+                status_to_ansi(status, lState),
+                width - 2, status_to_str(status)
+            );
+        }
+    }
+
+    static void status_ping_print_callback(int ping_try, int status_pos) {
+        LOG_ANSI( CHA(%d), status_pos + 1 );
+        LOG_INFO( COL(FG_BLUE;BOLD, "● ping: %d / %d"), ping_try, config.count_ping_tries);
+        LOG_ANSI( CHA(1) ); // reset/move cursor to the beginning of the line
+        fflush( stdout );   // flush output buffer for immediate printing, else nothing gets printed to the console
+    };
+
+    struct RoverLineArgumentProcessing {
+        std::string str_description  = "N/A";
+        std::string ansi_description = XSTR(FG_GRAY);
+        
+        std::string str_controller_color  = "N/A";
+        std::string ansi_controller_color = XSTR(BG_DEFAULT);
+        std::string ansi_controller_font  = XSTR(FG_GRAY);
+
+        std::string str_ip_livox  = "N/A";
+        std::string ansi_ip_livox = XSTR(FG_GRAY);
+    };
+    RoverLineArgumentProcessing preprocesses_rover_line_arguments( 
+        const DetailedRoverInfo& rov, 
+        const std::string& ansi_desc,
+        const std::string& ansi_ip
+    ) const {
+        RoverLineArgumentProcessing out;
+
+        if ( rov.description != "" ) {
+            out.str_description = rov.description;
+            out.ansi_description = ansi_desc;
+        }
+
+        if ( rov.controller_color != "" ) {
+            out.str_controller_color = rov.controller_color;
+
+            if ( color_string_map.find( rov.controller_color ) != color_string_map.end() ) {
+                const std::string& color_index = color_string_map.at( rov.controller_color );
+                out.ansi_controller_color = XSTR(PREFIX_BG) + color_index;
+                out.ansi_controller_font  = XSTR(PREFIX_FG) + color_index;
+            }
+        }
+
+        if ( rov.ip_livox.raw != 0 /* uninitialized or invalid */ ) {
+            out.str_ip_livox = rov.ip_livox.to_string(3);
+            out.ansi_ip_livox = ansi_ip;
+        }
+
+        return out;
+    }
+
+
+    // Line Prints --------------------------------------------------------------------------------
+    
+    void print_rover_line_default( 
+        const DetailedRoverInfo& rov, 
+        const Status status_column_1, 
+        const Status status_column_2, 
+        const Status status_column_3 
+    ) const {
+        #define CVAR FG_MAGENTA
+        RoverLineArgumentProcessing args = preprocesses_rover_line_arguments( rov, XSTR(CVAR), XSTR(CVAR) );
+
+        const size_t str_desc_len = slen(SEP CSI) + args.ansi_description.length() + slen("m") + sizes.max_desc_len + slen(SGR(0)) + 1;
+        char* str_desc = new char[ str_desc_len ];
+        snprintf( str_desc, str_desc_len, 
+                  SEP COL(%s, CENTER_FMT), 
+                  args.ansi_description.c_str(), CENTER_ARGS(args.str_description.c_str(), sizes.max_desc_len) 
+        );
+        
+        const size_t str_wheels_len = slen(SEP) + slen(SGR(CVAR)) + sizes.max_wheel_diameter_len + slen(SGR(0)) + slen(COL(FG_GRAY, " cm"))
+                                    + slen(SEP) + slen(SGR(CVAR)) + sizes.max_wheel_base_len     + slen(SGR(0)) + slen(COL(FG_GRAY, " cm"))+1;
+        char* str_wheels = new char[ str_wheels_len ];
+        snprintf( str_wheels, str_wheels_len, 
+                  SEP COL(CVAR, "%*.2f") COL(FG_GRAY, " cm") 
+                  SEP COL(CVAR, "%*.2f") COL(FG_GRAY, " cm"), 
+                  sizes.max_wheel_diameter_len-3, rov.wheel_diameter,
+                  sizes.max_wheel_base_len-3, rov.wheel_base 
+        );
+
+        LOG_INFO(
+            LPAD COL(CVAR, CENTER_FMT)          // name
+            "%s"                                // desc
+            SEP  COL(%s, " ") COL(%s, " %-*s")  // color
+            "%s"                                // wheels
+            SEP  COL(CVAR, CENTER_FMT)          // ip
+            SEP  COL(%s,   CENTER_FMT)          // ip_livox
+            SEP  COL(CVAR, "%-*s"),             // udev_symlink
+
+            CENTER_ARGS(rov.name.c_str(), sizes.max_name_len),
+            config.use_full_rover_table_output ? str_desc : "",
+            args.ansi_controller_color.c_str(), args.ansi_controller_font.c_str(), sizes.max_color_len-2, args.str_controller_color.c_str(),
+            config.use_full_rover_table_output ? str_wheels : "",
+            CENTER_ARGS(rov.ip_lms.to_string(3).c_str(), sizes.max_ip_lms_len),
+            args.ansi_ip_livox.c_str(), CENTER_ARGS(args.str_ip_livox.c_str(), sizes.max_ip_livox_len),
+            sizes.max_port_len, rov.udev_symlink.c_str()
+        );
+
+        delete[] str_desc;
+        delete[] str_wheels;
+
+        // printing the status columns
+        print_status(status_column_1, sizes.status_column_1_width, LineState::NORMAL);
+        print_status(status_column_2, sizes.status_column_2_width, LineState::NORMAL);
+        print_status(status_column_3, sizes.status_column_3_width, LineState::NORMAL);
+
+        LOG_INFO("\n");
+        #undef CVAR
+    }
+    void print_rover_line_selected( 
+        const DetailedRoverInfo& rov,
+        const Status status_column_1,
+        const Status status_column_2,
+        const Status status_column_3
+    ) const {
+        #define CVAR FG_BRIGHT_YELLOW;BOLD
+        RoverLineArgumentProcessing args = preprocesses_rover_line_arguments( rov, XSTR(CVAR), XSTR(CVAR) );
+
+        const size_t str_desc_len = slen(SEP SGR(CVAR)) + sizes.max_desc_len + slen(SGR(0)) + 1;
+        char* str_desc = new char[ str_desc_len ];
+        snprintf( str_desc, str_desc_len, 
+                  SEP COL(CVAR, CENTER_FMT), 
+                  CENTER_ARGS(args.str_description.c_str(), sizes.max_desc_len)
+        );
+        
+        const size_t str_wheels_len = slen(SEP) + slen(SGR(CVAR)) + sizes.max_wheel_diameter_len + slen(SGR(0)) + slen(COL(CVAR, " cm"))
+                                    + slen(SEP) + slen(SGR(CVAR)) + sizes.max_wheel_base_len     + slen(SGR(0)) + slen(COL(CVAR, " cm"))+1;
+        char* str_wheels = new char[ str_wheels_len ];
+        snprintf( str_wheels, str_wheels_len, 
+                  SEP COL(CVAR, "%*.2f") COL(CVAR, " cm") 
+                  SEP COL(CVAR, "%*.2f") COL(CVAR, " cm"), 
+                  sizes.max_wheel_diameter_len-3, rov.wheel_diameter,
+                  sizes.max_wheel_base_len-3, rov.wheel_base 
+        );
+
+        LOG_INFO(
+            LPAD COL(CVAR, CENTER_FMT)                  // name
+            "%s"                                        // desc
+            SEP  COL(%s, " ") COL(CVAR, " %-*s")        // color
+            "%s"                                        // wheels
+            SEP  COL(CVAR, CENTER_FMT)                  // ip
+            SEP  COL(CVAR, CENTER_FMT)                  // ip_livox
+            SEP  COL(CVAR, "%-*s"),                     // udev_symlink
+
+            CENTER_ARGS(rov.name.c_str(), sizes.max_name_len),
+            config.use_full_rover_table_output ? str_desc : "",
+            args.ansi_controller_color.c_str(), sizes.max_color_len-2, args.str_controller_color.c_str(),
+            config.use_full_rover_table_output ? str_wheels : "",
+            CENTER_ARGS(rov.ip_lms.to_string(3).c_str(), sizes.max_ip_lms_len),
+            CENTER_ARGS(args.str_ip_livox.c_str(), sizes.max_ip_livox_len),
+            sizes.max_port_len, rov.udev_symlink.c_str()
+        );
+
+        delete[] str_desc;
+        delete[] str_wheels;
+
+        // printing the status columns
+        print_status(status_column_1, sizes.status_column_1_width, LineState::SELECTED);
+        print_status(status_column_2, sizes.status_column_2_width, LineState::SELECTED);
+        print_status(status_column_3, sizes.status_column_3_width, LineState::SELECTED);
+
+        print_row_brackets();
+
+        LOG_INFO("\n");
+        #undef CVAR
+    }
+    void print_rover_line_activated( 
+        const DetailedRoverInfo& rov,
+        const Status status_column_1,
+        const Status status_column_2,
+        const Status status_column_3
+    ) const {
+        RoverLineArgumentProcessing args = preprocesses_rover_line_arguments( rov, XSTR(CACTIVATED), XSTR(CACTIVATED) );
+
+        const size_t str_desc_len = slen(SEP) + sizes.max_desc_len + 1;
+        char* str_desc = new char[ str_desc_len ];
+        snprintf( str_desc, str_desc_len, 
+                  SEP CENTER_FMT, 
+                  CENTER_ARGS(args.str_description.c_str(), sizes.max_desc_len)
+        );
+        
+        const size_t str_wheels_len = slen(SEP) + sizes.max_wheel_diameter_len + slen(" cm")
+                                    + slen(SEP) + sizes.max_wheel_base_len     + slen(" cm")+1;
+        char* str_wheels = new char[ str_wheels_len ];
+        snprintf( str_wheels, str_wheels_len, 
+                  SEP "%*.2f cm" 
+                  SEP "%*.2f cm", 
+                  sizes.max_wheel_diameter_len-3, rov.wheel_diameter,
+                  sizes.max_wheel_base_len-3, rov.wheel_base 
+        );
+
+        LOG_INFO( 
+            SGR(CACTIVATED)
+            LPAD CENTER_FMT                             // name
+            "%s"                                        // desc
+            SEP  COL(%s, " ") SGR(CACTIVATED) " %-*s"   // color
+            "%s"                                        // wheels
+            SEP  CENTER_FMT                             // ip
+            SEP  CENTER_FMT                             // ip_livox
+            SEP  "%-*s"                                 // udev_symlink
+            SGR(0),
+
+            CENTER_ARGS(rov.name.c_str(), sizes.max_name_len),
+            config.use_full_rover_table_output ? str_desc : "",
+            args.ansi_controller_color.c_str(), sizes.max_color_len-2, args.str_controller_color.c_str(),
+            config.use_full_rover_table_output ? str_wheels : "",
+            CENTER_ARGS(rov.ip_lms.to_string(3).c_str(), sizes.max_ip_lms_len),
+            CENTER_ARGS(args.str_ip_livox.c_str(), sizes.max_ip_livox_len),
+            sizes.max_port_len, rov.udev_symlink.c_str()
+        );
+
+        delete[] str_desc;
+        delete[] str_wheels;
+
+        // printing the status columns
+        print_status(status_column_1, sizes.status_column_1_width, LineState::ACTIVATED);
+        print_status(status_column_2, sizes.status_column_2_width, LineState::ACTIVATED);
+        print_status(status_column_3, sizes.status_column_3_width, LineState::ACTIVATED);
+
+        print_row_brackets( XSTR(CACTIVATED) );
+
+        LOG_INFO("\n");
+    }
+    void print_rover_line( 
+        const DetailedRoverInfo& rov, 
+        const Status status_column_1, 
+        const Status status_column_2, 
+        const Status status_column_3,
+        LineState state 
+    ) const {
+        switch( state ) {
+            case LineState::NORMAL:    print_rover_line_default(   rov, status_column_1, status_column_2, status_column_3 ); break;
+            case LineState::SELECTED:  print_rover_line_selected(  rov, status_column_1, status_column_2, status_column_3 ); break;
+            case LineState::ACTIVATED: print_rover_line_activated( rov, status_column_1, status_column_2, status_column_3 ); break;
+        }
+    }
+    #undef CACTIVATED
+
+    void print_row_brackets(const char* ansi = XSTR(FG_BRIGHT_YELLOW;BOLD)) const {
+        LOG_ANSI( CHA(1) ); // reset/move cursor to the beginning of the line (if not already there)
+        LOG_INFO( COL(%s, ">>"), ansi );
+        LOG_ANSI( CHA(%d), sizes.table_width + 1);
+        LOG_INFO( COL(%s, "<<"), ansi );
+        LOG_ANSI( CHA(1) ); // reset/move cursor to the beginning of the line
+    }
+
+    void print_line_with_status(
+        const int rov_index, 
+        const Status status_column_1, 
+        const Status status_column_2, 
+        const Status status_column_3,
+        const bool is_selected=true
+    ) const {
+        LOG_ANSI( EL(2) ); // clear line
+
+        // print line
+        print_rover_line(
+            rovers[rov_index], 
+            status_column_1,
+            status_column_2,
+            status_column_3,
+            is_selected ? TableVisualizer::LineState::SELECTED : TableVisualizer::LineState::NORMAL
+        );
+
+        LOG_ANSI( CPL(%d), lines_per_rover ); // move cursor back to begingen of this line/row
+    };
+
+
+    // Miscellaneous Prints -----------------------------------------------------------------------
+    
+    void print_table() const {
+        print_headers();
+
+        for( const DetailedRoverInfo& rov : rovers ) {
+            print_rover_line_default( rov, Status::WAITING, Status::WAITING, Status::WAITING );
+        }
+
+        LOG_INFO("\n");
+    }
+
+    void print_rover_selection(
+        const char* ansi_status,
+        const char* status,
+        const char* ansi_rover_name,
+        const char* rover_name
+    ) const {
+        LOG_LN_INFO( "%*sRover:   " COL(%s, "%s") "   " COL(%s, "%*s"),
+            CENTER_PAD_LEFT( sizes.selection_width, sizes.table_width), "",
+            ansi_status, status,
+            IF_PRINT( ansi_rover_name, )
+            sizes.max_name_len, rover_name
         );
     }
 
-    LOG_LN_INFO(" ");
-}
+    #undef LPAD
+    #undef SEP
+    #undef DASH
+    #undef DASH_CHR
+    #undef DDASH
+    #undef DDASH_CHR
+    #undef CSEP
+    #undef HSEP
+};
+
+const std::map<std::string, std::string> TableVisualizer::color_string_map = {
+    { "black",    XSTR(INDEX_BLACK)   },
+    { "white",    XSTR(INDEX_WHITE)   },
+    { "red",      XSTR(INDEX_RED)     },
+    { "red tape", XSTR(INDEX_RED)     },
+    { "green",    XSTR(INDEX_GREEN)   },
+    { "blue",     XSTR(INDEX_BLUE)    },
+    { "yellow",   XSTR(INDEX_YELLOW)  },
+    { "magenta",  XSTR(INDEX_MAGENTA) },
+    { "cyan",     XSTR(INDEX_CYAN)    }
+};
+
+static TableVisualizer visualizer;
+
 
 //-----------------------------------------------------------------------------
 // PINGING IMPLEMENTATION
@@ -381,30 +1066,10 @@ static int ping( const ip_t ip, const int pings ) {
 #define PING_SUCCESSFUL 0
 
 
-//-----------------------------------------------------------------------------
-// ROS SPECIFIC IMPLEMENTATIONS
-//-----------------------------------------------------------------------------
+//------------------------------------------------------------------------------
+// ROVER SEARCHING / MATCHING ALGORIHM
+//------------------------------------------------------------------------------
 
-static inline std::string to_lower( const std::string& str ) {
-    std::string data = str;
-    std::transform(data.begin(), data.end(), data.begin(), [](unsigned char c){ return std::tolower(c); });
-    return data;
-}
-
-static bool manual_select_rover( std::string rover_name ) {
-    LOG_LN_INFO( "Trying to find and select the rover named \"" COL(FG_GREEN, "%s") "\"", rover_name.c_str() );
-
-    for( size_t i=0; i < rovers.size(); i++ ) {
-        if( to_lower(rovers[i].name) == to_lower(rover_name) ) {
-            active_rover = &rovers[i];
-            active_rover_index = i;
-
-            LOG_LN_INFO( "Search was " COL(FG_BRIGHT_GREEN, "SUCCESSFUL") " and " COL(FG_BRIGHT_GREEN, "%s") " is now the selected Rover",
-                active_rover->name.c_str()
-            );
-
-            return true;
-        }
     }
 
     LOG_LN_WARN( "\"" COL(FG_GREEN, "%s" ) "\" was " COL(FG_BRIGHT_RED, "not found") " in the volksbot/config/rovers.yaml", rover_name.c_str() );
@@ -596,6 +1261,44 @@ best_fit:
     return changed;
 }
 
+
+//-----------------------------------------------------------------------------
+// ROS SPECIFIC IMPLEMENTATIONS
+//-----------------------------------------------------------------------------
+
+static inline std::string to_lower( const std::string& str ) {
+    std::string data = str;
+    std::transform(data.begin(), data.end(), data.begin(), [](unsigned char c){ return std::tolower(c); });
+    return data;
+}
+
+static bool manual_select_rover( const std::string& rover_name ) {
+    LOG_LN_INFO( "Trying to find and select the rover named \"" COL(FG_GREEN, "%s") "\"", rover_name.c_str() );
+
+    for( size_t i=0; i < rovers.size(); i++ ) {
+        if( to_lower(rovers[i].name) == to_lower(rover_name) ) {
+            active_rover = &rovers[i];
+            active_rover_index = i;
+
+            LOG_LN_INFO( "Search was " COL(FG_BRIGHT_GREEN, "SUCCESSFUL") " and " COL(FG_BRIGHT_GREEN, "%s") " is now the selected Rover",
+                active_rover->name.c_str()
+            );
+
+            return true;
+        }
+    }
+
+    LOG_LN_WARN( "\"" COL(FG_GREEN, "%s" ) "\" was " COL(FG_BRIGHT_RED, "not found") " in the volksbot/config/rovers.yaml", rover_name.c_str() );
+    LOG_LN_WARN( "Search was " COL(FG_BRIGHT_RED, "NOT successful") " and automatic Rover search will now commence\n" );
+
+    return false;
+}
+
+static void publish_rover() {
+    VB::msg::Rover rov = active_rover->to_message();
+    pub_rover->publish( rov );
+}
+
 static void find_and_publish() {
     bool found = find_rover();
     if( found || config.always_publish ) {
@@ -603,14 +1306,6 @@ static void find_and_publish() {
     }
 }
 
-
-/**
- * If a specific rover should be manually selected, call:
- *      ros2 run volksbot volksbot ${rover_name}
- * with the specified rover name to force select that rover.
- * 
- * Otherwise leave blank and automatic search will be used for rover detection
- */
 
 int main(int argc, char* argv[]) {
     signal(SIGINT, [](int sig){
