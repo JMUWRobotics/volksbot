@@ -144,3 +144,52 @@ or just a subset of the packages:
 ```bash
 colcon build --packages-select [package1] [package2] [package3] [...]
 ```
+
+# Debugging
+## Building with debug symbols
+To build the project with debug symbols, you can add the `--cmake-args -DCMAKE_BUILD_TYPE=Debug` flag to the build command:
+```bash
+colcon build --packages-ignore sick_scan_xd --cmake-args -DCMAKE_BUILD_TYPE=Debug
+```
+or just the package you want to debug:
+```bash
+colcon build --packages-select [package] --cmake-args -DCMAKE_BUILD_TYPE=Debug
+```
+
+## Debugging with gdbserver
+To debug with gdbserver, you can run a ros node with gdbserver by adding the `--prefix 'gdbserver localhost:[port]'"` flag to the ros2 run command:
+```bash
+ros2 run --prefix 'gdbserver localhost:[port]' [package] [executable]
+```
+
+## VSCode and gdbserver
+To debug with VSCode and gdbserver, you can create a launch configuration in your `.vscode/launch.json` file:
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug with gdbserver",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/ros2_ws/build/[package]/[executable]",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}/ros2_ws",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerServerAddress": "localhost:[port]",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
+```
+Make sure to replace `[package]`, `[executable]` and `[port]` with the appropriate values.
