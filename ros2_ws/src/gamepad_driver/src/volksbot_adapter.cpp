@@ -23,6 +23,7 @@ using namespace std::chrono_literals;
 
 #include "ros2_logger.h"
 
+#include "drivemode.h"
 #include "device_utils.h"
 
 
@@ -90,6 +91,7 @@ template<typename T> T min( const T a, const T b ) { return a <= b ? a : b; }
 using namespace std::chrono;
 using namespace VB;
 struct vel_ctrl_t {
+    static constexpr drive_mode_t initial_drive_mode = STICK_DRIVE; /* initial drive mode of the adapter */
 
     /* cm/s */
     static constexpr int speed_min = 10, speed_max = 100, speed_step = 10;
@@ -123,9 +125,6 @@ struct vel_ctrl_t {
 
     private:
         // Constants
-        enum drive_mode_t { STICK_DRIVE, PADDLE_DRIVE, TANK_DRIVE, COUNT };
-        static constexpr const char* drive_mode_str[drive_mode_t::COUNT+1] = { "STICK_DRIVE", "PADDLE_DRIVE", "TANK_DRIVE", "ERROR" };
-        
         const float throttle_sign_deadzone = tan( DEG2RAD(10) ); /* angle of deadzone for throttle sign */
         static constexpr float ff_feedback_max_accel = 2500.0f; /* cm/s /s */
         static constexpr float ff_feedback_min_accel = 500.0f; /* cm/s /s */
@@ -133,7 +132,7 @@ struct vel_ctrl_t {
         // Velocity calculation variables and parameters 
         int  speed = 20;            /* cm / s */
         int  throttle_sign = 0;     /* last sign of throttle */
-        drive_mode_t drive_mode = STICK_DRIVE; /* drive mode */
+        drive_mode_t drive_mode = initial_drive_mode; /* drive mode */
         
         // gamepad management variables
         Gamepad* gp;
