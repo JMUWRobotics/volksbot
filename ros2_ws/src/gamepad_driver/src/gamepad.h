@@ -36,8 +36,8 @@ typedef bool    button_t;
 typedef int16_t axis_t;
 
 struct thumb_stick_t {
-    axis_t   left_right;
-    axis_t   up_down;
+    axis_t   left_right;    // left > 0, right < 0
+    axis_t   up_down;       // up > 0, down < 0
     button_t pressed;
 };
 
@@ -45,7 +45,7 @@ struct gp_state {
     struct { button_t A, B, X, Y, back, start, home; } buttons;
     struct { button_t left, right; } shoulder;
     struct { axis_t left, right; } throttle;
-    struct { axis_t left_right, up_down; } hud; // >0 == left or up, <0 == right or down, 0 == none
+    struct { axis_t left_right, up_down; } hud;
     thumb_stick_t thumb_stick_left;
     thumb_stick_t thumb_stick_right;
 };
@@ -127,7 +127,7 @@ class Gamepad {
          *        Must be implemented by every inherited implementation. 
          * @param event input event to be applied/mapped onto its gamepad state
          */
-        void apply_event( const gp_event_t event );
+        void apply_event( const gp_event_t& event );
 
         /**
          * @brief busy waits for incoming events and applies them after reception
@@ -144,15 +144,15 @@ class Gamepad {
          */
         void set_rumble( const uint16_t mag_strong, const uint16_t mag_weak );
         
-        ff_rumble_effect get_rumble() const { return effect.u.rumble; };
+        const ff_rumble_effect& get_rumble() const { return effect.u.rumble; };
         
         bool has_rumble() const;
 
-        std::string get_serial_number() const { return device_serial_number; }
-        std::string get_name()          const { return name; }
-        uint32_t    get_last_event_id() const { return id; }
-        gp_event_t  get_last_event()    const { return gp_e; }
-        gp_state    get_state()         const { return gp_s; }
+        const std::string& get_serial_number() const { return device_serial_number; }
+        const std::string& get_name()          const { return name; }
+        uint32_t           get_last_event_id() const { return id; }
+        const gp_event_t&  get_last_event()    const { return gp_e; }
+        const gp_state&    get_state()         const { return gp_s; }
         
         virtual axis_t get_default_deadzone() const = 0;
         axis_t get_deadzone() const { return deadzone; }
@@ -176,7 +176,7 @@ class Gamepad {
          * @param event generic linux input event 
          * @return gp_event_t abstract gamepad event
          */
-        virtual gp_event_t map_event( const input_event event ) = 0;
+        virtual gp_event_t map_event( const input_event& event ) = 0;
 
         // state variables
         uint32_t    id;     /* rolling input event id */

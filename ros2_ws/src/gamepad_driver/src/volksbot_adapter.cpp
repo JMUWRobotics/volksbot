@@ -147,7 +147,7 @@ struct vel_ctrl_t {
         }
 
         #define EVENT_PRESSED(ev, c)  ( ((ev).code) == (c) && ((ev).value.btn) )
-        void apply_event( const gp_event_t gpe ) {
+        void apply_event( const gp_event_t& gpe ) {
             if( gpe.is_axis ) {
                 return;
             }
@@ -174,7 +174,7 @@ struct vel_ctrl_t {
             }
         }
 
-        void apply_state( const gp_state gps ) {
+        void apply_state( const gp_state& gps ) {
             float abs_throttle, throttle;
             float factor_left, factor_right, rot_factor;
             bool throttle_non_deadzone = false;

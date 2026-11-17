@@ -20,7 +20,8 @@ Currently **three** drive modes are implemented to control the rover via the gam
 The drive modes can be switched by pressing the `START` button on the controller.
 In all drive modes the right thumb stick can be used to turn on the spot, where left and right movement of the stick will cause the rover to rotate left and right respectively.
 Likewise, pressing the index Buttons `RB` and `LB` will increase or decrease the max speed of the rover, respectively.
- 
+
+
 - Arcade Drive:
 ```yaml
              / LT \     Switch Mode   / RT \

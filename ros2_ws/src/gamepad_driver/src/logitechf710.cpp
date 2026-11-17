@@ -14,7 +14,7 @@
 #define ABS(x)  ( (x) < 0 ? -(x) : (x) )
 #define DEADZONE(dz, val) ( ABS(val) <= (dz) ? 0 : (val) )  
 
-gp_event_t LogitechF::map_event( const input_event event ) {
+gp_event_t LogitechF::map_event( const input_event& event ) {
     gp_ie = event;
 
     gp_event_t ev { false, gp_index::INVALID, {false} };

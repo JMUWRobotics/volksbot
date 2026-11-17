@@ -140,7 +140,7 @@ bool Gamepad::has_connection() const {
 }
 
 
-void Gamepad::apply_event( const gp_event_t event ) {
+void Gamepad::apply_event( const gp_event_t& event ) {
     gp_e = event;
 
     uint8_t* byte_ptr = (uint8_t*) &gp_s;

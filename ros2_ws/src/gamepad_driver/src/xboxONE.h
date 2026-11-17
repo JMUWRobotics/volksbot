@@ -40,7 +40,7 @@ class XBoxOne : public Gamepad {
         const char* evio_id_name() const override { return "Microsoft X-Box One"; }
         axis_t get_default_deadzone() const override { return 5000; }
 
-        gp_event_t map_event( const input_event event ) override;
+        gp_event_t map_event( const input_event& event ) override;
 };
 
 #endif
