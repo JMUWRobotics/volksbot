@@ -25,6 +25,7 @@ using namespace std::chrono_literals;
 
 #include "drivemode.h"
 #include "device_utils.h"
+#include "visualizer.h"
 
 
 #define SPIN_PERIOD    100ms
@@ -48,6 +49,9 @@ using namespace std::chrono_literals;
 // enable emulated force feedback // works currently unstable
 // #define ACCEL_FORCE_FEEDBACK
 
+// enable the printing to console of the visualization info
+#define PRINT_VISUALIZATION
+
 
 //=============================================================================
 // CODE 
@@ -63,6 +67,9 @@ static_assert(
         + 1
     #endif
     #ifdef PRINT_VEL_CTRL
+        + 1
+    #endif
+    #ifdef PRINT_VISUALIZATION
         + 1
     #endif
     <= 1,
@@ -97,8 +104,9 @@ struct vel_ctrl_t {
     static constexpr int speed_min = 10, speed_max = 100, speed_step = 10;
     msg::VelGP vel; /* vel msg */
 
-    void update( Gamepad* gp ) {
+    void update( Gamepad* gp, std::shared_ptr<animation::Visualizer> visualizer ) {
         this->gp = gp;
+        this->visualizer = visualizer;
 
         if( gp == nullptr || !gp->has_connection() ) {
             vel.left = vel.right = 0;
@@ -136,6 +144,7 @@ struct vel_ctrl_t {
         
         // gamepad management variables
         Gamepad* gp;
+        std::shared_ptr<animation::Visualizer> visualizer;
         system_clock::time_point stop_rumble, last_update;
         system_clock::duration dt;
         uint32_t last_event_id = -1;
@@ -153,7 +162,13 @@ struct vel_ctrl_t {
 
             if( EVENT_PRESSED(gpe, gp_index::START) ) {
                 drive_mode = static_cast<drive_mode_t>( (drive_mode + 1) % drive_mode_t::COUNT );
+
+                #ifdef PRINT_VISUALIZATION
+                visualizer->set_drive_mode( drive_mode );
+                #else
                 LOG_LN_INFO( "Switched drive mode to " COL(FG_BRIGHT_GREEN, "%s"), drive_mode_str[drive_mode] );
+                #endif
+                
                 throttle_sign = 0;
                 set_rumble( 0xFFFF, 0xFFFF, 100ms );
             }
@@ -273,6 +288,11 @@ struct vel_ctrl_t {
 
             vel.left  = new_vel_left;
             vel.right = new_vel_right;
+            
+            // Visualization
+            #ifdef PRINT_VISUALIZATION
+            visualizer->print_state( gps );
+            #endif
 
             // Debuging
             #ifdef PRINT_VEL_CTRL
@@ -314,12 +334,22 @@ class Volks_gamepad : public rclcpp::Node {
             #ifdef PRINT_EVIO
                 active_gamepad->print_evio();
             #endif
+
+            #ifdef PRINT_VISUALIZATION
+            // TODO: make dynamic using runtime reflection of the gamepad entity
+            visualizer = std::make_shared<animation::LogitechVisualizer>(vel_ctrl_t::initial_drive_mode);
+            #endif
         }
         
         void run( rclcpp::Executor& executor ) {
             rclcpp::Time t1, t0 = get_clock()->now();
 
             while( rclcpp::ok() ) {
+                #ifdef PRINT_VISUALIZATION
+                LOG_ANSI( ED(2) );
+                visualizer->print_connected();
+                #endif
+
                 while ( active_gamepad->has_connection() ) {
                     if( !rclcpp::ok() ) {
                         return;
@@ -340,21 +370,33 @@ class Volks_gamepad : public rclcpp::Node {
                     // }
                     
                     // continue;
+                    vel_ctrl.update( active_gamepad, visualizer );
                     publish();
 
                     // artificially throttle down spinning so that we have enough time to process all input events
                     t1 = get_clock()->now();
                     if( t1 - t0 >= SPIN_PERIOD ) {
                         t0 = t1;
+                        
                         executor.spin_once( nanoseconds( 10ms ) );
                     }
                 }
 
                 // try to reconnect
-                LOG_LN_WARN( COL(FG_BRIGHT_RED, "Gamepad got disconnected!") " Trying to reconnect to " COL(BOLD;FG_BRIGHT_BLUE, "%s"), active_gamepad->get_name().c_str() );
 
+                #ifdef PRINT_VISUALIZATION
+                visualizer->print_disconnected();
+                #else
+                LOG_LN_WARN( COL(FG_BRIGHT_RED, "Gamepad got disconnected!") " Trying to reconnect to " COL(BOLD;FG_BRIGHT_BLUE, "%s"), active_gamepad->get_name().c_str() );
+                #endif
+                
                 if( device_util::try_reconnect( active_gamepad ) ) {
+                    #ifdef PRINT_VISUALIZATION
+                    LOG_ANSI( ED(2) );
+                    visualizer->print_connected();
+                    #else
                     LOG_LN_INFO( COL(FG_BRIGHT_GREEN, "Successfully reconnected to %s"), active_gamepad->get_name().c_str() );
+                    #endif
                 } else {
                     rclcpp::sleep_for( nanoseconds( 1000ms ) );
                 }
@@ -372,6 +414,7 @@ class Volks_gamepad : public rclcpp::Node {
         
         // data
         Gamepad* active_gamepad;
+        std::shared_ptr<animation::Visualizer> visualizer;
 
         void publish() {
             static rclcpp::Time t0 = get_clock()->now(), t1;
@@ -379,7 +422,6 @@ class Volks_gamepad : public rclcpp::Node {
             t1 = get_clock()->now();
             if( t1 - t0 >= PUBLISH_PERIOD ) {
                 t0 = t1;
-                vel_ctrl.update( active_gamepad );
                 publish_state();
                 publish_vel();
             }

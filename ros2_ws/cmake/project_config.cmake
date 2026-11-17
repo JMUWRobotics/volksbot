@@ -21,7 +21,7 @@ add_compile_definitions(
 
   # set logging for individual packages, will override the global logging config
   # [comment out to use global logging config}
-  # USE_LOGGING_GAME_PAD=0
+  USE_LOGGING_GAME_PAD=0
   # USE_LOGGING_KEYBOARD=0
   # USE_LOGGING_LMS_STARTER=0
   # USE_LOGGING_MOTOR_CONTROLLER=0
