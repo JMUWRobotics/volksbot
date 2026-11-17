@@ -50,8 +50,24 @@
 // Compile Time String Evaluation
 //------------------------------------------------------------------------------
 
-#define STR(s) #s
-#define XSTR(s) STR(s)
+/**
+ * @brief Calculates the length of a string literal at compile time, 
+ * excluding the trailing null character 
+ */
+#define SLEN( str ) ( sizeof(str) - 1 )
+
+/** @brief Converts a macro argument to a string literal */
+#define STR(m) #m
+/** @brief Expands a Macro and converts it to a string literal */
+#define XSTR(m) STR(m)
+
+/** 
+ * @brief Concatenates preprocessor tokens A and B without expanding macro definitions
+ * (however, if invoked from a macro, macro arguments are expanded).
+ */
+#define PPCAT_NX(A, B) A ## B
+/** @brief Concatenate preprocessor tokens A and B after macro-expanding them */
+#define PPCAT(A, B) PPCAT_NX(A, B)
 
 #if DISABLE_CONTROL_CODES == 0
 //------------------------------------------------------------------------------
@@ -215,55 +231,86 @@
 #define NO_STRIKE      29
 
 
-//----------//
-//  Colors  //
-//----------//
+//---------------------------------//
+//  Colors - Prefixes and Indices  //
+//---------------------------------//
+// Ansi color codes are defined using a combination of prefixes and indices. 
+// The prefixes determine the type of color (foreground, background, bright foreground, bright background), 
+// while the indices specify the actual color value.
 
-#define FG_RGB(r,g,b) 38;2;r;g;b
-#define BG_RGB(r,g,b) 38;2;r;g;b
+#define PREFIX_FG         3
+#define PREFIX_BG         4
+#define PREFIX_FG_BRIGHT  9
+#define PREFIX_BG_BRIGHT 10
+
+#define INDEX_BLACK       0
+#define INDEX_RED         1
+#define INDEX_GREEN       2
+#define INDEX_YELLOW      3
+#define INDEX_BLUE        4
+#define INDEX_MAGENTA     5
+#define INDEX_CYAN        6
+#define INDEX_WHITE       7
+#define INDEX_RGB         8
+#define INDEX_DEFAULT     9
+
+
+//----------------//
+//  Colors Codes  //
+//----------------//
+// Final color codes assembled from all combinations of prefixes and indices.
+
+#define COLOR_CODE(prefix, index) PPCAT(prefix, index)
+
+// RGB Colors
+#define FG_RGB(r,g,b) COLOR_CODE(PREFIX_FG, INDEX_RGB);2;r;g;b
+#define BG_RGB(r,g,b) COLOR_CODE(PREFIX_BG, INDEX_RGB);2;r;g;b
 
 // Foreground
-#define FG_BLACK   30
-#define FG_RED     31
-#define FG_GREEN   32
-#define FG_YELLOW  33
-#define FG_BLUE    34
-#define FG_MAGENTA 35
-#define FG_CYAN    36
-#define FG_WHITE   37
+#define FG_BLACK            COLOR_CODE(PREFIX_FG, INDEX_BLACK)
+#define FG_RED              COLOR_CODE(PREFIX_FG, INDEX_RED)
+#define FG_GREEN            COLOR_CODE(PREFIX_FG, INDEX_GREEN)
+#define FG_YELLOW           COLOR_CODE(PREFIX_FG, INDEX_YELLOW)
+#define FG_BLUE             COLOR_CODE(PREFIX_FG, INDEX_BLUE)
+#define FG_MAGENTA          COLOR_CODE(PREFIX_FG, INDEX_MAGENTA)
+#define FG_CYAN             COLOR_CODE(PREFIX_FG, INDEX_CYAN)
+#define FG_WHITE            COLOR_CODE(PREFIX_FG, INDEX_WHITE)
+#define FG_DEFAULT          COLOR_CODE(PREFIX_FG, INDEX_DEFAULT)
 
 // Background
-#define BG_BLACK   40
-#define BG_RED     41
-#define BG_GREEN   42
-#define BG_YELLOW  43
-#define BG_BLUE    44
-#define BG_MAGENTA 45
-#define BG_CYAN    46
-#define BG_WHITE   47
+#define BG_BLACK            COLOR_CODE(PREFIX_BG, INDEX_BLACK)
+#define BG_RED              COLOR_CODE(PREFIX_BG, INDEX_RED)
+#define BG_GREEN            COLOR_CODE(PREFIX_BG, INDEX_GREEN)
+#define BG_YELLOW           COLOR_CODE(PREFIX_BG, INDEX_YELLOW)
+#define BG_BLUE             COLOR_CODE(PREFIX_BG, INDEX_BLUE)
+#define BG_MAGENTA          COLOR_CODE(PREFIX_BG, INDEX_MAGENTA)
+#define BG_CYAN             COLOR_CODE(PREFIX_BG, INDEX_CYAN)
+#define BG_WHITE            COLOR_CODE(PREFIX_BG, INDEX_WHITE)
+#define BG_DEFAULT          COLOR_CODE(PREFIX_BG, INDEX_DEFAULT)
 
 // Foreground bright
-#define FG_BRIGHT_BLACK   90
-#define FG_BRIGHT_RED     91
-#define FG_BRIGHT_GREEN   92
-#define FG_BRIGHT_YELLOW  93
-#define FG_BRIGHT_BLUE    94
-#define FG_BRIGHT_MAGENTA 95
-#define FG_BRIGHT_CYAN    96
-#define FG_BRIGHT_WHITE   97
+#define FG_BRIGHT_BLACK     COLOR_CODE(PREFIX_FG_BRIGHT, INDEX_BLACK)
+#define FG_BRIGHT_RED       COLOR_CODE(PREFIX_FG_BRIGHT, INDEX_RED)
+#define FG_BRIGHT_GREEN     COLOR_CODE(PREFIX_FG_BRIGHT, INDEX_GREEN)
+#define FG_BRIGHT_YELLOW    COLOR_CODE(PREFIX_FG_BRIGHT, INDEX_YELLOW)
+#define FG_BRIGHT_BLUE      COLOR_CODE(PREFIX_FG_BRIGHT, INDEX_BLUE)
+#define FG_BRIGHT_MAGENTA   COLOR_CODE(PREFIX_FG_BRIGHT, INDEX_MAGENTA)
+#define FG_BRIGHT_CYAN      COLOR_CODE(PREFIX_FG_BRIGHT, INDEX_CYAN)
+#define FG_BRIGHT_WHITE     COLOR_CODE(PREFIX_FG_BRIGHT, INDEX_WHITE)
 
 // Background bright
-#define BG_BRIGHT_BLACK   100
-#define BG_BRIGHT_RED     101
-#define BG_BRIGHT_GREEN   102
-#define BG_BRIGHT_YELLOW  103
-#define BG_BRIGHT_BLUE    104
-#define BG_BRIGHT_MAGENTA 105
-#define BG_BRIGHT_CYAN    106
-#define BG_BRIGHT_WHITE   107
+#define BG_BRIGHT_BLACK     COLOR_CODE(PREFIX_BG_BRIGHT, INDEX_BLACK)
+#define BG_BRIGHT_RED       COLOR_CODE(PREFIX_BG_BRIGHT, INDEX_RED)
+#define BG_BRIGHT_GREEN     COLOR_CODE(PREFIX_BG_BRIGHT, INDEX_GREEN)
+#define BG_BRIGHT_YELLOW    COLOR_CODE(PREFIX_BG_BRIGHT, INDEX_YELLOW)
+#define BG_BRIGHT_BLUE      COLOR_CODE(PREFIX_BG_BRIGHT, INDEX_BLUE)
+#define BG_BRIGHT_MAGENTA   COLOR_CODE(PREFIX_BG_BRIGHT, INDEX_MAGENTA)
+#define BG_BRIGHT_CYAN      COLOR_CODE(PREFIX_BG_BRIGHT, INDEX_CYAN)
+#define BG_BRIGHT_WHITE     COLOR_CODE(PREFIX_BG_BRIGHT, INDEX_WHITE)
 
-#define FG_GRAY FG_BRIGHT_BLACK
-#define BG_GRAY BG_BRIGHT_BLACK
+// Alternative color names
+#define FG_GRAY             FG_BRIGHT_BLACK
+#define BG_GRAY             BG_BRIGHT_BLACK
 
 
 
