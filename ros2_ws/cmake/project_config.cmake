@@ -2,6 +2,18 @@
 #------------------------------------------------------------------------------
 # This manages things like compiler flags or cross package C/C++ defines
 
+# Temporary workaround: Keeps existing CMakeLists.txt files building unchanged until all packages
+# are migrated to target_link_libraries()
+# if ament_target_dependencies() macro is missing in newer versions, a fallbacl is defined that forwards
+# each dep to target_link_libraries()
+if(NOT COMMAND ament_target_dependencies)
+  macro(ament_target_dependencies target)
+    foreach(dep ${ARGN})
+      target_link_libraries(${target} ${dep}::${dep})
+    endforeach()
+  endmacro()
+endif()
+
 # Add standard ROS 2 compile options
 if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
   add_compile_options(-Wall -Wextra -Wpedantic -O3)

@@ -17,7 +17,11 @@ def generate_launch_description():
             package='tf2_ros',
             executable='static_transform_publisher',
             name='sickcali',
-            arguments=['0.12', '0', '0.24', '0.0', '0.0', '0.0', '1.0', 'base_link', 'front_laser']
+            arguments=[
+                '--x', '0.12', '--y', '0', '--z', '0.24',
+                '--qx', '0.0', '--qy', '0.0', '--qz', '0.0', '--qw', '1.0',
+                '--frame-id', 'base_link', '--child-frame-id', 'front_laser'
+            ]
         )
 
         # Node(

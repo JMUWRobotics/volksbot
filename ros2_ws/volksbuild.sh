@@ -5,6 +5,8 @@
 # $ ./volksbuild.sh <optional argument of parallel workers>
 
 set -e
+# fetch/ update sick_scan_xd submodule if missing or outdated
+git submodule update --init --recursive
 
 # Optional argument: number of parallel workers
 PARALLEL_ARGS=""
@@ -14,7 +16,7 @@ fi
 
 colcon build \
     --packages-select sick_scan_xd \
-    --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" " -DSCANSEGMENT_XD=0" \
+    --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" \
     --event-handlers console_direct+ \
     ${PARALLEL_ARGS}
 

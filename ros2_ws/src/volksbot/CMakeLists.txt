@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 project(volksbot)
 
 # include project wide configuration
@@ -28,6 +28,9 @@ FetchContent_Declare(
   GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
   GIT_TAG master # Can be a tag (yaml-cpp-x.x.x), a commit hash, or a branch name (master)
 )
+# Force static yaml-cpp build (.a) so it gets linked directly into the executable
+# Otherwise a shared library (.so) is build which colcon does not install because its not a ros2 package
+set(YAML_BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(yaml-cpp)
 
 # uncomment the following line if msg/srv/action files are placed within this package

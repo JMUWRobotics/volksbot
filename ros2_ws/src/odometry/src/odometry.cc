@@ -1,4 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
+#include "rclcpp/executors.hpp"
 #include "stdio.h"
 
 #include <unistd.h>
@@ -197,6 +198,8 @@ void Odometry::convertTicks2Odom( VB::msg::MCTicks::ConstSharedPtr cticks ) {
 // die ergibt mit dem neuen ROS wenig Sinn und das Ganze sollte angepasst werden
 void Odometry::update(int rate) {
 	rclcpp::Rate loop_rate(rate);
+	rclcpp::executors::SingleThreadedExecutor executor;
+	executor.add_node( this->get_node_base_interface() );
 
 	while (rclcpp::ok()) {
 		if( !active_rover.is_valid ) {
@@ -216,7 +219,7 @@ void Odometry::update(int rate) {
 
 		// TODO: Check if spin_some() is fine, else test with spin() or spin_all()
 		// spin the callbacks from node (pointer to odometry node object)
-		rclcpp::spin_some( this->get_node_base_interface() );
+		executor.spin_some();
 		loop_rate.sleep();
 	}
 

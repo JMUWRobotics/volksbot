@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.10)
 project(motor_controller)
 
 # Ensure executables can find packaged shared libraries at runtime
@@ -10,8 +10,8 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 # include project wide configuration
 include(${PROJECT_SOURCE_DIR}/../../cmake/project_config.cmake OPTIONAL)
 
-# Set C++ standard to C++14
-set(CMAKE_CXX_STANDARD 14)
+# Set C++ standard to C++20
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Find necessary ROS 2 packages

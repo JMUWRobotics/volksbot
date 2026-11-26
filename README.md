@@ -3,16 +3,16 @@ This project is an adaptation of the original code to the modern ROS2 alternativ
 
 ---
 # Prerequisits
-- Ubuntu 22.04 or Ubuntu 24.04
+- Ubuntu 26.04
 - GCC 11.0 or greater
-- [ROS2 humble](https://docs.ros.org/en/humble/index.html)
+- [ROS2 lyrical](https://docs.ros.org/en/lyrical/index.html)
 
 > [!Warning]
 > Other Linux distributions may or may not work correctly. Therefore, it is recommented to use one of the distributions mentioned above.
 > Please let us know your experience and success with other systems.
 
 > [!Important]
-> If you use Ubuntu 24.04, you will probably encounter a `Permission Denied` error when trying to run the `volksbot` node.
+> You will probably encounter a `Permission Denied` error when trying to run the `volksbot` node.
 > To fix this error regard the section [Trouble Shooting - Permission Denied](#permission-denied).
 
 # Quickstart
@@ -24,6 +24,21 @@ This project is an adaptation of the original code to the modern ROS2 alternativ
     ```bash
     git clone git@github.com:JMUWRobotics/volksbot.git
     ```
+
+    > [!Note]
+    > On the `lyrical` branch `sick_scan_xd` is included as a git submodule instead of being vendored directly.
+    > Clone with the `--recurse-submodules` flag:
+    > ```bash
+    > git clone --recurse-submodules -b lyrical git@github.com:JMUWRobotics/volksbot.git
+    > ```
+    > If you already cloned without this flag, run `git submodule update --init --recursive`
+    > (this is also done automatically by `volksbuild.sh`).
+
+    > [!Caution]
+    > `sick_scan_xd` is tracked differently on `main` (vendored source) vs. `lyrical`
+    > (git submodule). Avoid repeatedly switching between these branches in the same
+    > checkout — use `git worktree` or separate clones if you need both at once.
+
 2. change to the `ros2_ws` directory
     ```bash
     cd volksbot/ros2_ws
@@ -92,7 +107,7 @@ Regard the following documentation markdowns for further information on usage an
 ---
 # Trouble Shooting
 ## Permission Denied
-If you are running the `volksbot` node on Ubuntu 24, you might encounter a `Permission Denied` error during the selection process. 
+If you are running the `volksbot` node, you might encounter a `Permission Denied` error during the selection process. 
 This happens because the program attempts to use ICMP sockets for pinging, which requires specific kernel permissions.
 By default, some Ubuntu configurations set the allowed group range to `1 0`, meaning only the root user is permitted to open these sockets.
 
@@ -117,15 +132,19 @@ Any Bugs or Issues, please open an [issue](https://docs.github.com/en/issues/tra
     ```bash
     source ${ros2_distro}
     ```
-2. only build the SICK LMS package
+2. make sure the sick_scan_xd submodule is checked out
     ```bash
-    colcon build --packages-select sick_scan_xd --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" " -DSCANSEGMENT_XD=0" --event-handlers console_direct+
+    git submodule update --init --recursive
     ```
-3. source the ros2 workspace
+3. only build the SICK LMS package
+    ```bash
+    colcon build --packages-select sick_scan_xd --cmake-args " -DROS_VERSION=2" " -DLDMRS=0" --event-handlers console_direct+
+    ```
+4. source the ros2 workspace
     ```bash
     source ./install/setup.bash
     ```
-4. build the remaining packages
+5. build the remaining packages
     ```bash
     colcon build --packages-ignore sick_scan_xd
     ```
@@ -144,6 +163,25 @@ or just a subset of the packages:
 ```bash
 colcon build --packages-select [package1] [package2] [package3] [...]
 ```
+
+## Updating the sick_scan_xd submodule version:
+> [!Tip]
+> Tags on the upstream repository are plain semver
+> (e.g. `3.10.0`, not `v3.10.0`).
+
+1. find the exact upstream tag name
+    ```bash
+    git ls-remote --tags https://github.com/SICKAG/sick_scan_xd.git
+    ```
+2. check out the new tag inside the submodule and commit the updated pointer
+    ```bash
+    cd ros2_ws/src/sick_scan_xd
+    git fetch --tags
+    git checkout <new-version>
+    cd ../../..
+    git add ros2_ws/src/sick_scan_xd
+    git commit -m "Bump sick_scan_xd submodule to <new-version>"
+    ```
 
 # Debugging
 ## Building with debug symbols
